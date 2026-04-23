@@ -1,0 +1,195 @@
+/**
+ * engine.js
+ *
+ * The matching engine that finds built-in roles covering
+ * a given set of required operations.
+ *
+ * This is the algorithmic core of the RBAC Explorer.
+ */
+
+/**
+ * Check if a role action pattern matches a specific operation.
+ * Azure uses hierarchical wildcards:
+ *   "*"                            → matches everything
+ *   "Microsoft.Compute/*"          → matches all Compute operations
+ *   "Microsoft.Compute/vms/read"   → exact match
+ *   "* /read"                      → matches all read operations
+ */
+export function matchesWildcard(pattern, operation) {
+  // Exact match
+  if (pattern === operation) return true;
+
+  // Universal wildcard
+  if (pattern === "*") return true;
+
+  // "*/read" style — matches any namespace's read
+  if (pattern === "*/read") return operation.endsWith("/read");
+
+  // Convert Azure wildcard pattern to regex
+  // Replace * with .* but escape everything else
+  const escaped = pattern
+    .replace(/[.+?^${}()|[\]\\]/g, "\\$&") // escape regex special chars
+    .replace(/\\\./g, "\\.") // fix double-escaped dots
+    .replace(/\*/g, ".*"); // convert * to .*
+
+  const regex = new RegExp("^" + escaped + "$", "i");
+  return regex.test(operation);
+}
+
+/**
+ * Check if a role covers a single operation (considering Actions, NotActions, DataActions, NotDataActions)
+ */
+export function roleCoversOperation(role, operation) {
+  const isDataAction = operation.type === "dataAction";
+
+  // Pick the right pool
+  const actions = isDataAction ? (role.dataActions || []) : (role.actions || []);
+  const notActions = isDataAction ? (role.notDataActions || []) : (role.notActions || []);
+
+  // Check if any action pattern matches
+  const covered = actions.some((pattern) => matchesWildcard(pattern, operation.action));
+
+  // Check if excluded by NotActions
+  const excluded = notActions.some((pattern) => matchesWildcard(pattern, operation.action));
+
+  return covered && !excluded;
+}
+
+/**
+ * Find all built-in roles that cover the required operations.
+ * Returns roles sorted by least-privilege (best fit first).
+ *
+ * @param {Array} roles - Array of built-in role definitions
+ * @param {Array} requiredOps - Array of {action, type} objects
+ * @param {Object} options - { minCoverage: 0.5 }
+ * @returns {Array} Matching roles with coverage metadata
+ */
+export function findMatchingRoles(roles, requiredOps, options = {}) {
+  const { minCoverage = 0.5 } = options;
+
+  const results = roles.map((role) => {
+    const covered = [];
+    const missed = [];
+
+    for (const op of requiredOps) {
+      if (roleCoversOperation(role, op)) {
+        covered.push(op);
+      } else {
+        missed.push(op);
+      }
+    }
+
+    const coverage = requiredOps.length > 0 ? covered.length / requiredOps.length : 0;
+
+    // Use pre-computed estimated actions if available, otherwise compute
+    const estimatedTotalActions = role._estimatedActions || estimateActionCount(role);
+
+    return {
+      name: role.name,
+      id: role.id,
+      description: role.description,
+      actions: role.actions,
+      notActions: role.notActions || [],
+      dataActions: role.dataActions || [],
+      notDataActions: role.notDataActions || [],
+      coveredOps: covered,
+      coveredCount: covered.length,
+      missedOps: missed,
+      missedCount: missed.length,
+      coverage,
+      estimatedTotalActions,
+      overhead: Math.max(0, estimatedTotalActions - covered.length),
+    };
+  });
+
+  return results
+    .filter((r) => r.coverage >= minCoverage)
+    .sort((a, b) => {
+      // Primary: higher coverage first
+      if (b.coverage !== a.coverage) return b.coverage - a.coverage;
+      // Secondary: fewer total actions = more specific = better
+      return a.estimatedTotalActions - b.estimatedTotalActions;
+    });
+}
+
+/**
+ * Estimate how many individual operations a role grants.
+ * Wildcards are expanded to approximate counts.
+ */
+export function estimateActionCount(role) {
+  let count = 0;
+
+  for (const action of role.actions || []) {
+    if (action === "*") count += 5000;
+    else if (action === "*/read") count += 3000;
+    else if (action.endsWith("/*")) count += 30;
+    else if (action.includes("*")) count += 10;
+    else count += 1;
+  }
+
+  for (const action of role.dataActions || []) {
+    if (action === "*") count += 2000;
+    else if (action.endsWith("/*")) count += 15;
+    else if (action.includes("*")) count += 5;
+    else count += 1;
+  }
+
+  return count;
+}
+
+/**
+ * Generate a custom role definition JSON from required operations.
+ */
+export function generateCustomRoleJSON(taskTitle, operations) {
+  const actions = operations.filter((o) => o.type === "action").map((o) => o.action);
+  const dataActions = operations.filter((o) => o.type === "dataAction").map((o) => o.action);
+
+  return JSON.stringify(
+    {
+      Name: `Custom - ${taskTitle}`,
+      IsCustom: true,
+      Description: `Least-privilege custom role for: ${taskTitle}. Generated by Azure RBAC Explorer.`,
+      Actions: actions,
+      NotActions: [],
+      DataActions: dataActions,
+      NotDataActions: [],
+      AssignableScopes: ["/subscriptions/<your-subscription-id>"],
+    },
+    null,
+    2
+  );
+}
+
+/**
+ * Fuzzy search tasks by query string.
+ */
+export function searchTasks(tasks, query) {
+  if (!query.trim()) return tasks;
+
+  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+
+  return tasks
+    .map((task) => {
+      const haystack = [
+        task.title,
+        task.description,
+        ...(task.keywords || []),
+        task.category,
+        ...(task.operations || []).map((o) => o.action),
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      let score = 0;
+      for (const term of terms) {
+        if (haystack.includes(term)) score++;
+      }
+
+      // Boost exact title matches
+      if (task.title.toLowerCase().includes(query.toLowerCase())) score += 2;
+
+      return { ...task, _searchScore: score };
+    })
+    .filter((t) => t._searchScore > 0)
+    .sort((a, b) => b._searchScore - a._searchScore);
+}

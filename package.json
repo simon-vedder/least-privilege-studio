@@ -1,0 +1,45 @@
+{
+  "name": "least-privilege-studio",
+  "version": "0.1.0",
+  "description": "Describe what you want to do in Azure — get the exact permissions and least-privilege role.",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync:roles": "./scripts/sync-roles.sh",
+    "sync:operations": "./scripts/sync-operations.sh",
+    "sync:all": "./scripts/sync-roles.sh && ./scripts/sync-operations.sh && node scripts/build-data.js && npm run copy:data",
+    "copy:data": "mkdir -p public/data && cp data/roles.json data/ui-structure.json data/dependency-hints.json data/metadata.json public/data/",
+    "build:data": "node scripts/build-data.js && npm run copy:data",
+    "validate:tasks": "node scripts/validate-tasks.js",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.0",
+    "js-yaml": "^4.1.1",
+    "vite": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Simon Vedder <contact@simonvedder.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonvedder/azure-rbac-explorer"
+  },
+  "keywords": [
+    "azure",
+    "rbac",
+    "least-privilege",
+    "security",
+    "iam",
+    "permissions",
+    "roles"
+  ]
+}
