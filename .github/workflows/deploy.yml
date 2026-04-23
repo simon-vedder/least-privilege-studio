@@ -33,9 +33,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Sync Azure Data
-        run: npm run sync:all
-
       - name: Build
         run: npm run build
 
