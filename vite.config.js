@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/least-privilege-studio",
+  base: "/least-privilege-studio/",
   build: {
     outDir: "dist",
   },

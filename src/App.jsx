@@ -85,7 +85,7 @@ function opShortName(action, ns){
 function useData(){const[c,sC]=useState([]);const[r,sR]=useState([]);const[h,sH]=useState([]);const[m,sM]=useState(null);const[l,sL]=useState(true);const[d,sD]=useState(false);
 useEffect(()=>{(async()=>{
   // Use relative path so it works with any base path
-  const base=import.meta.env.BASE_URL||"/least-privilege-studio";
+  const base=(import.meta.env.BASE_URL||"/least-privilege-studio/").replace(/\/?$/,"/");
   const f=p=>fetch(`${base}data/${p}`).then(x=>x.ok?x.json():null);
   try{const[a,b,c2,d2]=await Promise.allSettled([f("ui-structure.json"),f("roles.json"),f("dependency-hints.json"),f("metadata.json")]);
   const cv=a.status==="fulfilled"&&a.value,rv=b.status==="fulfilled"&&b.value;
