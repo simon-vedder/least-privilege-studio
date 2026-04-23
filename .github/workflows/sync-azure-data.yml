@@ -1,0 +1,102 @@
+# .github/workflows/sync-azure-data.yml
+#
+# Runs weekly to pull the latest Azure built-in role definitions
+# and provider operations from the Azure REST API.
+#
+# Requirements:
+#   - Azure Service Principal credentials stored as GitHub secrets:
+#     AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID, AZURE_SUBSCRIPTION_ID
+#   - Service Principal needs only "Reader" role on the subscription
+#
+# The workflow:
+#   1. Authenticates to Azure
+#   2. Pulls role definitions and provider operations
+#   3. Transforms raw data into app-ready JSON
+#   4. Commits changes (if any) to the main branch
+
+name: Sync Azure Data
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: |
+            {
+              "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
+              "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
+              "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}",
+              "tenantId": "${{ secrets.AZURE_TENANT_ID }}"
+            }
+
+      - name: Pull built-in role definitions
+        run: |
+          mkdir -p data/raw
+          echo "Pulling built-in role definitions..."
+          az role definition list \
+            --query "[?roleType=='BuiltInRole']" \
+            --output json \
+            > data/raw/roles-raw.json
+          ROLE_COUNT=$(python3 -c "import json; print(len(json.load(open('data/raw/roles-raw.json'))))")
+          echo "Pulled $ROLE_COUNT roles"
+
+      - name: Pull provider operations
+        run: |
+          echo "Pulling provider operations..."
+          az provider operation list \
+            --output json \
+            > data/raw/operations-raw.json
+          OP_COUNT=$(python3 -c "
+          import json
+          data = json.load(open('data/raw/operations-raw.json'))
+          total = sum(len(op) for p in data for rt in p.get('resourceTypes',[]) for op in [rt.get('operations',[])])
+          print(total)
+          ")
+          echo "Pulled $OP_COUNT operations"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build processed data
+        run: node scripts/build-data.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Only commit the processed data, not raw files (they're large)
+          git add data/roles.json data/operations.json data/providers.json data/tasks.json data/metadata.json
+          
+          # Get counts for commit message
+          METADATA=$(cat data/metadata.json)
+          ROLES=$(echo "$METADATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['roleCount'])")
+          OPS=$(echo "$METADATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['operationCount'])")
+          
+          git commit -m "data: sync Azure RBAC data ($ROLES roles, $OPS operations)"
+          git push

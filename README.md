@@ -14,26 +14,6 @@ Developer tool for Azure RBAC permissions. Select resources and actions you need
 - Dependency hints (e.g. "VMs require managed disks")
 - 867+ built-in roles, 18,000+ operations from the Azure API
 
-## Quick Start
-
-```bash
-npm install
-az login
-npm run sync:all
-npm run dev
-```
-
-## Deploy
-
-```bash
-git init && git add . && git commit -m "initial"
-git branch -M main
-git remote add origin git@github.com:simonvedder/least-privilege-studio.git
-git push -u origin main
-```
-
-Settings → Pages → Source: GitHub Actions
-
 ## License
 
 MIT — Simon Vedder · [simonvedder.com](https://simonvedder.com)
