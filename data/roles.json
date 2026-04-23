@@ -3248,13 +3248,12 @@
       "Microsoft.Resources/deploymentStacks/write",
       "Microsoft.Resources/deploymentStacks/read",
       "Microsoft.Resources/deploymentStacks/validate/action",
-      "Microsoft.Resources/deploymentStacks/exportTemplate/action",
-      "Microsoft.Resources/deploymentStacksWhatIfResults/*"
+      "Microsoft.Resources/deploymentStacks/exportTemplate/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 105
+    "_estimatedActions": 75
   },
   {
     "name": "Azure Deployment Stack Owner",
@@ -3265,13 +3264,12 @@
       "Microsoft.Insights/alertRules/*",
       "Microsoft.Resources/deployments/*",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Resources/deploymentStacks/*",
-      "Microsoft.Resources/deploymentStacksWhatIfResults/*"
+      "Microsoft.Resources/deploymentStacks/*"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 131
+    "_estimatedActions": 101
   },
   {
     "name": "Azure Device Onboarding Contributor",
@@ -10394,7 +10392,6 @@
       "Microsoft.Security/defenderforstoragesettings/write",
       "Microsoft.Security/advancedThreatProtectionSettings/read",
       "Microsoft.Security/advancedThreatProtectionSettings/write",
-      "Microsoft.Security/securityOperators/read",
       "Microsoft.Storage/storageAccounts/write",
       "Microsoft.Storage/storageAccounts/read",
       "Microsoft.Storage/storageAccounts/blobServices/containers/read",
@@ -10406,7 +10403,7 @@
       "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/read"
     ],
     "notDataActions": [],
-    "_estimatedActions": 9
+    "_estimatedActions": 8
   },
   {
     "name": "Defender Serverless Scanner",
@@ -10558,7 +10555,6 @@
       "Microsoft.Security/defenderforstoragesettings/write",
       "Microsoft.Security/advancedThreatProtectionSettings/read",
       "Microsoft.Security/advancedThreatProtectionSettings/write",
-      "Microsoft.Security/securityOperators/read",
       "Microsoft.Storage/storageAccounts/write",
       "Microsoft.Storage/storageAccounts/read",
       "Microsoft.EventGrid/topics/read",
@@ -10572,7 +10568,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 14
+    "_estimatedActions": 13
   },
   {
     "name": "Defender Unified RBAC Authorization Manager",
@@ -15719,14 +15715,12 @@
       "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
       "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
       "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-      "Microsoft.HybridCompute/machines/read",
-      "Microsoft.HybridCompute/machines/extensions/read",
-      "Microsoft.HybridCompute/machines/extensions/write"
+      "Microsoft.HybridCompute/machines/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 10
+    "_estimatedActions": 8
   },
   {
     "name": "Microsoft.AzureStackHCI Device Pool Manager",
