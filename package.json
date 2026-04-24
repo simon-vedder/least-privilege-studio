@@ -27,11 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "author": "Simon Vedder <contact@simonvedder.com>",
+  "author": "Simon Vedder <info@simonvedder.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonvedder/azure-rbac-explorer"
+    "url": "https://github.com/simon-vedder/least-privilege-studio"
   },
   "keywords": [
     "azure",
