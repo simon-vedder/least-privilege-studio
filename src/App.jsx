@@ -80,10 +80,9 @@ function accessLevel(opAction) {
   return "Action";
 }
 
-// Short display name for an operation (just the meaningful part)
+// Display name for an operation (returning full path including provider namespace)
 function opShortName(action, ns) {
-  const rest = action.slice(ns.length + 1);
-  return rest;
+  return action;
 }
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
