@@ -14,6 +14,11 @@ const ABBREV = { "vm": "virtual machines", "nic": "network interfaces nics", "ns
 function searchMatch(query, categories) {
   if (!query.trim()) return { filtered: categories, isPermSearch: false, permQuery: "" };
   const q = query.toLowerCase().trim();
+  
+  // Prevent expanding all categories when the user is just typing the common prefix
+  const isGeneric = /^(m|mi|mic|micr|micro|micros|microso|microsof|microsoft|microsoft\.)$/i.test(q);
+  if (isGeneric) return { filtered: [], isPermSearch: false, permQuery: "" };
+
   // Mode 1: explicit permission path (contains / or microsoft.)
   if (q.includes("/") || q.includes("microsoft.")) {
     const f = categories.map(cat => ({ ...cat, providers: cat.providers.map(p => ({ ...p, types: p.types.filter(t => t.actions.some(a => a.ops.some(o => o.action.toLowerCase().includes(q)))) })).filter(p => p.types.length > 0) })).filter(c => c.providers.length > 0);
