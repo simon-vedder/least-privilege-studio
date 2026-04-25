@@ -88,21 +88,21 @@ function opShortName(action, ns) {
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 function useData() {
-  const [c, sC] = useState([]); const [r, sR] = useState([]); const [h, sH] = useState([]); const [m, sM] = useState(null); const [l, sL] = useState(true); const [d, sD] = useState(false);
+  const [c, sC] = useState([]); const [r, sR] = useState([]); const [m, sM] = useState(null); const [l, sL] = useState(true); const [d, sD] = useState(false);
   useEffect(() => {
     (async () => {
       // Use relative path so it works with any base path
       const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/");
       const f = p => fetch(`${base}data/${p}`).then(x => x.ok ? x.json() : null);
       try {
-        const [a, b, c2, d2] = await Promise.allSettled([f("ui-structure.json"), f("roles.json"), f("dependency-hints.json"), f("metadata.json")]);
+        const [a, b, d2] = await Promise.allSettled([f("ui-structure.json"), f("roles.json"), f("metadata.json")]);
         const cv = a.status === "fulfilled" && a.value, rv = b.status === "fulfilled" && b.value;
-        if (cv?.length && rv?.length) { sC(cv); sR(rv); sH(c2.status === "fulfilled" && c2.value || DH); sM(d2.status === "fulfilled" && d2.value || null) }
-        else { sD(true); sC(DC); sR(DR); sH(DH) }
-      } catch { sD(true); sC(DC); sR(DR); sH(DH) } sL(false)
+        if (cv?.length && rv?.length) { sC(cv); sR(rv); sM(d2.status === "fulfilled" && d2.value || null) }
+        else { sD(true); sC(DC); sR(DR) }
+      } catch { sD(true); sC(DC); sR(DR) } sL(false)
     })()
   }, []);
-  return { categories: c, roles: r, hints: h, meta: m, loading: l, isDemo: d }
+  return { categories: c, roles: r, meta: m, loading: l, isDemo: d }
 }
 
 // ─── STYLES ─────────────────────────────────────────────────────────────────
@@ -114,7 +114,7 @@ const LVLC = { "Read": "#4fc3f7", "Write": "#f5a623", "Delete": "#e94560", "Acti
 function Meter({ v }) { const p = Math.round(v * 100), c = p === 100 ? "#0f9b58" : p >= 80 ? "#f5a623" : "#e94560"; return <div style={{ display: "flex", alignItems: "center", gap: 10 }}><div style={{ flex: 1, height: 6, background: "#2a2a4a", borderRadius: 3, overflow: "hidden" }}><div style={{ width: `${p}%`, height: "100%", background: c, borderRadius: 3, transition: "width 0.4s" }} /></div><span style={{ fontFamily: "var(--m)", fontSize: 13, color: c, minWidth: 44, textAlign: "right" }}>{p}%</span></div> }
 function OB({ op, onRemove }) { const d = op.type === "dataAction"; return <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "5px 10px", background: d ? "rgba(245,166,35,0.08)" : "rgba(79,195,247,0.08)", border: `1px solid ${d ? "rgba(245,166,35,0.2)" : "rgba(79,195,247,0.15)"}`, borderRadius: 6, fontFamily: "var(--m)", fontSize: 11.5, color: "#c8d6e5" }}><span style={{ fontSize: 9, fontWeight: 700, padding: "2px 6px", borderRadius: 3, textTransform: "uppercase", letterSpacing: "0.05em", background: d ? "rgba(245,166,35,0.2)" : "rgba(79,195,247,0.15)", color: d ? "#f5a623" : "#4fc3f7" }}>{d ? "Data" : "Action"}</span><span style={{ wordBreak: "break-all", flex: 1 }}>{op.action}</span>{onRemove && <button onClick={() => onRemove(op.action)} style={{ background: "none", border: "none", color: "#6b7c93", cursor: "pointer", fontSize: 16, padding: "0 2px", lineHeight: 1, flexShrink: 0, opacity: 0.6 }} title="Remove this permission">×</button>}</div> }
 function RoleCard({ role, total, open, toggle }) { const cc = role.coverage === 1 ? "#0f9b58" : role.coverage >= 0.8 ? "#f5a623" : "#e94560"; return <div onClick={toggle} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 16, cursor: "pointer", borderLeft: `3px solid ${cc}`, transition: "all 0.2s" }}><div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}><div style={{ flex: 1 }}><div style={{ fontSize: 15, fontWeight: 600, color: "#e8ecf1", marginBottom: 2 }}>{role.name}</div><div style={{ fontSize: 11, color: "#4a5568", fontFamily: "var(--m)", marginBottom: 3 }}>{role.id}</div><div style={{ fontSize: 12, color: "#6b7c93", lineHeight: 1.4 }}>{role.description}</div></div><span style={{ fontSize: 16, color: "#6b7c93", marginLeft: 12, transform: open ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}>▾</span></div><div style={{ display: "flex", gap: 14, marginTop: 8, flexWrap: "wrap", fontSize: 12 }}><span style={{ color: "#8899aa" }}>Coverage: <span style={{ color: cc, fontWeight: 700 }}>{role.coveredCount}/{total}</span></span>{role.missedCount > 0 && <span style={{ color: "#e94560" }}>Missing: {role.missedCount}</span>}<span style={{ color: "#6b7c93" }}>~{role.est} total actions</span></div><div style={{ marginTop: 8 }}><Meter v={role.coverage} /></div>{open && <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid rgba(255,255,255,0.06)" }}>{role.missedCount > 0 && <div style={{ marginBottom: 12 }}><div style={{ fontSize: 12, fontWeight: 600, color: "#e94560", marginBottom: 8 }}>⚠ Not covered:</div><div style={{ display: "flex", flexDirection: "column", gap: 4 }}>{role.missedOps.map((o, i) => <OB key={i} op={o} />)}</div></div>}<div style={{ fontSize: 12, color: "#6b7c93", lineHeight: 1.6 }}>This role grants ~<b style={{ color: "#c8d6e5" }}>{role.est}</b> actions. You selected <b style={{ color: "#c8d6e5" }}>{total}</b>. Review whether the extra actions are acceptable.</div></div>}</div> }
-function HintBar({ hints, onAdd, sel }) { const [expanded, setExp] = useState(false); const u = hints.filter(h => !sel.has(h.opKey)); if (!u.length) return null; const LIMIT = 10, hasMore = u.length > LIMIT, visible = expanded ? u : u.slice(0, LIMIT); return <div style={{ margin: "12px 0", padding: 14, background: "rgba(245,166,35,0.06)", border: "1px solid rgba(245,166,35,0.18)", borderRadius: 10 }}><div style={{ fontSize: 12, fontWeight: 600, color: "#f5a623", marginBottom: 8 }}>💡 Typically also requires ({u.length}):</div><div style={{ display: "flex", flexDirection: "column", gap: 6 }}>{visible.map((h, i) => <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}><span style={{ fontFamily: "var(--m)", fontSize: 11, color: "#c8d6e5", wordBreak: "break-all" }}>{h.action} <span style={{ color: "#6b7c93" }}>({h.reason})</span></span><button onClick={() => onAdd(h)} style={{ padding: "3px 10px", borderRadius: 5, fontSize: 11, fontWeight: 600, cursor: "pointer", background: "rgba(245,166,35,0.15)", border: "1px solid rgba(245,166,35,0.3)", color: "#f5a623", fontFamily: "inherit", whiteSpace: "nowrap", flexShrink: 0 }}>+ Add</button></div>)}</div>{hasMore && <button onClick={() => setExp(!expanded)} style={{ marginTop: 8, padding: "5px 12px", borderRadius: 5, fontSize: 11, fontWeight: 500, cursor: "pointer", background: "none", border: "1px solid rgba(245,166,35,0.2)", color: "#f5a623", fontFamily: "inherit", width: "100%" }}>{expanded ? "▲ Show less" : `▼ Show all ${u.length} recommendations`}</button>}</div> }
+
 
 // AWS-style Action Group (Read, Write, Delete, Action)
 const ActionGroup = React.memo(function ActionGroup({ label, ops, ns, sel, onToggle, actionFilter, color, highlightQuery }) {
@@ -298,7 +298,7 @@ function CustomRoleImport({ allOps, onImport }) {
   </div>;
 }
 export default function App() {
-  const { categories, roles, hints, meta, loading, isDemo } = useData();
+  const { categories, roles, meta, loading, isDemo } = useData();
   const allOps = useOpIndex(categories);
   // sel: { "Microsoft.Compute/virtualMachines/read": true }
   const [sel, setSel] = useState({});
@@ -369,40 +369,7 @@ export default function App() {
 
   const sCount = Object.keys(sel).length;
 
-  // Dependency hints mapped to individual operations
-  const aHints = useMemo(() => {
-    const all = [];
-    for (const h of hints) {
-      // Check if any trigger operation is selected
-      const triggerSelected = categories.some(cat => cat.providers.some(prov => prov.types.some(t => {
-        if (t.key !== h.trigger.resourceType || prov.namespace !== h.trigger.provider) return false;
-        return t.actions.some(a => a.label === h.trigger.actionGroup && a.ops.some(op => sel[op.action]));
-      })));
-      if (!triggerSelected) continue;
-      for (const hint of h.hints) {
-        // Find the actual operations for this hint
-        for (const cat of categories) for (const prov of cat.providers) {
-          if (prov.namespace !== hint.provider) continue;
-          for (const t of prov.types) {
-            if (t.key !== hint.resourceType) continue;
-            for (const a of t.actions) {
-              if (hint.actionGroup && a.label !== hint.actionGroup) continue;
-              for (const op of a.ops) {
-                if (hint.action && op.action.toLowerCase() !== hint.action.toLowerCase()) continue;
-                if (!sel[op.action]) all.push({ ...op, reason: hint.reason, opKey: op.action });
-              }
-            }
-          }
-        }
-      }
-    }
-    const seen = new Set(), unique = [];
-    for (const h of all) if (!seen.has(h.opKey)) { seen.add(h.opKey); unique.push(h) }
-    return unique;
-  }, [sel, hints, categories]);
 
-  const selKeySet = useMemo(() => new Set(Object.keys(sel)), [sel]);
-  const addHint = useCallback(h => { setSel(prev => ({ ...prev, [h.action]: true })) }, []);
   // Defer heavy role matching so UI stays responsive
   const deferredOps = useDeferredValue(sOps);
   const rolesStale = deferredOps !== sOps;
@@ -497,7 +464,7 @@ export default function App() {
           <button onClick={clr} style={{ background: "none", border: "1px solid rgba(233,69,96,0.3)", color: "#e94560", padding: "4px 14px", borderRadius: 6, fontSize: 12, cursor: "pointer", fontFamily: "inherit" }}>Clear all</button>
         </div>}
 
-        {aHints.length > 0 && <HintBar hints={aHints} onAdd={addHint} sel={selKeySet} />}
+
 
         {/* Categories → Providers → Resource Types → Operations */}
         <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 28 }}>
@@ -604,7 +571,7 @@ const ROOT = { "--m": "'IBM Plex Mono',monospace", minHeight: "100vh", backgroun
 const HS = { fontSize: 14, fontWeight: 600, color: "#8899aa", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 };
 
 // ─── DEMO DATA ──────────────────────────────────────────────────────────────
-const DH = [{ trigger: { provider: "Microsoft.Compute", resourceType: "virtualMachines", actionGroup: "Write" }, hints: [{ provider: "Microsoft.Compute", resourceType: "disks", actionGroup: "Write", reason: "VMs require managed disks" }, { provider: "Microsoft.Network", resourceType: "networkInterfaces", actionGroup: "Write", reason: "VMs require a NIC" }, { provider: "Microsoft.Network", resourceType: "networkInterfaces", actionGroup: "Action", action: "Microsoft.Network/networkInterfaces/join/action", reason: "NIC must be joined to VM" }, { provider: "Microsoft.Network", resourceType: "virtualNetworks", actionGroup: "Action", action: "Microsoft.Network/virtualNetworks/subnets/join/action", reason: "NIC must join a subnet" }, { provider: "Microsoft.Network", resourceType: "virtualNetworks", actionGroup: "Read", reason: "Subnet must be readable" }, { provider: "Microsoft.Resources", resourceType: "subscriptions/resourceGroups", actionGroup: "Read", reason: "Resource group must be readable" }] }, { trigger: { provider: "Microsoft.Network", resourceType: "networkInterfaces", actionGroup: "Write" }, hints: [{ provider: "Microsoft.Network", resourceType: "virtualNetworks", actionGroup: "Action", action: "Microsoft.Network/virtualNetworks/subnets/join/action", reason: "NIC must join a subnet" }] }, { trigger: { provider: "Microsoft.Network", resourceType: "publicIPAddresses", actionGroup: "Write" }, hints: [{ provider: "Microsoft.Network", resourceType: "publicIPAddresses", actionGroup: "Action", action: "Microsoft.Network/publicIPAddresses/join/action", reason: "Public IP must be joined to NIC" }] }, { trigger: { provider: "Microsoft.Web", resourceType: "sites", actionGroup: "Write" }, hints: [{ provider: "Microsoft.Web", resourceType: "serverfarms", actionGroup: "Read", reason: "App needs an App Service Plan" }, { provider: "Microsoft.Resources", resourceType: "subscriptions/resourceGroups", actionGroup: "Read", reason: "Resource group must be readable" }] }];
+
 const DR = [{ name: "Virtual Machine Contributor", id: "9980e02c", description: "Create and manage VMs. No VNet or storage access.", actions: ["Microsoft.Authorization/*/read", "Microsoft.Compute/availabilitySets/*", "Microsoft.Compute/locations/*", "Microsoft.Compute/virtualMachines/*", "Microsoft.Compute/virtualMachineScaleSets/*", "Microsoft.Compute/disks/write", "Microsoft.Compute/disks/read", "Microsoft.Compute/disks/delete", "Microsoft.Insights/alertRules/*", "Microsoft.Network/applicationGateways/backendAddressPools/join/action", "Microsoft.Network/loadBalancers/backendAddressPools/join/action", "Microsoft.Network/loadBalancers/inboundNatPools/join/action", "Microsoft.Network/loadBalancers/inboundNatRules/join/action", "Microsoft.Network/loadBalancers/probes/join/action", "Microsoft.Network/loadBalancers/read", "Microsoft.Network/locations/*", "Microsoft.Network/networkInterfaces/*", "Microsoft.Network/networkSecurityGroups/join/action", "Microsoft.Network/networkSecurityGroups/read", "Microsoft.Network/publicIPAddresses/join/action", "Microsoft.Network/publicIPAddresses/read", "Microsoft.Network/virtualNetworks/read", "Microsoft.Network/virtualNetworks/subnets/join/action", "Microsoft.ResourceHealth/availabilityStatuses/read", "Microsoft.Resources/deployments/*", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Storage/storageAccounts/listKeys/action", "Microsoft.Storage/storageAccounts/read", "Microsoft.Support/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 59 }, { name: "Contributor", id: "b24988ac", description: "Full access to manage resources. Cannot assign roles.", actions: ["*"], notActions: ["Microsoft.Authorization/*/Delete", "Microsoft.Authorization/*/Write", "Microsoft.Authorization/elevateAccess/Action"], dataActions: [], notDataActions: [], _estimatedActions: 5000 }, { name: "Reader", id: "acdd72a7", description: "View all resources.", actions: ["*/read"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 3000 }, { name: "Network Contributor", id: "4d97b98b", description: "Create and manage networks.", actions: ["Microsoft.Authorization/*/read", "Microsoft.Insights/alertRules/*", "Microsoft.Network/*", "Microsoft.ResourceHealth/availabilityStatuses/read", "Microsoft.Resources/deployments/*", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Support/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 55 }, { name: "Storage Account Contributor", id: "17d1049b", description: "Manage storage accounts. No data access.", actions: ["Microsoft.Authorization/*/read", "Microsoft.Insights/alertRules/*", "Microsoft.Insights/diagnosticSettings/*", "Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action", "Microsoft.ResourceHealth/availabilityStatuses/read", "Microsoft.Resources/deployments/*", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Storage/storageAccounts/*", "Microsoft.Support/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 48 }, { name: "Storage Blob Data Reader", id: "2a2b9908", description: "Read blob containers and data.", actions: ["Microsoft.Storage/storageAccounts/blobServices/containers/read", "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"], notActions: [], dataActions: ["Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read"], notDataActions: [], _estimatedActions: 3 }, { name: "Storage Blob Data Contributor", id: "ba92f5b4", description: "Read, write, delete blob data.", actions: ["Microsoft.Storage/storageAccounts/blobServices/containers/read", "Microsoft.Storage/storageAccounts/blobServices/containers/write", "Microsoft.Storage/storageAccounts/blobServices/containers/delete", "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"], notActions: [], dataActions: ["Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read", "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write", "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete"], notDataActions: [], _estimatedActions: 9 }, { name: "Key Vault Contributor", id: "f25e0fa2", description: "Manage key vaults. No data access.", actions: ["Microsoft.Authorization/*/read", "Microsoft.Insights/alertRules/*", "Microsoft.KeyVault/*", "Microsoft.Resources/deployments/*", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Support/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 48 }, { name: "Website Contributor", id: "de139f84", description: "Manage websites.", actions: ["Microsoft.Authorization/*/read", "Microsoft.Insights/alertRules/*", "Microsoft.Insights/components/*", "Microsoft.ResourceHealth/availabilityStatuses/read", "Microsoft.Resources/deployments/*", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Support/*", "Microsoft.Web/certificates/*", "Microsoft.Web/listSitesAssignedToHostName/read", "Microsoft.Web/serverFarms/join/action", "Microsoft.Web/serverFarms/read", "Microsoft.Web/sites/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 42 }, { name: "SQL DB Contributor", id: "9b7fa17d", description: "Manage SQL databases.", actions: ["Microsoft.Authorization/*/read", "Microsoft.Insights/alertRules/*", "Microsoft.ResourceHealth/availabilityStatuses/read", "Microsoft.Resources/deployments/*", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Sql/locations/*/read", "Microsoft.Sql/servers/databases/*", "Microsoft.Sql/servers/read", "Microsoft.Support/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 42 }, { name: "User Access Administrator", id: "18d7d88d", description: "Manage user access.", actions: ["*/read", "Microsoft.Authorization/*", "Microsoft.Support/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 3040 }, { name: "Desktop Virtualization Contributor", id: "082f0a83", description: "Desktop Virtualization contributor.", actions: ["Microsoft.DesktopVirtualization/*", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Resources/deployments/*", "Microsoft.Authorization/*/read", "Microsoft.Insights/alertRules/*", "Microsoft.Support/*"], notActions: [], dataActions: [], notDataActions: [], _estimatedActions: 48 }];
 const _t = (p, k, a) => ({ key: k, name: k, provider: p, totalOps: a.reduce((s, x) => s + x.ops.length, 0), actions: a }); const _a = (l, o, h = false) => ({ label: l, ops: o, hasDataActions: h }); const _o = (a, t = "action") => ({ action: a, type: t });
 const DC = [
