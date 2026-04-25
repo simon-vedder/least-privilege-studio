@@ -17,7 +17,7 @@ function searchMatch(query, categories) {
   
   // Prevent expanding all categories when the user is just typing the common prefix
   const isGeneric = /^(m|mi|mic|micr|micro|micros|microso|microsof|microsoft|microsoft\.)$/i.test(q);
-  if (isGeneric) return { filtered: [], isPermSearch: false, permQuery: "" };
+  if (isGeneric) return { filtered: categories, isPermSearch: false, permQuery: "", isGeneric: true };
 
   // Mode 1: explicit permission path (contains / or microsoft.)
   if (q.includes("/") || q.includes("microsoft.")) {
@@ -384,8 +384,8 @@ export default function App() {
   const removeOp = useCallback(action => { startTransition(() => { setSel(prev => { const n = { ...prev }; delete n[action]; return n }) }) }, []);
 
   // Search
-  const isSearch = filter.trim().length > 0;
-  const { filtered: searchFiltered, isPermSearch, permQuery } = useMemo(() => searchMatch(filter, categories), [filter, categories]);
+  const { filtered: searchFiltered, isPermSearch, permQuery, isGeneric } = useMemo(() => searchMatch(filter, categories), [filter, categories]);
+  const isSearch = filter.trim().length > 0 && !isGeneric;
   const sorted = useMemo(() => searchFiltered.map(cat => ({ ...cat, providers: cat.providers.map(p => ({ ...p, types: [...p.types] })) })), [searchFiltered]);
 
   // When searching, compute which resource types matched via operation paths (not just name)
