@@ -22,12 +22,14 @@
         "provider": "Microsoft.Network",
         "resourceType": "networkInterfaces",
         "actionGroup": "Action",
+        "action": "Microsoft.Network/networkInterfaces/join/action",
         "reason": "NIC must join VM"
       },
       {
         "provider": "Microsoft.Network",
         "resourceType": "virtualNetworks",
         "actionGroup": "Action",
+        "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
         "reason": "NIC must join subnet"
       },
       {
@@ -55,6 +57,7 @@
         "provider": "Microsoft.Network",
         "resourceType": "virtualNetworks",
         "actionGroup": "Action",
+        "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
         "reason": "NIC must join subnet"
       }
     ]
@@ -70,6 +73,7 @@
         "provider": "Microsoft.Network",
         "resourceType": "publicIPAddresses",
         "actionGroup": "Action",
+        "action": "Microsoft.Network/publicIPAddresses/join/action",
         "reason": "Public IP must join NIC"
       }
     ]
@@ -157,6 +161,7 @@
         "provider": "Microsoft.Network",
         "resourceType": "virtualNetworks",
         "actionGroup": "Action",
+        "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
         "reason": "AKS nodes join subnet"
       }
     ]
