@@ -3248,12 +3248,13 @@
       "Microsoft.Resources/deploymentStacks/write",
       "Microsoft.Resources/deploymentStacks/read",
       "Microsoft.Resources/deploymentStacks/validate/action",
-      "Microsoft.Resources/deploymentStacks/exportTemplate/action"
+      "Microsoft.Resources/deploymentStacks/exportTemplate/action",
+      "Microsoft.Resources/deploymentStacksWhatIfResults/*"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 75
+    "_estimatedActions": 105
   },
   {
     "name": "Azure Deployment Stack Owner",
@@ -3264,12 +3265,13 @@
       "Microsoft.Insights/alertRules/*",
       "Microsoft.Resources/deployments/*",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Resources/deploymentStacks/*"
+      "Microsoft.Resources/deploymentStacks/*",
+      "Microsoft.Resources/deploymentStacksWhatIfResults/*"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 101
+    "_estimatedActions": 131
   },
   {
     "name": "Azure Device Onboarding Contributor",
@@ -7368,6 +7370,7 @@
       "Microsoft.Authorization/*/read",
       "Microsoft.RecoveryServices/locations/allocatedStamp/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/operationResults/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/operationsStatus/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/operationResults/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationResults/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/read",
@@ -7428,7 +7431,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 97
+    "_estimatedActions": 98
   },
   {
     "name": "Bayer Ag Powered Services Crop Id Solution User Role",
@@ -10392,6 +10395,7 @@
       "Microsoft.Security/defenderforstoragesettings/write",
       "Microsoft.Security/advancedThreatProtectionSettings/read",
       "Microsoft.Security/advancedThreatProtectionSettings/write",
+      "Microsoft.Security/securityOperators/read",
       "Microsoft.Storage/storageAccounts/write",
       "Microsoft.Storage/storageAccounts/read",
       "Microsoft.Storage/storageAccounts/blobServices/containers/read",
@@ -10403,7 +10407,7 @@
       "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/read"
     ],
     "notDataActions": [],
-    "_estimatedActions": 8
+    "_estimatedActions": 9
   },
   {
     "name": "Defender Serverless Scanner",
@@ -10555,6 +10559,7 @@
       "Microsoft.Security/defenderforstoragesettings/write",
       "Microsoft.Security/advancedThreatProtectionSettings/read",
       "Microsoft.Security/advancedThreatProtectionSettings/write",
+      "Microsoft.Security/securityOperators/read",
       "Microsoft.Storage/storageAccounts/write",
       "Microsoft.Storage/storageAccounts/read",
       "Microsoft.EventGrid/topics/read",
@@ -10568,7 +10573,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 13
+    "_estimatedActions": 14
   },
   {
     "name": "Defender Unified RBAC Authorization Manager",
@@ -12257,8 +12262,8 @@
       "Microsoft.Mission/virtualEnclaves/endpoints/read",
       "Microsoft.Mission/virtualEnclaves/workloads/read",
       "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
-      "Microsoft.Resources/deployments/*",
+      "Microsoft.Insights/alertRules/read",
+      "Microsoft.Resources/deployments/read",
       "Microsoft.Resources/subscriptions/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Resources/subscriptions/resourcegroups/deployments/read",
@@ -12275,7 +12280,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 87
+    "_estimatedActions": 29
   },
   {
     "name": "Essential Machine Management Administrator",
@@ -15060,6 +15065,35 @@
     "_estimatedActions": 127
   },
   {
+    "name": "Logic Apps Hybrid Contributor",
+    "id": "32109304-a0e2-4d64-bd07-b23ac5efbe43",
+    "description": "Full management of Logic Apps Hybrid, including creation, deletion, and updates.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.App/containerApps/*/read",
+      "Microsoft.App/containerApps/*/write",
+      "Microsoft.App/containerApps/*/delete",
+      "Microsoft.App/containerApps/*/action",
+      "Microsoft.App/logicApps/*/read",
+      "Microsoft.App/logicApps/*/write",
+      "Microsoft.App/logicApps/*/delete",
+      "Microsoft.App/logicApps/*/action",
+      "Microsoft.App/managedEnvironments/read",
+      "Microsoft.App/managedEnvironments/*/read",
+      "Microsoft.App/managedEnvironments/join/action",
+      "Microsoft.App/managedEnvironments/checknameavailability/action",
+      "Microsoft.App/connectedEnvironments/read",
+      "Microsoft.App/connectedEnvironments/*/read",
+      "Microsoft.App/connectedEnvironments/join/action",
+      "Microsoft.App/connectedEnvironments/checknameavailability/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 146
+  },
+  {
     "name": "Logic Apps Standard Contributor (Preview)",
     "id": "ad710c24-b039-4e85-a019-deb4a06e8570",
     "description": "You can manage all aspects of a Standard logic app and workflows. You can't change access or ownership.",
@@ -15357,6 +15391,7 @@
       "Microsoft.Approvals/approvalSettings/read",
       "Microsoft.Approvals/approvalSettings/write",
       "Microsoft.Approvals/approvalSettings/delete",
+      "Microsoft.Approvals/approvalSettings/initialize/action",
       "Microsoft.Approvals/approvalWorkflowDefinitions/read",
       "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/read",
       "Microsoft.Approvals/approvalWorkflowAssignments/read"
@@ -15364,7 +15399,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 6
+    "_estimatedActions": 7
   },
   {
     "name": "Microsoft Approvals Workflow Contributor",
@@ -15377,6 +15412,7 @@
       "Microsoft.Approvals/approvalWorkflowDefinitions/delete",
       "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/read",
       "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/write",
+      "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/syncPolicyStatus/action",
       "Microsoft.Approvals/approvalWorkflowAssignments/read",
       "Microsoft.Approvals/approvalWorkflowAssignments/write",
       "Microsoft.Approvals/approvalWorkflowAssignments/delete",
@@ -15385,7 +15421,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 10
+    "_estimatedActions": 11
   },
   {
     "name": "Microsoft Confluent Contributor role",
@@ -15715,12 +15751,14 @@
       "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
       "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
       "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-      "Microsoft.HybridCompute/machines/read"
+      "Microsoft.HybridCompute/machines/read",
+      "Microsoft.HybridCompute/machines/extensions/read",
+      "Microsoft.HybridCompute/machines/extensions/write"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 8
+    "_estimatedActions": 10
   },
   {
     "name": "Microsoft.AzureStackHCI Device Pool Manager",

@@ -15065,6 +15065,35 @@
     "_estimatedActions": 127
   },
   {
+    "name": "Logic Apps Hybrid Contributor",
+    "id": "32109304-a0e2-4d64-bd07-b23ac5efbe43",
+    "description": "Full management of Logic Apps Hybrid, including creation, deletion, and updates.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.App/containerApps/*/read",
+      "Microsoft.App/containerApps/*/write",
+      "Microsoft.App/containerApps/*/delete",
+      "Microsoft.App/containerApps/*/action",
+      "Microsoft.App/logicApps/*/read",
+      "Microsoft.App/logicApps/*/write",
+      "Microsoft.App/logicApps/*/delete",
+      "Microsoft.App/logicApps/*/action",
+      "Microsoft.App/managedEnvironments/read",
+      "Microsoft.App/managedEnvironments/*/read",
+      "Microsoft.App/managedEnvironments/join/action",
+      "Microsoft.App/managedEnvironments/checknameavailability/action",
+      "Microsoft.App/connectedEnvironments/read",
+      "Microsoft.App/connectedEnvironments/*/read",
+      "Microsoft.App/connectedEnvironments/join/action",
+      "Microsoft.App/connectedEnvironments/checknameavailability/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 146
+  },
+  {
     "name": "Logic Apps Standard Contributor (Preview)",
     "id": "ad710c24-b039-4e85-a019-deb4a06e8570",
     "description": "You can manage all aspects of a Standard logic app and workflows. You can't change access or ownership.",
