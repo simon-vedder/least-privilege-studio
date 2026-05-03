@@ -7370,6 +7370,7 @@
       "Microsoft.Authorization/*/read",
       "Microsoft.RecoveryServices/locations/allocatedStamp/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/operationResults/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/operationsStatus/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/operationResults/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationResults/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/read",
@@ -7430,7 +7431,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 97
+    "_estimatedActions": 98
   },
   {
     "name": "Bayer Ag Powered Services Crop Id Solution User Role",
@@ -12261,8 +12262,8 @@
       "Microsoft.Mission/virtualEnclaves/endpoints/read",
       "Microsoft.Mission/virtualEnclaves/workloads/read",
       "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
-      "Microsoft.Resources/deployments/*",
+      "Microsoft.Insights/alertRules/read",
+      "Microsoft.Resources/deployments/read",
       "Microsoft.Resources/subscriptions/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Resources/subscriptions/resourcegroups/deployments/read",
@@ -12279,7 +12280,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 87
+    "_estimatedActions": 29
   },
   {
     "name": "Essential Machine Management Administrator",
@@ -15361,6 +15362,7 @@
       "Microsoft.Approvals/approvalSettings/read",
       "Microsoft.Approvals/approvalSettings/write",
       "Microsoft.Approvals/approvalSettings/delete",
+      "Microsoft.Approvals/approvalSettings/initialize/action",
       "Microsoft.Approvals/approvalWorkflowDefinitions/read",
       "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/read",
       "Microsoft.Approvals/approvalWorkflowAssignments/read"
@@ -15368,7 +15370,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 6
+    "_estimatedActions": 7
   },
   {
     "name": "Microsoft Approvals Workflow Contributor",
@@ -15381,6 +15383,7 @@
       "Microsoft.Approvals/approvalWorkflowDefinitions/delete",
       "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/read",
       "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/write",
+      "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/syncPolicyStatus/action",
       "Microsoft.Approvals/approvalWorkflowAssignments/read",
       "Microsoft.Approvals/approvalWorkflowAssignments/write",
       "Microsoft.Approvals/approvalWorkflowAssignments/delete",
@@ -15389,7 +15392,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 10
+    "_estimatedActions": 11
   },
   {
     "name": "Microsoft Confluent Contributor role",
