@@ -79,6 +79,15 @@ jobs:
       - name: Build processed data
         run: node scripts/build-data.js
 
+      - name: Sync data to public folder
+        run: |
+          mkdir -p public/data
+          cp data/roles.json public/data/
+          cp data/operations.json public/data/
+          cp data/providers.json public/data/
+          cp data/tasks.json public/data/
+          cp data/metadata.json public/data/
+
       - name: Check for changes
         id: changes
         run: |
@@ -91,7 +100,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Only commit the processed data, not raw files (they're large)
-          git add data/roles.json data/operations.json data/providers.json data/tasks.json data/metadata.json
+          git add data/roles.json data/operations.json data/providers.json data/tasks.json data/metadata.json public/data/roles.json public/data/operations.json public/data/providers.json public/data/tasks.json public/data/metadata.json
           
           # Get counts for commit message
           METADATA=$(cat data/metadata.json)
