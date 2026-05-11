@@ -238,6 +238,62 @@
     "_estimatedActions": 0
   },
   {
+    "name": "Anyscale Platform Administrator Role",
+    "id": "3e9f3756-203e-4734-a0b8-4b68691ffae3",
+    "description": "Provides full access to Anyscale Cloud and resources as well as admin features such as usage and resource notifications.",
+    "actions": [
+      "Microsoft.Authorization/roleAssignments/write",
+      "Microsoft.Authorization/roleAssignments/delete",
+      "Microsoft.Authorization/*/read",
+      "Anyscale.Platform/*/read",
+      "Anyscale.Platform/*/write",
+      "Anyscale.Platform/*/delete"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Anyscale.Platform/admin/action",
+      "Anyscale.Platform/*/read",
+      "Anyscale.Platform/*/write",
+      "Anyscale.Platform/*/delete"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 42
+  },
+  {
+    "name": "Anyscale Platform Contributor Role",
+    "id": "6d461258-d39c-46cc-8ca1-cab4120979d8",
+    "description": "Grants read/write access to Anyscale Cloud and resources",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Anyscale.Platform/*/read",
+      "Anyscale.Platform/*/write",
+      "Anyscale.Platform/*/delete"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Anyscale.Platform/*/read",
+      "Anyscale.Platform/*/write",
+      "Anyscale.Platform/*/delete"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 40
+  },
+  {
+    "name": "Anyscale Platform Reader Role",
+    "id": "ab24b16e-fd5d-41b5-839e-6c6d2ad32363",
+    "description": "Read access to Anyscale Cloud and resources",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Anyscale.Platform/*/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Anyscale.Platform/*/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 20
+  },
+  {
     "name": "API Management Developer Portal Content Editor",
     "id": "c031e6a8-4391-4de0-8d69-4706a7ed3729",
     "description": "Can customize the developer portal, edit its content, and publish it.",
@@ -312,7 +368,7 @@
       "Microsoft.Authorization/*/read",
       "Microsoft.Insights/alertRules/*",
       "Microsoft.ResourceHealth/availabilityStatuses/read",
-      "Microsoft.Resources/deployments/*",
+      "Microsoft.Resources/deployments/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Support/*"
     ],
@@ -321,7 +377,7 @@
     ],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 113
+    "_estimatedActions": 84
   },
   {
     "name": "API Management Service Workspace API Developer",
@@ -9236,6 +9292,21 @@
     "_estimatedActions": 86
   },
   {
+    "name": "Container Apps SandboxGroup Data Owner",
+    "id": "c24cf47c-5077-412d-a19c-45202126392c",
+    "description": "Ownership of all Container Apps SandboxGroup data.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.App/sandboxGroups/*/read",
+      "Microsoft.App/sandboxGroups/*/write",
+      "Microsoft.App/sandboxGroups/*/delete",
+      "Microsoft.App/sandboxGroups/*/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "Container Apps SessionPools Contributor",
     "id": "f7669afb-68b2-44b4-9c5f-6d2a47fddda0",
     "description": "Full management of Container Apps SessionPools, including creation, deletion, and updates.",
@@ -11220,21 +11291,6 @@
     "_estimatedActions": 45
   },
   {
-    "name": "Dev Compute SandboxGroup Data Owner",
-    "id": "c24cf47c-5077-412d-a19c-45202126392c",
-    "description": "Ownership of all SandboxGroup data.",
-    "actions": [],
-    "notActions": [],
-    "dataActions": [
-      "Microsoft.App/sandboxGroups/*/read",
-      "Microsoft.App/sandboxGroups/*/write",
-      "Microsoft.App/sandboxGroups/*/delete",
-      "Microsoft.App/sandboxGroups/*/action"
-    ],
-    "notDataActions": [],
-    "_estimatedActions": 0
-  },
-  {
     "name": "DevCenter Dev Box User",
     "id": "45d50f46-0b78-4001-a660-4198cbe8cd05",
     "description": "Provides access to create and manage dev boxes.",
@@ -11567,16 +11623,19 @@
   {
     "name": "Diagnostics Operator",
     "id": "64375caa-ac3e-48b3-9492-da4d60aba7bb",
-    "description": "Role allows users to collect diagnostic information regarding their Virtual Machine",
+    "description": "Collect diagnostic information regarding Virtual Machine and Virtual Machine Scale Sets",
     "actions": [
       "Microsoft.Compute/virtualMachines/DiagnosticRunCommands/write",
       "Microsoft.Compute/virtualMachines/DiagnosticRunCommands/read",
-      "Microsoft.Compute/virtualMachines/DiagnosticRunCommands/delete"
+      "Microsoft.Compute/virtualMachines/DiagnosticRunCommands/delete",
+      "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/DiagnosticRunCommands/write",
+      "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/DiagnosticRunCommands/read",
+      "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/DiagnosticRunCommands/delete"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 3
+    "_estimatedActions": 6
   },
   {
     "name": "DICOM Data Owner",
@@ -13801,6 +13860,38 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 2
+  },
+  {
+    "name": "Inference Account Operator",
+    "id": "360cab3d-4340-4c96-816d-682fbd52b3e2",
+    "description": "Create, read, modify, and delete inference accounts. This role should be assigned to users who can only manage inference accounts but can't perform inference operations.",
+    "actions": [
+      "Microsoft.InferenceService/inferenceAccounts/write",
+      "Microsoft.InferenceService/inferenceAccounts/read",
+      "Microsoft.InferenceService/inferenceAccounts/delete"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [
+      "Microsoft.InferenceService/inferenceAccounts/invoke/*"
+    ],
+    "_estimatedActions": 3
+  },
+  {
+    "name": "Inference Account Owner",
+    "id": "76315a85-9e6b-4514-9780-868b1977b64e",
+    "description": "Create, read, modify, and delete inference accounts; as well as running inference workloads against those accounts. This role should be assigned to users who need full management capabilities over inference accounts, including the ability to run workloads.",
+    "actions": [
+      "Microsoft.InferenceService/inferenceAccounts/write",
+      "Microsoft.InferenceService/inferenceAccounts/read",
+      "Microsoft.InferenceService/inferenceAccounts/delete"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.InferenceService/inferenceAccounts/invoke/*"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 3
   },
   {
     "name": "Informatica DataManagement Contributor role",
@@ -17730,6 +17821,23 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 68
+  },
+  {
+    "name": "Semantic Reranker User",
+    "id": "6c74a7c5-4a87-40f9-bb03-61e49aecbc78",
+    "description": "Execute semantic reranking operations against registered inference accounts. This role should be assigned to users who need to run semantic reranking workloads but do not need to manage the accounts themselves.",
+    "actions": [
+      "Microsoft.InferenceService/inferenceAccounts/read"
+    ],
+    "notActions": [
+      "Microsoft.InferenceService/inferenceAccounts/write",
+      "Microsoft.InferenceService/inferenceAccounts/delete"
+    ],
+    "dataActions": [
+      "Microsoft.InferenceService/inferenceAccounts/invoke/semanticReranker/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 1
   },
   {
     "name": "Service Connector Contributor",
