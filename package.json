@@ -4,13 +4,13 @@
   "description": "Describe what you want to do in Azure — get the exact permissions and least-privilege role.",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview",
     "sync:roles": "./scripts/sync-roles.sh",
     "sync:operations": "./scripts/sync-operations.sh",
     "sync:all": "./scripts/sync-roles.sh && ./scripts/sync-operations.sh && node scripts/build-data.js && npm run copy:data",
-    "copy:data": "mkdir -p public/data && cp data/roles.json data/ui-structure.json data/dependency-hints.json data/metadata.json public/data/",
+    "copy:data": "mkdir -p public/data && cp data/roles.json data/ui-structure.json data/dependency-hints.json data/metadata.json data/operations-index.json public/data/",
     "build:data": "node scripts/build-data.js && npm run copy:data",
     "validate:tasks": "node scripts/validate-tasks.js",
     "lint": "eslint src/"

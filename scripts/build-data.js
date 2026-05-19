@@ -94,15 +94,38 @@ function build(raw){
 function procRoles(p){if(!fs.existsSync(p)){console.warn("⚠ no roles");return[]}const raw=JSON.parse(fs.readFileSync(p,"utf-8"));return raw.map(r=>{const pm=r.permissions||[],a=[...new Set(pm.flatMap(p=>p.actions||[]))],na=[...new Set(pm.flatMap(p=>p.notActions||[]))],da=[...new Set(pm.flatMap(p=>p.dataActions||[]))],nda=[...new Set(pm.flatMap(p=>p.notDataActions||[]))];let e=0;a.forEach(x=>{if(x==="*")e+=5000;else if(x==="*/read")e+=3000;else if(x.endsWith("/*"))e+=30;else if(x.includes("*"))e+=10;else e++});return{name:r.roleName||r.name,id:r.name,description:r.description||"",actions:a,notActions:na,dataActions:da,notDataActions:nda,_estimatedActions:e}}).filter(r=>!r.description.toLowerCase().includes("deprecated")).sort((a,b)=>a.name.localeCompare(b.name))}
 const HINTS=[{trigger:{provider:"Microsoft.Compute",resourceType:"virtualMachines",actionGroup:"Write"},hints:[{provider:"Microsoft.Compute",resourceType:"disks",actionGroup:"Write",reason:"VMs require managed disks"},{provider:"Microsoft.Network",resourceType:"networkInterfaces",actionGroup:"Write",reason:"VMs require a NIC"},{provider:"Microsoft.Network",resourceType:"networkInterfaces",actionGroup:"Action",reason:"NIC must join VM"},{provider:"Microsoft.Network",resourceType:"virtualNetworks",actionGroup:"Action",reason:"NIC must join subnet"},{provider:"Microsoft.Network",resourceType:"virtualNetworks",actionGroup:"Read",reason:"Subnet must be readable"},{provider:"Microsoft.Resources",resourceType:"subscriptions/resourceGroups",actionGroup:"Read",reason:"RG must be readable"}]},{trigger:{provider:"Microsoft.Network",resourceType:"networkInterfaces",actionGroup:"Write"},hints:[{provider:"Microsoft.Network",resourceType:"virtualNetworks",actionGroup:"Action",reason:"NIC must join subnet"}]},{trigger:{provider:"Microsoft.Network",resourceType:"publicIPAddresses",actionGroup:"Write"},hints:[{provider:"Microsoft.Network",resourceType:"publicIPAddresses",actionGroup:"Action",reason:"Public IP must join NIC"}]},{trigger:{provider:"Microsoft.Web",resourceType:"sites",actionGroup:"Write"},hints:[{provider:"Microsoft.Web",resourceType:"serverfarms",actionGroup:"Read",reason:"Needs App Service Plan"},{provider:"Microsoft.Resources",resourceType:"subscriptions/resourceGroups",actionGroup:"Read",reason:"RG must be readable"}]},{trigger:{provider:"Microsoft.Storage",resourceType:"storageAccounts",actionGroup:"Write"},hints:[{provider:"Microsoft.Resources",resourceType:"subscriptions/resourceGroups",actionGroup:"Read",reason:"RG must be readable"}]},{trigger:{provider:"Microsoft.KeyVault",resourceType:"vaults",actionGroup:"Write"},hints:[{provider:"Microsoft.Resources",resourceType:"subscriptions/resourceGroups",actionGroup:"Read",reason:"RG must be readable"}]},{trigger:{provider:"Microsoft.Sql",resourceType:"servers",actionGroup:"Write"},hints:[{provider:"Microsoft.Resources",resourceType:"subscriptions/resourceGroups",actionGroup:"Read",reason:"RG must be readable"}]},{trigger:{provider:"Microsoft.ContainerService",resourceType:"managedClusters",actionGroup:"Write"},hints:[{provider:"Microsoft.Network",resourceType:"virtualNetworks",actionGroup:"Read",reason:"AKS needs subnet"},{provider:"Microsoft.Network",resourceType:"virtualNetworks",actionGroup:"Action",reason:"AKS nodes join subnet"}]}];
 
+function buildOpsIndex(rawProviders, uiCats) {
+  const inUI = new Set();
+  for (const cat of uiCats) {
+    for (const prov of cat.providers) {
+      for (const type of prov.types) {
+        for (const ag of type.actions) {
+          for (const op of ag.ops) inUI.add(op.action);
+        }
+      }
+    }
+  }
+  const descMap = {};
+  for (const prov of rawProviders) {
+    const allOps = [...(prov.operations||[]), ...(prov.resourceTypes||[]).flatMap(rt=>rt.operations||[])];
+    for (const op of allOps) {
+      if (op.name && inUI.has(op.name)) descMap[op.name] = op.description || op.displayName || "";
+    }
+  }
+  return Array.from(inUI).sort().map(action => ({ action, description: descMap[action] || "" }));
+}
+
 function main(){
   console.log("Least Privilege Studio for Azure — Data Builder v6\n");
   const roles=procRoles(path.join(R,"roles-raw.json"));
   console.log(`Roles: ${roles.length}`);
   let ui=[];const op=path.join(R,"operations-raw.json");
-  if(fs.existsSync(op)){ui=build(JSON.parse(fs.readFileSync(op,"utf-8")));console.log(`Categories: ${ui.length}, Types: ${ui.reduce((s,c)=>s+c.totalTypes,0)}, Ops: ${ui.reduce((s,c)=>s+c.totalOps,0)}`)}
+  let rawOps=null;
+  if(fs.existsSync(op)){rawOps=JSON.parse(fs.readFileSync(op,"utf-8"));ui=build(rawOps);console.log(`Categories: ${ui.length}, Types: ${ui.reduce((s,c)=>s+c.totalTypes,0)}, Ops: ${ui.reduce((s,c)=>s+c.totalOps,0)}`)}
   const pub=path.join(P,"public","data");if(!fs.existsSync(pub))fs.mkdirSync(pub,{recursive:true});
   const w=(n,d)=>{const j=JSON.stringify(d,null,2);fs.writeFileSync(path.join(D,n),j);fs.writeFileSync(path.join(pub,n),j);console.log(`✓ ${n}`)};
   w("roles.json",roles);w("ui-structure.json",ui);w("dependency-hints.json",HINTS);
   w("metadata.json",{lastSync:new Date().toISOString(),roleCount:roles.length,operationCount:ui.reduce((s,c)=>s+c.totalOps,0),categoryCount:ui.length});
+  if(rawOps&&ui.length){const idx=buildOpsIndex(rawOps,ui);w("operations-index.json",idx);console.log(`Operations index: ${idx.length} ops`);}
 }
 main();
