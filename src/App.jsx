@@ -1,4 +1,6 @@
 import React, { useState, useMemo, useCallback, useRef, useEffect, startTransition, useDeferredValue } from "react";
+import RolesCatalog from "./RolesCatalog.jsx";
+import OperationsCatalog from "./OperationsCatalog.jsx";
 
 // ─── ENGINE ─────────────────────────────────────────────────────────────────
 const _reCache = new Map();
@@ -93,6 +95,9 @@ function opShortName(action, ns) {
 // ─── DATA ───────────────────────────────────────────────────────────────────
 function useData() {
   const [c, sC] = useState([]); const [r, sR] = useState([]); const [m, sM] = useState(null); const [l, sL] = useState(true); const [d, sD] = useState(false);
+  const [opsDescMap, setOpsDescMap] = useState(null);
+  const opsIndexLoading = useRef(false);
+
   useEffect(() => {
     (async () => {
       // Use relative path so it works with any base path
@@ -106,7 +111,24 @@ function useData() {
       } catch { sD(true); sC(DC); sR(DR) } sL(false)
     })()
   }, []);
-  return { categories: c, roles: r, meta: m, loading: l, isDemo: d }
+
+  const loadOpsIndex = useCallback(async () => {
+    if (opsDescMap !== null || opsIndexLoading.current) return;
+    opsIndexLoading.current = true;
+    try {
+      const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/");
+      const data = await fetch(`${base}data/operations-index.json`).then(x => x.ok ? x.json() : null);
+      if (Array.isArray(data)) {
+        const map = {};
+        for (const { action, description } of data) map[action] = description;
+        setOpsDescMap(map);
+      } else {
+        setOpsDescMap({});
+      }
+    } catch { setOpsDescMap({}) }
+  }, [opsDescMap]);
+
+  return { categories: c, roles: r, meta: m, loading: l, isDemo: d, opsDescMap, loadOpsIndex }
 }
 
 // ─── STYLES ─────────────────────────────────────────────────────────────────
@@ -301,8 +323,42 @@ function CustomRoleImport({ allOps, onImport }) {
     </div>}
   </div>;
 }
+const NAV_TABS = [
+  { id: "studio", label: "Studio" },
+  { id: "roles", label: "Roles" },
+  { id: "operations", label: "Operations" },
+];
+
+function NavBar({ view, setView }) {
+  return (
+    <nav style={{ display: "flex", gap: 0, borderBottom: "1px solid rgba(255,255,255,0.08)", marginBottom: 0 }}>
+      {NAV_TABS.map(tab => (
+        <button
+          key={tab.id}
+          onClick={() => setView(tab.id)}
+          style={{
+            padding: "10px 20px", background: "none", border: "none",
+            borderBottom: view === tab.id ? "2px solid #4fc3f7" : "2px solid transparent",
+            color: view === tab.id ? "#4fc3f7" : "#6b7c93",
+            fontFamily: "inherit", fontSize: 13, fontWeight: view === tab.id ? 600 : 400,
+            cursor: "pointer", transition: "all 0.15s", outline: "none"
+          }}
+        >
+          {tab.label}
+        </button>
+      ))}
+    </nav>
+  );
+}
+
 export default function App() {
-  const { categories, roles, meta, loading, isDemo } = useData();
+  const { categories, roles, meta, loading, isDemo, opsDescMap, loadOpsIndex } = useData();
+  const [view, setView] = useState("studio");
+
+  const handleSetView = useCallback((v) => {
+    setView(v);
+    if (v === "operations") loadOpsIndex();
+  }, [loadOpsIndex]);
   const allOps = useOpIndex(categories);
   // sel: { "Microsoft.Compute/virtualMachines/read": true }
   const [sel, setSel] = useState({});
@@ -361,6 +417,17 @@ export default function App() {
   const removeRole = useCallback((role) => {
     setAR(prev => prev.filter(r => r.id !== role.id));
   }, []);
+
+  const addRoleToStudio = useCallback((role) => {
+    applyRole(role);
+    setView("studio");
+  }, [applyRole]);
+
+  const addOpToStudio = useCallback((op) => {
+    toggleOps({ [op.action]: true });
+    setView("studio");
+  }, [toggleOps]);
+
   const applyCustomRole = useCallback((role) => {
     const ops = resolveRoleFast(role, allOps);
     startTransition(() => { setSel(prev => { const n = { ...prev }; for (const a of ops) n[a] = true; return n }) });
@@ -446,7 +513,24 @@ export default function App() {
         {meta && <div style={{ marginTop: 6, fontSize: 11, color: "#3a4556" }}>{meta.roleCount} roles · {meta.operationCount} operations · {meta.categoryCount} categories · Synced: {new Date(meta.lastSync).toLocaleDateString()}</div>}
       </header>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 24px" }}>
+      <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 24px 4px" }}>
+        <NavBar view={view} setView={handleSetView} />
+      </div>
+
+      {view === "roles" && (
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px 24px 60px" }}>
+          <RolesCatalog roles={roles} onAddToStudio={addRoleToStudio} />
+        </div>
+      )}
+      {view === "operations" && (
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px 24px 60px" }}>
+          {opsDescMap === null
+            ? <div style={{ padding: 24, textAlign: "center", fontSize: 13, color: "#6b7c93" }}>Loading operations index…</div>
+            : <OperationsCatalog categories={categories} roles={roles} opsDescMap={opsDescMap} onAddOpToStudio={addOpToStudio} onAddRoleToStudio={addRoleToStudio} />
+          }
+        </div>
+      )}
+      {view === "studio" && <div style={{ maxWidth: 960, margin: "0 auto", padding: "16px 24px" }}>
         {/* Search */}
         <div style={{ position: "relative", marginBottom: 12 }}>
           <input value={filterInput} onChange={e => handleSearch(e.target.value)} placeholder="Search resources... e.g. virtual machine, blob, aks, /start" style={{ width: "100%", boxSizing: "border-box", padding: "12px 16px 12px 44px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, color: "#e8ecf1", fontSize: 14, fontFamily: "inherit", outline: "none" }} onFocus={e => { e.target.style.borderColor = "rgba(79,195,247,0.4)" }} onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.1)" }} />
@@ -552,8 +636,9 @@ export default function App() {
             );
           })}
         </div>
-      </div>
+      </div>}
 
+      {view === "studio" && (<>
       {/* Results */}
       {sOps.length > 0 && (
         <div ref={rRef} style={{ maxWidth: 960, margin: "0 auto", padding: "0 24px 60px" }}>
@@ -566,6 +651,7 @@ export default function App() {
         </div>
       )}
       {!sOps.length && <div style={{ textAlign: "center", padding: "30px 24px 60px", maxWidth: 960, margin: "0 auto" }}><div style={{ fontSize: 13, color: "#3a4556" }}>Select resources and actions above to see required permissions and matching built-in roles.</div></div>}
+      </>)}
       <footer style={{ padding: "24px", maxWidth: 960, margin: "0 auto", borderTop: "1px solid rgba(255,255,255,0.05)", textAlign: "center" }}><div style={{ fontSize: 12, color: "#4a5568", marginBottom: 8 }}>Least Privilege Studio for Azure · Open Source · <a href="https://github.com/simon-vedder/least-privilege-studio" style={{ color: "#4fc3f7", textDecoration: "none" }}>GitHub</a></div><div style={{ fontSize: 12, color: "#4a5568", marginBottom: 8 }}>Built by <a href="https://simonvedder.com" style={{ color: "#4fc3f7", textDecoration: "none" }}>Simon Vedder</a> · <a href="https://www.linkedin.com/in/simonvedder/" style={{ color: "#4fc3f7", textDecoration: "none" }}>LinkedIn</a></div><div style={{ fontSize: 11, color: "#3a4556", marginBottom: 8 }}>Always verify permissions in a non-production environment before deploying.</div><div style={{ fontSize: 11, color: "#3a4556" }}>No personal data collected. No cookies. <a href="https://simonvedder.com/privacy" style={{ color: "#4a5568", textDecoration: "underline" }}>Privacy Policy</a> · <a href="https://simonvedder.com/terms" style={{ color: "#4a5568", textDecoration: "underline" }}>Terms</a></div></footer>
     </div>
   );
