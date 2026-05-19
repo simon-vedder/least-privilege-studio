@@ -30,13 +30,29 @@ function PaginationBar({ page, totalPages, pageSize, onPage, onPageSize, totalIt
   );
 }
 
-function RoleRow({ role, onClick }) {
-  const hasData = role.dataActions && role.dataActions.length > 0;
+function Hl({ text, query }) {
+  if (!query || !query.trim()) return text;
+  const words = query.trim().split(/\s+/).filter(Boolean);
+  const pat = words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const parts = text.split(new RegExp(`(${pat})`, 'gi'));
+  if (parts.length === 1) return text;
+  return parts.map((p, i) =>
+    i % 2 === 1
+      ? <mark key={i} style={{ background: "rgba(79,195,247,0.2)", color: "#4fc3f7", borderRadius: 2, padding: "0 1px" }}>{p}</mark>
+      : <span key={i}>{p}</span>
+  );
+}
+
+function RoleRow({ role, onClick, search }) {
+  const actCount = role.actions?.length || 0;
+  const dataCount = role.dataActions?.length || 0;
+  const notActCount = role.notActions?.length || 0;
+  const notDataCount = role.notDataActions?.length || 0;
   return (
     <div
       onClick={onClick}
       style={{
-        display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 12,
+        display: "grid", gridTemplateColumns: "1fr 56px 56px", alignItems: "center", gap: 12,
         padding: "12px 14px", borderBottom: "1px solid rgba(255,255,255,0.04)",
         cursor: "pointer", transition: "background 0.1s"
       }}
@@ -45,22 +61,22 @@ function RoleRow({ role, onClick }) {
     >
       <div style={{ minWidth: 0 }}>
         <div style={{ fontSize: 13, fontWeight: 600, color: "#e8ecf1", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {role.name}
+          <Hl text={role.name} query={search} />
         </div>
         <div style={{ fontSize: 11, color: "#3a4556", fontFamily: "var(--m)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           {role.id}
         </div>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
-        <span style={{ fontSize: 11, color: "#4a5568", fontFamily: "var(--m)", whiteSpace: "nowrap" }}>
-          {role.actions.length}A{hasData ? ` · ${role.dataActions.length}D` : ""}
-        </span>
-        {hasData && (
-          <span style={{ fontSize: 9, padding: "2px 5px", borderRadius: 3, background: "rgba(245,166,35,0.12)", color: "#f5a623", fontWeight: 700 }}>
-            DATA
-          </span>
-        )}
-        <span style={{ color: "#4a5568", fontSize: 12 }}>›</span>
+      <div style={{ textAlign: "right" }}>
+        <div style={{ fontSize: 13, fontWeight: 600, color: "#4fc3f7", fontFamily: "var(--m)" }}>{actCount}</div>
+        {notActCount > 0 && <div style={{ fontSize: 10, color: "#e94560", fontFamily: "var(--m)" }}>−{notActCount}</div>}
+      </div>
+      <div style={{ textAlign: "right" }}>
+        {dataCount > 0
+          ? <div style={{ fontSize: 13, fontWeight: 600, color: "#f5a623", fontFamily: "var(--m)" }}>{dataCount}</div>
+          : <div style={{ fontSize: 13, color: "#2a3545" }}>—</div>
+        }
+        {notDataCount > 0 && <div style={{ fontSize: 10, color: "#e94560", fontFamily: "var(--m)" }}>−{notDataCount}</div>}
       </div>
     </div>
   );
@@ -91,7 +107,7 @@ function PermList({ label, items, color }) {
   );
 }
 
-function RoleDetail({ role, onBack }) {
+function RoleDetail({ role, onBack, onAddToStudio }) {
   const [showRaw, setShowRaw] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -106,12 +122,22 @@ function RoleDetail({ role, onBack }) {
 
   return (
     <div>
-      <button
-        onClick={onBack}
-        style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", marginBottom: 20, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#8899aa", fontSize: 13, cursor: "pointer", fontFamily: "inherit" }}
-      >
-        ← Roles
-      </button>
+      <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
+        <button
+          onClick={onBack}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#8899aa", fontSize: 13, cursor: "pointer", fontFamily: "inherit" }}
+        >
+          ← Roles
+        </button>
+        {onAddToStudio && (
+          <button
+            onClick={() => onAddToStudio(role)}
+            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", background: "rgba(79,195,247,0.1)", border: "1px solid rgba(79,195,247,0.3)", borderRadius: 6, color: "#4fc3f7", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit" }}
+          >
+            + Add to Studio
+          </button>
+        )}
+      </div>
 
       <div style={{ marginBottom: 20 }}>
         <h2 style={{ fontSize: 20, fontWeight: 700, color: "#e8ecf1", margin: "0 0 6px" }}>{role.name}</h2>
@@ -176,7 +202,7 @@ function RoleDetail({ role, onBack }) {
   );
 }
 
-export default function RolesCatalog({ roles }) {
+export default function RolesCatalog({ roles, onAddToStudio }) {
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState(null);
   const [page, setPage] = useState(1);
@@ -201,7 +227,7 @@ export default function RolesCatalog({ roles }) {
   const handleSearch = v => { setSearch(v); setPage(1); };
   const handlePageSize = s => { setPageSize(s); setPage(1); };
 
-  if (selected) return <RoleDetail role={selected} onBack={() => setSelected(null)} />;
+  if (selected) return <RoleDetail role={selected} onBack={() => setSelected(null)} onAddToStudio={onAddToStudio} />;
 
   return (
     <div>
@@ -241,9 +267,10 @@ export default function RolesCatalog({ roles }) {
       {/* Table */}
       <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 10, overflow: "hidden" }}>
         {/* Table header */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr auto", padding: "8px 14px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 56px 56px", padding: "8px 14px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)", gap: 12 }}>
           <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em" }}>Role Name / ID</span>
-          <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em" }}>Actions</span>
+          <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em", textAlign: "right" }}>Actions</span>
+          <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em", textAlign: "right" }}>Data</span>
         </div>
 
         {!pageItems.length && (
@@ -251,7 +278,7 @@ export default function RolesCatalog({ roles }) {
         )}
 
         {pageItems.map(role => (
-          <RoleRow key={role.id} role={role} onClick={() => setSelected(role)} />
+          <RoleRow key={role.id} role={role} onClick={() => setSelected(role)} search={search} />
         ))}
       </div>
 

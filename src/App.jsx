@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useCallback, useRef, useEffect, startTransition, useDeferredValue } from "react";
 import RolesCatalog from "./RolesCatalog.jsx";
 import OperationsCatalog from "./OperationsCatalog.jsx";
-import AiSearch from "./AiSearch.jsx";
 
 // ─── ENGINE ─────────────────────────────────────────────────────────────────
 const _reCache = new Map();
@@ -328,7 +327,6 @@ const NAV_TABS = [
   { id: "studio", label: "Studio" },
   { id: "roles", label: "Roles" },
   { id: "operations", label: "Operations" },
-  { id: "ai", label: "AI Search" },
 ];
 
 function NavBar({ view, setView }) {
@@ -419,6 +417,17 @@ export default function App() {
   const removeRole = useCallback((role) => {
     setAR(prev => prev.filter(r => r.id !== role.id));
   }, []);
+
+  const addRoleToStudio = useCallback((role) => {
+    applyRole(role);
+    setView("studio");
+  }, [applyRole]);
+
+  const addOpToStudio = useCallback((op) => {
+    toggleOps({ [op.action]: true });
+    setView("studio");
+  }, [toggleOps]);
+
   const applyCustomRole = useCallback((role) => {
     const ops = resolveRoleFast(role, allOps);
     startTransition(() => { setSel(prev => { const n = { ...prev }; for (const a of ops) n[a] = true; return n }) });
@@ -510,23 +519,17 @@ export default function App() {
 
       {view === "roles" && (
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px 24px 60px" }}>
-          <RolesCatalog roles={roles} />
+          <RolesCatalog roles={roles} onAddToStudio={addRoleToStudio} />
         </div>
       )}
       {view === "operations" && (
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px 24px 60px" }}>
           {opsDescMap === null
             ? <div style={{ padding: 24, textAlign: "center", fontSize: 13, color: "#6b7c93" }}>Loading operations index…</div>
-            : <OperationsCatalog categories={categories} roles={roles} opsDescMap={opsDescMap} />
+            : <OperationsCatalog categories={categories} roles={roles} opsDescMap={opsDescMap} onAddOpToStudio={addOpToStudio} onAddRoleToStudio={addRoleToStudio} />
           }
         </div>
       )}
-      {view === "ai" && (
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px 24px 60px" }}>
-          <AiSearch roles={roles} />
-        </div>
-      )}
-
       {view === "studio" && <div style={{ maxWidth: 960, margin: "0 auto", padding: "16px 24px" }}>
         {/* Search */}
         <div style={{ position: "relative", marginBottom: 12 }}>

@@ -10,9 +10,9 @@
 #
 # The workflow:
 #   1. Authenticates to Azure
-#   2. Pulls role definitions and provider operations
-#   3. Transforms raw data into app-ready JSON
-#   4. Commits changes (if any) to the main branch
+#   2. Pulls role definitions and provider operations into data/raw/ (not committed)
+#   3. Runs build-data.js which writes processed files to public/data/
+#   4. Commits changed public/data/ files (if any) to main
 
 name: Sync Azure Data
 
@@ -63,7 +63,7 @@ jobs:
           OP_COUNT=$(python3 -c "
           import json
           data = json.load(open('data/raw/operations-raw.json'))
-          total = sum(len(op) for p in data for rt in p.get('resourceTypes',[]) for op in [rt.get('operations',[])])
+          total = sum(len(rt.get('operations', [])) for p in data for rt in p.get('resourceTypes', []))
           print(total)
           ")
           echo "Pulled $OP_COUNT operations"
@@ -79,19 +79,10 @@ jobs:
       - name: Build processed data
         run: node scripts/build-data.js
 
-      - name: Sync data to public folder
-        run: |
-          mkdir -p public/data
-          cp data/roles.json public/data/
-          cp data/operations.json public/data/
-          cp data/providers.json public/data/
-          cp data/tasks.json public/data/
-          cp data/metadata.json public/data/
-
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet public/data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
@@ -99,13 +90,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Only commit the processed data, not raw files (they're large)
-          git add data/roles.json data/operations.json data/providers.json data/tasks.json data/metadata.json public/data/roles.json public/data/operations.json public/data/providers.json public/data/tasks.json public/data/metadata.json
-          
-          # Get counts for commit message
-          METADATA=$(cat data/metadata.json)
-          ROLES=$(echo "$METADATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['roleCount'])")
-          OPS=$(echo "$METADATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['operationCount'])")
-          
+          git add public/data/roles.json public/data/ui-structure.json \
+                  public/data/operations-index.json public/data/metadata.json
+
+          ROLES=$(python3 -c "import json; print(json.load(open('public/data/metadata.json'))['roleCount'])")
+          OPS=$(python3 -c "import json; print(json.load(open('public/data/metadata.json'))['operationCount'])")
+
           git commit -m "data: sync Azure RBAC data ($ROLES roles, $OPS operations)"
-          git push
+          git push origin HEAD:main

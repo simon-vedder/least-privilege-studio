@@ -1,5 +1,5 @@
-import React, { useState, useMemo, useCallback } from "react";
-import { roleCoversOp, pn } from "./shared.js";
+import React, { useState, useMemo } from "react";
+import { roleCoversOp, pn, mw } from "./shared.js";
 
 const PAGE_SIZES = [25, 50, 100];
 
@@ -31,6 +31,19 @@ function PaginationBar({ page, totalPages, pageSize, onPage, onPageSize, totalIt
   );
 }
 
+function Hl({ text, query }) {
+  if (!query || !query.trim()) return text;
+  const words = query.trim().split(/\s+/).filter(Boolean);
+  const pat = words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const parts = text.split(new RegExp(`(${pat})`, 'gi'));
+  if (parts.length === 1) return text;
+  return parts.map((p, i) =>
+    i % 2 === 1
+      ? <mark key={i} style={{ background: "rgba(79,195,247,0.2)", color: "#4fc3f7", borderRadius: 2, padding: "0 1px" }}>{p}</mark>
+      : <span key={i}>{p}</span>
+  );
+}
+
 function TypeBadge({ isDataAction }) {
   return (
     <span style={{
@@ -45,7 +58,109 @@ function TypeBadge({ isDataAction }) {
   );
 }
 
-function OpDetail({ op, opsDescMap, roles, onClose }) {
+function RoleRow({ role, opAction, isDataAction, onAddRoleToStudio }) {
+  const [expanded, setExpanded] = useState(false);
+
+  // Find the matching pattern(s) within this role
+  const matchingPatterns = useMemo(() => {
+    const pool = isDataAction ? (role.dataActions || []) : (role.actions || []);
+    return pool.filter(p => mw(p, opAction));
+  }, [role, opAction, isDataAction]);
+
+  return (
+    <div style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, overflow: "hidden" }}>
+      {/* Role header row */}
+      <div style={{ padding: "10px 12px" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8, marginBottom: 6 }}>
+          <div style={{ fontSize: 13, fontWeight: 500, color: "#c8d6e5", lineHeight: 1.3, flex: 1 }}>{role.name}</div>
+          <button
+            onClick={() => onAddRoleToStudio(role)}
+            style={{ flexShrink: 0, padding: "3px 10px", borderRadius: 5, fontSize: 11, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", background: "rgba(79,195,247,0.1)", border: "1px solid rgba(79,195,247,0.25)", color: "#4fc3f7", whiteSpace: "nowrap" }}
+          >
+            + Studio
+          </button>
+        </div>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+          <button
+            onClick={() => setExpanded(!expanded)}
+            style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, cursor: "pointer", fontFamily: "inherit", background: "rgba(79,195,247,0.08)", border: "1px solid rgba(79,195,247,0.12)" }}
+          >
+            <span style={{ fontSize: 9, color: "#4fc3f7", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>Control</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: "#4fc3f7", fontFamily: "var(--m)" }}>{role.actions.length}</span>
+            <span style={{ fontSize: 9, color: "#4fc3f7", opacity: 0.6 }}>{expanded ? "▴" : "▾"}</span>
+          </button>
+          {role.dataActions.length > 0 && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, cursor: "pointer", fontFamily: "inherit", background: "rgba(245,166,35,0.08)", border: "1px solid rgba(245,166,35,0.12)" }}
+            >
+              <span style={{ fontSize: 9, color: "#f5a623", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>Data</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#f5a623", fontFamily: "var(--m)" }}>{role.dataActions.length}</span>
+              <span style={{ fontSize: 9, color: "#f5a623", opacity: 0.6 }}>{expanded ? "▴" : "▾"}</span>
+            </button>
+          )}
+          <div style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+            <span style={{ fontSize: 9, color: "#4a5568", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>~Total</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: "#4a5568", fontFamily: "var(--m)" }}>{role._estimatedActions || 1}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Expanded: action patterns */}
+      {expanded && (
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", padding: "10px 12px", background: "rgba(0,0,0,0.15)" }}>
+          {/* Matching patterns highlighted */}
+          {matchingPatterns.length > 0 && (
+            <div style={{ marginBottom: 10 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, color: "#0f9b58", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>
+                Matching pattern{matchingPatterns.length !== 1 ? "s" : ""}
+              </div>
+              {matchingPatterns.map(p => (
+                <div key={p} style={{ fontFamily: "var(--m)", fontSize: 11, color: "#0f9b58", padding: "3px 8px", background: "rgba(15,155,88,0.08)", border: "1px solid rgba(15,155,88,0.2)", borderRadius: 4, marginBottom: 2, wordBreak: "break-all" }}>
+                  {p}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* All control plane actions */}
+          {role.actions.length > 0 && (
+            <div style={{ marginBottom: 8 }}>
+              <div style={{ fontSize: 10, color: "#4fc3f7", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4, opacity: 0.7 }}>
+                Control plane ({role.actions.length})
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                {role.actions.map(a => (
+                  <div key={a} style={{ fontFamily: "var(--m)", fontSize: 10, color: matchingPatterns.includes(a) ? "#0f9b58" : "#4a5568", padding: "2px 6px", borderRadius: 3, wordBreak: "break-all" }}>
+                    {a}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* All data plane actions */}
+          {role.dataActions.length > 0 && (
+            <div>
+              <div style={{ fontSize: 10, color: "#f5a623", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4, opacity: 0.7 }}>
+                Data plane ({role.dataActions.length})
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                {role.dataActions.map(a => (
+                  <div key={a} style={{ fontFamily: "var(--m)", fontSize: 10, color: matchingPatterns.includes(a) ? "#0f9b58" : "#4a5568", padding: "2px 6px", borderRadius: 3, wordBreak: "break-all" }}>
+                    {a}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function OpDetail({ op, opsDescMap, roles, onClose, onAddOpToStudio, onAddRoleToStudio }) {
   const isDataAction = op.type === "dataAction";
   const description = opsDescMap[op.action] || "";
   const provider = op.action.split("/")[0];
@@ -53,15 +168,7 @@ function OpDetail({ op, opsDescMap, roles, onClose }) {
   const matchingRoles = useMemo(() => {
     return roles
       .filter(role => roleCoversOp(role, op.action, isDataAction))
-      .map(role => ({
-        name: role.name,
-        id: role.id,
-        actionCount: role.actions.length,
-        dataActionCount: role.dataActions.length,
-        est: role._estimatedActions || 1,
-        isDataRole: role.dataActions.length > 0
-      }))
-      .sort((a, b) => a.est - b.est);
+      .sort((a, b) => (a._estimatedActions || 1) - (b._estimatedActions || 1));
   }, [roles, op.action, isDataAction]);
 
   return (
@@ -96,12 +203,20 @@ function OpDetail({ op, opsDescMap, roles, onClose }) {
           <div style={{ fontSize: 13, color: "#3a4556", marginBottom: 16, fontStyle: "italic" }}>No description available</div>
         )}
 
-        {/* Provider */}
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 12px", marginBottom: 20, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 6 }}>
-          <span style={{ fontSize: 10, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.06em" }}>Provider</span>
-          <span style={{ fontSize: 12, color: "#8899aa" }}>·</span>
-          <span style={{ fontSize: 13, fontWeight: 600, color: "#c8d6e5" }}>{pn(provider)}</span>
-          <span style={{ fontSize: 10, color: "#4a5568", fontFamily: "var(--m)" }}>({provider})</span>
+        {/* Provider + Add to Studio */}
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 12px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 6 }}>
+            <span style={{ fontSize: 10, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.06em" }}>Provider</span>
+            <span style={{ fontSize: 12, color: "#8899aa" }}>·</span>
+            <span style={{ fontSize: 13, fontWeight: 600, color: "#c8d6e5" }}>{pn(provider)}</span>
+            <span style={{ fontSize: 10, color: "#4a5568", fontFamily: "var(--m)" }}>({provider})</span>
+          </div>
+          <button
+            onClick={() => onAddOpToStudio(op)}
+            style={{ padding: "6px 14px", borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", background: "rgba(79,195,247,0.12)", border: "1px solid rgba(79,195,247,0.3)", color: "#4fc3f7" }}
+          >
+            + Add to Studio
+          </button>
         </div>
 
         {/* Roles */}
@@ -110,7 +225,7 @@ function OpDetail({ op, opsDescMap, roles, onClose }) {
             <span style={{ fontSize: 13, fontWeight: 600, color: "#8899aa" }}>
               Covered by {matchingRoles.length} role{matchingRoles.length !== 1 ? "s" : ""}
             </span>
-            <span style={{ fontSize: 11, color: "#3a4556" }}>sorted by specificity</span>
+            <span style={{ fontSize: 11, color: "#3a4556" }}>sorted by specificity · click counts to expand</span>
           </div>
 
           {!matchingRoles.length && (
@@ -121,32 +236,13 @@ function OpDetail({ op, opsDescMap, roles, onClose }) {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
             {matchingRoles.map(role => (
-              <div key={role.id} style={{
-                padding: "10px 12px",
-                background: "rgba(255,255,255,0.025)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                borderRadius: 8,
-              }}>
-                <div style={{ fontSize: 13, fontWeight: 500, color: "#c8d6e5", marginBottom: 6, lineHeight: 1.3 }}>
-                  {role.name}
-                </div>
-                <div style={{ display: "flex", gap: 8 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, background: "rgba(79,195,247,0.08)", border: "1px solid rgba(79,195,247,0.12)" }}>
-                    <span style={{ fontSize: 9, color: "#4fc3f7", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>Control</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: "#4fc3f7", fontFamily: "var(--m)" }}>{role.actionCount}</span>
-                  </div>
-                  {role.dataActionCount > 0 && (
-                    <div style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, background: "rgba(245,166,35,0.08)", border: "1px solid rgba(245,166,35,0.12)" }}>
-                      <span style={{ fontSize: 9, color: "#f5a623", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>Data</span>
-                      <span style={{ fontSize: 12, fontWeight: 700, color: "#f5a623", fontFamily: "var(--m)" }}>{role.dataActionCount}</span>
-                    </div>
-                  )}
-                  <div style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                    <span style={{ fontSize: 9, color: "#4a5568", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>~Total</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: "#4a5568", fontFamily: "var(--m)" }}>{role.est}</span>
-                  </div>
-                </div>
-              </div>
+              <RoleRow
+                key={role.id}
+                role={role}
+                opAction={op.action}
+                isDataAction={isDataAction}
+                onAddRoleToStudio={onAddRoleToStudio}
+              />
             ))}
           </div>
         </div>
@@ -155,9 +251,10 @@ function OpDetail({ op, opsDescMap, roles, onClose }) {
   );
 }
 
-export default function OperationsCatalog({ categories, roles, opsDescMap }) {
+export default function OperationsCatalog({ categories, roles, opsDescMap, onAddOpToStudio, onAddRoleToStudio }) {
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState("all"); // all | control | data
+  const [providerFilter, setProviderFilter] = useState("all");
   const [selectedOp, setSelectedOp] = useState(null);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(50);
@@ -179,10 +276,13 @@ export default function OperationsCatalog({ categories, roles, opsDescMap }) {
     return ops.sort((a, b) => a.action.localeCompare(b.action));
   }, [categories]);
 
+  const providerList = useMemo(() => Array.from(new Set(allOps.map(o => o.provider))).sort(), [allOps]);
+
   const filtered = useMemo(() => {
     let ops = allOps;
     if (typeFilter === "control") ops = ops.filter(o => o.type !== "dataAction");
     if (typeFilter === "data") ops = ops.filter(o => o.type === "dataAction");
+    if (providerFilter !== "all") ops = ops.filter(o => o.provider === providerFilter);
     if (search.trim()) {
       const q = search.toLowerCase().trim();
       const words = q.split(/\s+/).filter(Boolean);
@@ -192,7 +292,7 @@ export default function OperationsCatalog({ categories, roles, opsDescMap }) {
       });
     }
     return ops;
-  }, [allOps, search, typeFilter, opsDescMap]);
+  }, [allOps, search, typeFilter, providerFilter, opsDescMap]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const safePage = Math.min(page, totalPages);
@@ -202,6 +302,7 @@ export default function OperationsCatalog({ categories, roles, opsDescMap }) {
 
   const handleSearch = v => { setSearch(v); setPage(1); };
   const handleType = v => { setTypeFilter(v); setPage(1); };
+  const handleProvider = v => { setProviderFilter(v); setPage(1); };
   const handlePageSize = s => { setPageSize(s); setPage(1); };
 
   const controlCount = useMemo(() => allOps.filter(o => o.type !== "dataAction").length, [allOps]);
@@ -251,10 +352,28 @@ export default function OperationsCatalog({ categories, roles, opsDescMap }) {
             </button>
           ))}
         </div>
+
+        {/* Provider filter */}
+        <select
+          value={providerFilter}
+          onChange={e => handleProvider(e.target.value)}
+          style={{
+            padding: "9px 12px", borderRadius: 8, fontSize: 12, cursor: "pointer",
+            fontFamily: "inherit", background: "rgba(255,255,255,0.05)",
+            border: providerFilter !== "all" ? "1px solid rgba(79,195,247,0.3)" : "1px solid rgba(255,255,255,0.1)",
+            color: providerFilter !== "all" ? "#4fc3f7" : "#6b7c93",
+            outline: "none",
+          }}
+        >
+          <option value="all">All Providers</option>
+          {providerList.map(p => (
+            <option key={p} value={p}>{pn(p)}</option>
+          ))}
+        </select>
       </div>
 
       {/* Results summary */}
-      {(search || typeFilter !== "all") && (
+      {(search || typeFilter !== "all" || providerFilter !== "all") && (
         <div style={{ fontSize: 12, color: "#4a5568", marginBottom: 8 }}>
           {filtered.length.toLocaleString()} operation{filtered.length !== 1 ? "s" : ""} match{filtered.length === 1 ? "es" : ""}
         </div>
@@ -263,7 +382,7 @@ export default function OperationsCatalog({ categories, roles, opsDescMap }) {
       {/* Table */}
       <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 10, overflow: "hidden" }}>
         {/* Header row */}
-        <div style={{ display: "grid", gridTemplateColumns: "80px 1fr 130px", padding: "8px 14px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)", gap: 12 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "60px 1fr 130px", padding: "8px 14px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)", gap: 12 }}>
           <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em" }}>Type</span>
           <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em" }}>Operation</span>
           <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em" }}>Provider</span>
@@ -282,18 +401,18 @@ export default function OperationsCatalog({ categories, roles, opsDescMap }) {
             <div
               key={op.action}
               onClick={() => setSelectedOp(op)}
-              style={{ display: "grid", gridTemplateColumns: "80px 1fr 130px", alignItems: "center", gap: 12, padding: "9px 14px", borderBottom: "1px solid rgba(255,255,255,0.035)", cursor: "pointer", transition: "background 0.1s" }}
+              style={{ display: "grid", gridTemplateColumns: "60px 1fr 130px", alignItems: "center", gap: 12, padding: "9px 14px", borderBottom: "1px solid rgba(255,255,255,0.035)", cursor: "pointer", transition: "background 0.1s" }}
               onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.04)"}
               onMouseLeave={e => e.currentTarget.style.background = "transparent"}
             >
               <TypeBadge isDataAction={op.type === "dataAction"} />
               <div style={{ minWidth: 0 }}>
                 <div style={{ fontFamily: "var(--m)", fontSize: 11, color: "#8899aa", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                  {op.action}
+                  <Hl text={op.action} query={search} />
                 </div>
                 {desc && (
                   <div style={{ fontSize: 11, color: "#4a5568", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", marginTop: 1 }}>
-                    {desc}
+                    <Hl text={desc} query={search} />
                   </div>
                 )}
               </div>
@@ -322,6 +441,8 @@ export default function OperationsCatalog({ categories, roles, opsDescMap }) {
           opsDescMap={opsDescMap}
           roles={roles}
           onClose={() => setSelectedOp(null)}
+          onAddOpToStudio={onAddOpToStudio}
+          onAddRoleToStudio={onAddRoleToStudio}
         />
       )}
     </div>
