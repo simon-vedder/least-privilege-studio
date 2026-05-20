@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 
 const PAGE_SIZES = [25, 50, 100];
 
@@ -43,16 +43,39 @@ function Hl({ text, query }) {
   );
 }
 
-function RoleRow({ role, onClick, search }) {
+function SortHeader({ label, col, sort, onSort, align = "right" }) {
+  const active = sort.by === col;
+  return (
+    <button
+      onClick={() => onSort(col)}
+      style={{
+        display: "flex", alignItems: "center", gap: 3, justifyContent: align === "right" ? "flex-end" : "flex-start",
+        background: "none", border: "none", cursor: "pointer", fontFamily: "inherit", padding: 0, width: "100%",
+        fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em",
+        color: active ? "#4fc3f7" : "#4a5568"
+      }}
+    >
+      {label}
+      <span style={{ fontSize: 9, opacity: active ? 1 : 0.4 }}>
+        {active ? (sort.dir === "asc" ? " ▲" : " ▼") : " ⇅"}
+      </span>
+    </button>
+  );
+}
+
+function RoleRow({ role, onClick, search, sort }) {
   const actCount = role.actions?.length || 0;
   const dataCount = role.dataActions?.length || 0;
   const notActCount = role.notActions?.length || 0;
   const notDataCount = role.notDataActions?.length || 0;
+  const hasWildcard = role.actions?.some(a => a.includes("*"));
+  const estOps = role._estimatedActions || actCount;
+
   return (
     <div
       onClick={onClick}
       style={{
-        display: "grid", gridTemplateColumns: "1fr 56px 56px", alignItems: "center", gap: 12,
+        display: "grid", gridTemplateColumns: "1fr 80px 60px", alignItems: "center", gap: 12,
         padding: "12px 14px", borderBottom: "1px solid rgba(255,255,255,0.04)",
         cursor: "pointer", transition: "background 0.1s"
       }}
@@ -68,7 +91,11 @@ function RoleRow({ role, onClick, search }) {
         </div>
       </div>
       <div style={{ textAlign: "right" }}>
-        <div style={{ fontSize: 13, fontWeight: 600, color: "#4fc3f7", fontFamily: "var(--m)" }}>{actCount}</div>
+        <div style={{ fontSize: 13, fontWeight: 600, fontFamily: "var(--m)", color: hasWildcard ? "#ce93d8" : "#4fc3f7" }}
+          title={hasWildcard ? `${actCount} pattern(s) including wildcards — resolves to ~${estOps.toLocaleString()} operations` : `${actCount} action pattern(s)`}
+        >
+          {hasWildcard ? "✦" : ""}{hasWildcard ? ` ~${estOps.toLocaleString()}` : actCount}
+        </div>
         {notActCount > 0 && <div style={{ fontSize: 10, color: "#e94560", fontFamily: "var(--m)" }}>−{notActCount}</div>}
       </div>
       <div style={{ textAlign: "right" }}>
@@ -107,9 +134,15 @@ function PermList({ label, items, color }) {
   );
 }
 
-function RoleDetail({ role, onBack, onAddToStudio }) {
+function RolePanel({ role, onClose, onAddToStudio }) {
   const [showRaw, setShowRaw] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const h = e => { if (e.key === "Escape") onClose() };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [onClose]);
 
   const rawJson = useMemo(() => {
     const { _estimatedActions, ...clean } = role;
@@ -119,86 +152,99 @@ function RoleDetail({ role, onBack, onAddToStudio }) {
   const copy = text => { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000) };
 
   const hasDataPlane = role.dataActions.length > 0 || role.notDataActions.length > 0;
+  const hasWildcard = role.actions?.some(a => a.includes("*"));
+  const estOps = role._estimatedActions || role.actions.length;
 
   return (
-    <div>
-      <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
-        <button
-          onClick={onBack}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#8899aa", fontSize: 13, cursor: "pointer", fontFamily: "inherit" }}
-        >
-          ← Roles
-        </button>
-        {onAddToStudio && (
-          <button
-            onClick={() => onAddToStudio(role)}
-            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", background: "rgba(79,195,247,0.1)", border: "1px solid rgba(79,195,247,0.3)", borderRadius: 6, color: "#4fc3f7", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit" }}
-          >
-            + Add to Studio
-          </button>
-        )}
-      </div>
-
-      <div style={{ marginBottom: 20 }}>
-        <h2 style={{ fontSize: 20, fontWeight: 700, color: "#e8ecf1", margin: "0 0 6px" }}>{role.name}</h2>
-        <div style={{ fontSize: 11, color: "#3a4556", fontFamily: "var(--m)", marginBottom: 8 }}>{role.id}</div>
-        <div style={{ fontSize: 13, color: "#8899aa", lineHeight: 1.6 }}>{role.description}</div>
-      </div>
-
-      <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
-        <span style={{ fontSize: 12, padding: "5px 12px", borderRadius: 20, background: "rgba(79,195,247,0.08)", border: "1px solid rgba(79,195,247,0.18)", color: "#4fc3f7" }}>
-          {role.actions.length} control plane actions
-        </span>
-        {hasDataPlane && (
-          <span style={{ fontSize: 12, padding: "5px 12px", borderRadius: 20, background: "rgba(245,166,35,0.08)", border: "1px solid rgba(245,166,35,0.18)", color: "#f5a623" }}>
-            {role.dataActions.length} data plane actions
-          </span>
-        )}
-        <span style={{ fontSize: 12, padding: "5px 12px", borderRadius: 20, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "#4a5568" }}>
-          ~{role._estimatedActions} resolved ops
-        </span>
-      </div>
-
-      <button
-        onClick={() => setShowRaw(!showRaw)}
-        style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "7px 16px", marginBottom: 16, borderRadius: 6, cursor: "pointer", fontFamily: "inherit", background: showRaw ? "rgba(171,71,188,0.12)" : "rgba(255,255,255,0.04)", border: `1px solid ${showRaw ? "rgba(171,71,188,0.35)" : "rgba(255,255,255,0.1)"}`, color: showRaw ? "#ce93d8" : "#6b7c93", fontSize: 13 }}
-      >
-        {showRaw ? "▾" : "▸"} Raw JSON definition
-      </button>
-
-      {showRaw && (
-        <div style={{ position: "relative", marginBottom: 20 }}>
-          <pre style={{ background: "rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "14px 16px", overflowX: "auto", fontSize: 11, lineHeight: 1.6, color: "#a8c0d8", fontFamily: "var(--m)", margin: 0 }}>
-            {rawJson}
-          </pre>
-          <button onClick={() => copy(rawJson)} style={{ position: "absolute", top: 8, right: 8, padding: "4px 10px", borderRadius: 5, cursor: "pointer", background: copied ? "rgba(15,155,88,0.2)" : "rgba(255,255,255,0.08)", border: `1px solid ${copied ? "rgba(15,155,88,0.4)" : "rgba(255,255,255,0.12)"}`, color: copied ? "#0f9b58" : "#8899aa", fontSize: 11, fontFamily: "inherit" }}>
-            {copied ? "✓ Copied" : "Copy"}
-          </button>
-        </div>
-      )}
-
-      <div style={{ display: "grid", gridTemplateColumns: hasDataPlane ? "1fr 1fr" : "1fr", gap: 12 }}>
-        <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(79,195,247,0.12)", borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: "#4fc3f7", marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ width: 8, height: 8, borderRadius: 4, background: "#4fc3f7", display: "inline-block" }} />
-            Control Plane
+    <>
+      <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 90, background: "rgba(0,0,0,0.4)", cursor: "pointer" }} />
+      <div style={{
+        position: "fixed", top: 0, right: 0, bottom: 0, width: Math.min(700, window.innerWidth),
+        background: "#0b0b1e", borderLeft: "1px solid rgba(255,255,255,0.1)",
+        overflowY: "auto", zIndex: 100, boxShadow: "-16px 0 56px rgba(0,0,0,0.7)"
+      }}>
+        {/* Gradient header zone */}
+        <div style={{ padding: "20px 24px 22px", background: "linear-gradient(160deg, rgba(79,195,247,0.07) 0%, rgba(171,71,188,0.05) 55%, transparent 100%)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+          <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
+            <button
+              onClick={onClose}
+              style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", padding: "6px 10px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#8899aa", fontSize: 14, cursor: "pointer", fontFamily: "inherit" }}
+            >
+              ✕
+            </button>
           </div>
-          <PermList label="Actions" items={role.actions} color="#4fc3f7" />
-          <PermList label="Not Actions" items={role.notActions} color="#e94560" />
-          {!role.actions.length && !role.notActions.length && <div style={{ fontSize: 12, color: "#3a4556" }}>None</div>}
+
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 6px", background: "linear-gradient(95deg, #e8f0ff 20%, #4fc3f7 70%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", lineHeight: 1.2 }}>{role.name}</h2>
+          <div style={{ fontSize: 11, color: "#3a4556", fontFamily: "var(--m)", marginBottom: 10 }}>{role.id}</div>
+          <div style={{ fontSize: 13, color: "#8899aa", lineHeight: 1.6, marginBottom: 14 }}>{role.description}</div>
+
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <span style={{ fontSize: 12, padding: "5px 12px", borderRadius: 20, background: hasWildcard ? "rgba(171,71,188,0.08)" : "rgba(79,195,247,0.08)", border: hasWildcard ? "1px solid rgba(171,71,188,0.18)" : "1px solid rgba(79,195,247,0.18)", color: hasWildcard ? "#ce93d8" : "#4fc3f7" }}>
+              {hasWildcard ? `✦ ~${estOps.toLocaleString()} ops (wildcard)` : `${role.actions.length} action patterns`}
+            </span>
+            {hasDataPlane && (
+              <span style={{ fontSize: 12, padding: "5px 12px", borderRadius: 20, background: "rgba(245,166,35,0.08)", border: "1px solid rgba(245,166,35,0.18)", color: "#f5a623" }}>
+                {role.dataActions.length} data plane actions
+              </span>
+            )}
+          </div>
         </div>
-        {hasDataPlane && (
-          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(245,166,35,0.12)", borderRadius: 10, padding: 16 }}>
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#f5a623", marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ width: 8, height: 8, borderRadius: 4, background: "#f5a623", display: "inline-block" }} />
-              Data Plane
+
+        <div style={{ padding: "20px 24px" }}>
+
+          {onAddToStudio && (
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
+              <button
+                onClick={() => onAddToStudio(role)}
+                style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", background: "rgba(79,195,247,0.12)", border: "1px solid rgba(79,195,247,0.3)", borderRadius: 6, color: "#4fc3f7", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit" }}
+              >
+                + Add to Studio
+              </button>
             </div>
-            <PermList label="Data Actions" items={role.dataActions} color="#f5a623" />
-            <PermList label="Not Data Actions" items={role.notDataActions} color="#e94560" />
+          )}
+
+          <button
+            onClick={() => setShowRaw(!showRaw)}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "7px 16px", marginBottom: 16, borderRadius: 6, cursor: "pointer", fontFamily: "inherit", background: showRaw ? "rgba(171,71,188,0.12)" : "rgba(255,255,255,0.04)", border: `1px solid ${showRaw ? "rgba(171,71,188,0.35)" : "rgba(255,255,255,0.1)"}`, color: showRaw ? "#ce93d8" : "#6b7c93", fontSize: 13 }}
+          >
+            {showRaw ? "▾" : "▸"} Raw JSON definition
+          </button>
+
+          {showRaw && (
+            <div style={{ position: "relative", marginBottom: 20 }}>
+              <pre style={{ background: "rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "14px 16px", overflowX: "auto", fontSize: 11, lineHeight: 1.6, color: "#a8c0d8", fontFamily: "var(--m)", margin: 0 }}>
+                {rawJson}
+              </pre>
+              <button onClick={() => copy(rawJson)} style={{ position: "absolute", top: 8, right: 8, padding: "4px 10px", borderRadius: 5, cursor: "pointer", background: copied ? "rgba(15,155,88,0.2)" : "rgba(255,255,255,0.08)", border: `1px solid ${copied ? "rgba(15,155,88,0.4)" : "rgba(255,255,255,0.12)"}`, color: copied ? "#0f9b58" : "#8899aa", fontSize: 11, fontFamily: "inherit" }}>
+                {copied ? "✓ Copied" : "Copy"}
+              </button>
+            </div>
+          )}
+
+          <div style={{ display: "grid", gridTemplateColumns: hasDataPlane ? "1fr 1fr" : "1fr", gap: 12 }}>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(79,195,247,0.12)", borderRadius: 10, padding: 16 }}>
+              <div style={{ fontSize: 12, fontWeight: 600, color: "#4fc3f7", marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
+                <span style={{ width: 8, height: 8, borderRadius: 4, background: "#4fc3f7", display: "inline-block" }} />
+                Control Plane
+              </div>
+              <PermList label="Actions" items={role.actions} color="#4fc3f7" />
+              <PermList label="Not Actions" items={role.notActions} color="#e94560" />
+              {!role.actions.length && !role.notActions.length && <div style={{ fontSize: 12, color: "#3a4556" }}>None</div>}
+            </div>
+            {hasDataPlane && (
+              <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(245,166,35,0.12)", borderRadius: 10, padding: 16 }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: "#f5a623", marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
+                  <span style={{ width: 8, height: 8, borderRadius: 4, background: "#f5a623", display: "inline-block" }} />
+                  Data Plane
+                </div>
+                <PermList label="Data Actions" items={role.dataActions} color="#f5a623" />
+                <PermList label="Not Data Actions" items={role.notDataActions} color="#e94560" />
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -207,6 +253,11 @@ export default function RolesCatalog({ roles, onAddToStudio }) {
   const [selected, setSelected] = useState(null);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(50);
+  const [sort, setSort] = useState({ by: "name", dir: "asc" });
+
+  const handleSort = col => {
+    setSort(s => s.by === col ? { by: col, dir: s.dir === "asc" ? "desc" : "asc" } : { by: col, dir: col === "name" ? "asc" : "desc" });
+  };
 
   const filtered = useMemo(() => {
     if (!search.trim()) return roles;
@@ -218,20 +269,40 @@ export default function RolesCatalog({ roles, onAddToStudio }) {
     );
   }, [roles, search]);
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const sorted = useMemo(() => {
+    const arr = [...filtered];
+    const { by, dir } = sort;
+    arr.sort((a, b) => {
+      if (by === "name") {
+        const v = a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+        return dir === "asc" ? v : -v;
+      }
+      if (by === "actions") {
+        const va = a._estimatedActions || a.actions?.length || 0;
+        const vb = b._estimatedActions || b.actions?.length || 0;
+        return dir === "asc" ? va - vb : vb - va;
+      }
+      if (by === "data") {
+        const va = a.dataActions?.length || 0;
+        const vb = b.dataActions?.length || 0;
+        return dir === "asc" ? va - vb : vb - va;
+      }
+      return 0;
+    });
+    return arr;
+  }, [filtered, sort]);
+
+  const totalPages = Math.max(1, Math.ceil(sorted.length / pageSize));
   const safePage = Math.min(page, totalPages);
   const rangeStart = (safePage - 1) * pageSize + 1;
-  const rangeEnd = Math.min(safePage * pageSize, filtered.length);
-  const pageItems = filtered.slice((safePage - 1) * pageSize, safePage * pageSize);
+  const rangeEnd = Math.min(safePage * pageSize, sorted.length);
+  const pageItems = sorted.slice((safePage - 1) * pageSize, safePage * pageSize);
 
   const handleSearch = v => { setSearch(v); setPage(1); };
   const handlePageSize = s => { setPageSize(s); setPage(1); };
 
-  if (selected) return <RoleDetail role={selected} onBack={() => setSelected(null)} onAddToStudio={onAddToStudio} />;
-
   return (
     <div>
-      {/* Page header */}
       <div style={{ marginBottom: 20 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 6 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: "#e8ecf1", margin: 0 }}>Built-in Roles</h2>
@@ -240,19 +311,18 @@ export default function RolesCatalog({ roles, onAddToStudio }) {
           </span>
         </div>
         <p style={{ fontSize: 13, color: "#4a5568", margin: 0, lineHeight: 1.5 }}>
-          All Azure built-in RBAC role definitions. Click a role to view its permissions and raw JSON.
+          All Azure built-in RBAC role definitions. Click a role to view its permissions and raw JSON. ✦ = wildcard actions.
         </p>
       </div>
 
-      {/* Search */}
       <div style={{ position: "relative", marginBottom: 4 }}>
         <input
           value={search}
           onChange={e => handleSearch(e.target.value)}
           placeholder="Search by name, GUID, or description…"
           style={{ width: "100%", boxSizing: "border-box", padding: "10px 40px 10px 40px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, color: "#e8ecf1", fontSize: 13, fontFamily: "inherit", outline: "none" }}
-          onFocus={e => e.target.style.borderColor = "rgba(79,195,247,0.4)"}
-          onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
+          onFocus={e => { e.target.style.borderColor = "rgba(79,195,247,0.4)"; e.target.style.boxShadow = "0 0 0 3px rgba(79,195,247,0.08)" }}
+          onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.1)"; e.target.style.boxShadow = "none" }}
         />
         <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", fontSize: 16, opacity: 0.35 }}>⌕</span>
         {search && <button onClick={() => handleSearch("")} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: "#6b7c93", cursor: "pointer", fontSize: 16 }}>×</button>}
@@ -264,13 +334,11 @@ export default function RolesCatalog({ roles, onAddToStudio }) {
         </div>
       )}
 
-      {/* Table */}
       <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 10, overflow: "hidden" }}>
-        {/* Table header */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 56px 56px", padding: "8px 14px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)", gap: 12 }}>
-          <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em" }}>Role Name / ID</span>
-          <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em", textAlign: "right" }}>Actions</span>
-          <span style={{ fontSize: 10, fontWeight: 700, color: "#4a5568", textTransform: "uppercase", letterSpacing: "0.07em", textAlign: "right" }}>Data</span>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 80px 60px", padding: "8px 14px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)", gap: 12 }}>
+          <SortHeader label="Role Name / ID" col="name" sort={sort} onSort={handleSort} align="left" />
+          <SortHeader label="Actions" col="actions" sort={sort} onSort={handleSort} align="right" />
+          <SortHeader label="Data" col="data" sort={sort} onSort={handleSort} align="right" />
         </div>
 
         {!pageItems.length && (
@@ -278,7 +346,7 @@ export default function RolesCatalog({ roles, onAddToStudio }) {
         )}
 
         {pageItems.map(role => (
-          <RoleRow key={role.id} role={role} onClick={() => setSelected(role)} search={search} />
+          <RoleRow key={role.id} role={role} onClick={() => setSelected(role)} search={search} sort={sort} />
         ))}
       </div>
 
@@ -289,11 +357,13 @@ export default function RolesCatalog({ roles, onAddToStudio }) {
           pageSize={pageSize}
           onPage={setPage}
           onPageSize={handlePageSize}
-          totalItems={filtered.length}
+          totalItems={sorted.length}
           rangeStart={rangeStart}
           rangeEnd={rangeEnd}
         />
       )}
+
+      {selected && <RolePanel role={selected} onClose={() => setSelected(null)} onAddToStudio={onAddToStudio} />}
     </div>
   );
 }
