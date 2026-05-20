@@ -137,9 +137,9 @@ const ac = c => AC[c] || "#4fc3f7";
 const LVLC = { "Read": "#4fc3f7", "Write": "#f5a623", "Delete": "#e94560", "Action": "#ab47bc" };
 
 // ─── COMPONENTS ─────────────────────────────────────────────────────────────
-function Meter({ v }) { const p = Math.round(v * 100), c = p === 100 ? "#0f9b58" : p >= 80 ? "#f5a623" : "#e94560"; return <div style={{ display: "flex", alignItems: "center", gap: 10 }}><div style={{ flex: 1, height: 6, background: "#2a2a4a", borderRadius: 3, overflow: "hidden" }}><div style={{ width: `${p}%`, height: "100%", background: c, borderRadius: 3, transition: "width 0.4s" }} /></div><span style={{ fontFamily: "var(--m)", fontSize: 13, color: c, minWidth: 44, textAlign: "right" }}>{p}%</span></div> }
+function Meter({ v }) { const p = Math.round(v * 100); const grad = p === 100 ? "linear-gradient(90deg,#0f9b58,#4fc3f7)" : p >= 80 ? "linear-gradient(90deg,#f5a623,#fdd835)" : "linear-gradient(90deg,#e94560,#f5a623)"; const c = p === 100 ? "#4fc3f7" : p >= 80 ? "#fdd835" : "#f5a623"; return <div style={{ display: "flex", alignItems: "center", gap: 10 }}><div style={{ flex: 1, height: 6, background: "#1e1e3a", borderRadius: 3, overflow: "hidden" }}><div style={{ width: `${p}%`, height: "100%", background: grad, borderRadius: 3, transition: "width 0.4s" }} /></div><span style={{ fontFamily: "var(--m)", fontSize: 13, color: c, minWidth: 44, textAlign: "right" }}>{p}%</span></div> }
 function OB({ op, onRemove }) { const d = op.type === "dataAction"; return <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "5px 10px", background: d ? "rgba(245,166,35,0.08)" : "rgba(79,195,247,0.08)", border: `1px solid ${d ? "rgba(245,166,35,0.2)" : "rgba(79,195,247,0.15)"}`, borderRadius: 6, fontFamily: "var(--m)", fontSize: 11.5, color: "#c8d6e5" }}><span style={{ fontSize: 9, fontWeight: 700, padding: "2px 6px", borderRadius: 3, textTransform: "uppercase", letterSpacing: "0.05em", background: d ? "rgba(245,166,35,0.2)" : "rgba(79,195,247,0.15)", color: d ? "#f5a623" : "#4fc3f7" }}>{d ? "Data" : "Action"}</span><span style={{ wordBreak: "break-all", flex: 1 }}>{op.action}</span>{onRemove && <button onClick={() => onRemove(op.action)} style={{ background: "none", border: "none", color: "#6b7c93", cursor: "pointer", fontSize: 16, padding: "0 2px", lineHeight: 1, flexShrink: 0, opacity: 0.6 }} title="Remove this permission">×</button>}</div> }
-function RoleCard({ role, total, open, toggle }) { const cc = role.coverage === 1 ? "#0f9b58" : role.coverage >= 0.8 ? "#f5a623" : "#e94560"; return <div onClick={toggle} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 16, cursor: "pointer", borderLeft: `3px solid ${cc}`, transition: "all 0.2s" }}><div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}><div style={{ flex: 1 }}><div style={{ fontSize: 15, fontWeight: 600, color: "#e8ecf1", marginBottom: 2 }}>{role.name}</div><div style={{ fontSize: 11, color: "#4a5568", fontFamily: "var(--m)", marginBottom: 3 }}>{role.id}</div><div style={{ fontSize: 12, color: "#6b7c93", lineHeight: 1.4 }}>{role.description}</div></div><span style={{ fontSize: 16, color: "#6b7c93", marginLeft: 12, transform: open ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}>▾</span></div><div style={{ display: "flex", gap: 14, marginTop: 8, flexWrap: "wrap", fontSize: 12 }}><span style={{ color: "#8899aa" }}>Coverage: <span style={{ color: cc, fontWeight: 700 }}>{role.coveredCount}/{total}</span></span>{role.missedCount > 0 && <span style={{ color: "#e94560" }}>Missing: {role.missedCount}</span>}<span style={{ color: "#6b7c93" }}>~{role.est} total actions</span></div><div style={{ marginTop: 8 }}><Meter v={role.coverage} /></div>{open && <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid rgba(255,255,255,0.06)" }}>{role.missedCount > 0 && <div style={{ marginBottom: 12 }}><div style={{ fontSize: 12, fontWeight: 600, color: "#e94560", marginBottom: 8 }}>⚠ Not covered:</div><div style={{ display: "flex", flexDirection: "column", gap: 4 }}>{role.missedOps.map((o, i) => <OB key={i} op={o} />)}</div></div>}<div style={{ fontSize: 12, color: "#6b7c93", lineHeight: 1.6 }}>This role grants ~<b style={{ color: "#c8d6e5" }}>{role.est}</b> actions. You selected <b style={{ color: "#c8d6e5" }}>{total}</b>. Review whether the extra actions are acceptable.</div></div>}</div> }
+function RoleCard({ role, total, open, toggle }) { const cc = role.coverage === 1 ? "#0f9b58" : role.coverage >= 0.8 ? "#f5a623" : "#e94560"; return <div onClick={toggle} className="role-card" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: 16, cursor: "pointer", borderLeft: `3px solid ${cc}`, transition: "all 0.2s", boxShadow: "0 2px 12px rgba(0,0,0,0.2)" }}><div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}><div style={{ flex: 1 }}><div style={{ fontSize: 15, fontWeight: 600, color: "#e8ecf1", marginBottom: 2 }}>{role.name}</div><div style={{ fontSize: 11, color: "#4a5568", fontFamily: "var(--m)", marginBottom: 3 }}>{role.id}</div><div style={{ fontSize: 12, color: "#6b7c93", lineHeight: 1.4 }}>{role.description}</div></div><span style={{ fontSize: 16, color: "#6b7c93", marginLeft: 12, transform: open ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}>▾</span></div><div style={{ display: "flex", gap: 14, marginTop: 8, flexWrap: "wrap", fontSize: 12 }}><span style={{ color: "#8899aa" }}>Coverage: <span style={{ color: cc, fontWeight: 700 }}>{role.coveredCount}/{total}</span></span>{role.missedCount > 0 && <span style={{ color: "#e94560" }}>Missing: {role.missedCount}</span>}<span style={{ color: "#6b7c93" }}>~{role.est} total actions</span></div><div style={{ marginTop: 8 }}><Meter v={role.coverage} /></div>{open && <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid rgba(255,255,255,0.06)" }}>{role.missedCount > 0 && <div style={{ marginBottom: 12 }}><div style={{ fontSize: 12, fontWeight: 600, color: "#e94560", marginBottom: 8 }}>⚠ Not covered:</div><div style={{ display: "flex", flexDirection: "column", gap: 4 }}>{role.missedOps.map((o, i) => <OB key={i} op={o} />)}</div></div>}<div style={{ fontSize: 12, color: "#6b7c93", lineHeight: 1.6 }}>This role grants ~<b style={{ color: "#c8d6e5" }}>{role.est}</b> actions. You selected <b style={{ color: "#c8d6e5" }}>{total}</b>. Review whether the extra actions are acceptable.</div></div>}</div> }
 
 
 // AWS-style Action Group (Read, Write, Delete, Action)
@@ -245,7 +245,7 @@ function RoleImport({ roles, allOps, onApply, appliedRoles, onRemove }) {
 
       {/* Import button + dropdown */}
       <div ref={ref} style={{ position: "relative" }}>
-        <button onClick={() => setOpen(!open)} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "5px 12px", borderRadius: 6, fontSize: 12, fontWeight: 500, cursor: "pointer", fontFamily: "inherit", background: open ? "rgba(171,71,188,0.12)" : "rgba(255,255,255,0.04)", border: `1px solid ${open ? "rgba(171,71,188,0.3)" : "rgba(255,255,255,0.1)"}`, color: open ? "#ce93d8" : "#6b7c93" }}>
+        <button onClick={() => setOpen(!open)} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500, cursor: "pointer", fontFamily: "inherit", background: open ? "rgba(171,71,188,0.12)" : "rgba(255,255,255,0.05)", border: `1px solid ${open ? "rgba(171,71,188,0.35)" : "rgba(255,255,255,0.1)"}`, color: open ? "#ce93d8" : "#7a8fa8", transition: "all 0.15s" }}>
           <span style={{ fontSize: 13 }}>+</span> Import from role
         </button>
 
@@ -312,7 +312,7 @@ function CustomRoleImport({ allOps, onImport }) {
   };
 
   return <div ref={ref} style={{ position: "relative" }}>
-    <button onClick={() => setOpen(!open)} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "5px 12px", borderRadius: 6, fontSize: 12, fontWeight: 500, cursor: "pointer", fontFamily: "inherit", background: open ? "rgba(79,195,247,0.12)" : "rgba(255,255,255,0.04)", border: `1px solid ${open ? "rgba(79,195,247,0.3)" : "rgba(255,255,255,0.1)"}`, color: open ? "#4fc3f7" : "#6b7c93" }}>
+    <button onClick={() => setOpen(!open)} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500, cursor: "pointer", fontFamily: "inherit", background: open ? "rgba(79,195,247,0.12)" : "rgba(255,255,255,0.05)", border: `1px solid ${open ? "rgba(79,195,247,0.35)" : "rgba(255,255,255,0.1)"}`, color: open ? "#4fc3f7" : "#7a8fa8", transition: "all 0.15s" }}>
       <span style={{ fontSize: 13 }}>+</span> Import custom JSON
     </button>
     {open && <div style={{ position: "absolute", top: "100%", left: 0, zIndex: 50, marginTop: 6, width: 400, background: "#1a1a2e", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 10, boxShadow: "0 8px 32px rgba(0,0,0,0.5)", padding: 14 }}>
@@ -331,14 +331,18 @@ const NAV_TABS = [
 
 function NavBar({ view, setView }) {
   return (
-    <nav style={{ display: "flex", gap: 0, borderBottom: "1px solid rgba(255,255,255,0.08)", marginBottom: 0 }}>
+    <nav style={{ display: "flex", gap: 2, borderBottom: "1px solid rgba(255,255,255,0.07)", marginBottom: 0 }}>
       {NAV_TABS.map(tab => (
         <button
           key={tab.id}
           onClick={() => setView(tab.id)}
+          className="nav-tab"
           style={{
-            padding: "10px 20px", background: "none", border: "none",
+            padding: "10px 20px",
+            background: view === tab.id ? "rgba(79,195,247,0.07)" : "none",
+            border: "none",
             borderBottom: view === tab.id ? "2px solid #4fc3f7" : "2px solid transparent",
+            borderRadius: "6px 6px 0 0",
             color: view === tab.id ? "#4fc3f7" : "#6b7c93",
             fontFamily: "inherit", fontSize: 13, fontWeight: view === tab.id ? 600 : 400,
             cursor: "pointer", transition: "all 0.15s", outline: "none"
@@ -500,19 +504,23 @@ export default function App() {
 
   return (
     <div style={ROOT}>
-      <style>{`*{box-sizing:border-box}html,body,#root{margin:0;padding:0}`}</style>
+      <style>{`*{box-sizing:border-box}html,body,#root{margin:0;padding:0}.cat-row:hover{background:rgba(255,255,255,0.04)!important}.prov-row:hover{background:rgba(255,255,255,0.04)!important}.rt-row:hover{background:rgba(255,255,255,0.06)!important}.role-card:hover{background:rgba(255,255,255,0.05)!important;transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,0,0,0.3)!important}.nav-tab:hover{color:#a8c8e8!important}`}</style>
       <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-      <header style={{ padding: "40px 24px 16px", maxWidth: 960, margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-          <img src={`${import.meta.env.BASE_URL}icon.png`} alt="" style={{ width: 38, height: 38, borderRadius: 10 }} />
-          <h1 style={{ fontSize: 22, fontWeight: 700, color: "#e8ecf1", margin: 0 }}>Least Privilege Studio for Azure</h1>
+      <header style={{ padding: "52px 24px 20px", maxWidth: 960, margin: "0 auto" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
+          <img src={`${import.meta.env.BASE_URL}icon.png`} alt="" style={{ width: 46, height: 46, borderRadius: 12, boxShadow: "0 0 28px rgba(79,195,247,0.22), 0 4px 14px rgba(0,0,0,0.5)", flexShrink: 0 }} />
+          <div>
+            <span style={{ display: "inline-block", fontSize: 10, padding: "3px 10px", borderRadius: 20, background: "rgba(79,195,247,0.08)", border: "1px solid rgba(79,195,247,0.2)", color: "#4fc3f7", marginBottom: 6, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>Azure RBAC</span>
+            <h1 style={{ fontSize: 30, fontWeight: 700, margin: 0, letterSpacing: "-0.02em", lineHeight: 1.15, background: "linear-gradient(95deg, #e8f0ff 15%, #4fc3f7 55%, #b39dda 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Least Privilege Studio</h1>
+          </div>
         </div>
-        <p style={{ fontSize: 13, color: "#6b7c93", margin: "0 0 4px", fontWeight: 500 }}>Developer tool for Azure RBAC permissions</p>
-        <p style={{ fontSize: 13, color: "#4a5568", margin: 0, lineHeight: 1.5, maxWidth: 640 }}>Select resources and actions you need. Get least-privilege built-in roles and custom role definitions.</p>
+        <p style={{ fontSize: 14, color: "#7a8fa8", margin: "0 0 5px", fontWeight: 500 }}>Build least-privilege Azure RBAC roles for any workload.</p>
+        <p style={{ fontSize: 13, color: "#4a5568", margin: 0, lineHeight: 1.6, maxWidth: 600 }}>Select resources and actions you need. Get least-privilege built-in roles and custom role definitions.</p>
         {isDemo && <div style={{ marginTop: 10, padding: "8px 14px", borderRadius: 8, fontSize: 12, background: "rgba(245,166,35,0.1)", border: "1px solid rgba(245,166,35,0.2)", color: "#f5a623" }}>⚠ Demo data. Run <code style={{ background: "rgba(0,0,0,0.2)", padding: "1px 5px", borderRadius: 3 }}>npm run sync:all</code> to load all Azure RBAC data.</div>}
-        {meta && <div style={{ marginTop: 6, fontSize: 11, color: "#3a4556" }}>{meta.roleCount} roles · {meta.operationCount} operations · {meta.categoryCount} categories · Synced: {new Date(meta.lastSync).toLocaleDateString()}</div>}
+        {meta && <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>{[`${meta.roleCount} roles`, `${meta.operationCount} operations`, `${meta.categoryCount} categories`, `Synced ${new Date(meta.lastSync).toLocaleDateString()}`].map((t, i) => <span key={i} style={{ fontSize: 11, color: "#4a5568", padding: "2px 9px", borderRadius: 4, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>{t}</span>)}</div>}
       </header>
 
+      <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.25), rgba(171,71,188,0.18), transparent)", maxWidth: 960, margin: "0 auto" }} />
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 24px 4px" }}>
         <NavBar view={view} setView={handleSetView} />
       </div>
@@ -533,7 +541,7 @@ export default function App() {
       {view === "studio" && <div style={{ maxWidth: 960, margin: "0 auto", padding: "16px 24px" }}>
         {/* Search */}
         <div style={{ position: "relative", marginBottom: 12 }}>
-          <input value={filterInput} onChange={e => handleSearch(e.target.value)} placeholder="Search resources... e.g. virtual machine, blob, aks, /start" style={{ width: "100%", boxSizing: "border-box", padding: "12px 16px 12px 44px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, color: "#e8ecf1", fontSize: 14, fontFamily: "inherit", outline: "none" }} onFocus={e => { e.target.style.borderColor = "rgba(79,195,247,0.4)" }} onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.1)" }} />
+          <input value={filterInput} onChange={e => handleSearch(e.target.value)} placeholder="Search resources... e.g. virtual machine, blob, aks, /start" style={{ width: "100%", boxSizing: "border-box", padding: "13px 16px 13px 46px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, color: "#e8ecf1", fontSize: 14, fontFamily: "inherit", outline: "none", transition: "border-color 0.2s, box-shadow 0.2s" }} onFocus={e => { e.target.style.borderColor = "rgba(79,195,247,0.45)"; e.target.style.boxShadow = "0 0 0 3px rgba(79,195,247,0.08)" }} onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none" }} />
           <span style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", fontSize: 18, opacity: 0.4 }}>⌕</span>
         </div>
 
@@ -562,9 +570,9 @@ export default function App() {
             const totalTypes = cat.providers.reduce((s, p) => s + p.types.length, 0);
             const singleProv = cat.providers.length === 1;
             return (
-              <div key={cat.name} style={{ background: "rgba(255,255,255,0.025)", border: `1px solid ${catSel ? ac(cat.name) + "55" : "rgba(255,255,255,0.07)"}`, borderRadius: 10, overflow: "hidden", transition: "border-color 0.3s" }}>
-                <button onClick={() => setOC(catOpen && !isSearch ? null : cat.name)} style={{ width: "100%", display: "flex", alignItems: "center", gap: 12, padding: "13px 16px", background: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}>
-                  <span style={{ fontSize: 18 }}>{cat.icon}</span>
+              <div key={cat.name} style={{ background: catOpen ? "rgba(255,255,255,0.03)" : catSel ? "rgba(255,255,255,0.035)" : "rgba(255,255,255,0.02)", border: `1px solid ${(catSel || catOpen) ? ac(cat.name) + "55" : "rgba(255,255,255,0.07)"}`, borderRadius: 12, overflow: "hidden", transition: "border-color 0.3s, background 0.2s, box-shadow 0.3s", boxShadow: catOpen ? `0 4px 28px rgba(0,0,0,0.3), 0 0 0 1px ${ac(cat.name)}18` : "none" }}>
+                <button onClick={() => setOC(catOpen && !isSearch ? null : cat.name)} className="cat-row" style={{ width: "100%", display: "flex", alignItems: "center", gap: 12, padding: "13px 16px", background: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}>
+                  <span style={{ width: 32, height: 32, borderRadius: 8, background: `${ac(cat.name)}18`, border: `1px solid ${ac(cat.name)}30`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, flexShrink: 0 }}>{cat.icon}</span>
                   <span style={{ fontSize: 14, fontWeight: 600, color: ac(cat.name), flex: 1, textAlign: "left" }}>{cat.name}</span>
                   <span style={{ fontSize: 11, color: "#4a5568", fontFamily: "var(--m)" }}>{totalTypes} types</span>
                   {catSel && <span style={{ width: 8, height: 8, borderRadius: 4, background: ac(cat.name), flexShrink: 0 }} />}
@@ -602,7 +610,7 @@ export default function App() {
                         const combinedFilter = localAF || hiddenSearchFilter;
                         const hlOps = searchAutoExpand ? filter : "";
                         return (<div key={rt.key}>
-                          <button onClick={() => { setORT(openRT === rk ? null : rk); setAF("") }} style={{ width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "8px 10px", background: rtOpen ? "rgba(255,255,255,0.04)" : "transparent", border: "none", borderRadius: 6, cursor: "pointer", fontFamily: "inherit", transition: "background 0.15s" }}>
+                          <button onClick={() => { setORT(openRT === rk ? null : rk); setAF("") }} className="rt-row" style={{ width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "8px 10px", background: rtOpen ? "rgba(255,255,255,0.04)" : "transparent", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit", transition: "background 0.15s" }}>
                             <span style={{ fontSize: 11, color: "#6b7c93", transform: rtOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s", flexShrink: 0 }}>▸</span>
                             <span style={{ fontSize: 13, fontWeight: rtSel ? 600 : 500, color: rtSel ? ac(cat.name) : "#b0bec5", flex: 1, textAlign: "left" }}>{isSearch ? <HL text={displayName} query={filter} /> : displayName}</span>
                             {sc > 0 && <span style={{ fontSize: 11, color: ac(cat.name), fontWeight: 600 }}>{sc} sel.</span>}
@@ -610,7 +618,7 @@ export default function App() {
                           </button>
 
                           {/* AWS-style action panel */}
-                          {rtOpen && (<div style={{ margin: "4px 0 8px", marginLeft: singleProv ? 8 : 20, padding: 16, background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8 }}>
+                          {rtOpen && (<div style={{ margin: "4px 0 8px", marginLeft: singleProv ? 8 : 20, padding: 16, background: "rgba(79,195,247,0.02)", border: "1px solid rgba(79,195,247,0.1)", borderRadius: 10 }}>
                             <div style={{ fontSize: 12, color: "#6b7c93", marginBottom: 8 }}>Specify actions from <b style={{ color: "#e8ecf1" }}>{displayName}</b></div>
                             {/* Action filter — always empty unless user types in it */}
                             <div style={{ position: "relative", marginBottom: 12 }}>
@@ -657,8 +665,8 @@ export default function App() {
   );
 }
 
-const ROOT = { "--m": "'IBM Plex Mono',monospace", minHeight: "100vh", background: "linear-gradient(170deg,#0a0a1a 0%,#111128 40%,#0d1117 100%)", color: "#c8d6e5", fontFamily: "'Instrument Sans',-apple-system,sans-serif" };
-const HS = { fontSize: 14, fontWeight: 600, color: "#8899aa", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 };
+const ROOT = { "--m": "'IBM Plex Mono',monospace", minHeight: "100vh", background: "#07071a", backgroundImage: "radial-gradient(ellipse 70% 45% at 85% -5%, rgba(79,195,247,0.09) 0%, transparent 100%), radial-gradient(ellipse 55% 35% at -5% 20%, rgba(171,71,188,0.07) 0%, transparent 100%), linear-gradient(160deg,#07071a 0%,#0d0d24 50%,#080c14 100%)", color: "#c8d6e5", fontFamily: "'Instrument Sans',-apple-system,sans-serif" };
+const HS = { fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14, background: "linear-gradient(90deg, #7a90a8 0%, #b0c8dc 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" };
 
 // ─── DEMO DATA ──────────────────────────────────────────────────────────────
 

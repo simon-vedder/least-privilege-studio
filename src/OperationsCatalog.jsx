@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { roleCoversOp, pn, mw } from "./shared.js";
 
 const PAGE_SIZES = [25, 50, 100];
@@ -86,7 +86,9 @@ function RoleRow({ role, opAction, isDataAction, onAddRoleToStudio }) {
             style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, cursor: "pointer", fontFamily: "inherit", background: "rgba(79,195,247,0.08)", border: "1px solid rgba(79,195,247,0.12)" }}
           >
             <span style={{ fontSize: 9, color: "#4fc3f7", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>Control</span>
-            <span style={{ fontSize: 12, fontWeight: 700, color: "#4fc3f7", fontFamily: "var(--m)" }}>{role.actions.length}</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: "#4fc3f7", fontFamily: "var(--m)" }}>
+              {role.actions.some(a => a.includes("*")) ? `~${(role._estimatedActions || 1).toLocaleString()}` : role.actions.length}
+            </span>
             <span style={{ fontSize: 9, color: "#4fc3f7", opacity: 0.6 }}>{expanded ? "▴" : "▾"}</span>
           </button>
           {role.dataActions.length > 0 && (
@@ -99,10 +101,6 @@ function RoleRow({ role, opAction, isDataAction, onAddRoleToStudio }) {
               <span style={{ fontSize: 9, color: "#f5a623", opacity: 0.6 }}>{expanded ? "▴" : "▾"}</span>
             </button>
           )}
-          <div style={{ display: "flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 4, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-            <span style={{ fontSize: 9, color: "#4a5568", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.05em" }}>~Total</span>
-            <span style={{ fontSize: 12, fontWeight: 700, color: "#4a5568", fontFamily: "var(--m)" }}>{role._estimatedActions || 1}</span>
-          </div>
         </div>
       </div>
 
@@ -165,6 +163,12 @@ function OpDetail({ op, opsDescMap, roles, onClose, onAddOpToStudio, onAddRoleTo
   const description = opsDescMap[op.action] || "";
   const provider = op.action.split("/")[0];
 
+  useEffect(() => {
+    const h = e => { if (e.key === "Escape") onClose() };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [onClose]);
+
   const matchingRoles = useMemo(() => {
     return roles
       .filter(role => roleCoversOp(role, op.action, isDataAction))
@@ -172,37 +176,35 @@ function OpDetail({ op, opsDescMap, roles, onClose, onAddOpToStudio, onAddRoleTo
   }, [roles, op.action, isDataAction]);
 
   return (
-    <div style={{
-      position: "fixed", top: 0, right: 0, bottom: 0, width: Math.min(520, window.innerWidth),
-      background: "#0d0d20", borderLeft: "1px solid rgba(255,255,255,0.1)",
-      overflowY: "auto", zIndex: 100, boxShadow: "-12px 0 40px rgba(0,0,0,0.6)"
-    }}>
-      <div style={{ padding: "20px 24px" }}>
-        {/* Close */}
-        <button onClick={onClose} style={{ position: "absolute", top: 16, right: 16, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#8899aa", fontSize: 14, cursor: "pointer", padding: "4px 10px", fontFamily: "inherit" }}>
-          ✕ Close
-        </button>
-
-        {/* Type + plane */}
-        <div style={{ display: "flex", gap: 8, marginBottom: 14, marginTop: 4 }}>
-          <TypeBadge isDataAction={isDataAction} />
-          <span style={{ fontSize: 12, color: "#4a5568" }}>{isDataAction ? "Data Plane" : "Control Plane"}</span>
+    <>
+      <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 90, background: "rgba(0,0,0,0.35)", cursor: "pointer" }} />
+      <div style={{
+        position: "fixed", top: 0, right: 0, bottom: 0, width: Math.min(680, window.innerWidth),
+        background: "#0b0b1e", borderLeft: "1px solid rgba(255,255,255,0.1)",
+        overflowY: "auto", zIndex: 100, boxShadow: "-16px 0 56px rgba(0,0,0,0.7)"
+      }}>
+      {/* Gradient header zone */}
+      <div style={{ padding: "20px 24px 20px", background: `linear-gradient(160deg, ${isDataAction ? "rgba(245,166,35,0.08)" : "rgba(79,195,247,0.07)"} 0%, rgba(171,71,188,0.04) 60%, transparent 100%)`, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12, marginBottom: 14 }}>
+          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <TypeBadge isDataAction={isDataAction} />
+            <span style={{ fontSize: 11, color: "#4a5568" }}>{isDataAction ? "Data Plane" : "Control Plane"}</span>
+          </div>
+          <button onClick={onClose} style={{ flexShrink: 0, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#8899aa", fontSize: 14, cursor: "pointer", padding: "4px 10px", fontFamily: "inherit" }}>
+            ✕
+          </button>
         </div>
-
-        {/* Operation path */}
-        <div style={{ fontFamily: "var(--m)", fontSize: 12, color: "#c8d6e5", wordBreak: "break-all", lineHeight: 1.6, marginBottom: 12, padding: "10px 12px", background: "rgba(255,255,255,0.03)", borderRadius: 6, border: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ fontFamily: "var(--m)", fontSize: 13, color: "#c8d6e5", wordBreak: "break-all", lineHeight: 1.6, marginBottom: 10, padding: "10px 14px", background: "rgba(0,0,0,0.25)", borderRadius: 8, border: `1px solid ${isDataAction ? "rgba(245,166,35,0.15)" : "rgba(79,195,247,0.12)"}` }}>
           {op.action}
         </div>
-
-        {/* Description */}
         {description ? (
-          <div style={{ fontSize: 14, color: "#a0b4c8", lineHeight: 1.7, marginBottom: 16 }}>
-            {description}
-          </div>
+          <div style={{ fontSize: 14, color: "#a0b4c8", lineHeight: 1.7 }}>{description}</div>
         ) : (
-          <div style={{ fontSize: 13, color: "#3a4556", marginBottom: 16, fontStyle: "italic" }}>No description available</div>
+          <div style={{ fontSize: 13, color: "#3a4556", fontStyle: "italic" }}>No description available</div>
         )}
+      </div>
 
+      <div style={{ padding: "20px 24px" }}>
         {/* Provider + Add to Studio */}
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 12px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 6 }}>
@@ -248,6 +250,7 @@ function OpDetail({ op, opsDescMap, roles, onClose, onAddOpToStudio, onAddRoleTo
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,7 +1,66 @@
 #!/usr/bin/env node
 const fs=require("fs"),path=require("path");
 const P=path.resolve(__dirname,".."),R=path.join(P,"data","raw"),D=path.join(P,"data");
-const NS2CAT={"Microsoft.Compute":"Compute","Microsoft.Batch":"Compute","Microsoft.ClassicCompute":"Compute","Microsoft.ServiceFabric":"Compute","Microsoft.Network":"Networking","Microsoft.Cdn":"Networking","Microsoft.ClassicNetwork":"Networking","Microsoft.ManagedNetwork":"Networking","Microsoft.Storage":"Storage","Microsoft.ClassicStorage":"Storage","Microsoft.StorageSync":"Storage","Microsoft.StoragePool":"Storage","Microsoft.NetApp":"Storage","Microsoft.DataBox":"Storage","Microsoft.ElasticSan":"Storage","Microsoft.Sql":"Databases","Microsoft.DBforMySQL":"Databases","Microsoft.DBforPostgreSQL":"Databases","Microsoft.DBforMariaDB":"Databases","Microsoft.DocumentDB":"Databases","Microsoft.Cache":"Databases","Microsoft.DataFactory":"Databases","Microsoft.Kusto":"Databases","Microsoft.Web":"Web + Serverless","Microsoft.CertificateRegistration":"Web + Serverless","Microsoft.DomainRegistration":"Web + Serverless","Microsoft.SignalRService":"Web + Serverless","Microsoft.Communication":"Web + Serverless","Microsoft.ApiManagement":"Web + Serverless","Microsoft.App":"Web + Serverless","Microsoft.ContainerService":"Containers","Microsoft.ContainerRegistry":"Containers","Microsoft.ContainerInstance":"Containers","Microsoft.KubernetesConfiguration":"Containers","Microsoft.Kubernetes":"Containers","Microsoft.MachineLearningServices":"AI + Machine Learning","Microsoft.CognitiveServices":"AI + Machine Learning","Microsoft.BotService":"AI + Machine Learning","Microsoft.Search":"AI + Machine Learning","Microsoft.KeyVault":"Security","Microsoft.Security":"Security","Microsoft.SecurityInsights":"Security","Microsoft.Attestation":"Security","Microsoft.ManagedIdentity":"Identity","Microsoft.AAD":"Identity","Microsoft.AzureActiveDirectory":"Identity","Microsoft.DevTestLab":"DevOps","Microsoft.DevCenter":"DevOps","Microsoft.LabServices":"DevOps","Microsoft.Insights":"Monitor","Microsoft.OperationalInsights":"Monitor","Microsoft.Monitor":"Monitor","Microsoft.AlertsManagement":"Monitor","Microsoft.Dashboard":"Monitor","Microsoft.Authorization":"Management + Governance","Microsoft.Resources":"Management + Governance","Microsoft.Management":"Management + Governance","Microsoft.PolicyInsights":"Management + Governance","Microsoft.CostManagement":"Management + Governance","Microsoft.Billing":"Management + Governance","Microsoft.Blueprint":"Management + Governance","Microsoft.Advisor":"Management + Governance","Microsoft.Maintenance":"Management + Governance","Microsoft.ResourceHealth":"Management + Governance","Microsoft.Support":"Management + Governance","Microsoft.Subscription":"Management + Governance","Microsoft.Portal":"Management + Governance","Microsoft.Features":"Management + Governance","Microsoft.Logic":"Integration","Microsoft.EventHub":"Integration","Microsoft.EventGrid":"Integration","Microsoft.ServiceBus":"Integration","Microsoft.Relay":"Integration","Microsoft.NotificationHubs":"Integration","Microsoft.Devices":"Internet of Things","Microsoft.IoTCentral":"Internet of Things","Microsoft.DigitalTwins":"Internet of Things","Microsoft.TimeSeriesInsights":"Internet of Things","Microsoft.Databricks":"Analytics","Microsoft.HDInsight":"Analytics","Microsoft.Synapse":"Analytics","Microsoft.StreamAnalytics":"Analytics","Microsoft.PowerBIDedicated":"Analytics","Microsoft.AnalysisServices":"Analytics","Microsoft.DesktopVirtualization":"Desktop Virtualization","Microsoft.RecoveryServices":"Backup + Recovery","Microsoft.DataProtection":"Backup + Recovery","Microsoft.Migrate":"Migration","Microsoft.OffAzure":"Migration"};
+const NS2CAT={
+  // Compute
+  "Microsoft.Compute":"Compute","Microsoft.Batch":"Compute","Microsoft.ClassicCompute":"Compute","Microsoft.ServiceFabric":"Compute",
+  "Microsoft.HybridCompute":"Compute","Microsoft.AzureStackHCI":"Compute","Microsoft.VirtualMachineImages":"Compute",
+  // Networking
+  "Microsoft.Network":"Networking","Microsoft.Cdn":"Networking","Microsoft.ClassicNetwork":"Networking","Microsoft.ManagedNetwork":"Networking",
+  "Microsoft.NetworkCloud":"Networking","Microsoft.ManagedNetworkFabric":"Networking",
+  // Storage
+  "Microsoft.Storage":"Storage","Microsoft.ClassicStorage":"Storage","Microsoft.StorageSync":"Storage","Microsoft.StoragePool":"Storage",
+  "Microsoft.NetApp":"Storage","Microsoft.DataBox":"Storage","Microsoft.ElasticSan":"Storage",
+  "Microsoft.StorageCache":"Storage","Microsoft.StorageMover":"Storage",
+  // Databases
+  "Microsoft.Sql":"Databases","Microsoft.DBforMySQL":"Databases","Microsoft.DBforPostgreSQL":"Databases","Microsoft.DBforMariaDB":"Databases",
+  "Microsoft.DocumentDB":"Databases","Microsoft.Cache":"Databases","Microsoft.SqlVirtualMachine":"Databases",
+  // Web + Serverless
+  "Microsoft.Web":"Web + Serverless","Microsoft.CertificateRegistration":"Web + Serverless","Microsoft.DomainRegistration":"Web + Serverless",
+  "Microsoft.SignalRService":"Web + Serverless","Microsoft.Communication":"Web + Serverless","Microsoft.ApiManagement":"Web + Serverless",
+  "Microsoft.App":"Web + Serverless","Microsoft.AppPlatform":"Web + Serverless",
+  // Containers
+  "Microsoft.ContainerService":"Containers","Microsoft.ContainerRegistry":"Containers","Microsoft.ContainerInstance":"Containers",
+  "Microsoft.KubernetesConfiguration":"Containers","Microsoft.Kubernetes":"Containers",
+  // AI + Machine Learning
+  "Microsoft.MachineLearningServices":"AI + Machine Learning","Microsoft.CognitiveServices":"AI + Machine Learning",
+  "Microsoft.BotService":"AI + Machine Learning","Microsoft.Search":"AI + Machine Learning",
+  // Security
+  "Microsoft.KeyVault":"Security","Microsoft.Security":"Security","Microsoft.SecurityInsights":"Security","Microsoft.Attestation":"Security",
+  "Microsoft.Purview":"Security",
+  // Identity
+  "Microsoft.ManagedIdentity":"Identity","Microsoft.AAD":"Identity","Microsoft.AzureActiveDirectory":"Identity",
+  // DevOps
+  "Microsoft.DevTestLab":"DevOps","Microsoft.DevCenter":"DevOps","Microsoft.LabServices":"DevOps",
+  "Microsoft.LoadTestService":"DevOps","Microsoft.DevOpsInfrastructure":"DevOps",
+  // Monitor
+  "Microsoft.Insights":"Monitor","Microsoft.OperationalInsights":"Monitor","Microsoft.Monitor":"Monitor",
+  "Microsoft.AlertsManagement":"Monitor","Microsoft.Dashboard":"Monitor",
+  // Management + Governance
+  "Microsoft.Authorization":"Management + Governance","Microsoft.Resources":"Management + Governance","Microsoft.Management":"Management + Governance",
+  "Microsoft.PolicyInsights":"Management + Governance","Microsoft.CostManagement":"Management + Governance","Microsoft.Billing":"Management + Governance",
+  "Microsoft.Blueprint":"Management + Governance","Microsoft.Advisor":"Management + Governance","Microsoft.Maintenance":"Management + Governance",
+  "Microsoft.ResourceHealth":"Management + Governance","Microsoft.Support":"Management + Governance","Microsoft.Subscription":"Management + Governance",
+  "Microsoft.Portal":"Management + Governance","Microsoft.Features":"Management + Governance",
+  "Microsoft.Automation":"Management + Governance","Microsoft.AppConfiguration":"Management + Governance",
+  // Integration
+  "Microsoft.Logic":"Integration","Microsoft.EventHub":"Integration","Microsoft.EventGrid":"Integration",
+  "Microsoft.ServiceBus":"Integration","Microsoft.Relay":"Integration","Microsoft.NotificationHubs":"Integration",
+  "Microsoft.DataFactory":"Integration",
+  // Analytics
+  "Microsoft.Databricks":"Analytics","Microsoft.HDInsight":"Analytics","Microsoft.Synapse":"Analytics",
+  "Microsoft.StreamAnalytics":"Analytics","Microsoft.PowerBIDedicated":"Analytics","Microsoft.AnalysisServices":"Analytics",
+  "Microsoft.Kusto":"Analytics","Microsoft.Fabric":"Analytics",
+  // Desktop Virtualization
+  "Microsoft.DesktopVirtualization":"Desktop Virtualization",
+  // Internet of Things
+  "Microsoft.Devices":"Internet of Things","Microsoft.IoTCentral":"Internet of Things","Microsoft.DigitalTwins":"Internet of Things",
+  "Microsoft.TimeSeriesInsights":"Internet of Things",
+  // Backup + Recovery
+  "Microsoft.RecoveryServices":"Backup + Recovery","Microsoft.DataProtection":"Backup + Recovery",
+  // Migration
+  "Microsoft.Migrate":"Migration","Microsoft.OffAzure":"Migration",
+};
 const CI={"Compute":"🖥","Networking":"🌐","Storage":"📦","Databases":"🗄","Web + Serverless":"🌍","Containers":"🐳","AI + Machine Learning":"🧠","Security":"🔐","Identity":"🛡","DevOps":"🔧","Monitor":"📊","Management + Governance":"⚙","Integration":"🔗","Analytics":"📈","Desktop Virtualization":"🖵","Internet of Things":"📡","Backup + Recovery":"💾","Migration":"🚚","Other":"📋"};
 const CO=["Compute","Networking","Storage","Databases","Web + Serverless","Containers","Security","Identity","AI + Machine Learning","Monitor","Management + Governance","Integration","Analytics","Desktop Virtualization","Internet of Things","DevOps","Backup + Recovery","Migration","Other"];
 const SKIP=[/\/operations\/read$/i,/\/operationResults/i,/\/operationStatuses/i,/\/usages\/read$/i,/\/providers\/read$/i,/\/locations\//i,/\/diagnosticSettings/i,/\/diagnosticSettingsCategories/i,/\/metricDefinitions/i,/\/metrics\b/i,/\/logDefinitions/i,/\/diagnosticOperations/i,/\/eventGridFilters/i,/\/diagnosticRunCommands/i];
@@ -81,9 +140,12 @@ function dn(ns,k){return DN[`${ns}|${k}`]||sc(k.split("/").pop())}
 function getTop(op,ns){const rest=op.slice(ns.length+1),parts=rest.split("/");if(parts.length<2)return null;if(parts.length>=3&&D2.has(parts[0]+"/"+parts[1]))return parts[0]+"/"+parts[1];return parts[0]}
 function cl(n){const l=n.split("/").pop().toLowerCase();if(l==="read")return"Read";if(l==="write")return"Write";if(l==="delete")return"Delete";return"Action"}
 
+// Normalize namespace to TitleCase so lowercase variants (microsoft.web → Microsoft.Web) match the map
+function normNs(ns){return ns.replace(/(?:^|\.)([a-z])/g,(_,c)=>_.replace(c,c.toUpperCase()))}
+
 function build(raw){
   const S={};
-  for(const prov of raw){const ns=prov.name||"",cat=NS2CAT[ns]||"Other";for(const rt of prov.resourceTypes||[])for(const op of rt.operations||[]){const n=op.name||"";if(!n||SKIP.some(p=>p.test(n)))continue;const top=getTop(n,ns);if(!top)continue;const lv=cl(n),isD=op.isDataAction||false;if(!S[cat])S[cat]={};if(!S[cat][ns])S[cat][ns]={};if(!S[cat][ns][top])S[cat][ns][top]={Read:[],Write:[],Delete:[],Action:[]};const b=S[cat][ns][top][lv];if(!b.some(e=>e.action===n))b.push({action:n,type:isD?"dataAction":"action"})}}
+  for(const prov of raw){const ns=prov.name||"",cat=NS2CAT[ns]||NS2CAT[normNs(ns)]||"Other";for(const rt of prov.resourceTypes||[])for(const op of rt.operations||[]){const n=op.name||"";if(!n||SKIP.some(p=>p.test(n)))continue;const top=getTop(n,ns);if(!top)continue;const lv=cl(n),isD=op.isDataAction||false;if(!S[cat])S[cat]={};if(!S[cat][ns])S[cat][ns]={};if(!S[cat][ns][top])S[cat][ns][top]={Read:[],Write:[],Delete:[],Action:[]};const b=S[cat][ns][top][lv];if(!b.some(e=>e.action===n))b.push({action:n,type:isD?"dataAction":"action"})}}
   const cats=[];
   for(const cn of CO){if(!S[cn])continue;const provs=[];for(const[ns,rts]of Object.entries(S[cn])){const types=[];for(const[k,lvls]of Object.entries(rts)){const acts=[];for(const[lv,ops]of Object.entries(lvls)){if(!ops.length)continue;ops.sort((a,b)=>a.action.localeCompare(b.action));acts.push({label:lv,ops,hasDataActions:ops.some(o=>o.type==="dataAction")})}if(!acts.length)continue;acts.sort((a,b)=>["Read","Write","Delete","Action"].indexOf(a.label)-["Read","Write","Delete","Action"].indexOf(b.label));const p=prio(ns,k);types.push({key:k,name:dn(ns,k),provider:ns,actions:acts,totalOps:acts.reduce((s,a)=>s+a.ops.length,0),priority:p})}
   // Sort: priority first (lower=better), then alphabetical
