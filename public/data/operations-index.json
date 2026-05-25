@@ -124,6 +124,22 @@
     "description": "Update a OrganizationResource"
   },
   {
+    "action": "Commvault.ContentStore/entities/delete",
+    "description": "Delete a Entity"
+  },
+  {
+    "action": "Commvault.ContentStore/entities/read",
+    "description": "Get a Entity"
+  },
+  {
+    "action": "Commvault.ContentStore/entities/write",
+    "description": "Update a Entity"
+  },
+  {
+    "action": "Commvault.ContentStore/registeredSubscriptions/read",
+    "description": "read registeredSubscriptions"
+  },
+  {
     "action": "Dell.Storage/filesystems/delete",
     "description": "Delete a FileSystemResource"
   },
@@ -860,6 +876,10 @@
     "description": "Creates/updates configuration"
   },
   {
+    "action": "Microsoft.Advisor/conversations/bootstrap/action",
+    "description": "Bootstrap Conversation"
+  },
+  {
     "action": "Microsoft.Advisor/generateRecommendations/read",
     "description": "Gets generate recommendations status"
   },
@@ -1136,6 +1156,14 @@
     "description": "Create or update the security requirement for the workspace."
   },
   {
+    "action": "Microsoft.ApiCenter/services/dataApiSettings/read",
+    "description": "Returns the DataAPI settings for the catalog. Synthesizes permissive defaults when no document exists."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/dataApiSettings/write",
+    "description": "Creates or updates the DataAPI settings configuration for the catalog."
+  },
+  {
     "action": "Microsoft.ApiCenter/services/delete",
     "description": "Deletes specified service."
   },
@@ -1172,8 +1200,40 @@
     "description": "Validates move resource request"
   },
   {
-    "action": "Microsoft.ApiCenter/services/workspace/importApiSource/action",
-    "description": "Imports resources from one or more API sources."
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/delete",
+    "description": "Deletes specified agent."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/read",
+    "description": "Checks if specified agent exists"
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/artifacts/delete",
+    "description": "Deletes specified agent artifact."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/artifacts/read",
+    "description": "Returns the base64-encoded file for the specified agent artifact (≤3 MiB)."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/artifacts/write",
+    "description": "Uploads a single file for the specified agent artifact."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/delete",
+    "description": "Deletes specified agent version."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/read",
+    "description": "Checks if specified agent version exists"
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/write",
+    "description": "Creates or updates specified agent version."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agents/write",
+    "description": "Creates or updates specified agent."
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/analyzerConfig/analysisExecutions/read",
@@ -1316,16 +1376,8 @@
     "description": "Create or update environment"
   },
   {
-    "action": "Microsoft.ApiCenter/services/workspaces/languageModels/delete",
-    "description": "Deletes specified language model."
-  },
-  {
-    "action": "Microsoft.ApiCenter/services/workspaces/languageModels/read",
-    "description": "Checks if specified language model exists"
-  },
-  {
-    "action": "Microsoft.ApiCenter/services/workspaces/languageModels/write",
-    "description": "Creates or updates specified language model."
+    "action": "Microsoft.ApiCenter/services/workspaces/importApiSource/action",
+    "description": "Imports resources from one or more API sources."
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/linkApiSource/action",
@@ -1338,6 +1390,18 @@
   {
     "action": "Microsoft.ApiCenter/services/workspaces/mcpRegistries/write",
     "description": "Creates or updates the MCP registry configuration for a workspace."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/models/delete",
+    "description": "Deletes specified model."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/models/read",
+    "description": "Checks if specified model exists"
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/models/write",
+    "description": "Creates or updates specified model."
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/plugins/delete",
@@ -3352,8 +3416,76 @@
     "description": "Create or Update a SRE AgentSpace"
   },
   {
+    "action": "Microsoft.App/artifactApps/delete",
+    "description": "Delete an artifact app resource"
+  },
+  {
+    "action": "Microsoft.App/artifactApps/read",
+    "description": "Get an artifact app resource"
+  },
+  {
+    "action": "Microsoft.App/artifactApps/replicas/read",
+    "description": "List replicas of an artifact app"
+  },
+  {
+    "action": "Microsoft.App/artifactApps/start/action",
+    "description": "Resume a stopped artifact app"
+  },
+  {
+    "action": "Microsoft.App/artifactApps/stop/action",
+    "description": "Stop a running artifact app"
+  },
+  {
+    "action": "Microsoft.App/artifactApps/write",
+    "description": "Create or update an artifact app resource"
+  },
+  {
+    "action": "Microsoft.App/artifacts/delete",
+    "description": "Delete an artifact resource"
+  },
+  {
+    "action": "Microsoft.App/artifacts/read",
+    "description": "Get an artifact resource"
+  },
+  {
+    "action": "Microsoft.App/artifacts/versions/cancel/action",
+    "description": "Cancel an in-flight artifact version build"
+  },
+  {
+    "action": "Microsoft.App/artifacts/versions/disable/action",
+    "description": "Disable an artifact version from use by ArtifactApps"
+  },
+  {
+    "action": "Microsoft.App/artifacts/versions/enable/action",
+    "description": "Enable an artifact version for use by ArtifactApps"
+  },
+  {
+    "action": "Microsoft.App/artifacts/versions/operationStatus/read",
+    "description": "Get the status of an artifact version's build operation"
+  },
+  {
+    "action": "Microsoft.App/artifacts/versions/read",
+    "description": "List versions of an artifact resource"
+  },
+  {
+    "action": "Microsoft.App/artifacts/write",
+    "description": "Create or update an artifact resource"
+  },
+  {
     "action": "Microsoft.App/managedEnvironments/privateEndpointConnectionsApproval/action",
     "description": "Approve Private Endpoint Connections"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/agentIdentities/delete",
+    "description": "Delete an agent identity in a sandbox group"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/agentIdentities/read",
+    "description": "List agent identities in a sandbox group"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/agentIdentities/write",
+    "description": "Create a new agent identity in a sandbox group"
   },
   {
     "action": "Microsoft.App/sandboxGroups/connections/delete",
@@ -3366,6 +3498,18 @@
   {
     "action": "Microsoft.App/sandboxGroups/connections/write",
     "description": "Create a new connection in a sandbox group"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/contentpackages/delete",
+    "description": "Delete a content package in a sandbox group"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/contentpackages/read",
+    "description": "List content packages in a sandbox group"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/contentpackages/write",
+    "description": "Create a content package by uploading binary content in a sandbox group"
   },
   {
     "action": "Microsoft.App/sandboxGroups/delete",
@@ -7829,7 +7973,7 @@
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/deleteMiLink/action",
-    "description": "Deletes the MI Link between an Azure Arc-enabled SQL Server and an Azure SQL Managed Instance."
+    "description": "Deletes the MI Link between an Azure Arc-enabled SQL Server and an Azure SQL Managed Instanc\nce."
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/failover/action",
@@ -7888,12 +8032,28 @@
     "description": "Retrieves full properties of all the Availability Groups in a SQL Server instance."
   },
   {
+    "action": "Microsoft.AzureArcData/sqlServerInstances/getBestPracticesAssessment/action",
+    "description": "Retrieves SQL best practices assessment results for the SQL Server instance."
+  },
+  {
+    "action": "Microsoft.AzureArcData/sqlServerInstances/getJobs/action",
+    "description": "Retrieves jobs for SQL Server instance."
+  },
+  {
+    "action": "Microsoft.AzureArcData/sqlServerInstances/getJobsStatus/action",
+    "description": "Gets jobs status details for sql arc resource"
+  },
+  {
     "action": "Microsoft.AzureArcData/sqlServerInstances/getTelemetry/action",
     "description": "Retrieves SQL Server instance telemetry"
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/read",
     "description": "Retrieves a SQL Server Instance resource"
+  },
+  {
+    "action": "Microsoft.AzureArcData/sqlServerInstances/runBestPracticeAssessment/action",
+    "description": "The request to run SQL best practices assessment asynchronously."
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/write",
@@ -7918,6 +8078,30 @@
   {
     "action": "Microsoft.AzureBusinessContinuity/unifiedProtectedItems/read",
     "description": "Get a UnifiedProtectedItemResource"
+  },
+  {
+    "action": "Microsoft.AzureContextCache/accounts/containers/delete",
+    "description": "Delete a container from a Context Cache Account."
+  },
+  {
+    "action": "Microsoft.AzureContextCache/accounts/containers/read",
+    "description": "List all containers in a Context Cache Account."
+  },
+  {
+    "action": "Microsoft.AzureContextCache/accounts/containers/write",
+    "description": "Update a container in a Context Cache Account."
+  },
+  {
+    "action": "Microsoft.AzureContextCache/accounts/delete",
+    "description": "Delete a Context Cache Account."
+  },
+  {
+    "action": "Microsoft.AzureContextCache/accounts/read",
+    "description": "List Context Cache Accounts by subscription."
+  },
+  {
+    "action": "Microsoft.AzureContextCache/accounts/write",
+    "description": "Create or update a Context Cache Account."
   },
   {
     "action": "Microsoft.AzureDataTransfer/connections/delete",
@@ -8092,6 +8276,38 @@
     "description": "Creates a new Azure Fleet resource or updates an existing one"
   },
   {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/delete",
+    "description": "Deletes a Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/read",
+    "description": "Gets the properties of a Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/reimage/action",
+    "description": "Reimages one or more Virtual Machines in a Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/restart/action",
+    "description": "Restarts one or more Virtual Machines in a Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/virtualMachines/read",
+    "description": "Gets the properties of a Virtual Machine in a Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/virtualMachines/reimage/action",
+    "description": "Reimages a Virtual Machine in a Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/virtualMachines/restart/action",
+    "description": "Restarts a Virtual Machine in a Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.AzureFleet/virtualMachineScaleSets/write",
+    "description": "Creates a new Virtual Machine Scale Set or updates an existing one"
+  },
+  {
     "action": "Microsoft.AzureImageTestingForLinux/jobTemplates/delete",
     "description": "Delete a JobTemplate"
   },
@@ -8221,11 +8437,11 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/refreshReadinessState/action",
-    "description": "This triggers detection of any drifts from the desired state of Target and capabilities and RBAC."
+    "description": "This triggers detection of any drifts from the desired state of Resources and RBAC."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/resyncReadinessCheck/action",
-    "description": "This triggers detection of any drifts from the desired state of Target and capabilities and RBAC."
+    "description": "This triggers detection of any drifts from the desired state of Resources and RBAC."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/start/action",
@@ -8249,7 +8465,11 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/read",
-    "description": "Get a GoalAssignment"
+    "description": "List GoalAssignment resources by tenant"
+  },
+  {
+    "action": "Microsoft.AzureResilienceManagement/goalAssignments/recommendCapacity/action",
+    "description": "Recommends capacity improvements for resources under the goal assignments scope. Returns AI-powered capacity assessments and recommendations."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/refreshGoalResources/action",
@@ -8261,7 +8481,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/write",
-    "description": "Update a GoalAssignment"
+    "description": "Create a GoalAssignment"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalTemplates/delete",
@@ -8866,6 +9086,30 @@
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Read",
     "description": "Gets EdgeMachines resources"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/SecuritySettings/Delete",
+    "description": "Deletes SecuritySettings resource for EdgeMachine"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/SecuritySettings/Read",
+    "description": "Gets EdgeMachine SecuritySettings"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/SecuritySettings/Write",
+    "description": "Creates or updates SecuritySettings resource for EdgeMachine"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Updates/Delete",
+    "description": "Deletes EdgeMachine Updates Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Updates/Read",
+    "description": "Reads EdgeMachine Updates Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Updates/Write",
+    "description": "Writes EdgeMachine Updates Resource"
   },
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Validate/Action",
@@ -9624,6 +9868,10 @@
     "description": "Gets an address by ID for the billing account."
   },
   {
+    "action": "Microsoft.Billing/billingAccounts/addresses/validateDeleteEligibility/write",
+    "description": "Validates if the address is eligible for deletion."
+  },
+  {
     "action": "Microsoft.Billing/billingAccounts/addresses/versions/action",
     "description": "Gets a specific version of an address by ID for the billing account."
   },
@@ -9874,6 +10122,10 @@
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/createBillingRoleAssignment/write",
     "description": "Adds a role assignment on an invoice section. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/ensureDefaultCloudSubscription/write",
+    "description": "Ensures a default cloud subscription exists for an invoice section. If one does not exist, it will be created. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/policies/read",
@@ -10140,6 +10392,22 @@
     "description": "Gets the transition details for a billing account that has transitioned from agreement type Microsoft Online Services Program to agreement type Microsoft Customer Agreement."
   },
   {
+    "action": "Microsoft.Billing/billingAccounts/contacts/addContactTypes/write",
+    "description": "Adds one or more contact types to a contact for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/contacts/read",
+    "description": "Lists the contacts for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/contacts/removeContactTypes/write",
+    "description": "Removes one or more contact types from a contact for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/contacts/write",
+    "description": "Creates or updates a contact for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
+  },
+  {
     "action": "Microsoft.Billing/billingAccounts/createBillingRoleAssignment/write",
     "description": "Adds a role assignment on a billing account. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
   },
@@ -10244,8 +10512,16 @@
     "description": "Update Department by Department Id"
   },
   {
+    "action": "Microsoft.Billing/billingAccounts/disable/action",
+    "description": "Disables a billing account."
+  },
+  {
     "action": "Microsoft.Billing/billingAccounts/downloadDocuments/write",
     "description": "Gets a URL to download multiple invoice documents (invoice pdf, tax receipts, credit notes) as a zip file. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/enable/action",
+    "description": "Enables a billing account."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/activate/write",
@@ -10462,6 +10738,10 @@
   {
     "action": "Microsoft.Billing/billingAccounts/validateDailyInvoicingOverrideTerms/write",
     "description": "Validate add daily invoicing override terms eligibility"
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/validateDeleteEligibility/action",
+    "description": "Validates if a billing account can be deleted. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/validateInvoicePayEligibility/action",
@@ -12000,356 +12280,68 @@
     "description": "Creates or update a Target resource that extends a tracked resource."
   },
   {
-    "action": "Microsoft.ClassicNetwork/expressroutecrossconnections/peerings/delete",
-    "description": "Delete express route cross connection peering."
+    "action": "Microsoft.Chaos/workspaces/delete",
+    "description": "Deletes a Workspace resource in a resource group."
   },
   {
-    "action": "Microsoft.ClassicNetwork/expressroutecrossconnections/peerings/read",
-    "description": "Get express route cross connection peering."
+    "action": "Microsoft.Chaos/workspaces/discoveredResources/read",
+    "description": "Gets a Discovered Resource or lists all Discovered Resources in a Workspace."
   },
   {
-    "action": "Microsoft.ClassicNetwork/expressroutecrossconnections/peerings/write",
-    "description": "Add express route cross connection peering."
+    "action": "Microsoft.Chaos/workspaces/read",
+    "description": "Gets a Workspace resource or lists all Workspace resources in a resource group or subscription."
   },
   {
-    "action": "Microsoft.ClassicNetwork/expressroutecrossconnections/read",
-    "description": "Get express route cross connections."
+    "action": "Microsoft.Chaos/workspaces/refreshRecommendations/action",
+    "description": "Refreshes recommendation status for all scenarios in a given workspace."
   },
   {
-    "action": "Microsoft.ClassicNetwork/expressroutecrossconnections/write",
-    "description": "Add express route cross connections."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/delete",
+    "description": "Deletes a Scenario Configuration resource for a Scenario."
   },
   {
-    "action": "Microsoft.ClassicNetwork/gatewaySupportedDevices/read",
-    "description": "Retrieves the list of supported devices."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/discover/action",
+    "description": "Discovers all Azure resources for the given scenario configuration."
   },
   {
-    "action": "Microsoft.ClassicNetwork/networkSecurityGroups/delete",
-    "description": "Deletes the network security group."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
+    "description": "Executes the scenario with the given scenario configuration."
   },
   {
-    "action": "Microsoft.ClassicNetwork/networkSecurityGroups/read",
-    "description": "Gets the network security group."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/action",
+    "description": "Fixes resource permissions for the given scenario configuration."
   },
   {
-    "action": "Microsoft.ClassicNetwork/networkSecurityGroups/securityRules/delete",
-    "description": "Deletes the security rule."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+    "description": "Gets a Scenario Configuration resource or lists all Scenario Configuration resources for a Scenario."
   },
   {
-    "action": "Microsoft.ClassicNetwork/networkSecurityGroups/securityRules/read",
-    "description": "Gets the security rule."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
+    "description": "Validates the given scenario configuration."
   },
   {
-    "action": "Microsoft.ClassicNetwork/networkSecurityGroups/securityRules/write",
-    "description": "Adds or update a security rule."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+    "description": "Gets the latest validation for a Scenario Configuration."
   },
   {
-    "action": "Microsoft.ClassicNetwork/networkSecurityGroups/write",
-    "description": "Adds a new network security group."
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/write",
+    "description": "Creates or updates a Scenario Configuration resource for a Scenario."
   },
   {
-    "action": "Microsoft.ClassicNetwork/quotas/read",
-    "description": "Get the quota for the subscription."
+    "action": "Microsoft.Chaos/workspaces/scenarios/read",
+    "description": "Gets a Scenario resource or lists all Scenario resources in a Workspace."
   },
   {
-    "action": "Microsoft.ClassicNetwork/reservedIps/delete",
-    "description": "Delete a reserved Ip."
+    "action": "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
+    "description": "Cancels a running Scenario Run."
   },
   {
-    "action": "Microsoft.ClassicNetwork/reservedIps/join/action",
-    "description": "Join a reserved Ip"
+    "action": "Microsoft.Chaos/workspaces/scenarios/runs/read",
+    "description": "Gets a Scenario Run resource or lists all Scenario Run resources for a Scenario."
   },
   {
-    "action": "Microsoft.ClassicNetwork/reservedIps/link/action",
-    "description": "Link a reserved Ip"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/reservedIps/read",
-    "description": "Gets the reserved Ips"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/reservedIps/write",
-    "description": "Add a new reserved Ip"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/abortMigration/action",
-    "description": "Aborts the migration of a Virtual Network"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/capabilities/read",
-    "description": "Shows the capabilities"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/checkIPAddressAvailability/action",
-    "description": "Checks the availability of a given IP address in a virtual network."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/commitMigration/action",
-    "description": "Commits the migration of a Virtual Network"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/delete",
-    "description": "Deletes the virtual network."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRevokedCertificates/delete",
-    "description": "Unrevokes a client certificate."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRevokedCertificates/read",
-    "description": "Read the revoked client certificates."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRevokedCertificates/write",
-    "description": "Revokes a client certificate."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRootCertificates/delete",
-    "description": "Deletes the virtual network gateway client certificate."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRootCertificates/download/action",
-    "description": "Downloads certificate by thumbprint."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRootCertificates/listPackage/action",
-    "description": "Lists the virtual network gateway certificate package."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRootCertificates/read",
-    "description": "Find the client root certificates."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/clientRootCertificates/write",
-    "description": "Uploads a new client root certificate."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/connections/connect/action",
-    "description": "Connects a site to site gateway connection."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/connections/disconnect/action",
-    "description": "Disconnects a site to site gateway connection."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/connections/read",
-    "description": "Retrieves the list of connections."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/connections/test/action",
-    "description": "Tests a site to site gateway connection."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/delete",
-    "description": "Deletes the virtual network gateway."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/downloadDeviceConfigurationScript/action",
-    "description": "Downloads the device configuration script."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/downloadDiagnostics/action",
-    "description": "Downloads the gateway diagnostics."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/listCircuitServiceKey/action",
-    "description": "Retrieves the circuit service key."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/listPackage/action",
-    "description": "Lists the virtual network gateway package."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/packages/read",
-    "description": "Gets the virtual network gateway package."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/read",
-    "description": "Gets the virtual network gateways."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/startDiagnostics/action",
-    "description": "Starts diagnositic for the virtual network gateway."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/stopDiagnostics/action",
-    "description": "Stops the diagnositic for the virtual network gateway."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/gateways/write",
-    "description": "Adds a virtual network gateway."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/join/action",
-    "description": "Joins the virtual network."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/peer/action",
-    "description": "Peers a virtual network with another virtual network."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/prepareMigration/action",
-    "description": "Prepares the migration of a Virtual Network"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/read",
-    "description": "Get the virtual network."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/remoteVirtualNetworkPeeringProxies/delete",
-    "description": "Deletes the remote virtual network peering proxy."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/remoteVirtualNetworkPeeringProxies/read",
-    "description": "Gets the remote virtual network peering proxy."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/remoteVirtualNetworkPeeringProxies/write",
-    "description": "Adds or updates the remote virtual network peering proxy."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/subnets/associatedNetworkSecurityGroups/delete",
-    "description": "Deletes the network security group associated with the subnet."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/subnets/associatedNetworkSecurityGroups/read",
-    "description": "Gets the network security group associated with the subnet."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/subnets/associatedNetworkSecurityGroups/write",
-    "description": "Adds a network security group associated with the subnet."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/validateMigration/action",
-    "description": "Validates the migration of a Virtual Network"
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/virtualNetworkPeerings/read",
-    "description": "Gets the virtual network peering."
-  },
-  {
-    "action": "Microsoft.ClassicNetwork/virtualNetworks/write",
-    "description": "Add a new virtual network."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/capabilities/read",
-    "description": "Shows the capabilities"
-  },
-  {
-    "action": "Microsoft.ClassicStorage/checkStorageAccountAvailability/read",
-    "description": "Get the availability of a storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/disks/read",
-    "description": "Returns the storage account disk."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/images/read",
-    "description": "Returns the image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/osImages/read",
-    "description": "Returns the operating system image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/osPlatformImages/read",
-    "description": "Gets the operating system platform image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/publicImages/read",
-    "description": "Gets the public virtual machine image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/quotas/read",
-    "description": "Get the quota for the subscription."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/abortMigration/action",
-    "description": "Aborts migration of a storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/commitMigration/action",
-    "description": "Commits migration of a storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/delete",
-    "description": "Delete the storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/disks/delete",
-    "description": "Deletes a given storage account  disk."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/disks/read",
-    "description": "Returns the storage account disk."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/disks/write",
-    "description": "Adds a storage account disk."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/images/delete",
-    "description": "Deletes a given storage account image. (Deprecated. Use 'Microsoft.ClassicStorage/storageAccounts/vmImages')"
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/images/read",
-    "description": "Returns the storage account image. (Deprecated. Use 'Microsoft.ClassicStorage/storageAccounts/vmImages')"
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/listKeys/action",
-    "description": "Lists the access keys for the storage accounts."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/osImages/delete",
-    "description": "Deletes a given storage account operating system image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/osImages/read",
-    "description": "Returns the storage account operating system image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/osImages/write",
-    "description": "Adds a given storage account operating system image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/prepareMigration/action",
-    "description": "Prepares migration of a storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/read",
-    "description": "Return the storage account with the given account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/regenerateKey/action",
-    "description": "Regenerates the existing access keys for the storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/services/read",
-    "description": "Get the available services."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/validateMigration/action",
-    "description": "Validates migration of a storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/vmImages/delete",
-    "description": "Deletes a given virtual machine image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/vmImages/read",
-    "description": "Returns the virtual machine image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/vmImages/write",
-    "description": "Adds a given virtual machine image."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/storageAccounts/write",
-    "description": "Adds a new storage account."
-  },
-  {
-    "action": "Microsoft.ClassicStorage/vmImages/read",
-    "description": "Lists virtual machine images."
+    "action": "Microsoft.Chaos/workspaces/write",
+    "description": "Creates or updates a Workspace resource in a resource group."
   },
   {
     "action": "Microsoft.CleanRoom/cleanrooms/delete",
@@ -12382,6 +12374,10 @@
   {
     "action": "Microsoft.CleanRoom/collaborations/enableWorkload/action",
     "description": "Enables a workload on a collaboration."
+  },
+  {
+    "action": "Microsoft.CleanRoom/collaborations/getReadonlyKubeConfig/action",
+    "description": "Gets the readonly kubeconfig for the collaboration."
   },
   {
     "action": "Microsoft.CleanRoom/collaborations/pause/action",
@@ -12516,8 +12512,16 @@
     "description": "Create a DiscoveryRule"
   },
   {
+    "action": "Microsoft.CloudHealth/healthmodels/entities/addDataAnnotation/action",
+    "description": "Add a data annotation to an entity"
+  },
+  {
     "action": "Microsoft.CloudHealth/healthmodels/entities/delete",
     "description": "Delete a Entity"
+  },
+  {
+    "action": "Microsoft.CloudHealth/healthmodels/entities/getDataAnnotations/action",
+    "description": "Retrieve data annotations for an entity"
   },
   {
     "action": "Microsoft.CloudHealth/healthmodels/entities/getHistory/action",
@@ -12526,6 +12530,10 @@
   {
     "action": "Microsoft.CloudHealth/healthmodels/entities/getSignalHistory/action",
     "description": "Retrieve the time series history for a signal on an entity"
+  },
+  {
+    "action": "Microsoft.CloudHealth/healthmodels/entities/getSignalRecommendations/action",
+    "description": "Get recommended signal configurations for a given Entity (only applicable for Entities representing Azure resources)"
   },
   {
     "action": "Microsoft.CloudHealth/healthmodels/entities/ingestHealthReport/action",
@@ -12540,8 +12548,12 @@
     "description": "Create a Entity"
   },
   {
+    "action": "Microsoft.CloudHealth/healthmodels/getRecommendedSignals/action",
+    "description": "Get recommended signal configurations for a given Azure resource type"
+  },
+  {
     "action": "Microsoft.CloudHealth/healthmodels/read",
-    "description": "Get a HealthModel"
+    "description": "List HealthModel resources by subscription ID"
   },
   {
     "action": "Microsoft.CloudHealth/healthmodels/relationships/delete",
@@ -12569,7 +12581,7 @@
   },
   {
     "action": "Microsoft.CloudHealth/healthmodels/write",
-    "description": "Update a HealthModel"
+    "description": "Create a HealthModel"
   },
   {
     "action": "Microsoft.CloudTest/accounts/delete",
@@ -12680,6 +12692,10 @@
     "description": "Creates or updates identity verification requests"
   },
   {
+    "action": "Microsoft.CodeSigning/RegisteredSubscriptions/read",
+    "description": "Reads registered subscriptions"
+  },
+  {
     "action": "Microsoft.CodeSigning/certificateProfiles/Sign/action",
     "description": "Signs provided files using specified certificate profile."
   },
@@ -12720,6 +12736,14 @@
     "description": "Read agents, threads, and messages"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/state/disable/action",
+    "description": "Set agent state to disabled"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/state/enable/action",
+    "description": "Set agent state to enabled"
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/write",
     "description": "Create update agents, threads, and messages"
   },
@@ -12748,8 +12772,28 @@
     "description": "List all connections in the project. Get a connection by name."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/data_generation_jobs/delete",
+    "description": "Delete a data generation job"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/data_generation_jobs/read",
+    "description": "List and get data generation jobs"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/data_generation_jobs/write",
+    "description": "Create or cancel a data generation job"
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/deployments/read",
     "description": "List all deployed models in the project. Get a deployed model."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/endpoints/interact/action",
+    "description": "Interact with an endpoint"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/endpoints/invoke/action",
+    "description": "[DEPRECATED] Invoke an endpoint"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/evaluations/delete",
@@ -12776,6 +12820,46 @@
     "description": "Create, cancel, pause and resume a fine-tuning job"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/index/entities/read",
+    "description": "Query index entities"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/jobs/cancel/action",
+    "description": "Cancel a running job"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/jobs/delete",
+    "description": "Delete a job"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/jobs/history/runs/read",
+    "description": "List or get run history for a job"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/jobs/read",
+    "description": "List and get jobs and artifacts"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/jobs/write",
+    "description": "Create or update a job, or append content to a job artifact"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/managed-deployments/action",
+    "description": "Perform an action on a MAAP managed deployment"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/managedAgentIdentityBlueprints/delete",
+    "description": "Delete a managed agent identity blueprint"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/managedAgentIdentityBlueprints/read",
+    "description": "Get or list managed agent identity blueprint"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/managedAgentIdentityBlueprints/write",
+    "description": "Create or update a managed agent identity blueprint"
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/notifications/delete",
     "description": "Delete all notifications or delete a particular notification of a specific project"
   },
@@ -12786,6 +12870,26 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/notifications/write",
     "description": "Create a new version of a notification or update or operate on an existing notification of a specific project"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/optimization/action",
+    "description": "Create agent optimization runs"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/optimization/cancel/action",
+    "description": "Cancel running agent optimization runs"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/optimization/delete",
+    "description": "Delete agent optimization runs"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/optimization/read",
+    "description": "Read agent optimization runs and results"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/optimization/write",
+    "description": "Update agent optimization configurations"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/providers/action",
@@ -12802,6 +12906,34 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/responses/write",
     "description": "Create a new response"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/delete",
+    "description": "Delete a routine"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/dispatch/action",
+    "description": "Dispatch a routine"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/read",
+    "description": "Get or list routines"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/write",
+    "description": "Create or update a routine"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/tasks/delete",
+    "description": "Delete a task"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/tasks/read",
+    "description": "Get or list tasks"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/tasks/write",
+    "description": "Create or update a task"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/usage/read",
@@ -13930,286 +14062,6 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/projects/write",
     "description": "Creates custom avatar projects."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/classify/iterations/image/action",
-    "description": "Classify an image and saves the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/classify/iterations/image/nostore/action",
-    "description": "Classify an image without saving the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/classify/iterations/url/action",
-    "description": "Classify an image url and saves the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/classify/iterations/url/nostore/action",
-    "description": "Classify an image url without saving the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/detect/iterations/image/action",
-    "description": "Detect objects in an image and saves the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/detect/iterations/image/nostore/action",
-    "description": "Detect objects in an image without saving the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/detect/iterations/url/action",
-    "description": "Detect objects in an image url and saves the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/detect/iterations/url/nostore/action",
-    "description": "Detect objects in an image url without saving the result."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/domains/read",
-    "description": "Get information about a specific domain.\r\nGet a list of the available domains.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/labelproposals/setting/action",
-    "description": "Set pool size of Label Proposal."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/labelproposals/setting/read",
-    "description": "Get pool size of Label Proposal for this project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/project/migrate/action",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/action",
-    "description": "Create a project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/delete",
-    "description": "Delete a specific project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/export/read",
-    "description": "Exports a project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/action",
-    "description": "This API accepts body content as multipart/form-data and application/octet-stream. When using multipart"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/delete",
-    "description": "Delete images from the set of training images."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/files/action",
-    "description": "This API accepts a batch of files, and optionally tags, to create images. There is a limit of 64 images and 20 tags."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/id/read",
-    "description": "This API will return a set of Images for the specified tags and optionally iteration. If no iteration is specified the"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/predictions/action",
-    "description": "This API creates a batch of images from predicted images specified. There is a limit of 64 images and 20 tags."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/regionproposals/action",
-    "description": "This API will get region proposals for an image along with confidences for the region. It returns an empty array if no proposals are found."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/regions/action",
-    "description": "This API accepts a batch of image regions, and optionally tags, to update existing images with region information."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/regions/delete",
-    "description": "Delete a set of image regions."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/suggested/action",
-    "description": "This API will fetch untagged images filtered by suggested tags Ids. It returns an empty array if no images are found."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/suggested/count/action",
-    "description": "This API takes in tagIds to get count of untagged images per suggested tags for a given threshold."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/tagged/count/read",
-    "description": "The filtering is on an and/or relationship. For example, if the provided tag ids are for the \"Dog\" and"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/tagged/read",
-    "description": "This API supports batching and range selection. By default it will only return first 50 images matching images."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/tags/action",
-    "description": "Associate a set of images with a set of tags."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/tags/delete",
-    "description": "Remove a set of tags from a set of images."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/untagged/count/read",
-    "description": "This API returns the images which have no tags for a given project and optionally an iteration. If no iteration is specified the"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/untagged/read",
-    "description": "This API supports batching and range selection. By default it will only return first 50 images matching images."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/images/urls/action",
-    "description": "This API accepts a batch of urls, and optionally tags, to create images. There is a limit of 64 images and 20 tags."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/import/action",
-    "description": "Imports a project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/delete",
-    "description": "Delete a specific iteration of a project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/export/action",
-    "description": "Export a trained iteration."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/export/read",
-    "description": "Get the list of exports for a specific iteration."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/performance/images/count/read",
-    "description": "The filtering is on an and/or relationship. For example, if the provided tag ids are for the \"Dog\" and"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/performance/images/read",
-    "description": "This API supports batching and range selection. By default it will only return first 50 images matching images."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/performance/read",
-    "description": "Get detailed performance information about an iteration."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/publish/action",
-    "description": "Publish a specific iteration."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/publish/delete",
-    "description": "Unpublish a specific iteration."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/read",
-    "description": "Get a specific iteration.\r\nGet iterations for the project.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/iterations/write",
-    "description": "Update a specific iteration."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/predictions/delete",
-    "description": "Delete a set of predicted images and their associated prediction results."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/predictions/query/action",
-    "description": "Get images that were sent to your prediction endpoint."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/quicktest/image/action",
-    "description": "Quick test an image."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/quicktest/url/action",
-    "description": "Quick test an image url."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/read",
-    "description": "Get a specific project.\r\nGet your projects.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/tags/action",
-    "description": "Create a tag for the project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/tags/delete",
-    "description": "Delete a tag from the project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/tags/read",
-    "description": "Get information about a specific tag.\r\nGet the tags for a given project and iteration.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/tags/write",
-    "description": "Update a tag."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/tagsandregions/suggestions/action",
-    "description": "This API will get suggested tags and regions for an array/batch of untagged images along with confidences for the tags. It returns an empty array if no tags are found."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/train/action",
-    "description": "Queues project for training."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/train/advanced/action",
-    "description": "Queues project for training with PipelineConfiguration and training type."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/projects/write",
-    "description": "Update a specific project."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/quota/action",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/quota/delete",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/quota/refresh/write",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/usage/prediction/user/read",
-    "description": "Get usage for prediction resource for Oxford user"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/usage/training/resource/tier/read",
-    "description": "Get usage for training resource for Azure user"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/usage/training/user/read",
-    "description": "Get usage for training resource for Oxford user"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/user/action",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/user/delete",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/user/state/write",
-    "description": "Update user state"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/user/tier/write",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/users/read",
-    "description": "*NotDefined*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/whitelist/delete",
-    "description": "Deletes a whitelisted user with specific capability"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/whitelist/read",
-    "description": "Gets a list of whitelisted users with specific capability"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/CustomVision.Prediction/whitelist/write",
-    "description": "Updates or creates a user in the whitelist with specific capability"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/CustomVision/classify/iterations/image/action",
@@ -17276,250 +17128,6 @@
     "description": "Get model manifest for given conditions"
   },
   {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/delete",
-    "description": "Delete the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/files/read",
-    "description": "Get a file associated with the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/read",
-    "description": "Get the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/delete",
-    "description": "Delete analyzer."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/read",
-    "description": "List analyzers.\r\nGet analyzer properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/results/images/read",
-    "description": "Get an image associated with the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/results/read",
-    "description": "Get the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/write",
-    "description": "Create a new analyzer asynchronously.\r\nUpdate analyzer properties."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:analyze/action",
-    "description": "Extract content and fields from input.\r\nExtract content and fields from input.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:analyzebinary/action",
-    "description": "Extract content and fields from input."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:copy/action",
-    "description": "Create a copy of the source analyzer to the current location."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:grantCopyAuthorization/action",
-    "description": "Get authorization for copying this analyzer to another location."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/delete",
-    "description": "Delete batch analysis job.  Analysis output is not deleted."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/read",
-    "description": "List all batch analysis jobs.\r\nGet batch analysis job."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/write",
-    "description": "Create a batch analysis job."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifierresults/read",
-    "description": "Get the result of a classifier operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/delete",
-    "description": "Delete classifier."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/read",
-    "description": "List classifiers.\r\nGet classifier properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/write",
-    "description": "Create a new classifier asynchronously.\r\nUpdate classifier properties."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers:classify/action",
-    "description": "Classify content with optional splitting."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers:classifybinary/action",
-    "description": "Classify content with optional splitting."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/defaults/read",
-    "description": "Return default settings for this Content Understanding resource."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/defaults/write",
-    "description": "Update default settings for this Content Understanding resource."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/faces:compare/action",
-    "description": "Compare the similarity between two faces."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/faces:detect/action",
-    "description": "Detect faces in an image."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/datasets/files/read",
-    "description": "Labeling - GetDatasetFile\r\nLabeling - ListDatasetFiles"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/delete",
-    "description": "Labeling - Delete project"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/delete",
-    "description": "Labeling - Delete label"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/document/read",
-    "description": "Labeling - Get document"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/document/write",
-    "description": "Labeling - Set document"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/ocr/read",
-    "description": "Labeling - Get OCR result"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/read",
-    "description": "Labeling - Get label\r\nLabeling - List labels"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/write",
-    "description": "Labeling - Create label"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels:analyze/action",
-    "description": "Labeling - Analyze document"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/read",
-    "description": "Labeling - Get project\r\nLabeling - List projects"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/delete",
-    "description": "Labeling - DeleteDatasetFile"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/read",
-    "description": "Labeling - GetReferenceFile\r\nLabeling - ListReferenceFiles"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/write",
-    "description": "Labeling - CreateDatasetFile"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files:analyze/action",
-    "description": "Labeling - StartGenerateResult"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema/read",
-    "description": "Labeling - Get current schema"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema:edit/action",
-    "description": "Labeling - Edit field schema"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema:suggest/action",
-    "description": "Labeling - Suggest field schema"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/stats/read",
-    "description": "Labeling - Get project stats"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/delete",
-    "description": "Labeling - Delete Test file"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/read",
-    "description": "Labeling - Get test files\r\nLabeling - List test files"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/write",
-    "description": "Labeling - Create or update test file"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files:hitl/action",
-    "description": "Labeling - HITL"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/write",
-    "description": "Labeling - Create project\r\nLabeling - Update project"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects:migrate/action",
-    "description": "Labeling - MigrateProject"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/delete",
-    "description": "Delete person directory and all associated persons and faces."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/delete",
-    "description": "Delete face.  Any linked person will be disassociated, but not deleted."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/read",
-    "description": "List faces.\r\nGet face properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/write",
-    "description": "Add a new face.\r\nUpdate face properties, such as modifying the association with a person."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces:find/action",
-    "description": "Find similar faces."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/delete",
-    "description": "Delete person.  Any linked faces will be disassociated, but not deleted."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/read",
-    "description": "List persons.\r\nGet person properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/write",
-    "description": "Add a new person and optionally associate with existing faces.\r\nUpdate person properties."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons:identify/action",
-    "description": "Identify the person from a face."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons:verify/action",
-    "description": "Verify if a face matches the person."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/read",
-    "description": "List person directories.\r\nGet person directory properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/write",
-    "description": "Create a new person directory.|Update person directory properties."
-  },
-  {
     "action": "Microsoft.CognitiveServices/accounts/NewsSearch/categorysearch/action",
     "description": "Returns news for a provided category."
   },
@@ -18916,6 +18524,250 @@
     "description": "Get web, image, news, & videos results for a given query."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/delete",
+    "description": "Delete the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/files/read",
+    "description": "Get a file associated with the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/read",
+    "description": "Get the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/delete",
+    "description": "Delete analyzer."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/read",
+    "description": "List analyzers.\r\nGet analyzer properties.*"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/results/images/read",
+    "description": "Get an image associated with the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/results/read",
+    "description": "Get the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/write",
+    "description": "Create a new analyzer asynchronously.\r\nUpdate analyzer properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:analyze/action",
+    "description": "Extract content and fields from input.\r\nExtract content and fields from input.*"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:analyzebinary/action",
+    "description": "Extract content and fields from input."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:copy/action",
+    "description": "Create a copy of the source analyzer to the current location."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:grantCopyAuthorization/action",
+    "description": "Get authorization for copying this analyzer to another location."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/delete",
+    "description": "Delete batch analysis job.  Analysis output is not deleted."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/read",
+    "description": "List all batch analysis jobs.\r\nGet batch analysis job."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/write",
+    "description": "Create a batch analysis job."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifierresults/read",
+    "description": "Get the result of a classifier operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/delete",
+    "description": "Delete classifier."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/read",
+    "description": "List classifiers.\r\nGet classifier properties.*"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/write",
+    "description": "Create a new classifier asynchronously.\r\nUpdate classifier properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers:classify/action",
+    "description": "Classify content with optional splitting."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers:classifybinary/action",
+    "description": "Classify content with optional splitting."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/defaults/read",
+    "description": "Return default settings for this Content Understanding resource."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/defaults/write",
+    "description": "Update default settings for this Content Understanding resource."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/faces:compare/action",
+    "description": "Compare the similarity between two faces."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/faces:detect/action",
+    "description": "Detect faces in an image."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/datasets/files/read",
+    "description": "Labeling - GetDatasetFile\r\nLabeling - ListDatasetFiles"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/delete",
+    "description": "Labeling - Delete project"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/delete",
+    "description": "Labeling - Delete label"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/document/read",
+    "description": "Labeling - Get document"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/document/write",
+    "description": "Labeling - Set document"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/ocr/read",
+    "description": "Labeling - Get OCR result"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/read",
+    "description": "Labeling - Get label\r\nLabeling - List labels"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/write",
+    "description": "Labeling - Create label"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels:analyze/action",
+    "description": "Labeling - Analyze document"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/read",
+    "description": "Labeling - Get project\r\nLabeling - List projects"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/delete",
+    "description": "Labeling - DeleteDatasetFile"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/read",
+    "description": "Labeling - GetReferenceFile\r\nLabeling - ListReferenceFiles"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/write",
+    "description": "Labeling - CreateDatasetFile"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files:analyze/action",
+    "description": "Labeling - StartGenerateResult"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema/read",
+    "description": "Labeling - Get current schema"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema:edit/action",
+    "description": "Labeling - Edit field schema"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema:suggest/action",
+    "description": "Labeling - Suggest field schema"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/stats/read",
+    "description": "Labeling - Get project stats"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/delete",
+    "description": "Labeling - Delete Test file"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/read",
+    "description": "Labeling - Get test files\r\nLabeling - List test files"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/write",
+    "description": "Labeling - Create or update test file"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files:hitl/action",
+    "description": "Labeling - HITL"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/write",
+    "description": "Labeling - Create project\r\nLabeling - Update project"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects:migrate/action",
+    "description": "Labeling - MigrateProject"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/delete",
+    "description": "Delete person directory and all associated persons and faces."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/delete",
+    "description": "Delete face.  Any linked person will be disassociated, but not deleted."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/read",
+    "description": "List faces.\r\nGet face properties.*"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/write",
+    "description": "Add a new face.\r\nUpdate face properties, such as modifying the association with a person."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces:find/action",
+    "description": "Find similar faces."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/delete",
+    "description": "Delete person.  Any linked faces will be disassociated, but not deleted."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/read",
+    "description": "List persons.\r\nGet person properties.*"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/write",
+    "description": "Add a new person and optionally associate with existing faces.\r\nUpdate person properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons:identify/action",
+    "description": "Identify the person from a face."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons:verify/action",
+    "description": "Verify if a face matches the person."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/read",
+    "description": "List person directories.\r\nGet person directory properties.*"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/write",
+    "description": "Create a new person directory.|Update person directory properties."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/delete",
     "description": "Delete a capability host"
   },
@@ -19002,6 +18854,18 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/listKeys/action",
     "description": "List keys"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/delete",
+    "description": "Deletes Managed Compute Deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/read",
+    "description": "Reads Managed Compute Deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/write",
+    "description": "Creates or updates Managed Compute Deployments."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/managedNetworks/batchOutboundRules/action",
@@ -19326,6 +19190,10 @@
   {
     "action": "Microsoft.CognitiveServices/deletedAccounts/read",
     "description": "List deleted accounts."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/managedComputeCapacities/read",
+    "description": "Returns the regional capacity with the highest available accelerators for the given Singularity endpoint and offer."
   },
   {
     "action": "Microsoft.CognitiveServices/modelCapacities/read",
@@ -21956,6 +21824,1262 @@
     "description": "Creates or updates a container registry with the specified parameters."
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/initializerconfigurations/delete",
+    "description": "Deletes initializerconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/initializerconfigurations/read",
+    "description": "Reads initializerconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/initializerconfigurations/write",
+    "description": "Writes initializerconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/mutatingwebhookconfigurations/delete",
+    "description": "Deletes mutatingwebhookconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/mutatingwebhookconfigurations/read",
+    "description": "Reads mutatingwebhookconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/mutatingwebhookconfigurations/write",
+    "description": "Writes mutatingwebhookconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/validatingwebhookconfigurations/delete",
+    "description": "Deletes validatingwebhookconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/validatingwebhookconfigurations/read",
+    "description": "Reads validatingwebhookconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/validatingwebhookconfigurations/write",
+    "description": "Writes validatingwebhookconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/api/read",
+    "description": "Reads api"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/api/v1/read",
+    "description": "Reads api/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apiextensions.k8s.io/customresourcedefinitions/delete",
+    "description": "Deletes customresourcedefinitions"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apiextensions.k8s.io/customresourcedefinitions/read",
+    "description": "Reads customresourcedefinitions"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apiextensions.k8s.io/customresourcedefinitions/write",
+    "description": "Writes customresourcedefinitions"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apiregistration.k8s.io/apiservices/delete",
+    "description": "Deletes apiservices"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apiregistration.k8s.io/apiservices/read",
+    "description": "Reads apiservices"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apiregistration.k8s.io/apiservices/write",
+    "description": "Writes apiservices"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/admissionregistration.k8s.io/read",
+    "description": "Reads admissionregistration.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/admissionregistration.k8s.io/v1/read",
+    "description": "Reads admissionregistration.k8s.io/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/admissionregistration.k8s.io/v1beta1/read",
+    "description": "Reads admissionregistration.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apiextensions.k8s.io/read",
+    "description": "Reads apiextensions.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apiextensions.k8s.io/v1/read",
+    "description": "Reads apiextensions.k8s.io/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apiextensions.k8s.io/v1beta1/read",
+    "description": "Reads apiextensions.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apiregistration.k8s.io/read",
+    "description": "Reads apiregistration.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apiregistration.k8s.io/v1/read",
+    "description": "Reads apiregistration.k8s.io/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apiregistration.k8s.io/v1beta1/read",
+    "description": "Reads apiregistration.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apps/read",
+    "description": "Reads apps"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apps/v1/read",
+    "description": "Reads apps/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apps/v1beta1/read",
+    "description": "Reads apps/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/apps/v1beta2/read",
+    "description": "Reads apps/v1beta2"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/authentication.k8s.io/read",
+    "description": "Reads authentication.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/authentication.k8s.io/v1/read",
+    "description": "Reads authentication.k8s.io/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/authentication.k8s.io/v1beta1/read",
+    "description": "Reads authentication.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/authorization.k8s.io/read",
+    "description": "Reads authorization.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/authorization.k8s.io/v1/read",
+    "description": "Reads authorization.k8s.io/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/authorization.k8s.io/v1beta1/read",
+    "description": "Reads authorization.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/autoscaling/read",
+    "description": "Reads autoscaling"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/autoscaling/v1/read",
+    "description": "Reads autoscaling/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/autoscaling/v2beta1/read",
+    "description": "Reads autoscaling/v2beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/autoscaling/v2beta2/read",
+    "description": "Reads autoscaling/v2beta2"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/batch/read",
+    "description": "Reads batch"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/batch/v1/read",
+    "description": "Reads batch/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/batch/v1beta1/read",
+    "description": "Reads batch/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/certificates.k8s.io/read",
+    "description": "Reads certificates.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/certificates.k8s.io/v1beta1/read",
+    "description": "Reads certificates.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/coordination.k8s.io/read",
+    "description": "Reads coordination.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/coordination.k8s.io/v1/read",
+    "description": "Reads coordination/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/coordination.k8s.io/v1beta1/read",
+    "description": "Reads coordination.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/events.k8s.io/read",
+    "description": "Reads events.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/events.k8s.io/v1beta1/read",
+    "description": "Reads events.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/extensions/read",
+    "description": "Reads extensions"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/extensions/v1beta1/read",
+    "description": "Reads extensions/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/networking.k8s.io/read",
+    "description": "Reads networking.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/networking.k8s.io/v1/read",
+    "description": "Reads networking/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/networking.k8s.io/v1beta1/read",
+    "description": "Reads networking.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/node.k8s.io/read",
+    "description": "Reads node.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/node.k8s.io/v1beta1/read",
+    "description": "Reads node.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/policy/read",
+    "description": "Reads policy"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/policy/v1beta1/read",
+    "description": "Reads policy/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/rbac.authorization.k8s.io/read",
+    "description": "Reads rbac.authorization.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/rbac.authorization.k8s.io/v1/read",
+    "description": "Reads rbac.authorization/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/rbac.authorization.k8s.io/v1beta1/read",
+    "description": "Reads rbac.authorization.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/read",
+    "description": "Reads apis"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/scheduling.k8s.io/read",
+    "description": "Reads scheduling.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/scheduling.k8s.io/v1/read",
+    "description": "Reads scheduling/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/scheduling.k8s.io/v1beta1/read",
+    "description": "Reads scheduling.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/storage.k8s.io/read",
+    "description": "Reads storage.k8s.io"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/storage.k8s.io/v1/read",
+    "description": "Reads storage/v1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apis/storage.k8s.io/v1beta1/read",
+    "description": "Reads storage.k8s.io/v1beta1"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/delete",
+    "description": "Deletes controllerrevisions"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
+    "description": "Reads controllerrevisions"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/write",
+    "description": "Writes controllerrevisions"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/daemonsets/delete",
+    "description": "Deletes daemonsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/daemonsets/read",
+    "description": "Reads daemonsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/daemonsets/write",
+    "description": "Writes daemonsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/deployments/delete",
+    "description": "Deletes deployments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/deployments/read",
+    "description": "Reads deployments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/deployments/write",
+    "description": "Writes deployments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/replicasets/delete",
+    "description": "Deletes replicasets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/replicasets/read",
+    "description": "Reads replicasets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/replicasets/write",
+    "description": "Writes replicasets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/statefulsets/delete",
+    "description": "Deletes statefulsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/statefulsets/read",
+    "description": "Reads statefulsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/apps/statefulsets/write",
+    "description": "Writes statefulsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/authentication.k8s.io/tokenreviews/write",
+    "description": "Writes tokenreviews"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/authentication.k8s.io/userextras/impersonate/action",
+    "description": "Impersonate userextras"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/authorization.k8s.io/localsubjectaccessreviews/write",
+    "description": "Writes localsubjectaccessreviews"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/authorization.k8s.io/selfsubjectaccessreviews/write",
+    "description": "Writes selfsubjectaccessreviews"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/authorization.k8s.io/selfsubjectrulesreviews/write",
+    "description": "Writes selfsubjectrulesreviews"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/authorization.k8s.io/subjectaccessreviews/write",
+    "description": "Writes subjectaccessreviews"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/delete",
+    "description": "Deletes horizontalpodautoscalers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/read",
+    "description": "Reads horizontalpodautoscalers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/write",
+    "description": "Writes horizontalpodautoscalers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/batch/cronjobs/delete",
+    "description": "Deletes cronjobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
+    "description": "Reads cronjobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/batch/cronjobs/write",
+    "description": "Writes cronjobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/batch/jobs/delete",
+    "description": "Deletes jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/batch/jobs/read",
+    "description": "Reads jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/batch/jobs/write",
+    "description": "Writes jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/bindings/write",
+    "description": "Writes bindings"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/delete",
+    "description": "Deletes certificatesigningrequests"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/read",
+    "description": "Reads certificatesigningrequests"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/write",
+    "description": "Writes certificatesigningrequests"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/componentstatuses/delete",
+    "description": "Deletes componentstatuses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/componentstatuses/read",
+    "description": "Reads componentstatuses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/componentstatuses/write",
+    "description": "Writes componentstatuses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/configmaps/delete",
+    "description": "Deletes configmaps"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/configmaps/read",
+    "description": "Reads configmaps"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/configmaps/write",
+    "description": "Writes configmaps"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/coordination.k8s.io/leases/delete",
+    "description": "Deletes leases"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/coordination.k8s.io/leases/read",
+    "description": "Reads leases"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/coordination.k8s.io/leases/write",
+    "description": "Writes leases"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/customresources/delete",
+    "description": "Deletes custom resources"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/customresources/read",
+    "description": "Reads custom resources"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/customresources/write",
+    "description": "Writes custom resources"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/delete",
+    "description": "Delete AI Manager"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/delete",
+    "description": "Deletes endpointslices"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/read",
+    "description": "Reads endpointslices"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/write",
+    "description": "Writes endpointslices"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/endpoints/delete",
+    "description": "Deletes endpoints"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/endpoints/read",
+    "description": "Reads endpoints"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/endpoints/write",
+    "description": "Writes endpoints"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/events.k8s.io/events/delete",
+    "description": "Deletes events"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/events.k8s.io/events/read",
+    "description": "Reads events"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/events.k8s.io/events/write",
+    "description": "Writes events"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/events/delete",
+    "description": "Deletes events"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/events/read",
+    "description": "Reads events"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/events/write",
+    "description": "Writes events"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/daemonsets/delete",
+    "description": "Deletes daemonsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/daemonsets/read",
+    "description": "Reads daemonsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/daemonsets/write",
+    "description": "Writes daemonsets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/deployments/delete",
+    "description": "Deletes deployments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/deployments/read",
+    "description": "Reads deployments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/deployments/write",
+    "description": "Writes deployments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/ingresses/delete",
+    "description": "Deletes ingresses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/ingresses/read",
+    "description": "Reads ingresses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/ingresses/write",
+    "description": "Writes ingresses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/delete",
+    "description": "Deletes networkpolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/read",
+    "description": "Reads networkpolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/write",
+    "description": "Writes networkpolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/podsecuritypolicies/delete",
+    "description": "Deletes podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/podsecuritypolicies/read",
+    "description": "Reads podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/podsecuritypolicies/write",
+    "description": "Writes podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/replicasets/delete",
+    "description": "Deletes replicasets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/replicasets/read",
+    "description": "Reads replicasets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/extensions/replicasets/write",
+    "description": "Writes replicasets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/flowcontrol.apiserver.k8s.io/flowschemas/delete",
+    "description": "Deletes flowschemas"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/flowcontrol.apiserver.k8s.io/flowschemas/read",
+    "description": "Reads flowschemas"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/flowcontrol.apiserver.k8s.io/flowschemas/write",
+    "description": "Writes flowschemas"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/flowcontrol.apiserver.k8s.io/prioritylevelconfigurations/delete",
+    "description": "Deletes prioritylevelconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/flowcontrol.apiserver.k8s.io/prioritylevelconfigurations/read",
+    "description": "Reads prioritylevelconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/flowcontrol.apiserver.k8s.io/prioritylevelconfigurations/write",
+    "description": "Writes prioritylevelconfigurations"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/groups/impersonate/action",
+    "description": "Impersonate groups"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/autoregister-completion/read",
+    "description": "Reads autoregister-completion"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/etcd/read",
+    "description": "Reads etcd"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/log/read",
+    "description": "Reads log"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/ping/read",
+    "description": "Reads ping"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/apiservice-openapi-controller/read",
+    "description": "Reads apiservice-openapi-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/apiservice-registration-controller/read",
+    "description": "Reads apiservice-registration-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/apiservice-status-available-controller/read",
+    "description": "Reads apiservice-status-available-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/bootstrap-controller/read",
+    "description": "Reads bootstrap-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/ca-registration/read",
+    "description": "Reads ca-registration"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/crd-informer-synced/read",
+    "description": "Reads crd-informer-synced"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/generic-apiserver-start-informers/read",
+    "description": "Reads generic-apiserver-start-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/kube-apiserver-autoregistration/read",
+    "description": "Reads kube-apiserver-autoregistration"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/rbac/bootstrap-roles/read",
+    "description": "Reads bootstrap-roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/scheduling/bootstrap-system-priority-classes/read",
+    "description": "Reads bootstrap-system-priority-classes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/start-apiextensions-controllers/read",
+    "description": "Reads start-apiextensions-controllers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/start-apiextensions-informers/read",
+    "description": "Reads start-apiextensions-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/start-kube-aggregator-informers/read",
+    "description": "Reads start-kube-aggregator-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/poststarthook/start-kube-apiserver-admission-initializer/read",
+    "description": "Reads start-kube-apiserver-admission-initializer"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/healthz/read",
+    "description": "Reads healthz"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/limitranges/delete",
+    "description": "Deletes limitranges"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/limitranges/read",
+    "description": "Reads limitranges"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/limitranges/write",
+    "description": "Writes limitranges"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/listCredential/action",
+    "description": "List AI Manager Credential"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/autoregister-completion/read",
+    "description": "Reads autoregister-completion"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/etcd/read",
+    "description": "Reads etcd"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/log/read",
+    "description": "Reads log"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/ping/read",
+    "description": "Reads ping"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/apiservice-openapi-controller/read",
+    "description": "Reads apiservice-openapi-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/apiservice-registration-controller/read",
+    "description": "Reads apiservice-registration-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/apiservice-status-available-controller/read",
+    "description": "Reads apiservice-status-available-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/bootstrap-controller/read",
+    "description": "Reads bootstrap-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/ca-registration/read",
+    "description": "Reads ca-registration"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/crd-informer-synced/read",
+    "description": "Reads crd-informer-synced"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/generic-apiserver-start-informers/read",
+    "description": "Reads generic-apiserver-start-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/kube-apiserver-autoregistration/read",
+    "description": "Reads kube-apiserver-autoregistration"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/rbac/bootstrap-roles/read",
+    "description": "Reads bootstrap-roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/scheduling/bootstrap-system-priority-classes/read",
+    "description": "Reads bootstrap-system-priority-classes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/start-apiextensions-controllers/read",
+    "description": "Reads start-apiextensions-controllers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/start-apiextensions-informers/read",
+    "description": "Reads start-apiextensions-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/start-kube-aggregator-informers/read",
+    "description": "Reads start-kube-aggregator-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/poststarthook/start-kube-apiserver-admission-initializer/read",
+    "description": "Reads start-kube-apiserver-admission-initializer"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/livez/read",
+    "description": "Reads livez"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/logs/read",
+    "description": "Reads logs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/delete",
+    "description": "Delete AI Manager Namespace"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
+    "description": "List AI Manager Namespace Credential"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/read",
+    "description": "Get AI Manager Namespace"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/write",
+    "description": "Create or Update AI Manager Namespace"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingressclasses/delete",
+    "description": "Deletes ingressclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingressclasses/read",
+    "description": "Reads ingressclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingressclasses/write",
+    "description": "Writes ingressclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/delete",
+    "description": "Deletes ingresses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/read",
+    "description": "Reads ingresses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/write",
+    "description": "Writes ingresses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/delete",
+    "description": "Deletes networkpolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/read",
+    "description": "Reads networkpolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/write",
+    "description": "Writes networkpolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/node.k8s.io/runtimeclasses/delete",
+    "description": "Deletes runtimeclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/node.k8s.io/runtimeclasses/read",
+    "description": "Reads runtimeclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/node.k8s.io/runtimeclasses/write",
+    "description": "Writes runtimeclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/nodes/delete",
+    "description": "Deletes nodes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/nodes/read",
+    "description": "Reads nodes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/nodes/write",
+    "description": "Writes nodes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/openapi/v2/read",
+    "description": "Reads v2"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/delete",
+    "description": "Deletes persistentvolumeclaims"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/read",
+    "description": "Reads persistentvolumeclaims"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/write",
+    "description": "Writes persistentvolumeclaims"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/persistentvolumes/delete",
+    "description": "Deletes persistentvolumes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/persistentvolumes/read",
+    "description": "Reads persistentvolumes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/persistentvolumes/write",
+    "description": "Writes persistentvolumes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/pods/delete",
+    "description": "Deletes pods"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/pods/exec/action",
+    "description": "Exec into pods resource"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/pods/read",
+    "description": "Reads pods"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/pods/write",
+    "description": "Writes pods"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/podtemplates/delete",
+    "description": "Deletes podtemplates"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/podtemplates/read",
+    "description": "Reads podtemplates"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/podtemplates/write",
+    "description": "Writes podtemplates"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/delete",
+    "description": "Deletes poddisruptionbudgets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/read",
+    "description": "Reads poddisruptionbudgets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/write",
+    "description": "Writes poddisruptionbudgets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/policy/podsecuritypolicies/delete",
+    "description": "Deletes podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/policy/podsecuritypolicies/read",
+    "description": "Reads podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/policy/podsecuritypolicies/use/action",
+    "description": "Use action on podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/policy/podsecuritypolicies/write",
+    "description": "Writes podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterrolebindings/delete",
+    "description": "Deletes clusterrolebindings"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterrolebindings/read",
+    "description": "Reads clusterrolebindings"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterrolebindings/write",
+    "description": "Writes clusterrolebindings"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterroles/bind/action",
+    "description": "Binds clusterroles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterroles/delete",
+    "description": "Deletes clusterroles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterroles/escalate/action",
+    "description": "Escalates"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterroles/read",
+    "description": "Reads clusterroles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterroles/write",
+    "description": "Writes clusterroles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/rolebindings/delete",
+    "description": "Deletes rolebindings"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/rolebindings/read",
+    "description": "Reads rolebindings"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/rolebindings/write",
+    "description": "Writes rolebindings"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/roles/bind/action",
+    "description": "Binds roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/roles/delete",
+    "description": "Deletes roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/roles/escalate/action",
+    "description": "Escalates roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/roles/read",
+    "description": "Reads roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/roles/write",
+    "description": "Writes roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/read",
+    "description": "Get AI Manager"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/autoregister-completion/read",
+    "description": "Reads autoregister-completion"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/etcd/read",
+    "description": "Reads etcd"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/log/read",
+    "description": "Reads log"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/ping/read",
+    "description": "Reads ping"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/apiservice-openapi-controller/read",
+    "description": "Reads apiservice-openapi-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/apiservice-registration-controller/read",
+    "description": "Reads apiservice-registration-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/apiservice-status-available-controller/read",
+    "description": "Reads apiservice-status-available-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/bootstrap-controller/read",
+    "description": "Reads bootstrap-controller"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/ca-registration/read",
+    "description": "Reads ca-registration"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/crd-informer-synced/read",
+    "description": "Reads crd-informer-synced"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/generic-apiserver-start-informers/read",
+    "description": "Reads generic-apiserver-start-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/kube-apiserver-autoregistration/read",
+    "description": "Reads kube-apiserver-autoregistration"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/rbac/bootstrap-roles/read",
+    "description": "Reads bootstrap-roles"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/scheduling/bootstrap-system-priority-classes/read",
+    "description": "Reads bootstrap-system-priority-classes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/start-apiextensions-controllers/read",
+    "description": "Reads start-apiextensions-controllers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/start-apiextensions-informers/read",
+    "description": "Reads start-apiextensions-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/start-kube-aggregator-informers/read",
+    "description": "Reads start-kube-aggregator-informers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/poststarthook/start-kube-apiserver-admission-initializer/read",
+    "description": "Reads start-kube-apiserver-admission-initializer"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/read",
+    "description": "Reads readyz"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/readyz/shutdown/read",
+    "description": "Reads shutdown"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/replicationcontrollers/delete",
+    "description": "Deletes replicationcontrollers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/replicationcontrollers/read",
+    "description": "Reads replicationcontrollers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/replicationcontrollers/write",
+    "description": "Writes replicationcontrollers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/resetMetrics/read",
+    "description": "Reads resetMetrics"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/resourcequotas/delete",
+    "description": "Deletes resourcequotas"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/resourcequotas/read",
+    "description": "Reads resourcequotas"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/resourcequotas/write",
+    "description": "Writes resourcequotas"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/scheduling.k8s.io/priorityclasses/delete",
+    "description": "Deletes priorityclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/scheduling.k8s.io/priorityclasses/read",
+    "description": "Reads priorityclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/scheduling.k8s.io/priorityclasses/write",
+    "description": "Writes priorityclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/secrets/delete",
+    "description": "Deletes secrets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/secrets/read",
+    "description": "Reads secrets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/secrets/write",
+    "description": "Writes secrets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/serviceaccounts/delete",
+    "description": "Deletes serviceaccounts"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/serviceaccounts/impersonate/action",
+    "description": "Impersonate serviceaccounts"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/serviceaccounts/read",
+    "description": "Reads serviceaccounts"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/serviceaccounts/write",
+    "description": "Writes serviceaccounts"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/services/delete",
+    "description": "Deletes services"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/services/read",
+    "description": "Reads services"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/services/write",
+    "description": "Writes services"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csidrivers/delete",
+    "description": "Deletes csidrivers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csidrivers/read",
+    "description": "Reads csidrivers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csidrivers/write",
+    "description": "Writes csidrivers"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csinodes/delete",
+    "description": "Deletes csinodes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csinodes/read",
+    "description": "Reads csinodes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csinodes/write",
+    "description": "Writes csinodes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csistoragecapacities/delete",
+    "description": "Deletes csistoragecapacities"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csistoragecapacities/read",
+    "description": "Reads csistoragecapacities"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/csistoragecapacities/write",
+    "description": "Writes csistoragecapacities"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/storageclasses/delete",
+    "description": "Deletes storageclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/storageclasses/read",
+    "description": "Reads storageclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/storageclasses/write",
+    "description": "Writes storageclasses"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/volumeattachments/delete",
+    "description": "Deletes volumeattachments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/volumeattachments/read",
+    "description": "Reads volumeattachments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/storage.k8s.io/volumeattachments/write",
+    "description": "Writes volumeattachments"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/swagger-api/read",
+    "description": "Reads swagger-api"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/swagger-ui/read",
+    "description": "Reads swagger-ui"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ui/read",
+    "description": "Reads ui"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/users/impersonate/action",
+    "description": "Impersonate users"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/version/read",
+    "description": "Reads version"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/write",
+    "description": "Create or Update AI Manager"
+  },
+  {
     "action": "Microsoft.ContainerService/containerServices/delete",
     "description": "Deletes a container service"
   },
@@ -22434,6 +23558,22 @@
   {
     "action": "Microsoft.ContainerService/fleets/cluster.kubernetes-fleet.io/memberclusters/write",
     "description": "Write fleet membercluster resource"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/clusterMeshProfiles/apply/action",
+    "description": "Applies a fleet cluster mesh profile"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/clusterMeshProfiles/delete",
+    "description": "Delete a fleet cluster mesh profile"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/clusterMeshProfiles/read",
+    "description": "Get a fleet cluster mesh profile"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/clusterMeshProfiles/write",
+    "description": "Create or Update a fleet cluster mesh profile"
   },
   {
     "action": "Microsoft.ContainerService/fleets/componentstatuses/delete",
@@ -27728,10 +28868,6 @@
     "description": "Creates a server with the specified parameters or update the properties or tags for the specified server."
   },
   {
-    "action": "Microsoft.DBforPostgreSQL/performanceTiers/read",
-    "description": "Returns the list of Performance Tiers available."
-  },
-  {
     "action": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnectionProxies/delete",
     "description": "Deletes an existing private endpoint connection via proxy"
   },
@@ -27766,222 +28902,6 @@
   {
     "action": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateLinkResources/read",
     "description": "Get the private link resources for the corresponding PostgreSQL SGv2"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/administrators/delete",
-    "description": "Deletes an existing administrator of PostgreSQL server."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/administrators/read",
-    "description": "Gets a list of PostgreSQL server administrators."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/administrators/write",
-    "description": "Creates or updates PostgreSQL server administrator with the specified parameters."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/advisors/read",
-    "description": "Return the list of advisors"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/advisors/recommendedActionSessions/action",
-    "description": "Make recommendations"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/advisors/recommendedActions/read",
-    "description": "Return the list of recommended actions"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/configurations/read",
-    "description": "Return the list of configurations for a server or gets the properties for the specified configuration."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/configurations/write",
-    "description": "Update the value for the specified configuration"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/databases/delete",
-    "description": "Deletes an existing PostgreSQL Database."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/databases/read",
-    "description": "Return the list of PostgreSQL Databases or gets the properties for the specified Database."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/databases/write",
-    "description": "Creates a PostgreSQL Database with the specified parameters or update the properties for the specified Database."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/delete",
-    "description": "Deletes an existing server."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/firewallRules/delete",
-    "description": "Deletes an existing firewall rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/firewallRules/read",
-    "description": "Return the list of firewall rules for a server or gets the properties for the specified firewall rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/firewallRules/write",
-    "description": "Creates a firewall rule with the specified parameters or update an existing rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/keys/delete",
-    "description": "Deletes an existing server key."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/keys/read",
-    "description": "Return the list of server keys or gets the properties for the specified server key."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/keys/write",
-    "description": "Creates a key with the specified parameters or update the properties or tags for the specified server key."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/logFiles/read",
-    "description": "Return the list of PostgreSQL LogFiles."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/performanceTiers/read",
-    "description": "Returns the list of Performance Tiers available."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnectionProxies/delete",
-    "description": "Deletes an existing private endpoint connection proxy"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnectionProxies/read",
-    "description": "Returns the list of private endpoint connection proxies or gets the properties for the specified private endpoint connection proxy."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnectionProxies/validate/action",
-    "description": "Validates a private endpoint connection create call from NRP side"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnectionProxies/write",
-    "description": "Creates a private endpoint connection proxy with the specified parameters or updates the properties or tags for the specified private endpoint connection proxy."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/delete",
-    "description": "Deletes an existing private endpoint connection"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/read",
-    "description": "Returns the list of private endpoint connections or gets the properties for the specified private endpoint connection."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/write",
-    "description": "Approves or rejects an existing private endpoint connection"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnectionsApproval/action",
-    "description": "Determines if user is allowed to approve a private endpoint connection"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/privateLinkResources/read",
-    "description": "Get the private link resources for the corresponding PostgreSQL Server"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/queryTexts/action",
-    "description": "Return the text of a query"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/queryTexts/read",
-    "description": "Return the texts for a list of queries"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/read",
-    "description": "Return the list of servers or gets the properties for the specified server."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/recoverableServers/read",
-    "description": "Return the recoverable PostgreSQL Server info"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/replicas/read",
-    "description": "Get read replicas of a PostgreSQL server"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/resetQueryPerformanceInsightData/action",
-    "description": "Reset Query Performance Insight data"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/restart/action",
-    "description": "Restarts a specific server."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/read",
-    "description": "Retrieve details of the server threat detection policy configured on a given server"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/write",
-    "description": "Change the server threat detection policy for a given server"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/topQueryStatistics/read",
-    "description": "Return the list of Query Statistics for the top queries."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/updateConfigurations/action",
-    "description": "Update configurations for the specified server"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/delete",
-    "description": "Deletes an existing Virtual Network Rule"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/read",
-    "description": "Return the list of virtual network rules or gets the properties for the specified virtual network rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/write",
-    "description": "Creates a virtual network rule with the specified parameters or update the properties or tags for the specified virtual network rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/waitStatistics/read",
-    "description": "Return wait statistics for an instance"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/servers/write",
-    "description": "Creates a server with the specified parameters or update the properties or tags for the specified server."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/configurations/read",
-    "description": "Return the list of configurations for a server or gets the properties for the specified configuration."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/configurations/write",
-    "description": "Update the value for the specified configuration"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/delete",
-    "description": "Deletes an existing server."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/firewallRules/delete",
-    "description": "Deletes an existing firewall rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/firewallRules/read",
-    "description": "Return the list of firewall rules for a server or gets the properties for the specified firewall rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/firewallRules/write",
-    "description": "Creates a firewall rule with the specified parameters or update an existing rule."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/read",
-    "description": "Return the list of servers or gets the properties for the specified server."
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/updateConfigurations/action",
-    "description": "Update configurations for the specified server"
-  },
-  {
-    "action": "Microsoft.DBforPostgreSQL/serversv2/write",
-    "description": "Creates a server with the specified parameters or update the properties or tags for the specified server."
   },
   {
     "action": "Microsoft.Dashboard/dashboards/dashboardDefinitions/delete",
@@ -30154,6 +31074,10 @@
   {
     "action": "Microsoft.Datadog/monitors/delete",
     "description": "Delete monitors"
+  },
+  {
+    "action": "Microsoft.Datadog/monitors/getBillingInfo/action",
+    "description": "Get marketplace and organization info mapped to the given monitor"
   },
   {
     "action": "Microsoft.Datadog/monitors/getDefaultApplicationKey/action",
@@ -32840,6 +33764,10 @@
     "description": "Update a Workspace"
   },
   {
+    "action": "Microsoft.DocumentDB/cassandraClusters/commands/read",
+    "description": "Read the output of commands previously run on a managed Cassandra cluster"
+  },
+  {
     "action": "Microsoft.DocumentDB/cassandraClusters/dataCenters/delete",
     "description": "Delete a data center in a managed Cassandra cluster"
   },
@@ -34100,6 +35028,54 @@
     "description": "Unsubscribe from channels in a Garnet cluster."
   },
   {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vadd/write",
+    "description": "Add a vector to a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vcard/read",
+    "description": "Get the cardinality of a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vdim/read",
+    "description": "Get the dimension of a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vemb/read",
+    "description": "Get the embedding of a vector in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vgetattr/read",
+    "description": "Get attributes of a vector in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vinfo/read",
+    "description": "Get information about a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vismember/read",
+    "description": "Check if an element is a member of a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vlinks/read",
+    "description": "Get the links of a vector in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vrandmember/read",
+    "description": "Get a random member from a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vrem/delete",
+    "description": "Remove a vector from a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vsetattr/write",
+    "description": "Set attributes of a vector in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/vsim/read",
+    "description": "Search for similar vectors in a vector set in a Garnet cluster."
+  },
+  {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/zadd/write",
     "description": "Add members to a sorted set in a Garnet cluster."
   },
@@ -34480,6 +35456,18 @@
     "description": "Create or Update Durable Task Scheduler Task Hub"
   },
   {
+    "action": "Microsoft.DurableTask/schedulers/transparentDataEncryptions/delete",
+    "description": "Delete a Durable Task Scheduler Transparent Data Encryptiony"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/transparentDataEncryptions/read",
+    "description": "Read a Durable Task Scheduler Transparent Data Encryptiony"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/transparentDataEncryptions/write",
+    "description": "Create or Replace a Durable Task Scheduler Transparent Data Encryptiony"
+  },
+  {
     "action": "Microsoft.DurableTask/schedulers/write",
     "description": "Create or Update Durable Task Scheduler"
   },
@@ -34600,8 +35588,16 @@
     "description": "Update a Workspace."
   },
   {
+    "action": "Microsoft.Edge/configTemplates/configTemplateMetadatas/delete",
+    "description": "Delete a ConfigTemplateMetadata Resource"
+  },
+  {
     "action": "Microsoft.Edge/configTemplates/configTemplateMetadatas/read",
-    "description": "Get a ConfigTemplateMetadata Resource"
+    "description": "List by ConfigTemplate"
+  },
+  {
+    "action": "Microsoft.Edge/configTemplates/configTemplateMetadatas/write",
+    "description": "Create or update a ConfigTemplateMetadata Resource"
   },
   {
     "action": "Microsoft.Edge/configTemplates/createVersion/action",
@@ -35060,6 +36056,18 @@
     "description": "Post request to resolve configuration"
   },
   {
+    "action": "Microsoft.Edge/solutionDeployments/delete",
+    "description": "Delete a SolutionDeployment Resource"
+  },
+  {
+    "action": "Microsoft.Edge/solutionDeployments/read",
+    "description": "List by subscription"
+  },
+  {
+    "action": "Microsoft.Edge/solutionDeployments/write",
+    "description": "Create or update a SolutionDeployment Resource"
+  },
+  {
     "action": "Microsoft.Edge/solutionTemplates/createVersion/action",
     "description": "Create a Solution Template Version Resource"
   },
@@ -35341,7 +36349,7 @@
   },
   {
     "action": "Microsoft.EdgeMarketplace/publishers/read",
-    "description": "Get a Publisher"
+    "description": "List Publisher resources by parent"
   },
   {
     "action": "Microsoft.EdgeOrder/addresses/delete",
@@ -35686,6 +36694,22 @@
   {
     "action": "Microsoft.EnterpriseSupport/services/write",
     "description": "Writes EnterpriseSupport resources"
+  },
+  {
+    "action": "Microsoft.EnterpriseSupport/supportPlans/cancel/action",
+    "description": "Cancels a Support Plan"
+  },
+  {
+    "action": "Microsoft.EnterpriseSupport/supportPlans/delete",
+    "description": "Deletes Support Plan resources"
+  },
+  {
+    "action": "Microsoft.EnterpriseSupport/supportPlans/read",
+    "description": "Reads Support Plan resources"
+  },
+  {
+    "action": "Microsoft.EnterpriseSupport/supportPlans/write",
+    "description": "Writes Support Plan resources"
   },
   {
     "action": "Microsoft.EventGrid/domains/PrivateEndpointConnectionsApproval/action",
@@ -37373,7 +38397,7 @@
   },
   {
     "action": "Microsoft.HardwareSecurityModules/cloudHsmClusters/privateLinkResources/read",
-    "description": "Get the available private link resources of an existing CloudHsm"
+    "description": "Get the available private link resources of an existing Hsm"
   },
   {
     "action": "Microsoft.HardwareSecurityModules/cloudHsmClusters/read",
@@ -39178,6 +40202,22 @@
   {
     "action": "Microsoft.Impact/WorkloadImpacts/Write",
     "description": "Writes WorkloadImpacts"
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/delete",
+    "description": "Deletes an inference service."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/invoke/semanticReranker/action",
+    "description": "Invokes the semantic reranker on an inference account."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/read",
+    "description": "Reads an inference service."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/write",
+    "description": "Creates or updates an inference service."
   },
   {
     "action": "Microsoft.Insights/ActionGroups/Delete",
@@ -44130,6 +45170,18 @@
   {
     "action": "Microsoft.LoadTestService/testProfiles/write",
     "description": "Write Test Profiles"
+  },
+  {
+    "action": "Microsoft.Logic/automationProjects/applications/delete",
+    "description": "Deletes the automation project application."
+  },
+  {
+    "action": "Microsoft.Logic/automationProjects/applications/read",
+    "description": "Reads the automation project application."
+  },
+  {
+    "action": "Microsoft.Logic/automationProjects/applications/write",
+    "description": "Writes the automation project application."
   },
   {
     "action": "Microsoft.Logic/automationProjects/delete",
@@ -49364,6 +50416,10 @@
     "description": "List user/group quota report for the volume."
   },
   {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listRemoteCaches/action",
+    "description": "List remote caches associated with the volume."
+  },
+  {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listReplications/action",
     "description": "A list of replications"
   },
@@ -49426,6 +50482,10 @@
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/resetCifsPassword/action",
     "description": "Reset cifs password from specific volume."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/resetSmbPassword/action",
+    "description": "Reset SMB password for a specific volume."
   },
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/restoreStatus/read",
@@ -49656,6 +50716,10 @@
     "description": "Get AppProtect policy attached to application gateway resource"
   },
   {
+    "action": "Microsoft.Network/applicationGateways/applicationGatewayHealth/action",
+    "description": "Gets an application gateway resource health"
+  },
+  {
     "action": "Microsoft.Network/applicationGateways/backendAddressPools/join/action",
     "description": "Joins an application gateway backend address pool. Not Alertable."
   },
@@ -49756,6 +50820,18 @@
     "description": "Creates an application gateway or updates an application gateway"
   },
   {
+    "action": "Microsoft.Network/applicationSecurityGroups/addressPrefixSets/delete",
+    "description": "Deletes an Address Prefix Set"
+  },
+  {
+    "action": "Microsoft.Network/applicationSecurityGroups/addressPrefixSets/read",
+    "description": "Gets an Address Prefix Set"
+  },
+  {
+    "action": "Microsoft.Network/applicationSecurityGroups/addressPrefixSets/write",
+    "description": "Creates an address prefix set or updates an existing address prefix set"
+  },
+  {
     "action": "Microsoft.Network/applicationSecurityGroups/delete",
     "description": "Deletes an Application Security Group"
   },
@@ -49768,6 +50844,10 @@
     "description": "Joins a Security Rule to Application Security Groups. Not alertable."
   },
   {
+    "action": "Microsoft.Network/applicationSecurityGroups/listAddressPrefixSets/action",
+    "description": "Lists address prefix sets in an application security group"
+  },
+  {
     "action": "Microsoft.Network/applicationSecurityGroups/listIpConfigurations/action",
     "description": "Lists IP Configurations in the ApplicationSecurityGroup"
   },
@@ -49778,6 +50858,38 @@
   {
     "action": "Microsoft.Network/applicationSecurityGroups/write",
     "description": "Creates an Application Security Group, or updates an existing Application Security Group."
+  },
+  {
+    "action": "Microsoft.Network/authenticationPolicies/delete",
+    "description": "Delete Authentication Policy"
+  },
+  {
+    "action": "Microsoft.Network/authenticationPolicies/join/action",
+    "description": "Join Authentication Policy"
+  },
+  {
+    "action": "Microsoft.Network/authenticationPolicies/read",
+    "description": "Get Authentication Policies"
+  },
+  {
+    "action": "Microsoft.Network/authenticationPolicies/write",
+    "description": "Create or update Authentication Policy"
+  },
+  {
+    "action": "Microsoft.Network/authorizationPolicies/delete",
+    "description": "Delete Authorization Policy"
+  },
+  {
+    "action": "Microsoft.Network/authorizationPolicies/join/action",
+    "description": "Join Authorization Policy"
+  },
+  {
+    "action": "Microsoft.Network/authorizationPolicies/read",
+    "description": "Get Authorization Policies"
+  },
+  {
+    "action": "Microsoft.Network/authorizationPolicies/write",
+    "description": "Create or update Authorization Policy"
   },
   {
     "action": "Microsoft.Network/azureFirewallFqdnTags/read",
@@ -50380,6 +51492,10 @@
     "description": "Gets an ExpressRouteCircuit Authorization with Authorization Key"
   },
   {
+    "action": "Microsoft.Network/expressRouteCircuits/authorizations/listkeys/action",
+    "description": "Get an Authorization Key for ExpressRouteCircuit Authorization"
+  },
+  {
     "action": "Microsoft.Network/expressRouteCircuits/authorizations/read",
     "description": "Get an ExpressRouteCircuit Authorization"
   },
@@ -50466,6 +51582,10 @@
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/delete",
     "description": "Delete Express Route Cross Connection"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteCrossConnections/deprovisionConnection/action",
+    "description": "Express Route Deprovision Multi Cloud Connection"
   },
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/features/delete",
@@ -50556,8 +51676,40 @@
     "description": "Create or Update Express Route Gateway"
   },
   {
+    "action": "Microsoft.Network/expressRouteLags/authorizations/delete",
+    "description": "Deletes an ExpressRouteLagAuthorization"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteLags/authorizations/listkeys/action",
+    "description": "Get an AuthorizationKey for ExpressRouteLagAuthorization"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteLags/authorizations/read",
+    "description": "Gets ExpressRouteLagAuthorization"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteLags/authorizations/write",
+    "description": "Create or Update ExpressRouteLagAuthorization"
+  },
+  {
     "action": "Microsoft.Network/expressRouteLags/delete",
     "description": "Deletes ExpressRouteLag"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteLags/generateloa/action",
+    "description": "Generates LOA for ExpressRouteLag"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteLags/join/action",
+    "description": "Joins ExpressRouteLag"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteLags/links/members/read",
+    "description": "Gets ExpressRouteLagMember"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteLags/links/read",
+    "description": "Gets ExpressRouteLagLink"
   },
   {
     "action": "Microsoft.Network/expressRouteLags/read",
@@ -50582,6 +51734,10 @@
   {
     "action": "Microsoft.Network/expressRoutePorts/authorizations/getAuthorization/action",
     "description": "Get Express Route Ports Authorization with Authorization Key"
+  },
+  {
+    "action": "Microsoft.Network/expressRoutePorts/authorizations/listkeys/action",
+    "description": "Get an Authorization Key for Express Route Ports Authorization"
   },
   {
     "action": "Microsoft.Network/expressRoutePorts/authorizations/read",
@@ -50702,6 +51858,18 @@
   {
     "action": "Microsoft.Network/firewallPolicies/write",
     "description": "Creates a Firewall Policy or Updates an existing Firewall Policy"
+  },
+  {
+    "action": "Microsoft.Network/firstPartyServiceTags/delete",
+    "description": "Delete First Party Service Tag"
+  },
+  {
+    "action": "Microsoft.Network/firstPartyServiceTags/read",
+    "description": "Get First Party Service Tag"
+  },
+  {
+    "action": "Microsoft.Network/firstPartyServiceTags/write",
+    "description": "Create or Update First Party Service Tag"
   },
   {
     "action": "Microsoft.Network/frontDoorWebApplicationFirewallManagedRuleSets/read",
@@ -51844,14 +53012,6 @@
     "description": "Deletes a Network Watcher Agent"
   },
   {
-    "action": "Microsoft.Network/networkWatchers/agents/deregister/action",
-    "description": "Deregisters a Network Watcher Agent"
-  },
-  {
-    "action": "Microsoft.Network/networkWatchers/agents/fetchRegistrationInfo/action",
-    "description": "Fetch Network Watcher Agent Registration detail"
-  },
-  {
     "action": "Microsoft.Network/networkWatchers/agents/read",
     "description": "Get Network Watcher Agent Detail"
   },
@@ -52538,6 +53698,10 @@
   {
     "action": "Microsoft.Network/trafficManagerProfiles/read",
     "description": "Get the Traffic Manager profile configuration. This includes DNS settings, traffic routing settings, endpoint monitoring settings, and the list of endpoints routed by this Traffic Manager profile."
+  },
+  {
+    "action": "Microsoft.Network/trafficManagerProfiles/validateLink/action",
+    "description": "Establishes a link between a DNS record and a Traffic Manager Profile so that the traffic manager profile can't be removed while it is being referenced by the dns record"
   },
   {
     "action": "Microsoft.Network/trafficManagerProfiles/write",
@@ -55136,6 +56300,10 @@
     "description": "Read data from the ADFTriggerRun table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ADGSyslogEvent/read",
+    "description": "Read data from the ADGSyslogEvent table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/ADReplicationResult/read",
     "description": "Read data from the ADReplicationResult table"
   },
@@ -55288,6 +56456,10 @@
     "description": "Read data from the ALBHealthEvent table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AMAHealth/read",
+    "description": "Read data from the AMAHealth table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/AMSKeyDeliveryRequests/read",
     "description": "Read data from the AMSKeyDeliveryRequests table"
   },
@@ -55310,6 +56482,22 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/ANFFileAccess/read",
     "description": "Read data from the ANFFileAccess table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ANFTopClientReadIOPS/read",
+    "description": "Read data from the ANFTopClientReadIOPS table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ANFTopClientWriteIOPS/read",
+    "description": "Read data from the ANFTopClientWriteIOPS table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ANFTopFileReadIOPS/read",
+    "description": "Read data from the ANFTopFileReadIOPS table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ANFTopFileWriteIOPS/read",
+    "description": "Read data from the ANFTopFileWriteIOPS table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/AOIDatabaseQuery/read",
@@ -55368,8 +56556,16 @@
     "description": "Read data from the ASRv2ReplicationVaults table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ASimAgentEventLogs/read",
+    "description": "Read data from the ASimAgentEventLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/ASimAlertEventLogs/read",
     "description": "Read data from the ASimAlertEventLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ASimAssetEntityLogs/read",
+    "description": "Read data from the ASimAssetEntityLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/ASimAuditEventLogs/read",
@@ -56028,6 +57224,42 @@
     "description": "Read data from the AzureMonitorPipelineLogErrors table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLAutomaticTuning/read",
+    "description": "Read data from the AzureSQLAutomaticTuning table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLBlocks/read",
+    "description": "Read data from the AzureSQLBlocks table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLDatabaseWaitStatistics/read",
+    "description": "Read data from the AzureSQLDatabaseWaitStatistics table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLDeadlocks/read",
+    "description": "Read data from the AzureSQLDeadlocks table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLErrors/read",
+    "description": "Read data from the AzureSQLErrors table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLQueryStoreRuntimeStatistics/read",
+    "description": "Read data from the AzureSQLQueryStoreRuntimeStatistics table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLQueryStoreWaitStatistics/read",
+    "description": "Read data from the AzureSQLQueryStoreWaitStatistics table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLResourceUsageStats/read",
+    "description": "Read data from the AzureSQLResourceUsageStats table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AzureSQLTimeouts/read",
+    "description": "Read data from the AzureSQLTimeouts table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/BehaviorAnalytics/read",
     "description": "Read data from the BehaviorAnalytics table"
   },
@@ -56124,8 +57356,24 @@
     "description": "Read data from the CloudAppEvents table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/CloudAuditEvents/read",
+    "description": "Read data from the CloudAuditEvents table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/CloudDnsEvents/read",
+    "description": "Read data from the CloudDnsEvents table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/CloudHsmServiceOperationAuditLogs/read",
     "description": "Read data from the CloudHsmServiceOperationAuditLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/CloudProcessEvents/read",
+    "description": "Read data from the CloudProcessEvents table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/CloudStorageAggregatedEvents/read",
+    "description": "Read data from the CloudStorageAggregatedEvents table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/CommonSecurityLog/read",
@@ -56588,6 +57836,10 @@
     "description": "Read data from the DeviceCustomProcessEvents table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/DeviceCustomRegistryEvents/read",
+    "description": "Read data from the DeviceCustomRegistryEvents table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/DeviceCustomScriptEvents/read",
     "description": "Read data from the DeviceCustomScriptEvents table"
   },
@@ -56674,6 +57926,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/DeviceTvmSoftwareVulnerabilitiesKB/read",
     "description": "Read data from the DeviceTvmSoftwareVulnerabilitiesKB table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/DisruptionAndResponseEvents/read",
+    "description": "Read data from the DisruptionAndResponseEvents table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/DnsAuditEvents/read",
@@ -57024,8 +58280,16 @@
     "description": "Read data from the HuntingBookmark table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/IdentityAccountInfo/read",
+    "description": "Read data from the IdentityAccountInfo table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/IdentityDirectoryEvents/read",
     "description": "Read data from the IdentityDirectoryEvents table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/IdentityEvents/read",
+    "description": "Read data from the IdentityEvents table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/IdentityInfo/read",
@@ -57308,6 +58572,18 @@
     "description": "Read data from the MeshControlPlane table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/MessageEvents/read",
+    "description": "Read data from the MessageEvents table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/MessagePostDeliveryEvents/read",
+    "description": "Read data from the MessagePostDeliveryEvents table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/MessageUrlInfo/read",
+    "description": "Read data from the MessageUrlInfo table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/MicrosoftAzureBastionAuditLogs/read",
     "description": "Read data from the MicrosoftAzureBastionAuditLogs table"
   },
@@ -57326,6 +58602,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/MicrosoftGraphActivityLogs/read",
     "description": "Read data from the MicrosoftGraphActivityLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/MicrosoftGraphPolicyLogs/read",
+    "description": "Read data from the MicrosoftGraphPolicyLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/MicrosoftHealthcareApisAuditLogs/read",
@@ -57482,6 +58762,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/NginxUpstreamUpdateLogs/read",
     "description": "Read data from the NginxUpstreamUpdateLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/OAuthAppInfo/read",
+    "description": "Read data from the OAuthAppInfo table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/OEPAirFlowTask/read",
@@ -57786,6 +59070,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/SecurityBaselineSummary/read",
     "description": "Read data from the SecurityBaselineSummary table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/SecurityCaseEvent/read",
+    "description": "Read data from the SecurityCaseEvent table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/SecurityDetection/read",
@@ -58336,6 +59624,10 @@
     "description": "Read data from the WorkloadMonitoringPerf table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ZTSJobStatus/read",
+    "description": "Read data from the ZTSJobStatus table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/ZTSRequest/read",
     "description": "Read data from the ZTSRequest table"
   },
@@ -58478,6 +59770,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/tables/migrate/action",
     "description": "Migrating a log analytics V1 table to V2 variation."
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/tables/protectionLevel/write",
+    "description": "Set or change the protection level of a Log Analytics table."
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/tables/query/read",
@@ -59640,6 +60936,14 @@
     "description": "Remove the backup cross-tenant vault mapping."
   },
   {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/vaultCredentials/generate/action",
+    "description": "Retrieves the cross-tenant vault mapping."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/vaultCredentials/operationStatus/read",
+    "description": "Retrieves the cross-tenant vault mapping."
+  },
+  {
     "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/write",
     "description": "Create a backup cross-tenant vault mapping."
   },
@@ -60746,6 +62050,10 @@
   {
     "action": "Microsoft.Relay/namespaces/write",
     "description": "Create a Namespace Resource and Update its properties. Tags and Capacity of the Namespace are the properties which can be updated."
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/registeredSubscriptions/read",
+    "description": "read registeredSubscriptions"
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/dataConnections/delete",
@@ -62376,12 +63684,24 @@
     "description": "Change the rule baseline result."
   },
   {
+    "action": "Microsoft.Security/sqlVulnerabilityAssessments/delete",
+    "description": "Delete SQL Vulnerability Assessment settings."
+  },
+  {
+    "action": "Microsoft.Security/sqlVulnerabilityAssessments/read",
+    "description": "Get SQL Vulnerability Assessment settings."
+  },
+  {
     "action": "Microsoft.Security/sqlVulnerabilityAssessments/scans/read",
     "description": "Return the list of vulnerability assessment scan records or get the scan record for the specified scan ID."
   },
   {
     "action": "Microsoft.Security/sqlVulnerabilityAssessments/scans/scanResults/read",
     "description": "Return the list of vulnerability assessment rule results or get the rule result for the specified rule ID."
+  },
+  {
+    "action": "Microsoft.Security/sqlVulnerabilityAssessments/write",
+    "description": "Create or update SQL Vulnerability Assessment settings."
   },
   {
     "action": "Microsoft.Security/standardAssignments/delete",
@@ -63764,6 +65084,42 @@
     "description": "Create or update an Application Gateway for Containers Frontend resource"
   },
   {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnectionProxies/delete",
+    "description": "Delete an Application Gateway for Containers Private Endpoint Connection Proxy resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnectionProxies/read",
+    "description": "Get an Application Gateway for Containers Private Endpoint Connection Proxy resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnectionProxies/updatePrivateEndpointProperties/action",
+    "description": "Update Private Endpoint Properties of an Application Gateway for Containers Private Endpoint Connection Proxy resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnectionProxies/validate/action",
+    "description": "Validate an Application Gateway for Containers Private Endpoint Connection Proxy resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnectionProxies/write",
+    "description": "Create or update an Application Gateway for Containers Private Endpoint Connection Proxy resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnections/delete",
+    "description": "Delete an Application Gateway for Containers Private Endpoint Connection resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnections/read",
+    "description": "Get an Application Gateway for Containers Private Endpoint Connection resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateEndpointConnections/write",
+    "description": "Create or update an Application Gateway for Containers Private Endpoint Connection resource"
+  },
+  {
+    "action": "Microsoft.ServiceNetworking/trafficControllers/privateLinkResources/read",
+    "description": "Get an Application Gateway for Containers Private Link Resource"
+  },
+  {
     "action": "Microsoft.ServiceNetworking/trafficControllers/read",
     "description": "Get an Application Gateway for Containers resource"
   },
@@ -64046,6 +65402,46 @@
   {
     "action": "Microsoft.SignalRService/WebPubSub/auth/accessToken/action",
     "description": "Generate an AccessToken for client to connect to AWPS, the token will expire in 5 minutes by default"
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/conversation/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/conversation/write",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/message/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/message/write",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/role/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/role/write",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/room/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/room/write",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/user/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.SignalRService/WebPubSub/chat/user/write",
+    "description": ""
   },
   {
     "action": "Microsoft.SignalRService/WebPubSub/clientConnection/generateToken/action",
@@ -64394,6 +65790,38 @@
   {
     "action": "Microsoft.SoftwarePlan/softwareLicenses/write",
     "description": "Create or Update any software license"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/cancel/action",
+    "description": "Cancel any software perpetual product"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/delete",
+    "description": "Delete any software perpetual product"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/productDownloadOptions/generateDownloadLinks/action",
+    "description": "Generate Product Download Links of a Software Perpetual Product"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/productDownloadOptions/read",
+    "description": "List Product Download Options of a Software Perpetual Product"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/productKeys/read",
+    "description": "List Product Keys of a software perpetual product"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/productKeys/showFullKey/action",
+    "description": "Provide Full 5x5 Key of a Product Key of a Software Perpetual Product"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/read",
+    "description": "Read any software perpetual product"
+  },
+  {
+    "action": "Microsoft.SoftwarePlan/softwarePerpetualProducts/write",
+    "description": "Create or Update any software perpetual product"
   },
   {
     "action": "Microsoft.SoftwarePlan/softwareSubscriptions/cancel/action",
@@ -64997,7 +66425,7 @@
   },
   {
     "action": "Microsoft.Sql/managedInstances/refreshExternalGovernanceStatus/action",
-    "description": "Refreshes external governance enablemement status"
+    "description": "Refreshes external governance enablement status"
   },
   {
     "action": "Microsoft.Sql/managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies/read",
@@ -65965,7 +67393,7 @@
   },
   {
     "action": "Microsoft.Sql/servers/jobAgents/jobs/executions/steps/targets/read",
-    "description": "Get a target executoin"
+    "description": "Get a target execution"
   },
   {
     "action": "Microsoft.Sql/servers/jobAgents/jobs/executions/targets/read",
@@ -66141,7 +67569,7 @@
   },
   {
     "action": "Microsoft.Sql/servers/refreshExternalGovernanceStatus/action",
-    "description": "Refreshes external governance enablemement status"
+    "description": "Refreshes external governance enablement status"
   },
   {
     "action": "Microsoft.Sql/servers/replicationLinks/read",
@@ -66213,7 +67641,7 @@
   },
   {
     "action": "Microsoft.Sql/servers/syncAgents/generateKey/action",
-    "description": "Generate sync agent registeration key"
+    "description": "Generate sync agent registration key"
   },
   {
     "action": "Microsoft.Sql/servers/syncAgents/linkedDatabases/read",
@@ -66838,6 +68266,10 @@
   {
     "action": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/updatePrivateEndpointProperties/action",
     "description": "Update storage account private endpoint properties"
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/validate/action",
+    "description": "Validate Private Endpoint Connection Proxies"
   },
   {
     "action": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/write",
@@ -67694,6 +69126,10 @@
   {
     "action": "Microsoft.Subscription/subscriptions/changeTenantStatus/read",
     "description": "Change tenant status of the Subscription"
+  },
+  {
+    "action": "Microsoft.SupercomputerInfrastructure/registeredSubscriptions/read",
+    "description": "read registeredSubscriptions"
   },
   {
     "action": "Microsoft.SupercomputerInfrastructure/supercomputers/clusters/read",
@@ -68896,10 +70332,6 @@
     "description": "Set Project"
   },
   {
-    "action": "Microsoft.VoiceServices/Accounts/Read",
-    "description": "Read Accounts"
-  },
-  {
     "action": "Microsoft.Web/Sites/joinPerimeter/action",
     "description": "Determines if a user is allowed to associate an Azure Web App with a Network Security Perimeter."
   },
@@ -68922,66 +70354,6 @@
   {
     "action": "Microsoft.Web/Sites/networkSecurityPerimeterConfigurations/read",
     "description": "Get Web App Network Security Perimeter Configurations."
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/connections/action",
-    "description": "Perform an action on an AI Gateway Connection"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/connections/delete",
-    "description": "Delete an existing AI Gateway Connection"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/connections/read",
-    "description": "Gets the properties of an AI Gateway Connection"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/connections/write",
-    "description": "Creates a new AI Gateway Connection or updates an existing one"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/delete",
-    "description": "Deletes an existing AI Gateway"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/mcpserverconfigs/action",
-    "description": "Perform an action on an AI Gateway MCP Server Config"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/mcpserverconfigs/delete",
-    "description": "Delete an existing AI Gateway MCP Server Config"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/mcpserverconfigs/read",
-    "description": "Get the properties of an AI Gateway MCP Server Config"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/mcpserverconfigs/write",
-    "description": "Create a new AI Gateway MCP Server Config or update an existing one"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/read",
-    "description": "Gets the properties of an AI Gateway"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/triggerconfigs/action",
-    "description": "Perform an action on an AI Gateway Trigger Config"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/triggerconfigs/delete",
-    "description": "Delete an existing AI Gateway Trigger Config"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/triggerconfigs/read",
-    "description": "Get the properties of an AI Gateway Trigger Config"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/triggerconfigs/write",
-    "description": "Create a new AI Gateway Trigger Config or update an existing one"
-  },
-  {
-    "action": "Microsoft.Web/aiGateways/write",
-    "description": "Creates a new AI Gateway or updates an existing one"
   },
   {
     "action": "Microsoft.Web/certificates/Delete",
@@ -69054,6 +70426,98 @@
   {
     "action": "Microsoft.Web/connections/accessPolicies/Write",
     "description": "Add or Update Connection Access Policies."
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/accessPolicies/action",
+    "description": "Performs an action on a Connector Gateway Connection Access Policy"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/accessPolicies/delete",
+    "description": "Deletes an existing Connector Gateway Connection Access Policy"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/accessPolicies/read",
+    "description": "Gets the properties of a Connector Gateway Connection Access Policy"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/accessPolicies/write",
+    "description": "Creates a new Connector Gateway Connection Access Policy or updates an existing one"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/action",
+    "description": "Perform an action on an Connector Gateway Connection"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/delete",
+    "description": "Delete an existing Connector Gateway Connection"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/read",
+    "description": "Gets the properties of an Connector Gateway Connection"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/connections/write",
+    "description": "Creates a new Connector Gateway Connection or updates an existing one"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/customConnectors/action",
+    "description": "Performs an action on a Connector Gateway Custom Connector"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/customConnectors/delete",
+    "description": "Deletes an existing Connector Gateway Custom Connector"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/customConnectors/read",
+    "description": "Gets the properties of a Connector Gateway Custom Connector"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/customConnectors/write",
+    "description": "Creates a new Connector Gateway Custom Connector or updates an existing one"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/delete",
+    "description": "Deletes an existing Connector Gateway"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/mcpserverconfigs/action",
+    "description": "Perform an action on an Connector Gateway MCP Server Config"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/mcpserverconfigs/delete",
+    "description": "Delete an existing Connector Gateway MCP Server Config"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/mcpserverconfigs/read",
+    "description": "Get the properties of an Connector Gateway MCP Server Config"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/mcpserverconfigs/write",
+    "description": "Create a new Connector Gateway MCP Server Config or update an existing one"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/read",
+    "description": "Gets the properties of an Connector Gateway"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/triggerconfigs/action",
+    "description": "Perform an action on an Connector Gateway Trigger Config"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/triggerconfigs/delete",
+    "description": "Delete an existing Connector Gateway Trigger Config"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/triggerconfigs/read",
+    "description": "Get the properties of an Connector Gateway Trigger Config"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/triggerconfigs/write",
+    "description": "Create a new Connector Gateway Trigger Config or update an existing one"
+  },
+  {
+    "action": "Microsoft.Web/connectorGateways/write",
+    "description": "Creates a new Connector Gateway or updates an existing one"
   },
   {
     "action": "Microsoft.Web/containerApps/delete",
@@ -70640,6 +72104,18 @@
     "description": "Update a ResourceAnchor"
   },
   {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/delete",
+    "description": "Delete a CustomCaptureConfigurations resource"
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/read",
+    "description": "Get a CustomCaptureConfigurations resource"
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/write",
+    "description": "Create or update a CustomCaptureConfigurations resource (start a packet capture)"
+  },
+  {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/delete",
     "description": "Delete a FirewallResource"
   },
@@ -71704,6 +73180,10 @@
     "description": "Get a Managed Environment"
   },
   {
+    "action": "microsoft.app/managedenvironments/runsupportcheck/action",
+    "description": "Initiates a diagnostic support check on the environment"
+  },
+  {
     "action": "microsoft.app/managedenvironments/storages/delete",
     "description": "Delete a storage of Managed Environment."
   },
@@ -71714,6 +73194,14 @@
   {
     "action": "microsoft.app/managedenvironments/storages/write",
     "description": "Create or Update a storage of Managed Environment."
+  },
+  {
+    "action": "microsoft.app/managedenvironments/supportcheckoperations/read",
+    "description": "Gets the status and result of a support check operation"
+  },
+  {
+    "action": "microsoft.app/managedenvironments/supportchecks/read",
+    "description": "Lists available support check types for the environment"
   },
   {
     "action": "microsoft.app/managedenvironments/workloadprofilestates/read",
