@@ -1200,6 +1200,18 @@
     "description": "Validates move resource request"
   },
   {
+    "action": "Microsoft.ApiCenter/services/workspaces/agentEvaluationConfigurations/delete",
+    "description": "Deletes specified agent evaluation configuration."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agentEvaluationConfigurations/read",
+    "description": "Checks if specified agent evaluation configuration exists"
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/agentEvaluationConfigurations/write",
+    "description": "Creates or updates specified agent evaluation configuration."
+  },
+  {
     "action": "Microsoft.ApiCenter/services/workspaces/agents/delete",
     "description": "Deletes specified agent."
   },
@@ -3420,6 +3432,10 @@
     "description": "Delete an artifact app resource"
   },
   {
+    "action": "Microsoft.App/artifactApps/listSecrets/action",
+    "description": "List the resolved secrets of an artifact app"
+  },
+  {
     "action": "Microsoft.App/artifactApps/read",
     "description": "Get an artifact app resource"
   },
@@ -3442,6 +3458,10 @@
   {
     "action": "Microsoft.App/artifacts/delete",
     "description": "Delete an artifact resource"
+  },
+  {
+    "action": "Microsoft.App/artifacts/listSecrets/action",
+    "description": "List the resolved secrets of an artifact"
   },
   {
     "action": "Microsoft.App/artifacts/read",
@@ -3474,6 +3494,10 @@
   {
     "action": "Microsoft.App/managedEnvironments/privateEndpointConnectionsApproval/action",
     "description": "Approve Private Endpoint Connections"
+  },
+  {
+    "action": "Microsoft.App/quotaPolicy/write",
+    "description": "Request a quota increase for a subscription"
   },
   {
     "action": "Microsoft.App/sandboxGroups/agentIdentities/delete",
@@ -9094,6 +9118,10 @@
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/SecuritySettings/Read",
     "description": "Gets EdgeMachine SecuritySettings"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/SecuritySettings/Refresh/Action",
+    "description": "Triggers an on-demand sync of EdgeMachine SecuritySettings compliance status from Guest Configuration RP."
   },
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/SecuritySettings/Write",
@@ -32940,6 +32968,34 @@
     "description": "Creates or updates a Device Update Account"
   },
   {
+    "action": "Microsoft.DeviceUpdate/linkedAccounts/delete",
+    "description": "Deletes a Linked Account"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkInitiate/action",
+    "description": "Initiate account linking. Validates and persists binding, sets linkingState to InProgress"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkNotify/action",
+    "description": "Notify linking state change (commit, fail, or namespaceDeleted)"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkPreflight/action",
+    "description": "Preflight check for account linking readiness. No state change"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkUpdate/action",
+    "description": "Update linking properties (e.g., identity rotation)"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/linkedAccounts/read",
+    "description": "Returns the list of Linked Accounts"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/linkedAccounts/write",
+    "description": "Creates or updates a Linked Account"
+  },
+  {
     "action": "Microsoft.DeviceUpdate/registeredSubscriptions/read",
     "description": "Reads registered subscriptions"
   },
@@ -39328,6 +39384,98 @@
     "description": "This role can create, read, continue and restart a troubleshooter."
   },
   {
+    "action": "Microsoft.HorizonDb/clusters/delete",
+    "description": "Deletes an existing HorizonDb cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/effectiveParameters/read",
+    "description": "Gets the effective (parameter group merged with per-cluster overrides) parameter set for a HorizonDb cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/delete",
+    "description": "Deletes an existing HorizonDb pool."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/firewallRules/delete",
+    "description": "Deletes an existing HorizonDb firewall rule."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/firewallRules/read",
+    "description": "Gets the properties for the specified HorizonDb firewall rule."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/firewallRules/write",
+    "description": "Creates or updates a HorizonDb firewall rule with the specified parameters."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/replicas/delete",
+    "description": "Deletes an existing HorizonDb replica."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/replicas/read",
+    "description": "Gets the properties for the specified HorizonDb replica."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/replicas/write",
+    "description": "Creates or updates a HorizonDb replica with the specified parameters."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/write",
+    "description": "Creates or updates a HorizonDb pool with the specified parameters."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/delete",
+    "description": "Deletes an existing HorizonDb private endpoint connection proxy."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/read",
+    "description": "Returns the properties for the specified HorizonDb private endpoint connection proxy."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/validate/action",
+    "description": "Validates a HorizonDb private endpoint connection proxy creation request from NRP."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/write",
+    "description": "Creates or updates a HorizonDb private endpoint connection proxy."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/read",
+    "description": "Lists all HorizonDb clusters in the subscription."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/systemAiModels/delete",
+    "description": "Deletes an existing System AI Model."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/systemAiModels/read",
+    "description": "Gets the properties for the specified System AI Model."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/write",
+    "description": "Creates a HorizonDb cluster with the specified parameters or update the properties or tags for the specified cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/parameterGroups/connections/read",
+    "description": "Gets the clusters connected to a HorizonDb parameter group."
+  },
+  {
+    "action": "Microsoft.HorizonDb/parameterGroups/delete",
+    "description": "Deletes an existing HorizonDb parameter group."
+  },
+  {
+    "action": "Microsoft.HorizonDb/parameterGroups/read",
+    "description": "Lists all HorizonDb parameter groups in the subscription."
+  },
+  {
+    "action": "Microsoft.HorizonDb/parameterGroups/versions/read",
+    "description": "Gets the versions of a HorizonDb parameter group."
+  },
+  {
+    "action": "Microsoft.HorizonDb/parameterGroups/write",
+    "description": "Creates or updates a HorizonDb parameter group with the specified parameters."
+  },
+  {
     "action": "Microsoft.HybridCompute/gateways/delete",
     "description": "Deletes an Azure Arc gateways"
   },
@@ -39557,63 +39705,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "List the endpoint access credentials to the resource."
+    "description": "Gets the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "List the ingress gateway access credentials to the resource."
+    "description": "Gets the ingress gateway endpoint credentials "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "List the managed proxy details to the resource."
+    "description": "Fetches the managed proxy details "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Get or list of endpoints to the target resource."
+    "description": "Gets the endpoint to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the serviceConfigurations access to the endpoints resource."
+    "description": "Deletes the service details to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Get or list of serviceConfigurations to the endpoints resource."
+    "description": "Gets the details about the service to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Create or update the serviceConfigurations to the endpoints resource."
+    "description": "Update the service details in the service configurations of the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Create or update the endpoint to the target resource."
+    "description": "Update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Deletes the public cloud connectors resource."
+    "description": "Delete a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Gets the public cloud connectors."
+    "description": "Get a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "Tests the permissions of solution configurations under public cloud connector."
+    "description": "A long-running resource action."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update the public cloud connectors resource."
+    "description": "Update a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Deletes the solution configuration with provided solution name."
+    "description": "Delete a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Retrieve a list of inventory by solution name."
+    "description": "Get a InventoryResource"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Retrieve the solution configuration identified by solution name."
+    "description": "Get a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -39621,11 +39769,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Updates the solution configuration for solution name."
+    "description": "Update a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Retrieve the solution type by provided solution type."
+    "description": "Get a SolutionTypeResource"
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -45188,6 +45336,14 @@
     "description": "Deletes the automation project."
   },
   {
+    "action": "Microsoft.Logic/automationProjects/principals/read",
+    "description": "Reads the automation project principal."
+  },
+  {
+    "action": "Microsoft.Logic/automationProjects/principals/write",
+    "description": "Writes the automation project principal."
+  },
+  {
     "action": "Microsoft.Logic/automationProjects/read",
     "description": "Reads the automation project."
   },
@@ -49894,6 +50050,10 @@
   {
     "action": "Microsoft.Mission/communities/setMaintenanceMode/action",
     "description": "Set Maintenance Mode on a Community."
+  },
+  {
+    "action": "Microsoft.Mission/communities/syncCommunityEndpoints/action",
+    "description": "Sync community endpoints to this community."
   },
   {
     "action": "Microsoft.Mission/communities/transitHubs/delete",
@@ -57404,6 +57564,10 @@
     "description": "Read data from the ContainerAppConsoleLogs table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ContainerAppHTTPLogs/read",
+    "description": "Read data from the ContainerAppHTTPLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/ContainerAppSystemLogs/read",
     "description": "Read data from the ContainerAppSystemLogs table"
   },
@@ -57928,6 +58092,18 @@
     "description": "Read data from the DeviceTvmSoftwareVulnerabilitiesKB table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/DiscoveryBookshelfAuditLogs/read",
+    "description": "Read data from the DiscoveryBookshelfAuditLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/DiscoverySupercomputerAuditLogs/read",
+    "description": "Read data from the DiscoverySupercomputerAuditLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/DiscoveryWorkspaceAuditLogs/read",
+    "description": "Read data from the DiscoveryWorkspaceAuditLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/DisruptionAndResponseEvents/read",
     "description": "Read data from the DisruptionAndResponseEvents table"
   },
@@ -58138,6 +58314,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/GoogleWorkspaceReports/read",
     "description": "Read data from the GoogleWorkspaceReports table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/GraphNotificationsActivityLogs/read",
+    "description": "Read data from the GraphNotificationsActivityLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/HDInsightAmbariClusterAlerts/read",
@@ -71790,6 +71970,30 @@
   {
     "action": "NGINX.NGINXPLUS/nginxDeployments/wafPolicies/Write",
     "description": "Write wafPolicies"
+  },
+  {
+    "action": "Napster.CompanionAPI/organizations/delete",
+    "description": "Delete a OrganizationResource"
+  },
+  {
+    "action": "Napster.CompanionAPI/organizations/latestLinkedSaaS/action",
+    "description": "Returns the latest SaaS linked to the Napster organization of the underlying monitor."
+  },
+  {
+    "action": "Napster.CompanionAPI/organizations/linkSaaS/action",
+    "description": "Links a new SaaS to the Napster organization of the underlying monitor."
+  },
+  {
+    "action": "Napster.CompanionAPI/organizations/read",
+    "description": "Get a OrganizationResource"
+  },
+  {
+    "action": "Napster.CompanionAPI/organizations/write",
+    "description": "Update a OrganizationResource"
+  },
+  {
+    "action": "Napster.CompanionAPI/registeredSubscriptions/read",
+    "description": "read registeredSubscriptions"
   },
   {
     "action": "NewRelic.Observability/accounts/read",

@@ -501,6 +501,10 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/SecuritySettings/Refresh/Action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/Validate/Action",
                     "type": "action"
                   }
@@ -508,7 +512,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 29,
+            "totalOps": 30,
             "priority": 999
           },
           {
@@ -3854,7 +3858,7 @@
       }
     ],
     "totalTypes": 53,
-    "totalOps": 558
+    "totalOps": 559
   },
   {
     "name": "Networking",
@@ -24893,6 +24897,10 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.App/artifactApps/listSecrets/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.App/artifactApps/start/action",
                     "type": "dataAction"
                   },
@@ -24904,7 +24912,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 6,
+            "totalOps": 7,
             "priority": 999
           },
           {
@@ -24954,6 +24962,10 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.App/artifacts/listSecrets/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.App/artifacts/versions/cancel/action",
                     "type": "action"
                   },
@@ -24966,10 +24978,10 @@
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               }
             ],
-            "totalOps": 8,
+            "totalOps": 9,
             "priority": 999
           },
           {
@@ -25836,6 +25848,25 @@
               }
             ],
             "totalOps": 50,
+            "priority": 999
+          },
+          {
+            "key": "quotaPolicy",
+            "name": "quota Policy",
+            "provider": "microsoft.app",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.App/quotaPolicy/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
             "priority": 999
           },
           {
@@ -30019,8 +30050,8 @@
         ]
       }
     ],
-    "totalTypes": 71,
-    "totalOps": 1660
+    "totalTypes": 72,
+    "totalOps": 1663
   },
   {
     "name": "Containers",
@@ -56945,6 +56976,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/ContainerAppHTTPLogs/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/ContainerAppSystemLogs/read",
                     "type": "action"
                   },
@@ -57453,6 +57488,18 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/DiscoveryBookshelfAuditLogs/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/DiscoverySupercomputerAuditLogs/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/DiscoveryWorkspaceAuditLogs/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/DisruptionAndResponseEvents/read",
                     "type": "action"
                   },
@@ -57678,6 +57725,10 @@
                   },
                   {
                     "action": "Microsoft.OperationalInsights/workspaces/query/GoogleWorkspaceReports/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/GraphNotificationsActivityLogs/read",
                     "type": "action"
                   },
                   {
@@ -59482,7 +59533,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1002,
+            "totalOps": 1007,
             "priority": 1
           },
           {
@@ -59627,7 +59678,7 @@
       }
     ],
     "totalTypes": 63,
-    "totalOps": 1591
+    "totalOps": 1596
   },
   {
     "name": "Management + Governance",
@@ -67710,6 +67761,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Logic/automationProjects/principals/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Logic/automationProjects/read",
                     "type": "action"
                   }
@@ -67721,6 +67776,10 @@
                 "ops": [
                   {
                     "action": "Microsoft.Logic/automationProjects/applications/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Logic/automationProjects/principals/write",
                     "type": "action"
                   },
                   {
@@ -67745,7 +67804,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 6,
+            "totalOps": 8,
             "priority": 999
           },
           {
@@ -69073,7 +69132,7 @@
       }
     ],
     "totalTypes": 37,
-    "totalOps": 699
+    "totalOps": 701
   },
   {
     "name": "Analytics",
@@ -78792,6 +78851,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.ApiCenter/services/workspaces/agentEvaluationConfigurations/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ApiCenter/services/workspaces/agents/read",
                     "type": "action"
                   },
@@ -78898,6 +78961,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.ApiCenter/services/workspaces/agentEvaluationConfigurations/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/artifacts/write",
                     "type": "action"
                   },
@@ -78997,6 +79064,10 @@
                   },
                   {
                     "action": "Microsoft.ApiCenter/services/metadataSchemas/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ApiCenter/services/workspaces/agentEvaluationConfigurations/delete",
                     "type": "action"
                   },
                   {
@@ -79145,7 +79216,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 88,
+            "totalOps": 91,
             "priority": 999
           }
         ]
@@ -94950,6 +95021,67 @@
             "priority": 999
           },
           {
+            "key": "linkedAccounts",
+            "name": "linked Accounts",
+            "provider": "Microsoft.DeviceUpdate",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/linkedAccounts/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/linkedAccounts/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/linkedAccounts/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkInitiate/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkNotify/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkPreflight/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceUpdate/linkedAccounts/linkUpdate/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 7,
+            "priority": 999
+          },
+          {
             "key": "registeredSubscriptions",
             "name": "registered Subscriptions",
             "provider": "Microsoft.DeviceUpdate",
@@ -100945,6 +101077,164 @@
         ]
       },
       {
+        "namespace": "Microsoft.HorizonDB",
+        "displayName": "HorizonDB",
+        "types": [
+          {
+            "key": "clusters",
+            "name": "clusters",
+            "provider": "Microsoft.HorizonDB",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/effectiveParameters/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/firewallRules/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/replicas/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/systemAiModels/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/firewallRules/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/replicas/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/firewallRules/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/replicas/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/systemAiModels/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/validate/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 18,
+            "priority": 999
+          },
+          {
+            "key": "parameterGroups",
+            "name": "parameter Groups",
+            "provider": "Microsoft.HorizonDB",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HorizonDb/parameterGroups/connections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/parameterGroups/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/parameterGroups/versions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HorizonDb/parameterGroups/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HorizonDb/parameterGroups/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 5,
+            "priority": 999
+          }
+        ]
+      },
+      {
         "namespace": "Microsoft.HybridConnectivity",
         "displayName": "HybridConnectivity",
         "types": [
@@ -106021,12 +106311,16 @@
                   {
                     "action": "Microsoft.Mission/communities/setMaintenanceMode/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Mission/communities/syncCommunityEndpoints/action",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 20,
+            "totalOps": 21,
             "priority": 999
           },
           {
@@ -106395,6 +106689,84 @@
               }
             ],
             "totalOps": 13,
+            "priority": 999
+          }
+        ]
+      },
+      {
+        "namespace": "Napster.CompanionAPI",
+        "displayName": "Napster.CompanionAPI",
+        "types": [
+          {
+            "key": "organizations",
+            "name": "organizations",
+            "provider": "Napster.CompanionAPI",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Napster.CompanionAPI/organizations/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Napster.CompanionAPI/organizations/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Napster.CompanionAPI/organizations/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Napster.CompanionAPI/organizations/latestLinkedSaaS/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Napster.CompanionAPI/organizations/linkSaaS/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 5,
+            "priority": 999
+          },
+          {
+            "key": "registeredSubscriptions",
+            "name": "registered Subscriptions",
+            "provider": "Napster.CompanionAPI",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Napster.CompanionAPI/registeredSubscriptions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
             "priority": 999
           }
         ]
@@ -115541,7 +115913,7 @@
         ]
       }
     ],
-    "totalTypes": 720,
-    "totalOps": 4398
+    "totalTypes": 725,
+    "totalOps": 4438
   }
 ]

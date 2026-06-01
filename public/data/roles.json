@@ -9727,6 +9727,40 @@
     "_estimatedActions": 53
   },
   {
+    "name": "Context Cache Administrator",
+    "id": "b0ffeab8-d678-4570-b532-ce96bf97b032",
+    "description": "Provides full to manage all Azure Context Cache resources. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Resources/deployments/*",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureContextCache/*"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 101
+  },
+  {
+    "name": "Context Cache Container Contributor",
+    "id": "646a9378-973f-42fd-927f-62d1c4381f50",
+    "description": "Allows creating and managing Azure Context Cache Container resource. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Resources/deployments/*",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureContextCache/locations/*",
+      "Microsoft.AzureContextCache/accounts/read",
+      "Microsoft.AzureContextCache/accounts/containers/*"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 132
+  },
+  {
     "name": "Contributor",
     "id": "b24988ac-6180-42a0-ab88-20f7382dd24c",
     "description": "Grants full access to manage all resources, but does not allow you to assign roles in Azure RBAC, manage assignments in Azure Blueprints, or share image galleries.",
@@ -12966,6 +13000,8 @@
       "Microsoft.AlertsManagement/prometheusRuleGroups/*",
       "Microsoft.AlertsManagement/smartDetectorAlertRules/*",
       "Microsoft.Authorization/*/read",
+      "Microsoft.Authorization/roleAssignments/write",
+      "Microsoft.Authorization/roleAssignments/delete",
       "Microsoft.CognitiveServices/*",
       "Microsoft.Insights/activityLogAlerts/*",
       "Microsoft.Insights/metricalerts/*",
@@ -12984,7 +13020,7 @@
       "Microsoft.CognitiveServices/*"
     ],
     "notDataActions": [],
-    "_estimatedActions": 375
+    "_estimatedActions": 377
   },
   {
     "name": "Foundry Project Manager",
@@ -15761,7 +15797,8 @@
     "actions": [],
     "notActions": [],
     "dataActions": [
-      "Microsoft.Discovery/bookshelf/knowledgeBaseVersions/query/action"
+      "Microsoft.Discovery/bookshelf/knowledgeBaseVersions/query/action",
+      "Microsoft.Discovery/bookshelf/knowledgebases/operations/read"
     ],
     "notDataActions": [],
     "_estimatedActions": 0
