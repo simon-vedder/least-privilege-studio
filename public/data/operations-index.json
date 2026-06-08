@@ -1229,7 +1229,7 @@
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/artifacts/write",
-    "description": "Uploads a single file for the specified agent artifact."
+    "description": "Uploads a single file for the specified agent artifact via JSON inline content."
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/agents/versions/delete",
@@ -1469,11 +1469,11 @@
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/skills/artifacts/read",
-    "description": "Checks if specified skill artifact exists"
+    "description": "Returns the base64-encoded file for the specified skill artifact (≤3 MiB)."
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/skills/artifacts/write",
-    "description": "Uploads a single file for the specified skill artifact."
+    "description": "Uploads a single file for the specified skill artifact via JSON inline content."
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/skills/delete",
@@ -1482,6 +1482,18 @@
   {
     "action": "Microsoft.ApiCenter/services/workspaces/skills/read",
     "description": "Checks if specified skill exists"
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/skills/versions/delete",
+    "description": "Deletes specified skill version."
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/skills/versions/read",
+    "description": "Checks if specified skill version exists"
+  },
+  {
+    "action": "Microsoft.ApiCenter/services/workspaces/skills/versions/write",
+    "description": "Creates or updates specified skill version."
   },
   {
     "action": "Microsoft.ApiCenter/services/workspaces/skills/write",
@@ -1530,6 +1542,30 @@
   {
     "action": "Microsoft.ApiManagement/reports/read",
     "description": "Get reports aggregated by time periods, geographical region, developers, products, APIs, operations, subscription and byRequest."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/agents/delete",
+    "description": "Deletes the specified agent."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/agents/read",
+    "description": "Lists a collection of agents in the specified service instance. or Gets the details of the agent specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/agents/write",
+    "description": "Creates or Updates an agent. or Updates an existing agent."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/aigatewaytenants/delete",
+    "description": "Deletes the specified AI Gateway tenant."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/aigatewaytenants/read",
+    "description": "Lists a collection of AI Gateway tenants in the specified service instance. or Gets the details of the AI Gateway tenant specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/aigatewaytenants/write",
+    "description": "Creates or Updates an AI Gateway tenant. or Updates an existing AI Gateway tenant."
   },
   {
     "action": "Microsoft.ApiManagement/service/apiVersionSets/delete",
@@ -1812,6 +1848,10 @@
     "description": "Deletes the specified backend."
   },
   {
+    "action": "Microsoft.ApiManagement/service/backends/listSecrets/action",
+    "description": "Gets the secrets of the backend specified by its identifier."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/backends/read",
     "description": "Lists a collection of backends in the specified service instance. or Gets the details of the backend specified by its identifier."
   },
@@ -2066,6 +2106,38 @@
   {
     "action": "Microsoft.ApiManagement/service/managedeployments/action",
     "description": "Change SKU/units, add/remove regional deployments of API Management Service"
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/modelProviders/delete",
+    "description": "Deletes the specified model provider."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/modelProviders/listCredentials/action",
+    "description": "Returns credential metadata for a model provider."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/modelProviders/models/delete",
+    "description": "Deletes the specified model."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/modelProviders/models/read",
+    "description": "Lists a collection of models under a specific model provider. or Gets the details of the model specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/modelProviders/models/write",
+    "description": "Creates or Updates a model. or Updates an existing model."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/modelProviders/read",
+    "description": "Lists a collection of model providers in the specified service instance. or Gets the details of the model provider specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/modelProviders/write",
+    "description": "Creates or Updates a model provider. or Updates an existing model provider."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/models/read",
+    "description": "Lists all models across all model providers."
   },
   {
     "action": "Microsoft.ApiManagement/service/namedValues/delete",
@@ -2752,6 +2824,26 @@
     "description": "Create a Key to an existing Existing Entity or Update existing key details. This operation can be used to renew key."
   },
   {
+    "action": "Microsoft.ApiManagement/service/toolServers/delete",
+    "description": "Deletes the specified tool server."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/toolServers/endpoints/oauth2/action",
+    "description": "Mints PKCE state and returns the IdP authorize URL plus redirect URI for the operator-driven OAuth 2.0 Authorization Code dance. or Clears the persisted refresh_token and bumps the OAuth2 configVersion. Idempotent; does not call the IdP."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/toolServers/listSecrets/action",
+    "description": "Returns the secret subtrees (header values, oauth2.clientSecret, openApi.specSource.contentBase64) for each endpoint on the tool server, keyed by namespace. Intended for round-trip add/edit/remove-endpoint scenarios where the caller needs the existing credentials to merge back into a subsequent PUT/PATCH."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/toolServers/read",
+    "description": "Lists a collection of tool servers in the specified service instance. or Gets the details of the tool server specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/toolServers/write",
+    "description": "Creates or Updates a tool server. or Updates an existing tool server."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/updatecertificate/action",
     "description": "Upload SSL certificate for an API Management Service"
   },
@@ -2968,6 +3060,10 @@
     "description": "Deletes specific Api Version Set."
   },
   {
+    "action": "Microsoft.ApiManagement/service/workspaces/backends/listSecrets/action",
+    "description": "Gets the secrets of the backend specified by its identifier."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/workspaces/backends/read",
     "description": "Lists a collection of backed in the specified service instance. or Gets the details of the backend specified by its identifier."
   },
@@ -3044,6 +3140,18 @@
     "description": "Syncs configuration from Kubernetes clusters by using an agent for specified Kubernetes-managed workspace"
   },
   {
+    "action": "Microsoft.ApiManagement/service/workspaces/languageModels/delete",
+    "description": "Deletes the specified language model."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/languageModels/read",
+    "description": "Lists a collection of language models. or Gets the details of the language model."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/languageModels/write",
+    "description": "Creates or Updates a language model. or Updates an existing language model."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/workspaces/loggers/delete",
     "description": "Deletes the specified logger."
   },
@@ -3054,6 +3162,38 @@
   {
     "action": "Microsoft.ApiManagement/service/workspaces/loggers/write",
     "description": "Creates or Updates a logger. or Updates an existing logger."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/modelProviders/delete",
+    "description": "Deletes the specified model provider."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/modelProviders/listCredentials/action",
+    "description": "Returns metadata describing the configured credentials of a Custom-kind model provider without revealing secret values."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/modelProviders/models/delete",
+    "description": "Deletes the specified model."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/modelProviders/models/read",
+    "description": "Lists a collection of models under a specific model provider. or Gets the details of the model specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/modelProviders/models/write",
+    "description": "Creates or Updates a model under a model provider. or Updates an existing model."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/modelProviders/read",
+    "description": "Lists a collection of model providers under a workspace. or Gets the details of the model provider specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/modelProviders/write",
+    "description": "Creates or Updates a model provider. or Updates an existing model provider."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/models/read",
+    "description": "Lists all models across all model providers in a workspace."
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/namedValues/delete",
@@ -3314,6 +3454,26 @@
   {
     "action": "Microsoft.ApiManagement/service/workspaces/tags/write",
     "description": "Creates a tag. or Updates the details of the tag specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/toolServers/delete",
+    "description": "Deletes the specified tool server."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/toolServers/endpoints/oauth2/action",
+    "description": "Mints PKCE state and returns the IdP authorize URL plus redirect URI for the operator-driven OAuth 2.0 Authorization Code dance. or Clears the persisted refresh_token and bumps the OAuth2 configVersion. Idempotent; does not call the IdP."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/toolServers/listSecrets/action",
+    "description": "Returns the secret subtrees (header values, oauth2.clientSecret, openApi.specSource.contentBase64) for each endpoint on the tool server, keyed by namespace. Intended for round-trip add/edit/remove-endpoint scenarios where the caller needs the existing credentials to merge back into a subsequent PUT/PATCH."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/toolServers/read",
+    "description": "Lists a collection of tool servers under a workspace. or Gets the details of the tool server specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/toolServers/write",
+    "description": "Creates or Updates a tool server. or Updates an existing tool server."
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/write",
@@ -5470,18 +5630,6 @@
   {
     "action": "Microsoft.Authorization/acquirePolicyToken/read",
     "description": "Acquire a policy token at the specified scope."
-  },
-  {
-    "action": "Microsoft.Authorization/classicAdministrators/delete",
-    "description": "Removes the administrator from the subscription."
-  },
-  {
-    "action": "Microsoft.Authorization/classicAdministrators/read",
-    "description": "Reads the administrators for the subscription."
-  },
-  {
-    "action": "Microsoft.Authorization/classicAdministrators/write",
-    "description": "Add or modify administrator to a subscription."
   },
   {
     "action": "Microsoft.Authorization/denyAssignments/delete",
@@ -20614,6 +20762,30 @@
   {
     "action": "Microsoft.Confluent/organizations/environments/delete",
     "description": "delete environments"
+  },
+  {
+    "action": "Microsoft.Confluent/organizations/environments/networkGateways/accessPoints/delete",
+    "description": "delete accessPoints"
+  },
+  {
+    "action": "Microsoft.Confluent/organizations/environments/networkGateways/accessPoints/read",
+    "description": "read accessPoints"
+  },
+  {
+    "action": "Microsoft.Confluent/organizations/environments/networkGateways/accessPoints/write",
+    "description": "create or update accessPoints"
+  },
+  {
+    "action": "Microsoft.Confluent/organizations/environments/networkGateways/delete",
+    "description": "delete networkGateways"
+  },
+  {
+    "action": "Microsoft.Confluent/organizations/environments/networkGateways/read",
+    "description": "read networkGateways"
+  },
+  {
+    "action": "Microsoft.Confluent/organizations/environments/networkGateways/write",
+    "description": "create or update networkGateways"
   },
   {
     "action": "Microsoft.Confluent/organizations/environments/read",
@@ -50237,7 +50409,7 @@
   },
   {
     "action": "Microsoft.MySQLDiscovery/MySQLSites/errorSummaries/read",
-    "description": "Lists the ErrorSummaries resource in MySQLSites."
+    "description": "Gets the ErrorSummaries resource."
   },
   {
     "action": "Microsoft.MySQLDiscovery/MySQLSites/read",
@@ -50249,7 +50421,7 @@
   },
   {
     "action": "Microsoft.MySQLDiscovery/MySQLSites/summaries/read",
-    "description": "Lists the Summaries resource in MySQLSites."
+    "description": "Gets the Summaries resource."
   },
   {
     "action": "Microsoft.MySQLDiscovery/MySQLSites/write",
@@ -57628,6 +57800,10 @@
     "description": "Read data from the CrowdStrikeAlerts table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/CrowdStrikeAuditEvents/read",
+    "description": "Read data from the CrowdStrikeAuditEvents table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/CrowdStrikeCases/read",
     "description": "Read data from the CrowdStrikeCases table"
   },
@@ -59917,7 +60093,7 @@
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/summarylogs/delete",
-    "description": "Delete a log analytics summary logs."
+    "description": "Delete a log analytics summary rule."
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/summarylogs/read",
@@ -59925,11 +60101,11 @@
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/summarylogs/start/action",
-    "description": "Starting a suspended summary log rule."
+    "description": "Starting a suspended summary rule."
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/summarylogs/stop/action",
-    "description": "Suspending a summary log rule."
+    "description": "Suspending a summary rule."
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/summarylogs/write",
@@ -66104,56 +66280,20 @@
     "description": "Updates the JIT request."
   },
   {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/delete",
-    "description": "Deletes the landing zone account."
-  },
-  {
     "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneConfigurations/createCopy/action",
     "description": "Create a duplicate of the landing zone configuration."
-  },
-  {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneConfigurations/delete",
-    "description": "Deletes the landing zone configuration."
   },
   {
     "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneConfigurations/generateLandingZone/action",
     "description": "Generate infrastructure as code (IaC) for a landing zone deployment."
   },
   {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneConfigurations/read",
-    "description": "Lists the landing zone configurations within a subscription."
-  },
-  {
     "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneConfigurations/updateAuthoringStatus/action",
     "description": "Update the authoring status on a landing zone configuration."
   },
   {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneConfigurations/write",
-    "description": "Updates the landing zone configuration."
-  },
-  {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneRegistrations/delete",
-    "description": "Deletes the landing zone registration."
-  },
-  {
     "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneRegistrations/drift/action",
     "description": "Compute drift for landing zone registration."
-  },
-  {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneRegistrations/read",
-    "description": "Lists the landing zone registrations within a subscription."
-  },
-  {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/landingZoneRegistrations/write",
-    "description": "Updates the landing zone registration."
-  },
-  {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/read",
-    "description": "Lists the landing zone accounts within a subscription."
-  },
-  {
-    "action": "Microsoft.Sovereign/landingZoneAccounts/write",
-    "description": "Creates the landing zone account."
   },
   {
     "action": "Microsoft.Sovereign/landingZoneConfigurations/createCopy/action",
@@ -66186,18 +66326,6 @@
   {
     "action": "Microsoft.Sovereign/sovereignViews/write",
     "description": "Updates the Sovereign View resource."
-  },
-  {
-    "action": "Microsoft.Sovereign/transparencyLogs/delete",
-    "description": "Delete a TransparencyLog"
-  },
-  {
-    "action": "Microsoft.Sovereign/transparencyLogs/read",
-    "description": "Get a TransparencyLog"
-  },
-  {
-    "action": "Microsoft.Sovereign/transparencyLogs/write",
-    "description": "Update a TransparencyLog"
   },
   {
     "action": "Microsoft.Sql/instancePools/delete",
@@ -72836,6 +72964,30 @@
     "description": "Create and Update Private Link Policy Definition"
   },
   {
+    "action": "microsoft.app/artifactapps/delete",
+    "description": "Delete an artifact app"
+  },
+  {
+    "action": "microsoft.app/artifactapps/read",
+    "description": "Get an artifact app"
+  },
+  {
+    "action": "microsoft.app/artifactapps/write",
+    "description": "Create or update an artifact app"
+  },
+  {
+    "action": "microsoft.app/artifacts/delete",
+    "description": "Delete an artifact"
+  },
+  {
+    "action": "microsoft.app/artifacts/read",
+    "description": "Get an artifact"
+  },
+  {
+    "action": "microsoft.app/artifacts/write",
+    "description": "Create or update an artifact"
+  },
+  {
     "action": "microsoft.app/builders/delete",
     "description": "Delete a Builder"
   },
@@ -73414,6 +73566,18 @@
   {
     "action": "microsoft.app/managedenvironments/write",
     "description": "Create or update a Managed Environment"
+  },
+  {
+    "action": "microsoft.app/sandboxgroups/delete",
+    "description": "Delete a sandbox group"
+  },
+  {
+    "action": "microsoft.app/sandboxgroups/read",
+    "description": "Get a sandbox group"
+  },
+  {
+    "action": "microsoft.app/sandboxgroups/write",
+    "description": "Create or update a sandbox group"
   },
   {
     "action": "microsoft.app/sessionPools/sessions/write",
