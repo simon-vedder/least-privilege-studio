@@ -81,6 +81,20 @@
     "_estimatedActions": 2
   },
   {
+    "name": "Advisor Recommendations Contributor",
+    "id": "f680209a-a2a2-4e0d-aa81-5d2a65c13604",
+    "description": "View assessment recommendations, accepted review recommendations, and manage the recommendations lifecycle (mark recommendations as completed, postponed or dismissed, in progress, or not started).",
+    "actions": [
+      "Microsoft.Advisor/recommendations/read",
+      "Microsoft.Advisor/recommendations/write",
+      "Microsoft.Advisor/recommendations/available/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 3
+  },
+  {
     "name": "Advisor Recommendations Contributor (Assessments and Reviews)",
     "id": "6b534d80-e337-47c4-864f-140f5c7f593d",
     "description": "View assessment recommendations, accepted review recommendations, and manage the recommendations lifecycle (mark recommendations as completed, postponed or dismissed, in progress, or not started).",
@@ -1695,6 +1709,7 @@
       "Microsoft.Insights/privatelinkscopes/privateEndpointConnectionsApproval/action",
       "Microsoft.Insights/privatelinkscopes/privateEndpointConnections/read",
       "Microsoft.Insights/privatelinkscopes/privateEndpointConnections/write",
+      "Microsoft.Insights/privatelinkscopes/privateEndpointConnections/operationResults/read",
       "Microsoft.Insights/privatelinkscopes/privateLinkResources/read",
       "Microsoft.Insights/privatelinkscopes/read",
       "Microsoft.Network/privateLinkServices/privateEndpointConnectionsApproval/action",
@@ -1709,7 +1724,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 89
+    "_estimatedActions": 90
   },
   {
     "name": "Azure AI Enterprise Networking Outbound Rules Operator",
@@ -1754,6 +1769,84 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 60
+  },
+  {
+    "name": "Azure AIManager and namespace RBAC Reader",
+    "id": "9c77f8a7-b0b9-4462-844c-de6e66add8ba",
+    "description": "Allows read-only access to all objects in an Azure AI Manager namespace, except Secrets, roles, and role bindings. Applying this role at the AI Manager scope will give access across all namespaces.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Resources/subscriptions/operationresults/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
+      "Microsoft.ContainerService/aiManagers/apps/daemonsets/read",
+      "Microsoft.ContainerService/aiManagers/apps/deployments/read",
+      "Microsoft.ContainerService/aiManagers/apps/replicasets/read",
+      "Microsoft.ContainerService/aiManagers/apps/statefulsets/read",
+      "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/read",
+      "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
+      "Microsoft.ContainerService/aiManagers/batch/jobs/read",
+      "Microsoft.ContainerService/aiManagers/configmaps/read",
+      "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/read",
+      "Microsoft.ContainerService/aiManagers/endpoints/read",
+      "Microsoft.ContainerService/aiManagers/events.k8s.io/events/read",
+      "Microsoft.ContainerService/aiManagers/events/read",
+      "Microsoft.ContainerService/aiManagers/extensions/daemonsets/read",
+      "Microsoft.ContainerService/aiManagers/extensions/deployments/read",
+      "Microsoft.ContainerService/aiManagers/extensions/ingresses/read",
+      "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/read",
+      "Microsoft.ContainerService/aiManagers/extensions/replicasets/read",
+      "Microsoft.ContainerService/aiManagers/limitranges/read",
+      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/pods/read",
+      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/nodes/read",
+      "Microsoft.ContainerService/aiManagers/namespaces/read",
+      "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/read",
+      "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/read",
+      "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/read",
+      "Microsoft.ContainerService/aiManagers/pods/read",
+      "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/read",
+      "Microsoft.ContainerService/aiManagers/replicationcontrollers/read",
+      "Microsoft.ContainerService/aiManagers/resourcequotas/read",
+      "Microsoft.ContainerService/aiManagers/serviceaccounts/read",
+      "Microsoft.ContainerService/aiManagers/services/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 13
+  },
+  {
+    "name": "Azure AIManager Contributor",
+    "id": "413f2675-4911-4010-be3b-c720b43a3c59",
+    "description": "Grants read/write access to Azure resources provided by Kubernetes AI Manager, including aimanagers, deployments, namespace, etc.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/aiManagers/*",
+      "Microsoft.Resources/deployments/*"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 101
+  },
+  {
+    "name": "Azure AIManager User",
+    "id": "223653d0-bf85-419e-ac7a-a67edf5fc44b",
+    "description": "Grants read access to Azure resources provided by Kubernetes AI Manager, including aimanagers, deployments, namespace, etc.",
+    "actions": [
+      "Microsoft.ContainerService/aiManagers/listCredential/action",
+      "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
+      "Microsoft.ContainerService/aiManagers/read",
+      "Microsoft.ContainerService/aiManagers/*/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 13
   },
   {
     "name": "Azure API Center Compliance Manager",
@@ -5190,6 +5283,21 @@
     "_estimatedActions": 2
   },
   {
+    "name": "Azure NetApp Files Administrator",
+    "id": "f5db7409-a2c6-4d0c-8cf4-412ac01a38df",
+    "description": "Allows full administrative access to Azure NetApp Files operations",
+    "actions": [
+      "Microsoft.NetApp/*/read",
+      "Microsoft.NetApp/*/write",
+      "Microsoft.NetApp/*/delete",
+      "Microsoft.NetApp/*/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 40
+  },
+  {
     "name": "Azure NetApp Files Reader",
     "id": "bafa5965-3211-483c-a7b7-027648c789e9",
     "description": "Allows read-only discovery operations for Azure NetApp Files resources",
@@ -5209,6 +5317,22 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 19
+  },
+  {
+    "name": "Azure Notebooks NotebookProxy Contributor",
+    "id": "063e4498-230d-40a9-be9b-037f35f982b5",
+    "description": "Can create, read, update, delete NotebookProxy resources and manage their credentials under Microsoft.Notebooks.",
+    "actions": [
+      "Microsoft.Notebooks/NotebookProxies/write",
+      "Microsoft.Notebooks/NotebookProxies/read",
+      "Microsoft.Notebooks/NotebookProxies/delete",
+      "Microsoft.Notebooks/NotebookProxies/listCredentials/action",
+      "Microsoft.Notebooks/NotebookProxies/rotateCredentials/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 5
   },
   {
     "name": "Azure Programmable Connectivity Gateway Dataplane User",
@@ -6025,13 +6149,32 @@
     "id": "4c7fd853-7345-4453-babd-e9481e9b460b",
     "description": "Contributor Role of Azure Resilience Management Recovery Service",
     "actions": [
-      "Microsoft.Authorization/roleAssignments/write",
       "Microsoft.Authorization/*/read",
       "Microsoft.Automation/automationAccounts/runbooks/read",
-      "Microsoft.AzureResilienceManagement/recoveryPlans/*/action",
-      "Microsoft.AzureResilienceManagement/recoveryPlans/*/delete",
-      "Microsoft.AzureResilienceManagement/recoveryPlans/*/read",
-      "Microsoft.AzureResilienceManagement/recoveryPlans/*/write",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/read",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/write",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/delete",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/finalize/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/checkReadiness/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/failover/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/failoverCommit/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/reprotect/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/testFailover/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/testFailoverCleanup/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/validateForOperation/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/validateForFailover/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/validateForFailoverCommit/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/validateForReprotect/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/validateForTestFailover/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/validateForTestFailoverCleanup/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/updateResources/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryResources/read",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/read",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/cancel/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/resume/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/retry/action",
+      "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/recoveryJobResources/read",
+      "Microsoft.AzureResilienceManagement/locations/OperationStatuses/read",
       "Microsoft.Insights/alertRules/",
       "Microsoft.Management/ServiceGroups/read",
       "Microsoft.Relationships/ServiceGroupMember/read",
@@ -6048,7 +6191,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 93
+    "_estimatedActions": 76
   },
   {
     "name": "Azure Resilience Management Recovery Operator",
@@ -10298,12 +10441,21 @@
       "Microsoft.Synapse/workspaces/securityAlertPolicies/write",
       "Microsoft.Sql/servers/vulnerabilityAssessments/read",
       "Microsoft.Synapse/workspaces/vulnerabilityAssessments/read",
-      "Microsoft.Sql/managedInstances/vulnerabilityAssessments/read"
+      "Microsoft.Sql/managedInstances/vulnerabilityAssessments/read",
+      "Microsoft.Sql/servers/sqlVulnerabilityAssessments/delete",
+      "Microsoft.Sql/servers/advancedThreatProtectionSettings/read",
+      "Microsoft.Sql/servers/advancedThreatProtectionSettings/write",
+      "Microsoft.Sql/managedInstances/advancedThreatProtectionSettings/write",
+      "Microsoft.Sql/managedInstances/advancedThreatProtectionSettings/read",
+      "Microsoft.Sql/managedInstances/vulnerabilityAssessments/write",
+      "Microsoft.Sql/managedInstances/vulnerabilityAssessments/delete",
+      "Microsoft.Security/SqlVulnerabilityAssessments/read",
+      "Microsoft.Security/SqlVulnerabilityAssessments/write"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 14
+    "_estimatedActions": 23
   },
   {
     "name": "Defender Cloud Secrets Posture",
@@ -12991,6 +13143,19 @@
     "_estimatedActions": 203
   },
   {
+    "name": "Foundry Agent Consumer",
+    "id": "eed3b665-ab3a-47b6-8f48-c9382fb1dad6",
+    "description": "Allows interacting with Foundry agents at runtime.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/applications/invoke/action",
+      "Microsoft.CognitiveServices/accounts/AIServices/endpoints/interact/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "Foundry Owner",
     "id": "c883944f-8b7b-4483-af10-35834be79c4a",
     "description": "Grants full to manage Foundry project and accounts. Grants reader access to Foundry projects, reader access to Foundry accounts, and data actions for a Foundry project.",
@@ -13044,6 +13209,18 @@
     ],
     "notDataActions": [],
     "_estimatedActions": 123
+  },
+  {
+    "name": "Foundry Project Runtime User",
+    "id": "142bfaed-a13f-4c2d-bed2-6db62c4a1009",
+    "description": "Allows interacting with Foundry agents at runtime with minimal required permissions.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/responses/*"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
   },
   {
     "name": "Foundry User",
@@ -19090,7 +19267,7 @@
     "description": "Full control of the agent—manage chats, incident response plans, and agent run modes; approve and execute commands.",
     "actions": [
       "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Insights/alertRules/read",
       "Microsoft.App/agents/read",
       "Microsoft.App/agents/*/read",
       "Microsoft.App/agents/write",
@@ -19104,7 +19281,7 @@
       "Microsoft.App/agents/threads/approve/action"
     ],
     "notDataActions": [],
-    "_estimatedActions": 62
+    "_estimatedActions": 33
   },
   {
     "name": "SRE Agent Author",
@@ -19153,7 +19330,7 @@
     "description": "Grants access to interact with the SRE Agent to triage incidents and run diagnostics.",
     "actions": [
       "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Insights/alertRules/read",
       "Microsoft.App/agents/read"
     ],
     "notActions": [],
@@ -19170,7 +19347,7 @@
       "Microsoft.App/agents/scheduledtasks/delete"
     ],
     "notDataActions": [],
-    "_estimatedActions": 41
+    "_estimatedActions": 12
   },
   {
     "name": "SSH PublicKeys Contributor Role",
