@@ -17966,6 +17966,18 @@
     "_estimatedActions": 3240
   },
   {
+    "name": "ResourceBuilder Contributor",
+    "id": "2ec40fb7-0838-470f-a644-a574aa191e92",
+    "description": "Provides access to Resource Builder Control Plane Operations",
+    "actions": [
+      "Microsoft.ResourceBuilder/registeredSubscriptions/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 1
+  },
+  {
     "name": "Role Based Access Control Administrator",
     "id": "f58310d9-a9f6-439a-9e8d-f62e7b41a168",
     "description": "Manage access to Azure resources by assigning roles using Azure RBAC. This role does not allow you to manage access using other ways, such as Azure Policy.",
