@@ -5148,6 +5148,18 @@
     "description": "Update a ContainerNode"
   },
   {
+    "action": "Microsoft.ApplicationMigration/containerSites/containerWorkloads/delete",
+    "description": "Delete a ContainerWorkload"
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/containerSites/containerWorkloads/read",
+    "description": "Get a ContainerWorkload"
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/containerSites/containerWorkloads/write",
+    "description": "Update a ContainerWorkload"
+  },
+  {
     "action": "Microsoft.ApplicationMigration/discoveryHubs/applications/delete",
     "description": "Delete a Application"
   },
@@ -9502,6 +9514,10 @@
   {
     "action": "Microsoft.AzureStackHCI/VirtualMachineInstances/Pause/Action",
     "description": "Pauses virtual machine instance resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/VirtualMachineInstances/PowerOff/Action",
+    "description": "Powers off virtual machine instance resource"
   },
   {
     "action": "Microsoft.AzureStackHCI/VirtualMachineInstances/Read",
@@ -20272,6 +20288,10 @@
     "description": "Manually walk the platform update domains of a service fabric Virtual Machine Scale Set to finish a pending update that is stuck"
   },
   {
+    "action": "Microsoft.Compute/virtualMachineScaleSets/forceRestart/action",
+    "description": "Internal DRI-only operation that force-restarts VM containers in a Virtual Machine Scale Set bypassing Maintenance Recommendation approval, used during outage recovery"
+  },
+  {
     "action": "Microsoft.Compute/virtualMachineScaleSets/instanceView/read",
     "description": "Gets the instance view of the Virtual Machine Scale Set"
   },
@@ -21808,12 +21828,28 @@
     "description": "List repositories in a container registry."
   },
   {
+    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/read",
+    "description": "Gets the configuration for the connected registry."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/write",
+    "description": "Updates the configuration for the connected registry."
+  },
+  {
     "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/deactivate/action",
     "description": "Deactivates a connected registry for a container registry"
   },
   {
     "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/delete",
     "description": "Deletes a connected registry from a container registry."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/read",
+    "description": "Gets synchronization messages for the connected registry."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/write",
+    "description": "Sends synchronization messages for the connected registry."
   },
   {
     "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/read",
@@ -29096,10 +29132,6 @@
     "description": "Reschedules the maintenance event to a specific UTC date/time for the Azure Database for PostgreSQL Flexible Server"
   },
   {
-    "action": "Microsoft.DBforPostgreSQL/flexibleServers/majorVersionUpgradePrecheck/action",
-    "description": "Creates a Major Version Upgrade Precheck operation"
-  },
-  {
     "action": "Microsoft.DBforPostgreSQL/flexibleServers/majorVersionUpgradePrecheck/read",
     "description": "Lists the Major Version Upgrade Precheck Operations Performed"
   },
@@ -29186,6 +29218,10 @@
   {
     "action": "Microsoft.DBforPostgreSQL/flexibleServers/startLtrBackup/action",
     "description": "Start long term backup for a server"
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/startMajorVersionUpgradePrecheck/action",
+    "description": "Creates a Major Version Upgrade Precheck operation"
   },
   {
     "action": "Microsoft.DBforPostgreSQL/flexibleServers/stop/action",
@@ -32485,31 +32521,31 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/ClaimAnyVm/action",
-    "description": "Claim a random claimable virtual machine in the lab."
+    "description": "宣告實驗室中可宣告的隨機虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/CreateEnvironment/action",
-    "description": "Create virtual machines in a lab."
+    "description": "在實驗室中建立虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/EnsureCurrentUserProfile/action",
-    "description": "Ensure the current user has a valid profile in the lab."
+    "description": "請確認目前的使用者在實驗室具有有效的設定檔。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/ExportResourceUsage/action",
-    "description": "Exports the lab resource usage into a storage account"
+    "description": "將實驗室資源使用量匯出到儲存體帳戶"
   },
   {
     "action": "Microsoft.DevTestLab/labs/GenerateUploadUri/action",
-    "description": "Generate a URI for uploading custom disk images to a Lab."
+    "description": "產生 URI，以便於將自訂的磁碟映像上傳至實驗室。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/ImportVirtualMachine/action",
-    "description": "Import a virtual machine into a different lab."
+    "description": "將虛擬機器匯入其他實驗室中。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/ListVhds/action",
-    "description": "List disk images available for custom image creation."
+    "description": "列出可用於建立自訂映像的磁碟映像。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/armTemplates/read",
@@ -32517,7 +32553,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/GenerateArmTemplate/action",
-    "description": "Generates an ARM template for the given artifact, uploads the required files to a storage account, and validates the generated artifact."
+    "description": "為指定的成品產生 ARM 範本，將必要的檔案上傳至儲存體帳戶，以及驗證所產生的成品。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/read",
@@ -32577,7 +32613,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/Notify/action",
-    "description": "Send notification to provided channel."
+    "description": "將通知傳送到提供的管道。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/delete",
@@ -32593,7 +32629,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/EvaluatePolicies/action",
-    "description": "Evaluates lab policy."
+    "description": "評估實驗室原則。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/policies/delete",
@@ -32617,11 +32653,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/ListApplicable/action",
-    "description": "Lists all applicable schedules"
+    "description": "列出所有適用的排程"
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/delete",
@@ -32689,11 +32725,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Attach/action",
-    "description": "Attach and create the lease of the disk to the virtual machine."
+    "description": "建立磁碟租用，並將其連結至虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Detach/action",
-    "description": "Detach and break the lease of the disk attached to the virtual machine."
+    "description": "中斷磁碟與虛擬機器的連結，並中止租用。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/delete",
@@ -32737,15 +32773,15 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/ListApplicableSchedules/action",
-    "description": "Lists the applicable start/stop schedules, if any."
+    "description": "列出適用的啟動/停止排程 (若有的話)。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Start/action",
-    "description": "Start a service fabric."
+    "description": "啟動 Service Fabric。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Stop/action",
-    "description": "Stop a service fabric"
+    "description": "停止 Service Fabric"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/delete",
@@ -32757,7 +32793,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/delete",
@@ -32781,67 +32817,67 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/AddDataDisk/action",
-    "description": "Attach a new or existing data disk to virtual machine."
+    "description": "將現有新的資料磁碟連結至虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ApplyArtifacts/action",
-    "description": "Apply artifacts to virtual machine."
+    "description": "將成品套用至虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ChangeSecurityProfile/action",
-    "description": "Change security profile of a virtual machine"
+    "description": "變更虛擬機的安全性配置檔"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Claim/action",
-    "description": "Take ownership of an existing virtual machine"
+    "description": "取得現有虛擬機器的擁有權"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ClearArtifactResults/action",
-    "description": "Clears the artifact results of the virtual machine."
+    "description": "清除虛擬機器的成品結果。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/DetachDataDisk/action",
-    "description": "Detach the specified disk from the virtual machine."
+    "description": "中斷指定磁碟與虛擬機器的連結。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/GetRdpFileContents/action",
-    "description": "Gets a string that represents the contents of the RDP file for the virtual machine"
+    "description": "取得代表虛擬機器 RDP 檔案內容的字串"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Hibernate/action",
-    "description": "Hibernate a virtual machine"
+    "description": "讓虛擬機休眠"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ListApplicableSchedules/action",
-    "description": "Lists the applicable start/stop schedules, if any."
+    "description": "列出適用的啟動/停止排程 (若有的話)。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Redeploy/action",
-    "description": "Redeploy a virtual machine"
+    "description": "重新部署虛擬機器"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Resize/action",
-    "description": "Resize Virtual Machine."
+    "description": "調整虛擬機器大小。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Restart/action",
-    "description": "Restart a virtual machine."
+    "description": "重新啟動虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Start/action",
-    "description": "Start a virtual machine."
+    "description": "啟動虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Stop/action",
-    "description": "Stop a virtual machine"
+    "description": "停止虛擬機器"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/TransferDisks/action",
-    "description": "Transfers all data disks attached to the virtual machine to be owned by the current user."
+    "description": "傳送所有連結至虛擬機器的資料磁碟，由目前的使用者擁有。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/UnClaim/action",
-    "description": "Release ownership of an existing virtual machine"
+    "description": "釋放現有虛擬機器的擁有權"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/delete",
@@ -32853,7 +32889,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/delete",
@@ -32913,11 +32949,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Retarget/action",
-    "description": "Updates a schedule's target resource Id."
+    "description": "更新排程的目標資源識別碼。"
   },
   {
     "action": "Microsoft.DevTestLab/schedules/delete",
@@ -51672,6 +51708,18 @@
     "description": "Creates or updates an Azure Firewall"
   },
   {
+    "action": "Microsoft.Network/azureserviceconnectioncontrollers/delete",
+    "description": "Deletes an Azure Service Connection Controller"
+  },
+  {
+    "action": "Microsoft.Network/azureserviceconnectioncontrollers/read",
+    "description": "Gets the Azure Service Connection Controller Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/azureserviceconnectioncontrollers/write",
+    "description": "Creates Or Updates Azure Service Connection Controller, in JSON format"
+  },
+  {
     "action": "Microsoft.Network/bastionHosts/createShareableLinks/action",
     "description": "Creates shareable urls for the VMs under a bastion and returns the urls"
   },
@@ -52714,6 +52762,10 @@
   {
     "action": "Microsoft.Network/interconnectGroups/delete",
     "description": "Delete Interconnect Group"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
+    "description": "Get InterconnectGroup Node Availability"
   },
   {
     "action": "Microsoft.Network/interconnectGroups/read",
@@ -54180,6 +54232,58 @@
     "description": "Creates a new private link service, or updates an existing private link service."
   },
   {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/delete",
+    "description": "Deletes a Private Traffic Manager Profile"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/delete",
+    "description": "Deletes a Private Traffic Manager Profile Endpoint"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/read",
+    "description": "Gets the Private Traffic Manager Profile Endpoint Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/write",
+    "description": "Creates Or Updates a Private Traffic Manager Profile Endpoint, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/delete",
+    "description": "Deletes a Private Traffic Manager Profile Health Policy"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/read",
+    "description": "Gets the Private Traffic Manager Profile Health Policy Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/write",
+    "description": "Creates Or Updates a Private Traffic Manager Profile Health Policy, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/read",
+    "description": "Gets the Private Traffic Manager Profile Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
+    "description": "Establishes a link between a private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the private DNS record"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
+    "description": "Creates Or Updates a Private Traffic Manager Profile, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/probinggateways/delete",
+    "description": "Deletes a Probing Gateway"
+  },
+  {
+    "action": "Microsoft.Network/probinggateways/read",
+    "description": "Gets the Probing Gateway Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/probinggateways/write",
+    "description": "Creates Or Updates a Probing Gateway, in JSON format"
+  },
+  {
     "action": "Microsoft.Network/publicIPAddresses/ddosProtectionStatus/action",
     "description": "Gets the effective Ddos protection status for a Public IP Address resource."
   },
@@ -54342,6 +54446,34 @@
   {
     "action": "Microsoft.Network/serviceEndpointPolicies/write",
     "description": "Creates a Service Endpoint Policy or updates an existing Service Endpoint Policy"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/delete",
+    "description": "Deletes a Topology Map"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/read",
+    "description": "Gets the Topology Map Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/sites/delete",
+    "description": "Deletes a Topology Map Site"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/sites/read",
+    "description": "Gets the Topology Map Site Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/sites/write",
+    "description": "Creates Or Updates a Topology Map Site, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/write",
+    "description": "Creates Or Updates a Topology Map, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymapsoperations/read",
+    "description": "Gets the Topology Map Operation details, in JSON format"
   },
   {
     "action": "Microsoft.Network/trafficManagerGeographicHierarchies/read",
@@ -54734,6 +54866,10 @@
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/effectiveSecurityUserRules/read",
     "description": "Permission to get the security user rule(s) taking effect on a subnet."
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworks/subnets/getNetworkPolicies/action",
+    "description": "Lists Network Intent Policies attached to a subnet"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
@@ -57552,6 +57688,10 @@
     "description": "Read data from the AegPublishFailureLogs table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AgentsInfo/read",
+    "description": "Read data from the AgentsInfo table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/AggregatedSecurityAlert/read",
     "description": "Read data from the AggregatedSecurityAlert table"
   },
@@ -58058,6 +58198,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/CloudDnsEvents/read",
     "description": "Read data from the CloudDnsEvents table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/CloudHsmHardwareOperationAuditLogs/read",
+    "description": "Read data from the CloudHsmHardwareOperationAuditLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/CloudHsmServiceOperationAuditLogs/read",
@@ -59658,6 +59802,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/PowerPlatformDlpActivity/read",
     "description": "Read data from the PowerPlatformDlpActivity table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/PreAuthenticationDiscoveryLogs/read",
+    "description": "Read data from the PreAuthenticationDiscoveryLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/ProjectActivity/read",
@@ -72222,46 +72370,6 @@
   {
     "action": "Microsoft.Workloads/phpWorkloads/write",
     "description": "Update PHP workload resource."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/delete",
-    "description": "Deletes a SAP Migration discovery site resource and its child resources, that is the associated SAP Instances and Server Instances."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/importEntities/action",
-    "description": "Import a SAP Migration discovery site resource and it's child resources, that is the SAP instances and Server instances."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/read",
-    "description": "Gets all SAP Migration discovery site resources in a Subscription."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/delete",
-    "description": "Deletes the SAP Instance resource. <br><br>This will be used by service only. Delete operation on this resource by end user will return a Bad Request error. You can delete the parent resource, which is the SAP Migration discovery site resource, using the delete operation on it."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/read",
-    "description": "Lists the SAP Instance resources for the given SAP Migration discovery site resource."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/serverInstances/delete",
-    "description": "Deletes the Server Instance resource. <br><br>This will be used by service only. Delete operation on this resource by end user will return a Bad Request error. You can delete the parent resource, which is the SAP Migration discovery site resource, using the delete operation on it."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/serverInstances/read",
-    "description": "Lists the Server Instance resources for the given SAP Instance resource."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/serverInstances/write",
-    "description": "Updates the Server Instance resource. This operation on a resource by end user will return a Bad Request error."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/write",
-    "description": "Updates the SAP Instance resource."
-  },
-  {
-    "action": "Microsoft.Workloads/sapDiscoverySites/write",
-    "description": "SAPDiscoverySites_Update."
   },
   {
     "action": "Microsoft.Workloads/sapVirtualInstances/applicationInstances/delete",

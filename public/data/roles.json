@@ -257,8 +257,6 @@
     "id": "3e9f3756-203e-4734-a0b8-4b68691ffae3",
     "description": "Provides full access to Anyscale Cloud and resources as well as admin features such as usage and resource notifications.",
     "actions": [
-      "Microsoft.Authorization/roleAssignments/write",
-      "Microsoft.Authorization/roleAssignments/delete",
       "Microsoft.Authorization/*/read",
       "Anyscale.Platform/*/read",
       "Anyscale.Platform/*/write",
@@ -272,7 +270,7 @@
       "Anyscale.Platform/*/delete"
     ],
     "notDataActions": [],
-    "_estimatedActions": 42
+    "_estimatedActions": 40
   },
   {
     "name": "Anyscale Platform Contributor Role",
@@ -599,9 +597,7 @@
       "Microsoft.AppConfiguration/configurationStores/*/delete",
       "Microsoft.AppConfiguration/configurationStores/*/action"
     ],
-    "notDataActions": [
-      "Microsoft.AppConfiguration/configurationStores/useSasAuth/action"
-    ],
+    "notDataActions": [],
     "_estimatedActions": 0
   },
   {
@@ -4791,6 +4787,139 @@
     "_estimatedActions": 80
   },
   {
+    "name": "Azure Local Migrate Execute Expert",
+    "id": "1cfa4eac-9a23-481c-a793-bfb6958e836c",
+    "description": "Grants restricted access on an Azure Local based Azure Migrate project to only perform migration related operations, including replication, execution of migrations, tracking and monitoring of migration progress, and initiation of agentless migrations.",
+    "actions": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/deployments/*",
+      "Microsoft.Resources/subscriptions/resourceGroups/write",
+      "Microsoft.Resources/subscriptions/locations/read",
+      "Microsoft.Resources/checkResourceName/action",
+      "Microsoft.Resources/deployments/validate/action",
+      "Microsoft.Resources/deploymentScripts/write",
+      "Microsoft.Resources/deploymentScripts/read",
+      "Microsoft.Resources/links/write",
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Authorization/locks/write",
+      "Microsoft.Authorization/locks/delete",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Migrate/*/read",
+      "Microsoft.ApplicationMigration/*/read",
+      "Microsoft.OffAzure/*/read",
+      "Microsoft.MySQLDiscovery/*/read",
+      "Microsoft.Support/*",
+      "Microsoft.Storage/storageAccounts/*/read",
+      "Microsoft.Storage/storageAccounts/*/write",
+      "Microsoft.Storage/storageAccounts/listKeys/action",
+      "Microsoft.Resources/links/read",
+      "Microsoft.DependencyMap/*/read",
+      "Microsoft.DependencyMap/maps/*/action",
+      "Microsoft.AzureStackHCI/*/Read",
+      "Microsoft.AzureStackHCI/LogicalNetworks/join/action",
+      "Microsoft.AzureStackHCI/NetworkInterfaces/*",
+      "Microsoft.AzureStackHCI/VirtualHardDisks/*",
+      "Microsoft.AzureStackHCI/VirtualMachines/Write",
+      "Microsoft.AzureStackHCI/VirtualMachineInstances/Write",
+      "Microsoft.DataReplication/*/read",
+      "Microsoft.DataReplication/replicationVaults/protectedItems/*",
+      "Microsoft.DataReplication/replicationVaults/replicationExtensions/*",
+      "Microsoft.DataReplication/replicationVaults/replicationPolicies/*",
+      "Microsoft.ExtendedLocation/customLocations/read",
+      "Microsoft.KubernetesConfiguration/extensions/read",
+      "Microsoft.ResourceConnector/appliances/read",
+      "Microsoft.Authorization/roleAssignments/write",
+      "Microsoft.Authorization/roleAssignments/delete"
+    ],
+    "notActions": [
+      "Microsoft.OffAzure/hypervSites/machines/inventoryinsights/pendingupdates/*",
+      "Microsoft.OffAzure/hypervSites/machines/inventoryinsights/vulnerabilities/*",
+      "Microsoft.OffAzure/serverSites/machines/inventoryinsights/pendingupdates/*",
+      "Microsoft.OffAzure/serverSites/machines/inventoryinsights/vulnerabilities/*",
+      "Microsoft.OffAzure/vmwareSites/machines/inventoryinsights/vulnerabilities/*",
+      "Microsoft.OffAzure/vmwareSites/machines/inventoryinsights/pendingupdates/*"
+    ],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 371
+  },
+  {
+    "name": "Azure Local Migrate Owner",
+    "id": "fd8ea4d5-6509-4db0-bada-356ab233b4fb",
+    "description": "Grants full access to create and manage Azure Local based Azure Migrate projects including appliance-based discovery and execution of migrations; Also grants ability to assign Azure Migrate Local specific roles in Azure RBAC",
+    "actions": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Resources/deployments/*",
+      "Microsoft.Resources/subscriptions/resourceGroups/write",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/locations/read",
+      "Microsoft.Resources/checkResourceName/action",
+      "Microsoft.Resources/deployments/validate/action",
+      "Microsoft.Resources/deploymentScripts/write",
+      "Microsoft.Resources/deploymentScripts/read",
+      "Microsoft.Resources/links/write",
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Authorization/locks/write",
+      "Microsoft.Authorization/locks/delete",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Migrate/*",
+      "Microsoft.ApplicationMigration/*",
+      "Microsoft.OffAzure/*",
+      "Microsoft.Support/*",
+      "Microsoft.MySQLDiscovery/*",
+      "Microsoft.DependencyMap/*",
+      "Microsoft.KeyVault/vaults/*",
+      "Microsoft.KeyVault/checkNameAvailability/read",
+      "Microsoft.HybridCompute/machines/read",
+      "Microsoft.HybridCompute/machines/write",
+      "Microsoft.HybridCompute/machines/delete",
+      "Microsoft.HybridCompute/register/action",
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Network/virtualNetworks/subnets/write",
+      "Microsoft.Network/virtualNetworks/subnets/join/action",
+      "Microsoft.Network/virtualNetworks/join/action",
+      "Microsoft.Network/privateEndpoints/read",
+      "Microsoft.Network/privateEndpoints/write",
+      "Microsoft.Network/privateEndpoints/privateDnsZoneGroups/write",
+      "Microsoft.Network/privateDnsZones/write",
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+      "Microsoft.Network/privateDnsZones/join/action",
+      "Microsoft.Network/privateDnsZones/A/write",
+      "Microsoft.Network/register/action",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Network/privateEndpoints/privateDnsZoneGroups/read",
+      "Microsoft.Storage/storageAccounts/*",
+      "Microsoft.GuestConfiguration/register/action",
+      "Microsoft.HybridConnectivity/register/action",
+      "Microsoft.RecoveryServices/vaults/*",
+      "Microsoft.RecoveryServices/register/action",
+      "Microsoft.RecoveryServices/operations/read",
+      "Microsoft.DataReplication/*/read",
+      "Microsoft.DataReplication/register/action",
+      "Microsoft.DataReplication/replicationFabrics/*",
+      "Microsoft.DataReplication/replicationVaults/*",
+      "Microsoft.KeyVault/register/action",
+      "Microsoft.AzureArcData/register/action",
+      "Microsoft.Resources/links/read",
+      "Microsoft.AzureStackHCI/*/Read",
+      "Microsoft.AzureStackHCI/LogicalNetworks/join/action",
+      "Microsoft.AzureStackHCI/NetworkInterfaces/*",
+      "Microsoft.AzureStackHCI/VirtualHardDisks/*",
+      "Microsoft.AzureStackHCI/VirtualMachines/Write",
+      "Microsoft.AzureStackHCI/VirtualMachineInstances/Write",
+      "Microsoft.ExtendedLocation/customLocations/read",
+      "Microsoft.KubernetesConfiguration/extensions/read",
+      "Microsoft.ResourceConnector/appliances/read",
+      "Microsoft.Authorization/roleAssignments/write",
+      "Microsoft.Authorization/roleAssignments/delete"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 526
+  },
+  {
     "name": "Azure Machine Learning Workspace Connection Secrets Reader",
     "id": "ea01e6af-a1c1-4350-9563-ad00f8c72ec5",
     "description": "Can list workspace connection secrets",
@@ -5204,12 +5333,13 @@
       "Microsoft.MySQLDiscovery/*/read",
       "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read",
       "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read",
-      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/read"
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/read",
+      "Microsoft.DataReplication/replicationVaults/protectedItems/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 114
+    "_estimatedActions": 115
   },
   {
     "name": "Azure Monitor Dashboards with Grafana Contributor",
@@ -9622,12 +9752,61 @@
       "Microsoft.Insights/AlertRules/Activated/Action",
       "Microsoft.Insights/AlertRules/Resolved/Action",
       "Microsoft.Insights/AlertRules/Throttled/Action",
-      "Microsoft.Insights/AlertRules/Incidents/Read"
+      "Microsoft.Insights/AlertRules/Incidents/Read",
+      "Microsoft.Resources/deployments/read",
+      "Microsoft.Resources/deployments/*/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/read",
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Network/virtualNetworks/subnets/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 27
+    "_estimatedActions": 42
+  },
+  {
+    "name": "Container Registry Connected Registry Administrator",
+    "id": "281928aa-9782-4d9a-954a-3f34c1ed9f95",
+    "description": "Can manage connected registries in a container registry, including the scope maps and tokens required to provision and operate them.",
+    "actions": [
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/write",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/delete",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/deactivate/action",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/resync/action",
+      "Microsoft.ContainerRegistry/registries/scopeMaps/read",
+      "Microsoft.ContainerRegistry/registries/scopeMaps/write",
+      "Microsoft.ContainerRegistry/registries/scopeMaps/delete",
+      "Microsoft.ContainerRegistry/registries/scopeMaps/operationStatuses/read",
+      "Microsoft.ContainerRegistry/registries/tokens/read",
+      "Microsoft.ContainerRegistry/registries/tokens/write",
+      "Microsoft.ContainerRegistry/registries/tokens/delete",
+      "Microsoft.ContainerRegistry/registries/tokens/operationStatuses/read",
+      "Microsoft.ContainerRegistry/registries/generateCredentials/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 15
+  },
+  {
+    "name": "Container Registry Connected Registry Reader",
+    "id": "93f83a62-9a8b-4821-9827-5b3ee513aec3",
+    "description": "Can view connected registries and their associated scope maps and tokens in a container registry.",
+    "actions": [
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/read",
+      "Microsoft.ContainerRegistry/registries/scopeMaps/read",
+      "Microsoft.ContainerRegistry/registries/scopeMaps/operationStatuses/read",
+      "Microsoft.ContainerRegistry/registries/tokens/read",
+      "Microsoft.ContainerRegistry/registries/tokens/operationStatuses/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 6
   },
   {
     "name": "Container Registry Contributor and Data Access Configuration Administrator",
@@ -9688,12 +9867,15 @@
       "Microsoft.Network/virtualNetworks/subnets/read",
       "Microsoft.Network/virtualNetworks/subnets/write",
       "Microsoft.Network/virtualNetworks/read",
-      "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/write"
+      "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/write",
+      "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/read",
+      "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/delete",
+      "Microsoft.Support/*"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 93
+    "_estimatedActions": 125
   },
   {
     "name": "Container Registry Credential Set Administrator",
@@ -11078,25 +11260,8 @@
     "id": "d56b031f-8d90-4376-9231-b5c94fce88ef",
     "description": "Defender Unified RBAC Scoped Reader. This role is managed and assigned automatically by the Defender Unified RBAC system. Manual assignment of this role is not recommended, as the Defender Unified RBAC system may modify or remove it at any time based on system requirements.",
     "actions": [
-      "Microsoft.SecurityInsights/*/read",
-      "Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action",
-      "Microsoft.SecurityInsights/threatIntelligence/indicators/query/action",
-      "Microsoft.SecurityInsights/threatIntelligence/queryIndicators/action",
-      "Microsoft.OperationalInsights/workspaces/analytics/query/action",
-      "Microsoft.OperationalInsights/workspaces/*/read",
-      "Microsoft.OperationalInsights/workspaces/LinkedServices/read",
-      "Microsoft.OperationalInsights/workspaces/savedSearches/read",
-      "Microsoft.OperationsManagement/solutions/read",
       "Microsoft.OperationalInsights/workspaces/query/read",
-      "Microsoft.OperationalInsights/workspaces/query/*/read",
-      "Microsoft.OperationalInsights/querypacks/*/read",
-      "Microsoft.OperationalInsights/workspaces/dataSources/read",
-      "Microsoft.OperationalInsights/workspaces/read",
-      "Microsoft.Insights/workbooks/read",
-      "Microsoft.Resources/deployments/*",
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Resources/templateSpecs/*/read",
-      "Microsoft.Authorization/*/read"
+      "Microsoft.OperationalInsights/workspaces/read"
     ],
     "notActions": [
       "Microsoft.SecurityInsights/ConfidentialWatchlists/*",
@@ -11107,7 +11272,7 @@
       "Microsoft.OperationalInsights/workspaces/tables/data/read"
     ],
     "notDataActions": [],
-    "_estimatedActions": 102
+    "_estimatedActions": 2
   },
   {
     "name": "DeID Batch Data Owner",
@@ -13149,7 +13314,6 @@
     "actions": [],
     "notActions": [],
     "dataActions": [
-      "Microsoft.CognitiveServices/accounts/AIServices/applications/invoke/action",
       "Microsoft.CognitiveServices/accounts/AIServices/endpoints/interact/action"
     ],
     "notDataActions": [],
@@ -13577,14 +13741,29 @@
   {
     "name": "Genome EndUser",
     "id": "0e91b552-ae32-49ea-9898-317af306aa4b",
-    "description": "Full access to Genome data plane operations only",
+    "description": "Full access to Genome control plane and data plane operations",
     "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Genome/data/read",
+      "Microsoft.Genome/data/write"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Genome SuperAdmin",
+    "id": "27ddfca1-add5-422d-9817-ab0d2d13dc6c",
+    "description": "Full access to Genome control plane and data plane operations",
+    "actions": [
+      "Microsoft.Genome/*"
+    ],
     "notActions": [],
     "dataActions": [
       "Microsoft.Genome/*"
     ],
     "notDataActions": [],
-    "_estimatedActions": 0
+    "_estimatedActions": 30
   },
   {
     "name": "GeoCatalog Administrator",
@@ -15663,7 +15842,7 @@
     "_estimatedActions": 246
   },
   {
-    "name": "Logic Apps Standard Operator (Preview)",
+    "name": "Logic Apps Standard Operator",
     "id": "b70c96e9-66fe-4c09-b6e7-c98e69c98555",
     "description": "You can enable and disable the logic app, resubmit workflow runs, as well as create connections. You can't edit workflows or settings.",
     "actions": [
@@ -15687,7 +15866,10 @@
       "Microsoft.Web/sites/stop/Action",
       "Microsoft.Web/sites/write"
     ],
-    "notActions": [],
+    "notActions": [
+      "Microsoft.Web/sites/hostruntime/host/_master/read",
+      "Microsoft.Web/sites/hostruntime/host/action"
+    ],
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 124
@@ -17506,6 +17688,11 @@
       "Microsoft.EnterpriseSupport/enterpriseSupports/read",
       "Microsoft.EnterpriseSupport/enterpriseSupports/write",
       "Microsoft.EnterpriseSupport/enterpriseSupports/delete",
+      "Microsoft.EnterpriseSupport/supportPlans/read",
+      "Microsoft.EnterpriseSupport/supportPlans/write",
+      "Microsoft.EnterpriseSupport/supportPlans/delete",
+      "Microsoft.EnterpriseSupport/supportPlans/cancel/action",
+      "Microsoft.EnterpriseSupport/operationStatuses/read",
       "Microsoft.EnterpriseSupport/register/action",
       "Microsoft.SoftwarePlan/register/action",
       "Microsoft.SoftwarePlan/softwareSubscriptions/read",
@@ -17544,12 +17731,16 @@
       "Microsoft.Hardware/returnPreview/action",
       "Microsoft.Hardware/returns/read",
       "Microsoft.Hardware/returns/write",
-      "Microsoft.Hardware/returns/delete"
+      "Microsoft.Hardware/returns/delete",
+      "Microsoft.ProgramEnrollment/register/action",
+      "Microsoft.ProgramEnrollment/eduEnrollments/read",
+      "Microsoft.ProgramEnrollment/eduEnrollments/write",
+      "Microsoft.ProgramEnrollment/eduEnrollments/delete"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 78
+    "_estimatedActions": 87
   },
   {
     "name": "Procurement Contributor with Resource Group Permissions",
@@ -17587,6 +17778,8 @@
       "Microsoft.EnterpriseSupport/supportPlans/read",
       "Microsoft.EnterpriseSupport/supportPlans/write",
       "Microsoft.EnterpriseSupport/supportPlans/delete",
+      "Microsoft.EnterpriseSupport/supportPlans/cancel/action",
+      "Microsoft.EnterpriseSupport/operationStatuses/read",
       "Microsoft.EnterpriseSupport/register/action",
       "Microsoft.Hardware/register/action",
       "Microsoft.Hardware/orderPreview/action",
@@ -17637,12 +17830,16 @@
       "Microsoft.SoftwarePlan/softwarePerpetualProducts/productKeys/showFullKey/action",
       "Microsoft.SoftwarePlan/softwarePerpetualProducts/productDownloadOptions/read",
       "Microsoft.SoftwarePlan/softwarePerpetualProducts/productDownloadOptions/generateDownloadLinks/action",
-      "Microsoft.SoftwarePlan/validateSoftwarePerpetualProductCreate/action"
+      "Microsoft.SoftwarePlan/validateSoftwarePerpetualProductCreate/action",
+      "Microsoft.ProgramEnrollment/register/action",
+      "Microsoft.ProgramEnrollment/eduEnrollments/read",
+      "Microsoft.ProgramEnrollment/eduEnrollments/write",
+      "Microsoft.ProgramEnrollment/eduEnrollments/delete"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 82
+    "_estimatedActions": 88
   },
   {
     "name": "Project Babylon Data Curator",
@@ -17964,18 +18161,6 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 3240
-  },
-  {
-    "name": "ResourceBuilder Contributor",
-    "id": "2ec40fb7-0838-470f-a644-a574aa191e92",
-    "description": "Provides access to Resource Builder Control Plane Operations",
-    "actions": [
-      "Microsoft.ResourceBuilder/registeredSubscriptions/read"
-    ],
-    "notActions": [],
-    "dataActions": [],
-    "notDataActions": [],
-    "_estimatedActions": 1
   },
   {
     "name": "Role Based Access Control Administrator",
@@ -19676,6 +19861,31 @@
     "_estimatedActions": 80
   },
   {
+    "name": "Storage File Backup Contributor",
+    "id": "c8a487a2-c85b-4487-83a1-9f04cde10293",
+    "description": "Lets you perform file share backup operations using Azure Backup on the storage account",
+    "actions": [
+      "Microsoft.Authorization/roleAssignments/read",
+      "Microsoft.Authorization/roleDefinitions/read",
+      "Microsoft.Authorization/permissions/read",
+      "Microsoft.Authorization/denyAssignments/read",
+      "Microsoft.Storage/storageAccounts/fileServices/read",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/delete",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/lease/action",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/read",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/write",
+      "Microsoft.Storage/storageAccounts/fileServices/write",
+      "Microsoft.Storage/storageAccounts/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Storage/storageAccounts/fileServices/fileShares/files/read",
+      "Microsoft.Storage/storageAccounts/fileServices/readFileBackupSemantics/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 11
+  },
+  {
     "name": "Storage File Data Privileged Contributor",
     "id": "69566ab7-960f-475b-8e7c-b3118f30c6bd",
     "description": "Customer has read, write, delete and modify NTFS permission access on Azure Storage file shares.",
@@ -19806,6 +20016,30 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 1
+  },
+  {
+    "name": "Storage File Restore Contributor",
+    "id": "e7a9e73d-4397-41f2-a282-af8b65aaa2dc",
+    "description": "Lets you perform file share restore operations using Azure Backup on the storage account",
+    "actions": [
+      "Microsoft.Authorization/roleAssignments/read",
+      "Microsoft.Authorization/roleDefinitions/read",
+      "Microsoft.Authorization/permissions/read",
+      "Microsoft.Authorization/denyAssignments/read",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/read",
+      "Microsoft.Storage/storageAccounts/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Storage/storageAccounts/fileServices/fileShares/files/delete",
+      "Microsoft.Storage/storageAccounts/fileServices/fileShares/files/modifypermissions/action",
+      "Microsoft.Storage/storageAccounts/fileServices/fileShares/files/read",
+      "Microsoft.Storage/storageAccounts/fileServices/fileShares/files/write",
+      "Microsoft.Storage/storageAccounts/fileServices/readFileBackupSemantics/action",
+      "Microsoft.Storage/storageAccounts/fileServices/writeFileBackupSemantics/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 6
   },
   {
     "name": "Storage Queue Data Contributor",

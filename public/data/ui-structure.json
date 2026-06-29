@@ -1156,6 +1156,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureStackHCI/VirtualMachineInstances/PowerOff/Action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/VirtualMachineInstances/Restart/Action",
                     "type": "action"
                   },
@@ -1179,7 +1183,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 11,
+            "totalOps": 12,
             "priority": 999
           },
           {
@@ -2001,6 +2005,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Compute/virtualMachineScaleSets/forceRestart/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Compute/virtualMachineScaleSets/manualUpgrade/action",
                     "type": "action"
                   },
@@ -2124,7 +2132,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 63,
+            "totalOps": 64,
             "priority": 2
           },
           {
@@ -3876,7 +3884,7 @@
       }
     ],
     "totalTypes": 53,
-    "totalOps": 562
+    "totalOps": 564
   },
   {
     "name": "Networking",
@@ -6597,6 +6605,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Network/virtualNetworks/subnets/getNetworkPolicies/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
                     "type": "action"
                   },
@@ -6628,7 +6640,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 59,
+            "totalOps": 60,
             "priority": 1
           },
           {
@@ -8188,6 +8200,45 @@
               }
             ],
             "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "azureserviceconnectioncontrollers",
+            "name": "azureserviceconnectioncontrollers",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/azureserviceconnectioncontrollers/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/azureserviceconnectioncontrollers/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/azureserviceconnectioncontrollers/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
             "priority": 999
           },
           {
@@ -9945,9 +9996,19 @@
                   }
                 ],
                 "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
               }
             ],
-            "totalOps": 4,
+            "totalOps": 5,
             "priority": 999
           },
           {
@@ -11629,6 +11690,118 @@
             "priority": 999
           },
           {
+            "key": "privatetrafficmanagerprofiles",
+            "name": "privatetrafficmanagerprofiles",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 10,
+            "priority": 999
+          },
+          {
+            "key": "probinggateways",
+            "name": "probinggateways",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/probinggateways/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/probinggateways/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/probinggateways/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
             "key": "publicIPPrefixes",
             "name": "public IP Prefixes",
             "provider": "Microsoft.Network",
@@ -11858,6 +12031,76 @@
               }
             ],
             "totalOps": 8,
+            "priority": 999
+          },
+          {
+            "key": "topologymaps",
+            "name": "topologymaps",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymaps/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/topologymaps/sites/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymaps/sites/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/topologymaps/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymaps/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/topologymaps/sites/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "topologymapsoperations",
+            "name": "topologymapsoperations",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymapsoperations/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
             "priority": 999
           },
           {
@@ -13734,8 +13977,8 @@
         ]
       }
     ],
-    "totalTypes": 143,
-    "totalOps": 1460
+    "totalTypes": 148,
+    "totalOps": 1485
   },
   {
     "name": "Storage",
@@ -17588,10 +17831,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/majorVersionUpgradePrecheck/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/migrateNetwork/action",
                     "type": "action"
                   },
@@ -17617,6 +17856,10 @@
                   },
                   {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/startLtrBackup/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/startMajorVersionUpgradePrecheck/action",
                     "type": "action"
                   },
                   {
@@ -30562,6 +30805,14 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/read",
                     "type": "action"
                   },
@@ -30678,6 +30929,14 @@
                   {
                     "action": "Microsoft.ContainerRegistry/registries/cacheRules/write",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/write",
+                    "type": "dataAction"
                   },
                   {
                     "action": "Microsoft.ContainerRegistry/registries/connectedRegistries/write",
@@ -30959,7 +31218,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 97,
+            "totalOps": 101,
             "priority": 2
           },
           {
@@ -38813,7 +39072,7 @@
       }
     ],
     "totalTypes": 26,
-    "totalOps": 1940
+    "totalOps": 1944
   },
   {
     "name": "Security",
@@ -56382,6 +56641,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/AgentsInfo/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/AggregatedSecurityAlert/read",
                     "type": "action"
                   },
@@ -57315,6 +57578,10 @@
                   },
                   {
                     "action": "Microsoft.OperationalInsights/workspaces/query/CloudDnsEvents/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/CloudHsmHardwareOperationAuditLogs/read",
                     "type": "action"
                   },
                   {
@@ -58918,6 +59185,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/PreAuthenticationDiscoveryLogs/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/ProjectActivity/read",
                     "type": "action"
                   },
@@ -59919,7 +60190,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1008,
+            "totalOps": 1011,
             "priority": 1
           },
           {
@@ -60064,7 +60335,7 @@
       }
     ],
     "totalTypes": 63,
-    "totalOps": 1597
+    "totalOps": 1600
   },
   {
     "name": "Management + Governance",
@@ -80138,6 +80409,10 @@
                   {
                     "action": "Microsoft.ApplicationMigration/containerSites/containerNodes/read",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ApplicationMigration/containerSites/containerWorkloads/read",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
@@ -80155,6 +80430,10 @@
                   },
                   {
                     "action": "Microsoft.ApplicationMigration/containerSites/containerNodes/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ApplicationMigration/containerSites/containerWorkloads/write",
                     "type": "action"
                   }
                 ],
@@ -80174,6 +80453,10 @@
                   {
                     "action": "Microsoft.ApplicationMigration/containerSites/containerNodes/delete",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ApplicationMigration/containerSites/containerWorkloads/delete",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
@@ -80189,7 +80472,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 10,
+            "totalOps": 13,
             "priority": 999
           },
           {
@@ -116416,79 +116699,6 @@
             "priority": 999
           },
           {
-            "key": "sapDiscoverySites",
-            "name": "sap Discovery Sites",
-            "provider": "Microsoft.Workloads",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/serverInstances/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/serverInstances/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/sapInstances/serverInstances/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Action",
-                "ops": [
-                  {
-                    "action": "Microsoft.Workloads/sapDiscoverySites/importEntities/action",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 10,
-            "priority": 999
-          },
-          {
             "key": "sapVirtualInstances",
             "name": "sap Virtual Instances",
             "provider": "Microsoft.Workloads",
@@ -116749,7 +116959,7 @@
         ]
       }
     ],
-    "totalTypes": 732,
-    "totalOps": 4484
+    "totalTypes": 731,
+    "totalOps": 4477
   }
 ]
