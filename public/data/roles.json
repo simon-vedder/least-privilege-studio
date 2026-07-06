@@ -9637,6 +9637,20 @@
     "_estimatedActions": 86
   },
   {
+    "name": "Container Apps SandboxGroup Contributor",
+    "id": "11b23f7a-6229-4518-88db-0576f10dd2a0",
+    "description": "Full management of Container Apps Sandbox Groups, including creation, deletion, and updates.",
+    "actions": [
+      "Microsoft.App/sandboxGroups/*/read",
+      "Microsoft.App/sandboxGroups/*/write",
+      "Microsoft.App/sandboxGroups/*/delete"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 30
+  },
+  {
     "name": "Container Apps SandboxGroup Data Owner",
     "id": "c24cf47c-5077-412d-a19c-45202126392c",
     "description": "Ownership of all Container Apps SandboxGroup data.",

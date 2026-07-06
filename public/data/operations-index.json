@@ -1144,10 +1144,6 @@
     "description": "Delete the security requirement for the workspace."
   },
   {
-    "action": "Microsoft.ApiCenter/services/apis/versions/securityRequirements/getCredentials/action",
-    "description": "Get the credentials for the security requirement."
-  },
-  {
     "action": "Microsoft.ApiCenter/services/apis/versions/securityRequirements/read",
     "description": "List the security requirements for the workspace."
   },
@@ -3878,6 +3874,10 @@
   {
     "action": "Microsoft.App/sandboxGroups/vnetConnections/write",
     "description": "Create or update a vnetConnection resource"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/volumes/count/read",
+    "description": "Get the count of volumes in a sandbox group, grouped by volume type"
   },
   {
     "action": "Microsoft.App/sandboxGroups/volumes/delete",
@@ -12736,12 +12736,356 @@
     "description": "Update a DelegatedIdentity"
   },
   {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addDevices/action",
+    "description": "Performs the collections addDevices action on a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addUserAssignments/action",
+    "description": "Performs the addUserAssignments action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/appDiscovery/action",
+    "description": "Performs the appDiscovery action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+    "description": "Reads the collections applications of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/assignUsers/action",
+    "description": "Performs the collections assignUsers action on a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkinCloudDevice/action",
+    "description": "Performs the checkinCloudDevice action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkoutCloudDevice/action",
+    "description": "Performs the checkoutCloudDevice action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/create/action",
+    "description": "Performs the create action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/delete",
+    "description": "Deletes the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteApp/action",
+    "description": "Performs the deleteApp action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteDevices/action",
+    "description": "Performs the collections deleteDevices action on a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/device/signal/action",
+    "description": "Performs the collections device signal action on a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+    "description": "Reads the collections devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+    "description": "Reads the collections policies autoscale status of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/attach/action",
+    "description": "Performs the attach action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkDelete/action",
+    "description": "Performs the bulkDelete action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkUpdate/action",
+    "description": "Performs the bulkUpdate action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/create/action",
+    "description": "Performs the create action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete",
+    "description": "Deletes the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete/action",
+    "description": "Performs the delete action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/deleteSnapshot/action",
+    "description": "Performs the deleteSnapshot action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/detach/action",
+    "description": "Performs the detach action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/importFromSasUrl/action",
+    "description": "Performs the importFromSasUrl action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/notifyUsage/action",
+    "description": "Performs the notifyUsage action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+    "description": "Reads the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/restoreSnapshot/action",
+    "description": "Performs the restoreSnapshot action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+    "description": "Reads the collections profiles snapshots of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/sas/read",
+    "description": "Reads the collections profiles snapshots sas of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/takeSnapshot/action",
+    "description": "Performs the takeSnapshot action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/update/action",
+    "description": "Performs the update action on the collections profiles of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+    "description": "Reads the collections publishableAppSetIndex of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+    "description": "Reads the collections publishableAppSets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/putApp/action",
+    "description": "Performs the putApp action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+    "description": "Reads the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUserAssignments/action",
+    "description": "Performs the removeUserAssignments action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUsers/action",
+    "description": "Performs the collections removeUsers action on a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/resumeProvisioning/action",
+    "description": "Performs the resumeProvisioning action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateCollectionMetadata/action",
+    "description": "Performs the updateCollectionMetadata action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateDeviceSpecification/action",
+    "description": "Performs the updateDeviceSpecification action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+    "description": "Reads the collections userAssignments of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+    "description": "Reads the collections users of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/validateApp/action",
+    "description": "Performs the validateApp action on the collections of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/write",
+    "description": "Modifies the collections of a partner business"
+  },
+  {
     "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/delete",
     "description": "Delete a PartnerBusiness"
   },
   {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/archive/action",
+    "description": "Performs the archive action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/block/action",
+    "description": "Performs the block action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/create/action",
+    "description": "Performs the create action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deallocate/action",
+    "description": "Performs the deallocate action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/delete/action",
+    "description": "Performs the delete action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deleteSnapshot/action",
+    "description": "Performs the deleteSnapshot action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/diagnoseAndRepair/action",
+    "description": "Performs the diagnoseAndRepair action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failback/action",
+    "description": "Performs the failback action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failover/action",
+    "description": "Performs the failover action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/hibernate/action",
+    "description": "Performs the hibernate action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/delete",
+    "description": "Deletes the devices operations of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+    "description": "Reads the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/reset/action",
+    "description": "Performs the reset action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/restart/action",
+    "description": "Performs the restart action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+    "description": "Reads the devices snapshots of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/sasUri/read",
+    "description": "Reads the devices snapshots sasUri of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action",
+    "description": "Performs the start action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/startSession/action",
+    "description": "Performs the startSession action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/takeSnapshot/action",
+    "description": "Performs the takeSnapshot action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/unblock/action",
+    "description": "Performs the unblock action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/update/action",
+    "description": "Performs the update action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/userAssignment/action",
+    "description": "Performs the userAssignment action on the devices of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/create/action",
+    "description": "Performs the create action on the encryptionSets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/delete/action",
+    "description": "Performs the delete action on the encryptionSets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/read",
+    "description": "Reads the encryptionSets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/update/action",
+    "description": "Performs the update action on the encryptionSets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/images/delete",
+    "description": "Deletes the images of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/images/write",
+    "description": "Modifies the images of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetwork/action",
+    "description": "Performs the createNetwork action on the networks of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetworkSetting/action",
+    "description": "Performs the createNetworkSetting action on the networks of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/delete",
+    "description": "Deletes the networks of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/deleteNetwork/action",
+    "description": "Performs the deleteNetwork action on the networks of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+    "description": "Reads the networks of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetwork/action",
+    "description": "Performs the updateNetwork action on the networks of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetworkSetting/action",
+    "description": "Performs the updateNetworkSetting action on the networks of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/write",
+    "description": "Modifies the networks of a partner business"
+  },
+  {
     "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/read",
     "description": "Reads the resource(s) of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/delete",
+    "description": "Deletes the resourceIsolationGroups of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/read",
+    "description": "Reads the resourceIsolationGroups of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/write",
+    "description": "Modifies the resourceIsolationGroups of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/create/action",
+    "description": "Performs the create action on the secrets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/delete/action",
+    "description": "Performs the delete action on the secrets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/read",
+    "description": "Reads the secrets of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/update/action",
+    "description": "Performs the update action on the secrets of a partner business"
   },
   {
     "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/write",
@@ -13040,6 +13384,10 @@
     "description": "Delete agents, threads, and messages"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action",
+    "description": "Allows passing the x-ms-user-identity header to make agent requests on behalf of a specific end user for per-user session isolation."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/read",
     "description": "Read agents, threads, and messages"
   },
@@ -13128,6 +13476,10 @@
     "description": "Create, cancel, pause and resume a fine-tuning job"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write",
+    "description": "Auto-deploy a fine-tuned model after a fine-tuning job completes. Requires this action in addition to fine_tuning/write when the job creation request includes auto-deployment parameters (e.g. 'suffix')."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/index/entities/read",
     "description": "Query index entities"
   },
@@ -13166,6 +13518,18 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/managedAgentIdentityBlueprints/write",
     "description": "Create or update a managed agent identity blueprint"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/managedComputeDeployments/delete",
+    "description": "Delete a managed compute deployment."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/managedComputeDeployments/read",
+    "description": "List or get managed compute deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/managedComputeDeployments/write",
+    "description": "Create or update a managed compute deployment."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/notifications/delete",
@@ -14092,12 +14456,36 @@
     "description": "A sync API for harmful content analysis for image with text"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/audio/manifest:bind/action",
+    "description": "A sync API for content provenance manifest binding to audio."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/digest:sign/action",
     "description": "A sync API for content provenance manifest binding."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/image/manifest:bind/action",
+    "description": "A sync API for content provenance manifest binding to image."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/jobs/read",
+    "description": "Get or List Async Provenance Jobs"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/jobs/write",
+    "description": "Create Async Provenance Job"
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/manifest:bind/action",
     "description": "A sync API for content provenance manifest binding."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/perceptible:overlay/action",
+    "description": "Generate perceptible provenance content disclaimer."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/video/manifest:bind/action",
+    "description": "A sync API for content provenance manifest binding to video."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance:detect/action",
@@ -17628,6 +18016,18 @@
     "description": "Retrieve a list of webhook event types."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/OpenAI/data-generation-jobs/delete",
+    "description": "Delete Data-generation-jobs."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/OpenAI/data-generation-jobs/read",
+    "description": "Gets information about data generation jobs."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/OpenAI/data-generation-jobs/write",
+    "description": "Create and cancel Data-generation-jobs."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/OpenAI/data-generations/delete",
     "description": "Delete Data-generations."
   },
@@ -18346,6 +18746,10 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/SpeechServices/voiceagent/realtime/action",
     "description": "Create a realtime connection to the voice agent api"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/SpeechServices/voicelive/capabilities/read",
+    "description": "Returns the language models and TTS voices available in this Voice Live deployment."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/SpeechServices/voicelive/realtime/action",
@@ -32521,31 +32925,31 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/ClaimAnyVm/action",
-    "description": "宣告實驗室中可宣告的隨機虛擬機器。"
+    "description": "Claim a random claimable virtual machine in the lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/CreateEnvironment/action",
-    "description": "在實驗室中建立虛擬機器。"
+    "description": "Create virtual machines in a lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/EnsureCurrentUserProfile/action",
-    "description": "請確認目前的使用者在實驗室具有有效的設定檔。"
+    "description": "Ensure the current user has a valid profile in the lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ExportResourceUsage/action",
-    "description": "將實驗室資源使用量匯出到儲存體帳戶"
+    "description": "Exports the lab resource usage into a storage account"
   },
   {
     "action": "Microsoft.DevTestLab/labs/GenerateUploadUri/action",
-    "description": "產生 URI，以便於將自訂的磁碟映像上傳至實驗室。"
+    "description": "Generate a URI for uploading custom disk images to a Lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ImportVirtualMachine/action",
-    "description": "將虛擬機器匯入其他實驗室中。"
+    "description": "Import a virtual machine into a different lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ListVhds/action",
-    "description": "列出可用於建立自訂映像的磁碟映像。"
+    "description": "List disk images available for custom image creation."
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/armTemplates/read",
@@ -32553,7 +32957,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/GenerateArmTemplate/action",
-    "description": "為指定的成品產生 ARM 範本，將必要的檔案上傳至儲存體帳戶，以及驗證所產生的成品。"
+    "description": "Generates an ARM template for the given artifact, uploads the required files to a storage account, and validates the generated artifact."
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/read",
@@ -32613,7 +33017,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/Notify/action",
-    "description": "將通知傳送到提供的管道。"
+    "description": "Send notification to provided channel."
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/delete",
@@ -32629,7 +33033,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/EvaluatePolicies/action",
-    "description": "評估實驗室原則。"
+    "description": "Evaluates lab policy."
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/policies/delete",
@@ -32653,11 +33057,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/ListApplicable/action",
-    "description": "列出所有適用的排程"
+    "description": "Lists all applicable schedules"
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/delete",
@@ -32725,11 +33129,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Attach/action",
-    "description": "建立磁碟租用，並將其連結至虛擬機器。"
+    "description": "Attach and create the lease of the disk to the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Detach/action",
-    "description": "中斷磁碟與虛擬機器的連結，並中止租用。"
+    "description": "Detach and break the lease of the disk attached to the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/delete",
@@ -32773,15 +33177,15 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/ListApplicableSchedules/action",
-    "description": "列出適用的啟動/停止排程 (若有的話)。"
+    "description": "Lists the applicable start/stop schedules, if any."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Start/action",
-    "description": "啟動 Service Fabric。"
+    "description": "Start a service fabric."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Stop/action",
-    "description": "停止 Service Fabric"
+    "description": "Stop a service fabric"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/delete",
@@ -32793,7 +33197,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/delete",
@@ -32817,67 +33221,67 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/AddDataDisk/action",
-    "description": "將現有新的資料磁碟連結至虛擬機器。"
+    "description": "Attach a new or existing data disk to virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ApplyArtifacts/action",
-    "description": "將成品套用至虛擬機器。"
+    "description": "Apply artifacts to virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ChangeSecurityProfile/action",
-    "description": "變更虛擬機的安全性配置檔"
+    "description": "Change security profile of a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Claim/action",
-    "description": "取得現有虛擬機器的擁有權"
+    "description": "Take ownership of an existing virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ClearArtifactResults/action",
-    "description": "清除虛擬機器的成品結果。"
+    "description": "Clears the artifact results of the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/DetachDataDisk/action",
-    "description": "中斷指定磁碟與虛擬機器的連結。"
+    "description": "Detach the specified disk from the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/GetRdpFileContents/action",
-    "description": "取得代表虛擬機器 RDP 檔案內容的字串"
+    "description": "Gets a string that represents the contents of the RDP file for the virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Hibernate/action",
-    "description": "讓虛擬機休眠"
+    "description": "Hibernate a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ListApplicableSchedules/action",
-    "description": "列出適用的啟動/停止排程 (若有的話)。"
+    "description": "Lists the applicable start/stop schedules, if any."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Redeploy/action",
-    "description": "重新部署虛擬機器"
+    "description": "Redeploy a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Resize/action",
-    "description": "調整虛擬機器大小。"
+    "description": "Resize Virtual Machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Restart/action",
-    "description": "重新啟動虛擬機器。"
+    "description": "Restart a virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Start/action",
-    "description": "啟動虛擬機器。"
+    "description": "Start a virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Stop/action",
-    "description": "停止虛擬機器"
+    "description": "Stop a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/TransferDisks/action",
-    "description": "傳送所有連結至虛擬機器的資料磁碟，由目前的使用者擁有。"
+    "description": "Transfers all data disks attached to the virtual machine to be owned by the current user."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/UnClaim/action",
-    "description": "釋放現有虛擬機器的擁有權"
+    "description": "Release ownership of an existing virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/delete",
@@ -32889,7 +33293,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/delete",
@@ -32949,11 +33353,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Retarget/action",
-    "description": "更新排程的目標資源識別碼。"
+    "description": "Updates a schedule's target resource Id."
   },
   {
     "action": "Microsoft.DevTestLab/schedules/delete",
@@ -37164,10 +37568,6 @@
     "description": "Writes Support Plan resources"
   },
   {
-    "action": "Microsoft.ErrorAtlas/unassignedErrors/read",
-    "description": "Get an unassigned error event."
-  },
-  {
     "action": "Microsoft.EventGrid/domains/PrivateEndpointConnectionsApproval/action",
     "description": "Approve PrivateEndpointConnections for domains"
   },
@@ -40165,63 +40565,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "Gets the endpoint access credentials to the resource."
+    "description": "List the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "Gets the ingress gateway endpoint credentials "
+    "description": "List the ingress gateway access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "Fetches the managed proxy details "
+    "description": "List the managed proxy details to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Gets the endpoint to the resource."
+    "description": "Get or list of endpoints to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the service details to the target resource."
+    "description": "Deletes the serviceConfigurations access to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Gets the details about the service to the resource."
+    "description": "Get or list of serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Update the service details in the service configurations of the target resource."
+    "description": "Create or update the serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Update the endpoint to the target resource."
+    "description": "Create or update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Delete a PublicCloudConnector"
+    "description": "Deletes the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Get a PublicCloudConnector"
+    "description": "Gets the public cloud connectors."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "A long-running resource action."
+    "description": "Tests the permissions of solution configurations under public cloud connector."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update a PublicCloudConnector"
+    "description": "Update the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Delete a SolutionConfiguration"
+    "description": "Deletes the solution configuration with provided solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Get a InventoryResource"
+    "description": "Retrieve a list of inventory by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Get a SolutionConfiguration"
+    "description": "Retrieve the solution configuration identified by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -40229,11 +40629,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Update a SolutionConfiguration"
+    "description": "Updates the solution configuration for solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Get a SolutionTypeResource"
+    "description": "Retrieve the solution type by provided solution type."
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -47588,6 +47988,30 @@
     "description": "API to update certain properties of the Access Control List resource."
   },
   {
+    "action": "Microsoft.ManagedNetworkFabric/edgeConnectors/delete",
+    "description": "Deletes the specified EdgeConnector."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/edgeConnectors/read",
+    "description": "Lists EdgeConnectors by subscription."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/edgeConnectors/write",
+    "description": "Updates an EdgeConnector."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/delete",
+    "description": "Deletes the specified Fabric."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/read",
+    "description": "Lists Fabrics by subscription."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/write",
+    "description": "Updates a Fabric."
+  },
+  {
     "action": "Microsoft.ManagedNetworkFabric/internetGatewayRules/delete",
     "description": "Implements Internet Gateway Rules DELETE method."
   },
@@ -48048,6 +48472,10 @@
     "description": "Updates the Network Bootstrap Device to use the latest passwords. Does not generate new passwords. Allows network bootstrap devices missed during a previous password rotation to be brought back into sync."
   },
   {
+    "action": "Microsoft.ManagedNetworkFabric/networkBootstrapDevices/runRoCommand/action",
+    "description": "Run the RO Command on the Network Bootstrap Device."
+  },
+  {
     "action": "Microsoft.ManagedNetworkFabric/networkBootstrapDevices/updateAdministrativeState/action",
     "description": "Updates the Administrative state of the Network Bootstrap Device."
   },
@@ -48142,6 +48570,10 @@
   {
     "action": "Microsoft.ManagedNetworkFabric/networkDevices/runRwCommand/action",
     "description": "Run the RW Command on the Network Device."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/networkDevices/runValidation/action",
+    "description": "Runs validation on the Network Device for the specified operation."
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/networkDevices/updateAdministrativeState/action",
@@ -48530,6 +48962,10 @@
   {
     "action": "Microsoft.ManagedNetworkFabric/networkFabrics/rotatePasswords/action",
     "description": "Creates new passwords, then updates the Terminal Server and Network Devices to use the new passwords.\n\nNote that disabled devices cannot be updated and must be resynchronized with the new passwords once they are enabled.\n\nFails if any of the devices could not be updated with the new password.\nFailed devices should be resynchronized with the new passwords once possible."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/networkFabrics/runValidation/action",
+    "description": "Runs validation on the Network Fabric for the specified operation."
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/networkFabrics/sshcommands/delete",
@@ -49390,6 +49826,54 @@
   {
     "action": "Microsoft.Migrate/assessmentProjects/businesscases/write",
     "description": "Creates a new business case or updates an existing business case"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessmentOptions/read",
+    "description": "Gets the properties of the containerApps AssessmentOptions"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/assessedWebApps/read",
+    "description": "Gets the properties of the assessedWebApps "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/assessedWebApps/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/delete",
+    "description": "Deletes the containerApps Assessment which are available in the given location"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/downloadurl/action",
+    "description": "Get Blob SAS URI for the containerApps AssessmentReport"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/managedEnvironments/read",
+    "description": "Gets the properties of the managedEnvironments "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/managedEnvironments/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/read",
+    "description": "Gets the properties of the containerApps Assessment"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/recalculateSummaries/action",
+    "description": "Recalculate summaries for an assessments"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/summaries/read",
+    "description": "Gets the properties of the summaries "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/summaries/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerAppsAssessments/write",
+    "description": "Creates a containerApps Assessment or updates an existing containerApps Assessment"
   },
   {
     "action": "Microsoft.Migrate/assessmentProjects/delete",
@@ -51708,18 +52192,6 @@
     "description": "Creates or updates an Azure Firewall"
   },
   {
-    "action": "Microsoft.Network/azureserviceconnectioncontrollers/delete",
-    "description": "Deletes an Azure Service Connection Controller"
-  },
-  {
-    "action": "Microsoft.Network/azureserviceconnectioncontrollers/read",
-    "description": "Gets the Azure Service Connection Controller Properties, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/azureserviceconnectioncontrollers/write",
-    "description": "Creates Or Updates Azure Service Connection Controller, in JSON format"
-  },
-  {
     "action": "Microsoft.Network/bastionHosts/createShareableLinks/action",
     "description": "Creates shareable urls for the VMs under a bastion and returns the urls"
   },
@@ -52762,10 +53234,6 @@
   {
     "action": "Microsoft.Network/interconnectGroups/delete",
     "description": "Delete Interconnect Group"
-  },
-  {
-    "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
-    "description": "Get InterconnectGroup Node Availability"
   },
   {
     "action": "Microsoft.Network/interconnectGroups/read",
@@ -54232,58 +54700,6 @@
     "description": "Creates a new private link service, or updates an existing private link service."
   },
   {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/delete",
-    "description": "Deletes a Private Traffic Manager Profile"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/delete",
-    "description": "Deletes a Private Traffic Manager Profile Endpoint"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/read",
-    "description": "Gets the Private Traffic Manager Profile Endpoint Properties, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/write",
-    "description": "Creates Or Updates a Private Traffic Manager Profile Endpoint, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/delete",
-    "description": "Deletes a Private Traffic Manager Profile Health Policy"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/read",
-    "description": "Gets the Private Traffic Manager Profile Health Policy Properties, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/write",
-    "description": "Creates Or Updates a Private Traffic Manager Profile Health Policy, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/read",
-    "description": "Gets the Private Traffic Manager Profile Properties, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
-    "description": "Establishes a link between a private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the private DNS record"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
-    "description": "Creates Or Updates a Private Traffic Manager Profile, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/probinggateways/delete",
-    "description": "Deletes a Probing Gateway"
-  },
-  {
-    "action": "Microsoft.Network/probinggateways/read",
-    "description": "Gets the Probing Gateway Properties, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/probinggateways/write",
-    "description": "Creates Or Updates a Probing Gateway, in JSON format"
-  },
-  {
     "action": "Microsoft.Network/publicIPAddresses/ddosProtectionStatus/action",
     "description": "Gets the effective Ddos protection status for a Public IP Address resource."
   },
@@ -54446,34 +54862,6 @@
   {
     "action": "Microsoft.Network/serviceEndpointPolicies/write",
     "description": "Creates a Service Endpoint Policy or updates an existing Service Endpoint Policy"
-  },
-  {
-    "action": "Microsoft.Network/topologymaps/delete",
-    "description": "Deletes a Topology Map"
-  },
-  {
-    "action": "Microsoft.Network/topologymaps/read",
-    "description": "Gets the Topology Map Properties, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/topologymaps/sites/delete",
-    "description": "Deletes a Topology Map Site"
-  },
-  {
-    "action": "Microsoft.Network/topologymaps/sites/read",
-    "description": "Gets the Topology Map Site Properties, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/topologymaps/sites/write",
-    "description": "Creates Or Updates a Topology Map Site, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/topologymaps/write",
-    "description": "Creates Or Updates a Topology Map, in JSON format"
-  },
-  {
-    "action": "Microsoft.Network/topologymapsoperations/read",
-    "description": "Gets the Topology Map Operation details, in JSON format"
   },
   {
     "action": "Microsoft.Network/trafficManagerGeographicHierarchies/read",
@@ -54866,10 +55254,6 @@
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/effectiveSecurityUserRules/read",
     "description": "Permission to get the security user rule(s) taking effect on a subnet."
-  },
-  {
-    "action": "Microsoft.Network/virtualNetworks/subnets/getNetworkPolicies/action",
-    "description": "Lists Network Intent Policies attached to a subnet"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
@@ -59424,6 +59808,10 @@
     "description": "Read data from the MNFSystemStateMessageUpdates table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/MPCAuditLogs/read",
+    "description": "Read data from the MPCAuditLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/MPCIngestionLogs/read",
     "description": "Read data from the MPCIngestionLogs table"
   },
@@ -59666,10 +60054,6 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/OEWExperimentScorecards/read",
     "description": "Read data from the OEWExperimentScorecards table"
-  },
-  {
-    "action": "Microsoft.OperationalInsights/workspaces/query/OGOAuditLogs/read",
-    "description": "Read data from the OGOAuditLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/OLPSupplyChainEntityOperations/read",
@@ -60492,8 +60876,16 @@
     "description": "Read data from the WorkloadMonitoringPerf table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ZTSGraph/read",
+    "description": "Read data from the ZTSGraph table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/ZTSJobStatus/read",
     "description": "Read data from the ZTSJobStatus table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ZTSMetadata/read",
+    "description": "Read data from the ZTSMetadata table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/ZTSRequest/read",
@@ -61724,42 +62116,6 @@
     "description": "Creates the service limit or quota request for the specified resource"
   },
   {
-    "action": "Microsoft.RecommendationsService/accounts/Delete",
-    "description": "Deletes account"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/Read",
-    "description": "Reads accounts"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/Write",
-    "description": "Writes account"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/modeling/Delete",
-    "description": "Deletes account's modeling resource"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/modeling/Read",
-    "description": "Reads account's modeling resources"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/modeling/Write",
-    "description": "Writes account's modeling resource"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/serviceEndpoints/Delete",
-    "description": "Deletes account's serviceEndpoint resource"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/serviceEndpoints/Read",
-    "description": "Reads account's serviceEndpoint resources"
-  },
-  {
-    "action": "Microsoft.RecommendationsService/accounts/serviceEndpoints/Write",
-    "description": "Writes account's serviceEndpoint resource"
-  },
-  {
     "action": "Microsoft.RecoveryServices/Vaults/PrivateEndpointConnectionsApproval/action",
     "description": "Approve the Private Endpoint Connection."
   },
@@ -62986,6 +63342,10 @@
   {
     "action": "Microsoft.ResourceBuilder/workspaces/pipelines/read",
     "description": "List Pipeline resources by Workspace"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/workspaces/pipelines/triggerRun/action",
+    "description": "Trigger a run of the pipeline."
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/pipelines/write",
@@ -68664,7 +69024,15 @@
     "description": ""
   },
   {
+    "action": "Microsoft.Storage/providerPermissions/read",
+    "description": ""
+  },
+  {
     "action": "Microsoft.Storage/resilienciesProgressions/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.Storage/resourceTypes/read",
     "description": ""
   },
   {
@@ -68674,6 +69042,10 @@
   {
     "action": "Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",
     "description": "Approve Private Endpoint Connections"
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/abortHnsOnMigration/action",
+    "description": "Customer is able to abort an ongoing Hns migration on the storage account"
   },
   {
     "action": "Microsoft.Storage/storageAccounts/accountLocks/delete",
@@ -68906,6 +69278,14 @@
   {
     "action": "Microsoft.Storage/storageAccounts/encryptionScopes/read",
     "description": ""
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/encryptionScopes/sharedIdentities/read",
+    "description": "Get shared identity for a storage account's encryption scope"
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/encryptionScopes/sharedIdentities/write",
+    "description": "Put shared identity for a storage account's encryption scope"
   },
   {
     "action": "Microsoft.Storage/storageAccounts/encryptionScopes/write",
@@ -69225,6 +69605,14 @@
   },
   {
     "action": "Microsoft.Storage/storageAccounts/rotateKey/action",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/sharedIdentities/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/sharedIdentities/write",
     "description": ""
   },
   {
