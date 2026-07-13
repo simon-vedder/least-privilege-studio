@@ -99,6 +99,10 @@
                   {
                     "action": "Microsoft.AzureStackHCI/Clusters/SecuritySettings/Read",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Jobs/Read",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
@@ -120,6 +124,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/Clusters/SecuritySettings/Write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Jobs/Write",
                     "type": "action"
                   },
                   {
@@ -150,6 +158,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/Clusters/SecuritySettings/Delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Jobs/Delete",
                     "type": "action"
                   }
                 ],
@@ -198,7 +210,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 24,
+            "totalOps": 27,
             "priority": 999
           },
           {
@@ -3884,7 +3896,7 @@
       }
     ],
     "totalTypes": 53,
-    "totalOps": 564
+    "totalOps": 567
   },
   {
     "name": "Networking",
@@ -25015,6 +25027,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.App/agents/dataconnectors/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.App/agents/extendedagents/read",
                     "type": "dataAction"
                   },
@@ -25048,6 +25064,10 @@
               {
                 "label": "Write",
                 "ops": [
+                  {
+                    "action": "Microsoft.App/agents/dataconnectors/write",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.App/agents/extendedagents/write",
                     "type": "dataAction"
@@ -25083,6 +25103,10 @@
                 "label": "Delete",
                 "ops": [
                   {
+                    "action": "Microsoft.App/agents/dataconnectors/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.App/agents/delete",
                     "type": "action"
                   },
@@ -25117,6 +25141,10 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.App/agents/dataconnectors/listSecrets/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.App/agents/threads/approve/action",
                     "type": "dataAction"
                   }
@@ -25124,7 +25152,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 22,
+            "totalOps": 26,
             "priority": 999
           },
           {
@@ -26221,25 +26249,6 @@
               }
             ],
             "totalOps": 50,
-            "priority": 999
-          },
-          {
-            "key": "quotaPolicy",
-            "name": "quota Policy",
-            "provider": "microsoft.app",
-            "actions": [
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.App/quotaPolicy/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 1,
             "priority": 999
           },
           {
@@ -30466,8 +30475,8 @@
         ]
       }
     ],
-    "totalTypes": 74,
-    "totalOps": 1710
+    "totalTypes": 73,
+    "totalOps": 1713
   },
   {
     "name": "Containers",
@@ -32858,6 +32867,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.ContainerService/managedClusters/agentPools/listBootstrapData/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ContainerService/managedClusters/agentPools/upgradeNodeImageVersion/action",
                     "type": "action"
                   },
@@ -32957,7 +32970,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 441,
+            "totalOps": 442,
             "priority": 1
           },
           {
@@ -37135,6 +37148,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.ContainerService/fleets/notify/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ContainerService/fleets/policy/podsecuritypolicies/use/action",
                     "type": "dataAction"
                   },
@@ -37174,7 +37191,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 691,
+            "totalOps": 692,
             "priority": 999
           },
           {
@@ -37391,9 +37408,23 @@
                   }
                 ],
                 "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.ContainerService/preparedImageSpecifications/deploy/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerService/preparedImageSpecifications/versions/deploy/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
               }
             ],
-            "totalOps": 6,
+            "totalOps": 8,
             "priority": 999
           },
           {
@@ -38989,7 +39020,7 @@
       }
     ],
     "totalTypes": 26,
-    "totalOps": 1944
+    "totalOps": 1948
   },
   {
     "name": "Security",
@@ -44087,90 +44118,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/files/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/results/images/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/results/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifierresults/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/defaults/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/datasets/files/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/document/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/ocr/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/stats/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/read",
-                    "type": "dataAction"
-                  },
-                  {
                     "action": "Microsoft.CognitiveServices/accounts/AnomalyDetector/multivariate/detect-batch/read",
                     "type": "dataAction"
                   },
@@ -45915,6 +45862,90 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/files/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/results/images/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/results/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifierresults/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/defaults/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/datasets/files/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/document/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/ocr/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/stats/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/networkSecurityPerimeterAssociationProxies/read",
                     "type": "action"
                   },
@@ -46327,6 +46358,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/index/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/languages/read",
                     "type": "dataAction"
                   },
@@ -46526,54 +46561,6 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/tasks/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/defaults/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/document/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/write",
                     "type": "dataAction"
                   },
                   {
@@ -47277,6 +47264,54 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/defaults/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/document/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/write",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/networkSecurityPerimeterAssociationProxies/write",
                     "type": "action"
                   },
@@ -47342,6 +47377,10 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/OpenAI/files/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
                     "type": "dataAction"
                   },
                   {
@@ -47708,50 +47747,6 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/tasks/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/delete",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/delete",
                     "type": "dataAction"
                   },
                   {
@@ -48383,6 +48378,50 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/delete",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/networkSecurityPerimeterAssociationProxies/delete",
                     "type": "action"
                   },
@@ -48615,6 +48654,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/index/delete",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/models/delete",
                     "type": "dataAction"
                   },
@@ -48730,74 +48773,6 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/dispatch/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:analyze/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:analyzebinary/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:copy/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:grantCopyAuthorization/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers:classify/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers:classifybinary/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/faces:compare/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/faces:detect/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects:migrate/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels:analyze/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files:analyze/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema:edit/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema:suggest/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files:hitl/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces:find/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons:identify/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons:verify/action",
                     "type": "dataAction"
                   },
                   {
@@ -50089,6 +50064,74 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:analyze/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:analyzebinary/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:copy/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:grantCopyAuthorization/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers:classify/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers:classifybinary/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/faces:compare/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/faces:detect/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects:migrate/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels:analyze/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files:analyze/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema:edit/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema:suggest/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files:hitl/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces:find/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons:identify/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons:verify/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/networkSecurityPerimeterConfigurations/reconcile/action",
                     "type": "action"
                   },
@@ -50449,6 +50492,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/index/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/internal/modelexport/containerexport/action",
                     "type": "dataAction"
                   },
@@ -50548,7 +50595,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1628,
+            "totalOps": 1632,
             "priority": 1
           },
           {
@@ -52407,7 +52454,7 @@
       }
     ],
     "totalTypes": 19,
-    "totalOps": 2034
+    "totalOps": 2038
   },
   {
     "name": "Monitor",
@@ -68670,6 +68717,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Logic/integrationAccounts/agreements/listSecrets/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Logic/integrationAccounts/assemblies/listContentCallbackUrl/action",
                     "type": "action"
                   },
@@ -68717,7 +68768,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 54,
+            "totalOps": 55,
             "priority": 999
           },
           {
@@ -69735,7 +69786,7 @@
       }
     ],
     "totalTypes": 37,
-    "totalOps": 701
+    "totalOps": 702
   },
   {
     "name": "Analytics",
@@ -103368,12 +103419,20 @@
                   {
                     "action": "Microsoft.InferenceService/inferenceAccounts/invoke/semanticReranker/action",
                     "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/regenerateKeys/action",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": true
               }
             ],
-            "totalOps": 4,
+            "totalOps": 6,
             "priority": 999
           }
         ]
@@ -103797,6 +103856,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/unsafeFunctionCalls/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.IoTFirmwareDefense/workspaces/read",
                     "type": "action"
                   },
@@ -103906,7 +103969,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 30,
+            "totalOps": 31,
             "priority": 999
           }
         ]
@@ -117255,6 +117318,6 @@
       }
     ],
     "totalTypes": 729,
-    "totalOps": 4553
+    "totalOps": 4556
   }
 ]

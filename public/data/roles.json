@@ -4179,8 +4179,7 @@
       "Microsoft.ContainerService/fleets/services/read",
       "Microsoft.ContainerService/fleets/cluster.kubernetes-fleet.io/internalmemberclusters/read",
       "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/resourceoverrides/read",
-      "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/resourceoverridesnapshots/read",
-      "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/works/read"
+      "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/resourceoverridesnapshots/read"
     ],
     "notDataActions": [],
     "_estimatedActions": 15
@@ -9113,6 +9112,7 @@
       "Microsoft.Features/features/read",
       "Microsoft.Mission/communities/communityEndpoints/read",
       "Microsoft.Mission/communities/communityEndpoints/write",
+      "Microsoft.Mission/communities/syncCommunityEndpoints/action",
       "Microsoft.Mission/communities/transitHubs/read",
       "Microsoft.Mission/communities/transitHubs/write",
       "Microsoft.Mission/enclaveConnections/read",
@@ -9123,7 +9123,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 41
+    "_estimatedActions": 42
   },
   {
     "name": "Community Owner Role",
@@ -9161,6 +9161,7 @@
       "Microsoft.Mission/communities/communityEndpoints/read",
       "Microsoft.Mission/communities/communityEndpoints/write",
       "Microsoft.Mission/communities/communityEndpoints/delete",
+      "Microsoft.Mission/communities/syncCommunityEndpoints/action",
       "Microsoft.Mission/communities/transitHubs/read",
       "Microsoft.Mission/communities/transitHubs/write",
       "Microsoft.Mission/communities/transitHubs/delete",
@@ -9176,7 +9177,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 51
+    "_estimatedActions": 52
   },
   {
     "name": "Community Reader Role",
@@ -9321,6 +9322,21 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 1
+  },
+  {
+    "name": "Confidential Ledger Contributor",
+    "id": "9cf8853f-1e61-4999-915d-3e018bfc8a71",
+    "description": "Allows full management of Confidential Ledger resources, including create, read, update, delete, backup and private endpoint connection management.",
+    "actions": [
+      "Microsoft.ConfidentialLedger/ledgers/read",
+      "Microsoft.ConfidentialLedger/ledgers/write",
+      "Microsoft.ConfidentialLedger/ledgers/delete",
+      "Microsoft.ConfidentialLedger/ledgers/filesExport/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 4
   },
   {
     "name": "Confidential Ledger Data Contributor",
@@ -9653,7 +9669,7 @@
   {
     "name": "Container Apps SandboxGroup Data Owner",
     "id": "c24cf47c-5077-412d-a19c-45202126392c",
-    "description": "Ownership of all Container Apps SandboxGroup data.",
+    "description": "Grants ownership of Container Apps Sandbox Group data in the group, including sandboxes, disk images, volumes, secrets, and all associated operations.",
     "actions": [],
     "notActions": [],
     "dataActions": [
@@ -15796,7 +15812,7 @@
     "_estimatedActions": 146
   },
   {
-    "name": "Logic Apps Standard Contributor (Preview)",
+    "name": "Logic Apps Standard Contributor",
     "id": "ad710c24-b039-4e85-a019-deb4a06e8570",
     "description": "You can manage all aspects of a Standard logic app and workflows. You can't change access or ownership.",
     "actions": [
@@ -15820,7 +15836,7 @@
     "_estimatedActions": 263
   },
   {
-    "name": "Logic Apps Standard Developer (Preview)",
+    "name": "Logic Apps Standard Developer",
     "id": "523776ba-4eb2-4600-a3c8-f2dc93da4bdb",
     "description": "You can create and edit workflows, connections, and settings for a Standard logic app. You can't make changes outside the workflow scope.",
     "actions": [
@@ -15889,7 +15905,7 @@
     "_estimatedActions": 124
   },
   {
-    "name": "Logic Apps Standard Reader (Preview)",
+    "name": "Logic Apps Standard Reader",
     "id": "4accf36b-2c05-432f-91c8-5c532dff4c73",
     "description": "You have read-only access to all resources in a Standard logic app and workflows, including the workflow runs and their history.",
     "actions": [
@@ -19500,7 +19516,7 @@
     "description": "Allows users to add custom features to the SRE Agent using incident handlers and extended agents.",
     "actions": [
       "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Insights/alertRules/read",
       "Microsoft.App/agents/read"
     ],
     "notActions": [],
@@ -19514,7 +19530,7 @@
       "Microsoft.App/agents/extendedAgents/delete"
     ],
     "notDataActions": [],
-    "_estimatedActions": 41
+    "_estimatedActions": 12
   },
   {
     "name": "SRE Agent Reader",
@@ -19522,7 +19538,7 @@
     "description": "Grants read-only access to all SRE Agent data, including chats, incidents, logs, and configurations. Does not permit interaction with the agent.",
     "actions": [
       "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Insights/alertRules/read",
       "Microsoft.App/agents/read"
     ],
     "notActions": [],
@@ -19533,7 +19549,7 @@
       "Microsoft.App/agents/incidentManagement/read"
     ],
     "notDataActions": [],
-    "_estimatedActions": 41
+    "_estimatedActions": 12
   },
   {
     "name": "SRE Agent Standard User",
@@ -19879,10 +19895,9 @@
     "id": "c8a487a2-c85b-4487-83a1-9f04cde10293",
     "description": "Lets you perform file share backup operations using Azure Backup on the storage account",
     "actions": [
-      "Microsoft.Authorization/roleAssignments/read",
-      "Microsoft.Authorization/roleDefinitions/read",
-      "Microsoft.Authorization/permissions/read",
-      "Microsoft.Authorization/denyAssignments/read",
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Authorization/locks/delete",
+      "Microsoft.Authorization/locks/write",
       "Microsoft.Storage/storageAccounts/fileServices/read",
       "Microsoft.Storage/storageAccounts/fileServices/shares/delete",
       "Microsoft.Storage/storageAccounts/fileServices/shares/lease/action",
@@ -19897,7 +19912,7 @@
       "Microsoft.Storage/storageAccounts/fileServices/readFileBackupSemantics/action"
     ],
     "notDataActions": [],
-    "_estimatedActions": 11
+    "_estimatedActions": 19
   },
   {
     "name": "Storage File Data Privileged Contributor",
@@ -20036,10 +20051,7 @@
     "id": "e7a9e73d-4397-41f2-a282-af8b65aaa2dc",
     "description": "Lets you perform file share restore operations using Azure Backup on the storage account",
     "actions": [
-      "Microsoft.Authorization/roleAssignments/read",
-      "Microsoft.Authorization/roleDefinitions/read",
-      "Microsoft.Authorization/permissions/read",
-      "Microsoft.Authorization/denyAssignments/read",
+      "Microsoft.Authorization/*/read",
       "Microsoft.Storage/storageAccounts/fileServices/shares/read",
       "Microsoft.Storage/storageAccounts/read"
     ],
@@ -20053,7 +20065,7 @@
       "Microsoft.Storage/storageAccounts/fileServices/writeFileBackupSemantics/action"
     ],
     "notDataActions": [],
-    "_estimatedActions": 6
+    "_estimatedActions": 12
   },
   {
     "name": "Storage Queue Data Contributor",

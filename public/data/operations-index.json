@@ -3480,6 +3480,22 @@
     "description": "Create or Update API Management Service instance"
   },
   {
+    "action": "Microsoft.App/agents/dataconnectors/delete",
+    "description": "Delete existing data connectors in an SRE agent"
+  },
+  {
+    "action": "Microsoft.App/agents/dataconnectors/listSecrets/action",
+    "description": "List secrets of an SRE agent data connector"
+  },
+  {
+    "action": "Microsoft.App/agents/dataconnectors/read",
+    "description": "Read data connectors in an SRE agent"
+  },
+  {
+    "action": "Microsoft.App/agents/dataconnectors/write",
+    "description": "Update data connectors in an SRE agent"
+  },
+  {
     "action": "Microsoft.App/agents/delete",
     "description": "Delete a SRE Agent"
   },
@@ -3650,10 +3666,6 @@
   {
     "action": "Microsoft.App/managedEnvironments/privateEndpointConnectionsApproval/action",
     "description": "Approve Private Endpoint Connections"
-  },
-  {
-    "action": "Microsoft.App/quotaPolicy/write",
-    "description": "Request a quota increase for a subscription"
   },
   {
     "action": "Microsoft.App/sandboxGroups/agentIdentities/delete",
@@ -9156,6 +9168,18 @@
     "description": "Upload cluster certificate"
   },
   {
+    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Jobs/Delete",
+    "description": "Deletes Cluster Volume Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Jobs/Read",
+    "description": "Reads Cluster Volume Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Jobs/Write",
+    "description": "Writes Cluster Volume Job Resource"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/Clusters/WACloginAsAdmin/Action",
     "description": "Manage OS of HCI resource via Windows Admin Center as an administrator"
   },
@@ -11481,263 +11505,263 @@
   },
   {
     "action": "Microsoft.Cache/redis/PrivateEndpointConnectionsApproval/action",
-    "description": "Approve Private Endpoint Connections"
+    "description": "Auto-approve a private endpoint connection of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/accessPolicies/delete",
-    "description": "Delete Redis Access Policies"
+    "description": "Delete access policies of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/accessPolicies/read",
-    "description": "Get Redis Access Policies"
+    "description": "Read access policies of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/accessPolicies/write",
-    "description": "Modify Redis Access Policies"
+    "description": "Create or modify access policies of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/accessPolicyAssignments/delete",
-    "description": "Delete Access Policy Assignments"
+    "description": "Delete access policy assignments of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/accessPolicyAssignments/read",
-    "description": "Get Redis Access Policy Assignments"
+    "description": "Read access policy assignments of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/accessPolicyAssignments/write",
-    "description": "Modify Redis Access Policy Assignments"
+    "description": "Create or modify access policy assignments of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/delete",
-    "description": "Delete the entire Redis Cache"
+    "description": "Delete an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/detectors/read",
-    "description": "Get the properties of one or all detectors for an Azure Cache for Redis cache"
+    "description": "Read the properties of one or all detectors for an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/export/action",
-    "description": "Export Redis data to prefixed storage blobs in specified format"
+    "description": "Export data from an Azure Cache for Redis cache to prefixed storage blobs in the specified format."
   },
   {
     "action": "Microsoft.Cache/redis/firewallRules/delete",
-    "description": "Delete IP firewall rules of a Redis Cache"
+    "description": "Delete an IP firewall rule from an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/firewallRules/read",
-    "description": "Get the IP firewall rules of a Redis Cache"
+    "description": "Read the IP firewall rules of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/firewallRules/write",
-    "description": "Edit the IP firewall rules of a Redis Cache"
+    "description": "Create or modify the IP firewall rules of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/flush/action",
-    "description": "Deletes all of the keys in a cache. "
+    "description": "Delete all keys in an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/forceReboot/action",
-    "description": "Force reboot a cache instance, potentially with data loss."
+    "description": "Force reboot an Azure Cache for Redis cache instance, potentially with data loss."
   },
   {
     "action": "Microsoft.Cache/redis/getMigrationInfo/action",
-    "description": "Internal API, do not use."
+    "description": "Read migration information for an Azure Cache for Redis cache. Internal API; do not use."
   },
   {
     "action": "Microsoft.Cache/redis/import/action",
-    "description": "Import data of a specified format from multiple blobs into Redis"
+    "description": "Import data of a specified format from one or more storage blobs into an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/linkedServers/delete",
-    "description": "Delete Linked Server from a Redis Cache"
+    "description": "Delete a linked server from an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/linkedServers/read",
-    "description": "Get Linked Servers associated with a redis cache."
+    "description": "Read linked servers associated with an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/linkedServers/write",
-    "description": "Add Linked Server to a Redis Cache"
+    "description": "Add or modify a linked server for an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/listKeys/action",
-    "description": "View the value of Redis Cache access keys in the management portal"
+    "description": "List the access keys of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/patchSchedules/delete",
-    "description": "Delete the patch schedule of a Redis Cache"
+    "description": "Delete the patching schedule of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/patchSchedules/read",
-    "description": "Gets the patching schedule of a Redis Cache"
+    "description": "Read the patching schedule of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/patchSchedules/write",
-    "description": "Modify the patching schedule of a Redis Cache"
+    "description": "Create or modify the patching schedule of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateEndpointConnectionProxies/delete",
-    "description": "Delete the private endpoint connection proxy"
+    "description": "Delete the private endpoint connection proxy of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateEndpointConnectionProxies/read",
-    "description": "Get the private endpoint connection proxy"
+    "description": "Read the private endpoint connection proxy of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateEndpointConnectionProxies/validate/action",
-    "description": "Validate the private endpoint connection proxy"
+    "description": "Validate the private endpoint connection proxy for an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateEndpointConnectionProxies/write",
-    "description": "Create the private endpoint connection proxy"
+    "description": "Create or modify the private endpoint connection proxy of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateEndpointConnections/delete",
-    "description": "Delete a private endpoint connection"
+    "description": "Delete a private endpoint connection of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateEndpointConnections/read",
-    "description": "Read a private endpoint connection"
+    "description": "Read a private endpoint connection of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateEndpointConnections/write",
-    "description": "Write a private endpoint connection"
+    "description": "Create or modify a private endpoint connection of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/privateLinkResources/read",
-    "description": "Read 'groupId' of redis subresource that a private link can be connected to"
+    "description": "Read the 'groupId' of an Azure Cache for Redis subresource that a private link can be connected to."
   },
   {
     "action": "Microsoft.Cache/redis/read",
-    "description": "View the Redis Cache's settings and configuration in the management portal"
+    "description": "Read the settings and configuration of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/regenerateKey/action",
-    "description": "Change the value of Redis Cache access keys in the management portal"
+    "description": "Regenerate the access keys of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/rollbackDnsForMigration/action",
-    "description": "Internal API, do not use."
+    "description": "Roll back the DNS record of an Azure Cache for Redis cache during migration. Internal API; do not use."
   },
   {
     "action": "Microsoft.Cache/redis/start/action",
-    "description": "Start an Azure Cache for Redis"
+    "description": "Start a previously stopped Azure Cache for Redis cache instance."
   },
   {
     "action": "Microsoft.Cache/redis/stop/action",
-    "description": "Stop an Azure Cache for Redis, potentially with data loss."
+    "description": "Stop an Azure Cache for Redis cache instance, potentially with data loss."
   },
   {
     "action": "Microsoft.Cache/redis/updateDnsForMigration/action",
-    "description": "Internal API, do not use."
+    "description": "Update the DNS record of an Azure Cache for Redis cache during migration. Internal API; do not use."
   },
   {
     "action": "Microsoft.Cache/redis/updateMigrationStatus/action",
-    "description": "Internal API, do not use."
+    "description": "Update the migration status of an Azure Cache for Redis cache. Internal API; do not use."
   },
   {
     "action": "Microsoft.Cache/redis/write",
-    "description": "Modify the Redis Cache's settings and configuration in the management portal"
+    "description": "Create or modify the settings and configuration of an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/PrivateEndpointConnectionsApproval/action",
-    "description": "Approve Private Endpoint Connections"
+    "description": "Auto-approve a private endpoint connection of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/delete",
-    "description": "Deletes a Redis Enterprise database and its contents"
+    "description": "Delete an Azure Managed Redis database and its contents."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/export/action",
-    "description": "Export data to storage blobs from a Redis Enterprise database "
+    "description": "Export data from an Azure Managed Redis database to storage blobs."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/forceUnlink/action",
-    "description": "Forcibly unlink a georeplica Redis Enterprise database from its peers"
+    "description": "Forcibly unlink an Azure Managed Redis geo-replica database from its peers."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/import/action",
-    "description": "Import data from storage blobs to a Redis Enterprise database"
+    "description": "Import data from storage blobs into an Azure Managed Redis database."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/listKeys/action",
-    "description": "View the value of Redis Enterprise database access keys in the management portal"
+    "description": "List the access keys of an Azure Managed Redis database."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/read",
-    "description": "View the Redis Enterprise cache database's settings and configuration in the management portal"
+    "description": "Read the settings and configuration of an Azure Managed Redis database."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/regenerateKey/action",
-    "description": "Change the value of Redis Enterprise database access keys in the management portal"
+    "description": "Regenerate the access keys of an Azure Managed Redis database."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/write",
-    "description": "Modify the Redis Enterprise cache database's settings and configuration in the management portal"
+    "description": "Create or modify the settings and configuration of an Azure Managed Redis database."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/delete",
-    "description": "Delete the entire Redis Enterprise cache"
+    "description": "Delete an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/listSkusForScaling/action",
-    "description": "List all available SKUs that a Azure Managed Redis cache can be scaled to"
+    "description": "List the SKUs that an Azure Managed Redis cache can be scaled to."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/migrations/cancel/action",
-    "description": "Cancel the Redis Enterprise cache migration"
+    "description": "Cancel an in-progress Azure Managed Redis migration."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/migrations/read",
-    "description": "View the Redis Enterprise cache migration"
+    "description": "Read the status of an Azure Managed Redis migration."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/migrations/validate/action",
-    "description": "Validate if a Redis cache can be migrated to an Azure Managed Redis cluster"
+    "description": "Validate the configuration of an Azure Managed Redis migration before starting it."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/migrations/write",
-    "description": "Start the Redis Enterprise cache migration"
+    "description": "Start an Azure Managed Redis migration."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateEndpointConnectionProxies/delete",
-    "description": "Delete the private endpoint connection proxy"
+    "description": "Delete the private endpoint connection proxy of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateEndpointConnectionProxies/read",
-    "description": "Get the private endpoint connection proxy"
+    "description": "Read the private endpoint connection proxy of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateEndpointConnectionProxies/validate/action",
-    "description": "Validate the private endpoint connection proxy"
+    "description": "Validate the private endpoint connection proxy for an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateEndpointConnectionProxies/write",
-    "description": "Create the private endpoint connection proxy"
+    "description": "Create or modify the private endpoint connection proxy of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/delete",
-    "description": "Delete a private endpoint connection"
+    "description": "Delete a private endpoint connection of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/read",
-    "description": "Read a private endpoint connection"
+    "description": "Read a private endpoint connection of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/write",
-    "description": "Write a private endpoint connection"
+    "description": "Create or modify a private endpoint connection of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/privateLinkResources/read",
-    "description": "Read 'groupId' of redis subresource that a private link can be connected to"
+    "description": "Read the 'groupId' of an Azure Managed Redis subresource that a private link can be connected to."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/read",
-    "description": "View the Redis Enterprise cache's settings and configuration in the management portal"
+    "description": "Read the settings and configuration of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/write",
-    "description": "Modify the Redis Enterprise cache's settings and configuration in the management portal"
+    "description": "Create or modify the settings and configuration of an Azure Managed Redis cache."
   },
   {
     "action": "Microsoft.Capacity/appliedreservations/read",
@@ -17844,6 +17868,250 @@
     "description": "Get model manifest for given conditions"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/delete",
+    "description": "Delete the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/files/read",
+    "description": "Get a file associated with the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzerresults/read",
+    "description": "Get the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/delete",
+    "description": "Delete analyzer."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/read",
+    "description": "List analyzers.\r\nGet analyzer properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/results/images/read",
+    "description": "Get an image associated with the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/results/read",
+    "description": "Get the result of an analysis operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers/write",
+    "description": "Create a new analyzer asynchronously.\r\nUpdate analyzer properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:analyze/action",
+    "description": "Extract content and fields from input."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:analyzebinary/action",
+    "description": "Extract content and fields from binary input."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:copy/action",
+    "description": "Create a copy of the source analyzer to the current location."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/analyzers:grantCopyAuthorization/action",
+    "description": "Get authorization for copying this analyzer to another location."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/delete",
+    "description": "Delete batch analysis job.  Analysis output is not deleted."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/read",
+    "description": "List all batch analysis jobs.\r\nGet batch analysis job."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/batchAnalysisJobs/write",
+    "description": "Create a batch analysis job."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifierresults/read",
+    "description": "Get the result of a classifier operation."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/delete",
+    "description": "Delete classifier."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/read",
+    "description": "List classifiers.\r\nGet classifier properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers/write",
+    "description": "Create a new classifier asynchronously.\r\nUpdate classifier properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers:classify/action",
+    "description": "Classify content with optional splitting."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/classifiers:classifybinary/action",
+    "description": "Classify binary content with optional splitting."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/defaults/read",
+    "description": "Return default settings for this Content Understanding resource."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/defaults/write",
+    "description": "Update default settings for this Content Understanding resource."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/faces:compare/action",
+    "description": "Compare the similarity between two faces."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/faces:detect/action",
+    "description": "Detect faces in an image."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/datasets/files/read",
+    "description": "Labeling - GetDatasetFile\r\nLabeling - ListDatasetFiles"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/delete",
+    "description": "Labeling - Delete project"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/delete",
+    "description": "Labeling - Delete label"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/document/read",
+    "description": "Labeling - Get document"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/document/write",
+    "description": "Labeling - Set document"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/ocr/read",
+    "description": "Labeling - Get OCR result"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/read",
+    "description": "Labeling - Get label\r\nLabeling - List labels"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels/write",
+    "description": "Labeling - Create label"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/labels:analyze/action",
+    "description": "Labeling - Analyze document"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/read",
+    "description": "Labeling - Get project\r\nLabeling - List projects"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/delete",
+    "description": "Labeling - DeleteDatasetFile"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/read",
+    "description": "Labeling - GetReferenceFile\r\nLabeling - ListReferenceFiles"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files/write",
+    "description": "Labeling - CreateDatasetFile"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/reference/files:analyze/action",
+    "description": "Labeling - StartGenerateResult"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema/read",
+    "description": "Labeling - Get current schema"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema:edit/action",
+    "description": "Labeling - Edit field schema"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/schema:suggest/action",
+    "description": "Labeling - Suggest field schema"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/stats/read",
+    "description": "Labeling - Get project stats"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/delete",
+    "description": "Labeling - Delete Test file"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/read",
+    "description": "Labeling - Get test files\r\nLabeling - List test files"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files/write",
+    "description": "Labeling - Create or update test file"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/test/files:hitl/action",
+    "description": "Labeling - HITL"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects/write",
+    "description": "Labeling - Create project\r\nLabeling - Update project"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/labelingProjects:migrate/action",
+    "description": "Labeling - MigrateProject"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/delete",
+    "description": "Delete person directory and all associated persons and faces."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/delete",
+    "description": "Delete face. Any linked person will be disassociated, but not deleted."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/read",
+    "description": "List faces.\r\nGet face properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces/write",
+    "description": "Add a new face.\r\nUpdate face properties, such as modifying the association with a person."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/faces:find/action",
+    "description": "Find similar faces."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/delete",
+    "description": "Delete person. Any linked faces will be disassociated, but not deleted."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/read",
+    "description": "List persons.\r\nGet person properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons/write",
+    "description": "Add a new person and optionally associate with existing faces.\r\nUpdate person properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons:identify/action",
+    "description": "Identify the person from a face."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/persons:verify/action",
+    "description": "Verify if a face matches the person."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/read",
+    "description": "List person directories.\r\nGet person directory properties."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/MultiModalIntelligence/persondirectories/write",
+    "description": "Create a new person directory.\r\nUpdate person directory properties."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/NewsSearch/categorysearch/action",
     "description": "Returns news for a provided category."
   },
@@ -18134,6 +18402,10 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/OpenAI/files/write",
     "description": "Upload or import files."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+    "description": "Auto-deploy a fine-tuned model after a fine-tuning job completes. Requires this action in addition to /fine-tunes/write when the job creation request includes auto-deployment parameters (e.g. 'suffix')."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes/delete",
@@ -18908,6 +19180,18 @@
     "description": "Gets the documents or Gets the requested document"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/index/action",
+    "description": "Link index with documents to create data set for Adaptive CT"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/index/delete",
+    "description": "Delete an index"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/index/read",
+    "description": "Get index details by workspace or by index id"
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/TextTranslation/api/texttranslator/v1.0/internal/modelexport/containerexport/action",
     "description": "Generate SAS URL for exporting on-prem container based custom translator"
   },
@@ -19254,250 +19538,6 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/WebSearch/search/action",
     "description": "Get web, image, news, & videos results for a given query."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/delete",
-    "description": "Delete the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/files/read",
-    "description": "Get a file associated with the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzerresults/read",
-    "description": "Get the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/delete",
-    "description": "Delete analyzer."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/read",
-    "description": "List analyzers.\r\nGet analyzer properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/results/images/read",
-    "description": "Get an image associated with the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/results/read",
-    "description": "Get the result of an analysis operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers/write",
-    "description": "Create a new analyzer asynchronously.\r\nUpdate analyzer properties."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:analyze/action",
-    "description": "Extract content and fields from input.\r\nExtract content and fields from input.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:analyzebinary/action",
-    "description": "Extract content and fields from input."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:copy/action",
-    "description": "Create a copy of the source analyzer to the current location."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/analyzers:grantCopyAuthorization/action",
-    "description": "Get authorization for copying this analyzer to another location."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/delete",
-    "description": "Delete batch analysis job.  Analysis output is not deleted."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/read",
-    "description": "List all batch analysis jobs.\r\nGet batch analysis job."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/batchAnalysisJobs/write",
-    "description": "Create a batch analysis job."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifierresults/read",
-    "description": "Get the result of a classifier operation."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/delete",
-    "description": "Delete classifier."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/read",
-    "description": "List classifiers.\r\nGet classifier properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers/write",
-    "description": "Create a new classifier asynchronously.\r\nUpdate classifier properties."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers:classify/action",
-    "description": "Classify content with optional splitting."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/classifiers:classifybinary/action",
-    "description": "Classify content with optional splitting."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/defaults/read",
-    "description": "Return default settings for this Content Understanding resource."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/defaults/write",
-    "description": "Update default settings for this Content Understanding resource."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/faces:compare/action",
-    "description": "Compare the similarity between two faces."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/faces:detect/action",
-    "description": "Detect faces in an image."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/datasets/files/read",
-    "description": "Labeling - GetDatasetFile\r\nLabeling - ListDatasetFiles"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/delete",
-    "description": "Labeling - Delete project"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/delete",
-    "description": "Labeling - Delete label"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/document/read",
-    "description": "Labeling - Get document"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/document/write",
-    "description": "Labeling - Set document"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/ocr/read",
-    "description": "Labeling - Get OCR result"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/read",
-    "description": "Labeling - Get label\r\nLabeling - List labels"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels/write",
-    "description": "Labeling - Create label"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/labels:analyze/action",
-    "description": "Labeling - Analyze document"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/read",
-    "description": "Labeling - Get project\r\nLabeling - List projects"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/delete",
-    "description": "Labeling - DeleteDatasetFile"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/read",
-    "description": "Labeling - GetReferenceFile\r\nLabeling - ListReferenceFiles"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files/write",
-    "description": "Labeling - CreateDatasetFile"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/reference/files:analyze/action",
-    "description": "Labeling - StartGenerateResult"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema/read",
-    "description": "Labeling - Get current schema"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema:edit/action",
-    "description": "Labeling - Edit field schema"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/schema:suggest/action",
-    "description": "Labeling - Suggest field schema"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/stats/read",
-    "description": "Labeling - Get project stats"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/delete",
-    "description": "Labeling - Delete Test file"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/read",
-    "description": "Labeling - Get test files\r\nLabeling - List test files"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files/write",
-    "description": "Labeling - Create or update test file"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/test/files:hitl/action",
-    "description": "Labeling - HITL"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects/write",
-    "description": "Labeling - Create project\r\nLabeling - Update project"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/labelingProjects:migrate/action",
-    "description": "Labeling - MigrateProject"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/delete",
-    "description": "Delete person directory and all associated persons and faces."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/delete",
-    "description": "Delete face.  Any linked person will be disassociated, but not deleted."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/read",
-    "description": "List faces.\r\nGet face properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces/write",
-    "description": "Add a new face.\r\nUpdate face properties, such as modifying the association with a person."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/faces:find/action",
-    "description": "Find similar faces."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/delete",
-    "description": "Delete person.  Any linked faces will be disassociated, but not deleted."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/read",
-    "description": "List persons.\r\nGet person properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons/write",
-    "description": "Add a new person and optionally associate with existing faces.\r\nUpdate person properties."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons:identify/action",
-    "description": "Identify the person from a face."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/persons:verify/action",
-    "description": "Verify if a face matches the person."
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/read",
-    "description": "List person directories.\r\nGet person directory properties.*"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/analyzers/persondirectories/write",
-    "description": "Create a new person directory.|Update person directory properties."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/delete",
@@ -26096,6 +26136,10 @@
     "description": "Writes nodes"
   },
   {
+    "action": "Microsoft.ContainerService/fleets/notify/action",
+    "description": "Send a notification event to a fleet"
+  },
+  {
     "action": "Microsoft.ContainerService/fleets/openapi/v2/read",
     "description": "Reads v2"
   },
@@ -26722,6 +26766,10 @@
   {
     "action": "Microsoft.ContainerService/managedClusters/agentPools/deleteMachines/action",
     "description": "Deletes machines"
+  },
+  {
+    "action": "Microsoft.ContainerService/managedClusters/agentPools/listBootstrapData/action",
+    "description": "Lists bootstrap data for the Agent Pool"
   },
   {
     "action": "Microsoft.ContainerService/managedClusters/agentPools/machines/read",
@@ -28492,12 +28540,20 @@
     "description": "Delete Prepared Image Specification"
   },
   {
+    "action": "Microsoft.ContainerService/preparedImageSpecifications/deploy/action",
+    "description": "Deploy Prepared Image Specification"
+  },
+  {
     "action": "Microsoft.ContainerService/preparedImageSpecifications/read",
     "description": "Get Prepared Image Specification"
   },
   {
     "action": "Microsoft.ContainerService/preparedImageSpecifications/versions/delete",
     "description": "Delete Prepared Image Specification Version"
+  },
+  {
+    "action": "Microsoft.ContainerService/preparedImageSpecifications/versions/deploy/action",
+    "description": "Deploy Prepared Image Specification Version"
   },
   {
     "action": "Microsoft.ContainerService/preparedImageSpecifications/versions/read",
@@ -41220,8 +41276,16 @@
     "description": "Invokes the semantic reranker on an inference account."
   },
   {
+    "action": "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
+    "description": "Lists the API keys for an inference account."
+  },
+  {
     "action": "Microsoft.InferenceService/inferenceAccounts/read",
     "description": "Reads an inference service."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/regenerateKeys/action",
+    "description": "Regenerates API keys for an inference account."
   },
   {
     "action": "Microsoft.InferenceService/inferenceAccounts/write",
@@ -43398,6 +43462,10 @@
   {
     "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/summaries/read",
     "description": "Get an analysis result summary of a firmware by name."
+  },
+  {
+    "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/unsafeFunctionCalls/read",
+    "description": "Lists unsafe function call analysis results of a firmware."
   },
   {
     "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/write",
@@ -46246,6 +46314,10 @@
   {
     "action": "Microsoft.Logic/integrationAccounts/agreements/listContentCallbackUrl/action",
     "description": "Gets the callback URL for agreement content in integration account."
+  },
+  {
+    "action": "Microsoft.Logic/integrationAccounts/agreements/listSecrets/action",
+    "description": "Gets the EDI authentication secrets for an agreement in integration account."
   },
   {
     "action": "Microsoft.Logic/integrationAccounts/agreements/read",
