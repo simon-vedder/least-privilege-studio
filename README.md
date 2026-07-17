@@ -1,6 +1,13 @@
 # Least Privilege Studio for Azure
 
+[![Live: leastprivilegestudio.com](https://img.shields.io/badge/live-leastprivilegestudio.com-16a34a)](https://leastprivilegestudio.com/)
+![Azure RBAC](https://img.shields.io/badge/Azure-RBAC-0078D4?logo=microsoftazure&logoColor=white)
+[![Deploy](https://github.com/simon-vedder/least-privilege-studio/actions/workflows/deploy.yml/badge.svg)](https://github.com/simon-vedder/least-privilege-studio/actions/workflows/deploy.yml)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+
 Developer tool for Azure RBAC permissions. Select resources and actions you need — get the least-privilege built-in role and custom role definitions.
+
+> ▶ **Try it live:** [leastprivilegestudio.com](https://leastprivilegestudio.com/) — no install, runs entirely in your browser.
 
 ## Features
 
