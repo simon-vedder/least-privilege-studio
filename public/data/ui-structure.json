@@ -101,6 +101,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureStackHCI/Clusters/StorageArrayAssociations/Read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Jobs/Read",
                     "type": "action"
                   }
@@ -124,6 +128,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/Clusters/SecuritySettings/Write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/Clusters/StorageArrayAssociations/Write",
                     "type": "action"
                   },
                   {
@@ -158,6 +166,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/Clusters/SecuritySettings/Delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/Clusters/StorageArrayAssociations/Delete",
                     "type": "action"
                   },
                   {
@@ -210,7 +222,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 27,
+            "totalOps": 30,
             "priority": 999
           },
           {
@@ -383,6 +395,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/DeploymentSettings/Read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Jobs/Read",
                     "type": "action"
                   },
@@ -437,6 +453,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/DeploymentSettings/Write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Jobs/Write",
                     "type": "action"
                   },
@@ -476,6 +496,10 @@
                 "ops": [
                   {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/Delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/DeploymentSettings/Delete",
                     "type": "action"
                   },
                   {
@@ -528,7 +552,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 31,
+            "totalOps": 34,
             "priority": 999
           },
           {
@@ -1006,6 +1030,49 @@
                 "ops": [
                   {
                     "action": "Microsoft.AzureStackHCI/Snapshots/join/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 4,
+            "priority": 999
+          },
+          {
+            "key": "StorageArrays",
+            "name": "Storage Arrays",
+            "provider": "Microsoft.AzureStackHCI",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.AzureStackHCI/StorageArrays/Read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/StorageArrays/StoragePools/Read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.AzureStackHCI/StorageArrays/Write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.AzureStackHCI/StorageArrays/Delete",
                     "type": "action"
                   }
                 ],
@@ -3895,8 +3962,8 @@
         ]
       }
     ],
-    "totalTypes": 53,
-    "totalOps": 567
+    "totalTypes": 54,
+    "totalOps": 577
   },
   {
     "name": "Networking",
@@ -15471,6 +15538,57 @@
             "priority": 999
           },
           {
+            "key": "contextCaches",
+            "name": "context Caches",
+            "provider": "Microsoft.Storage",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Storage/contextCaches/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Storage/contextCaches/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Storage/contextCaches/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
             "key": "deletedAccounts",
             "name": "deleted Accounts",
             "provider": "Microsoft.Storage",
@@ -16262,8 +16380,8 @@
         ]
       }
     ],
-    "totalTypes": 24,
-    "totalOps": 454
+    "totalTypes": 25,
+    "totalOps": 460
   },
   {
     "name": "Databases",
@@ -26490,7 +26608,15 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.App/sandboxGroups/sandboxes/disable/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.App/sandboxGroups/sandboxes/downloadContentPackage/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.App/sandboxGroups/sandboxes/enable/action",
                     "type": "dataAction"
                   },
                   {
@@ -26533,7 +26659,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 63,
+            "totalOps": 65,
             "priority": 999
           },
           {
@@ -30476,7 +30602,7 @@
       }
     ],
     "totalTypes": 73,
-    "totalOps": 1713
+    "totalOps": 1715
   },
   {
     "name": "Containers",
@@ -58137,6 +58263,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/DevOpsOperationsAudit/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/DHAppReliability/read",
                     "type": "action"
                   },
@@ -60222,7 +60352,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1013,
+            "totalOps": 1014,
             "priority": 1
           },
           {
@@ -60367,7 +60497,7 @@
       }
     ],
     "totalTypes": 63,
-    "totalOps": 1602
+    "totalOps": 1603
   },
   {
     "name": "Management + Governance",
@@ -87134,18 +87264,30 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureArcData/sqlServerInstances/getMigrationReadinessReport/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureArcData/sqlServerInstances/getTargetRecommendationReports/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureArcData/sqlServerInstances/getTelemetry/action",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.AzureArcData/sqlServerInstances/runBestPracticeAssessment/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureArcData/sqlServerInstances/runTargetRecommendationJob/action",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 23,
+            "totalOps": 26,
             "priority": 999
           },
           {
@@ -90470,6 +90612,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Chaos/workspaces/discoveries/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/evaluations/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Chaos/workspaces/read",
                     "type": "action"
                   },
@@ -90528,15 +90678,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/discover/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/action",
                     "type": "action"
                   },
                   {
@@ -96537,6 +96679,67 @@
             ],
             "totalOps": 1,
             "priority": 999
+          },
+          {
+            "key": "updateInstances",
+            "name": "update Instances",
+            "provider": "Microsoft.DeviceUpdate",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/updateInstances/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/updateInstances/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/updateInstances/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.DeviceUpdate/updateInstances/linkInitiate/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceUpdate/updateInstances/linkNotify/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceUpdate/updateInstances/linkPreflight/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceUpdate/updateInstances/linkUpdate/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 7,
+            "priority": 999
           }
         ]
       },
@@ -99705,6 +99908,90 @@
               }
             ],
             "totalOps": 4,
+            "priority": 999
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.EntraIDGovernance",
+        "displayName": "EntraIDGovernance",
+        "types": [
+          {
+            "key": "guestGovernanceUsage",
+            "name": "guest Governance Usage",
+            "provider": "Microsoft.EntraIDGovernance",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.EntraidGovernance/guestGovernanceUsage/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.EntraidGovernance/guestGovernanceUsage/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.EntraidGovernance/guestGovernanceUsage/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "scimApiConsumptions",
+            "name": "scim Api Consumptions",
+            "provider": "Microsoft.EntraIDGovernance",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.EntraidGovernance/scimApiConsumptions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.EntraidGovernance/scimApiConsumptions/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.EntraidGovernance/scimApiConsumptions/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
             "priority": 999
           }
         ]
@@ -108871,109 +109158,6 @@
         ]
       },
       {
-        "namespace": "Microsoft.OffAzureSpringBoot",
-        "displayName": "OffAzureSpringBoot",
-        "types": [
-          {
-            "key": "springbootsites",
-            "name": "springbootsites",
-            "provider": "Microsoft.OffAzureSpringBoot",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/errorSummaries/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootapps/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootservers/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/summaries/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/errorSummaries/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootapps/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootservers/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/summaries/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/errorSummaries/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootapps/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootservers/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/summaries/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Action",
-                "ops": [
-                  {
-                    "action": "Microsoft.OffAzureSpringBoot/springbootsites/refreshSite/action",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 16,
-            "priority": 999
-          }
-        ]
-      },
-      {
         "namespace": "Microsoft.OnlineExperimentation",
         "displayName": "OnlineExperimentation",
         "types": [
@@ -116019,6 +116203,96 @@
             ],
             "totalOps": 9,
             "priority": 999
+          },
+          {
+            "key": "validationTestCategories",
+            "name": "validation Test Categories",
+            "provider": "Microsoft.Validate",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Validate/validationTestCategories/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Validate/validationTestCategories/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Validate/validationTestCategories/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "validationTests",
+            "name": "validation Tests",
+            "provider": "Microsoft.Validate",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Validate/validationTests/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Validate/validationTests/versions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Validate/validationTests/versions/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Validate/validationTests/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Validate/validationTests/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Validate/validationTests/versions/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
           }
         ]
       },
@@ -117317,7 +117591,7 @@
         ]
       }
     ],
-    "totalTypes": 729,
-    "totalOps": 4556
+    "totalTypes": 733,
+    "totalOps": 4565
   }
 ]

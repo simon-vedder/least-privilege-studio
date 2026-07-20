@@ -1618,7 +1618,9 @@
       "Microsoft.CognitiveServices/accounts/ContentSafety/*",
       "Microsoft.CognitiveServices/accounts/MaaS/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write"
+    ],
     "_estimatedActions": 90
   },
   {
@@ -8001,6 +8003,8 @@
       "Microsoft.ChangeSafety/changeRecords/read",
       "Microsoft.ChangeSafety/changeRecords/write",
       "Microsoft.ChangeSafety/changeRecords/delete",
+      "Microsoft.ChangeSafety/changeStates/verifyChangeValidity/action",
+      "Microsoft.ChangeSafety/changeRecords/verifyChangeValidity/action",
       "Microsoft.ChangeSafety/changeStates/stageProgressions/read",
       "Microsoft.ChangeSafety/changeStates/stageProgressions/write",
       "Microsoft.ChangeSafety/changeStates/stageProgressions/delete",
@@ -8023,7 +8027,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 24
+    "_estimatedActions": 26
   },
   {
     "name": "Chaos Studio Experiment Contributor",
@@ -8491,7 +8495,10 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 0
   },
   {
@@ -8977,7 +8984,11 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action",
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 51
   },
   {
@@ -13379,7 +13390,9 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action"
+    ],
     "_estimatedActions": 377
   },
   {
@@ -13401,7 +13414,11 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action",
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 123
   },
   {
@@ -13440,7 +13457,11 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action",
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 90
   },
   {
