@@ -3,16 +3,23 @@
 # Runs weekly to pull the latest Azure built-in role definitions and provider
 # operations (Azure RBAC) plus Entra ID directory roles + resource actions.
 #
+# Auth: GitHub OIDC → Azure Workload Identity Federation (no client secret).
+#
 # Requirements:
-#   - Azure Service Principal credentials stored as GitHub secrets:
-#     AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID, AZURE_SUBSCRIPTION_ID
+#   - A federated credential on the app registration, subject:
+#       repo:simon-vedder/least-privilege-studio:ref:refs/heads/main
+#     issuer https://token.actions.githubusercontent.com,
+#     audience api://AzureADTokenExchange
+#   - These non-secret values as GitHub secrets or variables (referenced below):
+#     AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_SUBSCRIPTION_ID
+#     (no AZURE_CLIENT_SECRET — OIDC replaces it)
 #   - Azure RBAC data: SP needs "Reader" on the subscription
 #   - Entra data: SP needs Microsoft Graph application permission
-#     RoleManagement.Read.Directory (or Directory.Read.All), admin-consented.
+#     RoleManagement.Read.Directory (read-only), admin-consented.
 #     Without it, the Entra pull step fails and only Azure data is refreshed.
 #
 # The workflow:
-#   1. Authenticates to Azure
+#   1. Authenticates to Azure via OIDC (short-lived token, no stored secret)
 #   2. Pulls Azure role definitions + provider operations, and Entra roles +
 #      resource actions into data/raw/ (not committed)
 #   3. Runs build-data.js and build-entra.js → processed files in public/data/
@@ -27,7 +34,8 @@ on:
   workflow_dispatch: # Allow manual trigger
 
 permissions:
-  contents: write
+  contents: write # commit refreshed data back to main
+  id-token: write # request the GitHub OIDC token for Azure federation
 
 jobs:
   sync:
@@ -36,16 +44,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Azure Login
+      - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
-          creds: |
-            {
-              "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
-              "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
-              "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}",
-              "tenantId": "${{ secrets.AZURE_TENANT_ID }}"
-            }
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Pull built-in role definitions
         run: |
