@@ -43,6 +43,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so the commit-back can rebase / fast-forward cleanly
 
       - name: Azure Login (OIDC)
         uses: azure/login@v2
@@ -114,6 +116,8 @@ jobs:
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH: ${{ github.ref_name }} # push back to the branch that triggered the run
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -126,5 +130,7 @@ jobs:
           ROLES=$(python3 -c "import json; print(json.load(open('public/data/metadata.json'))['roleCount'])")
           OPS=$(python3 -c "import json; print(json.load(open('public/data/metadata.json'))['operationCount'])")
 
-          git commit -m "data: sync Azure RBAC data ($ROLES roles, $OPS operations)"
-          git push origin HEAD:main
+          git commit -m "data: sync role data ($ROLES Azure roles, $OPS operations)"
+          # Rebase onto any commits that landed during the run, then push to the same branch
+          git pull --rebase origin "$BRANCH"
+          git push origin "HEAD:$BRANCH"
