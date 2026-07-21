@@ -131,6 +131,7 @@ jobs:
           OPS=$(python3 -c "import json; print(json.load(open('public/data/metadata.json'))['operationCount'])")
 
           git commit -m "data: sync role data ($ROLES Azure roles, $OPS operations)"
-          # Rebase onto any commits that landed during the run, then push to the same branch
-          git pull --rebase origin "$BRANCH"
+          # Rebase onto any commits that landed during the run, then push to the same branch.
+          # --autostash tolerates unrelated tracked-file churn (npm/build side effects) in the tree.
+          git pull --rebase --autostash origin "$BRANCH"
           git push origin "HEAD:$BRANCH"
