@@ -9,8 +9,10 @@
     "preview": "node node_modules/vite/bin/vite.js preview",
     "sync:roles": "./scripts/sync-roles.sh",
     "sync:operations": "./scripts/sync-operations.sh",
-    "sync:all": "./scripts/sync-roles.sh && ./scripts/sync-operations.sh && node scripts/build-data.js",
+    "sync:entra": "./scripts/sync-entra.sh",
+    "sync:all": "./scripts/sync-roles.sh && ./scripts/sync-operations.sh && node scripts/build-data.js && ./scripts/sync-entra.sh && node scripts/build-entra.js",
     "build:data": "node scripts/build-data.js",
+    "build:entra": "node scripts/build-entra.js",
 "validate:tasks": "node scripts/validate-tasks.js",
     "lint": "eslint src/"
   },

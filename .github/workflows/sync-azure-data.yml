@@ -1,17 +1,21 @@
 # .github/workflows/sync-azure-data.yml
 #
-# Runs weekly to pull the latest Azure built-in role definitions
-# and provider operations from the Azure REST API.
+# Runs weekly to pull the latest Azure built-in role definitions and provider
+# operations (Azure RBAC) plus Entra ID directory roles + resource actions.
 #
 # Requirements:
 #   - Azure Service Principal credentials stored as GitHub secrets:
 #     AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID, AZURE_SUBSCRIPTION_ID
-#   - Service Principal needs only "Reader" role on the subscription
+#   - Azure RBAC data: SP needs "Reader" on the subscription
+#   - Entra data: SP needs Microsoft Graph application permission
+#     RoleManagement.Read.Directory (or Directory.Read.All), admin-consented.
+#     Without it, the Entra pull step fails and only Azure data is refreshed.
 #
 # The workflow:
 #   1. Authenticates to Azure
-#   2. Pulls role definitions and provider operations into data/raw/ (not committed)
-#   3. Runs build-data.js which writes processed files to public/data/
+#   2. Pulls Azure role definitions + provider operations, and Entra roles +
+#      resource actions into data/raw/ (not committed)
+#   3. Runs build-data.js and build-entra.js → processed files in public/data/
 #   4. Commits changed public/data/ files (if any) to main
 
 name: Sync Azure Data
@@ -68,6 +72,15 @@ jobs:
           ")
           echo "Pulled $OP_COUNT operations"
 
+      # Requires Graph app permission RoleManagement.Read.Directory on the SP.
+      # Non-fatal: if it fails, Azure RBAC data is still refreshed and committed.
+      - name: Pull Entra ID directory data
+        id: entra
+        continue-on-error: true
+        run: |
+          bash scripts/sync-entra.sh
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -77,12 +90,23 @@ jobs:
         run: npm ci
 
       - name: Build processed data
-        run: node scripts/build-data.js
+        run: |
+          node scripts/build-data.js
+          if [ -f data/raw/entra-roles-raw.json ] && [ -f data/raw/entra-resourceactions-raw.json ]; then
+            node scripts/build-entra.js
+          else
+            echo "Entra raw data missing — skipping Entra build."
+          fi
 
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet public/data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          # --porcelain catches both modified tracked files and new (untracked) Entra files
+          if [ -n "$(git status --porcelain public/data/)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
@@ -92,6 +116,8 @@ jobs:
 
           git add public/data/roles.json public/data/ui-structure.json \
                   public/data/operations-index.json public/data/metadata.json
+          # Entra files only exist if the (optional) Entra build ran
+          git add public/data/entra-*.json 2>/dev/null || true
 
           ROLES=$(python3 -c "import json; print(json.load(open('public/data/metadata.json'))['roleCount'])")
           OPS=$(python3 -c "import json; print(json.load(open('public/data/metadata.json'))['operationCount'])")
