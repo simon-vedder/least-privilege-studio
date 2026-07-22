@@ -8289,11 +8289,11 @@
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/getMigrationReadinessReport/action",
-    "description": "Retrieves the migration readiness report for the SQL Server instance. The report contains an assessment of the instance's readiness for migration to Azure SQL targets."
+    "description": "Retrieves the migration readiness report for the SQL Server instance."
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/getTargetRecommendationReports/action",
-    "description": "Retrieves the current job status and the latest target recommendation report for the SQL Server instance. The response always includes the jobStatus field, which indicates the state of the most recent target recommendation job (NotStarted, InProgress, Succeeded, or Failed). The report data is included in the response only when the jobStatus is Succeeded. A target recommendation job must be started using the RunTargetRecommendationJob API before calling this API. Only the most recent report is returned. If the report contains more sections than can be returned in a single response, use the nextReportOffset and nextSectionOffset values from the response to retrieve the remaining data."
+    "description": "Retrieves the current job status and the latest target recommendation report for the SQL Server instance."
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/getTelemetry/action",
@@ -8309,7 +8309,7 @@
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/runTargetRecommendationJob/action",
-    "description": "Starts a target recommendation job for the SQL Server instance. Only one job can run at a time. If the previous job is in a non-terminal state (NotStarted or InProgress), calling this operation again returns the existing job status without creating a new job. A new job is created only when the previous job has reached a terminal state (Succeeded or Failed). This operation does not return recommendations directly. Use the GetTargetRecommendationReports API to check the job status and retrieve the target recommendation report if the jobStatus is Succeeded."
+    "description": "Starts a target recommendation job for the SQL Server instance."
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/write",
@@ -11012,8 +11012,16 @@
     "description": "Lists payment methods attached to a billing account. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
+    "action": "Microsoft.Billing/billingAccounts/paymentMethods/fetchUnsettledCharges/write",
+    "description": "Fetches unsettled charges for a payment method. The operation is supported only for legacy billing accounts."
+  },
+  {
     "action": "Microsoft.Billing/billingAccounts/paymentMethods/read",
     "description": "Lists the payment methods by a billing account."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/paymentMethods/settleCharges/write",
+    "description": "Settles outstanding charges for a payment method. The operation is supported only for legacy billing accounts."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/policies/read",
@@ -13462,6 +13470,26 @@
   {
     "action": "Microsoft.CodeSigning/resourcetypes/read",
     "description": "Lists available resource types for Microsoft CodeSigning resource provider."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsightMonitors/action",
+    "description": "Perform actions on agent insight monitors"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsightMonitors/read",
+    "description": "Read agent insight monitors"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsightMonitors/write",
+    "description": "Update agent insight monitors"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsights/read",
+    "description": "Read agent insights"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsights/write",
+    "description": "Update agent insights"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/delete",
@@ -20722,6 +20750,14 @@
   {
     "action": "Microsoft.Compute/snapshots/read",
     "description": "Get the properties of a Snapshot"
+  },
+  {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
+    "description": "Update the immutability policy of a Snapshot"
+  },
+  {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
+    "description": "Lock the immutability policy of a Snapshot"
   },
   {
     "action": "Microsoft.Compute/snapshots/upload/action",
@@ -33041,31 +33077,31 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/ClaimAnyVm/action",
-    "description": "Beanspruchen Sie einen abrufbaren virtuellen Computer im Lab."
+    "description": "Claim a random claimable virtual machine in the lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/CreateEnvironment/action",
-    "description": "Erstellt virtuelle Computer in einem Lab."
+    "description": "Create virtual machines in a lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/EnsureCurrentUserProfile/action",
-    "description": "Stellen Sie sicher, dass der aktuelle Benutzer über ein gültiges Profil im Lab verfügt."
+    "description": "Ensure the current user has a valid profile in the lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ExportResourceUsage/action",
-    "description": "Exportiert die Lab-Ressourcenverwendung in ein Speicherkonto."
+    "description": "Exports the lab resource usage into a storage account"
   },
   {
     "action": "Microsoft.DevTestLab/labs/GenerateUploadUri/action",
-    "description": "Generiert einen URI zum Hochladen benutzerdefinierter Datenträgerimages in ein Lab."
+    "description": "Generate a URI for uploading custom disk images to a Lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ImportVirtualMachine/action",
-    "description": "Hiermit importieren Sie einen virtuellen Computer in ein anderes Lab."
+    "description": "Import a virtual machine into a different lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ListVhds/action",
-    "description": "Listet Datenträgerimages für die benutzerdefinierte Imageerstellung aus."
+    "description": "List disk images available for custom image creation."
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/armTemplates/read",
@@ -33073,7 +33109,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/GenerateArmTemplate/action",
-    "description": "Generiert eine ARM-Vorlage für das angegebene Artefakt, lädt die erforderlichen Dateien in ein Speicherkonto hoch und überprüft das generierte Artefakt."
+    "description": "Generates an ARM template for the given artifact, uploads the required files to a storage account, and validates the generated artifact."
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/read",
@@ -33133,7 +33169,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/Notify/action",
-    "description": "Sendet eine Benachrichtigung an den angegebenen Kanal."
+    "description": "Send notification to provided channel."
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/delete",
@@ -33149,7 +33185,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/EvaluatePolicies/action",
-    "description": "Wertet die Richtlinie des Labs aus."
+    "description": "Evaluates lab policy."
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/policies/delete",
@@ -33173,11 +33209,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/Execute/action",
-    "description": "Führt einen Zeitplan aus."
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/ListApplicable/action",
-    "description": "Listet alle anwendbaren Zeitpläne auf."
+    "description": "Lists all applicable schedules"
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/delete",
@@ -33245,11 +33281,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Attach/action",
-    "description": "Fügt die Lease des Datenträgers an den virtuellen Computer an und erstellt sie."
+    "description": "Attach and create the lease of the disk to the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Detach/action",
-    "description": "Trennt und unterbricht die Lease des an den virtuellen Computer angefügten Datenträgers."
+    "description": "Detach and break the lease of the disk attached to the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/delete",
@@ -33293,15 +33329,15 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/ListApplicableSchedules/action",
-    "description": "Listet die anwendbaren Zeitpläne zum Starten/Beenden auf, sofern vorhanden."
+    "description": "Lists the applicable start/stop schedules, if any."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Start/action",
-    "description": "Startet ein Service Fabric."
+    "description": "Start a service fabric."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Stop/action",
-    "description": "Beendet ein Service Fabric."
+    "description": "Stop a service fabric"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/delete",
@@ -33313,7 +33349,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/Execute/action",
-    "description": "Führt einen Zeitplan aus."
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/delete",
@@ -33337,67 +33373,67 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/AddDataDisk/action",
-    "description": "Fügt einen neuen oder vorhandenen Datenträger an einen virtuellen Computer an."
+    "description": "Attach a new or existing data disk to virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ApplyArtifacts/action",
-    "description": "Wendet Artefakte auf den virtuellen Computer an."
+    "description": "Apply artifacts to virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ChangeSecurityProfile/action",
-    "description": "Sicherheitsprofil eines virtuellen Computers ändern"
+    "description": "Change security profile of a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Claim/action",
-    "description": "Besitz für einen vorhandenen virtuellen Computer übernehmen"
+    "description": "Take ownership of an existing virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ClearArtifactResults/action",
-    "description": "Löscht die Artefaktergebnisse des virtuellen Computers."
+    "description": "Clears the artifact results of the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/DetachDataDisk/action",
-    "description": "Trennt den angegebenen Datenträger vom virtuellen Computer."
+    "description": "Detach the specified disk from the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/GetRdpFileContents/action",
-    "description": "Hiermit wird eine Zeichenfolge abgerufen, die den Inhalt der RDP-Datei für den virtuellen Computer darstellt."
+    "description": "Gets a string that represents the contents of the RDP file for the virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Hibernate/action",
-    "description": "Virtuellen Computer in Den Ruhezustand wechseln"
+    "description": "Hibernate a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ListApplicableSchedules/action",
-    "description": "Listet die anwendbaren Zeitpläne zum Starten/Beenden auf, sofern vorhanden."
+    "description": "Lists the applicable start/stop schedules, if any."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Redeploy/action",
-    "description": "Hiermit stellen Sie einen virtuellen Computer erneut bereit."
+    "description": "Redeploy a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Resize/action",
-    "description": "Hiermit ändern Sie die Größe des virtuellen Computers."
+    "description": "Resize Virtual Machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Restart/action",
-    "description": "Hiermit starten Sie einen virtuellen Computer neu."
+    "description": "Restart a virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Start/action",
-    "description": "Startet einen virtuellen Computer."
+    "description": "Start a virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Stop/action",
-    "description": "Beendet einen virtuellen Computer."
+    "description": "Stop a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/TransferDisks/action",
-    "description": "Überträgt den Besitz aller dem virtuellen Computer angefügten Datenträger auf den aktuellen Benutzer."
+    "description": "Transfers all data disks attached to the virtual machine to be owned by the current user."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/UnClaim/action",
-    "description": "Hiermit geben Sie den Besitz eines vorhandenen virtuellen Computers frei."
+    "description": "Release ownership of an existing virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/delete",
@@ -33409,7 +33445,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/Execute/action",
-    "description": "Führt einen Zeitplan aus."
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/delete",
@@ -33469,11 +33505,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Execute/action",
-    "description": "Führt einen Zeitplan aus."
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Retarget/action",
-    "description": "Aktualisiert die Ziel-Ressourcen-ID eines Zeitplans."
+    "description": "Updates a schedule's target resource Id."
   },
   {
     "action": "Microsoft.DevTestLab/schedules/delete",
@@ -36374,6 +36410,34 @@
   {
     "action": "Microsoft.DurableTask/schedulers/delete",
     "description": "Delete Durable Task Scheduler"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/detectors/read",
+    "description": "Read Durable Task Scheduler Detector"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/delete",
+    "description": "Delete Durable Task Scheduler Failover Instance to disable disaster recovery"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/failover/action",
+    "description": "Initiate a planned failover to make this scheduler the primary"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/forceFailoverAllowDataLoss/action",
+    "description": "Initiate a forced failover to make this scheduler the primary, potentially allowing data loss"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/read",
+    "description": "Read Durable Task Scheduler Failover Instance disaster recovery status"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/write",
+    "description": "Create or Update Durable Task Scheduler Failover Instance to enable disaster recovery"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/internalOperations/draction/action",
+    "description": "Internal operation used by the resource provider to manage disaster recovery configuration"
   },
   {
     "action": "Microsoft.DurableTask/schedulers/privateEndpointConnectionProxies/delete",
@@ -40733,63 +40797,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "List the endpoint access credentials to the resource."
+    "description": "Gets the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "List the ingress gateway access credentials to the resource."
+    "description": "Gets the ingress gateway endpoint credentials "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "List the managed proxy details to the resource."
+    "description": "Fetches the managed proxy details "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Get or list of endpoints to the target resource."
+    "description": "Gets the endpoint to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the serviceConfigurations access to the endpoints resource."
+    "description": "Deletes the service details to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Get or list of serviceConfigurations to the endpoints resource."
+    "description": "Gets the details about the service to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Create or update the serviceConfigurations to the endpoints resource."
+    "description": "Update the service details in the service configurations of the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Create or update the endpoint to the target resource."
+    "description": "Update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Deletes the public cloud connectors resource."
+    "description": "Delete a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Gets the public cloud connectors."
+    "description": "Get a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "Tests the permissions of solution configurations under public cloud connector."
+    "description": "A long-running resource action."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update the public cloud connectors resource."
+    "description": "Update a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Deletes the solution configuration with provided solution name."
+    "description": "Delete a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Retrieve a list of inventory by solution name."
+    "description": "Get a InventoryResource"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Retrieve the solution configuration identified by solution name."
+    "description": "Get a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -40797,11 +40861,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Updates the solution configuration for solution name."
+    "description": "Update a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Retrieve the solution type by provided solution type."
+    "description": "Get a SolutionTypeResource"
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -51496,130 +51560,6 @@
     "description": "Creates a new MySQL discovery site or updates an existing one. This operation establishes the discovery environment for MySQL servers and configures the association with master sites and migration projects."
   },
   {
-    "action": "Microsoft.NetApp/activeDirectoryConfigs/delete",
-    "description": "Deletes an active directory config."
-  },
-  {
-    "action": "Microsoft.NetApp/activeDirectoryConfigs/read",
-    "description": "Returns the details of an active directory config resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/activeDirectoryConfigs/write",
-    "description": "Creates or updates an active directory config resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/delete",
-    "description": "Deletes an elastic account."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupPolicies/delete",
-    "description": "Deletes an elastic backup policy."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupPolicies/read",
-    "description": "Returns the details of elastic backup policy resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupPolicies/write",
-    "description": "Creates or updates an elastic backup policy resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/delete",
-    "description": "Deletes an elastic backup vault resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/elasticBackups/delete",
-    "description": "Deletes an elastic backup resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/elasticBackups/read",
-    "description": "Reads an elastic backup resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/elasticBackups/write",
-    "description": "Writes an elastic backup resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/read",
-    "description": "Reads an elastic backup vault resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/write",
-    "description": "Writes an elastic backup vault resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/changeZone/action",
-    "description": "Change logical availability zone for an elastic capacityPool in a zone aware region and storage."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/checkVolumeFilePathAvailability/action",
-    "description": "Checks file path availability for an elastic capacity pool."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/delete",
-    "description": "Deletes an elastic capacity pool."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/delete",
-    "description": "Deletes an elastic volume."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/elasticSnapshots/delete",
-    "description": "Deletes an elastic snapshot."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/elasticSnapshots/read",
-    "description": "Returns the details of elastic snapshot resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/elasticSnapshots/write",
-    "description": "Creates an elastic snapshot."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/read",
-    "description": "Returns the details of elastic volume resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/revert/action",
-    "description": "Revert volume to specific snapshot"
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/write",
-    "description": "Creates or updates an elastic volume resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/read",
-    "description": "Returns the details of elastic capacity pool resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/write",
-    "description": "Creates or updates an elastic capacity pool resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/delete",
-    "description": "Deletes an elastic snapshot policy."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/elasticVolumes/read",
-    "description": "List connected elastic volumes"
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/read",
-    "description": "Returns the details of elastic snapshot policy resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/write",
-    "description": "Creates or updates an elastic snapshot policy resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/read",
-    "description": "Returns the details of elastic account resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/write",
-    "description": "Creates or updates an elastic account resource."
-  },
-  {
     "action": "Microsoft.NetApp/netAppAccounts/accountBackups/delete",
     "description": "Deletes an account backup resource."
   },
@@ -62120,6 +62060,10 @@
     "description": "Create or update Account Binding."
   },
   {
+    "action": "Microsoft.Quantum/Workspaces/chat/action",
+    "description": "Interact with the Azure Quantum AI researcher agent scoped to a workspace"
+  },
+  {
     "action": "Microsoft.Quantum/Workspaces/delete",
     "description": "Delete Workspace"
   },
@@ -62148,6 +62092,10 @@
     "description": "Write Workspace"
   },
   {
+    "action": "Microsoft.Quantum/providerAccounts/chat/action",
+    "description": "Interact with the Azure Quantum AI operator agent scoped to a provider account"
+  },
+  {
     "action": "Microsoft.Quantum/providerAccounts/delete",
     "description": "Deletes ProviderAccount"
   },
@@ -62160,6 +62108,10 @@
     "description": "Write ProviderAccount's devices and other data"
   },
   {
+    "action": "Microsoft.Quantum/providerAccounts/diagnostics/read",
+    "description": "Read ProviderAccount's AI diagnostics analysis results"
+  },
+  {
     "action": "Microsoft.Quantum/providerAccounts/jobs/read",
     "description": "Read ProviderAccount's jobs and other data"
   },
@@ -62168,12 +62120,28 @@
     "description": "Write ProviderAccount's jobs and other data"
   },
   {
+    "action": "Microsoft.Quantum/providerAccounts/messages/read",
+    "description": "Read Quantum ProviderAccount's emitted messages"
+  },
+  {
+    "action": "Microsoft.Quantum/providerAccounts/messages/write",
+    "description": "Write Quantum ProviderAccount's emitted messages"
+  },
+  {
+    "action": "Microsoft.Quantum/providerAccounts/quotaUsages/read",
+    "description": "Read ProviderAccount's quota usages"
+  },
+  {
     "action": "Microsoft.Quantum/providerAccounts/read",
     "description": "Read ProviderAccount"
   },
   {
     "action": "Microsoft.Quantum/providerAccounts/write",
     "description": "Write ProviderAccount"
+  },
+  {
+    "action": "Microsoft.Quantum/suiteOffers/chat/action",
+    "description": "Interact with the Azure Quantum AI admin agent scoped to a subscription's suite offers"
   },
   {
     "action": "Microsoft.Quantum/suiteOffers/read",
@@ -69144,30 +69112,6 @@
     "description": "Checks that account name is valid and is not in use."
   },
   {
-    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/delete",
-    "description": "Delete a container from a Context Cache resource."
-  },
-  {
-    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/read",
-    "description": "Returns the list of containers in a Context Cache resource or gets the properties of a specified container."
-  },
-  {
-    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/write",
-    "description": "Create or update a container in a Context Cache resource."
-  },
-  {
-    "action": "Microsoft.Storage/contextCaches/delete",
-    "description": "Delete a Context Cache resource."
-  },
-  {
-    "action": "Microsoft.Storage/contextCaches/read",
-    "description": "Returns the list of Context Cache resources or gets the properties of a specified Context Cache resource."
-  },
-  {
-    "action": "Microsoft.Storage/contextCaches/write",
-    "description": "Create or update a Context Cache resource."
-  },
-  {
     "action": "Microsoft.Storage/deletedAccounts/read",
     "description": ""
   },
@@ -72018,6 +71962,10 @@
   {
     "action": "Microsoft.Web/deletedSites/Read",
     "description": "Get the properties of a Deleted Web App"
+  },
+  {
+    "action": "Microsoft.Web/deletedSites/restore/action",
+    "description": "Restore a Deleted Web App to the original or a new app"
   },
   {
     "action": "Microsoft.Web/freeTrialStaticWebApps/delete",

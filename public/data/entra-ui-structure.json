@@ -1,0 +1,5490 @@
+[
+  {
+    "name": "Users",
+    "icon": "🧑",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "users",
+            "name": "Users",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/users/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/appRoleAssignments/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.email/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.email/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.fido2/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.fido2/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.microsoftAuthenticator/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.microsoftAuthenticator/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.password/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.password/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.passwordlessMicrosoftAuthenticator/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.passwordlessMicrosoftAuthenticator/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.securityQuestion/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.securityQuestion/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.sms/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.sms/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.softwareOath/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.softwareOath/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.temporaryAccessPass/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.temporaryAccessPass/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.voice/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.voice/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods/standard/restrictedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/basicProfile/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/customSecurityAttributes/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/deviceForResourceAccount/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/directReports/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/eligibleMemberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/guestBasicProfile/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/identities/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/invitedBy/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/licenseDetails/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/lifeCycleInfo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/mail/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/manager/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/memberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/oAuth2PermissionGrants/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/ownedDevices/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/ownedObjects/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/pendingMemberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/photo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/registeredDevices/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/scopedRoleMemberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/sponsorOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/sponsors/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/strongAuthentication/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/userPrincipalName/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/users/appRoleAssignments/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/assignLicense",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.email/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.email/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.fido2/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.fido2/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.microsoftAuthenticator/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.microsoftAuthenticator/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.password/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.password/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.passwordlessMicrosoftAuthenticator/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.passwordlessMicrosoftAuthenticator/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.securityQuestion/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.securityQuestion/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.sms/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.sms/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.softwareOath/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.softwareOath/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.temporaryAccessPass/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.temporaryAccessPass/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.voice/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.voice/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authorizationInfo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/basicProfile/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/contactInfo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/contactProfile/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/customSecurityAttributes/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/disable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/enable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/extensionProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/identities/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/jobInfo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/manager/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/mobile/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/parentalControls/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/password/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/passwordPolicies/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/photo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/preferredDataLocation/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/restore",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/searchableDeviceKey/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/sponsors/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/strongAuthentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/usageLocation/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/userPrincipalName/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/userType/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.email/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.fido2/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.microsoftAuthenticator/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.password/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.passwordlessMicrosoftAuthenticator/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.securityQuestion/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.sms/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.softwareOath/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.temporaryAccessPass/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods.voice/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/authenticationMethods/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/users/activateServicePlan",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/changePassword",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/convertExternalToInternalMemberUser",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/invalidateAllRefreshTokens",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/inviteGuest",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/users/reprocessLicenseAssignment",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 118,
+            "priority": 1
+          },
+          {
+            "key": "bulkJobs",
+            "name": "Bulk Jobs",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/bulkJobs/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/bulkJobs/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/bulkJobs/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "bulkJobs.groups",
+            "name": "Bulk Jobs · groups",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/bulkJobs.groups/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/bulkJobs.groups/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/bulkJobs.groups/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "contacts",
+            "name": "Contacts",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/contacts/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/contacts/memberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/contacts/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/contacts/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/contacts/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/contacts/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/contacts/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 7,
+            "priority": 999
+          },
+          {
+            "key": "externalUserProfiles",
+            "name": "External User Profiles",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/externalUserProfiles/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/externalUserProfiles/basic/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/externalUserProfiles/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "pendingExternalUserProfiles",
+            "name": "Pending External User Profiles",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/pendingExternalUserProfiles/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/pendingExternalUserProfiles/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/pendingExternalUserProfiles/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/pendingExternalUserProfiles/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 4,
+            "priority": 999
+          },
+          {
+            "key": "subscribedSkus",
+            "name": "Subscribed Skus",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/subscribedSkus/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/subscribedSkus/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/subscribedSkus/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "userCredentialPolicies",
+            "name": "User Credential Policies",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/policyAppliedTo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/tenantDefault/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/userCredentialPolicies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 8,
+            "priority": 999
+          },
+          {
+            "key": "userInfos",
+            "name": "User Infos",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/userInfos/address/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userInfos/email/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userInfos/openId/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userInfos/phone/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/userInfos/profile/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 5,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 9,
+    "totalOps": 154
+  },
+  {
+    "name": "Groups",
+    "icon": "👥",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "groups",
+            "name": "Groups",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups/allowAccessTo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/appRoleAssignments/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/appRoleAssignments/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/hasAccessTo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/hiddenMembers/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/memberOf/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/memberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/members/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/members/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/owners/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/pendingMembers/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/serviceEndpoints/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/settings/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/settings/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/standard/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups/allowAccessTo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/appRoleAssignments/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/assignedLabels/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/assignLicense",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/classification/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/dynamicMembershipRule/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/groupType/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/members/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/members/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/members/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/onPremWriteBack/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/owners/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/owners/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/pendingMembers/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/restore",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/serviceEndpoints/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/settings/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/visibility/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups/reprocessLicenseAssignment",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 44,
+            "priority": 1
+          },
+          {
+            "key": "groups.security",
+            "name": "Groups · security",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.security/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/assignedLabels/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/classification/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/dynamicMembershipRule/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/members/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/members/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/members/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/owners/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/owners/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security/visibility/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.security/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 15,
+            "priority": 1
+          },
+          {
+            "key": "groups.security.assignedMembership",
+            "name": "Groups · security · assigned Membership",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/classification/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/members/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/members/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/members/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/owners/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/owners/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/visibility/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.security.assignedMembership/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 13,
+            "priority": 1
+          },
+          {
+            "key": "groups.unified",
+            "name": "Groups · unified",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.unified/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/appRoleAssignments/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/assignedLabels/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/classification/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/dynamicMembershipRule/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/members/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/members/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/members/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/owners/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/owners/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/restore",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified/visibility/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.unified/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 17,
+            "priority": 1
+          },
+          {
+            "key": "groups.unified.assignedMembership",
+            "name": "Groups · unified · assigned Membership",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/classification/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/members/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/members/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/members/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/owners/update.add",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/owners/update.remove",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/visibility/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groups.unified.assignedMembership/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 13,
+            "priority": 1
+          },
+          {
+            "key": "groupSettingTemplates",
+            "name": "Group Setting Templates",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupSettingTemplates/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groupSettingTemplates/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupSettingTemplates/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "groupSettings",
+            "name": "Group Settings",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupSettings/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groupSettings/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupSettings/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groupSettings/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupSettings/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupSettings/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "groupsAssignableToRoles",
+            "name": "Groups Assignable To Roles",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupsAssignableToRoles/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groupsAssignableToRoles/assignLicense",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groupsAssignableToRoles/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/groupsAssignableToRoles/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupsAssignableToRoles/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "scopedRoleMemberships",
+            "name": "Scoped Role Memberships",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/scopedRoleMemberships/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/scopedRoleMemberships/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 9,
+    "totalOps": 119
+  },
+  {
+    "name": "Applications",
+    "icon": "📱",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "applications",
+            "name": "Applications",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applications/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/applicationProxy/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/owners/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/policies/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/policies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/standard/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/synchronization/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applications/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/applicationProxy/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/applicationProxyAuthentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/applicationProxySslCertificate/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/applicationProxyUrlSettings/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/appRoles/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/audience/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/authentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/credentials/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/disablement/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/extensionProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/notes/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/permissions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/policies/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/restore",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/tag/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications/verification/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applications/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applications/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 32,
+            "priority": 1
+          },
+          {
+            "key": "applications.myOrganization",
+            "name": "Applications · my Organization",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/appRoles/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/audience/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/authentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/credentials/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/extensionProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/notes/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/permissions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/tag/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applications.myOrganization/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 15,
+            "priority": 1
+          },
+          {
+            "key": "servicePrincipals",
+            "name": "Service Principals",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/servicePrincipals/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/appRoleAssignedTo/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/appRoleAssignedTo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/appRoleAssignments/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/appRoleAssignments/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/authentication/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/memberOf/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/memberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/oAuth2PermissionGrants/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/oAuth2PermissionGrants/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/ownedObjects/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/ownedObjects/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/owners/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/policies/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/policies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/standard/limitedRead",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/servicePrincipals/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/appRoleAssignedTo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/audience/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/authentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/credentials/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/customSecurityAttributes/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/disable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/enable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/notes/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/permissions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/policies/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/tag/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/servicePrincipals/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/servicePrincipals/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-all-application-permissions",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-all-application-permissions-verified",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-application-admin",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-company-admin",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-user-default-allow-consent-apps",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-user-default-legacy",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-user-default-low",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-user-default-recommended",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForOwnedResource.microsoft-all-application-permissions-for-chat",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForOwnedResource.microsoft-all-application-permissions-for-team",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForOwnedResource.microsoft-dynamically-managed-permissions-for-chat",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForOwnedResource.microsoft-dynamically-managed-permissions-for-team",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-chat",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-team",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForResource.microsoft-all-application-permissions-for-chat",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForResource.microsoft-all-application-permissions-for-team",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForResource.microsoft-dynamically-managed-permissions-for-chat",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForResource.microsoft-dynamically-managed-permissions-for-team",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForResource.microsoft-pre-approval-apps-for-chat",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForResource.microsoft-pre-approval-apps-for-team",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-all-application-permissions",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-all-application-permissions-verified",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-application-admin",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-company-admin",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-user-default-allow-consent-apps",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-user-default-legacy",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-user-default-low",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.microsoft-user-default-recommended",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/credentials/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/jobs/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/schema/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronizationCredentials/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronizationJobs/manage",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipals/synchronizationSchema/manage",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 79,
+            "priority": 2
+          },
+          {
+            "key": "adminConsentRequestPolicy",
+            "name": "Admin Consent Request Policy",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/adminConsentRequestPolicy/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "appConsent",
+            "name": "App Consent",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/appConsent/appConsentRequests/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "appRoleAssignments",
+            "name": "App Role Assignments",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/appRoleAssignments/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/appRoleAssignments/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/appRoleAssignments/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/appRoleAssignments/createAsOwner",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/appRoleAssignments/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/appRoleAssignments/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "applicationPolicies",
+            "name": "Application Policies",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applicationPolicies/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applicationPolicies/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applicationPolicies/policyAppliedTo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applicationPolicies/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applicationPolicies/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applicationPolicies/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applicationPolicies/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applicationPolicies/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/applicationPolicies/owners/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applicationPolicies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 10,
+            "priority": 999
+          },
+          {
+            "key": "applicationTemplates",
+            "name": "Application Templates",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/applicationTemplates/instantiate",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "azureManagedIdentities",
+            "name": "Azure Managed Identities",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "oAuth2PermissionGrants",
+            "name": "O Auth2 Permission Grants",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/oAuth2PermissionGrants/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/oAuth2PermissionGrants/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/oAuth2PermissionGrants/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/oAuth2PermissionGrants/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/oAuth2PermissionGrants/createAsOwner",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/oAuth2PermissionGrants/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 7,
+            "priority": 999
+          },
+          {
+            "key": "permissionGrantPolicies",
+            "name": "Permission Grant Policies",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/permissionGrantPolicies/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/permissionGrantPolicies/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/permissionGrantPolicies/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/permissionGrantPolicies/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/permissionGrantPolicies/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/permissionGrantPolicies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "servicePrincipalCreationPolicies",
+            "name": "Service Principal Creation Policies",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/servicePrincipalCreationPolicies/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipalCreationPolicies/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/servicePrincipalCreationPolicies/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipalCreationPolicies/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/servicePrincipalCreationPolicies/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/servicePrincipalCreationPolicies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 12,
+    "totalOps": 167
+  },
+  {
+    "name": "Devices",
+    "icon": "💻",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "devices",
+            "name": "Devices",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/devices/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/createdFrom/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/customSecurityAttributes/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/memberOf/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/registeredOwners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/registeredUsers/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/devices/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/customSecurityAttributes/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/disable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/enable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/extensionAttributeSet1/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/extensionAttributeSet2/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/extensionAttributeSet3/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/permissions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/registeredOwners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/devices/registeredUsers/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/devices/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/devices/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 20,
+            "priority": 1
+          },
+          {
+            "key": "bitlockerKeys",
+            "name": "Bitlocker Keys",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/bitlockerKeys/key/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/bitlockerKeys/metadata/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "certificateBasedDeviceAuthConfigurations",
+            "name": "Certificate Based Device Auth Configurations",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/certificateBasedDeviceAuthConfigurations/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/certificateBasedDeviceAuthConfigurations/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 4,
+            "priority": 999
+          },
+          {
+            "key": "deviceLocalCredentials",
+            "name": "Device Local Credentials",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceLocalCredentials/password/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/deviceLocalCredentials/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deviceManagementPolicies",
+            "name": "Device Management Policies",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceManagementPolicies/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceManagementPolicies/basic/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deviceRegistrationPolicy",
+            "name": "Device Registration Policy",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceRegistrationPolicy/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceRegistrationPolicy/basic/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deviceTemplates",
+            "name": "Device Templates",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceTemplates/deviceInstances/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/deviceTemplates/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/deviceTemplates/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceTemplates/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/deviceTemplates/owners/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceTemplates/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deviceTemplates/createDeviceFromTemplate",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 7,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 7,
+    "totalOps": 39
+  },
+  {
+    "name": "Conditional Access & Policies",
+    "icon": "🛡",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "conditionalAccessPolicies",
+            "name": "Conditional Access Policies",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/tenantDefault/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicies/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 10,
+            "priority": 1
+          },
+          {
+            "key": "authorizationPolicy",
+            "name": "Authorization Policy",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/authorizationPolicy/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/authorizationPolicy/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/authorizationPolicy/defaultUserRoleOverrides/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/authorizationPolicy/defaultUserRolePermissions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/authorizationPolicy/guestUserSettings/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/authorizationPolicy/organizationSettings/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/authorizationPolicy/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 7,
+            "priority": 999
+          },
+          {
+            "key": "customAuthenticationExtensions",
+            "name": "Custom Authentication Extensions",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/customAuthenticationExtensions/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/customAuthenticationExtensions/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "namedLocations",
+            "name": "Named Locations",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/namedLocations/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/namedLocations/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/namedLocations/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/namedLocations/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 4,
+            "priority": 999
+          },
+          {
+            "key": "onPasswordSubmitCustomAuthenticationExtension",
+            "name": "On Password Submit Custom Authentication Extension",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/onPasswordSubmitCustomAuthenticationExtension/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "policies",
+            "name": "Policies",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/policies/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/policies/owners/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/policies/policyAppliedTo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/policies/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/policies/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/policies/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/policies/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/policies/tenantDefault/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/policies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/policies/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 10,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 6,
+    "totalOps": 34
+  },
+  {
+    "name": "Roles & RBAC",
+    "icon": "🔑",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "directoryRoles",
+            "name": "Directory Roles",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/directoryRoles/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/directoryRoles/eligibleMembers/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/directoryRoles/members/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/directoryRoles/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/directoryRoles/basic/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/directoryRoles/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 1
+          },
+          {
+            "key": "roleAssignments",
+            "name": "Role Assignments",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/roleAssignments/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/roleAssignments/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/roleAssignments/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 2
+          },
+          {
+            "key": "roleDefinitions",
+            "name": "Role Definitions",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/roleDefinitions/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/roleDefinitions/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/roleDefinitions/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 3
+          },
+          {
+            "key": "directoryRoleTemplates",
+            "name": "Directory Role Templates",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/directoryRoleTemplates/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/directoryRoleTemplates/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "resourceNamespaces",
+            "name": "Resource Namespaces",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 5,
+    "totalOps": 15
+  },
+  {
+    "name": "Identity Governance",
+    "icon": "📋",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "accessReviews",
+            "name": "Access Reviews",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/accessReviews/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.applications/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.directoryRoles/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.groups/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.groups/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.groups/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.groups/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/accessReviews/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.applications/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.directoryRoles/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions.entitlementManagement/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/accessReviews/definitions/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 16,
+            "priority": 1
+          },
+          {
+            "key": "administrativeUnits",
+            "name": "Administrative Units",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/administrativeUnits/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/administrativeUnits/members/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/administrativeUnits/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/administrativeUnits/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/administrativeUnits/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/administrativeUnits/members/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/administrativeUnits/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 7,
+            "priority": 999
+          },
+          {
+            "key": "entitlementManagement",
+            "name": "Entitlement Management",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/entitlementManagement/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/entitlementManagement/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "lifecycleWorkflows",
+            "name": "Lifecycle Workflows",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/lifecycleWorkflows/workflows/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "privilegedIdentityManagement",
+            "name": "Privileged Identity Management",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/privilegedIdentityManagement/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/privilegedIdentityManagement/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "tenantGovernance",
+            "name": "Tenant Governance",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/tenantGovernance/policyTemplates/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/tenantGovernance/policyTemplates/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/tenantGovernance/relationships/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/tenantGovernance/requests/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/tenantGovernance/requests/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 5,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 6,
+    "totalOps": 34
+  },
+  {
+    "name": "Agent Identity",
+    "icon": "🤖",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "agentIdentities",
+            "name": "Agent Identities",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentities/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentities/appRoleAssignedTo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/authentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/disable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/enable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/policies/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentities/tag/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentities/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 13,
+            "priority": 1
+          },
+          {
+            "key": "agentIdentityBlueprintPrincipals",
+            "name": "Agent Identity Blueprint Principals",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/appRoleAssignedTo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/authentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/disable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/permissions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/policies/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/tag/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 14,
+            "priority": 999
+          },
+          {
+            "key": "agentIdentityBlueprints",
+            "name": "Agent Identity Blueprints",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/appRoles/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/audience/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/authentication/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/createAsOwner",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/credentials/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/owners/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/permissions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/policies/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/tag/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentIdentityBlueprints/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 15,
+            "priority": 999
+          },
+          {
+            "key": "agentUsers",
+            "name": "Agent Users",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentUsers/lifeCycleInfo/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentUsers/assignLicense",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/disable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/enable",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/lifeCycleInfo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/manager/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/photo/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/restore",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/sponsors/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/usageLocation/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/userPrincipalName/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentUsers/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/agentUsers/invalidateAllRefreshTokens",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/reprocessLicenseAssignment",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/agentUsers/revokeSignInSessions",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 17,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 4,
+    "totalOps": 59
+  },
+  {
+    "name": "External Identities",
+    "icon": "🌐",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "crossTenantAccessPolicy",
+            "name": "Cross Tenant Access Policy",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/default/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/tenantRestrictions/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 24,
+            "priority": 1
+          },
+          {
+            "key": "b2cTrustFrameworkKeySet",
+            "name": "B2c Trust Framework Key Set",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "b2cTrustFrameworkPolicy",
+            "name": "B2c Trust Framework Policy",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "b2cUserAttribute",
+            "name": "B2c User Attribute",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/b2cUserAttribute/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "b2cUserFlow",
+            "name": "B2c User Flow",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/b2cUserFlow/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "identityProviders",
+            "name": "Identity Providers",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/identityProviders/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "multiTenantOrganization",
+            "name": "Multi Tenant Organization",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/joinRequest/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/tenants/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/joinRequest/organizationDetails/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/tenants/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/tenants/organizationDetails/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/multiTenantOrganization/tenants/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 10,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 7,
+    "totalOps": 39
+  },
+  {
+    "name": "Organization",
+    "icon": "🏢",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "organization",
+            "name": "Organization",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/organization/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/organization/basicProfile/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/organization/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/organization/strongAuthentication/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/organization/trustedCAsForPasswordlessAuth/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/organization/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/organization/dirSync/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/organization/trustedCAsForPasswordlessAuth/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/organization/allProperties/allTasks",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/organization/strongAuthentication/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 10,
+            "priority": 1
+          },
+          {
+            "key": "domains",
+            "name": "Domains",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/domains/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/domains/federationConfiguration/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/domains/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/domains/federation/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/domains/federationConfiguration/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/domains/federationConfiguration/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/domains/federationConfiguration/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/domains/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 8,
+            "priority": 2
+          },
+          {
+            "key": "contracts",
+            "name": "Contracts",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/contracts/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/contracts/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "loginOrganizationBranding",
+            "name": "Login Organization Branding",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/loginOrganizationBranding/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/loginOrganizationBranding/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "tenantManagement",
+            "name": "Tenant Management",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/tenantManagement/tenants/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 5,
+    "totalOps": 23
+  },
+  {
+    "name": "Hybrid & Provisioning",
+    "icon": "🔄",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "cloudProvisioning",
+            "name": "Cloud Provisioning",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/cloudProvisioning/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "connectorGroups",
+            "name": "Connector Groups",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/connectorGroups/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/connectorGroups/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/connectorGroups/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/connectorGroups/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 4,
+            "priority": 999
+          },
+          {
+            "key": "connectors",
+            "name": "Connectors",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/connectors/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/connectors/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/connectors/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "directorySync",
+            "name": "Directory Sync",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/directorySync/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "federatedAuthentication",
+            "name": "Federated Authentication",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/federatedAuthentication/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "hybridAuthenticationPolicy",
+            "name": "Hybrid Authentication Policy",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/hybridAuthenticationPolicy/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "onPremisesSynchronization",
+            "name": "On Premises Synchronization",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/onPremisesSynchronization/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/onPremisesSynchronization/basic/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "passThroughAuthentication",
+            "name": "Pass Through Authentication",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/passThroughAuthentication/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "passwordHashSync",
+            "name": "Password Hash Sync",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/passwordHashSync/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "seamlessSso",
+            "name": "Seamless Sso",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/seamlessSso/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 10,
+    "totalOps": 17
+  },
+  {
+    "name": "Monitoring & Reports",
+    "icon": "📊",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "auditLogs",
+            "name": "Audit Logs",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/auditLogs/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "cloudAppSecurity",
+            "name": "Cloud App Security",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/cloudAppSecurity/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/cloudAppSecurity/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "customSecurityAttributeAuditLogs",
+            "name": "Custom Security Attribute Audit Logs",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "identityProtection",
+            "name": "Identity Protection",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/identityProtection/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/identityProtection/allProperties/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/identityProtection/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "provisioningLogs",
+            "name": "Provisioning Logs",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/provisioningLogs/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "signInReports",
+            "name": "Sign In Reports",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/signInReports/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 6,
+    "totalOps": 9
+  },
+  {
+    "name": "Custom Security Attributes",
+    "icon": "🏷",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "attributeSets",
+            "name": "Attribute Sets",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/attributeSets/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/attributeSets/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "customSecurityAttributeDefinitions",
+            "name": "Custom Security Attribute Definitions",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 2,
+    "totalOps": 4
+  },
+  {
+    "name": "Verifiable Credentials",
+    "icon": "🎫",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "verifiableCredentials",
+            "name": "Verifiable Credentials",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/contracts/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/verifiableCredentials/configuration/contracts/cards/revoke",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 9,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 1,
+    "totalOps": 9
+  },
+  {
+    "name": "Recovery & Lockbox",
+    "icon": "💾",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "backup",
+            "name": "Backup",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/backup/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/backup/preview/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/backup/recovery/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/backup/preview/cancel",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/backup/recovery/cancel",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 5,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems",
+            "name": "Deleted Items",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems.agentIdentities",
+            "name": "Deleted Items · agent Identities",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.agentIdentities/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.agentIdentities/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems.agentIdentityBlueprintPrincipals",
+            "name": "Deleted Items · agent Identity Blueprint Principals",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems.agentIdentityBlueprints",
+            "name": "Deleted Items · agent Identity Blueprints",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.agentIdentityBlueprints/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.agentIdentityBlueprints/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems.applications",
+            "name": "Deleted Items · applications",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.applications/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.applications/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems.devices",
+            "name": "Deleted Items · devices",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.devices/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.devices/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems.groups",
+            "name": "Deleted Items · groups",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.groups/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.groups/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
+            "key": "deletedItems.users",
+            "name": "Deleted Items · users",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/deletedItems.users/restore",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "lockbox",
+            "name": "Lockbox",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/lockbox/requests/update",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 10,
+    "totalOps": 21
+  },
+  {
+    "name": "Other",
+    "icon": "📦",
+    "providers": [
+      {
+        "namespace": "microsoft.directory",
+        "displayName": "Entra Directory",
+        "types": [
+          {
+            "key": "serviceAction",
+            "name": "Service Action",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/serviceAction/activateService",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/serviceAction/disableDirectoryFeature",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/serviceAction/enableDirectoryFeature",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/serviceAction/getAvailableExtentionProperties",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/serviceAction/grantResourceSpecificConsent",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/serviceAction/revokeResourceSpecificConsent",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          }
+        ]
+      }
+    ],
+    "totalTypes": 1,
+    "totalOps": 6
+  }
+]
