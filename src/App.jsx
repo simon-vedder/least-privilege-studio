@@ -136,10 +136,10 @@ function opShortName(action, ns) {
 // Render a resource path with its namespace prefix dimmed and the distinctive
 // tail highlighted, e.g. "Microsoft.Compute/" (dim) + "availabilitySets" (bright).
 // Makes it obvious exactly which resource the row grants access to.
-function PathLabel({ prefix, tail, brightColor, size }) {
+function PathLabel({ prefix, tail, brightColor, size, highlightQuery }) {
   return <span style={{ fontFamily: "var(--m)", fontSize: size, wordBreak: "break-all" }}>
-    <span style={{ color: "#566b85" }}>{prefix}</span>
-    <span style={{ color: brightColor, fontWeight: 600 }}>{tail}</span>
+    <span style={{ color: "#566b85" }}>{highlightQuery ? <HL text={prefix} query={highlightQuery} /> : prefix}</span>
+    <span style={{ color: brightColor, fontWeight: 600 }}>{highlightQuery ? <HL text={tail} query={highlightQuery} /> : tail}</span>
   </span>;
 }
 
@@ -665,7 +665,7 @@ export default function App() {
                   return (<div key={pk} style={{ marginBottom: 2 }}>
                     {!singleProv && (<button onClick={() => setOP(s => ({ ...s, [pk]: !s[pk] }))} style={{ width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "8px 10px", background: provOpen ? "rgba(255,255,255,0.02)" : "transparent", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit" }}>
                       <span style={{ fontSize: 11, color: ac(cat.name), opacity: 0.6, transform: provOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>▸</span>
-                      <span style={{ flex: 1, textAlign: "left" }}><PathLabel prefix={nsPrefix} tail={nsTail} brightColor={provSel ? ac(cat.name) : "#aeb9c9"} size={13} /></span>
+                      <span style={{ flex: 1, textAlign: "left" }}><PathLabel prefix={nsPrefix} tail={nsTail} brightColor={provSel ? ac(cat.name) : "#aeb9c9"} size={13} highlightQuery={isSearch ? filter : ""} /></span>
                       {provSel && <span style={{ width: 6, height: 6, borderRadius: 3, background: ac(cat.name) }} />}
                       <span style={{ fontSize: 10, color: "#647a94", fontFamily: "var(--m)" }}>{prov.types.length}</span>
                     </button>)}
@@ -701,9 +701,7 @@ export default function App() {
                           <button onClick={() => { const opening = openRT !== rk; setORT(opening ? rk : null); setAF(opening && isSearch ? filter.trim() : "") }} className="rt-row" title={rawType} style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 12px", background: rtOpen ? "rgba(255,255,255,0.04)" : "transparent", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit", transition: "background 0.15s" }}>
                             <span style={{ fontSize: 12, color: "#6b7c93", transform: rtOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s", flexShrink: 0, marginTop: 3 }}>▸</span>
                             <span style={{ display: "flex", flexDirection: "column", gap: 3, minWidth: 0, textAlign: "left" }}>
-                              {isSearch
-                                ? <span style={{ fontSize: 14, fontFamily: "var(--m)", fontWeight: rtSel ? 600 : 500, color: rtSel ? ac(cat.name) : "#c8d6e5" }}><HL text={rawType} query={filter} /></span>
-                                : <PathLabel prefix={prov.namespace + "/"} tail={rt.key} brightColor={rtSel ? ac(cat.name) : "#e6edf5"} size={14} />}
+                              <PathLabel prefix={prov.namespace + "/"} tail={rt.key} brightColor={rtSel ? ac(cat.name) : "#e6edf5"} size={14} highlightQuery={isSearch ? filter : ""} />
                               <span style={{ display: "flex", alignItems: "center", gap: 12 }}>
                                 <span style={{ fontSize: 12, color: "#8092a8", fontFamily: "var(--m)" }}>{totalOps} action{totalOps !== 1 ? "s" : ""}</span>
                                 <span style={{ display: "inline-flex", gap: 4 }} title={isSearch && matchedLevels.size ? "Match under: " + [...matchedLevels].join(", ") : "Access levels: " + [...presentLevels].join(", ")}>
