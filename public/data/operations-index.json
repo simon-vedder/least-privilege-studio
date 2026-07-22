@@ -3480,22 +3480,6 @@
     "description": "Create or Update API Management Service instance"
   },
   {
-    "action": "Microsoft.App/agents/dataconnectors/delete",
-    "description": "Delete existing data connectors in an SRE agent"
-  },
-  {
-    "action": "Microsoft.App/agents/dataconnectors/listSecrets/action",
-    "description": "List secrets of an SRE agent data connector"
-  },
-  {
-    "action": "Microsoft.App/agents/dataconnectors/read",
-    "description": "Read data connectors in an SRE agent"
-  },
-  {
-    "action": "Microsoft.App/agents/dataconnectors/write",
-    "description": "Update data connectors in an SRE agent"
-  },
-  {
     "action": "Microsoft.App/agents/delete",
     "description": "Delete a SRE Agent"
   },

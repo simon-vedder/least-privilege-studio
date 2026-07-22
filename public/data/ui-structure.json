@@ -24918,10 +24918,6 @@
                 "label": "Read",
                 "ops": [
                   {
-                    "action": "Microsoft.App/agents/dataconnectors/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.App/agents/extendedagents/read",
                     "type": "dataAction"
                   },
@@ -24955,10 +24951,6 @@
               {
                 "label": "Write",
                 "ops": [
-                  {
-                    "action": "Microsoft.App/agents/dataconnectors/write",
-                    "type": "action"
-                  },
                   {
                     "action": "Microsoft.App/agents/extendedagents/write",
                     "type": "dataAction"
@@ -24994,10 +24986,6 @@
                 "label": "Delete",
                 "ops": [
                   {
-                    "action": "Microsoft.App/agents/dataconnectors/delete",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.App/agents/delete",
                     "type": "action"
                   },
@@ -25032,10 +25020,6 @@
                 "label": "Action",
                 "ops": [
                   {
-                    "action": "Microsoft.App/agents/dataconnectors/listSecrets/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.App/agents/threads/approve/action",
                     "type": "dataAction"
                   }
@@ -25043,7 +25027,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 26,
+            "totalOps": 22,
             "priority": 999
           },
           {
@@ -30385,7 +30369,7 @@
       }
     ],
     "totalTypes": 73,
-    "totalOps": 1716
+    "totalOps": 1712
   },
   {
     "name": "Containers",
