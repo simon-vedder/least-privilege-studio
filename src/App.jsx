@@ -145,12 +145,12 @@ function PathLabel({ prefix, tail, brightColor, size }) {
 
 // Render a full action path with the shared "<namespace>/<type>/" prefix dimmed
 // and the distinctive tail highlighted — keeps the complete string, cuts the noise.
-function OpSplit({ action, ns, typeKey, selected }) {
+function OpSplit({ action, ns, typeKey, selected, highlightQuery }) {
   const prefix = typeKey ? `${ns}/${typeKey}/` : `${ns}/`;
   let head, tail;
   if (action.startsWith(prefix)) { head = prefix; tail = action.slice(prefix.length); }
   else { const i = action.lastIndexOf("/"); head = i >= 0 ? action.slice(0, i + 1) : ""; tail = i >= 0 ? action.slice(i + 1) : action; }
-  return <>{head && <span style={{ color: "#566b85" }}>{head}</span>}<span style={{ color: selected ? "#eaf2ff" : "#c8d6e5", fontWeight: 500 }}>{tail}</span></>;
+  return <>{head && <span style={{ color: "#566b85" }}>{head}</span>}<span style={{ color: selected ? "#eaf2ff" : "#c8d6e5", fontWeight: 500 }}>{highlightQuery ? <HL text={tail} query={highlightQuery} /> : tail}</span></>;
 }
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
@@ -245,7 +245,7 @@ const ActionGroup = React.memo(function ActionGroup({ label, ops, ns, typeKey, s
       {filtered.map(op => (
         <label key={op.action} style={{ display: "flex", alignItems: "center", gap: 8, padding: "3px 0", cursor: "pointer" }}>
           <input type="checkbox" checked={!!sel[op.action]} onChange={() => onToggle({ [op.action]: !sel[op.action] })} style={{ accentColor: color }} />
-          <span style={{ fontFamily: "var(--m)", fontSize: 11.5, wordBreak: "break-all" }}>{highlightQuery ? <HL text={opShortName(op.action, ns)} query={highlightQuery} /> : <OpSplit action={op.action} ns={ns} typeKey={typeKey} selected={!!sel[op.action]} />}</span>
+          <span style={{ fontFamily: "var(--m)", fontSize: 11.5, wordBreak: "break-all" }}><OpSplit action={op.action} ns={ns} typeKey={typeKey} selected={!!sel[op.action]} highlightQuery={highlightQuery} /></span>
           {op.type === "dataAction" && <span style={{ fontSize: 9, padding: "1px 5px", borderRadius: 3, background: "rgba(245,166,35,0.15)", color: "#f5a623", fontWeight: 600 }}>Data</span>}
         </label>
       ))}
