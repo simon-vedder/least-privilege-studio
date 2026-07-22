@@ -47,24 +47,33 @@ function searchMatch(query, categories) {
     const f = categories.map(cat => ({ ...cat, providers: cat.providers.map(p => ({ ...p, types: p.types.filter(t => t.actions.some(a => a.ops.some(o => o.action.toLowerCase().includes(q)))) })).filter(p => p.types.length > 0) })).filter(c => c.providers.length > 0);
     return { filtered: f, isPermSearch: true, permQuery: q };
   }
-  // Mode 2: plain-word search — match a type by its OWN name only (word-boundary,
-  // abbreviation-aware). Deliberately ignores the category/provider name, the
-  // namespace, and operation contents, so a search surfaces only the types it
-  // actually names — not every type under a matching bucket. For operation-level
-  // discovery, type a path fragment (Mode 1) or use the in-panel action filter.
+  // Mode 2: plain-word search — a type matches if its OWN name matches
+  // (word-boundary, abbreviation-aware) OR one of its operations matches (the
+  // op tail, namespace stripped, so "deallocate"/"blob" find the right types).
+  // Ignores the category/provider name and the namespace so results stay tight;
+  // the tree renders matches collapsed with the matching level marked.
   const words = q.split(/\s+/).filter(Boolean);
   const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const f = categories.map(cat => ({
-    ...cat, providers: cat.providers.map(p => ({
-      ...p, types: p.types.filter(t => {
-        const nameHay = (t.name + " " + t.key).toLowerCase();
-        return words.every(w => {
-          if (new RegExp("\\b" + esc(w), "i").test(nameHay)) return true;
-          if (ABBREV[w]) return ABBREV[w].some(ph => nameHay.includes(ph));
-          return false;
-        });
-      })
-    })).filter(p => p.types.length > 0)
+    ...cat, providers: cat.providers.map(p => {
+      const nsPrefix = (p.namespace + "/").toLowerCase();
+      return {
+        ...p, types: p.types.filter(t => {
+          const nameHay = (t.name + " " + t.key).toLowerCase();
+          const nameMatch = words.every(w => {
+            if (new RegExp("\\b" + esc(w), "i").test(nameHay)) return true;
+            if (ABBREV[w]) return ABBREV[w].some(ph => nameHay.includes(ph));
+            return false;
+          });
+          if (nameMatch) return true;
+          return t.actions.some(a => a.ops.some(o => {
+            const l = o.action.toLowerCase();
+            const tail = l.startsWith(nsPrefix) ? l.slice(nsPrefix.length) : l;
+            return words.every(w => tail.includes(w));
+          }));
+        })
+      };
+    }).filter(p => p.types.length > 0)
   })).filter(c => c.providers.length > 0);
   return { filtered: f, isPermSearch: false, permQuery: "" };
 }
@@ -673,11 +682,23 @@ export default function App() {
                         const displayName = niceName(rt.name || fn(rt.key));
                         const rawType = `${prov.namespace}/${rt.key}`;
                         const presentLevels = new Set(rt.actions.map(a => a.label));
-                        // In-panel filter applies only when the user opens the type manually
+                        // While searching, work out which access levels actually contain a
+                        // matching operation, so the collapsed row can mark where the hit is.
+                        const matchedLevels = new Set();
+                        if (isSearch) {
+                          const sw = filter.toLowerCase().trim().split(/\s+/).filter(Boolean);
+                          const isPathQ = filter.includes("/") || filter.toLowerCase().includes("microsoft.");
+                          const nsPre = (prov.namespace + "/").toLowerCase();
+                          for (const a of rt.actions) {
+                            if (a.ops.some(o => { let op = o.action.toLowerCase(); if (!isPathQ && op.startsWith(nsPre)) op = op.slice(nsPre.length); return sw.every(w => op.includes(w)); })) matchedLevels.add(a.label);
+                          }
+                        }
+                        // When a type is opened during a search, filter its actions to the query
+                        // so the user lands on the match instead of scrolling the whole panel.
                         const combinedFilter = openRT === rk ? actionFilter : "";
-                        const hlOps = "";
+                        const hlOps = openRT === rk ? actionFilter : "";
                         return (<div key={rt.key}>
-                          <button onClick={() => { setORT(openRT === rk ? null : rk); setAF("") }} className="rt-row" title={rawType} style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 12px", background: rtOpen ? "rgba(255,255,255,0.04)" : "transparent", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit", transition: "background 0.15s" }}>
+                          <button onClick={() => { const opening = openRT !== rk; setORT(opening ? rk : null); setAF(opening && isSearch ? filter.trim() : "") }} className="rt-row" title={rawType} style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 12px", background: rtOpen ? "rgba(255,255,255,0.04)" : "transparent", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit", transition: "background 0.15s" }}>
                             <span style={{ fontSize: 12, color: "#6b7c93", transform: rtOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s", flexShrink: 0, marginTop: 3 }}>▸</span>
                             <span style={{ display: "flex", flexDirection: "column", gap: 3, minWidth: 0, textAlign: "left" }}>
                               {isSearch
@@ -685,10 +706,18 @@ export default function App() {
                                 : <PathLabel prefix={prov.namespace + "/"} tail={rt.key} brightColor={rtSel ? ac(cat.name) : "#e6edf5"} size={14} />}
                               <span style={{ display: "flex", alignItems: "center", gap: 12 }}>
                                 <span style={{ fontSize: 12, color: "#8092a8", fontFamily: "var(--m)" }}>{totalOps} action{totalOps !== 1 ? "s" : ""}</span>
-                                <span style={{ display: "inline-flex", gap: 4 }} title={"Access levels: " + [...presentLevels].join(", ")}>
-                                  {["Read", "Write", "Delete", "Action"].map(lv => (
-                                    <span key={lv} style={{ fontSize: 12, fontWeight: 700, fontFamily: "var(--m)", color: presentLevels.has(lv) ? LVLC[lv] : "#333a4a" }}>{lv[0]}</span>
-                                  ))}
+                                <span style={{ display: "inline-flex", gap: 4 }} title={isSearch && matchedLevels.size ? "Match under: " + [...matchedLevels].join(", ") : "Access levels: " + [...presentLevels].join(", ")}>
+                                  {["Read", "Write", "Delete", "Action"].map(lv => {
+                                    const present = presentLevels.has(lv);
+                                    const base = { fontSize: 12, fontWeight: 700, fontFamily: "var(--m)", borderRadius: 3, padding: "0 3px" };
+                                    let style;
+                                    if (!present) style = { ...base, color: "#333a4a" };
+                                    else if (isSearch && matchedLevels.size) style = matchedLevels.has(lv)
+                                      ? { ...base, color: LVLC[lv], background: LVLC[lv] + "33", boxShadow: `0 0 0 1px ${LVLC[lv]}66` }
+                                      : { ...base, color: LVLC[lv], opacity: 0.28 };
+                                    else style = { ...base, color: LVLC[lv] };
+                                    return <span key={lv} style={style}>{lv[0]}</span>;
+                                  })}
                                 </span>
                                 {sc > 0 && <span style={{ fontSize: 12, color: ac(cat.name), fontWeight: 600 }}>· {sc} selected</span>}
                               </span>
