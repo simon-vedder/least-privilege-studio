@@ -1618,7 +1618,9 @@
       "Microsoft.CognitiveServices/accounts/ContentSafety/*",
       "Microsoft.CognitiveServices/accounts/MaaS/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write"
+    ],
     "_estimatedActions": 90
   },
   {
@@ -1752,6 +1754,55 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 41
+  },
+  {
+    "name": "Azure AI Manager and Namespace RBAC Inference Operator",
+    "id": "82b2f1a9-9593-4498-a824-c209343a28ec",
+    "description": "Allows read access to all objects in an Azure AI Manager namespace, plus the ability to read Secrets and invoke inference against AI models deployed in that namespace. This role does not allow modifying objects, roles, or role bindings. However, the ability to read Secrets allows the holder to obtain ServiceAccount tokens in the namespace. Applying this role at the AI Manager scope will give access across all namespaces.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Resources/subscriptions/operationresults/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
+      "Microsoft.ContainerService/aiManagers/apps/daemonsets/read",
+      "Microsoft.ContainerService/aiManagers/apps/deployments/read",
+      "Microsoft.ContainerService/aiManagers/apps/replicasets/read",
+      "Microsoft.ContainerService/aiManagers/apps/statefulsets/read",
+      "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/read",
+      "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
+      "Microsoft.ContainerService/aiManagers/batch/jobs/read",
+      "Microsoft.ContainerService/aiManagers/configmaps/read",
+      "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/read",
+      "Microsoft.ContainerService/aiManagers/endpoints/read",
+      "Microsoft.ContainerService/aiManagers/events.k8s.io/events/read",
+      "Microsoft.ContainerService/aiManagers/events/read",
+      "Microsoft.ContainerService/aiManagers/extensions/daemonsets/read",
+      "Microsoft.ContainerService/aiManagers/extensions/deployments/read",
+      "Microsoft.ContainerService/aiManagers/extensions/ingresses/read",
+      "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/read",
+      "Microsoft.ContainerService/aiManagers/extensions/replicasets/read",
+      "Microsoft.ContainerService/aiManagers/limitranges/read",
+      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/pods/read",
+      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/nodes/read",
+      "Microsoft.ContainerService/aiManagers/namespaces/read",
+      "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/read",
+      "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/read",
+      "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/read",
+      "Microsoft.ContainerService/aiManagers/pods/read",
+      "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/read",
+      "Microsoft.ContainerService/aiManagers/replicationcontrollers/read",
+      "Microsoft.ContainerService/aiManagers/resourcequotas/read",
+      "Microsoft.ContainerService/aiManagers/serviceaccounts/read",
+      "Microsoft.ContainerService/aiManagers/services/read",
+      "Microsoft.ContainerService/aiManagers/secrets/read",
+      "Microsoft.ContainerService/aiManagers/inference/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 13
   },
   {
     "name": "Azure AI Safety Evaluator",
@@ -8001,6 +8052,8 @@
       "Microsoft.ChangeSafety/changeRecords/read",
       "Microsoft.ChangeSafety/changeRecords/write",
       "Microsoft.ChangeSafety/changeRecords/delete",
+      "Microsoft.ChangeSafety/changeStates/verifyChangeValidity/action",
+      "Microsoft.ChangeSafety/changeRecords/verifyChangeValidity/action",
       "Microsoft.ChangeSafety/changeStates/stageProgressions/read",
       "Microsoft.ChangeSafety/changeStates/stageProgressions/write",
       "Microsoft.ChangeSafety/changeStates/stageProgressions/delete",
@@ -8023,7 +8076,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 24
+    "_estimatedActions": 26
   },
   {
     "name": "Chaos Studio Experiment Contributor",
@@ -8491,7 +8544,10 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 0
   },
   {
@@ -8977,7 +9033,11 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action",
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 51
   },
   {
@@ -13379,7 +13439,9 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action"
+    ],
     "_estimatedActions": 377
   },
   {
@@ -13401,7 +13463,11 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action",
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 123
   },
   {
@@ -13440,7 +13506,11 @@
     "dataActions": [
       "Microsoft.CognitiveServices/*"
     ],
-    "notDataActions": [],
+    "notDataActions": [
+      "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action",
+      "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
+      "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
+    ],
     "_estimatedActions": 90
   },
   {
@@ -17946,6 +18016,33 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 22
+  },
+  {
+    "name": "Provisioned Machine Contributor",
+    "id": "dab09fbf-28d0-4b30-b97e-d2a0f680847a",
+    "description": "Grants permissions to manage Azure Stack HCI Provisioned Machine resources, excluding disk management, device reset, and resource deletion",
+    "actions": [
+      "Microsoft.AzureStackHCI/edgeMachines/*"
+    ],
+    "notActions": [
+      "Microsoft.AzureStackHCI/edgeMachines/delete"
+    ],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 30
+  },
+  {
+    "name": "Provisioned Machine Reader",
+    "id": "cc733c34-b633-4850-8d77-77aa26638325",
+    "description": "Grants read-only access to Azure Stack HCI Provisioned Machine resources",
+    "actions": [
+      "Microsoft.AzureStackHCI/EdgeMachines/read",
+      "Microsoft.AzureStackHCI/EdgeMachines/jobs/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Pure Storage Cloud VM Volume Group Mount Reader",

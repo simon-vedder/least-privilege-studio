@@ -3756,6 +3756,10 @@
     "description": "Delete a sandbox from a sandbox group"
   },
   {
+    "action": "Microsoft.App/sandboxGroups/sandboxes/disable/action",
+    "description": "Disable a sandbox, stopping it first if it is running"
+  },
+  {
     "action": "Microsoft.App/sandboxGroups/sandboxes/downloadContentPackage/action",
     "description": "Download a content package to a running sandbox"
   },
@@ -3766,6 +3770,10 @@
   {
     "action": "Microsoft.App/sandboxGroups/sandboxes/egresspolicy/write",
     "description": "Set the egress policy for a running sandbox"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/sandboxes/enable/action",
+    "description": "Enable a disabled sandbox"
   },
   {
     "action": "Microsoft.App/sandboxGroups/sandboxes/exec/stream/action",
@@ -8280,6 +8288,14 @@
     "description": "Gets jobs status details for sql arc resource"
   },
   {
+    "action": "Microsoft.AzureArcData/sqlServerInstances/getMigrationReadinessReport/action",
+    "description": "Retrieves the migration readiness report for the SQL Server instance."
+  },
+  {
+    "action": "Microsoft.AzureArcData/sqlServerInstances/getTargetRecommendationReports/action",
+    "description": "Retrieves the current job status and the latest target recommendation report for the SQL Server instance."
+  },
+  {
     "action": "Microsoft.AzureArcData/sqlServerInstances/getTelemetry/action",
     "description": "Retrieves SQL Server instance telemetry"
   },
@@ -8290,6 +8306,10 @@
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/runBestPracticeAssessment/action",
     "description": "The request to run SQL best practices assessment asynchronously."
+  },
+  {
+    "action": "Microsoft.AzureArcData/sqlServerInstances/runTargetRecommendationJob/action",
+    "description": "Starts a target recommendation job for the SQL Server instance."
   },
   {
     "action": "Microsoft.AzureArcData/sqlServerInstances/write",
@@ -9164,6 +9184,18 @@
     "description": "Create or updates SecuritySettings resource of HCI cluster"
   },
   {
+    "action": "Microsoft.AzureStackHCI/Clusters/StorageArrayAssociations/Delete",
+    "description": "Deletes storage array associations resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/StorageArrayAssociations/Read",
+    "description": "Gets/Lists storage array associations resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/StorageArrayAssociations/Write",
+    "description": "Creates/Updates storage array associations resource"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/Clusters/UploadCertificate/Action",
     "description": "Upload cluster certificate"
   },
@@ -9258,6 +9290,18 @@
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Delete",
     "description": "Deletes EdgeMachine resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/DeploymentSettings/Delete",
+    "description": "Deletes DeploymentSettings resource for EdgeMachine"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/DeploymentSettings/Read",
+    "description": "Gets EdgeMachine DeploymentSettings"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/DeploymentSettings/Write",
+    "description": "Creates or updates DeploymentSettings resource for EdgeMachine"
   },
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Jobs/Delete",
@@ -9490,6 +9534,22 @@
   {
     "action": "Microsoft.AzureStackHCI/Snapshots/join/action",
     "description": "Joins snapshot resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/Delete",
+    "description": "Deletes storage arrays resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/Read",
+    "description": "Gets/Lists storage arrays resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/StoragePools/Read",
+    "description": "Gets/Lists storage pools resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/Write",
+    "description": "Creates/Updates storage arrays resource"
   },
   {
     "action": "Microsoft.AzureStackHCI/StorageContainers/Delete",
@@ -10952,8 +11012,16 @@
     "description": "Lists payment methods attached to a billing account. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
+    "action": "Microsoft.Billing/billingAccounts/paymentMethods/fetchUnsettledCharges/write",
+    "description": "Fetches unsettled charges for a payment method. The operation is supported only for legacy billing accounts."
+  },
+  {
     "action": "Microsoft.Billing/billingAccounts/paymentMethods/read",
     "description": "Lists the payment methods by a billing account."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/paymentMethods/settleCharges/write",
+    "description": "Settles outstanding charges for a payment method. The operation is supported only for legacy billing accounts."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/policies/read",
@@ -12576,6 +12644,14 @@
     "description": "Gets a Discovered Resource or lists all Discovered Resources in a Workspace."
   },
   {
+    "action": "Microsoft.Chaos/workspaces/discoveries/read",
+    "description": "Gets a Discovery resource or lists all Discovery resources in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/evaluations/read",
+    "description": "Gets an Evaluation resource or lists all Evaluation resources in a Workspace."
+  },
+  {
     "action": "Microsoft.Chaos/workspaces/read",
     "description": "Gets a Workspace resource or lists all Workspace resources in a resource group or subscription."
   },
@@ -12588,16 +12664,8 @@
     "description": "Deletes a Scenario Configuration resource for a Scenario."
   },
   {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/discover/action",
-    "description": "Discovers all Azure resources for the given scenario configuration."
-  },
-  {
     "action": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
     "description": "Executes the scenario with the given scenario configuration."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/action",
-    "description": "Fixes resource permissions for the given scenario configuration."
   },
   {
     "action": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
@@ -13402,6 +13470,26 @@
   {
     "action": "Microsoft.CodeSigning/resourcetypes/read",
     "description": "Lists available resource types for Microsoft CodeSigning resource provider."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsightMonitors/action",
+    "description": "Perform actions on agent insight monitors"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsightMonitors/read",
+    "description": "Read agent insight monitors"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsightMonitors/write",
+    "description": "Update agent insight monitors"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsights/read",
+    "description": "Read agent insights"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agentInsights/write",
+    "description": "Update agent insights"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/delete",
@@ -20662,6 +20750,14 @@
   {
     "action": "Microsoft.Compute/snapshots/read",
     "description": "Get the properties of a Snapshot"
+  },
+  {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
+    "description": "Update the immutability policy of a Snapshot"
+  },
+  {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
+    "description": "Lock the immutability policy of a Snapshot"
   },
   {
     "action": "Microsoft.Compute/snapshots/upload/action",
@@ -33860,6 +33956,34 @@
     "description": "Perform all operations related to agent updating (i.e. request updates & report update results)"
   },
   {
+    "action": "Microsoft.DeviceUpdate/updateInstances/delete",
+    "description": "Deletes an Update Instance"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/updateInstances/linkInitiate/action",
+    "description": "Initiate account linking. Validates and persists binding, sets linkingState to InProgress"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/updateInstances/linkNotify/action",
+    "description": "Notify linking state change (commit, fail, or namespaceDeleted)"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/updateInstances/linkPreflight/action",
+    "description": "Preflight check for account linking readiness. No state change"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/updateInstances/linkUpdate/action",
+    "description": "Update linking properties (e.g., identity rotation)"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/updateInstances/read",
+    "description": "Returns the list of Update Instances"
+  },
+  {
+    "action": "Microsoft.DeviceUpdate/updateInstances/write",
+    "description": "Creates or updates an Update Instance"
+  },
+  {
     "action": "Microsoft.Devices/IotHubs/cloudToDeviceMessages/feedback/action",
     "description": "Receive, complete, or abandon cloud-to-device message feedback notification"
   },
@@ -36288,6 +36412,34 @@
     "description": "Delete Durable Task Scheduler"
   },
   {
+    "action": "Microsoft.DurableTask/schedulers/detectors/read",
+    "description": "Read Durable Task Scheduler Detector"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/delete",
+    "description": "Delete Durable Task Scheduler Failover Instance to disable disaster recovery"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/failover/action",
+    "description": "Initiate a planned failover to make this scheduler the primary"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/forceFailoverAllowDataLoss/action",
+    "description": "Initiate a forced failover to make this scheduler the primary, potentially allowing data loss"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/read",
+    "description": "Read Durable Task Scheduler Failover Instance disaster recovery status"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/failoverInstances/write",
+    "description": "Create or Update Durable Task Scheduler Failover Instance to enable disaster recovery"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/internalOperations/draction/action",
+    "description": "Internal operation used by the resource provider to manage disaster recovery configuration"
+  },
+  {
     "action": "Microsoft.DurableTask/schedulers/privateEndpointConnectionProxies/delete",
     "description": "Delete Durable Task Scheduler Private Endpoint Connection Proxies"
   },
@@ -37622,6 +37774,30 @@
   {
     "action": "Microsoft.EnterpriseSupport/supportPlans/write",
     "description": "Writes Support Plan resources"
+  },
+  {
+    "action": "Microsoft.EntraidGovernance/guestGovernanceUsage/delete",
+    "description": "Delete a GuestGovernanceUsage"
+  },
+  {
+    "action": "Microsoft.EntraidGovernance/guestGovernanceUsage/read",
+    "description": "Get a GuestGovernanceUsage"
+  },
+  {
+    "action": "Microsoft.EntraidGovernance/guestGovernanceUsage/write",
+    "description": "Update a GuestGovernanceUsage"
+  },
+  {
+    "action": "Microsoft.EntraidGovernance/scimApiConsumptions/delete",
+    "description": "Delete a ScimApiConsumption"
+  },
+  {
+    "action": "Microsoft.EntraidGovernance/scimApiConsumptions/read",
+    "description": "Get a ScimApiConsumption"
+  },
+  {
+    "action": "Microsoft.EntraidGovernance/scimApiConsumptions/write",
+    "description": "Update a ScimApiConsumption"
   },
   {
     "action": "Microsoft.EventGrid/domains/PrivateEndpointConnectionsApproval/action",
@@ -40621,63 +40797,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "List the endpoint access credentials to the resource."
+    "description": "Gets the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "List the ingress gateway access credentials to the resource."
+    "description": "Gets the ingress gateway endpoint credentials "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "List the managed proxy details to the resource."
+    "description": "Fetches the managed proxy details "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Get or list of endpoints to the target resource."
+    "description": "Gets the endpoint to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the serviceConfigurations access to the endpoints resource."
+    "description": "Deletes the service details to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Get or list of serviceConfigurations to the endpoints resource."
+    "description": "Gets the details about the service to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Create or update the serviceConfigurations to the endpoints resource."
+    "description": "Update the service details in the service configurations of the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Create or update the endpoint to the target resource."
+    "description": "Update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Deletes the public cloud connectors resource."
+    "description": "Delete a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Gets the public cloud connectors."
+    "description": "Get a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "Tests the permissions of solution configurations under public cloud connector."
+    "description": "A long-running resource action."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update the public cloud connectors resource."
+    "description": "Update a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Deletes the solution configuration with provided solution name."
+    "description": "Delete a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Retrieve a list of inventory by solution name."
+    "description": "Get a InventoryResource"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Retrieve the solution configuration identified by solution name."
+    "description": "Get a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -40685,11 +40861,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Updates the solution configuration for solution name."
+    "description": "Update a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Retrieve the solution type by provided solution type."
+    "description": "Get a SolutionTypeResource"
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -51384,130 +51560,6 @@
     "description": "Creates a new MySQL discovery site or updates an existing one. This operation establishes the discovery environment for MySQL servers and configures the association with master sites and migration projects."
   },
   {
-    "action": "Microsoft.NetApp/activeDirectoryConfigs/delete",
-    "description": "Deletes an active directory config."
-  },
-  {
-    "action": "Microsoft.NetApp/activeDirectoryConfigs/read",
-    "description": "Returns the details of an active directory config resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/activeDirectoryConfigs/write",
-    "description": "Creates or updates an active directory config resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/delete",
-    "description": "Deletes an elastic account."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupPolicies/delete",
-    "description": "Deletes an elastic backup policy."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupPolicies/read",
-    "description": "Returns the details of elastic backup policy resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupPolicies/write",
-    "description": "Creates or updates an elastic backup policy resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/delete",
-    "description": "Deletes an elastic backup vault resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/elasticBackups/delete",
-    "description": "Deletes an elastic backup resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/elasticBackups/read",
-    "description": "Reads an elastic backup resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/elasticBackups/write",
-    "description": "Writes an elastic backup resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/read",
-    "description": "Reads an elastic backup vault resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticBackupVaults/write",
-    "description": "Writes an elastic backup vault resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/changeZone/action",
-    "description": "Change logical availability zone for an elastic capacityPool in a zone aware region and storage."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/checkVolumeFilePathAvailability/action",
-    "description": "Checks file path availability for an elastic capacity pool."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/delete",
-    "description": "Deletes an elastic capacity pool."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/delete",
-    "description": "Deletes an elastic volume."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/elasticSnapshots/delete",
-    "description": "Deletes an elastic snapshot."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/elasticSnapshots/read",
-    "description": "Returns the details of elastic snapshot resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/elasticSnapshots/write",
-    "description": "Creates an elastic snapshot."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/read",
-    "description": "Returns the details of elastic volume resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/revert/action",
-    "description": "Revert volume to specific snapshot"
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes/write",
-    "description": "Creates or updates an elastic volume resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/read",
-    "description": "Returns the details of elastic capacity pool resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticCapacityPools/write",
-    "description": "Creates or updates an elastic capacity pool resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/delete",
-    "description": "Deletes an elastic snapshot policy."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/elasticVolumes/read",
-    "description": "List connected elastic volumes"
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/read",
-    "description": "Returns the details of elastic snapshot policy resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/elasticSnapshotPolicies/write",
-    "description": "Creates or updates an elastic snapshot policy resource."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/read",
-    "description": "Returns the details of elastic account resource(s)."
-  },
-  {
-    "action": "Microsoft.NetApp/elasticAccounts/write",
-    "description": "Creates or updates an elastic account resource."
-  },
-  {
     "action": "Microsoft.NetApp/netAppAccounts/accountBackups/delete",
     "description": "Deletes an account backup resource."
   },
@@ -55753,7 +55805,7 @@
   },
   {
     "action": "Microsoft.NetworkCloud/clusters/rotateCredential/action",
-    "description": "Triggers the rotation of a credential that is managed by the cluster. The credential is specified by the names listed in the cluster's managed credentials property."
+    "description": "Rotate the specified cluster credential."
   },
   {
     "action": "Microsoft.NetworkCloud/clusters/scanRuntime/action",
@@ -56866,70 +56918,6 @@
   {
     "action": "Microsoft.OffAzure/vmwareSites/write",
     "description": "Creates or updates the VMware site"
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/delete",
-    "description": "Deleteaspringbootsitesresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/errorSummaries/delete",
-    "description": "DeleteerrorSummariesresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/errorSummaries/read",
-    "description": "ListstheErrorSummariesresourceinspringbootsites."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/errorSummaries/write",
-    "description": "CreateerrorSummariesresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/read",
-    "description": "Listspringbootsitesresourcebysubscription"
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/refreshSite/action",
-    "description": "Triggerrefreshspringbootsitesaction"
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootapps/delete",
-    "description": "Deletespringbootappsresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootapps/read",
-    "description": "Listspringbootappsresourcebysubscription"
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootapps/write",
-    "description": "Updateaspringbootappsresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootservers/delete",
-    "description": "Deletespringbootserversresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootservers/read",
-    "description": "Listspringbootserversresourcebysubscription"
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/springbootservers/write",
-    "description": "Updatespringbootserversresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/summaries/delete",
-    "description": "Deletesummariesresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/summaries/read",
-    "description": "ListstheSummariesresourceinspringbootsites."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/summaries/write",
-    "description": "Createsummariesresource."
-  },
-  {
-    "action": "Microsoft.OffAzureSpringBoot/springbootsites/write",
-    "description": "Updateaspringbootsitesresource."
   },
   {
     "action": "Microsoft.OnlineExperimentation/workspaces/PrivateEndpointConnectionsApproval/action",
@@ -59094,6 +59082,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/DevCenterResourceOperationLogs/read",
     "description": "Read data from the DevCenterResourceOperationLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/DevOpsOperationsAudit/read",
+    "description": "Read data from the DevOpsOperationsAudit table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/DeviceAppCrash/read",
@@ -62068,6 +62060,10 @@
     "description": "Create or update Account Binding."
   },
   {
+    "action": "Microsoft.Quantum/Workspaces/chat/action",
+    "description": "Interact with the Azure Quantum AI researcher agent scoped to a workspace"
+  },
+  {
     "action": "Microsoft.Quantum/Workspaces/delete",
     "description": "Delete Workspace"
   },
@@ -62096,6 +62092,10 @@
     "description": "Write Workspace"
   },
   {
+    "action": "Microsoft.Quantum/providerAccounts/chat/action",
+    "description": "Interact with the Azure Quantum AI operator agent scoped to a provider account"
+  },
+  {
     "action": "Microsoft.Quantum/providerAccounts/delete",
     "description": "Deletes ProviderAccount"
   },
@@ -62108,6 +62108,10 @@
     "description": "Write ProviderAccount's devices and other data"
   },
   {
+    "action": "Microsoft.Quantum/providerAccounts/diagnostics/read",
+    "description": "Read ProviderAccount's AI diagnostics analysis results"
+  },
+  {
     "action": "Microsoft.Quantum/providerAccounts/jobs/read",
     "description": "Read ProviderAccount's jobs and other data"
   },
@@ -62116,12 +62120,28 @@
     "description": "Write ProviderAccount's jobs and other data"
   },
   {
+    "action": "Microsoft.Quantum/providerAccounts/messages/read",
+    "description": "Read Quantum ProviderAccount's emitted messages"
+  },
+  {
+    "action": "Microsoft.Quantum/providerAccounts/messages/write",
+    "description": "Write Quantum ProviderAccount's emitted messages"
+  },
+  {
+    "action": "Microsoft.Quantum/providerAccounts/quotaUsages/read",
+    "description": "Read ProviderAccount's quota usages"
+  },
+  {
     "action": "Microsoft.Quantum/providerAccounts/read",
     "description": "Read ProviderAccount"
   },
   {
     "action": "Microsoft.Quantum/providerAccounts/write",
     "description": "Write ProviderAccount"
+  },
+  {
+    "action": "Microsoft.Quantum/suiteOffers/chat/action",
+    "description": "Interact with the Azure Quantum AI admin agent scoped to a subscription's suite offers"
   },
   {
     "action": "Microsoft.Quantum/suiteOffers/read",
@@ -71508,6 +71528,42 @@
     "description": "Create or update a cloud validation"
   },
   {
+    "action": "Microsoft.Validate/validationTestCategories/delete",
+    "description": "Delete a validation test category catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTestCategories/read",
+    "description": "Get a validation test category catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTestCategories/write",
+    "description": "Update a validation test category catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTests/delete",
+    "description": "Delete a validation test catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTests/read",
+    "description": "Get a validation test catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTests/versions/delete",
+    "description": "Delete a validation test version catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTests/versions/read",
+    "description": "Get a validation test version catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTests/versions/write",
+    "description": "Update a validation test version catalog entry"
+  },
+  {
+    "action": "Microsoft.Validate/validationTests/write",
+    "description": "Update a validation test catalog entry"
+  },
+  {
     "action": "Microsoft.VideoIndexer/accounts/PrivateEndpointConnectionsApproval/action",
     "description": "Approve Private Endpoint Connections on accounts"
   },
@@ -71906,6 +71962,10 @@
   {
     "action": "Microsoft.Web/deletedSites/Read",
     "description": "Get the properties of a Deleted Web App"
+  },
+  {
+    "action": "Microsoft.Web/deletedSites/restore/action",
+    "description": "Restore a Deleted Web App to the original or a new app"
   },
   {
     "action": "Microsoft.Web/freeTrialStaticWebApps/delete",
