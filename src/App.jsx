@@ -541,35 +541,6 @@ export default function App() {
 
   // When searching, compute which resource types matched via operation paths (not just name)
   // These should auto-expand with the search term as action filter
-  const searchHasOpMatch = useMemo(() => {
-    if (!isSearch) return new Set();
-    const q = filter.toLowerCase().trim();
-    const words = q.split(/\s+/).filter(Boolean);
-    // For plain-word searches, match the operation tail (namespace stripped) so a
-    // panel only auto-opens where the query genuinely hits an action — not just
-    // because the provider namespace contains the word. Path searches match in full.
-    const isPath = q.includes("/") || q.includes("microsoft.");
-    const matched = new Set();
-    for (const cat of searchFiltered) for (const p of cat.providers) {
-      const nsPrefix = (p.namespace + "/").toLowerCase();
-      for (const t of p.types) {
-        const hasOpMatch = t.actions.some(a => a.ops.some(o => {
-          let op = o.action.toLowerCase();
-          if (!isPath && op.startsWith(nsPrefix)) op = op.slice(nsPrefix.length);
-          return words.every(w => op.includes(w));
-        }));
-        if (hasOpMatch) matched.add(`${p.namespace}|${t.key}`);
-      }
-    }
-    return matched;
-  }, [isSearch, filter, searchFiltered]);
-
-  // The global action filter: when searching, pass the search query to filter operations inside panels
-  const globalActionFilter = useMemo(() => {
-    if (!isSearch) return "";
-    return filter.toLowerCase().trim();
-  }, [isSearch, filter]);
-
   // No auto-scroll — user scrolls to results manually
 
   // Group a resource type's operations by access level
@@ -692,10 +663,9 @@ export default function App() {
                     {provOpen && (() => {
                       const renderRT = (rt) => {
                         const rk = `${prov.namespace}|${rt.key}`;
-                        const hasSearchOpMatch = searchHasOpMatch.has(rk);
-                        // Only auto-expand if search matched via operation paths
-                        const searchAutoExpand = isSearch && hasSearchOpMatch;
-                        const rtOpen = openRT === rk || searchAutoExpand;
+                        // Search shows matched types COLLAPSED — the R/W/D/A badge marks
+                        // what's inside; the user expands the one they want. No action wall.
+                        const rtOpen = openRT === rk;
                         const rtSel = hasRTSel(prov, rt);
                         const sc = rtSelCount(rt);
                         const totalOps = rt.actions.reduce((s, a) => s + a.ops.length, 0);
@@ -703,13 +673,9 @@ export default function App() {
                         const displayName = niceName(rt.name || fn(rt.key));
                         const rawType = `${prov.namespace}/${rt.key}`;
                         const presentLevels = new Set(rt.actions.map(a => a.label));
-                        // For manually opened: use local action filter. For search-expanded: filter ops silently.
-                        const localAF = openRT === rk ? actionFilter : "";
-                        // Hidden search filter: filters ops but doesn't show in the input field
-                        const hiddenSearchFilter = searchAutoExpand && openRT !== rk ? globalActionFilter : "";
-                        // Combined filter for ActionGroup
-                        const combinedFilter = localAF || hiddenSearchFilter;
-                        const hlOps = searchAutoExpand ? filter : "";
+                        // In-panel filter applies only when the user opens the type manually
+                        const combinedFilter = openRT === rk ? actionFilter : "";
+                        const hlOps = "";
                         return (<div key={rt.key}>
                           <button onClick={() => { setORT(openRT === rk ? null : rk); setAF("") }} className="rt-row" title={rawType} style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 12px", background: rtOpen ? "rgba(255,255,255,0.04)" : "transparent", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit", transition: "background 0.15s" }}>
                             <span style={{ fontSize: 12, color: "#6b7c93", transform: rtOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s", flexShrink: 0, marginTop: 3 }}>▸</span>
