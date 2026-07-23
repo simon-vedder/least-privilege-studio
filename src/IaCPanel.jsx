@@ -22,9 +22,10 @@ function ActionRow({ action, level, reason }) {
 }
 
 function Check({ on, onChange, label, hint }) {
+  // onClick on the wrapper so the whole row (box + text) is clickable.
   return (
-    <label style={{ display: "inline-flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 13, color: "#c8d6e5" }}>
-      <span onClick={onChange} style={{ width: 18, height: 18, borderRadius: 5, border: `1px solid ${on ? "#4fc3f7" : "rgba(255,255,255,0.2)"}`, background: on ? "rgba(79,195,247,0.2)" : "transparent", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#4fc3f7", fontSize: 12, flexShrink: 0 }}>{on ? "✓" : ""}</span>
+    <label onClick={onChange} style={{ display: "inline-flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 13, color: "#c8d6e5", userSelect: "none" }}>
+      <span style={{ width: 18, height: 18, borderRadius: 5, border: `1px solid ${on ? "#4fc3f7" : "rgba(255,255,255,0.2)"}`, background: on ? "rgba(79,195,247,0.2)" : "transparent", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#4fc3f7", fontSize: 12, flexShrink: 0 }}>{on ? "✓" : ""}</span>
       <span>{label}{hint && <span style={{ color: "#647a94", marginLeft: 6, fontSize: 12 }}>{hint}</span>}</span>
     </label>
   );
