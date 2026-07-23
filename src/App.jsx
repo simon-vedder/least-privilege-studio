@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback, useRef, useEffect, startTransition, useDeferredValue } from "react";
 import RolesCatalog from "./RolesCatalog.jsx";
 import OperationsCatalog from "./OperationsCatalog.jsx";
+import IaCPanel from "./IaCPanel.jsx";
 
 // ─── ENGINE ─────────────────────────────────────────────────────────────────
 const _reCache = new Map();
@@ -405,14 +406,16 @@ function CustomRoleImport({ allOps, onImport }) {
 }
 const NAV_TABS = [
   { id: "studio", label: "Build" },
+  { id: "iac", label: "From IaC", azureOnly: true },
   { id: "roles", label: "Browse roles" },
   { id: "operations", label: "Browse operations" },
 ];
 
-function NavBar({ view, setView }) {
+function NavBar({ view, setView, dataset }) {
+  const tabs = NAV_TABS.filter(t => !t.azureOnly || dataset === "azure");
   return (
     <nav style={{ display: "flex", gap: 2, borderBottom: "1px solid rgba(255,255,255,0.07)", marginBottom: 0 }}>
-      {NAV_TABS.map(tab => (
+      {tabs.map(tab => (
         <button
           key={tab.id}
           onClick={() => setView(tab.id)}
@@ -514,6 +517,16 @@ export default function App() {
     setView("studio");
   }, [toggleOps]);
 
+  // Apply a batch of actions derived from an IaC template. Stay on the IaC tab so
+  // the user can paste more templates and keep accumulating — the sticky builder
+  // bar shows the running total and the jump to role + JSON.
+  const applyIaC = useCallback((actions) => {
+    if (!actions?.length) return;
+    const updates = {};
+    for (const a of actions) updates[a] = true;
+    toggleOps(updates);
+  }, [toggleOps]);
+
   const applyCustomRole = useCallback((role) => {
     const ops = resolveRoleFast(role, allOps);
     startTransition(() => { setSel(prev => { const n = { ...prev }; for (const a of ops) n[a] = true; return n }) });
@@ -600,9 +613,14 @@ export default function App() {
 
       <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.25), rgba(171,71,188,0.18), transparent)", maxWidth: 960, margin: "0 auto" }} />
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 24px 4px" }}>
-        <NavBar view={view} setView={handleSetView} />
+        <NavBar view={view} setView={handleSetView} dataset={dataset} />
       </div>
 
+      {view === "iac" && dataset === "azure" && (
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px 24px 60px" }}>
+          <IaCPanel allOps={allOps} onApply={applyIaC} />
+        </div>
+      )}
       {view === "roles" && (
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px 24px 60px" }}>
           <RolesCatalog roles={roles} onAddToStudio={addRoleToStudio} />
@@ -763,8 +781,9 @@ export default function App() {
       {!sOps.length && <div style={{ textAlign: "center", padding: "30px 24px 60px", maxWidth: 960, margin: "0 auto" }}><div style={{ fontSize: 13, color: "#3a4556" }}>Select resources and actions above to see required permissions and matching built-in roles.</div></div>}
       </>)}
 
-      {/* Sticky builder bar — always-visible summary + jump to result while browsing */}
-      {view === "studio" && sCount > 0 && (() => {
+      {/* Sticky builder bar — always-visible summary + jump to result while browsing.
+          Shown on Build and on the IaC tab so imports accumulate without a forced jump. */}
+      {(view === "studio" || view === "iac") && sCount > 0 && (() => {
         const dsColor = dataset === "entra" ? "#b39dda" : "#4fc3f7";
         const best = mRoles[0];
         return <>
@@ -778,7 +797,7 @@ export default function App() {
               </div>
               <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
                 <button onClick={clr} style={{ background: "none", border: "1px solid rgba(233,69,96,0.3)", color: "#e94560", padding: "7px 14px", borderRadius: 7, fontSize: 12.5, cursor: "pointer", fontFamily: "inherit" }}>Clear</button>
-                <button onClick={() => { setSJ(true); rRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 16px", borderRadius: 7, cursor: "pointer", fontFamily: "inherit", fontSize: 12.5, fontWeight: 600, background: `${dsColor}22`, border: `1px solid ${dsColor}55`, color: dsColor }}>View role &amp; JSON ↓</button>
+                <button onClick={() => { setView("studio"); setSJ(true); requestAnimationFrame(() => requestAnimationFrame(() => rRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }))); }} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 16px", borderRadius: 7, cursor: "pointer", fontFamily: "inherit", fontSize: 12.5, fontWeight: 600, background: `${dsColor}22`, border: `1px solid ${dsColor}55`, color: dsColor }}>View role &amp; JSON ↓</button>
               </div>
             </div>
           </div>
