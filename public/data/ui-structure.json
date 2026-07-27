@@ -93,6 +93,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureStackHCI/Clusters/Jobs/Read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/Clusters/Read",
                     "type": "action"
                   },
@@ -124,6 +128,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/Clusters/Jobs/Write",
                     "type": "action"
                   },
                   {
@@ -162,6 +170,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/Clusters/Jobs/Delete",
                     "type": "action"
                   },
                   {
@@ -222,7 +234,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 30,
+            "totalOps": 33,
             "priority": 999
           },
           {
@@ -403,6 +415,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/PrivilegedJobs/Read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Read",
                     "type": "action"
                   },
@@ -428,6 +444,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/NetworkAdapters/Read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProxyConfigurations/Jobs/Read",
                     "type": "action"
                   },
                   {
@@ -461,6 +481,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/PrivilegedJobs/Write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/EdgeMachineMetadata/Write",
                     "type": "action"
                   },
@@ -474,6 +498,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/NetworkAdapters/Jobs/Write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProxyConfigurations/Jobs/Write",
                     "type": "action"
                   },
                   {
@@ -507,6 +535,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/PrivilegedJobs/Delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/EdgeMachineMetadata/Delete",
                     "type": "action"
                   },
@@ -520,6 +552,10 @@
                   },
                   {
                     "action": "Microsoft.AzureStackHCI/EdgeMachines/NetworkAdapters/Jobs/Delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProxyConfigurations/Jobs/Delete",
                     "type": "action"
                   },
                   {
@@ -552,7 +588,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 34,
+            "totalOps": 40,
             "priority": 999
           },
           {
@@ -1048,6 +1084,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.AzureStackHCI/StorageArrays/Jobs/Read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/StorageArrays/Read",
                     "type": "action"
                   },
@@ -1062,6 +1102,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.AzureStackHCI/StorageArrays/Jobs/Write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureStackHCI/StorageArrays/Write",
                     "type": "action"
                   }
@@ -1074,12 +1118,16 @@
                   {
                     "action": "Microsoft.AzureStackHCI/StorageArrays/Delete",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureStackHCI/StorageArrays/Jobs/Delete",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 4,
+            "totalOps": 7,
             "priority": 999
           },
           {
@@ -2408,14 +2456,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Compute/snapshots/upload/action",
                     "type": "dataAction"
                   }
@@ -2423,7 +2463,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 9,
+            "totalOps": 7,
             "priority": 6
           },
           {
@@ -3971,7 +4011,7 @@
       }
     ],
     "totalTypes": 54,
-    "totalOps": 579
+    "totalOps": 589
   },
   {
     "name": "Networking",
@@ -6782,6 +6822,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Network/virtualNetworks/subnets/getNetworkPolicies/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
                     "type": "action"
                   },
@@ -6813,7 +6857,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 59,
+            "totalOps": 60,
             "priority": 1
           },
           {
@@ -8373,6 +8417,45 @@
               }
             ],
             "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "azureserviceconnectioncontrollers",
+            "name": "azureserviceconnectioncontrollers",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/azureserviceconnectioncontrollers/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/azureserviceconnectioncontrollers/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/azureserviceconnectioncontrollers/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
             "priority": 999
           },
           {
@@ -10130,9 +10213,19 @@
                   }
                 ],
                 "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
               }
             ],
-            "totalOps": 4,
+            "totalOps": 5,
             "priority": 999
           },
           {
@@ -11814,6 +11907,118 @@
             "priority": 999
           },
           {
+            "key": "privatetrafficmanagerprofiles",
+            "name": "privatetrafficmanagerprofiles",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 10,
+            "priority": 999
+          },
+          {
+            "key": "probinggateways",
+            "name": "probinggateways",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/probinggateways/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/probinggateways/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/probinggateways/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
             "key": "publicIPPrefixes",
             "name": "public IP Prefixes",
             "provider": "Microsoft.Network",
@@ -12043,6 +12248,76 @@
               }
             ],
             "totalOps": 8,
+            "priority": 999
+          },
+          {
+            "key": "topologymaps",
+            "name": "topologymaps",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymaps/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/topologymaps/sites/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymaps/sites/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/topologymaps/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymaps/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/topologymaps/sites/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "topologymapsoperations",
+            "name": "topologymapsoperations",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/topologymapsoperations/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
             "priority": 999
           },
           {
@@ -13919,8 +14194,8 @@
         ]
       }
     ],
-    "totalTypes": 145,
-    "totalOps": 1469
+    "totalTypes": 150,
+    "totalOps": 1494
   },
   {
     "name": "Storage",
@@ -24918,6 +25193,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.App/agents/dataconnectors/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.App/agents/extendedagents/read",
                     "type": "dataAction"
                   },
@@ -24951,6 +25230,10 @@
               {
                 "label": "Write",
                 "ops": [
+                  {
+                    "action": "Microsoft.App/agents/dataconnectors/write",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.App/agents/extendedagents/write",
                     "type": "dataAction"
@@ -24986,6 +25269,10 @@
                 "label": "Delete",
                 "ops": [
                   {
+                    "action": "Microsoft.App/agents/dataconnectors/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.App/agents/delete",
                     "type": "action"
                   },
@@ -25020,6 +25307,10 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.App/agents/dataconnectors/listSecrets/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.App/agents/threads/approve/action",
                     "type": "dataAction"
                   }
@@ -25027,7 +25318,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 22,
+            "totalOps": 26,
             "priority": 999
           },
           {
@@ -30369,7 +30660,7 @@
       }
     ],
     "totalTypes": 73,
-    "totalOps": 1712
+    "totalOps": 1716
   },
   {
     "name": "Containers",
@@ -59154,6 +59445,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/QuantumProviderAccountDeviceOperationLogs/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/QuantumProviderAccountJobAuditLogs/read",
                     "type": "action"
                   },
@@ -60139,7 +60434,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1014,
+            "totalOps": 1015,
             "priority": 1
           },
           {
@@ -60284,7 +60579,7 @@
       }
     ],
     "totalTypes": 63,
-    "totalOps": 1603
+    "totalOps": 1604
   },
   {
     "name": "Management + Governance",
@@ -76720,6 +77015,26 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessmentOptions/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/assessedContainerWorkloads/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/recommendedPlans/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/summaries/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/fileshareAssessmentOptions/read",
                     "type": "action"
                   },
@@ -77170,6 +77485,22 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/assessedContainerWorkloads/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/recommendedPlans/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/summaries/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/fileshareAssessments/assessedFileShares/write",
                     "type": "action"
                   },
@@ -77428,6 +77759,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/delete",
                     "type": "action"
                   },
@@ -77598,6 +77933,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/downloadurl/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/recalculateSummaries/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/fileshareAssessments/downloadurl/action",
                     "type": "action"
                   },
@@ -77721,7 +78064,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 276,
+            "totalOps": 288,
             "priority": 999
           },
           {
@@ -77765,6 +78108,10 @@
               {
                 "label": "Read",
                 "ops": [
+                  {
+                    "action": "Microsoft.Migrate/migrateProjects/artifacts/read",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.Migrate/migrateProjects/DatabaseInstances/read",
                     "type": "action"
@@ -77936,6 +78283,14 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.Migrate/migrateProjects/artifacts/generateDownloadUrl/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/migrateProjects/artifacts/getVersionHistory/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/migrateProjects/createwavesfromplan/action",
                     "type": "action"
                   },
@@ -77999,7 +78354,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 53,
+            "totalOps": 56,
             "priority": 999
           },
           {
@@ -78968,7 +79323,7 @@
       }
     ],
     "totalTypes": 11,
-    "totalOps": 514
+    "totalOps": 529
   },
   {
     "name": "Other",
@@ -90392,103 +90747,6 @@
               }
             ],
             "totalOps": 6,
-            "priority": 999
-          },
-          {
-            "key": "workspaces",
-            "name": "workspaces",
-            "provider": "Microsoft.Chaos",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/workspaces/discoveredResources/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/discoveries/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/evaluations/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/runs/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/workspaces/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Action",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/workspaces/refreshRecommendations/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 16,
             "priority": 999
           }
         ]
@@ -117454,7 +117712,7 @@
         ]
       }
     ],
-    "totalTypes": 733,
-    "totalOps": 4579
+    "totalTypes": 732,
+    "totalOps": 4563
   }
 ]

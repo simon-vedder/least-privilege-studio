@@ -3480,6 +3480,22 @@
     "description": "Create or Update API Management Service instance"
   },
   {
+    "action": "Microsoft.App/agents/dataconnectors/delete",
+    "description": "Delete existing data connectors in an SRE agent"
+  },
+  {
+    "action": "Microsoft.App/agents/dataconnectors/listSecrets/action",
+    "description": "List secrets of an SRE agent data connector"
+  },
+  {
+    "action": "Microsoft.App/agents/dataconnectors/read",
+    "description": "Read data connectors in an SRE agent"
+  },
+  {
+    "action": "Microsoft.App/agents/dataconnectors/write",
+    "description": "Update data connectors in an SRE agent"
+  },
+  {
     "action": "Microsoft.App/agents/delete",
     "description": "Delete a SRE Agent"
   },
@@ -9152,6 +9168,18 @@
     "description": "Creates or updates DeploymentSettings resource"
   },
   {
+    "action": "Microsoft.AzureStackHCI/Clusters/Jobs/Delete",
+    "description": "Deletes Cluster Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/Jobs/Read",
+    "description": "Reads Cluster Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/Jobs/Write",
+    "description": "Writes Cluster Job Resource"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/Clusters/Read",
     "description": "Gets clusters"
   },
@@ -9300,6 +9328,18 @@
     "description": "Writes EdgeMachine Disk Job Resource"
   },
   {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/PrivilegedJobs/Delete",
+    "description": "Deletes EdgeMachine Disk Privileged Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/PrivilegedJobs/Read",
+    "description": "Reads EdgeMachine Disk Privileged Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/PrivilegedJobs/Write",
+    "description": "Writes EdgeMachine Disk Privileged Job Resource"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Read",
     "description": "Gets EdgeMachine Disk resources"
   },
@@ -9358,6 +9398,18 @@
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/NetworkAdapters/Read",
     "description": "Gets EdgeMachine Network Adapter resources"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProxyConfigurations/Jobs/Delete",
+    "description": "Deletes EdgeMachine Proxy Configuration Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProxyConfigurations/Jobs/Read",
+    "description": "Reads EdgeMachine Proxy Configuration Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProxyConfigurations/Jobs/Write",
+    "description": "Writes EdgeMachine Proxy Configuration Job Resource"
   },
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Read",
@@ -9522,6 +9574,18 @@
   {
     "action": "Microsoft.AzureStackHCI/StorageArrays/Delete",
     "description": "Deletes storage arrays resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/Jobs/Delete",
+    "description": "Deletes Storage Array Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/Jobs/Read",
+    "description": "Reads Storage Array Job Resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/Jobs/Write",
+    "description": "Writes Storage Array Job Resource"
   },
   {
     "action": "Microsoft.AzureStackHCI/StorageArrays/Read",
@@ -12618,70 +12682,6 @@
   {
     "action": "Microsoft.Chaos/targets/write",
     "description": "Creates or update a Target resource that extends a tracked resource."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/delete",
-    "description": "Deletes a Workspace resource in a resource group."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/discoveredResources/read",
-    "description": "Gets a Discovered Resource or lists all Discovered Resources in a Workspace."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/discoveries/read",
-    "description": "Gets a Discovery resource or lists all Discovery resources in a Workspace."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/evaluations/read",
-    "description": "Gets an Evaluation resource or lists all Evaluation resources in a Workspace."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/read",
-    "description": "Gets a Workspace resource or lists all Workspace resources in a resource group or subscription."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/refreshRecommendations/action",
-    "description": "Refreshes recommendation status for all scenarios in a given workspace."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/delete",
-    "description": "Deletes a Scenario Configuration resource for a Scenario."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
-    "description": "Executes the scenario with the given scenario configuration."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
-    "description": "Gets a Scenario Configuration resource or lists all Scenario Configuration resources for a Scenario."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
-    "description": "Validates the given scenario configuration."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
-    "description": "Gets the latest validation for a Scenario Configuration."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/write",
-    "description": "Creates or updates a Scenario Configuration resource for a Scenario."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/read",
-    "description": "Gets a Scenario resource or lists all Scenario resources in a Workspace."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
-    "description": "Cancels a running Scenario Run."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/scenarios/runs/read",
-    "description": "Gets a Scenario Run resource or lists all Scenario Run resources for a Scenario."
-  },
-  {
-    "action": "Microsoft.Chaos/workspaces/write",
-    "description": "Creates or updates a Workspace resource in a resource group."
   },
   {
     "action": "Microsoft.CleanRoom/cleanrooms/delete",
@@ -20734,14 +20734,6 @@
   {
     "action": "Microsoft.Compute/snapshots/read",
     "description": "Get the properties of a Snapshot"
-  },
-  {
-    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
-    "description": "Update the immutability policy of a Snapshot"
-  },
-  {
-    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
-    "description": "Lock the immutability policy of a Snapshot"
   },
   {
     "action": "Microsoft.Compute/snapshots/upload/action",
@@ -50108,6 +50100,54 @@
     "description": "Creates a containerApps Assessment or updates an existing containerApps Assessment"
   },
   {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessmentOptions/read",
+    "description": "Gets the properties of the containerWorkload AssessmentOptions"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/assessedContainerWorkloads/read",
+    "description": "Gets the properties of the assessedContainerWorkloads "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/assessedContainerWorkloads/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/delete",
+    "description": "Deletes the containerWorkload Assessment which are available in the given location"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/downloadurl/action",
+    "description": "Get Blob SAS URI for the containerWorkload AssessmentReport"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/read",
+    "description": "Gets the properties of the containerWorkload Assessment"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/recalculateSummaries/action",
+    "description": "Recalculate summaries for an assessments"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/recommendedPlans/read",
+    "description": "Gets the properties of the recommendedPlans "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/recommendedPlans/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/summaries/read",
+    "description": "Gets the properties of the summaries "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/summaries/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/containerWorkloadAssessments/write",
+    "description": "Creates a containerWorkload Assessment or updates an existing containerWorkload Assessment"
+  },
+  {
     "action": "Microsoft.Migrate/assessmentProjects/delete",
     "description": "Deletes the assessment project"
   },
@@ -51010,6 +51050,18 @@
   {
     "action": "Microsoft.Migrate/migrateProjects/WebSites/read",
     "description": "Gets the properties of a web site"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/artifacts/generateDownloadUrl/action",
+    "description": "Generate Download URL for Artifact"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/artifacts/getVersionHistory/action",
+    "description": "Get Artifact Version History"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/artifacts/read",
+    "description": "Get Artifact"
   },
   {
     "action": "Microsoft.Migrate/migrateProjects/createwavesfromplan/action",
@@ -52300,6 +52352,18 @@
     "description": "Creates or updates an Azure Firewall"
   },
   {
+    "action": "Microsoft.Network/azureserviceconnectioncontrollers/delete",
+    "description": "Deletes an Azure Service Connection Controller"
+  },
+  {
+    "action": "Microsoft.Network/azureserviceconnectioncontrollers/read",
+    "description": "Gets the Azure Service Connection Controller Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/azureserviceconnectioncontrollers/write",
+    "description": "Creates Or Updates Azure Service Connection Controller, in JSON format"
+  },
+  {
     "action": "Microsoft.Network/bastionHosts/createShareableLinks/action",
     "description": "Creates shareable urls for the VMs under a bastion and returns the urls"
   },
@@ -53342,6 +53406,10 @@
   {
     "action": "Microsoft.Network/interconnectGroups/delete",
     "description": "Delete Interconnect Group"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
+    "description": "Get InterconnectGroup Node Availability"
   },
   {
     "action": "Microsoft.Network/interconnectGroups/read",
@@ -54808,6 +54876,58 @@
     "description": "Creates a new private link service, or updates an existing private link service."
   },
   {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/delete",
+    "description": "Deletes a Private Traffic Manager Profile"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/delete",
+    "description": "Deletes a Private Traffic Manager Profile Endpoint"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/read",
+    "description": "Gets the Private Traffic Manager Profile Endpoint Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/endpoints/write",
+    "description": "Creates Or Updates a Private Traffic Manager Profile Endpoint, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/delete",
+    "description": "Deletes a Private Traffic Manager Profile Health Policy"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/read",
+    "description": "Gets the Private Traffic Manager Profile Health Policy Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/healthPolicies/write",
+    "description": "Creates Or Updates a Private Traffic Manager Profile Health Policy, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/read",
+    "description": "Gets the Private Traffic Manager Profile Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
+    "description": "Establishes a link between a private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the private DNS record"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
+    "description": "Creates Or Updates a Private Traffic Manager Profile, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/probinggateways/delete",
+    "description": "Deletes a Probing Gateway"
+  },
+  {
+    "action": "Microsoft.Network/probinggateways/read",
+    "description": "Gets the Probing Gateway Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/probinggateways/write",
+    "description": "Creates Or Updates a Probing Gateway, in JSON format"
+  },
+  {
     "action": "Microsoft.Network/publicIPAddresses/ddosProtectionStatus/action",
     "description": "Gets the effective Ddos protection status for a Public IP Address resource."
   },
@@ -54970,6 +55090,34 @@
   {
     "action": "Microsoft.Network/serviceEndpointPolicies/write",
     "description": "Creates a Service Endpoint Policy or updates an existing Service Endpoint Policy"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/delete",
+    "description": "Deletes a Topology Map"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/read",
+    "description": "Gets the Topology Map Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/sites/delete",
+    "description": "Deletes a Topology Map Site"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/sites/read",
+    "description": "Gets the Topology Map Site Properties, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/sites/write",
+    "description": "Creates Or Updates a Topology Map Site, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymaps/write",
+    "description": "Creates Or Updates a Topology Map, in JSON format"
+  },
+  {
+    "action": "Microsoft.Network/topologymapsoperations/read",
+    "description": "Gets the Topology Map Operation details, in JSON format"
   },
   {
     "action": "Microsoft.Network/trafficManagerGeographicHierarchies/read",
@@ -55362,6 +55510,10 @@
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/effectiveSecurityUserRules/read",
     "description": "Permission to get the security user rule(s) taking effect on a subnet."
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworks/subnets/getNetworkPolicies/action",
+    "description": "Lists Network Intent Policies attached to a subnet"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/join/action",
@@ -60264,6 +60416,10 @@
     "description": "Read data from the QualysKnowledgeBase table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/QuantumProviderAccountDeviceOperationLogs/read",
+    "description": "Read data from the QuantumProviderAccountDeviceOperationLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/QuantumProviderAccountJobAuditLogs/read",
     "description": "Read data from the QuantumProviderAccountJobAuditLogs table"
   },
@@ -62465,7 +62621,7 @@
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
-    "description": "Get the list of ResourceGuard proxies for a resource"
+    "description": "Get ResourceGuard proxy operation gets an object representing the Azure resource of type 'ResourceGuard proxy'"
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/unlockDelete/action",

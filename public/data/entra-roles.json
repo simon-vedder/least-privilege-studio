@@ -230,12 +230,13 @@
       "microsoft.office365.messageCenter/messages/read",
       "microsoft.office365.network/performance/allProperties/read",
       "microsoft.office365.serviceHealth/allEntities/allTasks",
+      "microsoft.office365.usageReports/allEntities/allProperties/read",
       "microsoft.office365.webPortal/allEntities/standard/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 83
+    "_estimatedActions": 87
   },
   {
     "name": "Application Administrator",
@@ -3323,6 +3324,7 @@
       "microsoft.directory/crossTenantAccessPolicy/partners/delete",
       "microsoft.directory/crossTenantAccessPolicy/partners/standard/read",
       "microsoft.directory/crossTenantAccessPolicy/standard/read",
+      "microsoft.directory/signInReports/allProperties/read",
       "microsoft.directory/tenantGovernance/policyTemplates/allProperties/update",
       "microsoft.directory/tenantGovernance/policyTemplates/create",
       "microsoft.directory/tenantGovernance/relationships/create",
@@ -3333,25 +3335,27 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 18
+    "_estimatedActions": 22
   },
   {
     "name": "Tenant Governance Reader",
     "id": "e0a4caa6-fe82-443f-b92f-d87341d17b2e",
     "description": "Can read all tenant governance data.",
     "actions": [
+      "microsoft.directory/signInReports/allProperties/read",
       "microsoft.office365.webPortal/allEntities/standard/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 1
+    "_estimatedActions": 5
   },
   {
     "name": "Tenant Governance Relationship Administrator",
     "id": "b8e31d83-1534-480f-9b10-0338ded51b7e",
     "description": "Can initiate governance relationships and terminate them.",
     "actions": [
+      "microsoft.directory/signInReports/allProperties/read",
       "microsoft.directory/tenantGovernance/policyTemplates/allProperties/update",
       "microsoft.directory/tenantGovernance/policyTemplates/create",
       "microsoft.directory/tenantGovernance/relationships/create",
@@ -3361,7 +3365,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 8
+    "_estimatedActions": 12
   },
   {
     "name": "Tenant Governance Relationship Reader",

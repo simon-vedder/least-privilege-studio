@@ -12736,6 +12736,7 @@
       "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/approvalCallback/action",
       "Microsoft.Mission/communities/communityEndpoints/approvalCallback/action",
       "Microsoft.Mission/approvals/initiatorCallback/action",
+      "Microsoft.Mission/approvals/notifyInitiator/action",
       "Microsoft.Mission/communities/setMaintenanceMode/action",
       "Microsoft.Mission/communities/communityendpoints/connect/action",
       "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
@@ -12748,7 +12749,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 101
+    "_estimatedActions": 102
   },
   {
     "name": "Enclave Contributor Role",
@@ -16266,6 +16267,18 @@
     "_estimatedActions": 0
   },
   {
+    "name": "Microsoft Discovery Chat Model Reader - Preview",
+    "id": "5e523d62-66de-4912-99be-6b009b7839cc",
+    "description": "Read-only access to Discovery chat model deployments: allows listing chat model deployments and reading their details. Does not allow creating, modifying, or deleting deployments. Intended to be assigned alongside Discovery project roles so users can view and select the models available to them (e.g. in the agent-create model picker). This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Discovery/workspaces/chatModelDeployments/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 1
+  },
+  {
     "name": "Microsoft Discovery Platform Administrator (Preview)",
     "id": "7a2b6e6c-472e-4b39-8878-a26eb63d75c6",
     "description": "Grants full access to manage Microsoft.Discovery resources. This role is in preview and subject to change.",
@@ -16356,6 +16369,42 @@
     ],
     "notDataActions": [],
     "_estimatedActions": 12
+  },
+  {
+    "name": "Microsoft Discovery Project Contributor - Preview",
+    "id": "c883607b-5c40-4930-b09a-19f58ae1c538",
+    "description": "Full operational control over an existing Discovery project: investigations and conversations (read/write/delete) plus project settings update and deletion. Does not allow creating new projects, assigning roles, or managing tools or knowledge bases. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Discovery/workspaces/projects/read",
+      "Microsoft.Discovery/workspaces/projects/write",
+      "Microsoft.Discovery/workspaces/projects/delete"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Discovery/workspaces/projects/investigations/read",
+      "Microsoft.Discovery/workspaces/projects/investigations/write",
+      "Microsoft.Discovery/workspaces/projects/investigations/delete",
+      "Microsoft.Discovery/workspaces/conversations/read",
+      "Microsoft.Discovery/workspaces/conversations/write",
+      "Microsoft.Discovery/workspaces/conversations/delete"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 3
+  },
+  {
+    "name": "Microsoft Discovery Project Reader - Preview",
+    "id": "ac7d1e6d-3070-4d7d-9cd9-7adbf5cdd579",
+    "description": "Read-only access to an existing Discovery project and its contents, including its investigations and conversations. Does not allow creating, modifying, or deleting any resources, nor assigning roles. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Discovery/workspaces/projects/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Discovery/workspaces/projects/investigations/read",
+      "Microsoft.Discovery/workspaces/conversations/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 1
   },
   {
     "name": "Microsoft PowerBI Tenant Operations Role",
