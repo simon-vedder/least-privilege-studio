@@ -2794,12 +2794,13 @@
       "microsoft.office365.search/content/manage",
       "microsoft.office365.serviceHealth/allEntities/allTasks",
       "microsoft.office365.supportTickets/allEntities/allTasks",
+      "microsoft.office365.usageReports/allEntities/allProperties/read",
       "microsoft.office365.webPortal/allEntities/standard/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 19
+    "_estimatedActions": 23
   },
   {
     "name": "Search Editor",
@@ -2808,12 +2809,13 @@
     "actions": [
       "microsoft.office365.messageCenter/messages/read",
       "microsoft.office365.search/content/manage",
+      "microsoft.office365.usageReports/allEntities/allProperties/read",
       "microsoft.office365.webPortal/allEntities/standard/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 3
+    "_estimatedActions": 7
   },
   {
     "name": "Security Administrator",

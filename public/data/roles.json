@@ -851,6 +851,18 @@
     "_estimatedActions": 10
   },
   {
+    "name": "Associated Billing Accounts Reader",
+    "id": "d6c7ff7d-dd03-45a8-af9c-2a825e11bf9f",
+    "description": "Allows users to list all the associated billing accounts for their tenant.",
+    "actions": [
+      "Microsoft.AzureActiveDirectory/associatedBillingAccounts/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 1
+  },
+  {
     "name": "Astronomer Astro Contributor",
     "id": "a6a9a135-9048-45df-b559-a90bb025e92f",
     "description": "Provides access to Astronomer.Astro Control Plane Operations",
@@ -3121,6 +3133,7 @@
       "Microsoft.GuestConfiguration/guestConfigurationAssignments/*/read",
       "Microsoft.GuestConfiguration/guestConfigurationAssignments/read",
       "Microsoft.GuestConfiguration/guestConfigurationAssignments/write",
+      "Microsoft.GuestConfiguration/guestConfigurationAssignments/delete",
       "Microsoft.HybridCompute/machines/read",
       "Microsoft.HybridCompute/machines/extensions/read",
       "Microsoft.HybridCompute/*/read",
@@ -3155,7 +3168,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 61
+    "_estimatedActions": 62
   },
   {
     "name": "Azure Connected SQL Server Onboarding",
@@ -4070,6 +4083,10 @@
     "id": "bd80684d-2f5f-4130-892a-0955546282de",
     "description": "Grants read-only access to most Kubernetes cluster-scoped resources in the fleet-managed hub cluster.",
     "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Resources/subscriptions/operationresults/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.ContainerService/fleets/read",
       "Microsoft.ContainerService/fleets/listCredentials/action"
     ],
@@ -4106,13 +4123,12 @@
       "Microsoft.ContainerService/fleets/cluster.kubernetes-fleet.io/memberclusters/read",
       "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterresourceplacements/read",
       "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterresourcebindings/read",
-      "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterresourcesnapshots/read",
       "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterschedulingpolicysnapshots/read",
       "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterresourceoverrides/read",
       "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterresourceoverridesnapshots/read"
     ],
     "notDataActions": [],
-    "_estimatedActions": 2
+    "_estimatedActions": 15
   },
   {
     "name": "Azure Kubernetes Fleet Manager RBAC Cluster Writer",
@@ -4677,6 +4693,31 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 35
+  },
+  {
+    "name": "Azure Kubernetes Service Prepared Image Specification Contributor",
+    "id": "4f772c11-8026-4833-859c-5c23e84b5c30",
+    "description": "Allows users to create and manage Prepared Image Specification resources.",
+    "actions": [
+      "Microsoft.ContainerService/preparedImageSpecifications/*"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 30
+  },
+  {
+    "name": "Azure Kubernetes Service Prepared Image Specification Reader",
+    "id": "ed915fdf-c373-4707-988e-fb5d15a5a9ec",
+    "description": "Allows read-only access to Prepared Image Specification resources.",
+    "actions": [
+      "Microsoft.ContainerService/preparedImageSpecifications/read",
+      "Microsoft.ContainerService/preparedImageSpecifications/versions/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Azure Kubernetes Service RBAC Admin",
@@ -5580,12 +5621,14 @@
       "Microsoft.Network/natGateways/join/action",
       "Microsoft.Network/networkIntentPolicies/join/action",
       "Microsoft.Network/routeTables/join/action",
-      "Microsoft.Network/networkManagers/ipamPools/associateResourcesToPool/action"
+      "Microsoft.Network/networkManagers/ipamPools/associateResourcesToPool/action",
+      "Microsoft.Network/privatelinkservices/privateEndpointConnections/delete",
+      "Microsoft.Network/loadBalancers/delete"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 28
+    "_estimatedActions": 30
   },
   {
     "name": "Azure Red Hat OpenShift Cluster Ingress Operator",
@@ -8434,12 +8477,7 @@
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Support/*"
     ],
-    "notActions": [
-      "Microsoft.CognitiveServices/raiPolicy/write",
-      "Microsoft.CognitiveServices/raiPolicy/delete",
-      "Microsoft.CognitiveServices/raiExternalSafetyProviders/write",
-      "Microsoft.CognitiveServices/raiExternalSafetyProviders/delete"
-    ],
+    "notActions": [],
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 201
@@ -9161,6 +9199,8 @@
       "Microsoft.Mission/virtualEnclaves/endpoints/write",
       "Microsoft.Mission/virtualEnclaves/workloads/read",
       "Microsoft.Mission/virtualEnclaves/workloads/write",
+      "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
+      "Microsoft.Mission/virtualEnclaves/setEnclaveRoleAssignments/action",
       "Microsoft.Authorization/*/read",
       "Microsoft.Insights/alertRules/read",
       "Microsoft.Resources/deployments/read",
@@ -9185,7 +9225,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 42
+    "_estimatedActions": 44
   },
   {
     "name": "Community Owner Role",
@@ -9206,6 +9246,9 @@
       "Microsoft.Mission/virtualEnclaves/read",
       "Microsoft.Mission/virtualEnclaves/write",
       "Microsoft.Mission/virtualEnclaves/delete",
+      "Microsoft.Mission/virtualEnclaves/setMaintenanceMode/action",
+      "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
+      "Microsoft.Mission/virtualEnclaves/setEnclaveRoleAssignments/action",
       "Microsoft.Mission/virtualEnclaves/workloads/read",
       "Microsoft.Mission/virtualEnclaves/workloads/write",
       "Microsoft.Mission/virtualEnclaves/workloads/delete",
@@ -9239,7 +9282,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 52
+    "_estimatedActions": 55
   },
   {
     "name": "Community Reader Role",
@@ -9271,6 +9314,18 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 58
+  },
+  {
+    "name": "Commvault Contributor",
+    "id": "222f0527-8571-4054-955d-aae12f1d09d6",
+    "description": "Provides access to Commvault ContentStore Control Plane Operations",
+    "actions": [
+      "Commvault.ContentStore/*"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 30
   },
   {
     "name": "Compute Diagnostics Role",
@@ -9363,6 +9418,19 @@
       "Microsoft.ComputeLimit/locations/sharedLimits/read",
       "Microsoft.ComputeLimit/locations/sharedLimits/write",
       "Microsoft.ComputeLimit/locations/sharedLimits/delete",
+      "Microsoft.ComputeLimit/locations/sharedLimitCaps/read",
+      "Microsoft.ComputeLimit/locations/sharedLimitCaps/write",
+      "Microsoft.ComputeLimit/locations/sharedLimitCaps/delete",
+      "Microsoft.ComputeLimit/locations/sharedLimitCaps/memberCapOverrides/read",
+      "Microsoft.ComputeLimit/locations/sharedLimitCaps/memberCapOverrides/write",
+      "Microsoft.ComputeLimit/locations/sharedLimitCaps/memberCapOverrides/delete",
+      "Microsoft.ComputeLimit/locations/features/read",
+      "Microsoft.ComputeLimit/locations/features/enable/action",
+      "Microsoft.ComputeLimit/locations/features/disable/action",
+      "Microsoft.ComputeLimit/locations/trustedHostSubscriptions/read",
+      "Microsoft.ComputeLimit/locations/trustedHostSubscriptions/write",
+      "Microsoft.ComputeLimit/locations/trustedHostSubscriptions/delete",
+      "Microsoft.ComputeLimit/locations/operationResults/read",
       "Microsoft.ComputeLimit/register/action",
       "Microsoft.Insights/alertRules/*",
       "Microsoft.Resources/deployments/*",
@@ -9371,7 +9439,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 68
+    "_estimatedActions": 81
   },
   {
     "name": "Compute Recommendations Role",
@@ -9940,6 +10008,7 @@
       "Microsoft.ContainerRegistry/registries/connectedRegistries/write",
       "Microsoft.ContainerRegistry/registries/connectedRegistries/delete",
       "Microsoft.ContainerRegistry/registries/connectedRegistries/deactivate/action",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/resync/action",
       "Microsoft.ContainerRegistry/registries/webhooks/read",
       "Microsoft.ContainerRegistry/registries/webhooks/write",
       "Microsoft.ContainerRegistry/registries/webhooks/delete",
@@ -9967,7 +10036,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 125
+    "_estimatedActions": 126
   },
   {
     "name": "Container Registry Credential Set Administrator",
@@ -10241,12 +10310,14 @@
       "Microsoft.DocumentDB/databaseAccounts/enableLongTermProtection/action",
       "Microsoft.DocumentDB/databaseAccounts/disableLongTermProtection/action",
       "Microsoft.DocumentDB/databaseAccounts/preBackup/action",
-      "Microsoft.DocumentDB/databaseAccounts/backup/action"
+      "Microsoft.DocumentDB/databaseAccounts/backup/action",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/locations/operationsStatus/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 5
+    "_estimatedActions": 7
   },
   {
     "name": "Cosmos DB Long Term Retention Restore Role",
@@ -10254,12 +10325,14 @@
     "description": "Allows performing long term retention restore operations for Cosmos DB",
     "actions": [
       "Microsoft.DocumentDB/databaseAccounts/preRestore/action",
-      "Microsoft.DocumentDB/databaseAccounts/restore/action"
+      "Microsoft.DocumentDB/databaseAccounts/restore/action",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/locations/operationsStatus/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 2
+    "_estimatedActions": 4
   },
   {
     "name": "Cosmos DB Operator",
@@ -11102,6 +11175,7 @@
     "actions": [
       "microsoft.security/pricings/read",
       "microsoft.security/pricings/write",
+      "microsoft.security/pricings/action",
       "microsoft.security/pricings/securityoperators/read",
       "microsoft.security/securityoperators/read",
       "microsoft.security/register/action",
@@ -11111,7 +11185,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 7
+    "_estimatedActions": 8
   },
   {
     "name": "Defender SQL Servers On Machines",
@@ -14564,14 +14638,16 @@
     "actions": [
       "Microsoft.InferenceService/inferenceAccounts/write",
       "Microsoft.InferenceService/inferenceAccounts/read",
-      "Microsoft.InferenceService/inferenceAccounts/delete"
+      "Microsoft.InferenceService/inferenceAccounts/delete",
+      "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
+      "Microsoft.InferenceService/inferenceAccounts/regenerateKeys/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [
       "Microsoft.InferenceService/inferenceAccounts/invoke/*"
     ],
-    "_estimatedActions": 3
+    "_estimatedActions": 5
   },
   {
     "name": "Inference Account Owner",
@@ -14580,14 +14656,16 @@
     "actions": [
       "Microsoft.InferenceService/inferenceAccounts/write",
       "Microsoft.InferenceService/inferenceAccounts/read",
-      "Microsoft.InferenceService/inferenceAccounts/delete"
+      "Microsoft.InferenceService/inferenceAccounts/delete",
+      "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
+      "Microsoft.InferenceService/inferenceAccounts/regenerateKeys/action"
     ],
     "notActions": [],
     "dataActions": [
       "Microsoft.InferenceService/inferenceAccounts/invoke/*"
     ],
     "notDataActions": [],
-    "_estimatedActions": 3
+    "_estimatedActions": 5
   },
   {
     "name": "Informatica DataManagement Contributor role",
@@ -16407,6 +16485,18 @@
     "_estimatedActions": 1
   },
   {
+    "name": "Microsoft Discovery Tools Reader - Preview",
+    "id": "84c36cf8-7fcd-4453-af30-5f5b52b86732",
+    "description": "Read-only access to Discovery tool definitions: allows listing tools and reading their definitions. Does not allow creating, modifying, deleting, or running tools. Intended to be assigned alongside Discovery project roles so users can view the tools available to them. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Discovery/tools/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 1
+  },
+  {
     "name": "Microsoft PowerBI Tenant Operations Role",
     "id": "8c87871d-6201-42da-abb1-1c0c985ff71c",
     "description": "Allows management of tenant operations",
@@ -18134,7 +18224,7 @@
   {
     "name": "Quantum Workspace Data Contributor",
     "id": "c1410b24-3e69-4857-8f86-4d0a2e603250",
-    "description": "Create, read, and modify jobs and other Workspace data. This role is in preview and subject to change.",
+    "description": "Create, read, and modify jobs and other Workspace data.",
     "actions": [
       "Microsoft.Authorization/*/read",
       "Microsoft.Insights/alertRules/*",
@@ -18146,10 +18236,30 @@
     "notActions": [],
     "dataActions": [
       "Microsoft.Quantum/Workspaces/jobs/read",
-      "Microsoft.Quantum/Workspaces/jobs/write"
+      "Microsoft.Quantum/Workspaces/jobs/write",
+      "Microsoft.Quantum/Workspaces/chat/action"
     ],
     "notDataActions": [],
     "_estimatedActions": 73
+  },
+  {
+    "name": "Quantum Workspace Data Reader",
+    "id": "27af9d98-85b7-4dad-bc1b-df53a7fc8877",
+    "description": "Read jobs and other Workspace data.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/read",
+      "Microsoft.Resources/deployments/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Quantum/Workspaces/read",
+      "Microsoft.Quantum/locations/offerings/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Quantum/Workspaces/jobs/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 15
   },
   {
     "name": "Quota Request Operator",

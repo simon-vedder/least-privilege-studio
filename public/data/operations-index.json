@@ -1,5 +1,13 @@
 [
   {
+    "action": "Anyscale.Platform/agreements/accept/action",
+    "description": "Accept (sign) an Anyscale terms-of-use agreement for the subscription"
+  },
+  {
+    "action": "Anyscale.Platform/agreements/read",
+    "description": "Read Anyscale terms-of-use agreement status for the subscription"
+  },
+  {
     "action": "Anyscale.Platform/clouds/cloudResources/delete",
     "description": "Delete cloud resources"
   },
@@ -124,16 +132,112 @@
     "description": "Update a OrganizationResource"
   },
   {
-    "action": "Commvault.ContentStore/entities/delete",
-    "description": "Delete a Entity"
+    "action": "Commvault.ContentStore/cloudAccounts/delete",
+    "description": "Delete a CloudAccount"
   },
   {
-    "action": "Commvault.ContentStore/entities/read",
-    "description": "Get a Entity"
+    "action": "Commvault.ContentStore/cloudAccounts/latestLinkedSaaS/action",
+    "description": "Returns the latest SaaS linked to the cloud account."
   },
   {
-    "action": "Commvault.ContentStore/entities/write",
-    "description": "Update a Entity"
+    "action": "Commvault.ContentStore/cloudAccounts/linkSaaS/action",
+    "description": "Links a new SaaS to the cloud account."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/plans/delete",
+    "description": "Delete a CommvaultPlan"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/plans/read",
+    "description": "Get a CommvaultPlan"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/plans/write",
+    "description": "Create a CommvaultPlan"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/backup/action",
+    "description": "Ad-hoc backup of protected items resource in given protection group."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/delete",
+    "description": "Delete a ProtectionGroup"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/protectedItems/getRestorePoints/action",
+    "description": "Limits used for creation of resources."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/protectedItems/read",
+    "description": "Get a ProtectedItem"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/protectedItems/restore/action",
+    "description": "Restore resource for a protected item."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/read",
+    "description": "Get a ProtectionGroup"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/restore/action",
+    "description": "Restore resource for a protected items in given protection group."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/resumeBackup/action",
+    "description": "Resume Backup for a Protection Group."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/stopBackup/action",
+    "description": "Stop Backup for a Protection Group"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/protectionGroups/write",
+    "description": "Create a ProtectionGroup"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/read",
+    "description": "Get a CloudAccount"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/roleMappings/delete",
+    "description": "Delete a RoleMapping"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/roleMappings/read",
+    "description": "Get a RoleMapping"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/roleMappings/write",
+    "description": "Create a RoleMapping"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/storages/delete",
+    "description": "Delete a Storage"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/storages/disableComplianceLock/action",
+    "description": "Disable compliance lock on the storage. Initiates an out-of-band multi-person authorization (MPA) email approval workflow on the partner side. The storage compliance lock status transitions to 'DisablementPending' immediately; once the MPA approval completes, the status becomes 'Disabled' (observable via the refresh action)."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/storages/enableComplianceLock/action",
+    "description": "Enable compliance lock on the storage. Synchronous operation."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/storages/read",
+    "description": "Get a Storage"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/storages/refresh/action",
+    "description": "Refresh storage state from partner. Fetches latest compliance lock status from Commvault and updates the ARM resource."
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/storages/write",
+    "description": "Create a Storage"
+  },
+  {
+    "action": "Commvault.ContentStore/cloudAccounts/write",
+    "description": "Update a CloudAccount"
   },
   {
     "action": "Commvault.ContentStore/registeredSubscriptions/read",
@@ -1564,6 +1668,30 @@
     "description": "Creates or Updates an AI Gateway tenant. or Updates an existing AI Gateway tenant."
   },
   {
+    "action": "Microsoft.ApiManagement/service/apiKeys/delete",
+    "description": "Deletes the specified AIGateway API key."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apiKeys/listSecrets/action",
+    "description": "Returns the primary and secondary keys for the specified AIGateway API key."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apiKeys/read",
+    "description": "Lists a collection of AIGateway API keys in the specified service instance. or Gets the details of the AIGateway API key specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apiKeys/regeneratePrimaryKey/action",
+    "description": "Regenerates primary key of the specified AIGateway API key."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apiKeys/regenerateSecondaryKey/action",
+    "description": "Regenerates secondary key of the specified AIGateway API key."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apiKeys/write",
+    "description": "Creates or Updates an AIGateway API key. or Updates an existing AIGateway API key."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/apiVersionSets/delete",
     "description": "Deletes specific Api Version Set."
   },
@@ -1594,6 +1722,18 @@
   {
     "action": "Microsoft.ApiManagement/service/apis/diagnostics/write",
     "description": "Creates a new Diagnostic for an API or updates an existing one. or Updates the details of the Diagnostic for an API specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apis/models/delete",
+    "description": "Deletes the model mapping."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apis/models/read",
+    "description": "Lists model mappings for a Unified Model API. or Gets the details of the model mapping."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apis/models/write",
+    "description": "Creates a new model mapping or updates an existing one. or Updates the model mapping."
   },
   {
     "action": "Microsoft.ApiManagement/service/apis/operations/delete",
@@ -1758,6 +1898,18 @@
   {
     "action": "Microsoft.ApiManagement/service/apis/tools/delete",
     "description": "Deletes the specified mcp tool in the API."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apis/tools/policies/delete",
+    "description": "Deletes the policy configuration at the MCP tool level."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apis/tools/policies/read",
+    "description": "Get the policy configuration at the MCP tool level."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/apis/tools/policies/write",
+    "description": "Creates or updates policy configuration for the MCP tool."
   },
   {
     "action": "Microsoft.ApiManagement/service/apis/tools/read",
@@ -2656,6 +2808,18 @@
     "description": "Creates a new Diagnostic for an API or updates an existing one. or Updates the details of the Diagnostic for an API specified by its identifier."
   },
   {
+    "action": "Microsoft.ApiManagement/service/tenants/apis/models/delete",
+    "description": "Deletes the model mapping."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/tenants/apis/models/read",
+    "description": "Lists model mappings for a Unified Model API. or Gets the details of the model mapping."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/tenants/apis/models/write",
+    "description": "Creates a new model mapping or updates an existing one. or Updates the model mapping."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/tenants/apis/operations/delete",
     "description": "Deletes the specified operation in the API."
   },
@@ -2792,6 +2956,18 @@
     "description": "Deletes the specified mcp tool in the API."
   },
   {
+    "action": "Microsoft.ApiManagement/service/tenants/apis/tools/policies/delete",
+    "description": "Deletes the policy configuration at the MCP tool level."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/tenants/apis/tools/policies/read",
+    "description": "Get the policy configuration at the MCP tool level."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/tenants/apis/tools/policies/write",
+    "description": "Creates or updates policy configuration for the MCP tool."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/tenants/apis/tools/read",
     "description": "Lists a collection of mcp tools for the specified API. or Gets the details of the API MCP tool specified by its identifier."
   },
@@ -2829,7 +3005,7 @@
   },
   {
     "action": "Microsoft.ApiManagement/service/toolServers/listSecrets/action",
-    "description": "Returns the secret subtrees (header values, oauth2.clientSecret, openApi.specSource.contentBase64) for each endpoint on the tool server, keyed by namespace. Intended for round-trip add/edit/remove-endpoint scenarios where the caller needs the existing credentials to merge back into a subsequent PUT/PATCH."
+    "description": "Returns the secret subtrees (header values, oauth2.clientSecret, openApi.specSource.contentBase64) for each endpoint on the tool server, keyed by endpoint id. Intended for round-trip add/edit/remove-endpoint scenarios where the caller needs the existing credentials to merge back into a subsequent PUT/PATCH."
   },
   {
     "action": "Microsoft.ApiManagement/service/toolServers/read",
@@ -2900,6 +3076,18 @@
     "description": "Get WorkspaceLinks"
   },
   {
+    "action": "Microsoft.ApiManagement/service/workspaces/agents/delete",
+    "description": "Deletes the specified agent."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/agents/read",
+    "description": "Lists a collection of agents. or Gets the details of the agent specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/agents/write",
+    "description": "Creates or Updates an agent. or Updates an existing agent."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/workspaces/apiVersionSets/delete",
     "description": "Deletes specific Api Version Set."
   },
@@ -2930,6 +3118,18 @@
   {
     "action": "Microsoft.ApiManagement/service/workspaces/apis/diagnostics/write",
     "description": "Creates a new Diagnostic for an API or updates an existing one. or Updates the details of the Diagnostic for an API specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/apis/models/delete",
+    "description": "Deletes the specified model mapping from the API."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/apis/models/read",
+    "description": "Lists model mappings for a Unified Model API. or Gets the details of the model mapping."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/apis/models/write",
+    "description": "Creates a new model mapping or updates an existing one. or Updates the model mapping."
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/apis/operations/delete",
@@ -3452,6 +3652,18 @@
     "description": "Creates a tag. or Updates the details of the tag specified by its identifier."
   },
   {
+    "action": "Microsoft.ApiManagement/service/workspaces/telemetryExporters/delete",
+    "description": "Deletes the specified telemetry exporter."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/telemetryExporters/read",
+    "description": "Lists a collection of telemetry exporters under a workspace. or Gets the details of the telemetry exporter specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/telemetryExporters/write",
+    "description": "Creates or Updates a telemetry exporter. or Updates an existing telemetry exporter."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/workspaces/toolServers/delete",
     "description": "Deletes the specified tool server."
   },
@@ -3461,7 +3673,7 @@
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/toolServers/listSecrets/action",
-    "description": "Returns the secret subtrees (header values, oauth2.clientSecret, openApi.specSource.contentBase64) for each endpoint on the tool server, keyed by namespace. Intended for round-trip add/edit/remove-endpoint scenarios where the caller needs the existing credentials to merge back into a subsequent PUT/PATCH."
+    "description": "Returns the secret subtrees (header values, oauth2.clientSecret, openApi.specSource.contentBase64) for each endpoint on the tool server, keyed by endpoint id. Intended for round-trip add/edit/remove-endpoint scenarios where the caller needs the existing credentials to merge back into a subsequent PUT/PATCH."
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/toolServers/read",
@@ -3534,6 +3746,10 @@
   {
     "action": "Microsoft.App/agents/incidentmanagement/write",
     "description": "Update agent incident management configurations in an SRE agent"
+  },
+  {
+    "action": "Microsoft.App/agents/listSecrets/action",
+    "description": "List secrets for an Agent"
   },
   {
     "action": "Microsoft.App/agents/memory/delete",
@@ -5020,6 +5236,18 @@
     "description": "Deletes the StorageSites resource."
   },
   {
+    "action": "Microsoft.ApplicationMigration/StorageSites/nas/delete",
+    "description": "Deletes the NAS resource."
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/StorageSites/nas/read",
+    "description": "Gets the NAS resource."
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/StorageSites/nas/write",
+    "description": "Patch the NAS resource."
+  },
+  {
     "action": "Microsoft.ApplicationMigration/StorageSites/read",
     "description": "Gets the StorageSites resource."
   },
@@ -5178,6 +5406,22 @@
   {
     "action": "Microsoft.ApplicationMigration/containerSites/containerWorkloads/write",
     "description": "Update a ContainerWorkload"
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/containerSites/delete",
+    "description": "Delete a ContainerSite"
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/containerSites/read",
+    "description": "Get a ContainerSite"
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/containerSites/refresh/action",
+    "description": "Trigger Refresh action"
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/containerSites/write",
+    "description": "Update a ContainerSite"
   },
   {
     "action": "Microsoft.ApplicationMigration/discoveryHubs/applications/delete",
@@ -9224,6 +9468,14 @@
     "description": "Writes Cluster Volume Job Resource"
   },
   {
+    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Read",
+    "description": "Gets Cluster Volume resources"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Write",
+    "description": "Creates or updates Cluster Volume resources"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/Clusters/WACloginAsAdmin/Action",
     "description": "Manage OS of HCI resource via Windows Admin Center as an administrator"
   },
@@ -9316,6 +9568,10 @@
     "description": "Creates or updates DeploymentSettings resource for EdgeMachine"
   },
   {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Delete",
+    "description": "Deletes EdgeMachine Disk resources"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Jobs/Delete",
     "description": "Deletes EdgeMachine Disk Job Resource"
   },
@@ -9342,6 +9598,10 @@
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Read",
     "description": "Gets EdgeMachine Disk resources"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Disks/Write",
+    "description": "Creates or updates EdgeMachine Disk resources"
   },
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/EdgeMachineMetadata/Delete",
@@ -9452,8 +9712,16 @@
     "description": "Validates EdgeMachine Resources"
   },
   {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Volumes/Delete",
+    "description": "Deletes EdgeMachine Volume resources"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Volumes/Read",
     "description": "Gets EdgeMachine Volume resources"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/Volumes/Write",
+    "description": "Creates or updates EdgeMachine Volume resources"
   },
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Write",
@@ -9594,6 +9862,10 @@
   {
     "action": "Microsoft.AzureStackHCI/StorageArrays/StoragePools/Read",
     "description": "Gets/Lists storage pools resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/StorageArrays/StoragePools/Write",
+    "description": "Creates or updates storage pools resource"
   },
   {
     "action": "Microsoft.AzureStackHCI/StorageArrays/Write",
@@ -9740,8 +10012,16 @@
     "description": "Joins virtual networks resource"
   },
   {
+    "action": "Microsoft.AzureStackHCI/clusters/networkProfiles/Delete",
+    "description": "Deletes the Network profiles resource of an HCI cluster"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/clusters/networkProfiles/Read",
     "description": "Gets/Lists Network profiles resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/clusters/networkProfiles/Write",
+    "description": "Creates or updates the Network profiles resource of an HCI cluster"
   },
   {
     "action": "Microsoft.AzureStackHCI/clusters/updateSummaries/Read",
@@ -10400,6 +10680,10 @@
     "description": "Lists the billed or unbilled transactions by customer id for given start date and end date. Transactions include purchases, refunds and Azure usage charges. Unbilled transactions are listed under pending invoice Id and do not include tax. Tax is added to the amount once an invoice is generated."
   },
   {
+    "action": "Microsoft.Billing/billingAccounts/billingProfiles/defaultCloudSubscription/read",
+    "description": "Gets the default cloud subscription policy at billing profile scope by reading the default invoice section policy. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+  },
+  {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingPeriods/read",
     "description": "Lists the valid Billing Periods  by billing profile ID and department name. The operation is supported only for Departments under billing profiles with agreement type Enterprise Agreement."
   },
@@ -10442,6 +10726,10 @@
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/read",
     "description": "Lists the enrollment accounts for a specific billing account and a billing profile belonging to it."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/billingProfiles/ensureDefaultCloudSubscription/write",
+    "description": "Ensures a default invoice section exists for a billing profile and that the default invoice section has a default cloud subscription. If either does not exist, it will be created. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/action",
@@ -10720,8 +11008,16 @@
     "description": "Moves charges for a subscription to a new invoice section. The new invoice section must belong to the same billing profile as the existing invoice section. This operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
+    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/paymentMethodLinks/read",
+    "description": "Gets the active payment method linked with a billing subscription."
+  },
+  {
+    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/paymentMethodLinks/write",
+    "description": "Sets the active payment method for a billing subscription."
+  },
+  {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/read",
-    "description": "Lists the subscriptions for a billing account."
+    "description": "Gets a subscription by its ID. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement,  Microsoft Partner Agreement, and Enterprise Agreement."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/split/write",
@@ -13206,6 +13502,14 @@
   {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/sandboxes/write",
     "description": "Creates, updates, deletes, and allocates sandbox resources of a sandbox partner"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/read",
+    "description": "Reads volume contents of a sandbox partner"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/write",
+    "description": "Creates, updates, and deletes volume contents of a sandbox partner"
   },
   {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/write",
@@ -31108,6 +31412,18 @@
     "description": "Retrieve all services in the Subscription"
   },
   {
+    "action": "Microsoft.DataMigration/migrationServices/tasks/read",
+    "description": "Connectivity check to source and target endpoints for a database migration"
+  },
+  {
+    "action": "Microsoft.DataMigration/migrationServices/tasks/{connectivityCheckName}/read",
+    "description": "Connectivity check to source and target endpoints for a database migration"
+  },
+  {
+    "action": "Microsoft.DataMigration/migrationServices/tasks/{connectivityCheckName}/write",
+    "description": "Connectivity check to source and target endpoints for a database migration"
+  },
+  {
     "action": "Microsoft.DataMigration/migrationServices/validateIR/action",
     "description": ""
   },
@@ -36412,10 +36728,6 @@
     "description": "Create or Update Durable Task Scheduler Failover Instance to enable disaster recovery"
   },
   {
-    "action": "Microsoft.DurableTask/schedulers/internalOperations/draction/action",
-    "description": "Internal operation used by the resource provider to manage disaster recovery configuration"
-  },
-  {
     "action": "Microsoft.DurableTask/schedulers/privateEndpointConnectionProxies/delete",
     "description": "Delete Durable Task Scheduler Private Endpoint Connection Proxies"
   },
@@ -38956,12 +39268,36 @@
     "description": "Delete any File Shares"
   },
   {
+    "action": "Microsoft.FileShares/fileShares/files/delete",
+    "description": "Delete any file within a file share"
+  },
+  {
+    "action": "Microsoft.FileShares/fileShares/files/modifypermissions/action",
+    "description": "Modify the permissions of any file within a file share"
+  },
+  {
+    "action": "Microsoft.FileShares/fileShares/files/read",
+    "description": "Read the content and metadata of any file within a file share"
+  },
+  {
+    "action": "Microsoft.FileShares/fileShares/files/write",
+    "description": "Create or update the content and metadata of any file within a file share"
+  },
+  {
     "action": "Microsoft.FileShares/fileShares/read",
     "description": "Read any File Shares"
   },
   {
+    "action": "Microsoft.FileShares/fileShares/readFileBackupSemantics/action",
+    "description": "Read any file within a file share with backup semantics"
+  },
+  {
     "action": "Microsoft.FileShares/fileShares/write",
     "description": "Create or Update any File Shares"
+  },
+  {
+    "action": "Microsoft.FileShares/fileShares/writeFileBackupSemantics/action",
+    "description": "Create or update any file within a file share with backup semantics"
   },
   {
     "action": "Microsoft.FileShares/privateEndpointConnectionProxies/delete",
@@ -40773,63 +41109,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "Gets the endpoint access credentials to the resource."
+    "description": "List the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "Gets the ingress gateway endpoint credentials "
+    "description": "List the ingress gateway access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "Fetches the managed proxy details "
+    "description": "List the managed proxy details to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Gets the endpoint to the resource."
+    "description": "Get or list of endpoints to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the service details to the target resource."
+    "description": "Deletes the serviceConfigurations access to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Gets the details about the service to the resource."
+    "description": "Get or list of serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Update the service details in the service configurations of the target resource."
+    "description": "Create or update the serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Update the endpoint to the target resource."
+    "description": "Create or update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Delete a PublicCloudConnector"
+    "description": "Deletes the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Get a PublicCloudConnector"
+    "description": "Gets the public cloud connectors."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "A long-running resource action."
+    "description": "Tests the permissions of solution configurations under public cloud connector."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update a PublicCloudConnector"
+    "description": "Update the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Delete a SolutionConfiguration"
+    "description": "Deletes the solution configuration with provided solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Get a InventoryResource"
+    "description": "Retrieve a list of inventory by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Get a SolutionConfiguration"
+    "description": "Retrieve the solution configuration identified by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -40837,11 +41173,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Update a SolutionConfiguration"
+    "description": "Updates the solution configuration for solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Get a SolutionTypeResource"
+    "description": "Retrieve the solution type by provided solution type."
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -49456,6 +49792,10 @@
     "description": "For a given service group in the URI, retrieves all the service group ancestors"
   },
   {
+    "action": "Microsoft.Management/serviceGroups/listDescendants/read",
+    "description": "For a given service group in the URI, retrieves all the service group descendants"
+  },
+  {
     "action": "Microsoft.Management/serviceGroups/read",
     "description": "Read a Service Group"
   },
@@ -57808,6 +58148,10 @@
     "description": "Read data from the AGCFirewallLogs table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AGSGrafanaAlertAuthFailure/read",
+    "description": "Read data from the AGSGrafanaAlertAuthFailure table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/AGSGrafanaLoginEvents/read",
     "description": "Read data from the AGSGrafanaLoginEvents table"
   },
@@ -59386,6 +59730,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/DnsInventory/read",
     "description": "Read data from the DnsInventory table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/DragonCopilot/read",
+    "description": "Read data from the DragonCopilot table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/DurableTaskSchedulerLogs/read",
@@ -61050,6 +61398,22 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/Windows365AuditLogs/read",
     "description": "Read data from the Windows365AuditLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/Windows365CheckpointLogs/read",
+    "description": "Read data from the Windows365CheckpointLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/Windows365ConnectionErrorLogs/read",
+    "description": "Read data from the Windows365ConnectionErrorLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/Windows365ConnectionLogs/read",
+    "description": "Read data from the Windows365ConnectionLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/Windows365NetworkLogs/read",
+    "description": "Read data from the Windows365NetworkLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/WindowsClientAssessmentRecommendation/read",
@@ -63284,6 +63648,10 @@
     "description": "Write OpenShift cluster"
   },
   {
+    "action": "Microsoft.Relationships/contains/read",
+    "description": "Read a 'Contains' Relationship"
+  },
+  {
     "action": "Microsoft.Relationships/dependencyOf/delete",
     "description": "Delete a 'DependencyOf' Relationship"
   },
@@ -63529,11 +63897,11 @@
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/dataConnections/delete",
-    "description": "Delete a DataConnection"
+    "description": "Delete a data connection.\n\nDelete-time dependency validation is enforced. A data connection cannot be deleted while one or\nmore datasets in the same workspace still reference it through `DatasetProperties.connection.id`.\nIf any consuming dataset exists, the delete is rejected with the `ResourceDeleteHasActiveConsumers`\nerror (code `ARB-RP-228`) and the data connection is not deleted. The error reports the total number of consumers and\nreturns links to the consuming datasets, each with the property path of the reference.\n\nRequired steps before deleting a data connection:\n1. Identify every dataset in the workspace whose `properties.connection.id` references this data connection.\n2. For each consuming dataset, either update it to reference a different data connection (detach)\nor delete the dataset.\n3. Once no dataset references this data connection, retry this delete request.\n\nThe delete is performed asynchronously: the service returns 202 Accepted with a Location header\nto poll, or 204 No Content when the data connection does not exist."
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/dataConnections/read",
-    "description": "Get a DataConnection"
+    "description": "List DataConnection resources by Workspace"
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/dataConnections/write",
@@ -63541,7 +63909,7 @@
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/datasets/delete",
-    "description": "Delete a Dataset"
+    "description": "Delete a dataset.\n\nDelete-time dependency validation is enforced. A dataset cannot be deleted while one or more jobs\nstill reference it as an input or output through `JobProperties.inputs` or `JobProperties.outputs`\n(via `JobDataset.dataset`). If any consuming job exists, the delete is rejected with the\n`ResourceDeleteHasActiveConsumers` error (code `ARB-RP-228`) and the dataset is not deleted. The error reports the total\nnumber of consumers and returns links to the consuming jobs, each with the property path of the reference.\n\nRequired steps before deleting a dataset:\n1. Identify every job whose `properties.inputs` or `properties.outputs` reference this dataset.\n2. For each consuming job, either update it to remove the reference to this dataset or delete the job\n(and, where applicable, the pipeline that contains it).\n3. Once no job references this dataset, retry this delete request.\n\nThe delete is performed asynchronously: the service returns 202 Accepted with a Location header\nto poll, or 204 No Content when the dataset does not exist."
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/datasets/read",
@@ -63553,15 +63921,15 @@
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/delete",
-    "description": "Delete a Workspace"
+    "description": "Delete a workspace.\n\nDeleting a workspace cascades to all child resources (datasets, data connections, pipelines, jobs,\nand runs), which are removed as part of the ARM delete. A workspace is not subject to active-consumer\ndependency validation, so this delete is not blocked by references between its child resources.\n\nThe cascade is performed asynchronously: the service returns 202 Accepted with a Location header\nto poll, or 204 No Content when the workspace does not exist."
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/pipelines/delete",
-    "description": "Delete a Pipeline"
+    "description": "Delete a pipeline.\n\nDeleting a pipeline cascades to its child resources (jobs and runs), which are removed as part of\nthe ARM delete. A pipeline is not subject to active-consumer dependency validation, so this delete\nis not blocked by references from its child jobs.\n\nThe cascade is performed asynchronously: the service returns 202 Accepted with a Location header\nto poll, or 204 No Content when the pipeline does not exist."
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/pipelines/jobs/delete",
-    "description": "Delete a Job"
+    "description": "Delete a job.\n\nDelete-time dependency validation is enforced. A job cannot be deleted while its parent pipeline\nstill references it by name through `PipelineProperties.activities[].job` (a `ReferencePipelineJob`).\nIf the parent pipeline references this job, the delete is rejected with the\n`ResourceDeleteHasActiveConsumers` error (code `ARB-RP-228`) and the job is not deleted. The error reports the consuming\npipeline and the property path of the reference.\n\nRequired steps before deleting a job:\n1. Update the parent pipeline to remove the activity that references this job, or delete the pipeline.\n2. Once no pipeline activity references this job, retry this delete request.\n\nThe delete is performed asynchronously: the service returns 202 Accepted with a Location header\nto poll, or 204 No Content when the job does not exist."
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/pipelines/jobs/read",
@@ -63698,6 +64066,22 @@
   {
     "action": "Microsoft.ResourceIntelligence/generateQuery/read",
     "description": "Generates ARG query for a given user prompt."
+  },
+  {
+    "action": "Microsoft.ResourceNotifications/resourceSubscriptions/delete",
+    "description": "Deletes the specified resource subscription"
+  },
+  {
+    "action": "Microsoft.ResourceNotifications/resourceSubscriptions/destinations/delete",
+    "description": "Deletes the specified resource subscription destination"
+  },
+  {
+    "action": "Microsoft.ResourceNotifications/resourceSubscriptions/destinations/write",
+    "description": "Creates/Updates the specified resource subscription destination"
+  },
+  {
+    "action": "Microsoft.ResourceNotifications/resourceSubscriptions/write",
+    "description": "Creates/Updates the specified resource subscription"
   },
   {
     "action": "Microsoft.ResourceNotifications/systemTopics/subscribetoaksresources/action",
@@ -69252,6 +69636,30 @@
     "description": "Checks that account name is valid and is not in use."
   },
   {
+    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/delete",
+    "description": "Delete a container from a Context Cache resource."
+  },
+  {
+    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/read",
+    "description": "Returns the list of containers in a Context Cache resource or gets the properties of a specified container."
+  },
+  {
+    "action": "Microsoft.Storage/contextCaches/contextCacheContainers/write",
+    "description": "Create or update a container in a Context Cache resource."
+  },
+  {
+    "action": "Microsoft.Storage/contextCaches/delete",
+    "description": "Delete a Context Cache resource."
+  },
+  {
+    "action": "Microsoft.Storage/contextCaches/read",
+    "description": "Returns the list of Context Cache resources or gets the properties of a specified Context Cache resource."
+  },
+  {
+    "action": "Microsoft.Storage/contextCaches/write",
+    "description": "Create or update a Context Cache resource."
+  },
+  {
     "action": "Microsoft.Storage/deletedAccounts/read",
     "description": ""
   },
@@ -70249,7 +70657,11 @@
   },
   {
     "action": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/read",
-    "description": "Gets a Job Definition resource."
+    "description": "Lists all Job Definitions in a Project."
+  },
+  {
+    "action": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/reconcileJob/action",
+    "description": "Post action to reconcile the running job."
   },
   {
     "action": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/startJob/action",
@@ -70261,7 +70673,7 @@
   },
   {
     "action": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/write",
-    "description": "Updates properties for a Job Definition resource. Properties not specified in the request body will be unchanged."
+    "description": "Creates or updates a Job Definition resource, which contains configuration for a single unit of managed data transfer."
   },
   {
     "action": "Microsoft.StorageMover/storageMovers/projects/read",
@@ -74542,6 +74954,10 @@
   {
     "action": "microsoft.app/managedenvironments/certificates/write",
     "description": "Create or update a Managed Environment Certificate"
+  },
+  {
+    "action": "microsoft.app/managedenvironments/checkmigrationeligibility/action",
+    "description": "Dry-run check whether a Managed Environment can be migrated to a target mode. Read-only; does not perform any changes."
   },
   {
     "action": "microsoft.app/managedenvironments/checknameavailability/action",
