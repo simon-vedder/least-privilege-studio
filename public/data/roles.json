@@ -4878,6 +4878,66 @@
     "_estimatedActions": 80
   },
   {
+    "name": "Azure Local Infrastructure Contributor",
+    "id": "3e43f27e-8f98-43b0-9036-e5ae540c968a",
+    "description": "Grants permission to manage GPUs, network, disks, and volumes on Azure Local clusters.",
+    "actions": [
+      "Microsoft.AzureStackHCI/clusters/read",
+      "Microsoft.AzureStackHCI/clusters/arcSettings/read",
+      "Microsoft.AzureStackHCI/clusters/networkProfiles/read",
+      "Microsoft.AzureStackHCI/clusters/updateSummaries/read",
+      "Microsoft.AzureStackHCI/clusters/jobs/read",
+      "Microsoft.AzureStackHCI/clusters/jobs/write",
+      "Microsoft.AzureStackHCI/clusters/jobs/delete",
+      "Microsoft.AzureStackHCI/edgeMachines/read",
+      "Microsoft.AzureStackHCI/edgeMachines/gpus/read",
+      "Microsoft.AzureStackHCI/edgeMachines/gpus/jobs/read",
+      "Microsoft.AzureStackHCI/edgeMachines/gpus/jobs/write",
+      "Microsoft.AzureStackHCI/edgeMachines/gpus/jobs/delete",
+      "Microsoft.AzureStackHCI/edgeMachines/disks/read",
+      "Microsoft.AzureStackHCI/edgeMachines/disks/jobs/read",
+      "Microsoft.AzureStackHCI/edgeMachines/disks/jobs/write",
+      "Microsoft.AzureStackHCI/edgeMachines/disks/jobs/delete",
+      "Microsoft.AzureStackHCI/edgeMachines/volumes/read",
+      "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/read",
+      "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/read",
+      "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/write",
+      "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/delete",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 23
+  },
+  {
+    "name": "Azure Local Infrastructure Reader",
+    "id": "345f07df-7946-4fa9-9edd-80e603e89ea1",
+    "description": "Grants read-only access to GPUs, network, disks, and volumes on Azure Local clusters.",
+    "actions": [
+      "Microsoft.AzureStackHCI/clusters/read",
+      "Microsoft.AzureStackHCI/clusters/arcSettings/read",
+      "Microsoft.AzureStackHCI/clusters/networkProfiles/read",
+      "Microsoft.AzureStackHCI/clusters/jobs/read",
+      "Microsoft.AzureStackHCI/clusters/updateSummaries/read",
+      "Microsoft.AzureStackHCI/edgeMachines/read",
+      "Microsoft.AzureStackHCI/edgeMachines/gpus/read",
+      "Microsoft.AzureStackHCI/edgeMachines/gpus/jobs/read",
+      "Microsoft.AzureStackHCI/edgeMachines/disks/read",
+      "Microsoft.AzureStackHCI/edgeMachines/disks/jobs/read",
+      "Microsoft.AzureStackHCI/edgeMachines/volumes/read",
+      "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/read",
+      "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 15
+  },
+  {
     "name": "Azure Local Migrate Execute Expert",
     "id": "1cfa4eac-9a23-481c-a793-bfb6958e836c",
     "description": "Grants restricted access on an Azure Local based Azure Migrate project to only perform migration related operations, including replication, execution of migrations, tracking and monitoring of migration progress, and initiation of agentless migrations.",
@@ -10306,33 +10366,33 @@
     "id": "fc896ebc-f9a8-484d-a5ff-bd6a8c36289f",
     "description": "Allows performing long term retention backup operations for Cosmos DB",
     "actions": [
-      "Microsoft.DocumentDB/databaseAccounts/validateForLongTermProtection/action",
-      "Microsoft.DocumentDB/databaseAccounts/enableLongTermProtection/action",
-      "Microsoft.DocumentDB/databaseAccounts/disableLongTermProtection/action",
-      "Microsoft.DocumentDB/databaseAccounts/preBackup/action",
-      "Microsoft.DocumentDB/databaseAccounts/backup/action",
+      "Microsoft.DocumentDB/databaseAccounts/validateForLongTermProtection/*",
+      "Microsoft.DocumentDB/databaseAccounts/enableLongTermProtection/*",
+      "Microsoft.DocumentDB/databaseAccounts/disableLongTermProtection/*",
+      "Microsoft.DocumentDB/databaseAccounts/preBackup/*",
+      "Microsoft.DocumentDB/databaseAccounts/backup/*",
       "Microsoft.DocumentDB/databaseAccounts/read",
       "Microsoft.DocumentDB/locations/operationsStatus/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 7
+    "_estimatedActions": 152
   },
   {
     "name": "Cosmos DB Long Term Retention Restore Role",
     "id": "955d0cb2-de4e-43ed-819a-14220e079ba7",
     "description": "Allows performing long term retention restore operations for Cosmos DB",
     "actions": [
-      "Microsoft.DocumentDB/databaseAccounts/preRestore/action",
-      "Microsoft.DocumentDB/databaseAccounts/restore/action",
+      "Microsoft.DocumentDB/databaseAccounts/preRestore/*",
+      "Microsoft.DocumentDB/databaseAccounts/restore/*",
       "Microsoft.DocumentDB/databaseAccounts/read",
       "Microsoft.DocumentDB/locations/operationsStatus/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 4
+    "_estimatedActions": 62
   },
   {
     "name": "Cosmos DB Operator",
@@ -16334,15 +16394,18 @@
   {
     "name": "Microsoft Discovery Bookshelf Index Data Reader - Preview",
     "id": "8ec773c5-7ce6-4b78-91d1-182f8faa536d",
-    "description": "Grants query access to search and retrieve data from Microsoft Discovery Bookshelf knowledge bases. This is the minimum role required to use the retrieve action when linking a knowledge base to an agent. This role is in preview and subject to change.",
-    "actions": [],
+    "description": "Grants query access to search and retrieve data from Microsoft Discovery Bookshelf knowledge bases, and read-only access to list Bookshelves and their knowledge bases. This is the minimum role required to use the retrieve action when linking a knowledge base to an agent. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Discovery/bookshelves/read"
+    ],
     "notActions": [],
     "dataActions": [
       "Microsoft.Discovery/bookshelf/knowledgeBaseVersions/query/action",
-      "Microsoft.Discovery/bookshelf/knowledgebases/operations/read"
+      "Microsoft.Discovery/bookshelf/knowledgebases/operations/read",
+      "Microsoft.Discovery/bookshelf/knowledgebases/read"
     ],
     "notDataActions": [],
-    "_estimatedActions": 0
+    "_estimatedActions": 1
   },
   {
     "name": "Microsoft Discovery Chat Model Reader - Preview",
@@ -16483,6 +16546,35 @@
     ],
     "notDataActions": [],
     "_estimatedActions": 1
+  },
+  {
+    "name": "Microsoft Discovery Storage Container Contributor - Preview",
+    "id": "9697f39a-3a08-4fc8-ab07-674a0d5cacdd",
+    "description": "Grants management of storage assets within Microsoft.Discovery storage containers: allows reading a storage container and creating, reading, updating, and deleting the storage assets within it, including checking the status of asynchronous storage asset operations. Cannot create, update, or delete the storage container itself, and does not grant access to the underlying Azure Storage blob data. Intended to be assigned alongside Discovery project roles. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Discovery/storageContainers/read",
+      "Microsoft.Discovery/storageContainers/storageAssets/read",
+      "Microsoft.Discovery/storageContainers/storageAssets/write",
+      "Microsoft.Discovery/storageContainers/storageAssets/delete",
+      "Microsoft.Discovery/locations/operationStatuses/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 5
+  },
+  {
+    "name": "Microsoft Discovery Storage Container Reader - Preview",
+    "id": "a51eacd1-6976-43ce-b6b6-83585e3639f0",
+    "description": "Read-only access to Microsoft.Discovery storage containers and the storage assets within them: allows reading a storage container and listing/reading its storage assets. Does not allow creating, modifying, or deleting storage assets or containers, and does not grant access to the underlying Azure Storage blob data. Intended to be assigned alongside Discovery project roles. This role is in preview and subject to change.",
+    "actions": [
+      "Microsoft.Discovery/storageContainers/read",
+      "Microsoft.Discovery/storageContainers/storageAssets/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Microsoft Discovery Tools Reader - Preview",
@@ -17988,6 +18080,12 @@
     "id": "469a0cf0-3794-4627-838e-39d04f27b306",
     "description": "Manage procurement of products and services, and create, update, and delete resource groups.",
     "actions": [
+      "Microsoft.Resources/deployments/read",
+      "Microsoft.Resources/deployments/write",
+      "Microsoft.Resources/deployments/delete",
+      "Microsoft.Resources/deployments/validate/action",
+      "Microsoft.Resources/deployments/operations/read",
+      "Microsoft.Resources/deployments/operationstatuses/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Resources/subscriptions/resourceGroups/write",
       "Microsoft.BillingBenefits/register/action",
@@ -18034,6 +18132,7 @@
       "Microsoft.SaaS/resources/read",
       "Microsoft.SaaS/resources/write",
       "Microsoft.SaaS/resources/delete",
+      "Microsoft.SaaS/resources/listAccessToken/action",
       "Microsoft.SaaS/register/action",
       "Microsoft.SaaSHub/cloudServices/read",
       "Microsoft.SaaSHub/cloudServices/write",
@@ -18080,7 +18179,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 88
+    "_estimatedActions": 95
   },
   {
     "name": "Project Babylon Data Curator",

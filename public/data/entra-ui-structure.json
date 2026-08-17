@@ -5443,6 +5443,25 @@
         "displayName": "Entra Directory",
         "types": [
           {
+            "key": "onPasswordUpdateCustomAuthenticationExtension",
+            "name": "On Password Update Custom Authentication Extension",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/onPasswordUpdateCustomAuthenticationExtension/allProperties/allTasks",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
             "key": "serviceAction",
             "name": "Service Action",
             "provider": "microsoft.directory",
@@ -5484,7 +5503,7 @@
         ]
       }
     ],
-    "totalTypes": 1,
-    "totalOps": 6
+    "totalTypes": 2,
+    "totalOps": 7
   }
 ]

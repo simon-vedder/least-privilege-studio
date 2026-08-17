@@ -4,8 +4,28 @@
     "description": "Accept (sign) an Anyscale terms-of-use agreement for the subscription"
   },
   {
+    "action": "Anyscale.Platform/agreements/delete",
+    "description": "Revoke acceptance of an Anyscale terms-of-use agreement for the subscription"
+  },
+  {
     "action": "Anyscale.Platform/agreements/read",
     "description": "Read Anyscale terms-of-use agreement status for the subscription"
+  },
+  {
+    "action": "Anyscale.Platform/agreements/write",
+    "description": "Create or accept (sign) an Anyscale terms-of-use agreement for the subscription"
+  },
+  {
+    "action": "Anyscale.Platform/cloudResources/delete",
+    "description": "Delete subscription-scoped cloud resources"
+  },
+  {
+    "action": "Anyscale.Platform/cloudResources/read",
+    "description": "Read subscription-scoped cloud resources"
+  },
+  {
+    "action": "Anyscale.Platform/cloudResources/write",
+    "description": "Create or update subscription-scoped cloud resources"
   },
   {
     "action": "Anyscale.Platform/clouds/cloudResources/delete",
@@ -32,20 +52,20 @@
     "description": "Create or update compute configurations"
   },
   {
+    "action": "Anyscale.Platform/clouds/containerImages/delete",
+    "description": "Delete container images"
+  },
+  {
+    "action": "Anyscale.Platform/clouds/containerImages/read",
+    "description": "Read container images and builds"
+  },
+  {
+    "action": "Anyscale.Platform/clouds/containerImages/write",
+    "description": "Create or update container images"
+  },
+  {
     "action": "Anyscale.Platform/clouds/delete",
     "description": "Delete cloud"
-  },
-  {
-    "action": "Anyscale.Platform/clouds/images/delete",
-    "description": "Delete images"
-  },
-  {
-    "action": "Anyscale.Platform/clouds/images/read",
-    "description": "Read images and builds"
-  },
-  {
-    "action": "Anyscale.Platform/clouds/images/write",
-    "description": "Create or update images"
   },
   {
     "action": "Anyscale.Platform/clouds/projects/delete",
@@ -3870,6 +3890,10 @@
   {
     "action": "Microsoft.App/artifacts/versions/operationStatus/read",
     "description": "Get the status of an artifact version's build operation"
+  },
+  {
+    "action": "Microsoft.App/artifacts/versions/pull/read",
+    "description": "Get the contents of a specific artifact version by name"
   },
   {
     "action": "Microsoft.App/artifacts/versions/read",
@@ -10164,6 +10188,18 @@
     "description": "Write operation"
   },
   {
+    "action": "Microsoft.BareMetal/ManagedConsoleConnections/delete",
+    "description": "Delete operation"
+  },
+  {
+    "action": "Microsoft.BareMetal/ManagedConsoleConnections/read",
+    "description": "Read operation"
+  },
+  {
+    "action": "Microsoft.BareMetal/ManagedConsoleConnections/write",
+    "description": "Write operation"
+  },
+  {
     "action": "Microsoft.BareMetal/NetworkInterfaceAttachments/delete",
     "description": "Delete operation"
   },
@@ -11621,27 +11657,35 @@
   },
   {
     "action": "Microsoft.BillingTrust/assessments/delete",
-    "description": "Delete an assessment. Long-running operation — returns 202 + 204 + default with `Azure-AsyncOperation` (preferred) and `Location` polling headers."
+    "description": "Delete an assessment. Long-running operation — returns 202 with a polling header, then 204 once the assessment and its rules have been removed and any rule side-effects undone. Authorized to the parent resource provider; the billing-account lifecycle also removes assessments automatically when the account is gone."
   },
   {
     "action": "Microsoft.BillingTrust/assessments/listUploadToken/action",
-    "description": "Request a time-bound, principal-bound upload token for supplemental document uploads."
+    "description": "Request a time-bound, principal-bound upload token for a supplemental / appeal document. Returns the token and a pre-assigned document id; the document's type is bound later, when it is submitted via the rule `appeal` action."
   },
   {
     "action": "Microsoft.BillingTrust/assessments/read",
     "description": "List Assessment resources by parent"
   },
   {
+    "action": "Microsoft.BillingTrust/assessments/rules/appeal/action",
+    "description": "Appeal a rule's failed outcome by submitting a set of previously-uploaded\ndocuments (typically one per reviewer-requested document type). Accepted\nsynchronously when the rule is `appealable` and the documents are valid; the\nrule then scans the documents, forwards them to the verification provider, and\ntransitions to `underReview` asynchronously. Rejected when the rule is not\n`appealable` or a document type is not among `documentTypeCodes`."
+  },
+  {
     "action": "Microsoft.BillingTrust/assessments/rules/read",
     "description": "List Rule resources by Assessment"
   },
   {
+    "action": "Microsoft.BillingTrust/assessments/rules/startIndividualVerification/action",
+    "description": "Start identity verification (IDV) for one or more of a `uboVerification` rule's individuals. Each directive targets an already-resolved UBO (by its `id` from `users[].id`) and drives that individual through the provider's identity-verification flow: `generateLink` returns a link; `sendSms` also sends the link to the individual via SMS. Returns the per-individual outcome (generated link, whether an SMS was sent, and the resulting state). Valid only for `uboVerification` rules while the rule is awaiting identity verification or has failed; it does NOT re-run business verification. Rejected with 400 InvalidParameterValue (wrong kind or invalid directive) or 409 RuleNotActionable (wrong state)."
+  },
+  {
     "action": "Microsoft.BillingTrust/assessments/rules/write",
-    "description": "Create or update a Rule. **This operation is required for RPaaS tracked-resource\ncache population and MUST remain in the public spec.** Rules are created by the\nservice when the parent assessment is created; they are not directly creatable\nby end users. All customer PUT calls are rejected at runtime with\n`OperationNotAllowed` via the RPaaS ResourceCreationValidate extension.\nUse PATCH to modify rule fields that the customer is authorized to change.\nPeer RPs with the same topology (extension singleton parent + proxy child)\ndeclare an identical public PUT for the same RPaaS cache-population reason:\nMicrosoft.ScVmm/virtualMachineInstances/guestAgents,\nMicrosoft.ConnectedVMwarevSphere/virtualMachineInstances/guestAgents."
+    "description": "Create or update a Rule. Rules are created by the service when the parent\nassessment is created; they are not directly creatable by end users. Customer\nPUT calls are rejected at runtime with `OperationNotAllowed`. Use PATCH to\nmodify rule fields that the customer is authorized to change."
   },
   {
     "action": "Microsoft.BillingTrust/assessments/write",
-    "description": "Create or update an Assessment. Long-running operation — returns 200 (replace) or 201 (create) with the `Azure-AsyncOperation` polling header on both responses."
+    "description": "Update an assessment. The only patchable property is `draft`; evaluation/provisioning state and `error` are server-owned. Synchronous PATCH — the `draft` list is replaced wholesale (send `[]` to clear). The value is stored in service state and returned on read only under `?$expandCustomerData=true`; it is omitted from the default read response."
   },
   {
     "action": "Microsoft.Bing/accounts/delete",
@@ -12126,6 +12170,10 @@
   {
     "action": "Microsoft.Cache/redisEnterprise/migrations/read",
     "description": "Read the status of an Azure Managed Redis migration."
+  },
+  {
+    "action": "Microsoft.Cache/redisEnterprise/migrations/unlinkMigratedEndpoint/action",
+    "description": "Unlink the migrated endpoint created by an Azure Managed Redis migration."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/migrations/validate/action",
@@ -19916,6 +19964,18 @@
     "description": "Get web, image, news, & videos results for a given query."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/arcDeployments/delete",
+    "description": "Deletes deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/arcDeployments/read",
+    "description": "Reads deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/arcDeployments/write",
+    "description": "Writes deployments."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/delete",
     "description": "Delete a capability host"
   },
@@ -20344,12 +20404,28 @@
     "description": "Returns the regional capacity with the highest available accelerators for the given Singularity endpoint and offer."
   },
   {
+    "action": "Microsoft.CognitiveServices/modelCapacities/delete",
+    "description": "Deletes deployments."
+  },
+  {
     "action": "Microsoft.CognitiveServices/modelCapacities/read",
-    "description": "Reads available capacities of a model."
+    "description": "Reads deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/modelCapacities/write",
+    "description": "Writes deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/models/delete",
+    "description": "Deletes deployments."
   },
   {
     "action": "Microsoft.CognitiveServices/models/read",
-    "description": "Reads available models."
+    "description": "Reads deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/models/write",
+    "description": "Writes deployments."
   },
   {
     "action": "Microsoft.CognitiveServices/raiExternalSafetyProviders/read",
@@ -40760,28 +40836,8 @@
     "description": "Update a StorageAccountConnector"
   },
   {
-    "action": "Microsoft.Help/SelfHelp/read",
-    "description": "Reads a solution result"
-  },
-  {
-    "action": "Microsoft.Help/diagnostics/read",
-    "description": "Reads or creates an diagnostic resource to troubleshoot an issue"
-  },
-  {
-    "action": "Microsoft.Help/discoverySolutions/read",
-    "description": "Returns list of solutions"
-  },
-  {
-    "action": "Microsoft.Help/simplifiedSolutions/read",
-    "description": "Reads or creates an simplifiedSolutions result"
-  },
-  {
-    "action": "Microsoft.Help/solutions/read",
-    "description": "Reads or creates an solution result"
-  },
-  {
-    "action": "Microsoft.Help/troubleshooters/read",
-    "description": "This role can create, read, continue and restart a troubleshooter."
+    "action": "Microsoft.Help/smartDiagnostics/read",
+    "description": "Reads or creates an SmartDiagnostics result"
   },
   {
     "action": "Microsoft.HorizonDb/clusters/delete",
@@ -51524,6 +51580,26 @@
     "description": "Create or Update Report"
   },
   {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/delete",
+    "description": "Delete Runbook"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/read",
+    "description": "Get Runbook Execution"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/write",
+    "description": "Create, Update or Patch Runbook Execution"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/read",
+    "description": "Get Runbook"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/write",
+    "description": "Create or Update Runbook"
+  },
+  {
     "action": "Microsoft.Migrate/migrateProjects/solutions/Delete",
     "description": "Deletes a  migrate project solution"
   },
@@ -53296,6 +53372,10 @@
     "description": "Get an ExpressRouteCircuit"
   },
   {
+    "action": "Microsoft.Network/expressRouteCircuits/routeTable/action",
+    "description": "Gets the consolidated route table for a MultiCloud ExpressRoute circuit."
+  },
+  {
     "action": "Microsoft.Network/expressRouteCircuits/stats/read",
     "description": "Gets an ExpressRouteCircuit Stat"
   },
@@ -53540,6 +53620,18 @@
     "description": "Joins a Firewall Policy. Not alertable."
   },
   {
+    "action": "Microsoft.Network/firewallPolicies/kubeSelectorGroups/delete",
+    "description": "Deletes a Firewall Policy Kube Selector Group"
+  },
+  {
+    "action": "Microsoft.Network/firewallPolicies/kubeSelectorGroups/read",
+    "description": "Gets a Firewall Policy Kube Selector Group"
+  },
+  {
+    "action": "Microsoft.Network/firewallPolicies/kubeSelectorGroups/write",
+    "description": "Creates a Firewall Policy Kube Selector Group or Updates an existing Firewall Policy Kube Selector Group"
+  },
+  {
     "action": "Microsoft.Network/firewallPolicies/pacFile/action",
     "description": "Get Firewall Policy PacFile"
   },
@@ -53590,6 +53682,10 @@
   {
     "action": "Microsoft.Network/firstPartyServiceTags/delete",
     "description": "Delete First Party Service Tag"
+  },
+  {
+    "action": "Microsoft.Network/firstPartyServiceTags/join/action",
+    "description": "Joins a First Party Service Tag. Not alertable."
   },
   {
     "action": "Microsoft.Network/firstPartyServiceTags/read",
@@ -54884,6 +54980,10 @@
     "description": "Deletes a packet capture"
   },
   {
+    "action": "Microsoft.Network/networkWatchers/packetCaptures/queryInsight/action",
+    "description": "Query Packet Capture Insight running status"
+  },
+  {
     "action": "Microsoft.Network/networkWatchers/packetCaptures/queryStatus/action",
     "description": "Gets information about properties and status of a packet capture resource."
   },
@@ -54894,6 +54994,10 @@
   {
     "action": "Microsoft.Network/networkWatchers/packetCaptures/read",
     "description": "Get the packet capture definition"
+  },
+  {
+    "action": "Microsoft.Network/networkWatchers/packetCaptures/startInsight/action",
+    "description": "Start analysing Packet Capture and provide insights"
   },
   {
     "action": "Microsoft.Network/networkWatchers/packetCaptures/stop/action",
@@ -54950,6 +55054,18 @@
   {
     "action": "Microsoft.Network/networkWatchers/topology/read",
     "description": "Gets a network level view of resources and their relationships in a resource group."
+  },
+  {
+    "action": "Microsoft.Network/networkWatchers/trafficAnalytics/delete",
+    "description": "Deletes a Traffic Analytics"
+  },
+  {
+    "action": "Microsoft.Network/networkWatchers/trafficAnalytics/read",
+    "description": "Get Traffic Analytics details"
+  },
+  {
+    "action": "Microsoft.Network/networkWatchers/trafficAnalytics/write",
+    "description": "Creates a Traffic Analytics"
   },
   {
     "action": "Microsoft.Network/networkWatchers/troubleshoot/action",
@@ -55130,6 +55246,10 @@
   {
     "action": "Microsoft.Network/privateEndpointRedirectMaps/write",
     "description": "Creates Private Endpoint RedirectMap Or Updates An Existing Private Endpoint RedirectMap"
+  },
+  {
+    "action": "Microsoft.Network/privateEndpoints/copy/action",
+    "description": "Copies an existing private endpoint approval reference to inherit its connection approval."
   },
   {
     "action": "Microsoft.Network/privateEndpoints/delete",
@@ -57461,11 +57581,11 @@
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnectionProxies/delete",
-    "description": "(INTERNAL - DO NOT USE) Deletes the specified private endpoint connection proxy associated with the OAK Instance."
+    "description": "(INTERNAL - DO NOT USE) Deletes the specified private endpoint connection proxy associated with the ADME Instance."
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnectionProxies/read",
-    "description": "(INTERNAL - DO NOT USE) Get the specified private endpoint connection proxy associated with the OAK Instance."
+    "description": "(INTERNAL - DO NOT USE) List all private endpoint connection proxies in an ADME instance."
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnectionProxies/validate/action",
@@ -57473,7 +57593,7 @@
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnectionProxies/write",
-    "description": "(INTERNAL - DO NOT USE) Creates or updates the specified private endpoint connection proxy resource associated with the OAK instance."
+    "description": "(INTERNAL - DO NOT USE) Creates or updates the specified private endpoint connection proxy resource associated with the ADME instance."
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnections/delete",
@@ -57489,7 +57609,7 @@
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateLinkResources/read",
-    "description": "Get the specified private link resource associated with the OAK instance."
+    "description": "List all private link resources in an ADME instance."
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/read",
@@ -57666,6 +57786,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/jobs/export/action",
     "description": "Lets you export data from Log Analytics workspace per query and time range"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/joinPerimeter/action",
+    "description": "Joins a Log Analytics workspace to a network security perimeter."
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/linkedservices/delete",
@@ -62369,7 +62493,7 @@
   },
   {
     "action": "Microsoft.ProgramEnrollment/eduEnrollments/read",
-    "description": "List EduEnrollment resources by subscription ID"
+    "description": "List EduEnrollment resources by parent"
   },
   {
     "action": "Microsoft.ProgramEnrollment/eduEnrollments/write",
@@ -62845,6 +62969,10 @@
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/backup/action",
+    "description": "Performs Backup for Protected Item."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/configureSourceScan/action",
     "description": "Performs Backup for Protected Item."
   },
   {
@@ -64592,6 +64720,10 @@
     "description": "Evaluates whether an existing Saas resource can be cancelled."
   },
   {
+    "action": "Microsoft.SaaSHub/saasResources/canCancelOrReduceSeatsForIncludedResources/action",
+    "description": "Evaluates whether one or more source SaaS resources can be cancelled or have seats reduced into the target SaaS resource.\nThe resource name in the URL is the anchored target resource.\nOnly available starting in API version 2026-03-31-preview."
+  },
+  {
     "action": "Microsoft.SaaSHub/saasResources/canMerge/action",
     "description": "Evaluates whether the source Saas resource can be merged to target Saas resource."
   },
@@ -64602,6 +64734,10 @@
   {
     "action": "Microsoft.SaaSHub/saasResources/cancel/action",
     "description": "Cancels a SaaSHub Saas resource."
+  },
+  {
+    "action": "Microsoft.SaaSHub/saasResources/cancelOrReduceSeatsForIncludedResources/action",
+    "description": "Consolidates one or more source SaaS resources into the target SaaS resource.\nThe resource name in the URL is the anchored target resource.\nOnly available starting in API version 2026-03-31-preview."
   },
   {
     "action": "Microsoft.SaaSHub/saasResources/delete",
@@ -71076,10 +71212,6 @@
     "description": "Gets the status of the asynchronous operation"
   },
   {
-    "action": "Microsoft.Support/services/classifyProblems/action",
-    "description": "Lists one or all classified problems"
-  },
-  {
     "action": "Microsoft.Support/services/problemClassifications/read",
     "description": "Lists one or all problem classifications for an Azure service"
   },
@@ -74013,15 +74145,15 @@
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/delete",
-    "description": "Delete a CustomCaptureConfigurations resource"
+    "description": "Delete the Custom Capture Configuration on a firewall. SYNC - clears any in-progress or terminal capture state. Returns 200 on success or 204 when no configuration exists."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/read",
-    "description": "Get a CustomCaptureConfigurations resource"
+    "description": "Get the current Custom Capture Configuration for a firewall. Always returns 200 OK + body. Caller reads properties.pcapStatus to know whether to keep polling. Body field properties.nextCheckInSeconds advises when to poll next (omitted on terminal states)."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/write",
-    "description": "Create or update a CustomCaptureConfigurations resource (start a packet capture)"
+    "description": "Start a Custom Capture Configuration on a firewall. SYNC - returns 200 OK + body immediately. Body's properties.pcapStatus reflects current state (typically InProgress). Caller polls GET on its own clock using properties.nextCheckInSeconds as the cadence hint."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/delete",
@@ -74040,12 +74172,28 @@
     "description": "support info for firewall."
   },
   {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/delete",
+    "description": "Delete (clear) the Log Ingestion Settings for a firewall. SYNC - soft-clears the DCR destination on the partner (logs have no partner delete API). Returns 200 on success or 204 when nothing is configured."
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/read",
+    "description": "Get the Log Ingestion Settings for a firewall. Live read from the partner. Returns 200 OK with the current settings, or 404 when log ingestion has not been configured."
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/write",
+    "description": "Create or update the Log Ingestion Settings for a firewall. SYNC - forwards to the partner and returns 200 OK (or 201 Created on first create) with the persisted settings. commonDestination.monitorConfigurationsV2 (dcrId, logIngestionEndpoint, dcrImmutableId, streamName) drives where the firewall logs are ingested."
+  },
+  {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/read",
     "description": "Get a FirewallResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/saveLogProfile/action",
     "description": "Log Profile for Firewall"
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/statuses/read",
+    "description": "Get a FirewallStatusResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/write",

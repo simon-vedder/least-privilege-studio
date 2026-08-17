@@ -1844,6 +1844,10 @@
     "description": "Create and manage custom authentication extensions for onPasswordSubmit events"
   },
   {
+    "action": "microsoft.directory/onPasswordUpdateCustomAuthenticationExtension/allProperties/allTasks",
+    "description": "Create and manage custom authentication extensions for onPasswordUpdate events"
+  },
+  {
     "action": "microsoft.directory/onPremisesSynchronization/basic/update",
     "description": "Update basic on-premises directory synchronization information"
   },
