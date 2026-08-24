@@ -1004,6 +1004,18 @@
     "description": "Bootstrap Conversation"
   },
   {
+    "action": "Microsoft.Advisor/discoverableWorkloads/conversionStatus/read",
+    "description": "Read conversionStatus"
+  },
+  {
+    "action": "Microsoft.Advisor/discoverableWorkloads/convert/action",
+    "description": "Convert discoverableWorkloads"
+  },
+  {
+    "action": "Microsoft.Advisor/discoverableWorkloads/read",
+    "description": "Read discoverableWorkloads"
+  },
+  {
     "action": "Microsoft.Advisor/generateRecommendations/read",
     "description": "Gets generate recommendations status"
   },
@@ -1070,6 +1082,10 @@
   {
     "action": "Microsoft.Advisor/triageResources/read",
     "description": "Read triageResources"
+  },
+  {
+    "action": "Microsoft.Advisor/workloadResourceMappings/read",
+    "description": "Read workloadResourceMappings"
   },
   {
     "action": "Microsoft.Advisor/workloads/read",
@@ -4093,7 +4109,7 @@
   },
   {
     "action": "Microsoft.App/sandboxGroups/sandboxes/write",
-    "description": "Create a new sandbox in a sandbox group"
+    "description": "Generate an execution token for a sandbox"
   },
   {
     "action": "Microsoft.App/sandboxGroups/secrets/delete",
@@ -9700,6 +9716,10 @@
     "description": "Gets EdgeMachines resources"
   },
   {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/RefreshApplicableUpdates/Action",
+    "description": "Triggers an on-demand refresh of the applicable updates list for a single EdgeMachine, reconciling the EdgeMachines/{name}/updates/default child resource."
+  },
+  {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/RefreshSecuritySettings/Action",
     "description": "Triggers an on-demand sync of EdgeMachine SecuritySettings compliance status from Guest Configuration RP, creating the SecuritySettings child resource if it does not already exist."
   },
@@ -11654,6 +11674,26 @@
   {
     "action": "Microsoft.BillingBenefits/savingsPlanOrders/write",
     "description": "Create a savings plan orders"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/spendPlans/cancel/action",
+    "description": "Cancel a SpendPlan"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/spendPlans/read",
+    "description": "Read all SpendPlans"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/spendPlans/terms/read",
+    "description": "Read all SpendPlan Terms"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/spendPlans/terms/write",
+    "description": "Create or update a SpendPlan Term"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/spendPlans/write",
+    "description": "Create or update a SpendPlan"
   },
   {
     "action": "Microsoft.BillingTrust/assessments/delete",
@@ -21116,6 +21156,14 @@
     "description": "Get the properties of a Snapshot"
   },
   {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
+    "description": "Update the immutability policy of a Snapshot"
+  },
+  {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
+    "description": "Lock the immutability policy of a Snapshot"
+  },
+  {
     "action": "Microsoft.Compute/snapshots/upload/action",
     "description": "Perform write data operations on Snapshot SAS Uri"
   },
@@ -21554,6 +21602,18 @@
   {
     "action": "Microsoft.Compute/virtualMachines/upgradeVMAgent/action",
     "description": "Upgrade version of VM Agent on Virtual Machine"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmProtection/configureProtection/action",
+    "description": "Configures the Virtual Machine Protection properties"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmProtection/read",
+    "description": "Gets the Virtual Machine Protection properties"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmProtection/write",
+    "description": "Updates the Virtual Machine Protection properties"
   },
   {
     "action": "Microsoft.Compute/virtualMachines/vmSizes/read",
@@ -23780,10 +23840,6 @@
     "description": "Reads healthz"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/inference/action",
-    "description": "Perform inference on AI Manager"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/limitranges/delete",
     "description": "Deletes limitranges"
   },
@@ -23882,6 +23938,10 @@
   {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/delete",
     "description": "Delete AI Manager Namespace"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/inference/action",
+    "description": "Perform inference on AI Manager"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
@@ -32660,6 +32720,14 @@
     "description": "List registration tokens for host pool"
   },
   {
+    "action": "Microsoft.DesktopVirtualization/hostpools/migrationLinks/delete",
+    "description": "Delete migrationLinks."
+  },
+  {
+    "action": "Microsoft.DesktopVirtualization/hostpools/migrationLinks/write",
+    "description": "Write migrationLinks."
+  },
+  {
     "action": "Microsoft.DesktopVirtualization/hostpools/move/action",
     "description": "Move a hostpools to another resource group"
   },
@@ -32760,8 +32828,28 @@
     "description": "Write to sessionhostmanagements to update."
   },
   {
+    "action": "Microsoft.DesktopVirtualization/hostpools/sessionhosts/cancelMigration/action",
+    "description": "Action on cancelMigration."
+  },
+  {
+    "action": "Microsoft.DesktopVirtualization/hostpools/sessionhosts/completeMigration/action",
+    "description": "Action on completeMigration."
+  },
+  {
     "action": "Microsoft.DesktopVirtualization/hostpools/sessionhosts/delete",
     "description": "Delete hostpools/sessionhosts"
+  },
+  {
+    "action": "Microsoft.DesktopVirtualization/hostpools/sessionhosts/listSingleSessionHostRegistrationTokens/action",
+    "description": "List registration tokens for a session host"
+  },
+  {
+    "action": "Microsoft.DesktopVirtualization/hostpools/sessionhosts/migrate/action",
+    "description": "Action on migrate."
+  },
+  {
+    "action": "Microsoft.DesktopVirtualization/hostpools/sessionhosts/migrationStatus/read",
+    "description": "Read migrationStatus."
   },
   {
     "action": "Microsoft.DesktopVirtualization/hostpools/sessionhosts/read",
@@ -48616,12 +48704,108 @@
     "description": "Updates an EdgeConnector."
   },
   {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/delegations/delete",
+    "description": "Deletes the specified FabricDelegation."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/delegations/read",
+    "description": "Lists FabricDelegations by Fabric."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/delegations/write",
+    "description": "Updates a FabricDelegation."
+  },
+  {
     "action": "Microsoft.ManagedNetworkFabric/fabrics/delete",
     "description": "Deletes the specified Fabric."
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/fabrics/read",
     "description": "Lists Fabrics by subscription."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vlans/delete",
+    "description": "Deletes the specified Vlan."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vlans/read",
+    "description": "Lists Vlans by Fabric."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vlans/write",
+    "description": "Updates a Vlan."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/delegations/delete",
+    "description": "Deletes the specified VrfDelegation."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/delegations/read",
+    "description": "Lists VrfDelegations by Vrf."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/delegations/write",
+    "description": "Updates a VrfDelegation."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/delete",
+    "description": "Deletes the specified Vrf."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/networks/delete",
+    "description": "Deletes the specified Network."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/networks/read",
+    "description": "Lists Networks by Vrf."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/networks/write",
+    "description": "Updates a Network."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/peerings/delete",
+    "description": "Deletes the specified Peering."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/peerings/read",
+    "description": "Lists Peerings by Vrf."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/peerings/write",
+    "description": "Updates a Peering."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/read",
+    "description": "Lists Vrfs by Fabric."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/servicePeers/confirmAttachment/action",
+    "description": "Confirms a previously prepared service endpoint attachment."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/servicePeers/delete",
+    "description": "Deletes the specified ServicePeer."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/servicePeers/prepareAttachment/action",
+    "description": "Prepares a single-consumer service endpoint attachment."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/servicePeers/read",
+    "description": "Lists ServicePeers by Vrf."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/servicePeers/revoke/action",
+    "description": "Revokes an attachment and withdraws service exposure before cleanup."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/servicePeers/write",
+    "description": "Updates a ServicePeer."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/fabrics/vrfs/write",
+    "description": "Updates a Vrf."
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/fabrics/write",
@@ -49092,6 +49276,10 @@
     "description": "Run the RO Command on the Network Bootstrap Device."
   },
   {
+    "action": "Microsoft.ManagedNetworkFabric/networkBootstrapDevices/runRwCommand/action",
+    "description": "Run the RW Command on the Network Bootstrap Device."
+  },
+  {
     "action": "Microsoft.ManagedNetworkFabric/networkBootstrapDevices/updateAdministrativeState/action",
     "description": "Updates the Administrative state of the Network Bootstrap Device."
   },
@@ -49178,6 +49366,10 @@
   {
     "action": "Microsoft.ManagedNetworkFabric/networkDevices/resyncPasswords/action",
     "description": "Updates the Network Device to use the latest passwords. Does not generate new passwords. Allows network devices missed during a previous password rotation to be brought back into sync."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/networkDevices/runDiagnostics/action",
+    "description": "Runs a diagnostics operation on the Network Device."
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/networkDevices/runRoCommand/action",
@@ -49578,6 +49770,10 @@
   {
     "action": "Microsoft.ManagedNetworkFabric/networkFabrics/rotatePasswords/action",
     "description": "Creates new passwords, then updates the Terminal Server and Network Devices to use the new passwords.\n\nNote that disabled devices cannot be updated and must be resynchronized with the new passwords once they are enabled.\n\nFails if any of the devices could not be updated with the new password.\nFailed devices should be resynchronized with the new passwords once possible."
+  },
+  {
+    "action": "Microsoft.ManagedNetworkFabric/networkFabrics/runDiagnostics/action",
+    "description": "Runs diagnostics information collection on the Network Fabric"
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/networkFabrics/runValidation/action",
@@ -51580,20 +51776,80 @@
     "description": "Create or Update Report"
   },
   {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/addStep/action",
+    "description": "Add Runbook Step"
+  },
+  {
     "action": "Microsoft.Migrate/migrateProjects/runbooks/delete",
     "description": "Delete Runbook"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/deleteStep/action",
+    "description": "Delete Runbook Step"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/execute/action",
+    "description": "Execute Runbook"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/generateDownloadUrl/action",
+    "description": "Generate Runbook Execution Download URL"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/generateInputDownloadUrl/action",
+    "description": "Generate Runbook Execution Input Download URL"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/generateInputUploadUrl/action",
+    "description": "Generate Runbook Execution Input Upload URL"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/performAction/action",
+    "description": "Perform Runbook Execution Action"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/provideApproval/action",
+    "description": "Provide Runbook Execution Step Approval"
   },
   {
     "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/read",
     "description": "Get Runbook Execution"
   },
   {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/updateStepStatus/action",
+    "description": "Update Runbook Execution Step Status"
+  },
+  {
     "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/write",
     "description": "Create, Update or Patch Runbook Execution"
   },
   {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/generateInputUploadUrl/action",
+    "description": "Generate Runbook Input Upload URL"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/mergeWorkstreams/action",
+    "description": "Merge Runbook Workstreams"
+  },
+  {
     "action": "Microsoft.Migrate/migrateProjects/runbooks/read",
     "description": "Get Runbook"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/regenerate/action",
+    "description": "Regenerate Runbook"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/splitWorkstream/action",
+    "description": "Split Runbook Workstream"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/updateStep/action",
+    "description": "Update Runbook Step"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/validateInput/action",
+    "description": "Validate Runbook Input"
   },
   {
     "action": "Microsoft.Migrate/migrateProjects/runbooks/write",
@@ -52360,6 +52616,30 @@
     "description": "Change an account's existing AKV/HSM encryption with another instance of either AKV/HSM."
   },
   {
+    "action": "Microsoft.NetApp/netAppAccounts/consistencyGroups/consistencyGroupSnapshots/delete",
+    "description": "Deletes a consistency group snapshot resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/consistencyGroups/consistencyGroupSnapshots/read",
+    "description": "Reads a consistency group snapshot resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/consistencyGroups/consistencyGroupSnapshots/write",
+    "description": "Writes a consistency group snapshot resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/consistencyGroups/delete",
+    "description": "Deletes a consistency group resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/consistencyGroups/read",
+    "description": "Reads a consistency group resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/consistencyGroups/write",
+    "description": "Writes a consistency group resource."
+  },
+  {
     "action": "Microsoft.NetApp/netAppAccounts/delete",
     "description": "Deletes a account resource."
   },
@@ -52434,6 +52714,30 @@
   {
     "action": "Microsoft.NetApp/netAppAccounts/write",
     "description": "Writes an account resource."
+  },
+  {
+    "action": "Microsoft.NetApp/policyGroups/delete",
+    "description": "Deletes a policy group resource."
+  },
+  {
+    "action": "Microsoft.NetApp/policyGroups/extendedSnapshotRetentionPolicies/delete",
+    "description": "Deletes an extended snapshot retention policy resource."
+  },
+  {
+    "action": "Microsoft.NetApp/policyGroups/extendedSnapshotRetentionPolicies/read",
+    "description": "Reads an extended snapshot retention policy resource."
+  },
+  {
+    "action": "Microsoft.NetApp/policyGroups/extendedSnapshotRetentionPolicies/write",
+    "description": "Creates an extended snapshot retention policy resource."
+  },
+  {
+    "action": "Microsoft.NetApp/policyGroups/read",
+    "description": "Reads a policy group resource."
+  },
+  {
+    "action": "Microsoft.NetApp/policyGroups/write",
+    "description": "Creates a policy group resource."
   },
   {
     "action": "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/attachWafPolicyToAgc/action",
@@ -57597,15 +57901,15 @@
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnections/delete",
-    "description": "Deletes the specified private endpoint connection associated with the OAK Instance."
+    "description": "Deletes the specified private endpoint connection associated with the ADME Instance."
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnections/read",
-    "description": "Get the specified private endpoint connection associated with the OAK Instance."
+    "description": "List all private endpoint connections in an ADME instance."
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnections/write",
-    "description": "Update the state of specified private endpoint connection associated with the OAK Instance."
+    "description": "Update the state of specified private endpoint connection associated with the ADME Instance."
   },
   {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateLinkResources/read",
@@ -60812,6 +61116,10 @@
     "description": "Read data from the PGSQLServerLogs table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/PaymentHsmHardwareOperationAuditLogs/read",
+    "description": "Read data from the PaymentHsmHardwareOperationAuditLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/Perf/read",
     "description": "Read data from the Perf table"
   },
@@ -61998,6 +62306,42 @@
   {
     "action": "Microsoft.Pki/pkis/write",
     "description": "Updates some properties of a PKI resource, while not touching other properties."
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/delete",
+    "description": "Delete a cloud validation"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/read",
+    "description": "Get a cloud validation"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/validationExecutionPlans/delete",
+    "description": "Delete a validation test execution plan"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/validationExecutionPlans/executionPlanRuns/delete",
+    "description": "Delete a validation test execution plan run resource"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/validationExecutionPlans/executionPlanRuns/read",
+    "description": "Get a Validation test execution plan run details"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/validationExecutionPlans/executionPlanRuns/write",
+    "description": "Create or update a validation test execution plan"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/validationExecutionPlans/read",
+    "description": "Get a validation test execution plan"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/validationExecutionPlans/write",
+    "description": "Update a validation test execution plan"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/cloudValidations/write",
+    "description": "Update a cloud validation"
   },
   {
     "action": "Microsoft.PolicyInsights/asyncOperationResults/read",
@@ -63936,6 +64280,10 @@
     "description": "Checks availability of namespace alias under given subscription."
   },
   {
+    "action": "Microsoft.Relay/namespaces/generateUserDelegationKey/action",
+    "description": "Returns a user delegation key for the Namespace"
+  },
+  {
     "action": "Microsoft.Relay/namespaces/messages/listen/action",
     "description": "Receive messages"
   },
@@ -64014,6 +64362,10 @@
   {
     "action": "Microsoft.Relay/namespaces/removeAcsNamepsace/action",
     "description": "Remove ACS namespace"
+  },
+  {
+    "action": "Microsoft.Relay/namespaces/revokeUserDelegationKeys/action",
+    "description": "Revokes all the user delegation keys for the specified Relay Namespace"
   },
   {
     "action": "Microsoft.Relay/namespaces/write",
@@ -67960,12 +68312,20 @@
     "description": "Deletes the Sovereign View resource."
   },
   {
+    "action": "Microsoft.Sovereign/sovereignViews/filterValues/action",
+    "description": "Gets filter values for the Sovereign View resource."
+  },
+  {
+    "action": "Microsoft.Sovereign/sovereignViews/operationalStatus/action",
+    "description": "Gets the operational status for the Sovereign View resource."
+  },
+  {
     "action": "Microsoft.Sovereign/sovereignViews/read",
-    "description": "Gets the Sovereign View resource."
+    "description": "Lists the Sovereign View resources within a subscription."
   },
   {
     "action": "Microsoft.Sovereign/sovereignViews/write",
-    "description": "Updates the Sovereign View resource."
+    "description": "Creates the Sovereign View resource."
   },
   {
     "action": "Microsoft.Sovereign/transparencyLogs/delete",
@@ -72864,12 +73224,28 @@
     "description": "List Web App's security sensitive settings, such as publishing credentials, app settings and connection strings"
   },
   {
+    "action": "Microsoft.Web/sites/host/properties/read",
+    "description": "Get Web Apps Host Properties."
+  },
+  {
     "action": "Microsoft.Web/sites/hostruntime/host/_master/read",
     "description": "Get Function App's master key for admin operations"
   },
   {
     "action": "Microsoft.Web/sites/hostruntime/host/action",
     "description": "Perform Function App runtime action like sync triggers, add functions, invoke functions, delete functions etc."
+  },
+  {
+    "action": "Microsoft.Web/sites/hostruntime/vfs/read",
+    "description": "Get Web Apps Hostruntime Virtual File System."
+  },
+  {
+    "action": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows/validate/action",
+    "description": "Validate Web Apps Hostruntime Workflow."
+  },
+  {
+    "action": "Microsoft.Web/sites/instances/logs/read",
+    "description": "Get Web Apps Instance Logs."
   },
   {
     "action": "Microsoft.Web/sites/privateEndpointConnectionProxies/Delete",
@@ -73374,6 +73750,18 @@
   {
     "action": "Microsoft.Windows365/cloudPcDelegatedMsis/write",
     "description": "Partially updates a CloudPcDelegatedMsi."
+  },
+  {
+    "action": "Microsoft.Windows365/serviceConnectors/delete",
+    "description": "Delete a service connector resource."
+  },
+  {
+    "action": "Microsoft.Windows365/serviceConnectors/read",
+    "description": "Get a service connector resource."
+  },
+  {
+    "action": "Microsoft.Windows365/serviceConnectors/write",
+    "description": "Update a service connector resource."
   },
   {
     "action": "Microsoft.WorkloadBuilder/RegisteredSubscriptions/read",
@@ -74688,30 +75076,6 @@
     "description": "Create and Update Private Link Policy Definition"
   },
   {
-    "action": "microsoft.app/artifactapps/delete",
-    "description": "Delete an artifact app"
-  },
-  {
-    "action": "microsoft.app/artifactapps/read",
-    "description": "Get an artifact app"
-  },
-  {
-    "action": "microsoft.app/artifactapps/write",
-    "description": "Create or update an artifact app"
-  },
-  {
-    "action": "microsoft.app/artifacts/delete",
-    "description": "Delete an artifact"
-  },
-  {
-    "action": "microsoft.app/artifacts/read",
-    "description": "Get an artifact"
-  },
-  {
-    "action": "microsoft.app/artifacts/write",
-    "description": "Create or update an artifact"
-  },
-  {
     "action": "microsoft.app/builders/delete",
     "description": "Delete a Builder"
   },
@@ -75294,18 +75658,6 @@
   {
     "action": "microsoft.app/managedenvironments/write",
     "description": "Create or update a Managed Environment"
-  },
-  {
-    "action": "microsoft.app/sandboxgroups/delete",
-    "description": "Delete a sandbox group"
-  },
-  {
-    "action": "microsoft.app/sandboxgroups/read",
-    "description": "Get a sandbox group"
-  },
-  {
-    "action": "microsoft.app/sandboxgroups/write",
-    "description": "Create or update a sandbox group"
   },
   {
     "action": "microsoft.app/sessionPools/sessions/write",

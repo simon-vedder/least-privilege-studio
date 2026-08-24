@@ -4957,6 +4957,7 @@
       "Microsoft.Authorization/locks/delete",
       "Microsoft.Insights/alertRules/*",
       "Microsoft.Migrate/*/read",
+      "Microsoft.Migrate/migrateProjects/taskSummary/action",
       "Microsoft.ApplicationMigration/*/read",
       "Microsoft.OffAzure/*/read",
       "Microsoft.MySQLDiscovery/*/read",
@@ -4993,7 +4994,7 @@
     ],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 371
+    "_estimatedActions": 372
   },
   {
     "name": "Azure Local Migrate Owner",
@@ -5346,6 +5347,7 @@
       "Microsoft.Authorization/locks/delete",
       "Microsoft.Insights/alertRules/*",
       "Microsoft.Migrate/*/read",
+      "Microsoft.Migrate/migrateProjects/taskSummary/action",
       "Microsoft.ApplicationMigration/*/read",
       "Microsoft.OffAzure/*/read",
       "Microsoft.MySQLDiscovery/*/read",
@@ -5388,7 +5390,7 @@
     ],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 242
+    "_estimatedActions": 243
   },
   {
     "name": "Azure Migrate Owner",
@@ -9258,7 +9260,6 @@
       "Microsoft.Mission/virtualEnclaves/endpoints/read",
       "Microsoft.Mission/virtualEnclaves/endpoints/write",
       "Microsoft.Mission/virtualEnclaves/workloads/read",
-      "Microsoft.Mission/virtualEnclaves/workloads/write",
       "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
       "Microsoft.Mission/virtualEnclaves/setEnclaveRoleAssignments/action",
       "Microsoft.Authorization/*/read",
@@ -9285,7 +9286,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 44
+    "_estimatedActions": 43
   },
   {
     "name": "Community Owner Role",
@@ -9310,8 +9311,6 @@
       "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
       "Microsoft.Mission/virtualEnclaves/setEnclaveRoleAssignments/action",
       "Microsoft.Mission/virtualEnclaves/workloads/read",
-      "Microsoft.Mission/virtualEnclaves/workloads/write",
-      "Microsoft.Mission/virtualEnclaves/workloads/delete",
       "Microsoft.Authorization/*/read",
       "Microsoft.Insights/alertRules/read",
       "Microsoft.Resources/deployments/read",
@@ -9342,7 +9341,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 55
+    "_estimatedActions": 53
   },
   {
     "name": "Community Reader Role",
@@ -11041,12 +11040,13 @@
       "Microsoft.Security/advancedThreatProtectionSettings/write",
       "Microsoft.Security/defenderForStorageSettings/read",
       "Microsoft.Security/defenderForStorageSettings/write",
+      "Microsoft.Security/securityOperators/read",
       "Microsoft.Storage/storageAccounts/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 5
+    "_estimatedActions": 6
   },
   {
     "name": "Defender Kubernetes Agent Operator",
@@ -14477,9 +14477,9 @@
       "Microsoft.HealthBot/healthBots/RegisteredSkills/Read",
       "Microsoft.HealthBot/healthBots/Configuration/*",
       "Microsoft.HealthBot/healthBots/Localization/*",
-      "Microsoft.HealthBot/healthBots/AuthenticationProviders/*",
+      "Microsoft.HealthBot/healthBots/AuthenticationProviders/Read",
       "Microsoft.HealthBot/healthBots/Channels/*",
-      "Microsoft.HealthBot/healthBots/DataConnections/*",
+      "Microsoft.HealthBot/healthBots/DataConnections/Read",
       "Microsoft.HealthBot/healthBots/OpenAPIPlugins/*",
       "Microsoft.HealthBot/healthBots/Scenarios/*",
       "Microsoft.HealthBot/healthBots/LanguageModels/*",
@@ -16354,6 +16354,23 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 11
+  },
+  {
+    "name": "Microsoft Cloud Security Arc Machine Operator",
+    "id": "53ad7cb7-33cc-4509-b36b-03d40643c499",
+    "description": "Allows Microsoft Cloud Security to manage Azure Arc-enabled machines and their extensions, helping to secure connected workloads.",
+    "actions": [
+      "Microsoft.HybridCompute/machines/read",
+      "Microsoft.HybridCompute/machines/write",
+      "Microsoft.HybridCompute/machines/delete",
+      "Microsoft.HybridCompute/machines/extensions/read",
+      "Microsoft.HybridCompute/machines/extensions/write",
+      "Microsoft.HybridCompute/machines/extensions/delete"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 6
   },
   {
     "name": "Microsoft Confluent Contributor role",
@@ -19555,8 +19572,8 @@
       "Microsoft.Insights/metricDefinitions/read"
     ],
     "notActions": [
-      "Microsoft.Sql/servers/databases/ledgerDigestUploads/write",
-      "Microsoft.Sql/servers/databases/ledgerDigestUploads/disable/action",
+      "Microsoft.Sql/managedInstances/advancedThreatProtectionSettings/*",
+      "Microsoft.Sql/managedInstances/databases/advancedThreatProtectionSettings/*",
       "Microsoft.Sql/managedInstances/databases/currentSensitivityLabels/*",
       "Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/*",
       "Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/*",
@@ -19565,19 +19582,24 @@
       "Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/*",
       "Microsoft.Sql/managedInstances/securityAlertPolicies/*",
       "Microsoft.Sql/managedInstances/vulnerabilityAssessments/*",
+      "Microsoft.Sql/servers/databases/advancedThreatProtectionSettings/*",
       "Microsoft.Sql/servers/databases/auditingSettings/*",
       "Microsoft.Sql/servers/databases/auditRecords/read",
       "Microsoft.Sql/servers/databases/currentSensitivityLabels/*",
       "Microsoft.Sql/servers/databases/dataMaskingPolicies/*",
       "Microsoft.Sql/servers/databases/extendedAuditingSettings/*",
+      "Microsoft.Sql/servers/databases/ledgerDigestUploads/disable/action",
+      "Microsoft.Sql/servers/databases/ledgerDigestUploads/write",
       "Microsoft.Sql/servers/databases/recommendedSensitivityLabels/*",
       "Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/*",
       "Microsoft.Sql/servers/databases/securityAlertPolicies/*",
       "Microsoft.Sql/servers/databases/securityMetrics/*",
       "Microsoft.Sql/servers/databases/sensitivityLabels/*",
+      "Microsoft.Sql/servers/databases/sqlVulnerabilityAssessments/*",
       "Microsoft.Sql/servers/databases/vulnerabilityAssessments/*",
       "Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/*",
       "Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/*",
+      "Microsoft.Sql/servers/sqlVulnerabilityAssessments/*",
       "Microsoft.Sql/servers/vulnerabilityAssessments/*"
     ],
     "dataActions": [],
@@ -19706,6 +19728,8 @@
       "Microsoft.Insights/metricDefinitions/read"
     ],
     "notActions": [
+      "Microsoft.Sql/managedInstances/advancedThreatProtectionSettings/*",
+      "Microsoft.Sql/managedInstances/databases/advancedThreatProtectionSettings/*",
       "Microsoft.Sql/managedInstances/databases/currentSensitivityLabels/*",
       "Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/*",
       "Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/*",
@@ -19714,7 +19738,11 @@
       "Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/*",
       "Microsoft.Sql/managedInstances/securityAlertPolicies/*",
       "Microsoft.Sql/managedInstances/vulnerabilityAssessments/*",
+      "Microsoft.Sql/servers/advancedThreatProtectionSettings/*",
       "Microsoft.Sql/servers/auditingSettings/*",
+      "Microsoft.Sql/servers/azureADOnlyAuthentications/delete",
+      "Microsoft.Sql/servers/azureADOnlyAuthentications/write",
+      "Microsoft.Sql/servers/databases/advancedThreatProtectionSettings/*",
       "Microsoft.Sql/servers/databases/auditingSettings/*",
       "Microsoft.Sql/servers/databases/auditRecords/read",
       "Microsoft.Sql/servers/databases/currentSensitivityLabels/*",
@@ -19725,17 +19753,17 @@
       "Microsoft.Sql/servers/databases/securityAlertPolicies/*",
       "Microsoft.Sql/servers/databases/securityMetrics/*",
       "Microsoft.Sql/servers/databases/sensitivityLabels/*",
+      "Microsoft.Sql/servers/databases/sqlVulnerabilityAssessments/*",
       "Microsoft.Sql/servers/databases/vulnerabilityAssessments/*",
       "Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/*",
       "Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/*",
       "Microsoft.Sql/servers/devOpsAuditingSettings/*",
       "Microsoft.Sql/servers/extendedAuditingSettings/*",
-      "Microsoft.Sql/servers/securityAlertPolicies/*",
-      "Microsoft.Sql/servers/vulnerabilityAssessments/*",
-      "Microsoft.Sql/servers/azureADOnlyAuthentications/delete",
-      "Microsoft.Sql/servers/azureADOnlyAuthentications/write",
       "Microsoft.Sql/servers/externalPolicyBasedAuthorizations/delete",
-      "Microsoft.Sql/servers/externalPolicyBasedAuthorizations/write"
+      "Microsoft.Sql/servers/externalPolicyBasedAuthorizations/write",
+      "Microsoft.Sql/servers/securityAlertPolicies/*",
+      "Microsoft.Sql/servers/sqlVulnerabilityAssessments/*",
+      "Microsoft.Sql/servers/vulnerabilityAssessments/*"
     ],
     "dataActions": [],
     "notDataActions": [],
