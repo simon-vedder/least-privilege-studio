@@ -3424,6 +3424,10 @@
     "description": "Creates or Updates a model provider. or Updates an existing model provider."
   },
   {
+    "action": "Microsoft.ApiManagement/service/workspaces/models/invoke/action",
+    "description": "Invokes an AI Gateway model API."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/workspaces/models/read",
     "description": "Lists all models across all model providers in a workspace."
   },
@@ -3708,6 +3712,10 @@
     "description": "Mints PKCE state and returns the IdP authorize URL plus redirect URI for the operator-driven OAuth 2.0 Authorization Code dance. or Clears the persisted refresh_token and bumps the OAuth2 configVersion. Idempotent; does not call the IdP."
   },
   {
+    "action": "Microsoft.ApiManagement/service/workspaces/toolServers/invoke/action",
+    "description": "Invokes an AI Gateway tool server."
+  },
+  {
     "action": "Microsoft.ApiManagement/service/workspaces/toolServers/listSecrets/action",
     "description": "Returns the secret subtrees (header values, oauth2.clientSecret, openApi.specSource.contentBase64) for each endpoint on the tool server, keyed by endpoint id. Intended for round-trip add/edit/remove-endpoint scenarios where the caller needs the existing credentials to merge back into a subsequent PUT/PATCH."
   },
@@ -3960,6 +3968,18 @@
     "description": "Create a content package by uploading binary content in a sandbox group"
   },
   {
+    "action": "Microsoft.App/sandboxGroups/credentials/delete",
+    "description": "Delete a credential in a sandbox group"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/credentials/read",
+    "description": "List credentials in a sandbox group"
+  },
+  {
+    "action": "Microsoft.App/sandboxGroups/credentials/write",
+    "description": "Create or update a credential in a sandbox group"
+  },
+  {
     "action": "Microsoft.App/sandboxGroups/delete",
     "description": "Delete a sandbox group resource"
   },
@@ -3973,7 +3993,7 @@
   },
   {
     "action": "Microsoft.App/sandboxGroups/diskimages/write",
-    "description": "Create a new disk image in a sandbox group"
+    "description": "Create a new disk image using a discriminated source in a sandbox group"
   },
   {
     "action": "Microsoft.App/sandboxGroups/egressPolicies/delete",
@@ -4024,6 +4044,10 @@
     "description": "Get egress decisions for a running sandbox"
   },
   {
+    "action": "Microsoft.App/sandboxGroups/sandboxes/egressDecisions/read",
+    "description": "Get egress decisions for a running sandbox"
+  },
+  {
     "action": "Microsoft.App/sandboxGroups/sandboxes/egresspolicy/write",
     "description": "Set the egress policy for a running sandbox"
   },
@@ -4068,6 +4092,10 @@
     "description": "Add pod volume mounts to a running sandbox"
   },
   {
+    "action": "Microsoft.App/sandboxGroups/sandboxes/podVolumes/write",
+    "description": "Add pod volume mounts to a running sandbox"
+  },
+  {
     "action": "Microsoft.App/sandboxGroups/sandboxes/ports/delete",
     "description": "Remove a port from a running sandbox"
   },
@@ -4109,7 +4137,7 @@
   },
   {
     "action": "Microsoft.App/sandboxGroups/sandboxes/write",
-    "description": "Generate an execution token for a sandbox"
+    "description": "Create a new sandbox in a sandbox group"
   },
   {
     "action": "Microsoft.App/sandboxGroups/secrets/delete",
@@ -5586,6 +5614,10 @@
   {
     "action": "Microsoft.ApplicationMigration/networkSites/agents/read",
     "description": "Lists NetworkAgent resources within a network site."
+  },
+  {
+    "action": "Microsoft.ApplicationMigration/networkSites/agents/refresh/action",
+    "description": "Triggers a refresh of the network agent discovery."
   },
   {
     "action": "Microsoft.ApplicationMigration/networkSites/agents/write",
@@ -8436,6 +8468,14 @@
     "description": "Create or update Guest Usages resource"
   },
   {
+    "action": "Microsoft.AzureActiveDirectory/tenants/billingInformation/read",
+    "description": "View Tenant Billing Information resource"
+  },
+  {
+    "action": "Microsoft.AzureActiveDirectory/tenants/read",
+    "description": "View Tenant resource"
+  },
+  {
     "action": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/delete",
     "description": "Deletes an Active Directory connector resource"
   },
@@ -8944,12 +8984,20 @@
     "description": "This initiates a new Failover operation on this Drill Run."
   },
   {
+    "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/generateReport/action",
+    "description": "This generates, or regenerates, the report for this Drill Run. The action is idempotent and is safe to call at any time: a call that arrives while a generation is already running joins it, and a call made after a failed attempt retries it. A report that has been finalized is never regenerated."
+  },
+  {
+    "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/listReportDownloadUrl/action",
+    "description": "This returns a short-lived, read-only URL to download the report for this Drill Run. The URL expires at the returned expiryTimestamp and grants access to that single report only."
+  },
+  {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/markAsComplete/action",
     "description": "This enables the user to mark this stage as complete, disabling further retries on it."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/read",
-    "description": "Get a DrillRun"
+    "description": "List DrillRun resources by Drill"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/reprotect/action",
@@ -20016,6 +20064,18 @@
     "description": "Writes deployments."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/delete",
+    "description": "Delete budget policies"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/read",
+    "description": "Read budget policies"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/write",
+    "description": "Create or update budget policies"
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/delete",
     "description": "Delete a capability host"
   },
@@ -20276,6 +20336,18 @@
     "description": "Provision the managed network of the Cognitive Services Account."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/raiBindings/delete",
+    "description": "Deletes a Responsible AI policy binding."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/raiBindings/read",
+    "description": "Gets Responsible AI policy bindings."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/raiBindings/write",
+    "description": "Creates or updates a Responsible AI policy binding."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/raiBlocklists/addRaiBlocklistItems/action",
     "description": "Batch adds blocklist items under a blocklist."
   },
@@ -20362,6 +20434,18 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/raiPolicies/write",
     "description": "Create or update a custom Responsible AI policy."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/raiRegos/delete",
+    "description": "Deletes a reusable Responsible AI Rego resource."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/raiRegos/read",
+    "description": "Gets reusable Responsible AI Rego resources."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/raiRegos/write",
+    "description": "Creates or updates a reusable Responsible AI Rego resource."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/raiToolLabels/delete",
@@ -21156,14 +21240,6 @@
     "description": "Get the properties of a Snapshot"
   },
   {
-    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
-    "description": "Update the immutability policy of a Snapshot"
-  },
-  {
-    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
-    "description": "Lock the immutability policy of a Snapshot"
-  },
-  {
     "action": "Microsoft.Compute/snapshots/upload/action",
     "description": "Perform write data operations on Snapshot SAS Uri"
   },
@@ -21602,18 +21678,6 @@
   {
     "action": "Microsoft.Compute/virtualMachines/upgradeVMAgent/action",
     "description": "Upgrade version of VM Agent on Virtual Machine"
-  },
-  {
-    "action": "Microsoft.Compute/virtualMachines/vmProtection/configureProtection/action",
-    "description": "Configures the Virtual Machine Protection properties"
-  },
-  {
-    "action": "Microsoft.Compute/virtualMachines/vmProtection/read",
-    "description": "Gets the Virtual Machine Protection properties"
-  },
-  {
-    "action": "Microsoft.Compute/virtualMachines/vmProtection/write",
-    "description": "Updates the Virtual Machine Protection properties"
   },
   {
     "action": "Microsoft.Compute/virtualMachines/vmSizes/read",
@@ -40060,6 +40124,14 @@
     "description": "Process health data in Clinical Coder service API"
   },
   {
+    "action": "Microsoft.HealthBot/healthBots/AIActions/EBMcalc/Process/Action",
+    "description": "Process health data in EBMcalc service API"
+  },
+  {
+    "action": "Microsoft.HealthBot/healthBots/AIActions/MEATCriteria/Process/Action",
+    "description": "Process health data in MEAT Criteria service API"
+  },
+  {
     "action": "Microsoft.HealthBot/healthBots/AIActions/ProActiveCoding/Process/Action",
     "description": "Process health data in Pro Active Coding service API"
   },
@@ -40928,6 +41000,18 @@
     "description": "Reads or creates an SmartDiagnostics result"
   },
   {
+    "action": "Microsoft.HorizonDb/clusters/administrators/delete",
+    "description": "Deletes the specified EntraID administrator from the HorizonDb cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/administrators/read",
+    "description": "Gets the specified EntraID administrator for the HorizonDb cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/administrators/write",
+    "description": "Creates or updates an EntraID administrator for the specified HorizonDb cluster."
+  },
+  {
     "action": "Microsoft.HorizonDb/clusters/delete",
     "description": "Deletes an existing HorizonDb cluster."
   },
@@ -41253,63 +41337,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "List the endpoint access credentials to the resource."
+    "description": "Gets the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "List the ingress gateway access credentials to the resource."
+    "description": "Gets the ingress gateway endpoint credentials "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "List the managed proxy details to the resource."
+    "description": "Fetches the managed proxy details "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Get or list of endpoints to the target resource."
+    "description": "Gets the endpoint to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the serviceConfigurations access to the endpoints resource."
+    "description": "Deletes the service details to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Get or list of serviceConfigurations to the endpoints resource."
+    "description": "Gets the details about the service to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Create or update the serviceConfigurations to the endpoints resource."
+    "description": "Update the service details in the service configurations of the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Create or update the endpoint to the target resource."
+    "description": "Update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Deletes the public cloud connectors resource."
+    "description": "Delete a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Gets the public cloud connectors."
+    "description": "Get a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "Tests the permissions of solution configurations under public cloud connector."
+    "description": "A long-running resource action."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update the public cloud connectors resource."
+    "description": "Update a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Deletes the solution configuration with provided solution name."
+    "description": "Delete a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Retrieve a list of inventory by solution name."
+    "description": "Get a InventoryResource"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Retrieve the solution configuration identified by solution name."
+    "description": "Get a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -41317,11 +41401,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Updates the solution configuration for solution name."
+    "description": "Update a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Retrieve the solution type by provided solution type."
+    "description": "Get a SolutionTypeResource"
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -51796,12 +51880,8 @@
     "description": "Generate Runbook Execution Download URL"
   },
   {
-    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/generateInputDownloadUrl/action",
-    "description": "Generate Runbook Execution Input Download URL"
-  },
-  {
-    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/generateInputUploadUrl/action",
-    "description": "Generate Runbook Execution Input Upload URL"
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/generateUploadUrl/action",
+    "description": "Generate Runbook Execution Upload URL"
   },
   {
     "action": "Microsoft.Migrate/migrateProjects/runbooks/executions/performAction/action",
@@ -51824,8 +51904,12 @@
     "description": "Create, Update or Patch Runbook Execution"
   },
   {
-    "action": "Microsoft.Migrate/migrateProjects/runbooks/generateInputUploadUrl/action",
-    "description": "Generate Runbook Input Upload URL"
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/generateDownloadUrl/action",
+    "description": "Generate Runbook Download URL"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/runbooks/generateUploadUrl/action",
+    "description": "Generate Runbook Upload URL"
   },
   {
     "action": "Microsoft.Migrate/migrateProjects/runbooks/mergeWorkstreams/action",
@@ -61204,6 +61288,10 @@
     "description": "Read data from the QuantumProviderAccountJobAuditLogs table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/QuantumProviderAccountMessageAuditLogs/read",
+    "description": "Read data from the QuantumProviderAccountMessageAuditLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/QuantumProviderAccountQueueAuditLogs/read",
     "description": "Read data from the QuantumProviderAccountQueueAuditLogs table"
   },
@@ -63188,6 +63276,18 @@
     "description": "Retrieves the status of the cross-tenant vault mapping."
   },
   {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/getRecoveryPoints/action",
+    "description": "Returns a list of all recovery points from the cross-tenant mapped vault."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/operationsStatus/read",
+    "description": "Retrieves bulk restore operation status from the cross-tenant mapped vault."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/preCheckRestore/action",
+    "description": "Restore recovery point from cross-tenant mapped vault for the protected items."
+  },
+  {
     "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/protectionContainers/protectedItems/operationsStatus/read",
     "description": "Retrieves the status of operations performed on protected items from cross-tenant mapped vault."
   },
@@ -63202,6 +63302,22 @@
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/protectionContainers/protectedItems/recoveryPoints/restore/action",
     "description": "Restore recovery point from cross-tenant mapped vault for the protected items."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/recoveryPointOperationResults/read",
+    "description": "Retrieves bulk restore operation result from the cross-tenant mapped vault."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/restore/action",
+    "description": "Triggers bulk restore from the cross-tenant mapped vault."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/validateBulkRestoreOperationsStatus/read",
+    "description": "Retrieves bulk restore precheck operation status from the cross-tenant mapped vault."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupJobs/backupChildJobs/read",
+    "description": "Returns a list of all jobs from the cross-tenant mapped vault."
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupJobs/read",
@@ -63336,6 +63452,10 @@
     "description": "Get AccessToken for Cross Region Restore."
   },
   {
+    "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/fetchInstantItemRecoveryOperationResult/action",
+    "description": "Provision Instant Item Recovery for Protected Item"
+  },
+  {
     "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/move/action",
     "description": "Move Recovery point to another tier"
   },
@@ -63457,7 +63577,7 @@
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
-    "description": "Get ResourceGuard proxy operation gets an object representing the Azure resource of type 'ResourceGuard proxy'"
+    "description": "Get the list of ResourceGuard proxies for a resource"
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/unlockDelete/action",
@@ -64094,6 +64214,50 @@
   {
     "action": "Microsoft.RecoveryServices/vaults/replicationvCenters/read",
     "description": "Read any vCenters"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/delete",
+    "description": "Delete any Hosted Control Plane (HCP) OpenShift Clusters"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/externalAuths/delete",
+    "description": "Delete any External Authentication Configurations"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/externalAuths/read",
+    "description": "Read any External Authentication Configurations"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/externalAuths/write",
+    "description": "Create or Update any External Authentication Configurations"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/nodePools/delete",
+    "description": "Delete any Node Pools"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/nodePools/read",
+    "description": "Read any Node Pools"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/nodePools/write",
+    "description": "Create or Update any Node Pools"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/read",
+    "description": "Read any Hosted Control Plane (HCP) OpenShift Clusters"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/requestadmincredential/action",
+    "description": "Request a kubeconfig file for a Hosted Control Plane (HCP) OpenShift Cluster that authenticates using a limited-time signed certificate with administrator permissions"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/revokecredentials/action",
+    "description": "Revoke all unexpired certificates issued for user access to a Hosted Control Plane (HCP) OpenShift Cluster"
+  },
+  {
+    "action": "Microsoft.RedHatOpenShift/hcpOpenShiftClusters/write",
+    "description": "Create or Update any Hosted Control Plane (HCP) OpenShift Clusters"
   },
   {
     "action": "Microsoft.RedHatOpenShift/openShiftClusters/delete",
@@ -74533,15 +74697,15 @@
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/delete",
-    "description": "Delete the Custom Capture Configuration on a firewall. SYNC - clears any in-progress or terminal capture state. Returns 200 on success or 204 when no configuration exists."
+    "description": "Delete a CustomCaptureConfigurations resource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/read",
-    "description": "Get the current Custom Capture Configuration for a firewall. Always returns 200 OK + body. Caller reads properties.pcapStatus to know whether to keep polling. Body field properties.nextCheckInSeconds advises when to poll next (omitted on terminal states)."
+    "description": "Get a CustomCaptureConfigurations resource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/write",
-    "description": "Start a Custom Capture Configuration on a firewall. SYNC - returns 200 OK + body immediately. Body's properties.pcapStatus reflects current state (typically InProgress). Caller polls GET on its own clock using properties.nextCheckInSeconds as the cadence hint."
+    "description": "Create or update a CustomCaptureConfigurations resource (start a packet capture)"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/delete",
@@ -74560,28 +74724,12 @@
     "description": "support info for firewall."
   },
   {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/delete",
-    "description": "Delete (clear) the Log Ingestion Settings for a firewall. SYNC - soft-clears the DCR destination on the partner (logs have no partner delete API). Returns 200 on success or 204 when nothing is configured."
-  },
-  {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/read",
-    "description": "Get the Log Ingestion Settings for a firewall. Live read from the partner. Returns 200 OK with the current settings, or 404 when log ingestion has not been configured."
-  },
-  {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/write",
-    "description": "Create or update the Log Ingestion Settings for a firewall. SYNC - forwards to the partner and returns 200 OK (or 201 Created on first create) with the persisted settings. commonDestination.monitorConfigurationsV2 (dcrId, logIngestionEndpoint, dcrImmutableId, streamName) drives where the firewall logs are ingested."
-  },
-  {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/read",
     "description": "Get a FirewallResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/saveLogProfile/action",
     "description": "Log Profile for Firewall"
-  },
-  {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/statuses/read",
-    "description": "Get a FirewallStatusResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/write",

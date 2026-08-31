@@ -81,6 +81,34 @@
     "_estimatedActions": 2
   },
   {
+    "name": "Advisor Discoverable Workload Reader",
+    "id": "e4ea5ade-238a-4e4a-9e4d-683d809f7072",
+    "description": "View discoverable workloads and their resources.",
+    "actions": [
+      "Microsoft.Advisor/discoverableWorkloads/read",
+      "Microsoft.Advisor/workloadResourceMappings/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
+  },
+  {
+    "name": "Advisor Discoverable Workloads Contributor",
+    "id": "98911e7b-8e37-41af-86f4-9258b2a05035",
+    "description": "Convert discoverable workload into service group.",
+    "actions": [
+      "Microsoft.Advisor/discoverableWorkloads/read",
+      "Microsoft.Advisor/workloadResourceMappings/read",
+      "Microsoft.Advisor/discoverableWorkloads/convert/action",
+      "Microsoft.Advisor/discoverableWorkloads/conversionStatus/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 4
+  },
+  {
     "name": "Advisor Recommendations Contributor",
     "id": "f680209a-a2a2-4e0d-aa81-5d2a65c13604",
     "description": "View assessment recommendations, accepted review recommendations, and manage the recommendations lifecycle (mark recommendations as completed, postponed or dismissed, in progress, or not started).",
@@ -8370,6 +8398,27 @@
     "_estimatedActions": 0
   },
   {
+    "name": "Cloud Device Platform Sandbox Partner Data Contributor",
+    "id": "1a22653f-3441-4c27-8f4a-ba9f93b30e5d",
+    "description": "Read and manage resources for Cloud Device Platform sandbox partners.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/sandboxPartners/sandboxes/read",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/sandboxes/write",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/policies/read",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/policies/write",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/pools/read",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/pools/write",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/images/read",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/images/write",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/read",
+      "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/write"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "CloudTest Contributor Role",
     "id": "4e9d0bd4-5aab-4f91-92df-9def33fe287c",
     "description": "Read, write, delete and perform actions on CloudTest Accounts, CloudTest Pools, 1ES Hosted Pools, 1ES Build Caches and 1ES Images.",
@@ -9651,6 +9700,18 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 42
+  },
+  {
+    "name": "Container Apps Artifact Data Pull",
+    "id": "2aea396c-91f9-444f-a367-6bd94ab9a5cf",
+    "description": "Grants content pull permission for Container Apps Artifacts, allowing callers to pull the contents of Artifact versions.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.App/artifacts/versions/pull/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
   },
   {
     "name": "Container Apps ConnectedEnvironments Contributor",
@@ -12072,14 +12133,16 @@
   {
     "name": "Device Update Administrator",
     "id": "02ca0879-e8e4-47a5-a61e-5c618b76e64a",
-    "description": "Gives you full access to management and content operations",
+    "description": "Gives you full access to Device Update content and device management operations, with read access to Device Update resources",
     "actions": [
       "Microsoft.Authorization/*/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Support/*",
       "Microsoft.Insights/alertRules/*",
       "Microsoft.DeviceUpdate/accounts/read",
-      "Microsoft.DeviceUpdate/accounts/instances/read"
+      "Microsoft.DeviceUpdate/accounts/instances/read",
+      "Microsoft.DeviceUpdate/updateInstances/read",
+      "Microsoft.DeviceUpdate/linkedAccounts/read"
     ],
     "notActions": [],
     "dataActions": [
@@ -12091,7 +12154,7 @@
       "Microsoft.DeviceUpdate/accounts/instances/management/delete"
     ],
     "notDataActions": [],
-    "_estimatedActions": 73
+    "_estimatedActions": 75
   },
   {
     "name": "Device Update Content Administrator",
@@ -12136,7 +12199,7 @@
   {
     "name": "Device Update Contributor",
     "id": "f82fbe13-0f98-4809-af81-b82c343db82f",
-    "description": "Gives you full access to manage Device Update accounts, instances, and private endpoint connections",
+    "description": "Gives you full access to manage Device Update accounts, instances, linked accounts, linking operations, and private endpoint connections",
     "actions": [
       "Microsoft.Authorization/*/read",
       "Microsoft.Resources/deployments/*",
@@ -12150,12 +12213,19 @@
       "Microsoft.DeviceUpdate/accounts/instances/delete",
       "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/read",
       "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/write",
-      "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/delete"
+      "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/delete",
+      "Microsoft.DeviceUpdate/updateInstances/read",
+      "Microsoft.DeviceUpdate/updateInstances/write",
+      "Microsoft.DeviceUpdate/updateInstances/delete",
+      "Microsoft.DeviceUpdate/updateInstances/linkPreflight/action",
+      "Microsoft.DeviceUpdate/updateInstances/linkInitiate/action",
+      "Microsoft.DeviceUpdate/updateInstances/linkNotify/action",
+      "Microsoft.DeviceUpdate/updateInstances/linkUpdate/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 80
+    "_estimatedActions": 87
   },
   {
     "name": "Device Update Deployments Administrator",
@@ -13424,6 +13494,36 @@
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/readById/action",
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/search/action",
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/smart/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "File Share Data Privileged Contributor",
+    "id": "1eedde9e-98e4-4247-8236-e8aa2ffff3b8",
+    "description": "Allows for read, write, and delete access to all files and directories in an Azure file share, overriding the ownership and permissions configured on those files and directories.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.FileShares/fileShares/files/read",
+      "Microsoft.FileShares/fileShares/files/write",
+      "Microsoft.FileShares/fileShares/files/delete",
+      "Microsoft.FileShares/fileShares/files/modifypermissions/action",
+      "Microsoft.FileShares/fileShares/readFileBackupSemantics/action",
+      "Microsoft.FileShares/fileShares/writeFileBackupSemantics/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "File Share Data Privileged Reader",
+    "id": "1cfd6744-7b03-40d9-87bd-9f36e42e1df2",
+    "description": "Allows for read access to all files and directories in an Azure file share, overriding the ownership and permissions configured on those files and directories.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.FileShares/fileShares/files/read",
+      "Microsoft.FileShares/fileShares/readFileBackupSemantics/action"
     ],
     "notDataActions": [],
     "_estimatedActions": 0
@@ -20890,16 +20990,19 @@
     "description": "Has access to view and search through all video's insights and transcription in the Video Indexer portal. No access to model customization, embedding of widget, downloading videos, or sharing the account.",
     "actions": [
       "Microsoft.VideoIndexer/*/read",
-      "Microsoft.VideoIndexer/accounts/*/action"
+      "Microsoft.VideoIndexer/accounts/generateRestrictedViewerAccessToken/action",
+      "Microsoft.VideoIndexer/accounts/generateExtensionRestrictedViewerAccessToken/action"
     ],
     "notActions": [
       "Microsoft.VideoIndexer/*/write",
       "Microsoft.VideoIndexer/*/delete",
-      "Microsoft.VideoIndexer/accounts/generateAccessToken/action"
+      "Microsoft.VideoIndexer/accounts/generateAccessToken/action",
+      "Microsoft.VideoIndexer/accounts/generateExtensionAccessToken/action",
+      "Microsoft.VideoIndexer/accounts/PrivateEndpointConnectionsApproval/action"
     ],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 20
+    "_estimatedActions": 12
   },
   {
     "name": "Virtual Enclave Owner Role",
