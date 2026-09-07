@@ -4532,6 +4532,18 @@
     "description": "Creates a replica with the specified parameters."
   },
   {
+    "action": "Microsoft.AppConfiguration/configurationStores/schemas/delete",
+    "description": "Deletes an existing schema from the configuration store."
+  },
+  {
+    "action": "Microsoft.AppConfiguration/configurationStores/schemas/read",
+    "description": "Reads a schema from the configuration store."
+  },
+  {
+    "action": "Microsoft.AppConfiguration/configurationStores/schemas/write",
+    "description": "Creates or updates a schema in the configuration store."
+  },
+  {
     "action": "Microsoft.AppConfiguration/configurationStores/snapshots/archive/action",
     "description": "Modifies archival state for an existing snapshot in the configuration store."
   },
@@ -10784,10 +10796,6 @@
     "description": "Lists the billed or unbilled transactions by customer id for given start date and end date. Transactions include purchases, refunds and Azure usage charges. Unbilled transactions are listed under pending invoice Id and do not include tax. Tax is added to the amount once an invoice is generated."
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/defaultCloudSubscription/read",
-    "description": "Gets the default cloud subscription policy at billing profile scope by reading the default invoice section policy. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingPeriods/read",
     "description": "Lists the valid Billing Periods  by billing profile ID and department name. The operation is supported only for Departments under billing profiles with agreement type Enterprise Agreement."
   },
@@ -11121,7 +11129,7 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/read",
-    "description": "Gets a subscription by its ID. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement,  Microsoft Partner Agreement, and Enterprise Agreement."
+    "description": "Lists the subscriptions for a billing account."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/split/write",
@@ -21238,6 +21246,14 @@
   {
     "action": "Microsoft.Compute/snapshots/read",
     "description": "Get the properties of a Snapshot"
+  },
+  {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
+    "description": "Update the immutability policy of a Snapshot"
+  },
+  {
+    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
+    "description": "Lock the immutability policy of a Snapshot"
   },
   {
     "action": "Microsoft.Compute/snapshots/upload/action",
@@ -35592,6 +35608,22 @@
     "description": "Create a Cassandra keyspace."
   },
   {
+    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments/delete",
+    "description": "Delete a Cassandra Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments/write",
+    "description": "Create or update a Cassandra Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions/delete",
+    "description": "Delete a Cassandra Role Definition"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions/write",
+    "description": "Create or update a Cassandra Role Definition"
+  },
+  {
     "action": "Microsoft.DocumentDB/databaseAccounts/changeResourceGroup/action",
     "description": "Change resource group of a database account"
   },
@@ -35728,6 +35760,22 @@
     "description": "Create a Gremlin database."
   },
   {
+    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments/delete",
+    "description": "Delete a Gremlin Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments/write",
+    "description": "Create or update a Gremlin Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleDefinitions/delete",
+    "description": "Delete a Gremlin Role Definition"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleDefinitions/write",
+    "description": "Create or update a Gremlin Role Definition"
+  },
+  {
     "action": "Microsoft.DocumentDB/databaseAccounts/joinPerimeter/action",
     "description": "Joins a database account to a Network Security Perimeter"
   },
@@ -35738,6 +35786,22 @@
   {
     "action": "Microsoft.DocumentDB/databaseAccounts/listKeys/action",
     "description": "List keys of a database account"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleAssignments/delete",
+    "description": "Delete a Mongo MI Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleAssignments/write",
+    "description": "Create or update a Mongo MI Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleDefinitions/delete",
+    "description": "Delete a Mongo MI Role Definition"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleDefinitions/write",
+    "description": "Create or update a Mongo MI Role Definition"
   },
   {
     "action": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/delete",
@@ -36106,6 +36170,22 @@
   {
     "action": "Microsoft.DocumentDB/databaseAccounts/sqlRoleDefinitions/write",
     "description": "Create or update a SQL Role Definition"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments/delete",
+    "description": "Delete a Table Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments/write",
+    "description": "Create or update a Table Role Assignment"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleDefinitions/delete",
+    "description": "Delete a Table Role Definition"
+  },
+  {
+    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleDefinitions/write",
+    "description": "Create or update a Table Role Definition"
   },
   {
     "action": "Microsoft.DocumentDB/databaseAccounts/tables/delete",
@@ -41337,63 +41417,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "Gets the endpoint access credentials to the resource."
+    "description": "List the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "Gets the ingress gateway endpoint credentials "
+    "description": "List the ingress gateway access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "Fetches the managed proxy details "
+    "description": "List the managed proxy details to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Gets the endpoint to the resource."
+    "description": "Get or list of endpoints to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the service details to the target resource."
+    "description": "Deletes the serviceConfigurations access to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Gets the details about the service to the resource."
+    "description": "Get or list of serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Update the service details in the service configurations of the target resource."
+    "description": "Create or update the serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Update the endpoint to the target resource."
+    "description": "Create or update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Delete a PublicCloudConnector"
+    "description": "Deletes the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Get a PublicCloudConnector"
+    "description": "Gets the public cloud connectors."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "A long-running resource action."
+    "description": "Tests the permissions of solution configurations under public cloud connector."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update a PublicCloudConnector"
+    "description": "Update the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Delete a SolutionConfiguration"
+    "description": "Deletes the solution configuration with provided solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Get a InventoryResource"
+    "description": "Retrieve a list of inventory by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Get a SolutionConfiguration"
+    "description": "Retrieve the solution configuration identified by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -41401,11 +41481,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Update a SolutionConfiguration"
+    "description": "Updates the solution configuration for solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Get a SolutionTypeResource"
+    "description": "Retrieve the solution type by provided solution type."
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -41988,12 +42068,24 @@
     "description": "Deletes an inference service."
   },
   {
+    "action": "Microsoft.InferenceService/inferenceAccounts/invoke/embedding/action",
+    "description": "Invokes the embedding on an inference account."
+  },
+  {
     "action": "Microsoft.InferenceService/inferenceAccounts/invoke/semanticReranker/action",
     "description": "Invokes the semantic reranker on an inference account."
   },
   {
     "action": "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
     "description": "Lists the API keys for an inference account."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/read",
+    "description": "Invoke read-only Cosmos DB MCP tools on an inference account."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/write",
+    "description": "Invoke write-capable Cosmos DB MCP tools on an inference account."
   },
   {
     "action": "Microsoft.InferenceService/inferenceAccounts/read",
@@ -50824,6 +50916,14 @@
     "description": "Creates a containerWorkload Assessment or updates an existing containerWorkload Assessment"
   },
   {
+    "action": "Microsoft.Migrate/assessmentProjects/costAssumptions/read",
+    "description": "Get the properties of a CostAssumptions"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/costAssumptions/write",
+    "description": "Create or update a CostAssumptions"
+  },
+  {
     "action": "Microsoft.Migrate/assessmentProjects/delete",
     "description": "Deletes the assessment project"
   },
@@ -51172,6 +51272,70 @@
     "description": "Patch assessed entities"
   },
   {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedApplicationSecurityGroups/read",
+    "description": "Gets the properties of the assessedApplicationSecurityGroups "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedApplicationSecurityGroups/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallPolicyRules/read",
+    "description": "Gets the properties of the assessedFirewallPolicyRules "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallPolicyRules/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollectionGroups/read",
+    "description": "Gets the properties of the assessedFirewallRuleCollectionGroups "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollectionGroups/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollections/read",
+    "description": "Gets the properties of the assessedFirewallRuleCollections "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollections/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/read",
+    "description": "Gets the properties of the assessedFirewallPolicies "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewalls/read",
+    "description": "Gets the properties of the assessedFirewalls "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewalls/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedInternetEgresses/read",
+    "description": "Gets the properties of the assessedInternetEgresses "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedInternetEgresses/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedIpGroups/read",
+    "description": "Gets the properties of the assessedIpGroups "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedIpGroups/write",
+    "description": "Patch assessed entities"
+  },
+  {
     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedLoadBalancers/assessedInboundNatRules/read",
     "description": "Gets the properties of the assessedInboundNatRules "
   },
@@ -51196,6 +51360,22 @@
     "description": "Patch assessed entities"
   },
   {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/assessedNetworkGroups/read",
+    "description": "Gets the properties of the assessedNetworkGroups "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/assessedNetworkGroups/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/read",
+    "description": "Gets the properties of the assessedNetworkManagers "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/write",
+    "description": "Patch assessed entities"
+  },
+  {
     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkSecurityGroups/assessedNsgRules/read",
     "description": "Gets the properties of the assessedNsgRules "
   },
@@ -51212,11 +51392,51 @@
     "description": "Patch assessed entities"
   },
   {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkSecurityPerimeters/read",
+    "description": "Gets the properties of the assessedNetworkSecurityPerimeters "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkSecurityPerimeters/write",
+    "description": "Patch assessed entities"
+  },
+  {
     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkTopologies/read",
     "description": "Gets the properties of the assessedNetworkTopologies "
   },
   {
     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkTopologies/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkWatchers/read",
+    "description": "Gets the properties of the assessedNetworkWatchers "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkWatchers/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRuleCollections/read",
+    "description": "Gets the properties of the assessedSecurityAdminConfigurationRuleCollections "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRuleCollections/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRules/read",
+    "description": "Gets the properties of the assessedSecurityAdminConfigurationRules "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRules/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/read",
+    "description": "Gets the properties of the assessedSecurityAdminConfigurations "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/write",
     "description": "Patch assessed entities"
   },
   {
@@ -51308,6 +51528,42 @@
     "description": "Creates a oracle Collector or updates an existing oracle Collector"
   },
   {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessmentOptions/read",
+    "description": "Gets the properties of the peripheralResource AssessmentOptions"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/assessedPeripheralResources/read",
+    "description": "Gets the properties of the assessedPeripheralResources "
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/assessedPeripheralResources/write",
+    "description": "Patch assessed entities"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/delete",
+    "description": "Deletes the peripheralResource Assessment which are available in the given location"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/read",
+    "description": "Gets the properties of the peripheralResource Assessment"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/write",
+    "description": "Creates a peripheralResource Assessment or updates an existing peripheralResource Assessment"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceSettings/delete",
+    "description": "Deletes the peripheralResource Settings which are available in the given location"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceSettings/read",
+    "description": "Gets the properties of the peripheralResource Settings"
+  },
+  {
+    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceSettings/write",
+    "description": "Creates a peripheralResource Settings or updates an existing peripheralResource Settings"
+  },
+  {
     "action": "Microsoft.Migrate/assessmentProjects/pgsqlAssessmentOptions/read",
     "description": "Gets the properties of the pgsql AssessmentOptions"
   },
@@ -51396,108 +51652,12 @@
     "description": "Resolves ARG Scope, for App Awareness"
   },
   {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessmentOptions/read",
-    "description": "Gets the properties of the sap AssessmentOptions"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/assessedApplications/read",
-    "description": "Gets the properties of the assessedApplications "
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/assessedApplications/write",
-    "description": "Patch assessed entities"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/delete",
-    "description": "Deletes the sap Assessment which are available in the given location"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/downloadurl/action",
-    "description": "Get Blob SAS URI for the sap AssessmentReport"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/read",
-    "description": "Gets the properties of the sap Assessment"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/recalculateSummaries/action",
-    "description": "Recalculate summaries for an assessments"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/summaries/read",
-    "description": "Gets the properties of the sap AssessmentSummary"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/write",
-    "description": "Creates a sap Assessment or updates an existing sap Assessment"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapcollectors/delete",
-    "description": "Deletes the sap Collector which are available in the given location"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapcollectors/read",
-    "description": "Gets the properties of the sap Collector"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/sapcollectors/write",
-    "description": "Creates a sap Collector or updates an existing sap Collector"
-  },
-  {
     "action": "Microsoft.Migrate/assessmentProjects/servercollectors/read",
     "description": "Gets the properties of Server collector"
   },
   {
     "action": "Microsoft.Migrate/assessmentProjects/servercollectors/write",
     "description": "Creates a new Server collector or updates an existing Server collector"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessmentOptions/read",
-    "description": "Gets the properties of the springBoot AssessmentOptions"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/assessedApplications/read",
-    "description": "Gets the properties of the assessedApplications "
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/assessedApplications/write",
-    "description": "Patch assessed entities"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/delete",
-    "description": "Deletes the springBoot Assessment which are available in the given location"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/downloadurl/action",
-    "description": "Get Blob SAS URI for the springBoot AssessmentReport"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/read",
-    "description": "Gets the properties of the springBoot Assessment"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/recalculateSummaries/action",
-    "description": "Recalculate summaries for an assessments"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/summaries/read",
-    "description": "Gets the properties of the springBoot AssessmentSummary"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/write",
-    "description": "Creates a springBoot Assessment or updates an existing springBoot Assessment"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootcollectors/delete",
-    "description": "Deletes the springBoot Collector which are available in the given location"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootcollectors/read",
-    "description": "Gets the properties of the springBoot Collector"
-  },
-  {
-    "action": "Microsoft.Migrate/assessmentProjects/springBootcollectors/write",
-    "description": "Creates a springBoot Collector or updates an existing springBoot Collector"
   },
   {
     "action": "Microsoft.Migrate/assessmentProjects/sqlAssessmentOptions/read",
@@ -51790,6 +51950,14 @@
   {
     "action": "Microsoft.Migrate/migrateProjects/migrationentitygroups/write",
     "description": "Create Or Edit MigrationEntityGroup"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/plans/read",
+    "description": "Get Plan"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/plans/write",
+    "description": "Create or Update Plan"
   },
   {
     "action": "Microsoft.Migrate/migrateProjects/privateEndpointConnectionProxies/delete",
@@ -52858,6 +53026,10 @@
   {
     "action": "Microsoft.Network/adminNetworkSecurityGroups/write",
     "description": "Creates or Updates Existing Admin Network Security Group"
+  },
+  {
+    "action": "Microsoft.Network/applicationGatewayAvailableConfidentialComputeRegions/read",
+    "description": "Get Application Gateway available Confidential Compute regions"
   },
   {
     "action": "Microsoft.Network/applicationGatewayAvailableRequestHeaders/read",
@@ -56172,6 +56344,18 @@
     "description": "Create or update a Virtual Hub"
   },
   {
+    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/delete",
+    "description": "Delete Virtual Network Appliance Capability"
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/read",
+    "description": "Get Virtual Network Appliance Capability"
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/write",
+    "description": "Create or update Virtual Network Appliance Capability"
+  },
+  {
     "action": "Microsoft.Network/virtualNetworkAppliances/delete",
     "description": "Delete Virtual Network Appliance"
   },
@@ -56334,6 +56518,10 @@
   {
     "action": "Microsoft.Network/virtualNetworks/setAdminNetworkSecurityGroup/action",
     "description": "Sets Admin Network Security Group Reference On Virtual Network"
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworks/setGatewayConfiguration/action",
+    "description": "Sets Gateway VIP And Configuration Blob On Virtual Network"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/contextualServiceEndpointPolicies/delete",
@@ -63577,7 +63765,7 @@
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
-    "description": "Get the list of ResourceGuard proxies for a resource"
+    "description": "Get ResourceGuard proxy operation gets an object representing the Azure resource of type 'ResourceGuard proxy'"
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/unlockDelete/action",
@@ -65906,6 +66094,14 @@
   {
     "action": "Microsoft.Security/policies/write",
     "description": "Updates the security policy"
+  },
+  {
+    "action": "Microsoft.Security/pricingBatch/read",
+    "description": "Gets the pricing batch settings for the scope"
+  },
+  {
+    "action": "Microsoft.Security/pricingBatch/write",
+    "description": "Updates the pricing batch settings for the scope"
   },
   {
     "action": "Microsoft.Security/pricings/delete",
@@ -74697,15 +74893,15 @@
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/delete",
-    "description": "Delete a CustomCaptureConfigurations resource"
+    "description": "Delete the Custom Capture Configuration on a firewall. SYNC - clears any in-progress or terminal capture state. Returns 200 on success or 204 when no configuration exists."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/read",
-    "description": "Get a CustomCaptureConfigurations resource"
+    "description": "Get the current Custom Capture Configuration for a firewall. Always returns 200 OK + body. Caller reads properties.pcapStatus to know whether to keep polling. Body field properties.nextCheckInSeconds advises when to poll next (omitted on terminal states)."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/write",
-    "description": "Create or update a CustomCaptureConfigurations resource (start a packet capture)"
+    "description": "Start a Custom Capture Configuration on a firewall. SYNC - returns 200 OK + body immediately. Body's properties.pcapStatus reflects current state (typically InProgress). Caller polls GET on its own clock using properties.nextCheckInSeconds as the cadence hint."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/delete",
@@ -74724,12 +74920,28 @@
     "description": "support info for firewall."
   },
   {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/delete",
+    "description": "Delete (clear) the Log Ingestion Settings for a firewall. SYNC - soft-clears the DCR destination on the partner (logs have no partner delete API). Returns 200 on success or 204 when nothing is configured."
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/read",
+    "description": "Get the Log Ingestion Settings for a firewall. Live read from the partner. Returns 200 OK with the current settings, or 404 when log ingestion has not been configured."
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/write",
+    "description": "Create or update the Log Ingestion Settings for a firewall. SYNC - forwards to the partner and returns 200 OK (or 201 Created on first create) with the persisted settings. commonDestination.monitorConfigurationsV2 (dcrId, logIngestionEndpoint, dcrImmutableId, streamName) drives where the firewall logs are ingested."
+  },
+  {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/read",
     "description": "Get a FirewallResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/saveLogProfile/action",
     "description": "Log Profile for Firewall"
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/statuses/read",
+    "description": "Get a FirewallStatusResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/write",

@@ -2496,6 +2496,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Compute/snapshots/upload/action",
                     "type": "dataAction"
                   }
@@ -2503,7 +2511,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 7,
+            "totalOps": 9,
             "priority": 6
           },
           {
@@ -4051,7 +4059,7 @@
       }
     ],
     "totalTypes": 54,
-    "totalOps": 599
+    "totalOps": 601
   },
   {
     "name": "Networking",
@@ -6976,6 +6984,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Network/virtualNetworks/setGatewayConfiguration/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworks/subnets/getNetworkPolicies/action",
                     "type": "action"
                   },
@@ -7011,7 +7023,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 60,
+            "totalOps": 61,
             "priority": 1
           },
           {
@@ -8131,6 +8143,25 @@
               }
             ],
             "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "applicationGatewayAvailableConfidentialComputeRegions",
+            "name": "application Gateway Available Confidential Compute Regions",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/applicationGatewayAvailableConfidentialComputeRegions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
             "priority": 999
           },
           {
@@ -12845,6 +12876,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworkAppliances/read",
                     "type": "action"
                   }
@@ -12854,6 +12889,10 @@
               {
                 "label": "Write",
                 "ops": [
+                  {
+                    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/write",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.Network/virtualNetworkAppliances/write",
                     "type": "action"
@@ -12865,6 +12904,10 @@
                 "label": "Delete",
                 "ops": [
                   {
+                    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworkAppliances/delete",
                     "type": "action"
                   }
@@ -12872,7 +12915,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 3,
+            "totalOps": 6,
             "priority": 999
           },
           {
@@ -14398,8 +14441,8 @@
         ]
       }
     ],
-    "totalTypes": 150,
-    "totalOps": 1532
+    "totalTypes": 151,
+    "totalOps": 1537
   },
   {
     "name": "Storage",
@@ -18724,6 +18767,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/databaseAccounts/copyJobs/write",
                     "type": "action"
                   },
@@ -18748,6 +18799,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleDefinitions/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings/write",
                     "type": "action"
                   },
@@ -18769,6 +18828,14 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/databaseAccounts/mongodbUserDefinitions/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleAssignments/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleDefinitions/write",
                     "type": "action"
                   },
                   {
@@ -18832,6 +18899,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleDefinitions/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings/write",
                     "type": "action"
                   },
@@ -18890,6 +18965,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/databaseAccounts/delete",
                     "type": "action"
                   },
@@ -18899,6 +18982,14 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleDefinitions/delete",
                     "type": "action"
                   },
                   {
@@ -18915,6 +19006,14 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/databaseAccounts/mongodbUserDefinitions/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleAssignments/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/mongoMIRoleDefinitions/delete",
                     "type": "action"
                   },
                   {
@@ -18963,6 +19062,14 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/databaseAccounts/sqlRoleDefinitions/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/databaseAccounts/tableRoleDefinitions/delete",
                     "type": "action"
                   },
                   {
@@ -19219,7 +19326,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 196,
+            "totalOps": 212,
             "priority": 3
           },
           {
@@ -22233,7 +22340,7 @@
       }
     ],
     "totalTypes": 32,
-    "totalOps": 1130
+    "totalOps": 1146
   },
   {
     "name": "Web + Serverless",
@@ -41671,6 +41778,35 @@
             "priority": 999
           },
           {
+            "key": "pricingBatch",
+            "name": "pricing Batch",
+            "provider": "Microsoft.Security",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Security/pricingBatch/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Security/pricingBatch/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
+            "priority": 999
+          },
+          {
             "key": "pricings",
             "name": "pricings",
             "provider": "Microsoft.Security",
@@ -44026,8 +44162,8 @@
         ]
       }
     ],
-    "totalTypes": 103,
-    "totalOps": 467
+    "totalTypes": 104,
+    "totalOps": 469
   },
   {
     "name": "Identity",
@@ -61617,6 +61753,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AppConfiguration/configurationStores/schemas/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.AppConfiguration/configurationStores/snapshots/read",
                     "type": "dataAction"
                   }
@@ -61653,6 +61793,10 @@
                   {
                     "action": "Microsoft.AppConfiguration/configurationStores/replicas/write",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AppConfiguration/configurationStores/schemas/write",
+                    "type": "dataAction"
                   },
                   {
                     "action": "Microsoft.AppConfiguration/configurationStores/snapshots/write",
@@ -61699,6 +61843,10 @@
                   {
                     "action": "Microsoft.AppConfiguration/configurationStores/replicas/delete",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AppConfiguration/configurationStores/schemas/delete",
+                    "type": "dataAction"
                   }
                 ],
                 "hasDataActions": true
@@ -61746,7 +61894,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 37,
+            "totalOps": 40,
             "priority": 999
           }
         ]
@@ -63165,10 +63313,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/defaultCloudSubscription/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingPeriods/read",
                     "type": "action"
                   },
@@ -64024,7 +64168,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 235,
+            "totalOps": 234,
             "priority": 999
           },
           {
@@ -66806,7 +66950,7 @@
       }
     ],
     "totalTypes": 128,
-    "totalOps": 728
+    "totalOps": 730
   },
   {
     "name": "Integration",
@@ -77728,6 +77872,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/costAssumptions/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/fileshareAssessmentOptions/read",
                     "type": "action"
                   },
@@ -77884,6 +78032,38 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedApplicationSecurityGroups/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallPolicyRules/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollectionGroups/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewalls/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedInternetEgresses/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedIpGroups/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedLoadBalancers/assessedInboundNatRules/read",
                     "type": "action"
                   },
@@ -77896,6 +78076,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/assessedNetworkGroups/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkSecurityGroups/assessedNsgRules/read",
                     "type": "action"
                   },
@@ -77904,7 +78092,27 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkSecurityPerimeters/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkTopologies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkWatchers/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRuleCollections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRules/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/read",
                     "type": "action"
                   },
                   {
@@ -77945,6 +78153,22 @@
                   },
                   {
                     "action": "Microsoft.Migrate/assessmentProjects/oraclecollectors/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessmentOptions/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/assessedPeripheralResources/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceSettings/read",
                     "type": "action"
                   },
                   {
@@ -77992,47 +78216,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessmentOptions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/assessedApplications/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/summaries/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapcollectors/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Migrate/assessmentProjects/servercollectors/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessmentOptions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/assessedApplications/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/summaries/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootcollectors/read",
                     "type": "action"
                   },
                   {
@@ -78194,6 +78378,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/costAssumptions/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/fileshareAssessments/assessedFileShares/write",
                     "type": "action"
                   },
@@ -78274,6 +78462,38 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedApplicationSecurityGroups/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallPolicyRules/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollectionGroups/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/assessedFirewallRuleCollections/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewallPolicies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedFirewalls/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedInternetEgresses/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedIpGroups/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedLoadBalancers/assessedInboundNatRules/write",
                     "type": "action"
                   },
@@ -78286,6 +78506,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/assessedNetworkGroups/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkManagers/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkSecurityGroups/assessedNsgRules/write",
                     "type": "action"
                   },
@@ -78294,7 +78522,27 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkSecurityPerimeters/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkTopologies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedNetworkWatchers/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRuleCollections/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/assessedSecurityAdminConfigurationRules/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/networkAssessments/assessedSecurityAdminConfigurations/write",
                     "type": "action"
                   },
                   {
@@ -78326,6 +78574,18 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/assessedPeripheralResources/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceSettings/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/pgsqlAssessments/assessedInstances/write",
                     "type": "action"
                   },
@@ -78342,31 +78602,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/assessedApplications/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapcollectors/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Migrate/assessmentProjects/servercollectors/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/assessedApplications/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootcollectors/write",
                     "type": "action"
                   },
                   {
@@ -78528,6 +78764,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceAssessments/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/assessmentProjects/peripheralResourceSettings/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/assessmentProjects/pgsqlAssessments/delete",
                     "type": "action"
                   },
@@ -78537,22 +78781,6 @@
                   },
                   {
                     "action": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapcollectors/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootcollectors/delete",
                     "type": "action"
                   },
                   {
@@ -78710,22 +78938,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/downloadurl/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/sapAssessments/recalculateSummaries/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/downloadurl/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Migrate/assessmentProjects/springBootAssessments/recalculateSummaries/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Migrate/assessmentProjects/sqlAssessments/downloadurl/action",
                     "type": "action"
                   },
@@ -78757,7 +78969,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 288,
+            "totalOps": 305,
             "priority": 999
           },
           {
@@ -78827,6 +79039,10 @@
                   },
                   {
                     "action": "Microsoft.Migrate/migrateProjects/migrationentitygroups/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/migrateProjects/plans/read",
                     "type": "action"
                   },
                   {
@@ -78901,6 +79117,10 @@
                   },
                   {
                     "action": "Microsoft.Migrate/migrateProjects/migrationentitygroups/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Migrate/migrateProjects/plans/write",
                     "type": "action"
                   },
                   {
@@ -79127,7 +79347,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 76,
+            "totalOps": 78,
             "priority": 999
           },
           {
@@ -80096,7 +80316,7 @@
       }
     ],
     "totalTypes": 11,
-    "totalOps": 549
+    "totalOps": 568
   },
   {
     "name": "Other",
@@ -104823,21 +105043,29 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.InferenceService/inferenceAccounts/read",
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               },
               {
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/write",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.InferenceService/inferenceAccounts/write",
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               },
               {
                 "label": "Delete",
@@ -104852,6 +105080,10 @@
               {
                 "label": "Action",
                 "ops": [
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/invoke/embedding/action",
+                    "type": "dataAction"
+                  },
                   {
                     "action": "Microsoft.InferenceService/inferenceAccounts/invoke/semanticReranker/action",
                     "type": "dataAction"
@@ -104868,7 +105100,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 6,
+            "totalOps": 9,
             "priority": 999
           }
         ]
@@ -111270,7 +111502,15 @@
                     "type": "action"
                   },
                   {
+                    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "PaloAltoNetworks.Cloudngfw/firewalls/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "PaloAltoNetworks.Cloudngfw/firewalls/statuses/read",
                     "type": "action"
                   }
                 ],
@@ -111281,6 +111521,10 @@
                 "ops": [
                   {
                     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/write",
                     "type": "action"
                   },
                   {
@@ -111299,6 +111543,10 @@
                   },
                   {
                     "action": "PaloAltoNetworks.Cloudngfw/firewalls/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/delete",
                     "type": "action"
                   }
                 ],
@@ -111327,7 +111575,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 10,
+            "totalOps": 14,
             "priority": 999
           },
           {
@@ -119038,6 +119286,6 @@
       }
     ],
     "totalTypes": 736,
-    "totalOps": 4656
+    "totalOps": 4663
   }
 ]

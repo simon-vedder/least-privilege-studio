@@ -250,6 +250,42 @@
     "_estimatedActions": 0
   },
   {
+    "name": "AI Gateway Models User",
+    "id": "a6b68e3d-a1f0-4c60-8678-237c050cf4ea",
+    "description": "Invoke models in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ApiManagement/service/workspaces/models/*"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "AI Gateway Tools User",
+    "id": "dce03f8d-857f-4e40-a90d-67770fa6ecd2",
+    "description": "Invoke MCP servers in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ApiManagement/service/workspaces/toolServers/*"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "AI Gateway User",
+    "id": "caad7a21-134e-43f4-a550-c5ffc17e051c",
+    "description": "Invoke all assets in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ApiManagement/service/workspaces/*"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "AI Model Scanner Operator",
     "id": "8b9beb50-e28c-4879-8472-24c9d328085f",
     "description": "Grants Microsoft Defender for AI access to AI services and resources.",
@@ -3241,14 +3277,12 @@
       "Microsoft.Resources/subscriptions/read",
       "Microsoft.Management/managementGroups/read",
       "Microsoft.Resources/deployments/*",
-      "Microsoft.Support/*",
-      "Microsoft.Authorization/roleAssignments/write",
-      "Microsoft.Authorization/roleAssignments/delete"
+      "Microsoft.Support/*"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 79
+    "_estimatedActions": 77
   },
   {
     "name": "Azure Container Storage Operator",
@@ -3264,12 +3298,6 @@
       "Microsoft.Network/virtualNetworks/join/action",
       "Microsoft.Network/virtualNetworks/subnets/read",
       "Microsoft.Network/virtualNetworks/subnets/write",
-      "Microsoft.Compute/virtualMachines/read",
-      "Microsoft.Compute/virtualMachines/write",
-      "Microsoft.Compute/virtualMachineScaleSets/read",
-      "Microsoft.Compute/virtualMachineScaleSets/write",
-      "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/write",
-      "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/read",
       "Microsoft.Resources/subscriptions/providers/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Network/virtualNetworks/read"
@@ -3277,7 +3305,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 47
+    "_estimatedActions": 41
   },
   {
     "name": "Azure Container Storage Owner",
@@ -3298,14 +3326,12 @@
       "Microsoft.Resources/subscriptions/read",
       "Microsoft.Management/managementGroups/read",
       "Microsoft.Resources/deployments/*",
-      "Microsoft.Support/*",
-      "Microsoft.Authorization/roleAssignments/write",
-      "Microsoft.Authorization/roleAssignments/delete"
+      "Microsoft.Support/*"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 200
+    "_estimatedActions": 198
   },
   {
     "name": "Azure ContainerApps Session Executor",
@@ -12397,6 +12423,16 @@
     "_estimatedActions": 0
   },
   {
+    "name": "Discovery Log Analytics Cluster Linker - Preview",
+    "id": "506c2fa4-2713-45d3-a893-4b1360a66e88",
+    "description": "Allows the Discovery control plane to link Log Analytics workspaces to a customer's dedicated cluster for CMK (customer-managed key) encryption. Grants only cluster read and write permissions — no storage key access, no VM extensions, no broad read.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "Disk Backup Reader",
     "id": "3e5e47e6-65f7-47ef-90b5-e5dd4d455f24",
     "description": "Provides permission to backup vault to perform disk backup.",
@@ -16400,6 +16436,18 @@
     "_estimatedActions": 12
   },
   {
+    "name": "MEAT Criteria Data User",
+    "id": "24e6456b-7741-4fc8-b632-f44af1180ec3",
+    "description": "Process health data in MEAT Criteria service API",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.HealthBot/healthBots/AIActions/MEATCriteria/Process/Action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "Microsoft Approvals Request User",
     "id": "0343f3e8-01ac-4bb8-8f93-78b1d31ba64b",
     "description": "Requests approval workflow execution for resource changes.",
@@ -16509,9 +16557,9 @@
     "_estimatedActions": 25
   },
   {
-    "name": "Microsoft Discovery Bookshelf Index Data Reader - Preview",
+    "name": "Microsoft Discovery Bookshelf Index Data Reader",
     "id": "8ec773c5-7ce6-4b78-91d1-182f8faa536d",
-    "description": "Grants query access to search and retrieve data from Microsoft Discovery Bookshelf knowledge bases, and read-only access to list Bookshelves and their knowledge bases. This is the minimum role required to use the retrieve action when linking a knowledge base to an agent. This role is in preview and subject to change.",
+    "description": "Grants query access to search and retrieve data from Microsoft Discovery Bookshelf knowledge bases, and read-only access to list Bookshelves and their knowledge bases. This is the minimum role required to use the retrieve action when linking a knowledge base to an agent.",
     "actions": [
       "Microsoft.Discovery/bookshelves/read"
     ],
@@ -16537,9 +16585,9 @@
     "_estimatedActions": 1
   },
   {
-    "name": "Microsoft Discovery Platform Administrator (Preview)",
+    "name": "Microsoft Discovery Platform Administrator",
     "id": "7a2b6e6c-472e-4b39-8878-a26eb63d75c6",
-    "description": "Grants full access to manage Microsoft.Discovery resources. This role is in preview and subject to change.",
+    "description": "Grants full access to manage Microsoft.Discovery resources.",
     "actions": [
       "Microsoft.Discovery/locations/operationStatuses/read",
       "Microsoft.Discovery/checkNameAvailability/action",
@@ -16563,9 +16611,9 @@
     "_estimatedActions": 138
   },
   {
-    "name": "Microsoft Discovery Platform Contributor (Preview)",
+    "name": "Microsoft Discovery Platform Contributor",
     "id": "01288891-85ee-45a7-b367-9db3b752fc65",
-    "description": "Grants permissions to view and operate on most Discovery platform resources, including workspaces, supercomputers, storages, agents, bookshelves, data containers, models, tools, workflows, and investigations, as well as perform data plane actions, but does not allow creating, updating, or deleting core resources such as workspaces, supercomputers, storages, bookshelves, node pools, or projects. This role is in preview and subject to change.",
+    "description": "Grants permissions to view and operate on most Discovery platform resources, including workspaces, supercomputers, storages, agents, bookshelves, data containers, models, tools, workflows, and investigations, as well as perform data plane actions, but does not allow creating, updating, or deleting core resources such as workspaces, supercomputers, storages, bookshelves, node pools, or projects.",
     "actions": [
       "Microsoft.Discovery/locations/operationStatuses/read",
       "Microsoft.Discovery/operations/read",
@@ -16613,9 +16661,9 @@
     "_estimatedActions": 350
   },
   {
-    "name": "Microsoft Discovery Platform Reader (Preview)",
+    "name": "Microsoft Discovery Platform Reader",
     "id": "3bb7c424-af4e-436b-bfcc-8779c8934c31",
-    "description": "Grants readonly permissions to view Microsoft.Discovery resources. This role in preview and subject to change.",
+    "description": "Grants readonly permissions to view Microsoft.Discovery resources.",
     "actions": [
       "Microsoft.Discovery/*/read",
       "Microsoft.Resources/deployments/read",
@@ -18135,6 +18183,10 @@
       "Microsoft.BillingBenefits/conditionalCredits/delete",
       "Microsoft.BillingBenefits/conditionalCredits/cancel/action",
       "Microsoft.BillingBenefits/conditionalCredits/contributors/read",
+      "Microsoft.BillingBenefits/spendPlans/read",
+      "Microsoft.BillingBenefits/spendPlans/write",
+      "Microsoft.BillingBenefits/spendPlans/cancel/action",
+      "Microsoft.BillingBenefits/spendPlans/terms/read",
       "Microsoft.EnterpriseSupport/enterpriseSupports/read",
       "Microsoft.EnterpriseSupport/enterpriseSupports/write",
       "Microsoft.EnterpriseSupport/enterpriseSupports/delete",
@@ -18190,7 +18242,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 87
+    "_estimatedActions": 91
   },
   {
     "name": "Procurement Contributor with Resource Group Permissions",
@@ -18228,6 +18280,10 @@
       "Microsoft.BillingBenefits/conditionalCredits/delete",
       "Microsoft.BillingBenefits/conditionalCredits/cancel/action",
       "Microsoft.BillingBenefits/conditionalCredits/contributors/read",
+      "Microsoft.BillingBenefits/spendPlans/read",
+      "Microsoft.BillingBenefits/spendPlans/write",
+      "Microsoft.BillingBenefits/spendPlans/cancel/action",
+      "Microsoft.BillingBenefits/spendPlans/terms/read",
       "Microsoft.EnterpriseSupport/enterpriseSupports/read",
       "Microsoft.EnterpriseSupport/enterpriseSupports/write",
       "Microsoft.EnterpriseSupport/enterpriseSupports/delete",
@@ -18296,7 +18352,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 95
+    "_estimatedActions": 99
   },
   {
     "name": "Project Babylon Data Curator",
@@ -20065,6 +20121,7 @@
       "Microsoft.App/agents/graph/read",
       "Microsoft.App/agents/memory/read",
       "Microsoft.App/agents/incidentManagement/read",
+      "Microsoft.App/agents/extendedAgents/read",
       "Microsoft.App/agents/threads/write",
       "Microsoft.App/agents/graph/write",
       "Microsoft.App/agents/memory/write",
