@@ -1,5 +1,21 @@
 [
   {
+    "name": "A365 Gateway Policy Operator",
+    "id": "849de3f8-3686-489c-bd02-732984d0c145",
+    "description": "Read Azure API Management services and update asset's access state according to A365 policies.",
+    "actions": [
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/apis/read",
+      "Microsoft.ApiManagement/service/apis/write",
+      "Microsoft.ApiManagement/service/workspaces/toolServers/read",
+      "Microsoft.ApiManagement/service/workspaces/toolServers/write"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 5
+  },
+  {
     "name": "Access Review Operator Service Role",
     "id": "76cc9ee4-d5d3-4a45-a930-26add3d73475",
     "description": "Lets you grant Access Review System app permissions to discover and revoke access as needed by the access review process.",
@@ -1832,55 +1848,6 @@
     "_estimatedActions": 41
   },
   {
-    "name": "Azure AI Manager and Namespace RBAC Inference Operator",
-    "id": "82b2f1a9-9593-4498-a824-c209343a28ec",
-    "description": "Allows read access to all objects in an Azure AI Manager namespace, plus the ability to read Secrets and invoke inference against AI models deployed in that namespace. This role does not allow modifying objects, roles, or role bindings. However, the ability to read Secrets allows the holder to obtain ServiceAccount tokens in the namespace. Applying this role at the AI Manager scope will give access across all namespaces.",
-    "actions": [
-      "Microsoft.Authorization/*/read",
-      "Microsoft.Resources/subscriptions/operationresults/read",
-      "Microsoft.Resources/subscriptions/read",
-      "Microsoft.Resources/subscriptions/resourceGroups/read"
-    ],
-    "notActions": [],
-    "dataActions": [
-      "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
-      "Microsoft.ContainerService/aiManagers/apps/daemonsets/read",
-      "Microsoft.ContainerService/aiManagers/apps/deployments/read",
-      "Microsoft.ContainerService/aiManagers/apps/replicasets/read",
-      "Microsoft.ContainerService/aiManagers/apps/statefulsets/read",
-      "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/read",
-      "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
-      "Microsoft.ContainerService/aiManagers/batch/jobs/read",
-      "Microsoft.ContainerService/aiManagers/configmaps/read",
-      "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/read",
-      "Microsoft.ContainerService/aiManagers/endpoints/read",
-      "Microsoft.ContainerService/aiManagers/events.k8s.io/events/read",
-      "Microsoft.ContainerService/aiManagers/events/read",
-      "Microsoft.ContainerService/aiManagers/extensions/daemonsets/read",
-      "Microsoft.ContainerService/aiManagers/extensions/deployments/read",
-      "Microsoft.ContainerService/aiManagers/extensions/ingresses/read",
-      "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/read",
-      "Microsoft.ContainerService/aiManagers/extensions/replicasets/read",
-      "Microsoft.ContainerService/aiManagers/limitranges/read",
-      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/pods/read",
-      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/nodes/read",
-      "Microsoft.ContainerService/aiManagers/namespaces/read",
-      "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/read",
-      "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/read",
-      "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/read",
-      "Microsoft.ContainerService/aiManagers/pods/read",
-      "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/read",
-      "Microsoft.ContainerService/aiManagers/replicationcontrollers/read",
-      "Microsoft.ContainerService/aiManagers/resourcequotas/read",
-      "Microsoft.ContainerService/aiManagers/serviceaccounts/read",
-      "Microsoft.ContainerService/aiManagers/services/read",
-      "Microsoft.ContainerService/aiManagers/secrets/read",
-      "Microsoft.ContainerService/aiManagers/inference/action"
-    ],
-    "notDataActions": [],
-    "_estimatedActions": 13
-  },
-  {
     "name": "Azure AI Safety Evaluator",
     "id": "11102f94-c441-49e6-a78b-ef80e0188abc",
     "description": "This role can perform all actions under workspace evaluations and simulations.",
@@ -1894,7 +1861,57 @@
     "_estimatedActions": 60
   },
   {
-    "name": "Azure AIManager and namespace RBAC Reader",
+    "name": "Azure AIManager and namespace RBAC Admin",
+    "id": "e2845093-d729-45cd-9f6e-a337c027d655",
+    "description": "Allows read/write access to all objects in an Azure AI Manager namespace, except Secrets, roles, and role bindings. Applying this role at the AI Manager scope will give access across all namespaces.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Resources/subscriptions/operationresults/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ContainerService/aiManagers/*"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 13
+  },
+  {
+    "name": "Azure AIManager Contributor",
+    "id": "413f2675-4911-4010-be3b-c720b43a3c59",
+    "description": "Grants read/write access to Azure resources provided by Kubernetes AI Manager, including aimanagers, deployments, namespace, etc.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/*",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/aiManagers/*",
+      "Microsoft.Resources/deployments/*"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 101
+  },
+  {
+    "name": "Azure AIManager Inference User",
+    "id": "82b2f1a9-9593-4498-a824-c209343a28ec",
+    "description": "Allows read access to read access keys and invoke inference against AI models deployed in a namespace. applying this role at the AIManager scope will give access across all namespaces.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Resources/subscriptions/operationresults/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ContainerService/aiManagers/namespaces/inference/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 13
+  },
+  {
+    "name": "Azure AIManager RBAC Reader",
     "id": "9c77f8a7-b0b9-4462-844c-de6e66add8ba",
     "description": "Allows read-only access to all objects in an Azure AI Manager namespace, except Secrets, roles, and role bindings. Applying this role at the AI Manager scope will give access across all namespaces.",
     "actions": [
@@ -1939,22 +1956,6 @@
     ],
     "notDataActions": [],
     "_estimatedActions": 13
-  },
-  {
-    "name": "Azure AIManager Contributor",
-    "id": "413f2675-4911-4010-be3b-c720b43a3c59",
-    "description": "Grants read/write access to Azure resources provided by Kubernetes AI Manager, including aimanagers, deployments, namespace, etc.",
-    "actions": [
-      "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.ContainerService/aiManagers/*",
-      "Microsoft.Resources/deployments/*"
-    ],
-    "notActions": [],
-    "dataActions": [],
-    "notDataActions": [],
-    "_estimatedActions": 101
   },
   {
     "name": "Azure AIManager User",
@@ -3707,6 +3708,18 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 10
+  },
+  {
+    "name": "Azure Firewall for Containers Configuration Manager",
+    "id": "3060977b-24b3-41d4-89d2-3c9b2c426041",
+    "description": "Allows access and configuration updates to Azure Firewall for Containers.",
+    "actions": [
+      "Microsoft.Network/azureFirewalls/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 1
   },
   {
     "name": "Azure Front Door Domain Contributor",
@@ -7577,6 +7590,7 @@
       "Microsoft.Authorization/*/read",
       "Microsoft.Network/virtualNetworks/read",
       "Microsoft.RecoveryServices/locations/*",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappingStatus/action",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/operationResults/*",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/*",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action",
@@ -7662,7 +7676,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 673
+    "_estimatedActions": 674
   },
   {
     "name": "Backup MUA Admin",
@@ -9532,14 +9546,29 @@
   {
     "name": "Compute Gallery Sharing Admin",
     "id": "1ef6a3be-d0ac-425d-8c01-acb62866290b",
-    "description": "This role allows user to share gallery to another subscription/tenant or share it to the public.",
+    "description": "This role allows user to share gallery to another subscription/tenant or share it to the public or to accept/reject galleries shared to the user's subscription.",
     "actions": [
-      "Microsoft.Compute/galleries/share/action"
+      "Microsoft.Compute/galleries/share/action",
+      "Microsoft.Compute/locations/sharedGallerySubscriptions/sharedGalleries/accept/action",
+      "Microsoft.Compute/locations/sharedGallerySubscriptions/sharedGalleries/reject/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 1
+    "_estimatedActions": 3
+  },
+  {
+    "name": "Compute Gallery Tenant Level Sharing Admin",
+    "id": "c9b5f20e-fe31-47ac-8115-d5c4c7fb19e3",
+    "description": "This role allows user to accept/reject galleries shared to the user's AAD tenant.",
+    "actions": [
+      "Microsoft.Compute/locations/tenantLevelSharedGallerySubscriptions/sharedGalleries/accept/action",
+      "Microsoft.Compute/locations/tenantLevelSharedGallerySubscriptions/sharedGalleries/reject/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Compute Limit Operator",
@@ -10483,7 +10512,7 @@
   {
     "name": "Cosmos DB Operator",
     "id": "230815da-be43-4aae-9cb4-875f7bd000aa",
-    "description": "Lets you manage Azure Cosmos DB accounts, but not access data in them. Prevents access to account keys and connection strings.",
+    "description": "Lets you manage Azure Cosmos DB accounts and their databases, containers, stored procedures, triggers, user-defined functions, and client encryption key metadata. Does not grant direct access to item data, account keys, or connection strings.",
     "actions": [
       "Microsoft.DocumentDb/databaseAccounts/*",
       "Microsoft.Insights/alertRules/*",
@@ -10658,6 +10687,53 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 21
+  },
+  {
+    "name": "CTR Contributor",
+    "id": "bc747a16-60be-4b06-8dc5-e22ba64a208c",
+    "description": "Allows cross-tenant restore operations using Recovery Services vault mappings.",
+    "actions": [
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupTriggerValidateOperation/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupValidateOperation/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/remove/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupJobs/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/vaultCredentials/generate/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/vaultCredentials/operationResults/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/vaultCredentials/operationStatus/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/protectionContainers/protectedItems/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/protectionContainers/protectedItems/operationResults/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/protectionContainers/protectedItems/operationsStatus/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/protectionContainers/protectedItems/recoveryPoints/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/protectionContainers/protectedItems/recoveryPoints/restore/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupProtectedItems/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupValidateOperationResults/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupValidateOperationsStatuses/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/getRecoveryPoints/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/preCheckRestore/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/restore/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/operationsStatus/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/recoveryPointOperationResults/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/validateBulkRestoreOperationsStatus/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupJobs/backupChildJobs/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 23
+  },
+  {
+    "name": "CTR Creator",
+    "id": "60141276-53cb-43d3-9eeb-bbe8980b1f53",
+    "description": "Allows creating cross-tenant restore vault mappings on a target Recovery Services vault.",
+    "actions": [
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/write"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Data Boundary Tenant Administrator",
@@ -12426,11 +12502,14 @@
     "name": "Discovery Log Analytics Cluster Linker - Preview",
     "id": "506c2fa4-2713-45d3-a893-4b1360a66e88",
     "description": "Allows the Discovery control plane to link Log Analytics workspaces to a customer's dedicated cluster for CMK (customer-managed key) encryption. Grants only cluster read and write permissions — no storage key access, no VM extensions, no broad read.",
-    "actions": [],
+    "actions": [
+      "Microsoft.OperationalInsights/clusters/read",
+      "Microsoft.OperationalInsights/clusters/write"
+    ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 0
+    "_estimatedActions": 2
   },
   {
     "name": "Disk Backup Reader",
@@ -12951,45 +13030,22 @@
     "description": "Read all resources in Azure Virtual Enclaves and Approve approval requests within the Enclave",
     "actions": [
       "Microsoft.Mission/Operations/read",
+      "Microsoft.Mission/Locations/OperationStatuses/read",
       "Microsoft.Mission/communities/read",
+      "Microsoft.Mission/communities/dedicatedHubs/read",
       "Microsoft.Mission/virtualEnclaves/read",
-      "Microsoft.Mission/virtualEnclaves/endpoints/read",
       "Microsoft.Mission/virtualEnclaves/workloads/read",
-      "Microsoft.Authorization/*/read",
-      "Microsoft.Insights/alertRules/*",
-      "Microsoft.Resources/deployments/*",
-      "Microsoft.Resources/subscriptions/read",
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Resources/subscriptions/resourcegroups/deployments/read",
-      "Microsoft.Resources/subscriptions/operationresults/read",
-      "Microsoft.ResourceHealth/availabilityStatuses/read",
-      "Microsoft.Features/providers/features/read",
-      "Microsoft.Features/features/read",
       "Microsoft.Mission/communities/communityEndpoints/read",
       "Microsoft.Mission/communities/transitHubs/read",
       "Microsoft.Mission/enclaveConnections/read",
       "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/read",
       "Microsoft.Mission/approvals/read",
-      "Microsoft.Mission/approvals/write",
-      "Microsoft.Mission/enclaveConnections/approvalCallback/action",
-      "Microsoft.Mission/virtualEnclaves/approvalCallback/action",
-      "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/approvalCallback/action",
-      "Microsoft.Mission/communities/communityEndpoints/approvalCallback/action",
-      "Microsoft.Mission/approvals/initiatorCallback/action",
-      "Microsoft.Mission/approvals/notifyInitiator/action",
-      "Microsoft.Mission/communities/setMaintenanceMode/action",
-      "Microsoft.Mission/communities/communityendpoints/connect/action",
-      "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
-      "Microsoft.Mission/virtualEnclaves/setEnclaveRoleAssignments/action",
-      "Microsoft.Mission/virtualEnclaves/setSubnetConfiguration/action",
-      "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/connect/action",
-      "Microsoft.Mission/enclaveConnections/setSourceCidr/action",
-      "Microsoft.Mission/virtualenclaves/setMaintenanceMode/action"
+      "Microsoft.Mission/approvals/notifyInitiator/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 102
+    "_estimatedActions": 12
   },
   {
     "name": "Enclave Contributor Role",
@@ -18347,12 +18403,13 @@
       "Microsoft.ProgramEnrollment/register/action",
       "Microsoft.ProgramEnrollment/eduEnrollments/read",
       "Microsoft.ProgramEnrollment/eduEnrollments/write",
-      "Microsoft.ProgramEnrollment/eduEnrollments/delete"
+      "Microsoft.ProgramEnrollment/eduEnrollments/delete",
+      "Microsoft.Billing/billingProperty/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 99
+    "_estimatedActions": 100
   },
   {
     "name": "Project Babylon Data Curator",
