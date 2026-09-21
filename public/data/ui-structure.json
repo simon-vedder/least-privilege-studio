@@ -5057,45 +5057,6 @@
             "priority": 999
           },
           {
-            "key": "ipCommunityLists",
-            "name": "ip Community Lists",
-            "provider": "Microsoft.ManagedNetworkFabric",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.ManagedNetworkFabric/ipCommunityLists/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.ManagedNetworkFabric/ipCommunityLists/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.ManagedNetworkFabric/ipCommunityLists/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
             "key": "ipExtendedCommunities",
             "name": "ip Extended Communities",
             "provider": "Microsoft.ManagedNetworkFabric",
@@ -5142,45 +5103,6 @@
               }
             ],
             "totalOps": 4,
-            "priority": 999
-          },
-          {
-            "key": "ipPrefixLists",
-            "name": "ip Prefix Lists",
-            "provider": "Microsoft.ManagedNetworkFabric",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.ManagedNetworkFabric/ipPrefixLists/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.ManagedNetworkFabric/ipPrefixLists/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.ManagedNetworkFabric/ipPrefixLists/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
             "priority": 999
           },
           {
@@ -5451,10 +5373,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.ManagedNetworkFabric/l3IsolationDomains/externalNetworks/updateAdminState/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.ManagedNetworkFabric/l3IsolationDomains/externalNetworks/updateBfdAdministrativeState/action",
                     "type": "action"
                   },
@@ -5558,7 +5476,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 46,
+            "totalOps": 45,
             "priority": 999
           },
           {
@@ -6984,6 +6902,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Network/virtualNetworks/setGatewayConfiguration/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworks/subnets/getNetworkPolicies/action",
                     "type": "action"
                   },
@@ -7019,7 +6941,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 60,
+            "totalOps": 61,
             "priority": 1
           },
           {
@@ -8139,6 +8061,25 @@
               }
             ],
             "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "applicationGatewayAvailableConfidentialComputeRegions",
+            "name": "application Gateway Available Confidential Compute Regions",
+            "provider": "Microsoft.Network",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Network/applicationGatewayAvailableConfidentialComputeRegions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
             "priority": 999
           },
           {
@@ -12853,6 +12794,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworkAppliances/read",
                     "type": "action"
                   }
@@ -12862,6 +12807,10 @@
               {
                 "label": "Write",
                 "ops": [
+                  {
+                    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/write",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.Network/virtualNetworkAppliances/write",
                     "type": "action"
@@ -12873,6 +12822,10 @@
                 "label": "Delete",
                 "ops": [
                   {
+                    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworkAppliances/delete",
                     "type": "action"
                   }
@@ -12880,7 +12833,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 3,
+            "totalOps": 6,
             "priority": 999
           },
           {
@@ -13881,6 +13834,57 @@
             "priority": 999
           },
           {
+            "key": "edgeClusters",
+            "name": "edge Clusters",
+            "provider": "Microsoft.NetworkCloud",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.NetworkCloud/edgeClusters/capacityProfiles/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.NetworkCloud/edgeClusters/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.NetworkCloud/edgeClusters/capacityProfiles/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.NetworkCloud/edgeClusters/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.NetworkCloud/edgeClusters/capacityProfiles/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.NetworkCloud/edgeClusters/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
+            "priority": 999
+          },
+          {
             "key": "kubernetesClusters",
             "name": "kubernetes Clusters",
             "provider": "Microsoft.NetworkCloud",
@@ -14407,7 +14411,7 @@
       }
     ],
     "totalTypes": 150,
-    "totalOps": 1532
+    "totalOps": 1536
   },
   {
     "name": "Storage",
@@ -32030,10 +32034,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/managedClusters/agentPools/machines/read",
                     "type": "action"
                   },
@@ -32920,10 +32920,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/managedClusters/agentPools/machines/write",
                     "type": "action"
                   },
@@ -33330,10 +33326,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/delete",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/managedClusters/agentPools/delete",
                     "type": "action"
                   },
@@ -33724,10 +33716,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/managedClusters/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
-                    "type": "dataAction"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/managedClusters/groups/impersonate/action",
                     "type": "dataAction"
                   },
@@ -33819,7 +33807,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 446,
+            "totalOps": 442,
             "priority": 1
           },
           {
@@ -34067,10 +34055,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/aiManagers/approuting.kubernetes.azure.com/defaultdomaincertificates/read",
-                    "type": "dataAction"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
                     "type": "dataAction"
                   },
@@ -34095,10 +34079,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/aiManagers/azmonitoring.coreos.com/podmonitors/read",
-                    "type": "dataAction"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
                     "type": "dataAction"
                   },
@@ -34108,10 +34088,6 @@
                   },
                   {
                     "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/cilium.io/ciliumnetworkpolicies/read",
                     "type": "dataAction"
                   },
                   {
@@ -34176,46 +34152,6 @@
                   },
                   {
                     "action": "Microsoft.ContainerService/aiManagers/flowcontrol.apiserver.k8s.io/prioritylevelconfigurations/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/backendlbpolicies/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/backendtlspolicies/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/gatewayclasses/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/gateways/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/grpcroutes/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/httproutes/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/referencegrants/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/tcproutes/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/tlsroutes/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/udproutes/read",
                     "type": "dataAction"
                   },
                   {
@@ -34292,50 +34228,6 @@
                   },
                   {
                     "action": "Microsoft.ContainerService/aiManagers/healthz/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/inference.networking.k8s.io/inferencepools/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/inferencesets/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/modelmirrors/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/multiroleinferences/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/ragengines/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/workspaces/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/karpenter.azure.com/aksnodeclasses/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/karpenter.sh/nodeclaims/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/karpenter.sh/nodepools/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/keda.sh/clustertriggerauthentications/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/keda.sh/scaledobjects/read",
                     "type": "dataAction"
                   },
                   {
@@ -34419,27 +34311,11 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/aiManagers/llm-d.ai/inferenceobjectives/read",
-                    "type": "dataAction"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/aiManagers/logs/read",
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/aiManagers/modelSources/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/aiManagers/namespaces/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/networking.istio.io/envoyfilters/read",
                     "type": "dataAction"
                   },
                   {
@@ -34608,14 +34484,6 @@
                   },
                   {
                     "action": "Microsoft.ContainerService/aiManagers/secrets/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/security.istio.io/peerauthentications/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/security.istio.io/requestauthentications/read",
                     "type": "dataAction"
                   },
                   {
@@ -34815,14 +34683,6 @@
                   {
                     "action": "Microsoft.ContainerService/aiManagers/limitranges/write",
                     "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/modelSources/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/write",
-                    "type": "action"
                   },
                   {
                     "action": "Microsoft.ContainerService/aiManagers/namespaces/write",
@@ -35071,16 +34931,8 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/aiManagers/modelSources/delete",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/aiManagers/namespaces/delete",
                     "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/delete",
-                    "type": "action"
                   },
                   {
                     "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingressclasses/delete",
@@ -35197,10 +35049,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
-                    "type": "dataAction"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/aiManagers/groups/impersonate/action",
                     "type": "dataAction"
                   },
@@ -35213,15 +35061,7 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.ContainerService/aiManagers/namespaces/listAccessKeys/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/aiManagers/namespaces/rotateKeys/action",
                     "type": "action"
                   },
                   {
@@ -35260,7 +35100,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 352,
+            "totalOps": 315,
             "priority": 999
           },
           {
@@ -38093,10 +37933,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.ContainerService/fleets/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
-                    "type": "dataAction"
-                  },
-                  {
                     "action": "Microsoft.ContainerService/fleets/clusterMeshProfiles/apply/action",
                     "type": "action"
                   },
@@ -38110,10 +37946,6 @@
                   },
                   {
                     "action": "Microsoft.ContainerService/fleets/members/authentication.k8s.io/userextras/impersonate/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.ContainerService/fleets/members/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
                     "type": "dataAction"
                   },
                   {
@@ -38196,7 +38028,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 694,
+            "totalOps": 692,
             "priority": 999
           },
           {
@@ -40025,7 +39857,7 @@
       }
     ],
     "totalTypes": 26,
-    "totalOps": 1991
+    "totalOps": 1948
   },
   {
     "name": "Security",
@@ -45300,10 +45132,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/read",
                     "type": "action"
                   },
@@ -45530,6 +45358,10 @@
                   {
                     "action": "Microsoft.CognitiveServices/accounts/ConversationalLanguageUnderstanding/projects/validation/read",
                     "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/costControls/read",
+                    "type": "action"
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/consents/read",
@@ -47714,10 +47546,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/write",
                     "type": "action"
                   },
@@ -47868,6 +47696,10 @@
                   {
                     "action": "Microsoft.CognitiveServices/accounts/ConversationalLanguageUnderstanding/projects/write",
                     "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/costControls/write",
+                    "type": "action"
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/consents/write",
@@ -48510,6 +48342,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes/policies/write",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes/write",
                     "type": "dataAction"
                   },
@@ -48916,10 +48752,6 @@
                     "type": "dataAction"
                   },
                   {
-                    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/delete",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/delete",
                     "type": "action"
                   },
@@ -49050,6 +48882,10 @@
                   {
                     "action": "Microsoft.CognitiveServices/accounts/ConversationalLanguageUnderstanding/projects/models/delete",
                     "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/costControls/delete",
+                    "type": "action"
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/consents/delete",
@@ -50322,6 +50158,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/client-watermark:register/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/digest:sign/action",
                     "type": "dataAction"
                   },
@@ -50383,6 +50223,10 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/text:shieldprompt/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/unifiedModerate/action",
                     "type": "dataAction"
                   },
                   {
@@ -51753,7 +51597,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1650,
+            "totalOps": 1653,
             "priority": 1
           },
           {
@@ -53583,12 +53427,24 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.Search/searchServices/agents/retrieve/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.Search/searchServices/createQueryKey/action",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.Search/searchServices/debugSessions/execute/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/knowledgeBases/retrieve/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/knowledgeSources/retrieve/action",
+                    "type": "dataAction"
                   },
                   {
                     "action": "Microsoft.Search/searchServices/listAdminKeys/action",
@@ -53623,10 +53479,10 @@
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               }
             ],
-            "totalOps": 61,
+            "totalOps": 64,
             "priority": 3
           },
           {
@@ -53652,7 +53508,7 @@
       }
     ],
     "totalTypes": 19,
-    "totalOps": 2060
+    "totalOps": 2066
   },
   {
     "name": "Monitor",
@@ -63560,27 +63416,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/alertPreferences/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/alerts/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/associatedBillingAccounts/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/associatedTenants/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/availableBalance/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingPeriods/read",
                     "type": "action"
                   },
                   {
@@ -63588,35 +63424,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/alerts/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/availableBalance/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingPeriods/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingPermissions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRequests/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRoleAssignments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRoleDefinitions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingSubscriptions/read",
                     "type": "action"
                   },
                   {
@@ -63624,35 +63432,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRequests/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRoleAssignments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRoleDefinitions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingSubscriptions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/policies/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/transactions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingPeriods/read",
                     "type": "action"
                   },
                   {
@@ -63660,43 +63440,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingRoleDefinitions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingSubscriptions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/enrollmentAccounts/billingPeriods/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/enrollmentAccounts/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/billingPeriods/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/billingPermissions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/billingSubscriptions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/read",
                     "type": "action"
                   },
                   {
@@ -63704,43 +63448,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRequests/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRoleAssignments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRoleDefinitions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingSubscriptions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/policies/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/products/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/transactions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/notificationContacts/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/paymentMethodLinks/read",
                     "type": "action"
                   },
                   {
@@ -63756,35 +63464,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/transactions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfilesSummaries/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingRequests/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingRoleAssignments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingRoleDefinitions/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingSubscriptionAliases/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/invoices/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/paymentMethodLinks/read",
                     "type": "action"
                   },
                   {
@@ -63792,23 +63472,11 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/contacts/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/customers/billingPermissions/read",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/customers/billingSubscriptions/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/customers/policies/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/customers/products/read",
                     "type": "action"
                   },
                   {
@@ -63820,27 +63488,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/departments/billingPeriods/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/departments/billingPermissions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/departments/billingRoleAssignments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/departments/billingRoleDefinitions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/departments/billingSubscriptions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/departments/enrollmentAccounts/billingPeriods/read",
                     "type": "action"
                   },
                   {
@@ -63856,23 +63504,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingPeriods/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingPermissions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingRoleAssignments/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingRoleDefinitions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingSubscriptions/read",
                     "type": "action"
                   },
                   {
@@ -63880,23 +63512,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/invoices/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/invoices/transactions/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/invoices/transactionSummary/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/invoiceSections/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/licenseReservations/read",
                     "type": "action"
                   },
                   {
@@ -63905,22 +63521,6 @@
                   },
                   {
                     "action": "Microsoft.Billing/billingAccounts/notificationContacts/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/download/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/partnerOrganizations/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/paymentMethodLinks/read",
                     "type": "action"
                   },
                   {
@@ -63962,43 +63562,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/addresses/validateDeleteEligibility/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/alertPreferences/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/alerts/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/associatedTenants/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingProviders/register/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingProviders/unregister/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRoleAssignments/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/checkAccess/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/createBillingRoleAssignment/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRoleAssignments/write",
                     "type": "action"
                   },
                   {
@@ -64006,35 +63570,11 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/createBillingRoleAssignment/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/policies/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/resolveBillingRoleAssignments/write",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/ensureDefaultCloudSubscription/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/paynow/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/validatePaynowEligibility/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/validateRefundEligibility/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRoleAssignments/write",
                     "type": "action"
                   },
                   {
@@ -64046,23 +63586,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/createBillingRoleAssignment/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/ensureDefaultCloudSubscription/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/policies/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/resolveBillingRoleAssignments/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/validateDeleteEligibility/write",
                     "type": "action"
                   },
                   {
@@ -64074,10 +63598,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/paymentMethodLinks/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/policies/write",
                     "type": "action"
                   },
@@ -64086,15 +63606,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/updateInvoiceRecipientContacts/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/validateDeleteBillingProfileEligibility/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProfiles/validateDeleteEligibility/write",
                     "type": "action"
                   },
                   {
@@ -64103,14 +63615,6 @@
                   },
                   {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProviders/register/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingProviders/unregister/write",
                     "type": "action"
                   },
                   {
@@ -64126,43 +63630,11 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/downloadDocuments/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/enable/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/extendTrial/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/fetchHistory/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/invoices/download/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/merge/write",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/move/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/paymentMethodLinks/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/split/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/validateMoveEligibility/write",
                     "type": "action"
                   },
                   {
@@ -64179,26 +63651,6 @@
                   },
                   {
                     "action": "Microsoft.Billing/billingAccounts/checkAccess/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/confirmTransition/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/contacts/addContactTypes/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/contacts/removeContactTypes/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/contacts/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/createBillingRoleAssignment/write",
                     "type": "action"
                   },
                   {
@@ -64242,10 +63694,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/downloadDocuments/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/activate/write",
                     "type": "action"
                   },
@@ -64270,39 +63718,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/generateBillingToken/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/invoices/amend/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/invoices/download/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/invoices/downloadSummary/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/invoices/transactionsDownload/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/invoiceSections/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/licenseReservations/cancel/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/licenseReservations/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/listProductRecommendations/write",
                     "type": "action"
                   },
                   {
@@ -64310,27 +63726,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/cancel/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/paymentMethods/fetchUnsettledCharges/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/paymentMethods/settleCharges/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/policies/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/products/write",
                     "type": "action"
                   },
                   {
@@ -64339,10 +63735,6 @@
                   },
                   {
                     "action": "Microsoft.Billing/billingAccounts/resolveBillingRoleAssignments/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/transferEnrollmentToMCA/write",
                     "type": "action"
                   },
                   {
@@ -64363,18 +63755,6 @@
               {
                 "label": "Action",
                 "ops": [
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/addPaymentTerms/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/addresses/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/addresses/versions/action",
-                    "type": "action"
-                  },
                   {
                     "action": "Microsoft.Billing/billingAccounts/billingProfiles/action",
                     "type": "action"
@@ -64440,23 +63820,11 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/cancelPaymentTerms/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/confirmTransition/action",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.Billing/billingAccounts/customers/initiateTransfer/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/disable/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/enable/action",
                     "type": "action"
                   },
                   {
@@ -64476,38 +63844,18 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Billing/billingAccounts/offboard/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Billing/billingAccounts/products/move/action",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.Billing/billingAccounts/products/validateMoveEligibility/action",
                     "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/refresh/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/validateDeleteEligibility/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/validateInvoicePayEligibility/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Billing/billingAccounts/validatePaymentTerms/action",
-                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 234,
+            "totalOps": 107,
             "priority": 999
           },
           {
@@ -64549,35 +63897,6 @@
                 "ops": [
                   {
                     "action": "Microsoft.Billing/billingProperty/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 2,
-            "priority": 999
-          },
-          {
-            "key": "billingRequests",
-            "name": "billing Requests",
-            "provider": "Microsoft.Billing",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.Billing/billingRequests/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.Billing/billingRequests/write",
                     "type": "action"
                   }
                 ],
@@ -64645,35 +63964,6 @@
                 "ops": [
                   {
                     "action": "Microsoft.Billing/invoices/download/action",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 2,
-            "priority": 999
-          },
-          {
-            "key": "paymentMethods",
-            "name": "payment Methods",
-            "provider": "Microsoft.Billing",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.Billing/paymentMethods/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.Billing/paymentMethods/write",
                     "type": "action"
                   }
                 ],
@@ -67288,8 +66578,8 @@
         ]
       }
     ],
-    "totalTypes": 128,
-    "totalOps": 730
+    "totalTypes": 126,
+    "totalOps": 599
   },
   {
     "name": "Integration",
@@ -69134,6 +68424,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.EventHub/namespaces/eventhubs/read",
                     "type": "action"
                   },
@@ -69228,6 +68522,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.EventHub/namespaces/eventhubs/write",
                     "type": "action"
                   },
@@ -69303,6 +68601,10 @@
                   },
                   {
                     "action": "Microsoft.EventHub/namespaces/eventhubs/Delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/delete",
                     "type": "action"
                   },
                   {
@@ -69392,6 +68694,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/approve/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/reject/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.EventHub/namespaces/failover/action",
                     "type": "action"
                   },
@@ -69439,7 +68749,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 76,
+            "totalOps": 81,
             "priority": 2
           },
           {
@@ -71118,7 +70428,7 @@
       }
     ],
     "totalTypes": 37,
-    "totalOps": 704
+    "totalOps": 709
   },
   {
     "name": "Analytics",
@@ -76838,6 +76148,26 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/operationStatus/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/recoveryPoints/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupJobs/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DataProtection/backupVaults/deletedBackupInstances/read",
                     "type": "action"
                   },
@@ -76865,6 +76195,10 @@
                   },
                   {
                     "action": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/write",
                     "type": "action"
                   },
                   {
@@ -76948,6 +76282,26 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/findRestorableTimeRanges/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/restore/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/validateRestore/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/remove/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappingStatus/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DataProtection/backupVaults/deletedBackupInstances/undelete/action",
                     "type": "action"
                   },
@@ -76959,7 +76313,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 30,
+            "totalOps": 41,
             "priority": 2
           },
           {
@@ -78044,7 +77398,7 @@
       }
     ],
     "totalTypes": 5,
-    "totalOps": 271
+    "totalOps": 282
   },
   {
     "name": "Migration",
@@ -92154,79 +91508,6 @@
             "priority": 999
           },
           {
-            "key": "privateAccesses",
-            "name": "private Accesses",
-            "provider": "Microsoft.Chaos",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnections/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnections/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnections/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Action",
-                "ops": [
-                  {
-                    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/validate/action",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 10,
-            "priority": 999
-          },
-          {
             "key": "skus",
             "name": "skus",
             "provider": "Microsoft.Chaos",
@@ -92294,6 +91575,167 @@
               }
             ],
             "totalOps": 6,
+            "priority": 999
+          },
+          {
+            "key": "workspaces",
+            "name": "workspaces",
+            "provider": "Microsoft.Chaos",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Chaos/workspaces/connections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/discoveredResources/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/discoveries/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/evaluations/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/runs/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Chaos/workspaces/connections/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/discoveries/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/evaluations/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/runs/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Chaos/workspaces/connections/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/discoveries/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/evaluations/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/runs/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.Chaos/workspaces/discover/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/discoveries/start/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/evaluate/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/workspaces/scenarios/runs/start/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 32,
             "priority": 999
           }
         ]
@@ -99159,6 +98601,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DurableTask/schedulers/taskhubs/taskqueues/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DurableTask/schedulers/transparentDataEncryptions/read",
                     "type": "action"
                   }
@@ -99182,6 +98628,10 @@
                   },
                   {
                     "action": "Microsoft.DurableTask/schedulers/retentionPolicies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DurableTask/schedulers/taskhubs/taskqueues/write",
                     "type": "action"
                   },
                   {
@@ -99227,6 +98677,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DurableTask/schedulers/taskhubs/taskqueues/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DurableTask/schedulers/transparentDataEncryptions/delete",
                     "type": "action"
                   }
@@ -99268,7 +98722,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 32,
+            "totalOps": 35,
             "priority": 999
           }
         ]
@@ -105840,6 +105294,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/latestCves/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/passwordHashes/read",
                     "type": "action"
                   },
@@ -105969,7 +105427,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 31,
+            "totalOps": 32,
             "priority": 999
           }
         ]
@@ -105986,6 +105444,10 @@
               {
                 "label": "Read",
                 "ops": [
+                  {
+                    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/read",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.IoTOperations/instances/akriConnectorTemplates/connectors/read",
                     "type": "action"
@@ -106053,6 +105515,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.IoTOperations/instances/akriConnectorTemplates/connectors/write",
                     "type": "action"
                   },
@@ -106119,6 +105585,10 @@
                 "label": "Delete",
                 "ops": [
                   {
+                    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.IoTOperations/instances/akriConnectorTemplates/connectors/delete",
                     "type": "action"
                   },
@@ -106182,7 +105652,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 45,
+            "totalOps": 48,
             "priority": 999
           }
         ]
@@ -119660,6 +119130,6 @@
       }
     ],
     "totalTypes": 739,
-    "totalOps": 4676
+    "totalOps": 4705
   }
 ]

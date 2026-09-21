@@ -9197,15 +9197,15 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalTemplates/delete",
-    "description": "Delete a GoalTemplate"
+    "description": "Deletes a goal template. Deprecated: the GoalTemplate resource type is deprecated and is removed in 2026-09-30-preview. Set resiliency intent directly on the GoalAssignment (requireZonalResiliency, requireRegionalResiliency) and read resource posture from GoalResource (zonalResiliency, regionalResiliency) instead."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalTemplates/read",
-    "description": "Get a GoalTemplate"
+    "description": "Lists the goal templates of a service group. Deprecated: the GoalTemplate resource type is deprecated and is removed in 2026-09-30-preview. Set resiliency intent directly on the GoalAssignment (requireZonalResiliency, requireRegionalResiliency) and read resource posture from GoalResource (zonalResiliency, regionalResiliency) instead."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalTemplates/write",
-    "description": "Update a GoalTemplate"
+    "description": "Creates or updates a goal template. Deprecated: the GoalTemplate resource type is deprecated and is removed in 2026-09-30-preview. Set resiliency intent directly on the GoalAssignment (requireZonalResiliency, requireRegionalResiliency) and read resource posture from GoalResource (zonalResiliency, regionalResiliency) instead."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/checkReadiness/action",
@@ -10736,224 +10736,56 @@
     "description": "Add an Enrollment Account"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/addPaymentTerms/action",
-    "description": "Adds payment terms to all the billing profiles under the billing account. Currently, payment terms can be added only on billing accounts that have Agreement Type as 'Microsoft Customer Agreement' and AccountType as 'Enterprise'. This action needs pre-authorization and only Field Sellers are authorized to add the payment terms and is not a self-serve action."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/addPaymentTerms/write",
     "description": "Add payment terms"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/addresses/action",
-    "description": "Gets an address by ID for the billing account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/addresses/validateDeleteEligibility/write",
-    "description": "Validates if the address is eligible for deletion."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/addresses/versions/action",
-    "description": "Gets a specific version of an address by ID for the billing account."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/agreements/read",
-    "description": "Lists the agreements for a billing account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/alertPreferences/read",
-    "description": "Gets the AlertPreference with the given Id."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/alertPreferences/write",
-    "description": "Creates or updates an AlertPreference for the specifed Billing Account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/alerts/read",
-    "description": "Gets the alert definition by an Id."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/alerts/write",
-    "description": "Creates or updates an alert for the specified Billing Account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/associatedBillingAccounts/read",
-    "description": "Lists associated billing accounts."
+    "description": "List/Get Agreement(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/associatedTenants/read",
-    "description": "Lists the associated tenants that can collaborate with the billing account on commerce activities like viewing and downloading invoices, managing payments, making purchases, and managing or provisioning licenses."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/associatedTenants/write",
-    "description": "Create or update an associated tenant for the billing account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/availableBalance/read",
-    "description": "The Available Credit or Payment on Account Balance for a billing account. The credit balance can be used to settle due or past due invoices and is supported for billing accounts with agreement type Microsoft Customer Agreement. The payment on account balance is supported for billing accounts with agreement type Microsoft Customer Agreement or Microsoft Online Services Program."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingPeriods/read",
-    "description": "Lists the valid Billing Periods for a Billing Account. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get Associated tenant(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingPermissions/read",
-    "description": "Lists the billing permissions the caller has on a billing account."
+    "description": "List/Get Billing Permissions by Billing Account"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/action",
     "description": "Create Billing Profile"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/alerts/read",
-    "description": "Lists the alerts for a billing profile. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/availableBalance/read",
-    "description": "The Available Credit or Payment on Account Balance for a billing profile. The credit balance can be used to settle due or past due invoices and is supported for billing accounts with agreement type Microsoft Customer Agreement. The payment on account balance is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingPeriods/read",
-    "description": "Lists the valid Billing Periods for a Billing Profile. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingPermissions/read",
-    "description": "Lists the billing permissions the caller has on a billing profile."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingProviders/register/write",
-    "description": "Registers a resource provider with Microsoft.Billing at billing profile scope."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingProviders/unregister/write",
-    "description": "Unregisters a resource provider with Microsoft.Billing at billing profile scope."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRequests/read",
-    "description": "The list of billing requests submitted for the billing profile."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRoleAssignments/read",
-    "description": "Gets a role assignment for the caller on a billing profile. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRoleAssignments/write",
-    "description": "Deletes a role assignment on a billing profile. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingRoleDefinitions/read",
-    "description": "Gets the definition for a role on a billing profile. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/billingSubscriptions/read",
-    "description": "Gets a subscription by its billing profile and ID. The operation is supported for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get Billing Permissions by Billing Profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/checkAccess/write",
-    "description": "Provides a list of check access response objects for a billing profile."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/createBillingRoleAssignment/write",
-    "description": "Adds a role assignment on a billing profile. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
+    "description": "Allows/Disallows an access request at Billing Profile scope"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingPermissions/read",
-    "description": "Lists the billing permissions the caller has for a customer."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRequests/read",
-    "description": "The list of billing requests submitted for the customer."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRoleAssignments/read",
-    "description": "Gets a role assignment for the caller on a customer. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRoleAssignments/write",
-    "description": "Deletes a role assignment on a customer. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingRoleDefinitions/read",
-    "description": "Gets the definition for a role on a customer. The operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/billingSubscriptions/read",
-    "description": "Lists the subscriptions for a customer. The operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
+    "description": "List/Get Billing Permissions by Customer"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/checkAccess/write",
-    "description": "Provides a list of check access response objects for a customer."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/createBillingRoleAssignment/write",
-    "description": "Adds a role assignment on a customer. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/policies/read",
-    "description": "Lists the policies for a customer. This operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/policies/write",
-    "description": "Updates the policies for a customer. This operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
+    "description": "Allows/Disallows an access request at Customer scope"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/read",
-    "description": "Lists the customers that are billed to a billing profile. The operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
+    "description": "List/Get Customer(s) by Billing Profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/resolveBillingRoleAssignments/write",
-    "description": "Lists the role assignments for the caller on a customer while fetching user info for each role assignment. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/customers/transactions/read",
-    "description": "Lists the billed or unbilled transactions by customer id for given start date and end date. Transactions include purchases, refunds and Azure usage charges. Unbilled transactions are listed under pending invoice Id and do not include tax. Tax is added to the amount once an invoice is generated."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingPeriods/read",
-    "description": "Lists the valid Billing Periods  by billing profile ID and department name. The operation is supported only for Departments under billing profiles with agreement type Enterprise Agreement."
+    "description": "Resolve Billing Role Assignments"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingPermissions/read",
     "description": "List/Get Billing Permissions by Billing Profile Department"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingRoleDefinitions/read",
-    "description": "Gets the definition for a role on a department. The operation is supported for billing profiles with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/billingSubscriptions/read",
-    "description": "List billing subscriptions by billing profile ID and department name. This operation is supported only for billing accounts of type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/enrollmentAccounts/billingPeriods/read",
-    "description": "Lists the valid Billing Periods for an Enrollment Account under Department under Billing Profile. The operation is supported only for enrollment profiles under billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/enrollmentAccounts/read",
-    "description": "Get list of enrollment accounts using billing"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/departments/read",
-    "description": "Lists the departments that a user has access to. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/billingPeriods/read",
-    "description": "Lists the valid Billing Periods for an Enrollment Account under Billing Profile. The operation is supported only for billing profiles under billing accounts with agreement type Enterprise Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/billingPermissions/read",
     "description": "List/Get Billing Permissions by Billing Profile Account"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/billingSubscriptions/read",
-    "description": "List billing subscriptions by billing profile ID and enrollment account name. This operation is supported only for billing accounts of type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/enrollmentAccounts/read",
-    "description": "Lists the enrollment accounts for a specific billing account and a billing profile belonging to it."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/ensureDefaultCloudSubscription/write",
-    "description": "Ensures a default invoice section exists for a billing profile and that the default invoice section has a default cloud subscription. If either does not exist, it will be created. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/action",
@@ -10961,31 +10793,11 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingPermissions/read",
-    "description": "Lists the billing permissions the caller has for an invoice section."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRequests/read",
-    "description": "The list of billing requests submitted for the invoice section."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRoleAssignments/read",
-    "description": "Gets a role assignment for the caller on an invoice section. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRoleAssignments/write",
-    "description": "Deletes a role assignment on an invoice section. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingRoleDefinitions/read",
-    "description": "Gets the definition for a role on an invoice section. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "List/Get Billing Permissions by Invoice Section"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingSubscriptions/move/action",
     "description": "Move Billing Subscription"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingSubscriptions/read",
-    "description": "Lists the subscriptions that are billed to an invoice section. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/billingSubscriptions/transfer/action",
@@ -11001,31 +10813,11 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/checkAccess/write",
-    "description": "Provides a list of check access response objects for an invoice section."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/createBillingRoleAssignment/write",
-    "description": "Adds a role assignment on an invoice section. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/ensureDefaultCloudSubscription/write",
-    "description": "Ensures a default cloud subscription exists for an invoice section. If one does not exist, it will be created. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/policies/read",
-    "description": "Lists the policies for an invoice section. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/policies/write",
-    "description": "Updates the policies for an invoice section. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "Allows/Disallows an access request at Invoice Section scope"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/products/move/action",
     "description": "Move Product"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/products/read",
-    "description": "Lists the products for an invoice section. These don't include products billed based on usage. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/products/transfer/action",
@@ -11037,19 +10829,11 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/read",
-    "description": "Lists the invoice sections that a user has access to. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "List Invoice Sections for Billing Profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/resolveBillingRoleAssignments/write",
-    "description": "Lists the role assignments for the caller on an invoice section while fetching user info for each role assignment. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/transactions/read",
-    "description": "Lists the billed or unbilled transactions by invoice section name for given start date and end date. Transactions include purchases, refunds and Azure usage charges. Unbilled transactions are listed under pending invoice Id and do not include tax. Tax is added to the amount once an invoice is generated."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/validateDeleteEligibility/write",
-    "description": "Validates if the invoice section can be deleted. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "Resolve Billing Role Assignments"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/validateDeleteInvoiceSectionEligibility/write",
@@ -11057,51 +10841,27 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/write",
-    "description": "Creates or updates an invoice section. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "Delete Invoice Section"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/download/action",
     "description": "Download invoice for billing profile"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/paynow/write",
-    "description": "Initiates a pay now operation for an invoice."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/pricesheet/download/action",
     "description": "Download Pricesheet by Invoice"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/read",
-    "description": "Lists the invoices for a billing profile for a given start date and end date. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/validatePaynowEligibility/write",
-    "description": "Validate whether a user is eligible to use the Pay Now feature for the invoice."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/invoices/validateRefundEligibility/write",
     "description": "Validate Refund Eligibility"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/notificationContacts/read",
-    "description": "Lists the NotificationContacts for the given billing profile. The operation is supported only for billing profiles with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/paymentMethodLinks/read",
-    "description": "Lists payment methods attached to a billing profile. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/paymentMethodLinks/write",
-    "description": "Links a payment method with the billing profile."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/policies/read",
-    "description": "Lists the policies for a billing profile. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "Get policies of a billing profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/policies/write",
-    "description": "Updates the policies for a billing profile. This operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "Update policies of a billing profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/priceProduct/action",
@@ -11113,7 +10873,7 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/products/read",
-    "description": "Lists the products for a billing profile. These don't include products billed based on usage. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement or Microsoft Partner Agreement."
+    "description": "List/Get Product(s) by billing profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/purchaseProduct/action",
@@ -11121,151 +10881,71 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/read",
-    "description": "Lists the billing profiles that a user has access to. The operation is supported for billing accounts with agreement of type Microsoft Customer Agreement and Microsoft Partner Agreement."
+    "description": "List/Get Billing Profile(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/resolveBillingRoleAssignments/write",
-    "description": "Lists the role assignments for the caller on an billing profile while fetching user info for each role assignment. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/transactions/read",
-    "description": "Lists the billed or unbilled transactions by billing profile name for given start and end date. Transactions include purchases, refunds and Azure usage charges. Unbilled transactions are listed under pending invoice Id and do not include tax. Tax is added to the amount once an invoice is generated."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/updateInvoiceRecipientContacts/write",
-    "description": "Updates invoice recipient contacts for a billing profile."
+    "description": "Resolve Billing Role Assignments"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/validateDeleteBillingProfileEligibility/write",
     "description": "Validate Delete Eligibility"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingProfiles/validateDeleteEligibility/write",
-    "description": "Validates if the billing profile can be deleted. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/validateRefundEligibility/write",
-    "description": "Validates whether the billing profile has any invoices eligible for an expedited refund. The operation is supported for billing accounts with the agreement type Microsoft Customer Agreement and the account type Individual."
+    "description": "Validate Refund Eligibility for a Billing Profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingProfiles/write",
-    "description": "Creates or updates a billing profile. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement, Microsoft Partner Agreement and Enterprise Agreement. If you are a MCA Individual (Pay-as-you-go) customer, then please use the Azure portal experience to create the billing profile."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProfilesSummaries/read",
-    "description": "Gets the summary of billing profiles under a billing account. The operation is supported for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProviders/register/write",
-    "description": "Registers a resource provider with Microsoft.Billing at billing account scope."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingProviders/unregister/write",
-    "description": "Unregisters a resource provider with Microsoft.Billing at billing account scope."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingRequests/read",
-    "description": "The list of billing requests submitted for the billing account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingRoleAssignments/read",
-    "description": "Gets a role assignment for the caller on a billing account. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement, Microsoft Customer Agreement or Enterprise Agreement."
+    "description": "Delete Billing Profile"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingRoleAssignments/write",
-    "description": "Create or update a billing role assignment. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingRoleDefinitions/read",
-    "description": "Gets the definition for a role on a billing account. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement, Microsoft Customer Agreement or Enterprise Agreement."
+    "description": "Create / Update BillingRoleAssignment"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptionAliases/read",
-    "description": "Gets a subscription by its alias ID.  The operation is supported for seat based billing subscriptions."
+    "description": "List/Get Billing Subscription Aliases"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptionAliases/write",
-    "description": "Creates or updates a billing subscription by its alias ID.  The operation is supported for seat based billing subscriptions."
+    "description": "Create / Update Billing Subscription Alias"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/cancel/write",
-    "description": "Cancels a usage-based subscription. This operation is supported only for billing accounts of type Microsoft Partner Agreement."
+    "description": "Cancel an azure billing subscription"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/downloadDocuments/action",
     "description": "Download invoice using download link from list"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/downloadDocuments/write",
-    "description": "Gets a URL to download multiple invoice documents (invoice pdf, tax receipts, credit notes) as a zip file."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/enable/write",
-    "description": "Enable an azure billing subscription."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/extendTrial/write",
-    "description": "Extends the end date of subscription's term for a trial product by one month."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/fetchHistory/write",
-    "description": "History of events related to the subscription."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/invoices/download/write",
-    "description": "Gets a URL to download an invoice by billing subscription."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/invoices/read",
-    "description": "Lists the invoices for a subscription."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/merge/write",
-    "description": "Merges the billing subscription provided in the request with a target billing subscription."
+    "description": "Merge two billing subscriptions"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/move/action",
     "description": "Move Billing Subscription"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/move/write",
-    "description": "Moves charges for a subscription to a new invoice section. The new invoice section must belong to the same billing profile as the existing invoice section. This operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/paymentMethodLinks/read",
-    "description": "Gets the active payment method linked with a billing subscription."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/paymentMethodLinks/write",
-    "description": "Sets the active payment method for a billing subscription."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/read",
-    "description": "Lists the subscriptions for a billing account."
+    "description": "List/Get Billing Subscriptions"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/split/write",
-    "description": "Splits a subscription into a new subscription with quantity less than current subscription quantity and not equal to 0."
+    "description": "Split a billing subscription"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/validateMoveEligibility/action",
     "description": "Validate Subscription Move Parameters"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/validateMoveEligibility/write",
-    "description": "Validates if charges for a subscription can be moved to a new invoice section. This operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/billingSubscriptions/write",
-    "description": "Updates the properties of a billing subscription."
+    "description": "Cancel a billing subscription"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/cancelDailyInvoicingOverrideTerms/write",
     "description": "Cancel daily invoicing override terms"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/cancelPaymentTerms/action",
-    "description": "Cancels all the payment terms on billing account that falls after the cancellation date in the request. Currently, cancel payment terms is only served by admin actions and is not a self-serve action."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/cancelPaymentTerms/write",
@@ -11273,43 +10953,15 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/checkAccess/write",
-    "description": "Provides a list of check access response objects for a billing account."
+    "description": "Allows/Disallows an access request at Billing Account scope"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/confirmTransition/action",
     "description": "Confirm Transition"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/confirmTransition/write",
-    "description": "Gets the transition details for a billing account that has transitioned from agreement type Microsoft Online Services Program to agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/contacts/addContactTypes/write",
-    "description": "Adds one or more contact types to a contact for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/contacts/read",
-    "description": "Lists the contacts for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/contacts/removeContactTypes/write",
-    "description": "Removes one or more contact types from a contact for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/contacts/write",
-    "description": "Creates or updates a contact for a billing account. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement and Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/createBillingRoleAssignment/write",
-    "description": "Adds a role assignment on a billing account. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/customers/billingPermissions/read",
-    "description": "Lists the billing permissions the caller has for a customer at billing account level."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/customers/billingSubscriptions/read",
-    "description": "Lists the subscriptions for a customer at billing account level. The operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
+    "description": "List/Get Billing Permissions by Customer"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/customers/checkAccess/write",
@@ -11321,19 +10973,15 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/customers/policies/read",
-    "description": "Lists the policies for a customer at billing account scope. This operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
+    "description": "Get policies of a customer"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/customers/policies/write",
-    "description": "Updates the policies for a customer at billing account scope. This operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/customers/products/read",
-    "description": "Lists the products for a customer. These don't include products billed based on usage.The operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
+    "description": "Update policies of a customer"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/customers/read",
-    "description": "Lists the customers that are billed to a billing account. The operation is supported only for billing accounts with agreement type Microsoft Partner Agreement."
+    "description": "Get Customer by Id on Billing Account Scope"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/customers/resolveBillingRoleAssignments/write",
@@ -11352,40 +11000,20 @@
     "description": "Add an Enrollment Account"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/departments/billingPeriods/read",
-    "description": "Lists the valid Billing Periods for a Department. The operation is supported only for Departments under billing accounts with agreement type Enterprise Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/departments/billingPermissions/read",
-    "description": "Lists the billing permissions the caller has for a department."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/departments/billingRoleAssignments/read",
-    "description": "Gets a role assignment for the caller on a department. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get Billing Permissions by Department"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/departments/billingRoleAssignments/write",
-    "description": "Create or update a billing role assignment. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/departments/billingRoleDefinitions/read",
-    "description": "Gets the definition for a role on a department. The operation is supported for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/departments/billingSubscriptions/read",
-    "description": "Lists the subscriptions for a department. The operation is supported for billing accounts with agreement type Enterprise Agreement."
+    "description": "Create / Update BillingRoleAssignment"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/departments/checkAccess/write",
-    "description": "Provides a list of check access response objects for a department."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/departments/enrollmentAccounts/billingPeriods/read",
-    "description": "Lists the valid Billing Periods for an Enrollment Account under Department. The operation is supported only for enrollment accounts under billing accounts with agreement type Enterprise Agreement."
+    "description": "Allows/Disallows an access request at Enrollment Department scope"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/departments/enrollmentAccounts/read",
-    "description": "Lists the enrollment accounts for a department. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get Enrollment Account(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/departments/enrollmentAccounts/remove/write",
@@ -11397,23 +11025,11 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/departments/read",
-    "description": "Lists the departments that a user has access to. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get Department(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/departments/write",
     "description": "Update Department by Department Id"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/disable/action",
-    "description": "Disables a billing account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/downloadDocuments/write",
-    "description": "Gets a URL to download multiple invoice documents (invoice pdf, tax receipts, credit notes) as a zip file. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/enable/action",
-    "description": "Enables a billing account."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/activate/write",
@@ -11424,28 +11040,12 @@
     "description": "Get status of Enrollment Account activation"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingPeriods/read",
-    "description": "Lists the valid Billing Periods for an Enrollment Account. The operation is supported only for enrollment accounts under billing accounts with agreement type Enterprise Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingPermissions/read",
-    "description": "Lists the billing permissions the caller has for an enrollment account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingRoleAssignments/read",
-    "description": "Gets a role assignment for the caller on a enrollment Account. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get Billing Permissions by Enrollment Account"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingRoleAssignments/write",
-    "description": "Create or update a billing role assignment. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingRoleDefinitions/read",
-    "description": "Gets the definition for a role on an enrollment account. The operation is supported for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingSubscriptions/read",
-    "description": "Lists the subscriptions for an enrollment account. The operation is supported for billing accounts with agreement type Enterprise Agreement."
+    "description": "Create / Update BillingRoleAssignment"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/billingSubscriptions/write",
@@ -11453,11 +11053,11 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/checkAccess/write",
-    "description": "Provides a list of check access response objects for an enrollment account."
+    "description": "Allows/Disallows an access request at Enrollment Account scope"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/read",
-    "description": "Lists the enrollment accounts for a billing account. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get Enrollment Account(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/transferBillingSubscriptions/write",
@@ -11466,10 +11066,6 @@
   {
     "action": "Microsoft.Billing/billingAccounts/enrollmentAccounts/write",
     "description": "Update an Enrollment Account"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/generateBillingToken/write",
-    "description": "Generates billing tokens for the provided line items."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/invoiceSections/elevate/action",
@@ -11484,52 +11080,12 @@
     "description": "Create Invoice Section"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/invoices/amend/write",
-    "description": "Regenerate an invoice by billing account name and invoice name. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/invoices/download/action",
     "description": "Download invoice"
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/invoices/download/write",
-    "description": "Gets a URL to download an invoice document. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement, Microsoft Customer Agreement or Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/invoices/downloadSummary/write",
-    "description": "Gets a URL to download the summary document for an invoice. The operation is supported for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/invoices/pricesheet/download/action",
     "description": "Download Pricesheet by Invoice"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/invoices/read",
-    "description": "Lists the invoices for a billing account for a given start date and end date. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement, Microsoft Customer Agreement, or Microsoft Online Services Program."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/invoices/transactionSummary/read",
-    "description": "Gets the transaction summary for an invoice. Transactions include purchases, refunds and Azure usage charges."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/invoices/transactions/read",
-    "description": "Lists the transactions for an invoice. Transactions include purchases, refunds and Azure usage charges."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/invoices/transactionsDownload/write",
-    "description": "Gets a URL to download the transactions document for an invoice. The operation is supported for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/licenseReservations/cancel/write",
-    "description": "Cancels a license reservation for VL Online services. Accepts an optional cancellation reason. This operation is supported for billing accounts of type Enterprise Agreement to cancel a license reservation under Volume Licensing (VL)."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/licenseReservations/read",
-    "description": "Lists the license reservations for VL Online Services. This operation is supported for billing accounts of type Enterprise Agreement to list license reservations under Volume Licensing (VL)."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/licenseReservations/write",
-    "description": "Creates the license reservation for VL Online Services. This operation is supported for billing accounts of type Enterprise Agreement to create license reservations under Volume Licensing (VL)."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/listBillingProfilesWithViewPricesheetPermissions/read",
@@ -11537,83 +11093,39 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/listInvoiceSectionsWithCreateSubscriptionPermission/action",
-    "description": "Lists the invoice sections for which the user has permission to create Azure subscriptions. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/listProductRecommendations/write",
-    "description": "Lists ProductIds or offerIds recommended for purchase on an account. Please specify the type of the cohort for the billing account in the 'x-ms-recommendations-cohort-type' header as a required string parameter."
+    "description": "Lists Invoice Sections with create subscription permission."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/notificationContacts/read",
-    "description": "Lists the NotificationContacts for the given billing account. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
+    "description": "List/Get NotificationContact(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/notificationContacts/write",
-    "description": "Update a notification contact by ID. The operation is supported only for billing accounts with agreement type Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/offboard/action",
-    "description": "Offboard a billing account"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/cancel/write",
-    "description": "Cancels a partner change request."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/download/read",
-    "description": "Downloads the partner change request document."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/read",
-    "description": "Gets the details of a partner change request."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/partnerChangeRequests/write",
-    "description": "Initiates a partner change request for the specified billing account."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/partnerOrganizations/read",
-    "description": "List all the partner organizations user belongs to. The operation is supported for billing accounts with agreement type Microsoft Enterprise Agreement and for users with role Partner Administrator."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/paymentMethodLinks/read",
-    "description": "Lists payment methods attached to a billing account. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/paymentMethods/fetchUnsettledCharges/write",
-    "description": "Fetches unsettled charges for a payment method. The operation is supported only for legacy billing accounts."
+    "description": "Update Notification Contact by userRole Id"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/paymentMethods/read",
     "description": "Lists the payment methods by a billing account."
   },
   {
-    "action": "Microsoft.Billing/billingAccounts/paymentMethods/settleCharges/write",
-    "description": "Settles outstanding charges for a payment method. The operation is supported only for legacy billing accounts."
-  },
-  {
     "action": "Microsoft.Billing/billingAccounts/policies/read",
-    "description": "Get the policies for a billing account of Enterprise Agreement type."
+    "description": "Get policies of a billing account"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/policies/write",
-    "description": "Update the policies for a billing account of Enterprise Agreement type."
+    "description": "Update policies of a billing account"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/products/move/action",
-    "description": "Moves a product's charges to a new invoice section. The new invoice section must belong to the same billing profile as the existing invoice section. This operation is supported only for products that are purchased with a recurring charge and for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "Move Product"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/products/read",
-    "description": "Lists the products for a billing account. These don't include products billed based on usage. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement or Microsoft Partner Agreement."
+    "description": "List/Get Product(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/products/validateMoveEligibility/action",
-    "description": "Validates if a product's charges can be moved to a new invoice section. This operation is supported only for products that are purchased with a recurring charge and for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/products/write",
-    "description": "Updates the properties of a Product. Currently, auto renew can be updated. The operation is supported only for billing accounts with agreement type Microsoft Customer Agreement."
+    "description": "Validate Product Move Parameters"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/purchaseProduct/write",
@@ -11621,35 +11133,15 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/read",
-    "description": "Lists the billing accounts that a user has access to."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/refresh/action",
-    "description": "Refresh resources for a billing account"
+    "description": "List/Get Billing Account(s)"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/resolveBillingRoleAssignments/write",
-    "description": "Lists the role assignments for the caller on a billing account while fetching user info for each role assignment. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement, Microsoft Customer Agreement or Enterprise Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/transferEnrollmentToMCA/write",
-    "description": "Create and update entities in WAEP database, when enrollment is transferred from EA to MCA"
+    "description": "Resolve Billing Role Assignments"
   },
   {
     "action": "Microsoft.Billing/billingAccounts/validateDailyInvoicingOverrideTerms/write",
     "description": "Validate add daily invoicing override terms eligibility"
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/validateDeleteEligibility/action",
-    "description": "Validates if a billing account can be deleted. The operation is supported for billing accounts with agreement type Microsoft Customer Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/validateInvoicePayEligibility/action",
-    "description": "Validates invoice pay eligibility on a billing account. The operation is supported for billing accounts with agreement of type Microsoft Customer Agreement and Microsoft Partner Agreement."
-  },
-  {
-    "action": "Microsoft.Billing/billingAccounts/validatePaymentTerms/action",
-    "description": "Validates payment terms on a billing account with agreement type 'Microsoft Customer Agreement' and account type 'Enterprise'."
   },
   {
     "action": "Microsoft.Billing/billingAccounts/validatePaymentTerms/write",
@@ -11657,7 +11149,7 @@
   },
   {
     "action": "Microsoft.Billing/billingAccounts/write",
-    "description": "Updates the properties of a billing account. Currently, displayName and address can be updated for billing accounts with agreement type Microsoft Customer Agreement. Currently address and notification email address can be updated for billing accounts with agreement type Microsoft Online Services Agreement. Currently, purchase order number can be edited for billing accounts with agreement type Enterprise Agreement."
+    "description": "Update Billing Account"
   },
   {
     "action": "Microsoft.Billing/billingPeriods/read",
@@ -11665,19 +11157,11 @@
   },
   {
     "action": "Microsoft.Billing/billingProperty/read",
-    "description": "Gets the billing properties for a subscription"
+    "description": "List/Get Billing Properties"
   },
   {
     "action": "Microsoft.Billing/billingProperty/write",
-    "description": "Updates the billing property of a subscription. Currently, cost center can be updated for billing accounts with agreement type Microsoft Customer Agreement and subscription service usage address can be updated for billing accounts with agreement type Microsoft Online Service Program."
-  },
-  {
-    "action": "Microsoft.Billing/billingRequests/read",
-    "description": "The list of billing requests submitted by a user."
-  },
-  {
-    "action": "Microsoft.Billing/billingRequests/write",
-    "description": "Create or update a billing request."
+    "description": "Update Billing Properties"
   },
   {
     "action": "Microsoft.Billing/departments/read",
@@ -11696,16 +11180,8 @@
     "description": "List Invoices"
   },
   {
-    "action": "Microsoft.Billing/paymentMethods/read",
-    "description": "Lists the payment methods owned by the caller."
-  },
-  {
-    "action": "Microsoft.Billing/paymentMethods/write",
-    "description": "Deletes a payment method owned by the caller."
-  },
-  {
     "action": "Microsoft.Billing/policies/read",
-    "description": "Lists the policies that are managed by the Billing Admin for the defined subscriptions. This is supported for Microsoft Online Services Program, Microsoft Customer Agreement and Microsoft Partner Agreement."
+    "description": "Get policies of a subscription"
   },
   {
     "action": "Microsoft.Billing/promotions/read",
@@ -13208,46 +12684,6 @@
     "description": "Creates or updates a Chaos Experiment resource in a resource group."
   },
   {
-    "action": "Microsoft.Chaos/privateAccesses/delete",
-    "description": "Deletes a Private Access resource in a resource group."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/delete",
-    "description": "Deletes a Private Endpoint Connection Proxy resource in a resource group."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/read",
-    "description": "Gets all Private Endpoint Connection Proxies that extend a tracked resource."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/validate/action",
-    "description": "Validates a Private Endpoint Connection Proxy resource in a resource group."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnectionProxies/write",
-    "description": "Creates or updates a Private Endpoint Connection Proxy resource in a resource group."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnections/delete",
-    "description": "Deletes a Private Endpoint Connection resource in a resource group."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnections/read",
-    "description": "Gets all Private Endpoint Connection that extend a tracked resource."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/privateEndpointConnections/write",
-    "description": "Creates or updates a Private Endpoint Connection resource in a resource group."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/read",
-    "description": "Gets all Private Accesses that extend a tracked resource."
-  },
-  {
-    "action": "Microsoft.Chaos/privateAccesses/write",
-    "description": "Creates or updates a Private Access resource in a resource group."
-  },
-  {
     "action": "Microsoft.Chaos/skus/read",
     "description": "Read the available SKUs for Chaos Studio."
   },
@@ -13274,6 +12710,134 @@
   {
     "action": "Microsoft.Chaos/targets/write",
     "description": "Creates or update a Target resource that extends a tracked resource."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/connections/delete",
+    "description": "Deletes a Connection resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/connections/read",
+    "description": "Gets Connection resources in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/connections/write",
+    "description": "Creates or updates a Connection resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/delete",
+    "description": "Deletes a Chaos Workspace resource in a resource group."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/discover/action",
+    "description": "Triggers resource discovery for all scenarios in a given workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/discoveredResources/read",
+    "description": "Gets resources discovered by a Workspace Discovery."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/discoveries/delete",
+    "description": "Deletes a Discovery resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/discoveries/read",
+    "description": "Gets Discovery resources in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/discoveries/start/action",
+    "description": "Starts a Discovery operation in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/discoveries/write",
+    "description": "Creates or updates a Discovery resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/evaluate/action",
+    "description": "Triggers template evaluation for all scenarios in a given workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/evaluations/delete",
+    "description": "Deletes an Evaluation resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/evaluations/read",
+    "description": "Gets Evaluation resources in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/evaluations/write",
+    "description": "Creates or updates an Evaluation resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/read",
+    "description": "Gets Chaos Workspace resources."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/delete",
+    "description": "Deletes a Scenario Configuration resource for a Scenario."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
+    "description": "Executes the scenario with the given scenario configuration."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/action",
+    "description": "Fixes resource permissions for the given scenario configuration."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+    "description": "Gets the latest fix resource permissions result for a Scenario Configuration."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+    "description": "Gets a Scenario Configuration resource or lists all Scenario Configuration resources for a Scenario."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
+    "description": "Validates the given scenario configuration."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+    "description": "Gets the latest validation for a Scenario Configuration."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/configurations/write",
+    "description": "Creates or updates a Scenario Configuration resource for a Scenario."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/delete",
+    "description": "Deletes a Scenario resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/read",
+    "description": "Gets Scenario resources in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
+    "description": "Cancels a running Scenario Run."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/runs/delete",
+    "description": "Deletes a Run resource in a Scenario."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/runs/read",
+    "description": "Gets Run resources in a Scenario."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/runs/start/action",
+    "description": "Starts a Scenario Run."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/runs/write",
+    "description": "Creates or updates a Run resource in a Scenario."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/scenarios/write",
+    "description": "Creates or updates a Scenario resource in a Workspace."
+  },
+  {
+    "action": "Microsoft.Chaos/workspaces/write",
+    "description": "Creates or updates a Chaos Workspace resource in a resource group."
   },
   {
     "action": "Microsoft.CleanRoom/cleanrooms/delete",
@@ -15156,6 +14720,10 @@
     "description": "A sync API for content provenance manifest binding to audio."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/client-watermark:register/action",
+    "description": "An internal API for registering generation metadata for a client-applied watermark."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/provenance/digest:sign/action",
     "description": "A sync API for content provenance manifest binding."
   },
@@ -15314,6 +14882,10 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/text:shieldprompt/action",
     "description": "A synchronous API for the analysis of text prompt injection attacks."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/ContentSafety/unifiedModerate/action",
+    "description": "A synchronous API for unified moderation of input content."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/ContentSafety/whitelist/features/read",
@@ -19088,6 +18660,10 @@
     "description": "Delete the adaptation of a model."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes/policies/write",
+    "description": "Sets policies for an account."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes/read",
     "description": "Gets information about fine-tuned models."
   },
@@ -20228,18 +19804,6 @@
     "description": "Writes deployments."
   },
   {
-    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/delete",
-    "description": "Delete budget policies"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/read",
-    "description": "Read budget policies"
-  },
-  {
-    "action": "Microsoft.CognitiveServices/accounts/budgetPolicies/write",
-    "description": "Create or update budget policies"
-  },
-  {
     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/delete",
     "description": "Delete a capability host"
   },
@@ -20278,6 +19842,18 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/connections/write",
     "description": "Write a connection"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/costControls/delete",
+    "description": "Deletes a Cost Control."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/costControls/read",
+    "description": "Gets Cost Controls under an account."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/costControls/write",
+    "description": "Creates or updates a Cost Control."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/defenderForAISettings/delete",
@@ -23664,10 +23240,6 @@
     "description": "Reads storage.k8s.io/v1beta1"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/approuting.kubernetes.azure.com/defaultdomaincertificates/read",
-    "description": "Get AI Manager Default Domain Certificates"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/delete",
     "description": "Deletes controllerrevisions"
   },
@@ -23764,10 +23336,6 @@
     "description": "Writes horizontalpodautoscalers"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/azmonitoring.coreos.com/podmonitors/read",
-    "description": "Get AI Manager Pod Monitors"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/batch/cronjobs/delete",
     "description": "Deletes cronjobs"
   },
@@ -23800,20 +23368,12 @@
     "description": "Deletes certificatesigningrequests"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
-    "description": "Allows automatic approval of kubelet client certificate signing requests"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/read",
     "description": "Reads certificatesigningrequests"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/write",
     "description": "Writes certificatesigningrequests"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/cilium.io/ciliumnetworkpolicies/read",
-    "description": "Get AI Manager Cilium Network Policies"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/componentstatuses/delete",
@@ -24012,46 +23572,6 @@
     "description": "Writes prioritylevelconfigurations"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/backendlbpolicies/read",
-    "description": "Get AI Manager Backend LB Policies"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/backendtlspolicies/read",
-    "description": "Get AI Manager Backend TLS Policies"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/gatewayclasses/read",
-    "description": "Get AI Manager Gateway Classes"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/gateways/read",
-    "description": "Get AI Manager Gateway Resources"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/grpcroutes/read",
-    "description": "Get AI Manager GRPC Routes"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/httproutes/read",
-    "description": "Get AI Manager HTTP Routes"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/referencegrants/read",
-    "description": "Get AI Manager Reference Grants"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/tcproutes/read",
-    "description": "Get AI Manager TCP Routes"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/tlsroutes/read",
-    "description": "Get AI Manager TLS Routes"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/udproutes/read",
-    "description": "Get AI Manager UDP Routes"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/groups/impersonate/action",
     "description": "Impersonate groups"
   },
@@ -24130,50 +23650,6 @@
   {
     "action": "Microsoft.ContainerService/aiManagers/healthz/read",
     "description": "Reads healthz"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/inference.networking.k8s.io/inferencepools/read",
-    "description": "Get AI Manager Inference Pools"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/inferencesets/read",
-    "description": "Get AI Manager Inference Sets"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/modelmirrors/read",
-    "description": "Get AI Manager Model Mirrors"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/multiroleinferences/read",
-    "description": "Get AI Manager Multi Role Inferences"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/ragengines/read",
-    "description": "Get AI Manager RAG Engines"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/workspaces/read",
-    "description": "Get AI Manager Workspaces"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/karpenter.azure.com/aksnodeclasses/read",
-    "description": "Get AI Manager AKS Node Classes"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/karpenter.sh/nodeclaims/read",
-    "description": "Get AI Manager Node Claims"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/karpenter.sh/nodepools/read",
-    "description": "Get AI Manager Node Pools"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/keda.sh/clustertriggerauthentications/read",
-    "description": "Get AI Manager Cluster Trigger Authentications"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/keda.sh/scaledobjects/read",
-    "description": "Get AI Manager Scaled Objects"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/limitranges/delete",
@@ -24268,24 +23744,8 @@
     "description": "Reads livez"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/llm-d.ai/inferenceobjectives/read",
-    "description": "Get AI Manager Inference Objectives"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/logs/read",
     "description": "Reads logs"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/modelSources/delete",
-    "description": "Delete AI Manager Model Source"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/modelSources/read",
-    "description": "Get AI Manager Model Source"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/modelSources/write",
-    "description": "Create or Update AI Manager Model Source"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/delete",
@@ -24296,40 +23756,16 @@
     "description": "Perform inference on AI Manager"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/namespaces/listAccessKeys/action",
-    "description": "List AI Manager Namespace Access Keys"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
     "description": "List AI Manager Namespace Credential"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/delete",
-    "description": "Delete AI Manager Model Deployment"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/read",
-    "description": "Get AI Manager Model Deployment"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/write",
-    "description": "Create or Update AI Manager Model Deployment"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/read",
     "description": "Get AI Manager Namespace"
   },
   {
-    "action": "Microsoft.ContainerService/aiManagers/namespaces/rotateKeys/action",
-    "description": "Rotate AI Manager Namespace Access Keys"
-  },
-  {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/write",
     "description": "Create or Update AI Manager Namespace"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/networking.istio.io/envoyfilters/read",
-    "description": "Get AI Manager Envoy Filters"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingressclasses/delete",
@@ -24674,14 +24110,6 @@
   {
     "action": "Microsoft.ContainerService/aiManagers/secrets/write",
     "description": "Writes secrets"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/security.istio.io/peerauthentications/read",
-    "description": "Get AI Manager Peer Authentications"
-  },
-  {
-    "action": "Microsoft.ContainerService/aiManagers/security.istio.io/requestauthentications/read",
-    "description": "Get AI Manager Request Authentications"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/serviceaccounts/delete",
@@ -25242,10 +24670,6 @@
   {
     "action": "Microsoft.ContainerService/fleets/certificates.k8s.io/certificatesigningrequests/delete",
     "description": "Deletes certificatesigningrequests"
-  },
-  {
-    "action": "Microsoft.ContainerService/fleets/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
-    "description": "Allows automatic approval of kubelet client certificate signing requests"
   },
   {
     "action": "Microsoft.ContainerService/fleets/certificates.k8s.io/certificatesigningrequests/read",
@@ -26046,10 +25470,6 @@
   {
     "action": "Microsoft.ContainerService/fleets/members/certificates.k8s.io/certificatesigningrequests/delete",
     "description": "Deletes certificatesigningrequests"
-  },
-  {
-    "action": "Microsoft.ContainerService/fleets/members/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
-    "description": "Allows automatic approval of kubelet client certificate signing requests"
   },
   {
     "action": "Microsoft.ContainerService/fleets/members/certificates.k8s.io/certificatesigningrequests/read",
@@ -27660,18 +27080,6 @@
     "description": "Writes validatingwebhookconfigurations"
   },
   {
-    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/delete",
-    "description": "Delete an agent fabric membership from a managed cluster"
-  },
-  {
-    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/read",
-    "description": "Read an agent fabric membership of a managed cluster"
-  },
-  {
-    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/write",
-    "description": "Create an agent fabric membership of a managed cluster"
-  },
-  {
     "action": "Microsoft.ContainerService/managedClusters/agentPools/abort/action",
     "description": "Latest ongoing operation on agent pool gets aborted"
   },
@@ -28086,10 +27494,6 @@
   {
     "action": "Microsoft.ContainerService/managedClusters/certificates.k8s.io/certificatesigningrequests/delete",
     "description": "Deletes certificatesigningrequests"
-  },
-  {
-    "action": "Microsoft.ContainerService/managedClusters/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
-    "description": "Allows automatic approval of kubelet client certificate signing requests"
   },
   {
     "action": "Microsoft.ContainerService/managedClusters/certificates.k8s.io/certificatesigningrequests/read",
@@ -32226,6 +31630,50 @@
   {
     "action": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/write",
     "description": "Create ResourceGuard proxy operation creates an Azure resource of type 'ResourceGuard Proxy'"
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappingStatus/action",
+    "description": "Retrieves the status of the cross-tenant vault mapping."
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/findRestorableTimeRanges/action",
+    "description": "Finds Restorable Time Ranges"
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/operationStatus/read",
+    "description": "Returns Backup Operation Status for Backup Vault."
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/read",
+    "description": "Returns details of the Backup Instance"
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/recoveryPoints/read",
+    "description": "Returns details of the Recovery Point"
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/restore/action",
+    "description": "Triggers restore on the Backup Instance"
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/validateRestore/action",
+    "description": "Validates for Restore of the Backup Instance"
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupJobs/read",
+    "description": "Get cross region restore job details from secondary region."
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/read",
+    "description": "Retrieves the cross-tenant vault mapping."
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/remove/action",
+    "description": "Remove the backup cross-tenant vault mapping."
+  },
+  {
+    "action": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/write",
+    "description": "Create a backup cross-tenant vault mapping."
   },
   {
     "action": "Microsoft.DataProtection/backupVaults/delete",
@@ -37440,6 +36888,18 @@
     "description": "Read Durable Task Scheduler Task Hub"
   },
   {
+    "action": "Microsoft.DurableTask/schedulers/taskhubs/taskqueues/delete",
+    "description": "Delete Durable Task Scheduler Task Queue"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/taskhubs/taskqueues/read",
+    "description": "Read Durable Task Scheduler Task Queue"
+  },
+  {
+    "action": "Microsoft.DurableTask/schedulers/taskhubs/taskqueues/write",
+    "description": "Create or Update Durable Task Scheduler Task Queue"
+  },
+  {
     "action": "Microsoft.DurableTask/schedulers/taskhubs/write",
     "description": "Create or Update Durable Task Scheduler Task Hub"
   },
@@ -39486,6 +38946,26 @@
   {
     "action": "Microsoft.EventHub/namespaces/eventHubs/consumergroups/write",
     "description": "Create or Update ConsumerGroup properties."
+  },
+  {
+    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/approve/action",
+    "description": "Operation to approve Fabric Shortcut resource request"
+  },
+  {
+    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/delete",
+    "description": "Operation to delete Fabric Shortcut resource"
+  },
+  {
+    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/read",
+    "description": "Get list of Fabric Shortcut resource descriptions"
+  },
+  {
+    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/reject/action",
+    "description": "Operation to reject Fabric Shortcut resource request"
+  },
+  {
+    "action": "Microsoft.EventHub/namespaces/eventHubs/fabricShortcuts/write",
+    "description": "Create or Update Fabric Shortcut properties."
   },
   {
     "action": "Microsoft.EventHub/namespaces/eventhubs/Delete",
@@ -44584,6 +44064,10 @@
     "description": "The operation to get a scan summary."
   },
   {
+    "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/latestCves/read",
+    "description": "Lists the latest CVE analysis results of a firmware, including how each CVE changed relative to the prior CVE analysis."
+  },
+  {
     "action": "Microsoft.IoTFirmwareDefense/workspaces/firmwares/passwordHashes/read",
     "description": "Lists password hash analysis results of a firmware."
   },
@@ -44622,6 +44106,18 @@
   {
     "action": "Microsoft.IoTFirmwareDefense/workspaces/write",
     "description": "The operation to update a firmware analysis workspaces."
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/delete",
+    "description": "Delete a AioApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/read",
+    "description": "Get a AioApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/write",
+    "description": "Create a AioApplicationConfigurationResource"
   },
   {
     "action": "Microsoft.IoTOperations/instances/akriConnectorTemplates/connectors/delete",
@@ -49412,18 +48908,6 @@
     "description": "API to update certain properties of the IP Community resource."
   },
   {
-    "action": "Microsoft.ManagedNetworkFabric/ipCommunityLists/delete",
-    "description": "Implements Ip Community List DELETE method."
-  },
-  {
-    "action": "Microsoft.ManagedNetworkFabric/ipCommunityLists/read",
-    "description": "Implements IpCommunityLists list by subscription GET method."
-  },
-  {
-    "action": "Microsoft.ManagedNetworkFabric/ipCommunityLists/write",
-    "description": "API to update certain properties of the Ip Community List resource."
-  },
-  {
     "action": "Microsoft.ManagedNetworkFabric/ipExtendedCommunities/delete",
     "description": "Implements IP Extended Community DELETE method."
   },
@@ -49438,18 +48922,6 @@
   {
     "action": "Microsoft.ManagedNetworkFabric/ipExtendedCommunities/write",
     "description": "API to update certain properties of the IP Extended Community resource."
-  },
-  {
-    "action": "Microsoft.ManagedNetworkFabric/ipPrefixLists/delete",
-    "description": "Implements Ip Prefix List DELETE method."
-  },
-  {
-    "action": "Microsoft.ManagedNetworkFabric/ipPrefixLists/read",
-    "description": "Implements IpPrefixLists list by subscription GET method."
-  },
-  {
-    "action": "Microsoft.ManagedNetworkFabric/ipPrefixLists/write",
-    "description": "API to update certain properties of the Ip Prefix List resource."
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/ipPrefixes/delete",
@@ -49562,10 +49034,6 @@
   {
     "action": "Microsoft.ManagedNetworkFabric/l3IsolationDomains/externalNetworks/read",
     "description": "Implements External Networks list by resource group GET method."
-  },
-  {
-    "action": "Microsoft.ManagedNetworkFabric/l3IsolationDomains/externalNetworks/updateAdminState/action",
-    "description": "Executes update operation to enable or disable administrative State for externalNetwork."
   },
   {
     "action": "Microsoft.ManagedNetworkFabric/l3IsolationDomains/externalNetworks/updateAdministrativeState/action",
@@ -53280,6 +52748,10 @@
     "description": "Creates or Updates Existing Admin Network Security Group"
   },
   {
+    "action": "Microsoft.Network/applicationGatewayAvailableConfidentialComputeRegions/read",
+    "description": "Get Application Gateway available Confidential Compute regions"
+  },
+  {
     "action": "Microsoft.Network/applicationGatewayAvailableRequestHeaders/read",
     "description": "Get Application Gateway available Request Headers"
   },
@@ -56592,6 +56064,18 @@
     "description": "Create or update a Virtual Hub"
   },
   {
+    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/delete",
+    "description": "Delete Virtual Network Appliance Capability"
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/read",
+    "description": "Get Virtual Network Appliance Capability"
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworkAppliances/capabilities/write",
+    "description": "Create or update Virtual Network Appliance Capability"
+  },
+  {
     "action": "Microsoft.Network/virtualNetworkAppliances/delete",
     "description": "Delete Virtual Network Appliance"
   },
@@ -56754,6 +56238,10 @@
   {
     "action": "Microsoft.Network/virtualNetworks/setAdminNetworkSecurityGroup/action",
     "description": "Sets Admin Network Security Group Reference On Virtual Network"
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworks/setGatewayConfiguration/action",
+    "description": "Sets Gateway VIP And Configuration Blob On Virtual Network"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/subnets/contextualServiceEndpointPolicies/delete",
@@ -57222,6 +56710,30 @@
   {
     "action": "Microsoft.NetworkCloud/clusters/write",
     "description": "Patch the properties of the provided cluster, or update the tags associated with the cluster. Properties and tag updates can be done independently."
+  },
+  {
+    "action": "Microsoft.NetworkCloud/edgeClusters/capacityProfiles/delete",
+    "description": "Delete the provided capacity profile."
+  },
+  {
+    "action": "Microsoft.NetworkCloud/edgeClusters/capacityProfiles/read",
+    "description": "Get a list of capacity profiles for the provided edge cluster."
+  },
+  {
+    "action": "Microsoft.NetworkCloud/edgeClusters/capacityProfiles/write",
+    "description": "Update the properties or tags associated with the provided capacity profile."
+  },
+  {
+    "action": "Microsoft.NetworkCloud/edgeClusters/delete",
+    "description": "Delete the provided edge cluster."
+  },
+  {
+    "action": "Microsoft.NetworkCloud/edgeClusters/read",
+    "description": "Get a list of edge clusters in the provided subscription."
+  },
+  {
+    "action": "Microsoft.NetworkCloud/edgeClusters/write",
+    "description": "Update the tags associated with the provided edge cluster."
   },
   {
     "action": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/delete",
@@ -65776,6 +65288,10 @@
     "description": "Read agent configurations."
   },
   {
+    "action": "Microsoft.Search/searchServices/agents/retrieve/action",
+    "description": "Retrieve relevant data from the backing stores of an Agent."
+  },
+  {
     "action": "Microsoft.Search/searchServices/agents/write",
     "description": "Create new agents or modify existing agent configurations."
   },
@@ -65880,6 +65396,10 @@
     "description": "Return a knowledge base or a list of knowledge bases."
   },
   {
+    "action": "Microsoft.Search/searchServices/knowledgeBases/retrieve/action",
+    "description": "Retrieve the contents of a Knowledge Base."
+  },
+  {
     "action": "Microsoft.Search/searchServices/knowledgeBases/write",
     "description": "Create a knowledge base or modify its properties."
   },
@@ -65890,6 +65410,10 @@
   {
     "action": "Microsoft.Search/searchServices/knowledgeSources/read",
     "description": "Read Knowledge Sources."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/knowledgeSources/retrieve/action",
+    "description": "Retrieve the contents of a Knowledge Source."
   },
   {
     "action": "Microsoft.Search/searchServices/knowledgeSources/write",

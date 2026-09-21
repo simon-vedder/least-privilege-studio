@@ -4639,6 +4639,20 @@
     "_estimatedActions": 221
   },
   {
+    "name": "Azure Kubernetes Service Flex Node Agent Role",
+    "id": "8f139b0f-7eaf-460b-a9da-5b1246d9ed0d",
+    "description": "Grants AKS Flex Node agents permission to retrieve bootstrap data and manage machine resources within an agent pool",
+    "actions": [
+      "Microsoft.ContainerService/managedClusters/agentPools/listBootstrapData/action",
+      "Microsoft.ContainerService/managedClusters/agentPools/machines/read",
+      "Microsoft.ContainerService/managedClusters/agentPools/machines/write"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 3
+  },
+  {
     "name": "Azure Kubernetes Service Hybrid Cluster Admin Role",
     "id": "b5092dac-c796-4349-8681-1a322a31c3f9",
     "description": "List cluster admin credential action.",
@@ -4970,13 +4984,14 @@
       "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/read",
       "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/write",
       "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/delete",
+      "Microsoft.HybridCompute/machines/read",
       "Microsoft.Resources/subscriptions/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 23
+    "_estimatedActions": 24
   },
   {
     "name": "Azure Local Infrastructure Reader",
@@ -4996,13 +5011,14 @@
       "Microsoft.AzureStackHCI/edgeMachines/volumes/read",
       "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/read",
       "Microsoft.AzureStackHCI/edgeMachines/networkAdapters/jobs/read",
+      "Microsoft.HybridCompute/machines/read",
       "Microsoft.Resources/subscriptions/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 15
+    "_estimatedActions": 16
   },
   {
     "name": "Azure Local Migrate Execute Expert",
@@ -9208,6 +9224,7 @@
     "actions": [
       "Microsoft.CognitiveServices/*/read",
       "Microsoft.CognitiveServices/accounts/listkeys/action",
+      "Microsoft.CognitiveServices/accounts/projects/connections/listsecrets/action",
       "Microsoft.Insights/alertRules/read",
       "Microsoft.Insights/diagnosticSettings/read",
       "Microsoft.Insights/logDefinitions/read",
@@ -9229,7 +9246,7 @@
       "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
       "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
     ],
-    "_estimatedActions": 51
+    "_estimatedActions": 52
   },
   {
     "name": "Collaborative Data Contributor",
@@ -13819,6 +13836,7 @@
       "Microsoft.Authorization/*/read",
       "Microsoft.CognitiveServices/*/read",
       "Microsoft.CognitiveServices/accounts/listkeys/action",
+      "Microsoft.CognitiveServices/accounts/projects/connections/listsecrets/action",
       "Microsoft.Insights/alertRules/read",
       "Microsoft.Insights/diagnosticSettings/read",
       "Microsoft.Insights/logDefinitions/read",
@@ -13840,7 +13858,7 @@
       "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
       "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
     ],
-    "_estimatedActions": 90
+    "_estimatedActions": 91
   },
   {
     "name": "Garnet Data Contributor",
@@ -18670,6 +18688,139 @@
     "_estimatedActions": 84
   },
   {
+    "name": "Red Team Administrator",
+    "id": "3f6d1a95-b7c8-4e2b-8f04-d91a6ce7235e",
+    "description": "Read approved Azure resources and manage Azure role assignments.",
+    "actions": [
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ResourceGraph/resources/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+      "Microsoft.Network/publicIPAddresses/read",
+      "Microsoft.Network/networkSecurityGroups/read",
+      "Microsoft.Network/networkInterfaces/read",
+      "Microsoft.Network/dnsZones/read",
+      "Microsoft.Network/dnsZones/CNAME/read",
+      "Microsoft.Compute/virtualMachines/read",
+      "Microsoft.Compute/virtualMachines/extensions/read",
+      "Microsoft.Web/sites/read",
+      "Microsoft.Web/sites/config/read",
+      "Microsoft.Web/sites/config/list/action",
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.KeyVault/vaults/read",
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/firewallRules/read",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.Automation/automationAccounts/read",
+      "Microsoft.OperationalInsights/workspaces/read",
+      "Microsoft.OperationalInsights/workspaces/query/read",
+      "Microsoft.OperationalInsights/workspaces/search/action",
+      "Microsoft.Security/assessments/read",
+      "Microsoft.Security/assessments/subAssessments/read",
+      "Microsoft.Security/alerts/read",
+      "Microsoft.Security/locations/alerts/read",
+      "Microsoft.Security/secureScores/read",
+      "Microsoft.Security/secureScoreControls/read",
+      "Microsoft.Security/secureScores/secureScoreControls/read",
+      "Microsoft.Security/tasks/read",
+      "Microsoft.Security/locations/tasks/read",
+      "Microsoft.Security/automations/read",
+      "Microsoft.Security/complianceResults/read",
+      "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
+      "Microsoft.Authorization/roleAssignments/read",
+      "Microsoft.Authorization/roleAssignments/write",
+      "Microsoft.Authorization/roleAssignments/delete"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
+      "Microsoft.KeyVault/vaults/keys/read",
+      "Microsoft.KeyVault/vaults/certificates/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 40
+  },
+  {
+    "name": "Red Team Recon Agent - Azure",
+    "id": "7e2a3b84-6f91-4c5d-b8a2-1f37e9d4ac60",
+    "description": "Read approved Azure resources and security metadata.",
+    "actions": [
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ResourceGraph/resources/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+      "Microsoft.Network/publicIPAddresses/read",
+      "Microsoft.Network/networkSecurityGroups/read",
+      "Microsoft.Network/networkInterfaces/read",
+      "Microsoft.Network/dnsZones/read",
+      "Microsoft.Network/dnsZones/CNAME/read",
+      "Microsoft.Compute/virtualMachines/read",
+      "Microsoft.Compute/virtualMachines/extensions/read",
+      "Microsoft.Web/sites/read",
+      "Microsoft.Web/sites/config/read",
+      "Microsoft.Web/sites/config/list/action",
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.KeyVault/vaults/read",
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/firewallRules/read",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.Automation/automationAccounts/read",
+      "Microsoft.OperationalInsights/workspaces/read",
+      "Microsoft.OperationalInsights/workspaces/query/read",
+      "Microsoft.OperationalInsights/workspaces/search/action",
+      "Microsoft.Security/assessments/read",
+      "Microsoft.Security/assessments/subAssessments/read",
+      "Microsoft.Security/alerts/read",
+      "Microsoft.Security/locations/alerts/read",
+      "Microsoft.Security/secureScores/read",
+      "Microsoft.Security/secureScoreControls/read",
+      "Microsoft.Security/secureScores/secureScoreControls/read",
+      "Microsoft.Security/tasks/read",
+      "Microsoft.Security/locations/tasks/read",
+      "Microsoft.Security/automations/read",
+      "Microsoft.Security/complianceResults/read",
+      "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
+      "Microsoft.Authorization/roleAssignments/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
+      "Microsoft.KeyVault/vaults/keys/read",
+      "Microsoft.KeyVault/vaults/certificates/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 38
+  },
+  {
+    "name": "Red Team Web App Agent",
+    "id": "c1d8f2a9-45be-4f73-9a16-8b02d5e7f4c1",
+    "description": "Read Azure web application and exposure metadata.",
+    "actions": [
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ResourceGraph/resources/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Network/publicIPAddresses/read",
+      "Microsoft.Network/networkSecurityGroups/read",
+      "Microsoft.Network/networkInterfaces/read",
+      "Microsoft.Network/dnsZones/read",
+      "Microsoft.Network/dnsZones/CNAME/read",
+      "Microsoft.Web/sites/read",
+      "Microsoft.Web/sites/config/read",
+      "Microsoft.Web/sites/config/list/action",
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 14
+  },
+  {
     "name": "Redis Cache Contributor",
     "id": "e0f68234-74aa-48ed-b826-c38b57376e17",
     "description": "Create and manage Azure Cache for Redis resources. Cannot read or write data stored in the cache.",
@@ -19210,6 +19361,19 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 68
+  },
+  {
+    "name": "Security Service Entitlements Contributor",
+    "id": "23511ce8-0df2-4291-ac54-4c47989f54fa",
+    "description": "Allows users to read and create or update Microsoft.Security service entitlement resources for Defender product onboarding.",
+    "actions": [
+      "Microsoft.Security/serviceEntitlements/read",
+      "Microsoft.Security/serviceEntitlements/write"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Semantic Reranker User",
