@@ -1861,26 +1861,9 @@
     "_estimatedActions": 60
   },
   {
-    "name": "Azure AIManager and namespace RBAC Admin",
-    "id": "e2845093-d729-45cd-9f6e-a337c027d655",
-    "description": "Allows read/write access to all objects in an Azure AI Manager namespace, except Secrets, roles, and role bindings. Applying this role at the AI Manager scope will give access across all namespaces.",
-    "actions": [
-      "Microsoft.Authorization/*/read",
-      "Microsoft.Resources/subscriptions/operationresults/read",
-      "Microsoft.Resources/subscriptions/read",
-      "Microsoft.Resources/subscriptions/resourceGroups/read"
-    ],
-    "notActions": [],
-    "dataActions": [
-      "Microsoft.ContainerService/aiManagers/*"
-    ],
-    "notDataActions": [],
-    "_estimatedActions": 13
-  },
-  {
     "name": "Azure AIManager Contributor",
     "id": "413f2675-4911-4010-be3b-c720b43a3c59",
-    "description": "Grants read/write access to Azure resources provided by Kubernetes AI Manager, including aimanagers, deployments, namespace, etc.",
+    "description": "Grants read/write access to Azure resources provided by Azure AIManager, including aimanagers, deployments, namespace and models etc.",
     "actions": [
       "Microsoft.Authorization/*/read",
       "Microsoft.Insights/alertRules/*",
@@ -1911,9 +1894,19 @@
     "_estimatedActions": 13
   },
   {
-    "name": "Azure AIManager RBAC Reader",
-    "id": "9c77f8a7-b0b9-4462-844c-de6e66add8ba",
-    "description": "Allows read-only access to all objects in an Azure AI Manager namespace, except Secrets, roles, and role bindings. Applying this role at the AI Manager scope will give access across all namespaces.",
+    "name": "Azure AIManager Model User",
+    "id": "cfd6c7dc-3ed8-41c1-989c-bccee069803a",
+    "description": "Allows read access to list models, get model details, and calculate model costs",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Azure AIManager RBAC Admin",
+    "id": "e2845093-d729-45cd-9f6e-a337c027d655",
+    "description": "Allows read/write access to all Kubernetes objects in an Azure AIManager.",
     "actions": [
       "Microsoft.Authorization/*/read",
       "Microsoft.Resources/subscriptions/operationresults/read",
@@ -1922,55 +1915,58 @@
     ],
     "notActions": [],
     "dataActions": [
-      "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
-      "Microsoft.ContainerService/aiManagers/apps/daemonsets/read",
-      "Microsoft.ContainerService/aiManagers/apps/deployments/read",
-      "Microsoft.ContainerService/aiManagers/apps/replicasets/read",
-      "Microsoft.ContainerService/aiManagers/apps/statefulsets/read",
-      "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/read",
-      "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
-      "Microsoft.ContainerService/aiManagers/batch/jobs/read",
-      "Microsoft.ContainerService/aiManagers/configmaps/read",
-      "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/read",
-      "Microsoft.ContainerService/aiManagers/endpoints/read",
-      "Microsoft.ContainerService/aiManagers/events.k8s.io/events/read",
-      "Microsoft.ContainerService/aiManagers/events/read",
-      "Microsoft.ContainerService/aiManagers/extensions/daemonsets/read",
-      "Microsoft.ContainerService/aiManagers/extensions/deployments/read",
-      "Microsoft.ContainerService/aiManagers/extensions/ingresses/read",
-      "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/read",
-      "Microsoft.ContainerService/aiManagers/extensions/replicasets/read",
-      "Microsoft.ContainerService/aiManagers/limitranges/read",
-      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/pods/read",
-      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/nodes/read",
-      "Microsoft.ContainerService/aiManagers/namespaces/read",
-      "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/read",
-      "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/read",
-      "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/read",
-      "Microsoft.ContainerService/aiManagers/pods/read",
-      "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/read",
-      "Microsoft.ContainerService/aiManagers/replicationcontrollers/read",
-      "Microsoft.ContainerService/aiManagers/resourcequotas/read",
-      "Microsoft.ContainerService/aiManagers/serviceaccounts/read",
-      "Microsoft.ContainerService/aiManagers/services/read"
+      "Microsoft.ContainerService/aiManagers/*"
     ],
     "notDataActions": [],
     "_estimatedActions": 13
   },
   {
+    "name": "Azure AIManager RBAC Reader",
+    "id": "9c77f8a7-b0b9-4462-844c-de6e66add8ba",
+    "description": "Allows read-only access to all Kubernetes objects in an Azure AIManager, except Secrets, roles, and role bindings. Applying this role at the AIManager scope will give access across all namespaces.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Resources/subscriptions/operationresults/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ContainerService/aiManagers/*/read",
+      "Microsoft.ContainerService/aiManagers/apps/*/read",
+      "Microsoft.ContainerService/aiManagers/autoscaling/*/read",
+      "Microsoft.ContainerService/aiManagers/batch/*/read",
+      "Microsoft.ContainerService/aiManagers/discovery.k8s.io/*/read",
+      "Microsoft.ContainerService/aiManagers/events.k8s.io/*/read",
+      "Microsoft.ContainerService/aiManagers/extensions/*/read",
+      "Microsoft.ContainerService/aiManagers/metrics.k8s.io/*/read",
+      "Microsoft.ContainerService/aiManagers/networking.k8s.io/*/read",
+      "Microsoft.ContainerService/aiManagers/policy/*/read"
+    ],
+    "notDataActions": [
+      "Microsoft.ContainerService/aiManagers/secrets/*",
+      "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterroles/*",
+      "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterrolebindings/*",
+      "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/roles/*",
+      "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/rolebindings/*"
+    ],
+    "_estimatedActions": 13
+  },
+  {
     "name": "Azure AIManager User",
     "id": "223653d0-bf85-419e-ac7a-a67edf5fc44b",
-    "description": "Grants read access to Azure resources provided by Kubernetes AI Manager, including aimanagers, deployments, namespace, etc.",
+    "description": "Grants read access to Azure resources provided by Azure AIManager, including aimanagers, deployments, namespace, etc.",
     "actions": [
       "Microsoft.ContainerService/aiManagers/listCredential/action",
       "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
       "Microsoft.ContainerService/aiManagers/read",
-      "Microsoft.ContainerService/aiManagers/*/read"
+      "Microsoft.ContainerService/aiManagers/*/read",
+      "Microsoft.ContainerService/aiManagers/namespaces/*/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 13
+    "_estimatedActions": 23
   },
   {
     "name": "Azure API Center Compliance Manager",
@@ -2141,6 +2137,52 @@
     ],
     "notDataActions": [],
     "_estimatedActions": 74
+  },
+  {
+    "name": "Azure Arc Kubernetes Reader",
+    "id": "06927065-6e3c-475e-b565-1dd2c3a93b60",
+    "description": "Lets you read all resources in cluster/namespace, except secrets.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Insights/alertRules/read",
+      "Microsoft.Resources/subscriptions/operationresults/read",
+      "Microsoft.Resources/subscriptions/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Support/*"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Kubernetes/connectedClusters/apps/controllerrevisions/read",
+      "Microsoft.Kubernetes/connectedClusters/apps/daemonsets/read",
+      "Microsoft.Kubernetes/connectedClusters/apps/deployments/read",
+      "Microsoft.Kubernetes/connectedClusters/apps/replicasets/read",
+      "Microsoft.Kubernetes/connectedClusters/apps/statefulsets/read",
+      "Microsoft.Kubernetes/connectedClusters/autoscaling/horizontalpodautoscalers/read",
+      "Microsoft.Kubernetes/connectedClusters/batch/cronjobs/read",
+      "Microsoft.Kubernetes/connectedClusters/batch/jobs/read",
+      "Microsoft.Kubernetes/connectedClusters/configmaps/read",
+      "Microsoft.Kubernetes/connectedClusters/endpoints/read",
+      "Microsoft.Kubernetes/connectedClusters/events.k8s.io/events/read",
+      "Microsoft.Kubernetes/connectedClusters/events/read",
+      "Microsoft.Kubernetes/connectedClusters/extensions/daemonsets/read",
+      "Microsoft.Kubernetes/connectedClusters/extensions/deployments/read",
+      "Microsoft.Kubernetes/connectedClusters/extensions/ingresses/read",
+      "Microsoft.Kubernetes/connectedClusters/extensions/networkpolicies/read",
+      "Microsoft.Kubernetes/connectedClusters/extensions/replicasets/read",
+      "Microsoft.Kubernetes/connectedClusters/limitranges/read",
+      "Microsoft.Kubernetes/connectedClusters/namespaces/read",
+      "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/ingresses/read",
+      "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/networkpolicies/read",
+      "Microsoft.Kubernetes/connectedClusters/persistentvolumeclaims/read",
+      "Microsoft.Kubernetes/connectedClusters/pods/read",
+      "Microsoft.Kubernetes/connectedClusters/policy/poddisruptionbudgets/read",
+      "Microsoft.Kubernetes/connectedClusters/replicationcontrollers/read",
+      "Microsoft.Kubernetes/connectedClusters/resourcequotas/read",
+      "Microsoft.Kubernetes/connectedClusters/serviceaccounts/read",
+      "Microsoft.Kubernetes/connectedClusters/services/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 44
   },
   {
     "name": "Azure Arc Kubernetes Viewer",
@@ -6189,6 +6231,11 @@
       "Microsoft.Chaos/workspaces/delete",
       "Microsoft.Chaos/workspaces/read",
       "Microsoft.Chaos/workspaces/write",
+      "Microsoft.Chaos/workspaces/discover/action",
+      "Microsoft.Chaos/workspaces/evaluate/action",
+      "Microsoft.Chaos/workspaces/discoveries/read",
+      "Microsoft.Chaos/workspaces/evaluations/read",
+      "Microsoft.Chaos/workspaces/operationResults/read",
       "Microsoft.Chaos/workspaces/refreshRecommendations/action",
       "Microsoft.Chaos/workspaces/discoveredResources/read",
       "Microsoft.Chaos/workspaces/scenarios/delete",
@@ -6219,7 +6266,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 53
+    "_estimatedActions": 58
   },
   {
     "name": "Azure Resilience Management Drills Assets Contributor",
@@ -6240,6 +6287,11 @@
       "Microsoft.Chaos/workspaces/delete",
       "Microsoft.Chaos/workspaces/read",
       "Microsoft.Chaos/workspaces/write",
+      "Microsoft.Chaos/workspaces/discover/action",
+      "Microsoft.Chaos/workspaces/evaluate/action",
+      "Microsoft.Chaos/workspaces/discoveries/read",
+      "Microsoft.Chaos/workspaces/evaluations/read",
+      "Microsoft.Chaos/workspaces/operationResults/read",
       "Microsoft.Chaos/workspaces/refreshRecommendations/action",
       "Microsoft.Chaos/workspaces/discoveredResources/read",
       "Microsoft.Chaos/workspaces/scenarios/delete",
@@ -6272,7 +6324,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 51
+    "_estimatedActions": 56
   },
   {
     "name": "Azure Resilience Management Drills Contributor",
@@ -8270,6 +8322,70 @@
     "_estimatedActions": 26
   },
   {
+    "name": "Chaos Permissions Admin",
+    "id": "1091dee8-a09b-4205-95fa-b0100e8f006d",
+    "description": "Can review and fix resource permissions for Chaos Studio scenario configurations, with read-only access to other workspace resources and results. Cannot author resources, trigger discovery or evaluation, validate configurations, or execute or cancel runs. Intended for security and IAM administrators.",
+    "actions": [
+      "Microsoft.Chaos/workspaces/read",
+      "Microsoft.Chaos/workspaces/connections/read",
+      "Microsoft.Chaos/workspaces/discoveredResources/read",
+      "Microsoft.Chaos/workspaces/discoveries/read",
+      "Microsoft.Chaos/workspaces/evaluations/read",
+      "Microsoft.Chaos/workspaces/operationResults/read",
+      "Microsoft.Chaos/workspaces/scenarios/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/action",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+      "Microsoft.Chaos/workspaces/scenarios/runs/read",
+      "Microsoft.Chaos/operations/read",
+      "Microsoft.Chaos/locations/actions/read",
+      "Microsoft.Chaos/locations/actionVersions/read",
+      "Microsoft.Chaos/locations/operationStatuses/read",
+      "Microsoft.Chaos/locations/operationResults/read",
+      "Microsoft.Chaos/locations/targetTypes/read",
+      "Microsoft.Chaos/locations/targetTypes/capabilityTypes/read",
+      "Microsoft.Chaos/locations/workspaceOperationResults/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 20
+  },
+  {
+    "name": "Chaos Scenario Operator",
+    "id": "08debc4b-0ada-478e-b198-db165d97e7de",
+    "description": "Can validate configurations and execute, cancel, and monitor Chaos Studio scenario runs. Cannot author or delete workspace resources, trigger discovery or evaluation, or fix resource permissions. Intended for SREs and on-call engineers.",
+    "actions": [
+      "Microsoft.Chaos/workspaces/read",
+      "Microsoft.Chaos/workspaces/connections/read",
+      "Microsoft.Chaos/workspaces/discoveredResources/read",
+      "Microsoft.Chaos/workspaces/discoveries/read",
+      "Microsoft.Chaos/workspaces/evaluations/read",
+      "Microsoft.Chaos/workspaces/operationResults/read",
+      "Microsoft.Chaos/workspaces/scenarios/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+      "Microsoft.Chaos/workspaces/scenarios/runs/read",
+      "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
+      "Microsoft.Chaos/operations/read",
+      "Microsoft.Chaos/locations/actions/read",
+      "Microsoft.Chaos/locations/actionVersions/read",
+      "Microsoft.Chaos/locations/operationStatuses/read",
+      "Microsoft.Chaos/locations/operationResults/read",
+      "Microsoft.Chaos/locations/targetTypes/read",
+      "Microsoft.Chaos/locations/targetTypes/capabilityTypes/read",
+      "Microsoft.Chaos/locations/workspaceOperationResults/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 22
+  },
+  {
     "name": "Chaos Studio Experiment Contributor",
     "id": "7c2e40b7-25eb-482a-82cb-78ba06cb46d5",
     "description": "Can create, run, and see details for experiments, onboard targets, and manage capabilities.",
@@ -8345,6 +8461,49 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 79
+  },
+  {
+    "name": "Chaos Workspace Contributor",
+    "id": "9a6bb34c-81a2-4692-b7e4-d892eb1f56b5",
+    "description": "Can manage Chaos Studio workspaces and connections, discover resources, evaluate recommendations, author and validate scenarios and configurations, and execute and cancel runs. Cannot fix resource permissions. Intended for workspace owners.",
+    "actions": [
+      "Microsoft.Chaos/workspaces/read",
+      "Microsoft.Chaos/workspaces/write",
+      "Microsoft.Chaos/workspaces/delete",
+      "Microsoft.Chaos/workspaces/discover/action",
+      "Microsoft.Chaos/workspaces/evaluate/action",
+      "Microsoft.Chaos/workspaces/connections/read",
+      "Microsoft.Chaos/workspaces/connections/write",
+      "Microsoft.Chaos/workspaces/connections/delete",
+      "Microsoft.Chaos/workspaces/discoveredResources/read",
+      "Microsoft.Chaos/workspaces/discoveries/read",
+      "Microsoft.Chaos/workspaces/evaluations/read",
+      "Microsoft.Chaos/workspaces/operationResults/read",
+      "Microsoft.Chaos/workspaces/scenarios/read",
+      "Microsoft.Chaos/workspaces/scenarios/write",
+      "Microsoft.Chaos/workspaces/scenarios/delete",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/write",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/delete",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+      "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+      "Microsoft.Chaos/workspaces/scenarios/runs/read",
+      "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
+      "Microsoft.Chaos/operations/read",
+      "Microsoft.Chaos/locations/actions/read",
+      "Microsoft.Chaos/locations/actionVersions/read",
+      "Microsoft.Chaos/locations/operationStatuses/read",
+      "Microsoft.Chaos/locations/operationResults/read",
+      "Microsoft.Chaos/locations/targetTypes/read",
+      "Microsoft.Chaos/locations/targetTypes/capabilityTypes/read",
+      "Microsoft.Chaos/locations/workspaceOperationResults/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 32
   },
   {
     "name": "Classic Network Contributor",
@@ -10159,6 +10318,46 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 6
+  },
+  {
+    "name": "Container Registry Connected Registry Sync Contributor",
+    "id": "e85263c4-8ef3-4ab1-82a4-f6d18e75d328",
+    "description": "Grants the data-plane permissions required to list repositories; read, write, and delete repository content and metadata; and communicate with the ACR gateway for ReadWrite Connected Registry synchronization.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/config/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/config/write",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/message/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/message/write",
+      "Microsoft.ContainerRegistry/registries/catalog/read",
+      "Microsoft.ContainerRegistry/registries/repositories/content/read",
+      "Microsoft.ContainerRegistry/registries/repositories/content/write",
+      "Microsoft.ContainerRegistry/registries/repositories/content/delete",
+      "Microsoft.ContainerRegistry/registries/repositories/metadata/read",
+      "Microsoft.ContainerRegistry/registries/repositories/metadata/write",
+      "Microsoft.ContainerRegistry/registries/repositories/metadata/delete"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Container Registry Connected Registry Sync Reader",
+    "id": "2b7c9e07-f345-488e-ac2f-78e83b45fda4",
+    "description": "Grants the data-plane permissions required to list repositories, read repository content and metadata, and communicate with the ACR gateway for ReadOnly Connected Registry synchronization.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/config/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/config/write",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/message/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/message/write",
+      "Microsoft.ContainerRegistry/registries/catalog/read",
+      "Microsoft.ContainerRegistry/registries/repositories/content/read",
+      "Microsoft.ContainerRegistry/registries/repositories/metadata/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
   },
   {
     "name": "Container Registry Contributor and Data Access Configuration Administrator",
@@ -12818,6 +13017,22 @@
     "_estimatedActions": 55
   },
   {
+    "name": "Durable Task Contributor",
+    "id": "b774de67-8924-4991-9fe5-07d8a8f51401",
+    "description": "Full management of Durable Task Scheduler, including creation, deletion, and updates.",
+    "actions": [
+      "Microsoft.Authorization/*/read",
+      "Microsoft.DurableTask/schedulers/*/read",
+      "Microsoft.DurableTask/schedulers/*/write",
+      "Microsoft.DurableTask/schedulers/*/delete",
+      "Microsoft.DurableTask/schedulers/*/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 50
+  },
+  {
     "name": "Durable Task Data Contributor",
     "id": "0ad04412-c4d5-4796-b79c-f76d14c8d402",
     "description": "Durable Task role for all data access operations.",
@@ -14186,6 +14401,18 @@
     "_estimatedActions": 30
   },
   {
+    "name": "Genome Data Reader",
+    "id": "1344669a-e3ad-4e43-8972-087b0c4cf2d9",
+    "description": "Grants read access to Genome data plane operations",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Genome/data/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "Genome EndUser",
     "id": "0e91b552-ae32-49ea-9898-317af306aa4b",
     "description": "Full access to Genome control plane and data plane operations",
@@ -14908,16 +15135,17 @@
     "actions": [
       "Microsoft.InferenceService/inferenceAccounts/write",
       "Microsoft.InferenceService/inferenceAccounts/read",
-      "Microsoft.InferenceService/inferenceAccounts/delete",
+      "Microsoft.InferenceService/inferenceAccounts/delete"
+    ],
+    "notActions": [
       "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
       "Microsoft.InferenceService/inferenceAccounts/regenerateKeys/action"
     ],
-    "notActions": [],
     "dataActions": [],
     "notDataActions": [
       "Microsoft.InferenceService/inferenceAccounts/invoke/*"
     ],
-    "_estimatedActions": 5
+    "_estimatedActions": 3
   },
   {
     "name": "Inference Account Owner",
@@ -18686,139 +18914,6 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 84
-  },
-  {
-    "name": "Red Team Administrator",
-    "id": "3f6d1a95-b7c8-4e2b-8f04-d91a6ce7235e",
-    "description": "Read approved Azure resources and manage Azure role assignments.",
-    "actions": [
-      "Microsoft.Resources/subscriptions/read",
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.ResourceGraph/resources/read",
-      "Microsoft.Storage/storageAccounts/read",
-      "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-      "Microsoft.Network/publicIPAddresses/read",
-      "Microsoft.Network/networkSecurityGroups/read",
-      "Microsoft.Network/networkInterfaces/read",
-      "Microsoft.Network/dnsZones/read",
-      "Microsoft.Network/dnsZones/CNAME/read",
-      "Microsoft.Compute/virtualMachines/read",
-      "Microsoft.Compute/virtualMachines/extensions/read",
-      "Microsoft.Web/sites/read",
-      "Microsoft.Web/sites/config/read",
-      "Microsoft.Web/sites/config/list/action",
-      "Microsoft.ContainerService/managedClusters/read",
-      "Microsoft.KeyVault/vaults/read",
-      "Microsoft.ContainerRegistry/registries/read",
-      "Microsoft.Sql/servers/read",
-      "Microsoft.Sql/servers/firewallRules/read",
-      "Microsoft.DocumentDB/databaseAccounts/read",
-      "Microsoft.Automation/automationAccounts/read",
-      "Microsoft.OperationalInsights/workspaces/read",
-      "Microsoft.OperationalInsights/workspaces/query/read",
-      "Microsoft.OperationalInsights/workspaces/search/action",
-      "Microsoft.Security/assessments/read",
-      "Microsoft.Security/assessments/subAssessments/read",
-      "Microsoft.Security/alerts/read",
-      "Microsoft.Security/locations/alerts/read",
-      "Microsoft.Security/secureScores/read",
-      "Microsoft.Security/secureScoreControls/read",
-      "Microsoft.Security/secureScores/secureScoreControls/read",
-      "Microsoft.Security/tasks/read",
-      "Microsoft.Security/locations/tasks/read",
-      "Microsoft.Security/automations/read",
-      "Microsoft.Security/complianceResults/read",
-      "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
-      "Microsoft.Authorization/roleAssignments/read",
-      "Microsoft.Authorization/roleAssignments/write",
-      "Microsoft.Authorization/roleAssignments/delete"
-    ],
-    "notActions": [],
-    "dataActions": [
-      "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
-      "Microsoft.KeyVault/vaults/keys/read",
-      "Microsoft.KeyVault/vaults/certificates/read"
-    ],
-    "notDataActions": [],
-    "_estimatedActions": 40
-  },
-  {
-    "name": "Red Team Recon Agent - Azure",
-    "id": "7e2a3b84-6f91-4c5d-b8a2-1f37e9d4ac60",
-    "description": "Read approved Azure resources and security metadata.",
-    "actions": [
-      "Microsoft.Resources/subscriptions/read",
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.ResourceGraph/resources/read",
-      "Microsoft.Storage/storageAccounts/read",
-      "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-      "Microsoft.Network/publicIPAddresses/read",
-      "Microsoft.Network/networkSecurityGroups/read",
-      "Microsoft.Network/networkInterfaces/read",
-      "Microsoft.Network/dnsZones/read",
-      "Microsoft.Network/dnsZones/CNAME/read",
-      "Microsoft.Compute/virtualMachines/read",
-      "Microsoft.Compute/virtualMachines/extensions/read",
-      "Microsoft.Web/sites/read",
-      "Microsoft.Web/sites/config/read",
-      "Microsoft.Web/sites/config/list/action",
-      "Microsoft.ContainerService/managedClusters/read",
-      "Microsoft.KeyVault/vaults/read",
-      "Microsoft.ContainerRegistry/registries/read",
-      "Microsoft.Sql/servers/read",
-      "Microsoft.Sql/servers/firewallRules/read",
-      "Microsoft.DocumentDB/databaseAccounts/read",
-      "Microsoft.Automation/automationAccounts/read",
-      "Microsoft.OperationalInsights/workspaces/read",
-      "Microsoft.OperationalInsights/workspaces/query/read",
-      "Microsoft.OperationalInsights/workspaces/search/action",
-      "Microsoft.Security/assessments/read",
-      "Microsoft.Security/assessments/subAssessments/read",
-      "Microsoft.Security/alerts/read",
-      "Microsoft.Security/locations/alerts/read",
-      "Microsoft.Security/secureScores/read",
-      "Microsoft.Security/secureScoreControls/read",
-      "Microsoft.Security/secureScores/secureScoreControls/read",
-      "Microsoft.Security/tasks/read",
-      "Microsoft.Security/locations/tasks/read",
-      "Microsoft.Security/automations/read",
-      "Microsoft.Security/complianceResults/read",
-      "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
-      "Microsoft.Authorization/roleAssignments/read"
-    ],
-    "notActions": [],
-    "dataActions": [
-      "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
-      "Microsoft.KeyVault/vaults/keys/read",
-      "Microsoft.KeyVault/vaults/certificates/read"
-    ],
-    "notDataActions": [],
-    "_estimatedActions": 38
-  },
-  {
-    "name": "Red Team Web App Agent",
-    "id": "c1d8f2a9-45be-4f73-9a16-8b02d5e7f4c1",
-    "description": "Read Azure web application and exposure metadata.",
-    "actions": [
-      "Microsoft.Resources/subscriptions/read",
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.ResourceGraph/resources/read",
-      "Microsoft.Storage/storageAccounts/read",
-      "Microsoft.Network/publicIPAddresses/read",
-      "Microsoft.Network/networkSecurityGroups/read",
-      "Microsoft.Network/networkInterfaces/read",
-      "Microsoft.Network/dnsZones/read",
-      "Microsoft.Network/dnsZones/CNAME/read",
-      "Microsoft.Web/sites/read",
-      "Microsoft.Web/sites/config/read",
-      "Microsoft.Web/sites/config/list/action",
-      "Microsoft.ContainerRegistry/registries/read",
-      "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read"
-    ],
-    "notActions": [],
-    "dataActions": [],
-    "notDataActions": [],
-    "_estimatedActions": 14
   },
   {
     "name": "Redis Cache Contributor",

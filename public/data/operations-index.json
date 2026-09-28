@@ -1680,8 +1680,24 @@
     "description": "List the authentication keys of an AI Gateway instance"
   },
   {
+    "action": "Microsoft.ApiManagement/aigateways/models/call/action",
+    "description": "Invokes a model through an AI Gateway."
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/models/list/action",
+    "description": "Lists the models available through an AI Gateway by using the OpenAI-compatible GET /v1/models endpoint."
+  },
+  {
     "action": "Microsoft.ApiManagement/aigateways/read",
     "description": "Read metadata for an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/tools/call/action",
+    "description": "Invokes a tool on an AI Gateway MCP server by using the MCP tools/call method."
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/tools/list/action",
+    "description": "Lists the tools available on an AI Gateway MCP server by using the MCP tools/list method."
   },
   {
     "action": "Microsoft.ApiManagement/aigateways/workspaces/modelProviders/delete",
@@ -1708,12 +1724,12 @@
     "description": "Creates or Updates a model provider. or Updates an existing model provider."
   },
   {
-    "action": "Microsoft.ApiManagement/aigateways/workspaces/models/invoke/action",
-    "description": "Invokes an AI Gateway model API."
-  },
-  {
     "action": "Microsoft.ApiManagement/aigateways/workspaces/models/read",
     "description": "Lists all models across all model providers in a workspace."
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/workspaces/read",
+    "description": "Gets the details of the Workspace specified by its identifier."
   },
   {
     "action": "Microsoft.ApiManagement/aigateways/workspaces/telemetryExporters/delete",
@@ -1733,11 +1749,7 @@
   },
   {
     "action": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/endpoints/oauth2/action",
-    "description": "Mints PKCE state and returns the IdP authorize URL plus redirect URI for the operator-driven OAuth 2.0 Authorization Code dance. or Clears the persisted refresh_token and bumps the OAuth2 configVersion. Idempotent; does not call the IdP."
-  },
-  {
-    "action": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/invoke/action",
-    "description": "Invokes an AI Gateway tool server."
+    "description": "Returns a short-lived Gateway start link and the Gateway callback redirect URI for the configured OAuth 2.0 Authorization Code endpoint."
   },
   {
     "action": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/listSecrets/action",
@@ -1750,6 +1762,10 @@
   {
     "action": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/write",
     "description": "Creates or Updates a tool server. or Updates an existing tool server."
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/workspaces/write",
+    "description": "Updates the details of the Workspace specified by its identifier."
   },
   {
     "action": "Microsoft.ApiManagement/aigateways/write",
@@ -1814,6 +1830,18 @@
   {
     "action": "Microsoft.ApiManagement/service/aigatewaytenants/write",
     "description": "Creates or Updates an AI Gateway tenant. or Updates an existing AI Gateway tenant."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/aliases/delete",
+    "description": "Deletes the specified alias."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/aliases/read",
+    "description": "Lists a collection of aliases in the specified service instance. or Gets the details of the alias specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/aliases/write",
+    "description": "Creates or Updates an alias. or Updates an existing alias."
   },
   {
     "action": "Microsoft.ApiManagement/service/apiKeys/delete",
@@ -2374,18 +2402,6 @@
   {
     "action": "Microsoft.ApiManagement/service/identityProviders/write",
     "description": "Creates or Updates the IdentityProvider configuration. or Updates an existing IdentityProvider configuration."
-  },
-  {
-    "action": "Microsoft.ApiManagement/service/languageModels/delete",
-    "description": "Deletes the specified language model."
-  },
-  {
-    "action": "Microsoft.ApiManagement/service/languageModels/read",
-    "description": "Lists a collection of language models in the specified service instance. or Gets the details of the language model specified by its identifier."
-  },
-  {
-    "action": "Microsoft.ApiManagement/service/languageModels/write",
-    "description": "Creates or Updates a language model. or Updates an existing language model."
   },
   {
     "action": "Microsoft.ApiManagement/service/loggers/delete",
@@ -3149,7 +3165,7 @@
   },
   {
     "action": "Microsoft.ApiManagement/service/toolServers/endpoints/oauth2/action",
-    "description": "Mints PKCE state and returns the IdP authorize URL plus redirect URI for the operator-driven OAuth 2.0 Authorization Code dance. or Clears the persisted refresh_token and bumps the OAuth2 configVersion. Idempotent; does not call the IdP."
+    "description": "Returns a short-lived Gateway start link and the Gateway callback redirect URI for the configured OAuth 2.0 Authorization Code endpoint."
   },
   {
     "action": "Microsoft.ApiManagement/service/toolServers/listSecrets/action",
@@ -3234,6 +3250,18 @@
   {
     "action": "Microsoft.ApiManagement/service/workspaces/agents/write",
     "description": "Creates or Updates an agent. or Updates an existing agent."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/aliases/delete",
+    "description": "Deletes the specified alias."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/aliases/read",
+    "description": "Lists a collection of aliases in a workspace. or Gets the details of the alias specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/service/workspaces/aliases/write",
+    "description": "Creates or Updates an alias. or Updates an existing alias."
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/apiVersionSets/delete",
@@ -3482,18 +3510,6 @@
   {
     "action": "Microsoft.ApiManagement/service/workspaces/kubernetesManaged/agent/syncConfiguration/action",
     "description": "Syncs configuration from Kubernetes clusters by using an agent for specified Kubernetes-managed workspace"
-  },
-  {
-    "action": "Microsoft.ApiManagement/service/workspaces/languageModels/delete",
-    "description": "Deletes the specified language model."
-  },
-  {
-    "action": "Microsoft.ApiManagement/service/workspaces/languageModels/read",
-    "description": "Lists a collection of language models. or Gets the details of the language model."
-  },
-  {
-    "action": "Microsoft.ApiManagement/service/workspaces/languageModels/write",
-    "description": "Creates or Updates a language model. or Updates an existing language model."
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/loggers/delete",
@@ -3821,7 +3837,7 @@
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/toolServers/endpoints/oauth2/action",
-    "description": "Mints PKCE state and returns the IdP authorize URL plus redirect URI for the operator-driven OAuth 2.0 Authorization Code dance. or Clears the persisted refresh_token and bumps the OAuth2 configVersion. Idempotent; does not call the IdP."
+    "description": "Returns a short-lived Gateway start link and the Gateway callback redirect URI for the configured OAuth 2.0 Authorization Code endpoint."
   },
   {
     "action": "Microsoft.ApiManagement/service/workspaces/toolServers/invoke/action",
@@ -6070,30 +6086,6 @@
   {
     "action": "Microsoft.Attestation/attestationProviders/delete",
     "description": "Removes attestation service."
-  },
-  {
-    "action": "Microsoft.Attestation/attestationProviders/joinPerimeter/action",
-    "description": "Action to join the Network Security Perimeter, used by linked access checks by NRP."
-  },
-  {
-    "action": "Microsoft.Attestation/attestationProviders/networkSecurityPerimeterAssociationProxies/delete",
-    "description": "Network Security Perimeter Association Proxy delete description."
-  },
-  {
-    "action": "Microsoft.Attestation/attestationProviders/networkSecurityPerimeterAssociationProxies/read",
-    "description": "Network Security Perimeter Association Proxy read description."
-  },
-  {
-    "action": "Microsoft.Attestation/attestationProviders/networkSecurityPerimeterAssociationProxies/write",
-    "description": "Network Security Perimeter Association Proxy write description."
-  },
-  {
-    "action": "Microsoft.Attestation/attestationProviders/networkSecurityPerimeterConfigurations/read",
-    "description": "Network Security Perimeter Configuration read description."
-  },
-  {
-    "action": "Microsoft.Attestation/attestationProviders/networkSecurityPerimeterConfigurations/reconcile/action",
-    "description": "Reconcile the Network Security Perimeter Configuration stored in a Microsoft Azure Attestation with NRP's (Microsoft.Network Resource Provider) copy."
   },
   {
     "action": "Microsoft.Attestation/attestationProviders/operationStatus/read",
@@ -9081,19 +9073,19 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/addOrUpdateResources/action",
-    "description": "This enables the user to include, exclude or update resources from their Drill."
+    "description": "This enables the user to include, exclude or update resources from their Drill. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/delete",
-    "description": "Delete a Drill"
+    "description": "Delete a Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillResources/read",
-    "description": "Get a DrillResource"
+    "description": "List DrillResource resources by Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/addNotes/action",
-    "description": "This enables the user to add notes on this Drill Run."
+    "description": "This enables the user to add notes on this Drill Run. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/drillRunChildJobs/read",
@@ -9101,35 +9093,35 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/drillRunResources/read",
-    "description": "Get a DrillRunResource"
+    "description": "List DrillRunResource resources by DrillRun Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/failOver/action",
-    "description": "This initiates a new Failover operation on this Drill Run."
+    "description": "This initiates a new Failover operation on this Drill Run. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/generateReport/action",
-    "description": "This generates, or regenerates, the report for this Drill Run. The action is idempotent and is safe to call at any time: a call that arrives while a generation is already running joins it, and a call made after a failed attempt retries it. A report that has been finalized is never regenerated."
+    "description": "This generates, or regenerates, the report for this Drill Run. The action is idempotent and is safe to call at any time: a call that arrives while a generation is already running joins it, and a call made after a failed attempt retries it. A report that has been finalized is never regenerated. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/listReportDownloadUrl/action",
-    "description": "This returns a short-lived, read-only URL to download the report for this Drill Run. The URL expires at the returned expiryTimestamp and grants access to that single report only."
+    "description": "This returns a short-lived, read-only URL to download the report for this Drill Run. The URL expires at the returned expiryTimestamp and grants access to that single report only. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/markAsComplete/action",
-    "description": "This enables the user to mark this stage as complete, disabling further retries on it."
+    "description": "This enables the user to mark this stage as complete, disabling further retries on it. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/read",
-    "description": "List DrillRun resources by Drill"
+    "description": "List DrillRun resources by Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/reprotect/action",
-    "description": "This initiates a new Reprotect operation on this Drill Run."
+    "description": "This initiates a new Reprotect operation on this Drill Run. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/resume/action",
-    "description": "This unblocks a Failover workflow that is paused after the Fault stage, to proceed to the Failover stage."
+    "description": "This unblocks a Failover workflow that is paused after the Fault stage, to proceed to the Failover stage. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/testFailOver/action",
@@ -9141,11 +9133,11 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/end/action",
-    "description": "This ends the currently running instance of the Drill."
+    "description": "This ends the currently running instance of the Drill. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/read",
-    "description": "List Drill resources by tenant"
+    "description": "List Drill resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/refreshReadinessState/action",
@@ -9153,47 +9145,47 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/resyncReadinessCheck/action",
-    "description": "This triggers detection of any drifts from the desired state of Resources and RBAC."
+    "description": "This triggers detection of any drifts from the desired state of Resources and RBAC. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/start/action",
-    "description": "This starts a new running instance of the Drill."
+    "description": "This starts a new running instance of the Drill. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/validateForExecution/action",
-    "description": "This returns eligible resource to be faulted or failed over."
+    "description": "This returns eligible resource to be faulted or failed over. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/write",
-    "description": "Create a Drill"
+    "description": "Create a Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/delete",
-    "description": "Delete a GoalAssignment"
+    "description": "Delete a GoalAssignment Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/goalResources/read",
-    "description": "Get a GoalResource"
+    "description": "List GoalResource resources by GoalAssignment Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/read",
-    "description": "List GoalAssignment resources by tenant"
+    "description": "List GoalAssignment resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/recommendCapacity/action",
-    "description": "Recommends capacity improvements for resources under the goal assignments scope. Returns AI-powered capacity assessments and recommendations."
+    "description": "Recommends capacity improvements for resources under the goal assignments scope. Returns AI-powered capacity assessments and recommendations. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/refreshGoalResources/action",
-    "description": "Refreshes the goal resources under a goal assignment. This operation scans for new resources under the scope of the assignment."
+    "description": "Refreshes the goal resources under a goal assignment. This operation scans for new resources under the scope of the assignment. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/updateGoalResources/action",
-    "description": "Action to exclude a resource from goal assignment."
+    "description": "Action to exclude a resource from goal assignment. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/write",
-    "description": "Create a GoalAssignment"
+    "description": "Create a GoalAssignment Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalTemplates/delete",
@@ -9209,35 +9201,35 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/checkReadiness/action",
-    "description": "This action performs the necessary readiness check on the recovery orchestration plan to ensure it is in the desired state and eligible for all recovery actions, including all protected resources."
+    "description": "This action performs the necessary readiness check on the recovery orchestration plan to ensure it is in the desired state and eligible for all recovery actions, including all protected resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/delete",
-    "description": "Delete a RecoveryPlan"
+    "description": "Delete a RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/failover/action",
-    "description": "This action triggers the failover operation on the recovery orchestration plan for the qualified resources."
+    "description": "This action triggers the failover operation on the recovery orchestration plan for the qualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/failoverCommit/action",
-    "description": "This action triggers the failover commit operation on the recovery orchestration plan for the qualified resources."
+    "description": "This action triggers the failover commit operation on the recovery orchestration plan for the qualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/finalize/action",
-    "description": "This action finalizes the recovery orchestration plan, ensuring all necessary configurations are in place."
+    "description": "This action finalizes the recovery orchestration plan, ensuring all necessary configurations are in place. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/read",
-    "description": "Get a RecoveryPlan"
+    "description": "List RecoveryPlan resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/cancel/action",
-    "description": "This action attempts to cancel the ongoing recovery orchestration job."
+    "description": "This action attempts to cancel the ongoing recovery orchestration job. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/read",
-    "description": "Get a RecoveryJob"
+    "description": "List RecoveryJob resources by RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/recoveryChildJobs/read",
@@ -9245,91 +9237,91 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/recoveryJobResources/read",
-    "description": "Get a RecoveryJobResource"
+    "description": "List RecoveryJobResource resources by RecoveryJob Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/resume/action",
-    "description": "This action resumes the ongoing recovery orchestration job that was paused for required user intervention."
+    "description": "This action resumes the ongoing recovery orchestration job that was paused for required user intervention. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/retry/action",
-    "description": "This action retries the ongoing recovery orchestration job for resources that failed in previous attempts."
+    "description": "This action retries the ongoing recovery orchestration job for resources that failed in previous attempts. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryResources/read",
-    "description": "Get a RecoveryResource"
+    "description": "List RecoveryResource resources by RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/reprotect/action",
-    "description": "This action triggers the reprotect operation on the recovery orchestration plan for the qualified resources."
+    "description": "This action triggers the reprotect operation on the recovery orchestration plan for the qualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/testFailover/action",
-    "description": "This action triggers the test failover operation on the recovery orchestration plan for the qualified resources."
+    "description": "This action triggers the test failover operation on the recovery orchestration plan for the qualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/testFailoverCleanup/action",
-    "description": "This action triggers the test failover cleanup operation on the recovery orchestration plan for the qualified resources."
+    "description": "This action triggers the test failover cleanup operation on the recovery orchestration plan for the qualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/updateResources/action",
-    "description": "This action adds or updates the resources to be included in the recovery orchestration plan."
+    "description": "This action adds or updates the resources to be included in the recovery orchestration plan. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/validateForFailover/action",
-    "description": "This action checks if the recovery orchestration plan is eligible for failover operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources."
+    "description": "This action checks if the recovery orchestration plan is eligible for failover operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/validateForFailoverCommit/action",
-    "description": "This action checks if the recovery orchestration plan is eligible for failover commit operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources."
+    "description": "This action checks if the recovery orchestration plan is eligible for failover commit operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/validateForOperation/action",
-    "description": "This action checks if the recovery orchestration plan is eligible for operations like failover and reprotect, ensuring it meets the necessary criteria."
+    "description": "This action checks if the recovery orchestration plan is eligible for operations like failover and reprotect, ensuring it meets the necessary criteria. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/validateForReprotect/action",
-    "description": "This action checks if the recovery orchestration plan is eligible for reprotect operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources."
+    "description": "This action checks if the recovery orchestration plan is eligible for reprotect operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/validateForTestFailover/action",
-    "description": "This action checks if the recovery orchestration plan is eligible for test failover operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources."
+    "description": "This action checks if the recovery orchestration plan is eligible for test failover operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/validateForTestFailoverCleanup/action",
-    "description": "This action checks if the recovery orchestration plan is eligible for test failover cleanup operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources."
+    "description": "This action checks if the recovery orchestration plan is eligible for test failover cleanup operation, ensuring it meets the necessary criteria and provides a list of qualified and unqualified resources. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/write",
-    "description": "Update a RecoveryPlan"
+    "description": "Create a RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/unifiedResilienceItems/read",
-    "description": "Get a UnifiedResilienceItem"
+    "description": "List UnifiedResilienceItem resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/delete",
-    "description": "Delete a UsagePlan"
+    "description": "Delete a UsagePlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/enrollments/delete",
-    "description": "Delete an Enrollment."
+    "description": "Delete an Enrollment. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/enrollments/read",
-    "description": "Get an Enrollment."
+    "description": "List Enrollments by Usage Plan. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/enrollments/write",
-    "description": "Create or update an Enrollment."
+    "description": "Create or update an Enrollment. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/read",
-    "description": "Get a UsagePlan"
+    "description": "List UsagePlan resources by subscription ID Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/write",
-    "description": "Update a UsagePlan"
+    "description": "Create a UsagePlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
   {
     "action": "Microsoft.AzureScan/scanningAccounts/delete",
@@ -10346,26 +10338,6 @@
   {
     "action": "Microsoft.AzureStackHCI/virtualNetworks/subnets/join/action",
     "description": "Joins subnet resource"
-  },
-  {
-    "action": "Microsoft.BackupSolutions/VMwareApplications/applicationArtifacts/read",
-    "description": "Lists application artifacts."
-  },
-  {
-    "action": "Microsoft.BackupSolutions/VMwareApplications/delete",
-    "description": "Removes an application."
-  },
-  {
-    "action": "Microsoft.BackupSolutions/VMwareApplications/read",
-    "description": "Retrieves a list of applications."
-  },
-  {
-    "action": "Microsoft.BackupSolutions/VMwareApplications/refreshPermissions/action",
-    "description": "Refreshes application permission(s)."
-  },
-  {
-    "action": "Microsoft.BackupSolutions/VMwareApplications/write",
-    "description": "Creates an application."
   },
   {
     "action": "Microsoft.BareMetal/BareMetalConnections/delete",
@@ -13152,6 +13124,10 @@
     "description": "Performs the block action on the devices of a partner business"
   },
   {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/collectDiagnostics/action",
+    "description": "Performs the collectDiagnostics action on the devices of a partner business"
+  },
+  {
     "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/create/action",
     "description": "Performs the create action on the devices of a partner business"
   },
@@ -13296,6 +13272,14 @@
     "description": "Deletes the resourceIsolationGroups of a partner business"
   },
   {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/read",
+    "description": "Reads the device quota forecasts for a specified resource isolation group of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/write",
+    "description": "Modifies the device quota forecasts for a specified resource isolation group of a partner business"
+  },
+  {
     "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/read",
     "description": "Reads the resourceIsolationGroups of a partner business"
   },
@@ -13322,6 +13306,10 @@
   {
     "action": "Microsoft.CloudDevicePlatform/partnerBusinesses/write",
     "description": "Modifies the resource(s) of a partner business"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/providerPermissions/read",
+    "description": "read providerPermissions"
   },
   {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/delete",
@@ -19792,6 +19780,18 @@
     "description": "Get web, image, news, & videos results for a given query."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/adapterDeployments/delete",
+    "description": "Deletes Adapter Deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/adapterDeployments/read",
+    "description": "Reads Adapter Deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/adapterDeployments/write",
+    "description": "Creates or updates Adapter Deployments."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/arcDeployments/delete",
     "description": "Deletes deployments."
   },
@@ -20752,6 +20752,30 @@
     "description": "Creates a new Gallery In VM Access Control Profile or updates an existing one"
   },
   {
+    "action": "Microsoft.Compute/galleries/instanceProfiles/delete",
+    "description": "Deletes the Gallery Instance Profile"
+  },
+  {
+    "action": "Microsoft.Compute/galleries/instanceProfiles/read",
+    "description": "Gets the properties of Gallery Instance Profile"
+  },
+  {
+    "action": "Microsoft.Compute/galleries/instanceProfiles/versions/delete",
+    "description": "Deletes the Gallery Instance Profile Version"
+  },
+  {
+    "action": "Microsoft.Compute/galleries/instanceProfiles/versions/read",
+    "description": "Gets the properties of Gallery Instance Profile Version"
+  },
+  {
+    "action": "Microsoft.Compute/galleries/instanceProfiles/versions/write",
+    "description": "Creates a new Gallery Instance Profile Version or updates an existing one"
+  },
+  {
+    "action": "Microsoft.Compute/galleries/instanceProfiles/write",
+    "description": "Creates a new Gallery Instance Profile or updates an existing one"
+  },
+  {
     "action": "Microsoft.Compute/galleries/read",
     "description": "Gets the properties of Gallery"
   },
@@ -21012,6 +21036,18 @@
     "description": "Creates a new SSH public key or updates an existing SSH public key"
   },
   {
+    "action": "Microsoft.Compute/virtualMachineScaleSets/applications/delete",
+    "description": "Delete a VM Application from a virtual machine scale set"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachineScaleSets/applications/read",
+    "description": "Get the properties of a VM Application on a virtual machine scale set"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachineScaleSets/applications/write",
+    "description": "Create a new VM Application or update an existing one on a virtual machine scale set"
+  },
+  {
     "action": "Microsoft.Compute/virtualMachineScaleSets/approveRollingUpgrade/action",
     "description": "Approves deferred rolling upgrades for the instances of a Virtual Machine Scale Set "
   },
@@ -21142,6 +21178,14 @@
   {
     "action": "Microsoft.Compute/virtualMachineScaleSets/start/action",
     "description": "Starts the instances of the Virtual Machine Scale Set"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/applications/instanceView/read",
+    "description": "Get detailed runtime status of a VM Application on a virtual machine scale set's instance"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/applications/read",
+    "description": "Get the properties of a VM Application on a virtual machine scale set's instance"
   },
   {
     "action": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/approveRollingUpgrade/action",
@@ -21388,6 +21432,10 @@
     "description": "Restarts the virtual machine"
   },
   {
+    "action": "Microsoft.Compute/virtualMachines/restore/action",
+    "description": "Provides a single-call API to restore a VM to a previous known-good state by restoring all disks from a VM Restore Point and swapping them onto an existing stopped VM, eliminating manual multi-step disk orchestration and any dependency on Azure Backup vault infrastructure."
+  },
+  {
     "action": "Microsoft.Compute/virtualMachines/retrieveBootDiagnosticsData/action",
     "description": "Retrieves boot diagnostic logs blob URIs"
   },
@@ -21426,6 +21474,34 @@
   {
     "action": "Microsoft.Compute/virtualMachines/upgradeVMAgent/action",
     "description": "Upgrade version of VM Agent on Virtual Machine"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmApplications/delete",
+    "description": "Delete a VM Application from a virtual machine"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmApplications/instanceView/read",
+    "description": "Get detailed runtime status of a VM Application on a virtual machine"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmApplications/read",
+    "description": "Get the properties of a VM Application on a virtual machine"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmApplications/write",
+    "description": "Create a VM Application or update an existing one on a virtual machine"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmProtection/configureProtection/action",
+    "description": "Configures the Virtual Machine Protection properties"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmProtection/read",
+    "description": "Gets the Virtual Machine Protection properties"
+  },
+  {
+    "action": "Microsoft.Compute/virtualMachines/vmProtection/write",
+    "description": "Updates the Virtual Machine Protection properties"
   },
   {
     "action": "Microsoft.Compute/virtualMachines/vmSizes/read",
@@ -22560,6 +22636,14 @@
     "description": "Checks whether the container registry name is available for use."
   },
   {
+    "action": "Microsoft.ContainerRegistry/deletedWorkflowFactories/purge/action",
+    "description": "Permanently purges a soft-deleted workflow factory and all its child resources."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/deletedWorkflowFactories/read",
+    "description": "Gets the properties of a soft-deleted workflow factory or lists all soft-deleted workflow factories in the specified subscription."
+  },
+  {
     "action": "Microsoft.ContainerRegistry/registries/agentpools/delete",
     "description": "Delete an agentpool for a container registry."
   },
@@ -22964,6 +23048,54 @@
     "description": "Creates or updates a container registry with the specified parameters."
   },
   {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/delete",
+    "description": "Deletes a workflow factory."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedWorkflows/purge/action",
+    "description": "Permanently purges a soft-deleted workflow and initiates cleanup of associated runs."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedWorkflows/read",
+    "description": "Gets the properties of a soft-deleted workflow or lists all soft-deleted workflows in the specified workflow factory."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedWorkflows/recover/action",
+    "description": "Recovers a soft-deleted workflow, restoring it to active state."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/read",
+    "description": "Gets the properties of the specified workflow factory or lists all the workflow factories under the specified resource group or subscription."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/delete",
+    "description": "Deletes a workflow."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/read",
+    "description": "Gets the properties of the specified workflow or lists all the workflows the specified resource group or subscription."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/runs/cancel/action",
+    "description": "Cancel an existing run."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/runs/read",
+    "description": "Gets the properties of the specified workflow run or lists all the workflow runs for the specified workflow."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/scheduleRun/action",
+    "description": "Schedules a run for the specified workflow."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/write",
+    "description": "Creates or updates a workflow with the specified parameters."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/write",
+    "description": "Creates or updates a workflow factory with the specified parameters."
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/admissionregistration.k8s.io/initializerconfigurations/delete",
     "description": "Deletes initializerconfigurations"
   },
@@ -23240,6 +23372,10 @@
     "description": "Reads storage.k8s.io/v1beta1"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/approuting.kubernetes.azure.com/defaultdomaincertificates/read",
+    "description": "Get AI Manager Default Domain Certificates"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/delete",
     "description": "Deletes controllerrevisions"
   },
@@ -23336,6 +23472,10 @@
     "description": "Writes horizontalpodautoscalers"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/azmonitoring.coreos.com/podmonitors/read",
+    "description": "Get AI Manager Pod Monitors"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/batch/cronjobs/delete",
     "description": "Deletes cronjobs"
   },
@@ -23368,12 +23508,20 @@
     "description": "Deletes certificatesigningrequests"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
+    "description": "Allows automatic approval of kubelet client certificate signing requests"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/read",
     "description": "Reads certificatesigningrequests"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/certificates.k8s.io/certificatesigningrequests/write",
     "description": "Writes certificatesigningrequests"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/cilium.io/ciliumnetworkpolicies/read",
+    "description": "Get AI Manager Cilium Network Policies"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/componentstatuses/delete",
@@ -23572,6 +23720,46 @@
     "description": "Writes prioritylevelconfigurations"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/backendlbpolicies/read",
+    "description": "Get AI Manager Backend LB Policies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/backendtlspolicies/read",
+    "description": "Get AI Manager Backend TLS Policies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/gatewayclasses/read",
+    "description": "Get AI Manager Gateway Classes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/gateways/read",
+    "description": "Get AI Manager Gateway Resources"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/grpcroutes/read",
+    "description": "Get AI Manager GRPC Routes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/httproutes/read",
+    "description": "Get AI Manager HTTP Routes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/referencegrants/read",
+    "description": "Get AI Manager Reference Grants"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/tcproutes/read",
+    "description": "Get AI Manager TCP Routes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/tlsroutes/read",
+    "description": "Get AI Manager TLS Routes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/udproutes/read",
+    "description": "Get AI Manager UDP Routes"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/groups/impersonate/action",
     "description": "Impersonate groups"
   },
@@ -23650,6 +23838,50 @@
   {
     "action": "Microsoft.ContainerService/aiManagers/healthz/read",
     "description": "Reads healthz"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/inference.networking.k8s.io/inferencepools/read",
+    "description": "Get AI Manager Inference Pools"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/inferencesets/read",
+    "description": "Get AI Manager Inference Sets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/modelmirrors/read",
+    "description": "Get AI Manager Model Mirrors"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/multiroleinferences/read",
+    "description": "Get AI Manager Multi Role Inferences"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/ragengines/read",
+    "description": "Get AI Manager RAG Engines"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/kaito.sh/workspaces/read",
+    "description": "Get AI Manager Workspaces"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/karpenter.azure.com/aksnodeclasses/read",
+    "description": "Get AI Manager AKS Node Classes"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/karpenter.sh/nodeclaims/read",
+    "description": "Get AI Manager Node Claims"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/karpenter.sh/nodepools/read",
+    "description": "Get AI Manager Node Pools"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/keda.sh/clustertriggerauthentications/read",
+    "description": "Get AI Manager Cluster Trigger Authentications"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/keda.sh/scaledobjects/read",
+    "description": "Get AI Manager Scaled Objects"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/limitranges/delete",
@@ -23744,8 +23976,24 @@
     "description": "Reads livez"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/llm-d.ai/inferenceobjectives/read",
+    "description": "Get AI Manager Inference Objectives"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/logs/read",
     "description": "Reads logs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/modelSources/delete",
+    "description": "Delete AI Manager Model Source"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/modelSources/read",
+    "description": "Get AI Manager Model Source"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/modelSources/write",
+    "description": "Create or Update AI Manager Model Source"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/delete",
@@ -23756,16 +24004,40 @@
     "description": "Perform inference on AI Manager"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/listAccessKeys/action",
+    "description": "List AI Manager Namespace Access Keys"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
     "description": "List AI Manager Namespace Credential"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/delete",
+    "description": "Delete AI Manager Model Deployment"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/read",
+    "description": "Get AI Manager Model Deployment"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/modelDeployments/write",
+    "description": "Create or Update AI Manager Model Deployment"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/read",
     "description": "Get AI Manager Namespace"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/namespaces/rotateKeys/action",
+    "description": "Rotate AI Manager Namespace Access Keys"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/namespaces/write",
     "description": "Create or Update AI Manager Namespace"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/networking.istio.io/envoyfilters/read",
+    "description": "Get AI Manager Envoy Filters"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingressclasses/delete",
@@ -24110,6 +24382,14 @@
   {
     "action": "Microsoft.ContainerService/aiManagers/secrets/write",
     "description": "Writes secrets"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/security.istio.io/peerauthentications/read",
+    "description": "Get AI Manager Peer Authentications"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/security.istio.io/requestauthentications/read",
+    "description": "Get AI Manager Request Authentications"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/serviceaccounts/delete",
@@ -24670,6 +24950,10 @@
   {
     "action": "Microsoft.ContainerService/fleets/certificates.k8s.io/certificatesigningrequests/delete",
     "description": "Deletes certificatesigningrequests"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
+    "description": "Allows automatic approval of kubelet client certificate signing requests"
   },
   {
     "action": "Microsoft.ContainerService/fleets/certificates.k8s.io/certificatesigningrequests/read",
@@ -25470,6 +25754,10 @@
   {
     "action": "Microsoft.ContainerService/fleets/members/certificates.k8s.io/certificatesigningrequests/delete",
     "description": "Deletes certificatesigningrequests"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/members/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
+    "description": "Allows automatic approval of kubelet client certificate signing requests"
   },
   {
     "action": "Microsoft.ContainerService/fleets/members/certificates.k8s.io/certificatesigningrequests/read",
@@ -27080,6 +27368,18 @@
     "description": "Writes validatingwebhookconfigurations"
   },
   {
+    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/delete",
+    "description": "Delete an agent fabric membership from a managed cluster"
+  },
+  {
+    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/read",
+    "description": "Read an agent fabric membership of a managed cluster"
+  },
+  {
+    "action": "Microsoft.ContainerService/managedClusters/agentFabricMemberships/write",
+    "description": "Create an agent fabric membership of a managed cluster"
+  },
+  {
     "action": "Microsoft.ContainerService/managedClusters/agentPools/abort/action",
     "description": "Latest ongoing operation on agent pool gets aborted"
   },
@@ -27494,6 +27794,10 @@
   {
     "action": "Microsoft.ContainerService/managedClusters/certificates.k8s.io/certificatesigningrequests/delete",
     "description": "Deletes certificatesigningrequests"
+  },
+  {
+    "action": "Microsoft.ContainerService/managedClusters/certificates.k8s.io/certificatesigningrequests/nodeclient/action",
+    "description": "Allows automatic approval of kubelet client certificate signing requests"
   },
   {
     "action": "Microsoft.ContainerService/managedClusters/certificates.k8s.io/certificatesigningrequests/read",
@@ -30764,6 +31068,14 @@
     "description": "Execute Data Flow debug command."
   },
   {
+    "action": "Microsoft.DataFactory/factories/fabricCapacityProvisioning/action",
+    "description": "Initiates a Fabric trial-capacity provisioning long-running operation on behalf of the caller."
+  },
+  {
+    "action": "Microsoft.DataFactory/factories/fabricCapacityProvisioning/status/action",
+    "description": "Polls the status of an in-flight Fabric trial-capacity provisioning operation on behalf of the caller."
+  },
+  {
     "action": "Microsoft.DataFactory/factories/getDataPlaneAccess/action",
     "description": "Gets access to ADF DataPlane service."
   },
@@ -33389,31 +33701,31 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/ClaimAnyVm/action",
-    "description": "Claim a random claimable virtual machine in the lab."
+    "description": "宣告實驗室中可宣告的隨機虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/CreateEnvironment/action",
-    "description": "Create virtual machines in a lab."
+    "description": "在實驗室中建立虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/EnsureCurrentUserProfile/action",
-    "description": "Ensure the current user has a valid profile in the lab."
+    "description": "請確認目前的使用者在實驗室具有有效的設定檔。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/ExportResourceUsage/action",
-    "description": "Exports the lab resource usage into a storage account"
+    "description": "將實驗室資源使用量匯出到儲存體帳戶"
   },
   {
     "action": "Microsoft.DevTestLab/labs/GenerateUploadUri/action",
-    "description": "Generate a URI for uploading custom disk images to a Lab."
+    "description": "產生 URI，以便於將自訂的磁碟映像上傳至實驗室。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/ImportVirtualMachine/action",
-    "description": "Import a virtual machine into a different lab."
+    "description": "將虛擬機器匯入其他實驗室中。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/ListVhds/action",
-    "description": "List disk images available for custom image creation."
+    "description": "列出可用於建立自訂映像的磁碟映像。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/armTemplates/read",
@@ -33421,7 +33733,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/GenerateArmTemplate/action",
-    "description": "Generates an ARM template for the given artifact, uploads the required files to a storage account, and validates the generated artifact."
+    "description": "為指定的成品產生 ARM 範本，將必要的檔案上傳至儲存體帳戶，以及驗證所產生的成品。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/read",
@@ -33481,7 +33793,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/Notify/action",
-    "description": "Send notification to provided channel."
+    "description": "將通知傳送到提供的管道。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/delete",
@@ -33497,7 +33809,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/EvaluatePolicies/action",
-    "description": "Evaluates lab policy."
+    "description": "評估實驗室原則。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/policies/delete",
@@ -33521,11 +33833,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/ListApplicable/action",
-    "description": "Lists all applicable schedules"
+    "description": "列出所有適用的排程"
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/delete",
@@ -33593,11 +33905,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Attach/action",
-    "description": "Attach and create the lease of the disk to the virtual machine."
+    "description": "建立磁碟租用，並將其連結至虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Detach/action",
-    "description": "Detach and break the lease of the disk attached to the virtual machine."
+    "description": "中斷磁碟與虛擬機器的連結，並中止租用。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/delete",
@@ -33641,15 +33953,15 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/ListApplicableSchedules/action",
-    "description": "Lists the applicable start/stop schedules, if any."
+    "description": "列出適用的啟動/停止排程 (若有的話)。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Start/action",
-    "description": "Start a service fabric."
+    "description": "啟動 Service Fabric。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Stop/action",
-    "description": "Stop a service fabric"
+    "description": "停止 Service Fabric"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/delete",
@@ -33661,7 +33973,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/delete",
@@ -33685,67 +33997,67 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/AddDataDisk/action",
-    "description": "Attach a new or existing data disk to virtual machine."
+    "description": "將現有新的資料磁碟連結至虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ApplyArtifacts/action",
-    "description": "Apply artifacts to virtual machine."
+    "description": "將成品套用至虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ChangeSecurityProfile/action",
-    "description": "Change security profile of a virtual machine"
+    "description": "變更虛擬機的安全性配置檔"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Claim/action",
-    "description": "Take ownership of an existing virtual machine"
+    "description": "取得現有虛擬機器的擁有權"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ClearArtifactResults/action",
-    "description": "Clears the artifact results of the virtual machine."
+    "description": "清除虛擬機器的成品結果。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/DetachDataDisk/action",
-    "description": "Detach the specified disk from the virtual machine."
+    "description": "中斷指定磁碟與虛擬機器的連結。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/GetRdpFileContents/action",
-    "description": "Gets a string that represents the contents of the RDP file for the virtual machine"
+    "description": "取得代表虛擬機器 RDP 檔案內容的字串"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Hibernate/action",
-    "description": "Hibernate a virtual machine"
+    "description": "讓虛擬機休眠"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ListApplicableSchedules/action",
-    "description": "Lists the applicable start/stop schedules, if any."
+    "description": "列出適用的啟動/停止排程 (若有的話)。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Redeploy/action",
-    "description": "Redeploy a virtual machine"
+    "description": "重新部署虛擬機器"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Resize/action",
-    "description": "Resize Virtual Machine."
+    "description": "調整虛擬機器大小。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Restart/action",
-    "description": "Restart a virtual machine."
+    "description": "重新啟動虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Start/action",
-    "description": "Start a virtual machine."
+    "description": "啟動虛擬機器。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Stop/action",
-    "description": "Stop a virtual machine"
+    "description": "停止虛擬機器"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/TransferDisks/action",
-    "description": "Transfers all data disks attached to the virtual machine to be owned by the current user."
+    "description": "傳送所有連結至虛擬機器的資料磁碟，由目前的使用者擁有。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/UnClaim/action",
-    "description": "Release ownership of an existing virtual machine"
+    "description": "釋放現有虛擬機器的擁有權"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/delete",
@@ -33757,7 +34069,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/delete",
@@ -33817,11 +34129,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Execute/action",
-    "description": "Execute a schedule."
+    "description": "執行排程。"
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Retarget/action",
-    "description": "Updates a schedule's target resource Id."
+    "description": "更新排程的目標資源識別碼。"
   },
   {
     "action": "Microsoft.DevTestLab/schedules/delete",
@@ -39496,6 +39808,10 @@
     "description": "write fluidRelayServers"
   },
   {
+    "action": "Microsoft.GCPConnector/providerPermissions/read",
+    "description": "read providerPermissions"
+  },
+  {
     "action": "Microsoft.GcpConnector/bigQueryDatasets/delete",
     "description": "Delete a BigQueryDataset"
   },
@@ -40728,42 +41044,6 @@
     "description": "Write"
   },
   {
-    "action": "Microsoft.HealthcareInterop/ddmsConnectors/delete",
-    "description": "Delete a DdmsConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsConnectors/read",
-    "description": "Get a DdmsConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsConnectors/write",
-    "description": "Update a DdmsConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsFhirEventBatchChannels/delete",
-    "description": "Delete a DdmsFhirEventBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsFhirEventBatchChannels/read",
-    "description": "Get a DdmsFhirEventBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsFhirEventBatchChannels/write",
-    "description": "Update a DdmsFhirEventBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsFhirFlatFileBatchChannels/delete",
-    "description": "Delete a DdmsFhirFlatFileBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsFhirFlatFileBatchChannels/read",
-    "description": "Get a DdmsFhirFlatFileBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/ddmsFhirFlatFileBatchChannels/write",
-    "description": "Update a DdmsFhirFlatFileBatchChannel"
-  },
-  {
     "action": "Microsoft.HealthcareInterop/dicomConnectors/delete",
     "description": "Delete a DicomConnector"
   },
@@ -40908,6 +41188,22 @@
     "description": "Gets the effective (parameter group merged with per-cluster overrides) parameter set for a HorizonDb cluster."
   },
   {
+    "action": "Microsoft.HorizonDb/clusters/endpoints/read",
+    "description": ""
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/microsoftEntraAdministrators/delete",
+    "description": "Deletes the specified EntraID administrator from the HorizonDb cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/microsoftEntraAdministrators/read",
+    "description": "Gets the specified EntraID administrator for the HorizonDb cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/microsoftEntraAdministrators/write",
+    "description": "Creates or updates an EntraID administrator for the specified HorizonDb cluster."
+  },
+  {
     "action": "Microsoft.HorizonDb/clusters/pools/delete",
     "description": "Deletes an existing HorizonDb pool."
   },
@@ -40922,6 +41218,10 @@
   {
     "action": "Microsoft.HorizonDb/clusters/pools/firewallRules/write",
     "description": "Creates or updates a HorizonDb firewall rule with the specified parameters."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/read",
+    "description": "Gets the properties for the specified HorizonDb pool."
   },
   {
     "action": "Microsoft.HorizonDb/clusters/pools/replicas/delete",
@@ -46060,6 +46360,10 @@
     "description": "Creates or updates flux configuration."
   },
   {
+    "action": "Microsoft.KubernetesConfiguration/kubernetesResources/read",
+    "description": "Get the specified Kubernetes Resource."
+  },
+  {
     "action": "Microsoft.KubernetesConfiguration/namespaces/listUserCredential/action",
     "description": "Get User Credentials for the parent cluster of the namespace resource."
   },
@@ -46122,6 +46426,10 @@
   {
     "action": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/write",
     "description": "Creates or updates source control configuration."
+  },
+  {
+    "action": "Microsoft.KubernetesConfiguration/upgradeAssessments/read",
+    "description": "Get the specified Upgrade Assessment."
   },
   {
     "action": "Microsoft.KubernetesRuntime/bfdProfiles/delete",
@@ -52406,6 +52714,18 @@
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/deleteReplication/action",
     "description": "Delete the replication on the destination volume"
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/directoryQuotas/delete",
+    "description": "Deletes a directoryQuota resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/directoryQuotas/read",
+    "description": "Reads a directoryQuota resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/directoryQuotas/write",
+    "description": "Writes a directoryQuota resource."
   },
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeExternalReplication/action",
@@ -63517,7 +63837,7 @@
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
-    "description": "Get ResourceGuard proxy operation gets an object representing the Azure resource of type 'ResourceGuard proxy'"
+    "description": "Get the list of ResourceGuard proxies for a resource"
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/unlockDelete/action",
@@ -66130,6 +66450,18 @@
   {
     "action": "Microsoft.Security/serverVulnerabilityAssessmentsSettings/write",
     "description": "Create or update server vulnerability assessments settings on a given subscription"
+  },
+  {
+    "action": "Microsoft.Security/serviceEntitlementSettings/delete",
+    "description": "Deletes a service entitlement setting."
+  },
+  {
+    "action": "Microsoft.Security/serviceEntitlementSettings/read",
+    "description": "Gets or lists service entitlement settings."
+  },
+  {
+    "action": "Microsoft.Security/serviceEntitlementSettings/write",
+    "description": "Creates, replaces, or updates a service entitlement setting."
   },
   {
     "action": "Microsoft.Security/serviceEntitlements/read",
@@ -73908,6 +74240,14 @@
     "description": "Partially updates a CloudPcDelegatedMsi."
   },
   {
+    "action": "Microsoft.Windows365/providerPermissions/read",
+    "description": "read providerPermissions"
+  },
+  {
+    "action": "Microsoft.Windows365/serviceConnectors/attach/action",
+    "description": "Attach a service connector to Windows 365."
+  },
+  {
     "action": "Microsoft.Windows365/serviceConnectors/delete",
     "description": "Delete a service connector resource."
   },
@@ -75986,6 +76326,26 @@
   {
     "action": "microsoft.monitor/investigations/write",
     "description": "Create or Update any Investigation"
+  },
+  {
+    "action": "microsoft.monitor/observabilityAgents/conversation/action",
+    "description": "Start or continue a Deep Investigation conversation with an Observability Agent"
+  },
+  {
+    "action": "microsoft.monitor/observabilityAgents/customConversation/action",
+    "description": "Start or continue a custom conversation in General mode with an Observability Agent"
+  },
+  {
+    "action": "microsoft.monitor/observabilityAgents/delete",
+    "description": "Delete any Observability Agent"
+  },
+  {
+    "action": "microsoft.monitor/observabilityAgents/read",
+    "description": "Read any Observability Agent"
+  },
+  {
+    "action": "microsoft.monitor/observabilityAgents/write",
+    "description": "Create or Update any Observability Agent"
   },
   {
     "action": "microsoft.monitor/pipelineGroups/delete",
