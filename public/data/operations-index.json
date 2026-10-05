@@ -140,18 +140,6 @@
     "description": "read registeredSubscriptions"
   },
   {
-    "action": "Astronomer.Astro/organizations/delete",
-    "description": "Delete a OrganizationResource"
-  },
-  {
-    "action": "Astronomer.Astro/organizations/read",
-    "description": "Get a OrganizationResource"
-  },
-  {
-    "action": "Astronomer.Astro/organizations/write",
-    "description": "Update a OrganizationResource"
-  },
-  {
     "action": "Commvault.ContentStore/cloudAccounts/delete",
     "description": "Delete a CloudAccount"
   },
@@ -3992,8 +3980,16 @@
     "description": "Delete an artifact app resource"
   },
   {
+    "action": "Microsoft.App/artifactApps/exec/action",
+    "description": "Start an interactive exec session in a running artifact app instance"
+  },
+  {
     "action": "Microsoft.App/artifactApps/listSecrets/action",
     "description": "List the resolved secrets of an artifact app"
+  },
+  {
+    "action": "Microsoft.App/artifactApps/logstream/action",
+    "description": "Stream logs from a running artifact app instance"
   },
   {
     "action": "Microsoft.App/artifactApps/read",
@@ -8536,6 +8532,10 @@
     "description": "Lists all B2C tenants where the user is a member"
   },
   {
+    "action": "Microsoft.AzureActiveDirectory/billingInformation/read",
+    "description": "View Billing Information resource"
+  },
+  {
     "action": "Microsoft.AzureActiveDirectory/ciamDirectories/delete",
     "description": "Delete CIAM Directory resource"
   },
@@ -8582,14 +8582,6 @@
   {
     "action": "Microsoft.AzureActiveDirectory/guestUsages/write",
     "description": "Create or update Guest Usages resource"
-  },
-  {
-    "action": "Microsoft.AzureActiveDirectory/tenants/billingInformation/read",
-    "description": "View Tenant Billing Information resource"
-  },
-  {
-    "action": "Microsoft.AzureActiveDirectory/tenants/read",
-    "description": "View Tenant resource"
   },
   {
     "action": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/delete",
@@ -9077,11 +9069,11 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/delete",
-    "description": "Delete a Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Delete a Drill"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillResources/read",
-    "description": "List DrillResource resources by Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List DrillResource resources by Drill"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/addNotes/action",
@@ -9093,7 +9085,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/drillRunResources/read",
-    "description": "List DrillRunResource resources by DrillRun Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List DrillRunResource resources by DrillRun"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/failOver/action",
@@ -9113,7 +9105,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/read",
-    "description": "List DrillRun resources by Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List DrillRun resources by Drill"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/drillRuns/reprotect/action",
@@ -9137,7 +9129,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/read",
-    "description": "List Drill resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List Drill resources by tenant"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/refreshReadinessState/action",
@@ -9157,19 +9149,19 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/drills/write",
-    "description": "Create a Drill Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Create a Drill"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/delete",
-    "description": "Delete a GoalAssignment Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Delete a GoalAssignment"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/goalResources/read",
-    "description": "List GoalResource resources by GoalAssignment Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List GoalResource resources by GoalAssignment"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/read",
-    "description": "List GoalAssignment resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List GoalAssignment resources by tenant"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/recommendCapacity/action",
@@ -9185,7 +9177,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/write",
-    "description": "Create a GoalAssignment Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Create a GoalAssignment"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalTemplates/delete",
@@ -9205,7 +9197,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/delete",
-    "description": "Delete a RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Delete a RecoveryPlan"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/failover/action",
@@ -9221,7 +9213,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/read",
-    "description": "List RecoveryPlan resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List RecoveryPlan resources by tenant"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/cancel/action",
@@ -9229,7 +9221,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/read",
-    "description": "List RecoveryJob resources by RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List RecoveryJob resources by RecoveryPlan"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/recoveryChildJobs/read",
@@ -9237,7 +9229,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/recoveryJobResources/read",
-    "description": "List RecoveryJobResource resources by RecoveryJob Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List RecoveryJobResource resources by RecoveryJob"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/resume/action",
@@ -9249,7 +9241,7 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryResources/read",
-    "description": "List RecoveryResource resources by RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List RecoveryResource resources by RecoveryPlan"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/reprotect/action",
@@ -9293,35 +9285,35 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/write",
-    "description": "Create a RecoveryPlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Create a RecoveryPlan"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/unifiedResilienceItems/read",
-    "description": "List UnifiedResilienceItem resources by tenant Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List UnifiedResilienceItem resources by tenant"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/delete",
-    "description": "Delete a UsagePlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Delete a UsagePlan"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/enrollments/delete",
-    "description": "Delete an Enrollment. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Delete an Enrollment."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/enrollments/read",
-    "description": "List Enrollments by Usage Plan. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List Enrollments by Usage Plan."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/enrollments/write",
-    "description": "Create or update an Enrollment. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Create or update an Enrollment."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/read",
-    "description": "List UsagePlan resources by subscription ID Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "List UsagePlan resources by subscription ID"
   },
   {
     "action": "Microsoft.AzureResilienceManagement/usagePlans/write",
-    "description": "Create a UsagePlan Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Create a UsagePlan"
   },
   {
     "action": "Microsoft.AzureScan/scanningAccounts/delete",
@@ -10380,10 +10372,6 @@
     "description": "Read operation"
   },
   {
-    "action": "Microsoft.BareMetal/bareMetalInventoryBase/regions/read",
-    "description": "Read operation"
-  },
-  {
     "action": "Microsoft.BareMetal/consoleConnections/delete",
     "description": "Delete operation"
   },
@@ -10430,10 +10418,6 @@
   {
     "action": "Microsoft.BareMetal/peeringSettings/write",
     "description": "Write operation"
-  },
-  {
-    "action": "Microsoft.BareMetal/sdnApplianceInventory/regions/read",
-    "description": "Read operation"
   },
   {
     "action": "Microsoft.BareMetal/vmWs/delete",
@@ -28132,6 +28116,18 @@
     "description": "Reads healthz"
   },
   {
+    "action": "Microsoft.ContainerService/managedClusters/identityBindings/delete",
+    "description": "Delete identity bindings for managed cluster"
+  },
+  {
+    "action": "Microsoft.ContainerService/managedClusters/identityBindings/read",
+    "description": "Get identity bindings for managed cluster"
+  },
+  {
+    "action": "Microsoft.ContainerService/managedClusters/identityBindings/write",
+    "description": "Create or update identity bindings for managed cluster"
+  },
+  {
     "action": "Microsoft.ContainerService/managedClusters/jwtAuthenticators/delete",
     "description": "Delete a JWT authenticator from a managed cluster"
   },
@@ -29334,6 +29330,10 @@
   {
     "action": "Microsoft.CostManagement/query/read",
     "description": "Query usage data by a scope."
+  },
+  {
+    "action": "Microsoft.CostManagement/query/security/action",
+    "description": "Query usage data by a scope for security products only."
   },
   {
     "action": "Microsoft.CostManagement/reports/read",
@@ -32788,12 +32788,12 @@
     "description": "Delete appattachpackages"
   },
   {
-    "action": "Microsoft.DesktopVirtualization/appattachpackages/move/action",
-    "description": "Move appattachpackages to another ResourceGroup or Subscription"
+    "action": "Microsoft.DesktopVirtualization/appattachpackages/expandmsixfile/action",
+    "description": "Expand an expandmsixfile to desired output location"
   },
   {
-    "action": "Microsoft.DesktopVirtualization/appattachpackages/msixfiles/action",
-    "description": "Expand an expandmsixfile to desired output location"
+    "action": "Microsoft.DesktopVirtualization/appattachpackages/move/action",
+    "description": "Move appattachpackages to another ResourceGroup or Subscription"
   },
   {
     "action": "Microsoft.DesktopVirtualization/appattachpackages/read",
@@ -33701,31 +33701,31 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/ClaimAnyVm/action",
-    "description": "宣告實驗室中可宣告的隨機虛擬機器。"
+    "description": "Claim a random claimable virtual machine in the lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/CreateEnvironment/action",
-    "description": "在實驗室中建立虛擬機器。"
+    "description": "Create virtual machines in a lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/EnsureCurrentUserProfile/action",
-    "description": "請確認目前的使用者在實驗室具有有效的設定檔。"
+    "description": "Ensure the current user has a valid profile in the lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ExportResourceUsage/action",
-    "description": "將實驗室資源使用量匯出到儲存體帳戶"
+    "description": "Exports the lab resource usage into a storage account"
   },
   {
     "action": "Microsoft.DevTestLab/labs/GenerateUploadUri/action",
-    "description": "產生 URI，以便於將自訂的磁碟映像上傳至實驗室。"
+    "description": "Generate a URI for uploading custom disk images to a Lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ImportVirtualMachine/action",
-    "description": "將虛擬機器匯入其他實驗室中。"
+    "description": "Import a virtual machine into a different lab."
   },
   {
     "action": "Microsoft.DevTestLab/labs/ListVhds/action",
-    "description": "列出可用於建立自訂映像的磁碟映像。"
+    "description": "List disk images available for custom image creation."
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/armTemplates/read",
@@ -33733,7 +33733,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/GenerateArmTemplate/action",
-    "description": "為指定的成品產生 ARM 範本，將必要的檔案上傳至儲存體帳戶，以及驗證所產生的成品。"
+    "description": "Generates an ARM template for the given artifact, uploads the required files to a storage account, and validates the generated artifact."
   },
   {
     "action": "Microsoft.DevTestLab/labs/artifactSources/artifacts/read",
@@ -33793,7 +33793,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/Notify/action",
-    "description": "將通知傳送到提供的管道。"
+    "description": "Send notification to provided channel."
   },
   {
     "action": "Microsoft.DevTestLab/labs/notificationChannels/delete",
@@ -33809,7 +33809,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/EvaluatePolicies/action",
-    "description": "評估實驗室原則。"
+    "description": "Evaluates lab policy."
   },
   {
     "action": "Microsoft.DevTestLab/labs/policySets/policies/delete",
@@ -33833,11 +33833,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/ListApplicable/action",
-    "description": "列出所有適用的排程"
+    "description": "Lists all applicable schedules"
   },
   {
     "action": "Microsoft.DevTestLab/labs/schedules/delete",
@@ -33905,11 +33905,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Attach/action",
-    "description": "建立磁碟租用，並將其連結至虛擬機器。"
+    "description": "Attach and create the lease of the disk to the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/Detach/action",
-    "description": "中斷磁碟與虛擬機器的連結，並中止租用。"
+    "description": "Detach and break the lease of the disk attached to the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/disks/delete",
@@ -33953,15 +33953,15 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/ListApplicableSchedules/action",
-    "description": "列出適用的啟動/停止排程 (若有的話)。"
+    "description": "Lists the applicable start/stop schedules, if any."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Start/action",
-    "description": "啟動 Service Fabric。"
+    "description": "Start a service fabric."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/Stop/action",
-    "description": "停止 Service Fabric"
+    "description": "Stop a service fabric"
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/delete",
@@ -33973,7 +33973,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/delete",
@@ -33997,67 +33997,67 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/AddDataDisk/action",
-    "description": "將現有新的資料磁碟連結至虛擬機器。"
+    "description": "Attach a new or existing data disk to virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ApplyArtifacts/action",
-    "description": "將成品套用至虛擬機器。"
+    "description": "Apply artifacts to virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ChangeSecurityProfile/action",
-    "description": "變更虛擬機的安全性配置檔"
+    "description": "Change security profile of a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Claim/action",
-    "description": "取得現有虛擬機器的擁有權"
+    "description": "Take ownership of an existing virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ClearArtifactResults/action",
-    "description": "清除虛擬機器的成品結果。"
+    "description": "Clears the artifact results of the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/DetachDataDisk/action",
-    "description": "中斷指定磁碟與虛擬機器的連結。"
+    "description": "Detach the specified disk from the virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/GetRdpFileContents/action",
-    "description": "取得代表虛擬機器 RDP 檔案內容的字串"
+    "description": "Gets a string that represents the contents of the RDP file for the virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Hibernate/action",
-    "description": "讓虛擬機休眠"
+    "description": "Hibernate a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/ListApplicableSchedules/action",
-    "description": "列出適用的啟動/停止排程 (若有的話)。"
+    "description": "Lists the applicable start/stop schedules, if any."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Redeploy/action",
-    "description": "重新部署虛擬機器"
+    "description": "Redeploy a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Resize/action",
-    "description": "調整虛擬機器大小。"
+    "description": "Resize Virtual Machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Restart/action",
-    "description": "重新啟動虛擬機器。"
+    "description": "Restart a virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Start/action",
-    "description": "啟動虛擬機器。"
+    "description": "Start a virtual machine."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/Stop/action",
-    "description": "停止虛擬機器"
+    "description": "Stop a virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/TransferDisks/action",
-    "description": "傳送所有連結至虛擬機器的資料磁碟，由目前的使用者擁有。"
+    "description": "Transfers all data disks attached to the virtual machine to be owned by the current user."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/UnClaim/action",
-    "description": "釋放現有虛擬機器的擁有權"
+    "description": "Release ownership of an existing virtual machine"
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/delete",
@@ -34069,7 +34069,7 @@
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/labs/virtualMachines/schedules/delete",
@@ -34129,11 +34129,11 @@
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Execute/action",
-    "description": "執行排程。"
+    "description": "Execute a schedule."
   },
   {
     "action": "Microsoft.DevTestLab/schedules/Retarget/action",
-    "description": "更新排程的目標資源識別碼。"
+    "description": "Updates a schedule's target resource Id."
   },
   {
     "action": "Microsoft.DevTestLab/schedules/delete",
@@ -40700,38 +40700,6 @@
     "description": "Update a DeidService"
   },
   {
-    "action": "Microsoft.HealthModel/healthmodels/delete",
-    "description": "Delete a HealthModel"
-  },
-  {
-    "action": "Microsoft.HealthModel/healthmodels/getNodeHealthStateDistribution/action",
-    "description": "Return the health state distribution in a timespan for a node"
-  },
-  {
-    "action": "Microsoft.HealthModel/healthmodels/getRunstate/action",
-    "description": "Gets the execution and scheduling state of the health model"
-  },
-  {
-    "action": "Microsoft.HealthModel/healthmodels/listNodeHistory/action",
-    "description": "Lists the health state history of a specific node with all its queries"
-  },
-  {
-    "action": "Microsoft.HealthModel/healthmodels/read",
-    "description": "Get a HealthModel"
-  },
-  {
-    "action": "Microsoft.HealthModel/healthmodels/snapshots/read",
-    "description": "Get a Snapshot"
-  },
-  {
-    "action": "Microsoft.HealthModel/healthmodels/versions/read",
-    "description": "Get a HealthModelVersion"
-  },
-  {
-    "action": "Microsoft.HealthModel/healthmodels/write",
-    "description": "Update a HealthModel"
-  },
-  {
     "action": "Microsoft.HealthcareApis/checkNameAvailability/read",
     "description": "Checks for the availability of the specified name."
   },
@@ -44406,18 +44374,6 @@
   {
     "action": "Microsoft.IoTFirmwareDefense/workspaces/write",
     "description": "The operation to update a firmware analysis workspaces."
-  },
-  {
-    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/delete",
-    "description": "Delete a AioApplicationConfigurationResource"
-  },
-  {
-    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/read",
-    "description": "Get a AioApplicationConfigurationResource"
-  },
-  {
-    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/write",
-    "description": "Create a AioApplicationConfigurationResource"
   },
   {
     "action": "Microsoft.IoTOperations/instances/akriConnectorTemplates/connectors/delete",
@@ -50328,6 +50284,10 @@
     "description": "For a given service group in the URI, retrieves all the service group descendants"
   },
   {
+    "action": "Microsoft.Management/serviceGroups/listMembers/read",
+    "description": "For a given service group in the URI, retrieves all resource members including expanded container contents"
+  },
+  {
     "action": "Microsoft.Management/serviceGroups/read",
     "description": "Read a Service Group"
   },
@@ -53016,6 +52976,10 @@
     "description": "Deletes an extended snapshot retention policy resource."
   },
   {
+    "action": "Microsoft.NetApp/policyGroups/extendedSnapshotRetentionPolicies/listVolumes/action",
+    "description": "List volume resource IDs associated with an extended snapshot retention policy."
+  },
+  {
     "action": "Microsoft.NetApp/policyGroups/extendedSnapshotRetentionPolicies/read",
     "description": "Reads an extended snapshot retention policy resource."
   },
@@ -53984,6 +53948,10 @@
     "description": "Creates or updates an existing ExpressRouteCircuit"
   },
   {
+    "action": "Microsoft.Network/expressRouteCrossConnections/commitCircuitMigration/action",
+    "description": "Commit Express Route Circuit Migration"
+  },
+  {
     "action": "Microsoft.Network/expressRouteCrossConnections/confirmActivationKey/action",
     "description": "Express Route Cross Connection Confirm Activation Key"
   },
@@ -54010,6 +53978,10 @@
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/join/action",
     "description": "Joins an Express Route Cross Connection. Not alertable."
+  },
+  {
+    "action": "Microsoft.Network/expressRouteCrossConnections/migrateCircuit/action",
+    "description": "Migrate Express Route Circuit"
   },
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/notifyConnectionStatus/action",
@@ -54040,6 +54012,10 @@
     "description": "Creates an Express Route Cross Connection Peering or Updates an existing Express Route Cross Connection Peering"
   },
   {
+    "action": "Microsoft.Network/expressRouteCrossConnections/prepareCircuitMigration/action",
+    "description": "Prepare Express Route Circuit Migration"
+  },
+  {
     "action": "Microsoft.Network/expressRouteCrossConnections/proposeInterconnect/action",
     "description": "Express Route Cross Connection operation to propose Interconnect"
   },
@@ -54048,8 +54024,20 @@
     "description": "Get Express Route Cross Connection"
   },
   {
+    "action": "Microsoft.Network/expressRouteCrossConnections/restoreBgpForCircuitMigration/action",
+    "description": "Restore BGP For Express Route Circuit Migration"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteCrossConnections/rollbackCircuitMigration/action",
+    "description": "Rollback Express Route Circuit Migration"
+  },
+  {
     "action": "Microsoft.Network/expressRouteCrossConnections/serviceProviders/action",
     "description": "Backfill Express Route Cross Connection"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteCrossConnections/shutDownBgpForCircuitMigration/action",
+    "description": "Shut Down BGP For Express Route Circuit Migration"
   },
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/write",
@@ -54442,6 +54430,18 @@
   {
     "action": "Microsoft.Network/interconnectGroups/delete",
     "description": "Delete Interconnect Group"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/delete",
+    "description": "Delete Interconnect Group Logical Subgroup"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/read",
+    "description": "Get Interconnect Group Logical Subgroup"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/write",
+    "description": "Create or update Interconnect Group Logical Subgroup"
   },
   {
     "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
@@ -55264,6 +55264,14 @@
     "description": "Creates or Updates a Network Security Perimeter Logging Configuration"
   },
   {
+    "action": "Microsoft.Network/networkSecurityPerimeters/perimeterProfiles/read",
+    "description": "Gets a NSP Perimeter Profile combined resource"
+  },
+  {
+    "action": "Microsoft.Network/networkSecurityPerimeters/profiles/accessRuleRoleAssignments/read",
+    "description": "Gets a NSP Access Rule Role Assignment"
+  },
+  {
     "action": "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/delete",
     "description": "Deletes a Network Security Perimeter Access Rule"
   },
@@ -55298,6 +55306,10 @@
   {
     "action": "Microsoft.Network/networkSecurityPerimeters/read",
     "description": "Gets a Network Security Perimeter"
+  },
+  {
+    "action": "Microsoft.Network/networkSecurityPerimeters/resourceAssociationMappings/read",
+    "description": "Gets a NSP Resource Association Mapping"
   },
   {
     "action": "Microsoft.Network/networkSecurityPerimeters/resourceAssociationProxies/delete",
@@ -55969,7 +55981,11 @@
   },
   {
     "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
-    "description": "Establishes a link between a private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the private DNS record"
+    "description": "Establishes a link between a Private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the Private DNS record"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/read",
+    "description": "Grants permission to invoke validateLink for a Private DNS record on a Private Traffic Manager profile"
   },
   {
     "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
@@ -56234,6 +56250,10 @@
   {
     "action": "Microsoft.Network/trafficManagerProfiles/validateLink/action",
     "description": "Establishes a link between a DNS record and a Traffic Manager Profile so that the traffic manager profile can't be removed while it is being referenced by the dns record"
+  },
+  {
+    "action": "Microsoft.Network/trafficManagerProfiles/validateLink/read",
+    "description": "Grants permission to invoke validateLink for a DNS record on a Traffic Manager profile"
   },
   {
     "action": "Microsoft.Network/trafficManagerProfiles/write",
@@ -56544,20 +56564,12 @@
     "description": "Creates a virtual network peering proxy or updates an existing virtual network peering proxy"
   },
   {
-    "action": "Microsoft.Network/virtualNetworks/removeAdminNetworkSecurityGroup/action",
-    "description": "Removes Admin Network Security Group Reference From Virtual Network"
-  },
-  {
     "action": "Microsoft.Network/virtualNetworks/rnmEffectiveNetworkSecurityGroups/action",
     "description": "Gets Security Groups Configured On CA Of The Vnet In Rnm Format"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/rnmEffectiveRouteTable/action",
     "description": "Gets RouteTables Configured On CA Of The Vnet In Rnm Format"
-  },
-  {
-    "action": "Microsoft.Network/virtualNetworks/setAdminNetworkSecurityGroup/action",
-    "description": "Sets Admin Network Security Group Reference On Virtual Network"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/setGatewayConfiguration/action",
@@ -63656,6 +63668,14 @@
     "description": "Create a backup Protection Intent"
   },
   {
+    "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfo/action",
+    "description": "Get extended info of a recovery point."
+  },
+  {
+    "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfoOperationResult/read",
+    "description": "Get extended info of a recovery point."
+  },
+  {
     "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/getRecoveryPoints/action",
     "description": "Get Recovery Points for Protected Items."
   },
@@ -68768,6 +68788,10 @@
     "description": "Gets compliance details for the Sovereign View resource."
   },
   {
+    "action": "Microsoft.Sovereign/sovereignViews/complianceResourceDetails/action",
+    "description": "Gets the compliance reasoning for given resource and dimension, including the reasoning for its linked and replica resources."
+  },
+  {
     "action": "Microsoft.Sovereign/sovereignViews/complianceSummary/action",
     "description": "Gets the compliance summary for the Sovereign View resource."
   },
@@ -68786,6 +68810,14 @@
   {
     "action": "Microsoft.Sovereign/sovereignViews/read",
     "description": "Lists the Sovereign View resources within a subscription."
+  },
+  {
+    "action": "Microsoft.Sovereign/sovereignViews/remediate/action",
+    "description": "Remediates the Sovereign View resource for the given ARM resource IDs."
+  },
+  {
+    "action": "Microsoft.Sovereign/sovereignViews/remediationResult/action",
+    "description": "Fetches the result of a previously triggered remediation."
   },
   {
     "action": "Microsoft.Sovereign/sovereignViews/write",
@@ -70596,6 +70628,10 @@
     "description": "Checks that account name is valid and is not in use."
   },
   {
+    "action": "Microsoft.Storage/contextCacheCheckNameAvailability/read",
+    "description": "Checks that the context cache resource name is valid and is not in use."
+  },
+  {
     "action": "Microsoft.Storage/contextCaches/contextCacheContainers/delete",
     "description": "Delete a container from a Context Cache resource."
   },
@@ -70802,6 +70838,14 @@
   {
     "action": "Microsoft.Storage/storageAccounts/blobServices/getInfo/action",
     "description": ""
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/blobServices/metadata/journal/read",
+    "description": "Returns the contents of the metadata journal container"
+  },
+  {
+    "action": "Microsoft.Storage/storageAccounts/blobServices/metadata/snapshot/read",
+    "description": "Returns the contents of the metadata snapshot container"
   },
   {
     "action": "Microsoft.Storage/storageAccounts/blobServices/read",
@@ -75029,15 +75073,15 @@
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/delete",
-    "description": "Delete the Custom Capture Configuration on a firewall. SYNC - clears any in-progress or terminal capture state. Returns 200 on success or 204 when no configuration exists."
+    "description": "Delete a CustomCaptureConfigurations resource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/read",
-    "description": "Get the current Custom Capture Configuration for a firewall. Always returns 200 OK + body. Caller reads properties.pcapStatus to know whether to keep polling. Body field properties.nextCheckInSeconds advises when to poll next (omitted on terminal states)."
+    "description": "Get a CustomCaptureConfigurations resource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/write",
-    "description": "Start a Custom Capture Configuration on a firewall. SYNC - returns 200 OK + body immediately. Body's properties.pcapStatus reflects current state (typically InProgress). Caller polls GET on its own clock using properties.nextCheckInSeconds as the cadence hint."
+    "description": "Create or update a CustomCaptureConfigurations resource (start a packet capture)"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/delete",
@@ -75056,28 +75100,12 @@
     "description": "support info for firewall."
   },
   {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/delete",
-    "description": "Delete (clear) the Log Ingestion Settings for a firewall. SYNC - soft-clears the DCR destination on the partner (logs have no partner delete API). Returns 200 on success or 204 when nothing is configured."
-  },
-  {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/read",
-    "description": "Get the Log Ingestion Settings for a firewall. Live read from the partner. Returns 200 OK with the current settings, or 404 when log ingestion has not been configured."
-  },
-  {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/write",
-    "description": "Create or update the Log Ingestion Settings for a firewall. SYNC - forwards to the partner and returns 200 OK (or 201 Created on first create) with the persisted settings. commonDestination.monitorConfigurationsV2 (dcrId, logIngestionEndpoint, dcrImmutableId, streamName) drives where the firewall logs are ingested."
-  },
-  {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/read",
     "description": "Get a FirewallResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/saveLogProfile/action",
     "description": "Log Profile for Firewall"
-  },
-  {
-    "action": "PaloAltoNetworks.Cloudngfw/firewalls/statuses/read",
-    "description": "Get a FirewallStatusResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/write",
@@ -76400,12 +76428,28 @@
     "description": "Creates or updates a static CIDR in an Ipam Pool"
   },
   {
+    "action": "microsoft.network/p2sVpnGateways/abortMigration/action",
+    "description": "Abort migration for a P2S VPN gateway"
+  },
+  {
     "action": "microsoft.network/p2sVpnGateways/attach/action",
     "description": "Attaches a P2SVpnGateway Hub from WAN Traffic manager"
   },
   {
+    "action": "microsoft.network/p2sVpnGateways/commitMigration/action",
+    "description": "Commit migration for a P2S VPN gateway"
+  },
+  {
     "action": "microsoft.network/p2sVpnGateways/detach/action",
     "description": "Detaches a P2SVpnGateway Hub from WAN Traffic manager"
+  },
+  {
+    "action": "microsoft.network/p2sVpnGateways/executeMigration/action",
+    "description": "Execute migration for a P2S VPN gateway"
+  },
+  {
+    "action": "microsoft.network/p2sVpnGateways/prepareMigration/action",
+    "description": "Prepare migration for a P2S VPN gateway"
   },
   {
     "action": "microsoft.network/p2sVpnGateways/reset/action",
