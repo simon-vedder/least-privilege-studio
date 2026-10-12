@@ -9153,19 +9153,19 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/delete",
-    "description": "Delete a GoalAssignment"
+    "description": "Deletes a goal assignment."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/goalResources/read",
-    "description": "List GoalResource resources by GoalAssignment"
+    "description": "Lists goal resources under a goal assignment."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/read",
-    "description": "List GoalAssignment resources by tenant"
+    "description": "Lists goal assignments in a service group."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/recommendCapacity/action",
-    "description": "Recommends capacity improvements for resources under the goal assignments scope. Returns AI-powered capacity assessments and recommendations. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Recommends capacity improvements for resources under the goal assignment's scope. Returns AI-powered capacity assessments and recommendations."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/refreshGoalResources/action",
@@ -9173,11 +9173,11 @@
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/updateGoalResources/action",
-    "description": "Action to exclude a resource from goal assignment. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
+    "description": "Updates goal resources under a goal assignment."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalAssignments/write",
-    "description": "Create a GoalAssignment"
+    "description": "Creates or updates a goal assignment."
   },
   {
     "action": "Microsoft.AzureResilienceManagement/goalTemplates/delete",
@@ -9670,6 +9670,10 @@
   {
     "action": "Microsoft.AzureStackHCI/Clusters/Volumes/Write",
     "description": "Creates or updates Cluster Volume resources"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/Clusters/Volumes/deploy/action",
+    "description": "Deploys Cluster Volume resources"
   },
   {
     "action": "Microsoft.AzureStackHCI/Clusters/WACloginAsAdmin/Action",
@@ -32568,10 +32572,6 @@
     "description": "Removes a Databricks workspace."
   },
   {
-    "action": "Microsoft.Databricks/workspaces/outboundNetworkDependenciesEndpoints/read",
-    "description": "Gets a list of egress endpoints (network endpoints of all outbound dependencies) for an Azure Databricks Workspace. The operation returns properties of each egress endpoint"
-  },
-  {
     "action": "Microsoft.Databricks/workspaces/privateEndpointConnectionProxies/delete",
     "description": "Delete Private Endpoint Connection Proxies"
   },
@@ -52096,6 +52096,30 @@
     "description": "Create or Update Runbook"
   },
   {
+    "action": "Microsoft.Migrate/migrateProjects/sessions/archive/action",
+    "description": "Archive Session"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/sessions/delete",
+    "description": "Delete Session"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/sessions/invoke/action",
+    "description": "Invoke Session"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/sessions/publish/action",
+    "description": "Publish Session"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/sessions/read",
+    "description": "Get Session"
+  },
+  {
+    "action": "Microsoft.Migrate/migrateProjects/sessions/write",
+    "description": "Create or Update Session"
+  },
+  {
     "action": "Microsoft.Migrate/migrateProjects/solutions/Delete",
     "description": "Deletes a  migrate project solution"
   },
@@ -53948,10 +53972,6 @@
     "description": "Creates or updates an existing ExpressRouteCircuit"
   },
   {
-    "action": "Microsoft.Network/expressRouteCrossConnections/commitCircuitMigration/action",
-    "description": "Commit Express Route Circuit Migration"
-  },
-  {
     "action": "Microsoft.Network/expressRouteCrossConnections/confirmActivationKey/action",
     "description": "Express Route Cross Connection Confirm Activation Key"
   },
@@ -53978,10 +53998,6 @@
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/join/action",
     "description": "Joins an Express Route Cross Connection. Not alertable."
-  },
-  {
-    "action": "Microsoft.Network/expressRouteCrossConnections/migrateCircuit/action",
-    "description": "Migrate Express Route Circuit"
   },
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/notifyConnectionStatus/action",
@@ -54012,10 +54028,6 @@
     "description": "Creates an Express Route Cross Connection Peering or Updates an existing Express Route Cross Connection Peering"
   },
   {
-    "action": "Microsoft.Network/expressRouteCrossConnections/prepareCircuitMigration/action",
-    "description": "Prepare Express Route Circuit Migration"
-  },
-  {
     "action": "Microsoft.Network/expressRouteCrossConnections/proposeInterconnect/action",
     "description": "Express Route Cross Connection operation to propose Interconnect"
   },
@@ -54024,20 +54036,8 @@
     "description": "Get Express Route Cross Connection"
   },
   {
-    "action": "Microsoft.Network/expressRouteCrossConnections/restoreBgpForCircuitMigration/action",
-    "description": "Restore BGP For Express Route Circuit Migration"
-  },
-  {
-    "action": "Microsoft.Network/expressRouteCrossConnections/rollbackCircuitMigration/action",
-    "description": "Rollback Express Route Circuit Migration"
-  },
-  {
     "action": "Microsoft.Network/expressRouteCrossConnections/serviceProviders/action",
     "description": "Backfill Express Route Cross Connection"
-  },
-  {
-    "action": "Microsoft.Network/expressRouteCrossConnections/shutDownBgpForCircuitMigration/action",
-    "description": "Shut Down BGP For Express Route Circuit Migration"
   },
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/write",
@@ -54430,18 +54430,6 @@
   {
     "action": "Microsoft.Network/interconnectGroups/delete",
     "description": "Delete Interconnect Group"
-  },
-  {
-    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/delete",
-    "description": "Delete Interconnect Group Logical Subgroup"
-  },
-  {
-    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/read",
-    "description": "Get Interconnect Group Logical Subgroup"
-  },
-  {
-    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/write",
-    "description": "Create or update Interconnect Group Logical Subgroup"
   },
   {
     "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
@@ -55264,14 +55252,6 @@
     "description": "Creates or Updates a Network Security Perimeter Logging Configuration"
   },
   {
-    "action": "Microsoft.Network/networkSecurityPerimeters/perimeterProfiles/read",
-    "description": "Gets a NSP Perimeter Profile combined resource"
-  },
-  {
-    "action": "Microsoft.Network/networkSecurityPerimeters/profiles/accessRuleRoleAssignments/read",
-    "description": "Gets a NSP Access Rule Role Assignment"
-  },
-  {
     "action": "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/delete",
     "description": "Deletes a Network Security Perimeter Access Rule"
   },
@@ -55306,10 +55286,6 @@
   {
     "action": "Microsoft.Network/networkSecurityPerimeters/read",
     "description": "Gets a Network Security Perimeter"
-  },
-  {
-    "action": "Microsoft.Network/networkSecurityPerimeters/resourceAssociationMappings/read",
-    "description": "Gets a NSP Resource Association Mapping"
   },
   {
     "action": "Microsoft.Network/networkSecurityPerimeters/resourceAssociationProxies/delete",
@@ -55981,11 +55957,7 @@
   },
   {
     "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
-    "description": "Establishes a link between a Private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the Private DNS record"
-  },
-  {
-    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/read",
-    "description": "Grants permission to invoke validateLink for a Private DNS record on a Private Traffic Manager profile"
+    "description": "Establishes a link between a private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the private DNS record"
   },
   {
     "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
@@ -56250,10 +56222,6 @@
   {
     "action": "Microsoft.Network/trafficManagerProfiles/validateLink/action",
     "description": "Establishes a link between a DNS record and a Traffic Manager Profile so that the traffic manager profile can't be removed while it is being referenced by the dns record"
-  },
-  {
-    "action": "Microsoft.Network/trafficManagerProfiles/validateLink/read",
-    "description": "Grants permission to invoke validateLink for a DNS record on a Traffic Manager profile"
   },
   {
     "action": "Microsoft.Network/trafficManagerProfiles/write",
@@ -57300,6 +57268,110 @@
     "description": "CreateOrUpdateAzureTrafficCollector"
   },
   {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/delete",
+    "description": "Delete a AgentFabric"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/members/delete",
+    "description": "Delete a Member"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/members/read",
+    "description": "List Member resources by AgentFabric"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/members/write",
+    "description": "Create a Member"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/read",
+    "description": "List AgentFabric resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/write",
+    "description": "Create a AgentFabric"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/delete",
+    "description": "Deletes a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/findings/read",
+    "description": "Lists findings across all protected resources under a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/mitigations/read",
+    "description": "Lists mitigations across all protected resources under a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/delete",
+    "description": "Deletes a protected resource under a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/findings/mitigate/action",
+    "description": "Triggers mitigation for all awaiting-approval mitigations under a finding."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/findings/read",
+    "description": "Lists findings under a protected resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/findings/rollback/action",
+    "description": "Rolls back succeeded rollbackable mitigations under a finding."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/mitigations/execute/action",
+    "description": "Approves and queues a mitigation for execution."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/mitigations/read",
+    "description": "Lists mitigations under a protected resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/mitigations/rollback/action",
+    "description": "Rolls back a mitigation when rollback is available."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/read",
+    "description": "Lists all protected resources under a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/triggerInventoryUpload/action",
+    "description": "Requests a fresh inventory upload from the Neuron agents associated with a protected resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/protectedResources/write",
+    "description": "Creates or updates a protected resource under a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/read",
+    "description": "Gets all NeuroShield resources in a subscription."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/summary/read",
+    "description": "Gets an aggregate fleet overview for a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/neuroShields/write",
+    "description": "Creates or updates a NeuroShield resource."
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/policyGroups/delete",
+    "description": "Delete a PolicyGroup"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/policyGroups/read",
+    "description": "List PolicyGroup resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/policyGroups/write",
+    "description": "Create a PolicyGroup"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/providerPermissions/read",
+    "description": "read providerPermissions"
+  },
+  {
     "action": "Microsoft.NexusIdentity/identityControllers/delete",
     "description": "Delete a IdentityController"
   },
@@ -57501,6 +57573,18 @@
   },
   {
     "action": "Microsoft.Nutanix/Nodes/write",
+    "description": "Write operation"
+  },
+  {
+    "action": "Microsoft.Nutanix/PodNetworkInterfaceSets/delete",
+    "description": "Delete operation"
+  },
+  {
+    "action": "Microsoft.Nutanix/PodNetworkInterfaceSets/read",
+    "description": "Read operation"
+  },
+  {
+    "action": "Microsoft.Nutanix/PodNetworkInterfaceSets/write",
     "description": "Write operation"
   },
   {
@@ -59120,6 +59204,10 @@
     "description": "Read data from the ASimDnsActivityLogs table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ASimEmailEventLogs/read",
+    "description": "Read data from the ASimEmailEventLogs table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/ASimFileEventLogs/read",
     "description": "Read data from the ASimFileEventLogs table"
   },
@@ -59390,6 +59478,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/AegPublishFailureLogs/read",
     "description": "Read data from the AegPublishFailureLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/AgentFabricFlowLogs/read",
+    "description": "Read data from the AgentFabricFlowLogs table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/AgentsInfo/read",
@@ -59874,6 +59966,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/CIEventsOperational/read",
     "description": "Read data from the CIEventsOperational table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/CallActivityEvents/read",
+    "description": "Read data from the CallActivityEvents table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/CampaignInfo/read",
@@ -60850,6 +60946,34 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/Heartbeat/read",
     "description": "Read data from the Heartbeat table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/HorizonDBAutovacuumStats/read",
+    "description": "Read data from the HorizonDBAutovacuumStats table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/HorizonDBPgStatActivitySessions/read",
+    "description": "Read data from the HorizonDBPgStatActivitySessions table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/HorizonDBQueryStoreQueryText/read",
+    "description": "Read data from the HorizonDBQueryStoreQueryText table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/HorizonDBQueryStoreRuntimeStats/read",
+    "description": "Read data from the HorizonDBQueryStoreRuntimeStats table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/HorizonDBQueryStoreWaitsStats/read",
+    "description": "Read data from the HorizonDBQueryStoreWaitsStats table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/HorizonDBServerLogs/read",
+    "description": "Read data from the HorizonDBServerLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/HorizonDBTransactionsStats/read",
+    "description": "Read data from the HorizonDBTransactionsStats table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/HuntingBookmark/read",
@@ -62706,6 +62830,14 @@
   {
     "action": "Microsoft.PlatformValidation/validationTestCategories/read",
     "description": "List validation test category catalog entries for a subscription"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/validationTests/read",
+    "description": "List validation test catalog entries for a subscription"
+  },
+  {
+    "action": "Microsoft.PlatformValidation/validationTests/versions/read",
+    "description": "List validation test version catalog entries"
   },
   {
     "action": "Microsoft.PolicyInsights/asyncOperationResults/read",
@@ -74624,6 +74756,74 @@
     "description": "Updates a Virtual Instance."
   },
   {
+    "action": "Microsoft.Workloads/workloadAgents/conversations/delete",
+    "description": "Deletes a conversation."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/conversations/listItems/action",
+    "description": "Lists the items exchanged in a conversation."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/conversations/read",
+    "description": "Lists the conversations of a workload agent."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/conversations/write",
+    "description": "Updates the metadata of a conversation."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/delete",
+    "description": "Deletes a workload agent."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/read",
+    "description": "Lists the workload agents in a subscription."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/responses/delete",
+    "description": "Deletes a response."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/responses/listItems/action",
+    "description": "Lists the input and output items of a response."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/responses/read",
+    "description": "Lists the responses of a workload agent."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/responses/write",
+    "description": "Updates the metadata of a response."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/skills/delete",
+    "description": "Deletes a skill."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/skills/read",
+    "description": "Lists the skills of a workload agent."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/skills/write",
+    "description": "Creates or updates a skill."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/toolConnections/delete",
+    "description": "Deletes a tool connection."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/toolConnections/read",
+    "description": "Lists the tool connections of a workload agent."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/toolConnections/write",
+    "description": "Creates or updates a tool connection."
+  },
+  {
+    "action": "Microsoft.Workloads/workloadAgents/write",
+    "description": "Updates a workload agent."
+  },
+  {
     "action": "Microsoft.ZeroTrustSegmentation/segmentationManagers/delete",
     "description": "Delete a SegmentationManager"
   },
@@ -75073,15 +75273,15 @@
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/delete",
-    "description": "Delete a CustomCaptureConfigurations resource"
+    "description": "Delete the Custom Capture Configuration on a firewall. SYNC - clears any in-progress or terminal capture state. Returns 200 on success or 204 when no configuration exists."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/read",
-    "description": "Get a CustomCaptureConfigurations resource"
+    "description": "Get the current Custom Capture Configuration for a firewall. Always returns 200 OK + body. Caller reads properties.pcapStatus to know whether to keep polling. Body field properties.nextCheckInSeconds advises when to poll next (omitted on terminal states)."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/customCaptureConfigurations/write",
-    "description": "Create or update a CustomCaptureConfigurations resource (start a packet capture)"
+    "description": "Start a Custom Capture Configuration on a firewall. SYNC - returns 200 OK + body immediately. Body's properties.pcapStatus reflects current state (typically InProgress). Caller polls GET on its own clock using properties.nextCheckInSeconds as the cadence hint."
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/delete",
@@ -75100,12 +75300,28 @@
     "description": "support info for firewall."
   },
   {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/delete",
+    "description": "Delete (clear) the Log Ingestion Settings for a firewall. SYNC - soft-clears the DCR destination on the partner (logs have no partner delete API). Returns 200 on success or 204 when nothing is configured."
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/read",
+    "description": "Get the Log Ingestion Settings for a firewall. Live read from the partner. Returns 200 OK with the current settings, or 404 when log ingestion has not been configured."
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/logIngestionSettings/write",
+    "description": "Create or update the Log Ingestion Settings for a firewall. SYNC - forwards to the partner and returns 200 OK (or 201 Created on first create) with the persisted settings. commonDestination.monitorConfigurationsV2 (dcrId, logIngestionEndpoint, dcrImmutableId, streamName) drives where the firewall logs are ingested."
+  },
+  {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/read",
     "description": "Get a FirewallResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/saveLogProfile/action",
     "description": "Log Profile for Firewall"
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/firewalls/statuses/read",
+    "description": "Get a FirewallStatusResource"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/firewalls/write",
@@ -75354,6 +75570,10 @@
   {
     "action": "PaloAltoNetworks.Cloudngfw/localRulestacks/write",
     "description": "Update a LocalRulestackResource"
+  },
+  {
+    "action": "PaloAltoNetworks.Cloudngfw/providerPermissions/read",
+    "description": "read providerPermissions"
   },
   {
     "action": "PaloAltoNetworks.Cloudngfw/registeredSubscriptions/read",
@@ -76428,28 +76648,12 @@
     "description": "Creates or updates a static CIDR in an Ipam Pool"
   },
   {
-    "action": "microsoft.network/p2sVpnGateways/abortMigration/action",
-    "description": "Abort migration for a P2S VPN gateway"
-  },
-  {
     "action": "microsoft.network/p2sVpnGateways/attach/action",
     "description": "Attaches a P2SVpnGateway Hub from WAN Traffic manager"
   },
   {
-    "action": "microsoft.network/p2sVpnGateways/commitMigration/action",
-    "description": "Commit migration for a P2S VPN gateway"
-  },
-  {
     "action": "microsoft.network/p2sVpnGateways/detach/action",
     "description": "Detaches a P2SVpnGateway Hub from WAN Traffic manager"
-  },
-  {
-    "action": "microsoft.network/p2sVpnGateways/executeMigration/action",
-    "description": "Execute migration for a P2S VPN gateway"
-  },
-  {
-    "action": "microsoft.network/p2sVpnGateways/prepareMigration/action",
-    "description": "Prepare migration for a P2S VPN gateway"
   },
   {
     "action": "microsoft.network/p2sVpnGateways/reset/action",

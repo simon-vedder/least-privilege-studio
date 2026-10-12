@@ -19773,12 +19773,15 @@
     "description": "Allows users to read and create or update Microsoft.Security service entitlement resources for Defender product onboarding.",
     "actions": [
       "Microsoft.Security/serviceEntitlements/read",
-      "Microsoft.Security/serviceEntitlements/write"
+      "Microsoft.Security/serviceEntitlements/write",
+      "Microsoft.Security/serviceEntitlementSettings/read",
+      "Microsoft.Security/serviceEntitlementSettings/write",
+      "Microsoft.Security/serviceEntitlementSettings/delete"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 2
+    "_estimatedActions": 5
   },
   {
     "name": "Semantic Reranker User",
