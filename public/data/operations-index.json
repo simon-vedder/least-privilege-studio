@@ -1676,6 +1676,22 @@
     "description": "Lists the models available through an AI Gateway by using the OpenAI-compatible GET /v1/models endpoint."
   },
   {
+    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnectionProxies/delete",
+    "description": "Delete a private endpoint connection proxy that Microsoft.Network uses to connect a private endpoint to an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnectionProxies/read",
+    "description": "Get a private endpoint connection proxy that Microsoft.Network uses to connect a private endpoint to an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnectionProxies/validate/action",
+    "description": "Validate a private endpoint connection proxy that Microsoft.Network uses to connect a private endpoint to an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnectionProxies/write",
+    "description": "Create or update a private endpoint connection proxy that Microsoft.Network uses to connect a private endpoint to an AI Gateway instance"
+  },
+  {
     "action": "Microsoft.ApiManagement/aigateways/read",
     "description": "Read metadata for an AI Gateway instance"
   },
@@ -4556,6 +4572,10 @@
     "description": "Creates experimentation with the specified parameters."
   },
   {
+    "action": "Microsoft.AppConfiguration/configurationStores/featureFlags/action",
+    "description": "Performs an action on an existing feature flag from the configuration store. This also grants the ability to read feature flags."
+  },
+  {
     "action": "Microsoft.AppConfiguration/configurationStores/featureFlags/delete",
     "description": "Deletes an existing feature flag from the configuration store."
   },
@@ -5992,24 +6012,12 @@
     "description": "Create a ApprovalWorkflowAssignment"
   },
   {
-    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/delete",
-    "description": "Delete a ApprovalWorkflowInstance"
-  },
-  {
     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/executeStage/action",
     "description": "A long-running resource action."
   },
   {
-    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/read",
-    "description": "List ApprovalWorkflowInstance resources by ApprovalWorkflowDefinition"
-  },
-  {
     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/syncPolicyStatus/action",
     "description": "Synchronize approved policy records with policy resource status."
-  },
-  {
-    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/write",
-    "description": "Create a ApprovalWorkflowInstance"
   },
   {
     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/delete",
@@ -10488,54 +10496,6 @@
     "description": "Creates a new application or updates an existing application"
   },
   {
-    "action": "Microsoft.Batch/batchAccounts/computeNodeOperationResults/read",
-    "description": "Gets the results of a long running Compute Node operation on a Batch Account"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePoolOperationResults/read",
-    "description": "Gets the results of a long running Compute Pool operation on a Batch Account"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/computeNodes/deallocate/action",
-    "description": "Deallocate a Compute Node"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/computeNodes/read",
-    "description": "Lists Compute Nodes on a Compute Pool or gets the properties of a Compute Node"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/computeNodes/reboot/action",
-    "description": "Reboot a Compute Node"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/computeNodes/reimage/action",
-    "description": "Reimage a Compute Node"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/computeNodes/remove/action",
-    "description": "Remove a Compute Node from a Compute Pool"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/computeNodes/start/action",
-    "description": "Start a Compute Node"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/computeNodes/write",
-    "description": "Updates an existing Compute Node"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/delete",
-    "description": "Deletes a Compute Pool from a Batch Account"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/read",
-    "description": "Lists Compute Pools on a Batch Account or gets the properties of a Compute Pool"
-  },
-  {
-    "action": "Microsoft.Batch/batchAccounts/computePools/write",
-    "description": "Creates a new Compute Pool on a Batch Account or updates an existing Compute Pool"
-  },
-  {
     "action": "Microsoft.Batch/batchAccounts/delete",
     "description": "Deletes a Batch account"
   },
@@ -11632,12 +11592,24 @@
     "description": "Create or modify access policy assignments of an Azure Cache for Redis cache."
   },
   {
+    "action": "Microsoft.Cache/redis/configureMigrationAccess/action",
+    "description": "Internal API, do not use."
+  },
+  {
     "action": "Microsoft.Cache/redis/delete",
     "description": "Delete an Azure Cache for Redis cache."
   },
   {
     "action": "Microsoft.Cache/redis/detectors/read",
     "description": "Read the properties of one or all detectors for an Azure Cache for Redis cache."
+  },
+  {
+    "action": "Microsoft.Cache/redis/disableMigrationAccess/action",
+    "description": "Internal API, do not use."
+  },
+  {
+    "action": "Microsoft.Cache/redis/drainConnections/action",
+    "description": "Internal API, do not use."
   },
   {
     "action": "Microsoft.Cache/redis/export/action",
@@ -11862,6 +11834,10 @@
   {
     "action": "Microsoft.Cache/redisEnterprise/read",
     "description": "Read the settings and configuration of an Azure Managed Redis cache."
+  },
+  {
+    "action": "Microsoft.Cache/redisEnterprise/unlinkMigratedEndpoint/action",
+    "description": "Unlink legacy Azure Cache for Redis Enterprise endpoint from a migrated Azure Managed Redis."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/write",
@@ -23548,6 +23524,22 @@
     "description": "Writes leases"
   },
   {
+    "action": "Microsoft.ContainerService/aiManagers/customAIModels/calculateCost/action",
+    "description": "Calculate AI Manager Custom AI Model Cost"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/customAIModels/delete",
+    "description": "Delete AI Manager Custom AI Model"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/customAIModels/read",
+    "description": "Get AI Manager Custom AI Model"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/customAIModels/write",
+    "description": "Create or Update AI Manager Custom AI Model"
+  },
+  {
     "action": "Microsoft.ContainerService/aiManagers/customresources/delete",
     "description": "Deletes custom resources"
   },
@@ -24170,6 +24162,54 @@
   {
     "action": "Microsoft.ContainerService/aiManagers/policy/podsecuritypolicies/write",
     "description": "Writes podsecuritypolicies"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayclusters/delete",
+    "description": "Delete AI Manager Ray Clusters"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayclusters/read",
+    "description": "Get AI Manager Ray Clusters"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayclusters/write",
+    "description": "Create or Update AI Manager Ray Clusters"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/raycronjobs/delete",
+    "description": "Delete AI Manager Ray Cron Jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/raycronjobs/read",
+    "description": "Get AI Manager Ray Cron Jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/raycronjobs/write",
+    "description": "Create or Update AI Manager Ray Cron Jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayjobs/delete",
+    "description": "Delete AI Manager Ray Jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayjobs/read",
+    "description": "Get AI Manager Ray Jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayjobs/write",
+    "description": "Create or Update AI Manager Ray Jobs"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayservices/delete",
+    "description": "Delete AI Manager Ray Services"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayservices/read",
+    "description": "Get AI Manager Ray Services"
+  },
+  {
+    "action": "Microsoft.ContainerService/aiManagers/ray.io/rayservices/write",
+    "description": "Create or Update AI Manager Ray Services"
   },
   {
     "action": "Microsoft.ContainerService/aiManagers/rbac.authorization.k8s.io/clusterrolebindings/delete",
@@ -28040,6 +28080,10 @@
     "description": "Writes prioritylevelconfigurations"
   },
   {
+    "action": "Microsoft.ContainerService/managedClusters/generateUpgradeInsights/action",
+    "description": "Generates or refreshes an upgrade readiness evaluation for a managed cluster"
+  },
+  {
     "action": "Microsoft.ContainerService/managedClusters/groups/impersonate/action",
     "description": "Impersonate groups"
   },
@@ -29086,6 +29130,10 @@
   {
     "action": "Microsoft.ContainerService/managedClusters/unpinManagedCluster/action",
     "description": "Unpin a managed cluster"
+  },
+  {
+    "action": "Microsoft.ContainerService/managedClusters/upgradeInsights/read",
+    "description": "Gets an upgrade insight"
   },
   {
     "action": "Microsoft.ContainerService/managedClusters/upgradeProfiles/read",
@@ -35408,8 +35456,24 @@
     "description": "Creates or updates Investigation."
   },
   {
+    "action": "Microsoft.Discovery/workspaces/projects/operations/cancel/action",
+    "description": "Cancel a tool-run operation in the specified project."
+  },
+  {
+    "action": "Microsoft.Discovery/workspaces/projects/operations/connect/action",
+    "description": "Connect to a running tool-run pod in the specified project by attaching a debug container."
+  },
+  {
+    "action": "Microsoft.Discovery/workspaces/projects/operations/reconcile/action",
+    "description": "Reconcile tool-run operations in the specified project."
+  },
+  {
     "action": "Microsoft.Discovery/workspaces/projects/read",
     "description": "Get a Project"
+  },
+  {
+    "action": "Microsoft.Discovery/workspaces/projects/runTool/action",
+    "description": "Submit a tool run in the specified project."
   },
   {
     "action": "Microsoft.Discovery/workspaces/projects/write",
@@ -41380,6 +41444,14 @@
     "description": "Read any Azure Arc machines"
   },
   {
+    "action": "Microsoft.HybridCompute/machines/reconnect/action",
+    "description": "Reconnect an Azure Arc machines"
+  },
+  {
+    "action": "Microsoft.HybridCompute/machines/rollbackTpmTransition/action",
+    "description": "Rollback TPM transition for an Azure Arc machines identity key store"
+  },
+  {
     "action": "Microsoft.HybridCompute/machines/runcommands/delete",
     "description": "Deletes an Azure Arc runcommands"
   },
@@ -41390,6 +41462,10 @@
   {
     "action": "Microsoft.HybridCompute/machines/runcommands/write",
     "description": "Installs or Updates an Azure Arc runcommands"
+  },
+  {
+    "action": "Microsoft.HybridCompute/machines/tpmTransition/action",
+    "description": "Migrate an Azure Arc machines identity key store to TPM"
   },
   {
     "action": "Microsoft.HybridCompute/machines/write",
@@ -44376,6 +44452,78 @@
     "description": "The operation to update a firmware analysis workspaces."
   },
   {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/aioApplicationConfigurations/delete",
+    "description": "Delete a AioApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/aioApplicationConfigurations/read",
+    "description": "Get a AioApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/aioApplicationConfigurations/write",
+    "description": "Create a AioApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/aioConnectorConfigurations/delete",
+    "description": "Delete a AioConnectorConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/aioConnectorConfigurations/read",
+    "description": "Get a AioConnectorConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/aioConnectorConfigurations/write",
+    "description": "Create a AioConnectorConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/delete",
+    "description": "Delete a AioApplicationDefinitionResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/read",
+    "description": "Get a AioApplicationDefinitionResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/aioApplicationDefinitions/write",
+    "description": "Create a AioApplicationDefinitionResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriConnectorApplicationConfigurations/delete",
+    "description": "Delete a AioConnectorApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriConnectorApplicationConfigurations/read",
+    "description": "Get a AioConnectorApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriConnectorApplicationConfigurations/write",
+    "description": "Create a AioConnectorApplicationConfigurationResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/delete",
+    "description": "Delete a AioApplicationConfigurationV1Resource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/read",
+    "description": "Get a AioApplicationConfigurationV1Resource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/akriEdgeApplicationConfigurations/write",
+    "description": "Create a AioApplicationConfigurationV1Resource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/delete",
+    "description": "Delete a AioApplicationProfileResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/read",
+    "description": "Get a AioApplicationProfileResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/akriApplicationProfiles/write",
+    "description": "Create a AioApplicationProfileResource"
+  },
+  {
     "action": "Microsoft.IoTOperations/instances/akriConnectorTemplates/connectors/delete",
     "description": "Delete a AkriConnectorResource"
   },
@@ -44534,6 +44682,30 @@
   {
     "action": "Microsoft.IoTOperations/instances/diagnostics/write",
     "description": "Create a DiagnosticResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpAuthorizationPolicies/delete",
+    "description": "Delete a McpAuthorizationPolicyResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpAuthorizationPolicies/read",
+    "description": "Get a McpAuthorizationPolicyResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpAuthorizationPolicies/write",
+    "description": "Create a McpAuthorizationPolicyResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpServerConnections/delete",
+    "description": "Delete a McpServerConnectionResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpServerConnections/read",
+    "description": "Get a McpServerConnectionResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpServerConnections/write",
+    "description": "Create a McpServerConnectionResource"
   },
   {
     "action": "Microsoft.IoTOperations/instances/read",
@@ -52532,6 +52704,90 @@
     "description": "Creates a new MySQL discovery site or updates an existing one. This operation establishes the discovery environment for MySQL servers and configures the association with master sites and migration projects."
   },
   {
+    "action": "Microsoft.NetApp/externalCacheConnections/delete",
+    "description": "Deletes an external cache connection resource."
+  },
+  {
+    "action": "Microsoft.NetApp/externalCacheConnections/read",
+    "description": "Returns the details of external cache connection resource(s)."
+  },
+  {
+    "action": "Microsoft.NetApp/externalCacheConnections/write",
+    "description": "Creates or updates an external cache connection resource."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/clusterPeers/read",
+    "description": "Reads a cluster peer resource."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/clusterPeers/svmPeers/read",
+    "description": "Reads an SVM peer resource."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/delete",
+    "description": "Deletes an external cluster."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/externalSvms/delete",
+    "description": "Deletes an external SVM."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/externalSvms/externalCaches/read",
+    "description": "Reads an external cache resource."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/externalSvms/externalVolumes/delete",
+    "description": "Deletes an external volume."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/externalSvms/externalVolumes/read",
+    "description": "Returns the details of external volume resource(s)."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/externalSvms/externalVolumes/write",
+    "description": "Creates or updates an external volume resource."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/externalSvms/read",
+    "description": "Returns the details of external SVM resource(s)."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/externalSvms/write",
+    "description": "Creates or updates an external SVM resource."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/read",
+    "description": "Returns the details of external cluster resource(s)."
+  },
+  {
+    "action": "Microsoft.NetApp/externalClusters/write",
+    "description": "Creates or updates an external cluster resource."
+  },
+  {
+    "action": "Microsoft.NetApp/hybridReplications/delete",
+    "description": "Deletes a hybrid replication resource."
+  },
+  {
+    "action": "Microsoft.NetApp/hybridReplications/pause/action",
+    "description": "Pauses a hybrid replication."
+  },
+  {
+    "action": "Microsoft.NetApp/hybridReplications/read",
+    "description": "Returns the details of hybrid replication resource(s)."
+  },
+  {
+    "action": "Microsoft.NetApp/hybridReplications/resume/action",
+    "description": "Resumes a hybrid replication."
+  },
+  {
+    "action": "Microsoft.NetApp/hybridReplications/startReplicationTransfer/action",
+    "description": "Starts an immediate on-demand replication transfer for a hybrid replication."
+  },
+  {
+    "action": "Microsoft.NetApp/hybridReplications/write",
+    "description": "Creates or updates a hybrid replication resource."
+  },
+  {
     "action": "Microsoft.NetApp/netAppAccounts/accountBackups/delete",
     "description": "Deletes an account backup resource."
   },
@@ -53972,6 +54228,10 @@
     "description": "Creates or updates an existing ExpressRouteCircuit"
   },
   {
+    "action": "Microsoft.Network/expressRouteCrossConnections/commitCircuitMigration/action",
+    "description": "Commit Express Route Circuit Migration"
+  },
+  {
     "action": "Microsoft.Network/expressRouteCrossConnections/confirmActivationKey/action",
     "description": "Express Route Cross Connection Confirm Activation Key"
   },
@@ -53998,6 +54258,10 @@
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/join/action",
     "description": "Joins an Express Route Cross Connection. Not alertable."
+  },
+  {
+    "action": "Microsoft.Network/expressRouteCrossConnections/migrateCircuit/action",
+    "description": "Migrate Express Route Circuit"
   },
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/notifyConnectionStatus/action",
@@ -54028,6 +54292,10 @@
     "description": "Creates an Express Route Cross Connection Peering or Updates an existing Express Route Cross Connection Peering"
   },
   {
+    "action": "Microsoft.Network/expressRouteCrossConnections/prepareCircuitMigration/action",
+    "description": "Prepare Express Route Circuit Migration"
+  },
+  {
     "action": "Microsoft.Network/expressRouteCrossConnections/proposeInterconnect/action",
     "description": "Express Route Cross Connection operation to propose Interconnect"
   },
@@ -54036,8 +54304,20 @@
     "description": "Get Express Route Cross Connection"
   },
   {
+    "action": "Microsoft.Network/expressRouteCrossConnections/restoreBgpForCircuitMigration/action",
+    "description": "Restore BGP For Express Route Circuit Migration"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteCrossConnections/rollbackCircuitMigration/action",
+    "description": "Rollback Express Route Circuit Migration"
+  },
+  {
     "action": "Microsoft.Network/expressRouteCrossConnections/serviceProviders/action",
     "description": "Backfill Express Route Cross Connection"
+  },
+  {
+    "action": "Microsoft.Network/expressRouteCrossConnections/shutDownBgpForCircuitMigration/action",
+    "description": "Shut Down BGP For Express Route Circuit Migration"
   },
   {
     "action": "Microsoft.Network/expressRouteCrossConnections/write",
@@ -54430,6 +54710,18 @@
   {
     "action": "Microsoft.Network/interconnectGroups/delete",
     "description": "Delete Interconnect Group"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/delete",
+    "description": "Delete Interconnect Group Logical Subgroup"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/read",
+    "description": "Get Interconnect Group Logical Subgroup"
+  },
+  {
+    "action": "Microsoft.Network/interconnectGroups/logicalSubgroups/write",
+    "description": "Create or update Interconnect Group Logical Subgroup"
   },
   {
     "action": "Microsoft.Network/interconnectGroups/nodeAvailability/action",
@@ -55252,6 +55544,14 @@
     "description": "Creates or Updates a Network Security Perimeter Logging Configuration"
   },
   {
+    "action": "Microsoft.Network/networkSecurityPerimeters/perimeterProfiles/read",
+    "description": "Gets a NSP Perimeter Profile combined resource"
+  },
+  {
+    "action": "Microsoft.Network/networkSecurityPerimeters/profiles/accessRuleRoleAssignments/read",
+    "description": "Gets a NSP Access Rule Role Assignment"
+  },
+  {
     "action": "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/delete",
     "description": "Deletes a Network Security Perimeter Access Rule"
   },
@@ -55286,6 +55586,10 @@
   {
     "action": "Microsoft.Network/networkSecurityPerimeters/read",
     "description": "Gets a Network Security Perimeter"
+  },
+  {
+    "action": "Microsoft.Network/networkSecurityPerimeters/resourceAssociationMappings/read",
+    "description": "Gets a NSP Resource Association Mapping"
   },
   {
     "action": "Microsoft.Network/networkSecurityPerimeters/resourceAssociationProxies/delete",
@@ -55957,7 +56261,11 @@
   },
   {
     "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/action",
-    "description": "Establishes a link between a private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the private DNS record"
+    "description": "Establishes a link between a Private DNS record and a Private Traffic Manager Profile so that the private traffic manager profile can't be removed while it is being referenced by the Private DNS record"
+  },
+  {
+    "action": "Microsoft.Network/privatetrafficmanagerprofiles/validateLink/read",
+    "description": "Grants permission to invoke validateLink for a Private DNS record on a Private Traffic Manager profile"
   },
   {
     "action": "Microsoft.Network/privatetrafficmanagerprofiles/write",
@@ -56222,6 +56530,10 @@
   {
     "action": "Microsoft.Network/trafficManagerProfiles/validateLink/action",
     "description": "Establishes a link between a DNS record and a Traffic Manager Profile so that the traffic manager profile can't be removed while it is being referenced by the dns record"
+  },
+  {
+    "action": "Microsoft.Network/trafficManagerProfiles/validateLink/read",
+    "description": "Grants permission to invoke validateLink for a DNS record on a Traffic Manager profile"
   },
   {
     "action": "Microsoft.Network/trafficManagerProfiles/write",
@@ -57268,8 +57580,24 @@
     "description": "CreateOrUpdateAzureTrafficCollector"
   },
   {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/clusterAssociations/delete",
+    "description": "Deletes the association. Idempotent: returns `202 Accepted` when completion is\nasynchronous, and `204 No Content` when it completes synchronously or the\nassociation is already absent.\n\nFor an association enrolling an ACI SandboxGroup (`clusterResourceId` of type\n`Microsoft.ContainerInstance/sandboxGroups`), the service returns\n`409 ClusterAssociationNotEmpty` while any Member still references the\nSandboxGroup. All such Members must be deleted before the association can be\nremoved.\n\n```json\n{\n  \"error\": {\n    \"code\": \"ClusterAssociationNotEmpty\",\n    \"message\": \"The ClusterAssociation cannot be deleted because one or more members still reference it.\",\n    \"target\": \"properties.clusterResourceId\"\n  }\n}\n```"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/clusterAssociations/read",
+    "description": "Get a ClusterAssociation"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/clusterAssociations/write",
+    "description": "Update a ClusterAssociation"
+  },
+  {
     "action": "Microsoft.NetworkSecurity/agentFabrics/delete",
     "description": "Delete a AgentFabric"
+  },
+  {
+    "action": "Microsoft.NetworkSecurity/agentFabrics/egressTrustBundles/read",
+    "description": "Gets the egress TLS-inspection trust bundle for the fabric.\n\nThe bundle changes rarely, so callers are expected to cache it for the advertised\nvalidity period rather than reading it per workload. To decide whether a cached copy is\nstill current, compare `bundleVersion`: it is derived from the anchor set, so it changes\nexactly when the anchors change and is stable otherwise. Every read returns the full\nbundle together with refreshed cache metadata."
   },
   {
     "action": "Microsoft.NetworkSecurity/agentFabrics/members/delete",
@@ -57289,7 +57617,7 @@
   },
   {
     "action": "Microsoft.NetworkSecurity/agentFabrics/write",
-    "description": "Create a AgentFabric"
+    "description": "Creates or replaces an AgentFabric.\n\nBefore accepting the request or changing policy-group associations, validate the policy\ntypes in every proposed defaultPolicyGroups reference against the fabric's effective\ninspection configuration. If no connection is configured and any referenced group contains a\nContentInspection policy, reject the request with HTTP 409 and error code\nContentInspectionCapabilityDisabled, targeting properties.defaultPolicyGroups. No incompatible\nassociation change is accepted. This check does not depend on whether policy selectors\ncurrently match traffic.\n\nOmitting contentInspectionProfile or supplying {} on PUT for an existing fabric preserves its\ncustomer-owned connection, legacy regional connection, or absence of connection.\nDo not persist {} over the stored connection or cancel a pending connection update.\nNew-fabric omission or {} requests no inspection capability and no regional fallback.\nExisting legacy fabrics without a profile retain their regional Content Safety connection,\nwhich satisfies the inspection prerequisite without new probes, management calls, or key\nretrieval. A connection still being validated is not an absent connection.\nError messages must not disclose associated fabric IDs the caller is not authorized to read.\n\nIf a connection update is in progress for this fabric, reject a PUT requesting a different\nconnection with HTTP 409 Conflict, without changing the connection update already in progress.\nA retry of the same requested connection is not a conflicting change. This does not prevent\nlater key rotations or endpoint replacements.\n\nIn API version `2026-10-07-preview` and later, reject definite invalid customer connection input before\naccepting PUT with HTTP 400 Bad Request. A nonempty profile must contain both endpoint and apiKey.\nReject a missing field before connection validation, without retrieving a saved key or comparing\nwith the saved endpoint to permit key omission. Only a truly empty object is a connection no-op;\npartial objects or objects containing only unrecognized fields must not be treated as empty.\nInvalid input also includes a null or nonobject profile;\na malformed, untrusted, or unsupported endpoint (including a non-HTTPS or unrecognized Azure\naccount host or an unsupported cloud); and explicit null, empty, or wrong-type endpoint or key.\nAn endpoint without a key is invalid even when unchanged; a key without an endpoint is invalid.\nAn omitted profile or {} is not invalid connection input. Its no-op applies only to connection\nhandling; caller authorization, other Fabric fields, policy compatibility, and ordinary\npending-operation rules still apply.\n\nFor service-level connection validation rejection, return ContentInspectionConnectionValidationFailed\nin the standard error response, targeting properties.contentInspectionProfile or its endpoint\nor apiKey field when the invalid field is known. Ordinary schema/model validation may retain\nits standard HTTP 400 errors. The connection code also applies to definitively rejected\ncredentials or a confirmed account/access setting or missing required Content Safety API\ncapability that prevents use of the supplied connection. Interpret upstream 401/403 responses\nto distinguish credentials from account access, local authentication, or network restrictions;\ndo not report them as authentication/authorization failures of the Fabric caller.\n\nThrottling (HTTP 429), service failures (5xx), DNS/TLS failures, timeouts, and inconclusive\navailability do not establish bad customer input and must not be classified as this HTTP 400\nrejection. A DNS timeout or an arbitrary upstream 404 does not prove that the account is absent.\nIf a definite validation rejection is discovered after PUT acceptance, report terminal Failed\nwith the corresponding error in the established long-running operation status response;\nthe accepted PUT response does not become HTTP 400. Failed replacement preserves the previously\nactive connection; never validate or operate failed customer input using regional credentials.\nError responses must not contain key values or raw upstream response bodies.\n\nExample connection rejection response (HTTP 400 Bad Request):\n\n```json\n{\n  \"error\": {\n    \"code\": \"ContentInspectionConnectionValidationFailed\",\n    \"message\": \"The supplied Content Safety connection could not be validated. Verify the endpoint, API key, and account access settings.\",\n    \"target\": \"properties.contentInspectionProfile\"\n  }\n}\n```\n\nExample rejection response (HTTP 409 Conflict):\n\n```json\n{\n  \"error\": {\n    \"code\": \"ContentInspectionCapabilityDisabled\",\n    \"message\": \"The referenced policy group contains a ContentInspection policy, but this fabric has no configured inspection connection.\",\n    \"target\": \"properties.defaultPolicyGroups\"\n  }\n}\n```"
   },
   {
     "action": "Microsoft.NetworkSecurity/neuroShields/delete",
@@ -57349,7 +57677,7 @@
   },
   {
     "action": "Microsoft.NetworkSecurity/neuroShields/summary/read",
-    "description": "Gets an aggregate fleet overview for a NeuroShield resource."
+    "description": "Gets the aggregate fleet overview singleton for a NeuroShield resource."
   },
   {
     "action": "Microsoft.NetworkSecurity/neuroShields/write",
@@ -57365,7 +57693,7 @@
   },
   {
     "action": "Microsoft.NetworkSecurity/policyGroups/write",
-    "description": "Create a PolicyGroup"
+    "description": "Creates or replaces a PolicyGroup.\n\nIf the PUT introduces a ContentInspection policy in networkSecurityPolicies and any\nassociated fabric has no configured inspection connection, reject the\nrequest with HTTP 409 and error code ContentInspectionCapabilityDisabled, targeting\nproperties.networkSecurityPolicies. Validate before persisting or distributing policy changes,\npreserving the previously accepted policies on rejection. Do not partially apply changes to\ncompatible fabrics or silently skip inspection for fabrics without an inspection connection.\n\nCompatibility uses the associated fabrics' stored configuration, independent of whether\npolicy selectors currently match traffic. This is a configuration check, not a fresh Content\nSafety connectivity probe. Changes that do not introduce ContentInspection policies do not\nrequire this check; transient connection failures do not remove a fabric's configuration.\nExisting legacy fabrics without a profile retain their regional Content Safety connection,\nwhich satisfies the inspection prerequisite without new probes, management calls, or key\nretrieval. A connection still being validated is not an absent connection.\nUnattached groups and groups associated only with compatible fabrics may\ncontain ContentInspection policies. Removing those policies or detaching a group\nremains allowed, subject to other validation. Tags-only PATCH does not change policy contents.\nError messages must not disclose associated fabric IDs the caller is not authorized to read.\n\nExample rejection response (HTTP 409 Conflict):\n\n```json\n{\n  \"error\": {\n    \"code\": \"ContentInspectionCapabilityDisabled\",\n    \"message\": \"The proposed ContentInspection policy is incompatible with an associated fabric that has no configured inspection connection.\",\n    \"target\": \"properties.networkSecurityPolicies\"\n  }\n}\n```"
   },
   {
     "action": "Microsoft.NetworkSecurity/providerPermissions/read",
@@ -57573,18 +57901,6 @@
   },
   {
     "action": "Microsoft.Nutanix/Nodes/write",
-    "description": "Write operation"
-  },
-  {
-    "action": "Microsoft.Nutanix/PodNetworkInterfaceSets/delete",
-    "description": "Delete operation"
-  },
-  {
-    "action": "Microsoft.Nutanix/PodNetworkInterfaceSets/read",
-    "description": "Read operation"
-  },
-  {
-    "action": "Microsoft.Nutanix/PodNetworkInterfaceSets/write",
     "description": "Write operation"
   },
   {
@@ -61436,6 +61752,22 @@
     "description": "Read data from the NWConnectionMonitorTestResult table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/NWPacketCaptureDnsQuery/read",
+    "description": "Read data from the NWPacketCaptureDnsQuery table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/NWPacketCaptureHttpTransaction/read",
+    "description": "Read data from the NWPacketCaptureHttpTransaction table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/NWPacketCaptureNetworkSession/read",
+    "description": "Read data from the NWPacketCaptureNetworkSession table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/NWPacketCaptureTlsSession/read",
+    "description": "Read data from the NWPacketCaptureTlsSession table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/NatGatewayFlowlogsV1/read",
     "description": "Read data from the NatGatewayFlowlogsV1 table"
   },
@@ -63989,7 +64321,7 @@
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
-    "description": "Get the list of ResourceGuard proxies for a resource"
+    "description": "Get ResourceGuard proxy operation gets an object representing the Azure resource of type 'ResourceGuard proxy'"
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/unlockDelete/action",
@@ -64948,8 +65280,48 @@
     "description": "Create a Namespace Resource and Update its properties. Tags and Capacity of the Namespace are the properties which can be updated."
   },
   {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/datasetRegistrations/delete",
+    "description": "Delete a DataCatalogDatasetRegistration"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/datasetRegistrations/read",
+    "description": "Get a DataCatalogDatasetRegistration"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/datasetRegistrations/write",
+    "description": "Create a DataCatalogDatasetRegistration"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/datasets/delete",
+    "description": "Delete a DataCatalogDataset"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/datasets/read",
+    "description": "Get a DataCatalogDataset"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/datasets/write",
+    "description": "Create a DataCatalogDataset"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/delete",
+    "description": "Delete a DataCatalog"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/read",
+    "description": "Get a DataCatalog"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/dataCatalogs/write",
+    "description": "Update a DataCatalog"
+  },
+  {
     "action": "Microsoft.ResourceBuilder/registeredSubscriptions/read",
     "description": "read registeredSubscriptions"
+  },
+  {
+    "action": "Microsoft.ResourceBuilder/systemDatasets/read",
+    "description": "List SystemDataset resources by resource group"
   },
   {
     "action": "Microsoft.ResourceBuilder/workspaces/dataConnections/delete",
@@ -76648,12 +77020,28 @@
     "description": "Creates or updates a static CIDR in an Ipam Pool"
   },
   {
+    "action": "microsoft.network/p2sVpnGateways/abortMigration/action",
+    "description": "Abort migration for a P2S VPN gateway"
+  },
+  {
     "action": "microsoft.network/p2sVpnGateways/attach/action",
     "description": "Attaches a P2SVpnGateway Hub from WAN Traffic manager"
   },
   {
+    "action": "microsoft.network/p2sVpnGateways/commitMigration/action",
+    "description": "Commit migration for a P2S VPN gateway"
+  },
+  {
     "action": "microsoft.network/p2sVpnGateways/detach/action",
     "description": "Detaches a P2SVpnGateway Hub from WAN Traffic manager"
+  },
+  {
+    "action": "microsoft.network/p2sVpnGateways/executeMigration/action",
+    "description": "Execute migration for a P2S VPN gateway"
+  },
+  {
+    "action": "microsoft.network/p2sVpnGateways/prepareMigration/action",
+    "description": "Prepare migration for a P2S VPN gateway"
   },
   {
     "action": "microsoft.network/p2sVpnGateways/reset/action",

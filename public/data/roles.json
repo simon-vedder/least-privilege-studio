@@ -2209,7 +2209,7 @@
   {
     "name": "Azure Arc Kubernetes Viewer",
     "id": "63f0a09d-1495-4db4-a681-037d84835eb4",
-    "description": "Lets you view all resources in cluster/namespace, except secrets.",
+    "description": "Lets you view all resources in cluster/namespace, except secrets. This Role Definition is on the path to deprecation, please use Azure Arc Kubernetes Reader instead.",
     "actions": [
       "Microsoft.Authorization/*/read",
       "Microsoft.Insights/alertRules/*",
@@ -3825,7 +3825,7 @@
       "Microsoft.Cdn/operationresults/*",
       "Microsoft.Cdn/profiles/*/read",
       "Microsoft.Insights/alertRules/*",
-      "Microsoft.Resources/deployments/*",
+      "Microsoft.Resources/deployments/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Cdn/operationresults/profileresults/afdendpointresults/CheckCustomDomainDNSMappingStatus/action",
       "Microsoft.Cdn/profiles/queryloganalyticsmetrics/action",
@@ -3841,7 +3841,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 122
+    "_estimatedActions": 93
   },
   {
     "name": "Azure Front Door Secret Contributor",
@@ -6499,6 +6499,7 @@
       "Microsoft.AzureResilienceManagement/drills/*/delete",
       "Microsoft.AzureResilienceManagement/drills/*/read",
       "Microsoft.AzureResilienceManagement/drills/*/write",
+      "Microsoft.AzureResilienceManagement/goalAssignments/read",
       "Microsoft.AzureResilienceManagement/recoveryPlans/*/action",
       "Microsoft.AzureResilienceManagement/recoveryPlans/*/delete",
       "Microsoft.AzureResilienceManagement/recoveryPlans/*/read",
@@ -6513,7 +6514,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 98
+    "_estimatedActions": 99
   },
   {
     "name": "Azure Resilience Management Drills Assets Administrator",
@@ -6643,6 +6644,7 @@
       "Microsoft.AzureResilienceManagement/drills/*/delete",
       "Microsoft.AzureResilienceManagement/drills/*/read",
       "Microsoft.AzureResilienceManagement/drills/*/write",
+      "Microsoft.AzureResilienceManagement/goalAssignments/read",
       "Microsoft.AzureResilienceManagement/recoveryPlans/*/action",
       "Microsoft.AzureResilienceManagement/recoveryPlans/*/delete",
       "Microsoft.AzureResilienceManagement/recoveryPlans/*/read",
@@ -6657,7 +6659,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 96
+    "_estimatedActions": 97
   },
   {
     "name": "Azure Resilience Management Drills Operator",
@@ -6868,12 +6870,13 @@
       "Microsoft.AzureResilienceManagement/usagePlans/write",
       "Microsoft.AzureResilienceManagement/usagePlans/enrollments/delete",
       "Microsoft.AzureResilienceManagement/usagePlans/enrollments/read",
-      "Microsoft.AzureResilienceManagement/usagePlans/enrollments/write"
+      "Microsoft.AzureResilienceManagement/usagePlans/enrollments/write",
+      "Microsoft.AzureResilienceManagement/goalAssignments/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 93
+    "_estimatedActions": 94
   },
   {
     "name": "Azure Resilience Management Recovery Contributor",
@@ -6917,12 +6920,13 @@
       "Microsoft.AzureResilienceManagement/usagePlans/write",
       "Microsoft.AzureResilienceManagement/usagePlans/enrollments/delete",
       "Microsoft.AzureResilienceManagement/usagePlans/enrollments/read",
-      "Microsoft.AzureResilienceManagement/usagePlans/enrollments/write"
+      "Microsoft.AzureResilienceManagement/usagePlans/enrollments/write",
+      "Microsoft.AzureResilienceManagement/goalAssignments/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 76
+    "_estimatedActions": 77
   },
   {
     "name": "Azure Resilience Management Recovery Operator",
@@ -7709,6 +7713,10 @@
       "Microsoft.AzureStackHCI/Clusters/ArcSettings/Read",
       "Microsoft.AzureStackHCI/NetworkSecurityGroups/Read",
       "Microsoft.AzureStackHCI/NetworkSecurityGroups/SecurityRules/Read",
+      "Microsoft.Compute/disks/delete",
+      "Microsoft.Compute/disks/write",
+      "Microsoft.Compute/disks/read",
+      "Microsoft.Compute/disks/beginGetAccess/action",
       "Microsoft.Insights/AlertRules/Write",
       "Microsoft.Insights/AlertRules/Delete",
       "Microsoft.Insights/AlertRules/Read",
@@ -7765,12 +7773,13 @@
       "Microsoft.HybridCompute/licenses/delete",
       "Microsoft.ExtendedLocation/customLocations/Read",
       "Microsoft.ExtendedLocation/customLocations/deploy/action",
-      "Microsoft.KubernetesConfiguration/extensions/read"
+      "Microsoft.KubernetesConfiguration/extensions/read",
+      "Microsoft.AzureStackHCI/clusters/volumes/deploy/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 200
+    "_estimatedActions": 205
   },
   {
     "name": "Azure Stack HCI VM Reader",
@@ -8002,6 +8011,8 @@
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectableContainers/read",
       "Microsoft.RecoveryServices/vaults/operationStatus/read",
       "Microsoft.RecoveryServices/vaults/operationResults/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfo/action",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfoOperationResult/read",
       "Microsoft.RecoveryServices/locations/backupStatus/action",
       "Microsoft.RecoveryServices/locations/backupPreValidateProtection/action",
       "Microsoft.RecoveryServices/locations/backupValidateFeatures/action",
@@ -8055,7 +8066,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 674
+    "_estimatedActions": 676
   },
   {
     "name": "Backup MUA Admin",
@@ -8165,6 +8176,8 @@
       "Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectableContainers/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/items/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfo/action",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfoOperationResult/read",
       "Microsoft.RecoveryServices/locations/backupStatus/action",
       "Microsoft.RecoveryServices/locations/backupPreValidateProtection/action",
       "Microsoft.RecoveryServices/locations/backupValidateFeatures/action",
@@ -8215,7 +8228,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 310
+    "_estimatedActions": 312
   },
   {
     "name": "Backup Reader",
@@ -8281,12 +8294,14 @@
       "Microsoft.DataProtection/subscriptions/resourceGroups/providers/locations/fetchCrossRegionRestoreJobs/action",
       "Microsoft.DataProtection/subscriptions/resourceGroups/providers/locations/fetchCrossRegionRestoreJob/action",
       "Microsoft.DataProtection/subscriptions/resourceGroups/providers/locations/fetchSecondaryRecoveryPoints/action",
-      "Microsoft.DataProtection/locations/checkFeatureSupport/action"
+      "Microsoft.DataProtection/locations/checkFeatureSupport/action",
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappingStatus/action",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappingStatus/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 98
+    "_estimatedActions": 100
   },
   {
     "name": "Bayer Ag Powered Services Crop Id Solution User Role",
@@ -8631,6 +8646,16 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 26
+  },
+  {
+    "name": "Chaos Kubernetes Extension Operator",
+    "id": "681440c1-3630-4424-a530-0305ac721cfd",
+    "description": "Lets a Chaos Studio workspace identity impersonate the Chaos Studio extension's Kubernetes service account and read pods on AKS clusters, and read the cluster's Deployment Safeguards, so Chaos Studio can run faults through the extension.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 0
   },
   {
     "name": "Chaos Permissions Admin",
@@ -11241,12 +11266,22 @@
       "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/operationsStatus/read",
       "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/recoveryPointOperationResults/read",
       "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/validateBulkRestoreOperationsStatus/read",
-      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupJobs/backupChildJobs/read"
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupJobs/backupChildJobs/read",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/read",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/remove/action",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/read",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/findRestorableTimeRanges/action",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/validateRestore/action",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/restore/action",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/operationResults/read",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/operationStatus/read",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/recoveryPoints/read",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupJobs/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 23
+    "_estimatedActions": 33
   },
   {
     "name": "CTR Creator",
@@ -11254,12 +11289,14 @@
     "description": "Allows creating cross-tenant restore vault mappings on a target Recovery Services vault.",
     "actions": [
       "Microsoft.RecoveryServices/Vaults/read",
-      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/write"
+      "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/write",
+      "Microsoft.DataProtection/backupVaults/read",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/write"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 2
+    "_estimatedActions": 4
   },
   {
     "name": "Data Boundary Tenant Administrator",
@@ -13109,16 +13146,12 @@
       "Microsoft.Compute/snapshots/read",
       "Microsoft.Compute/snapshots/beginGetAccess/action",
       "Microsoft.Compute/snapshots/endGetAccess/action",
-      "Microsoft.Compute/disks/beginGetAccess/action",
-      "Microsoft.Storage/storageAccounts/listkeys/action",
-      "Microsoft.Storage/storageAccounts/write",
-      "Microsoft.Storage/storageAccounts/read",
-      "Microsoft.Storage/storageAccounts/delete"
+      "Microsoft.Compute/disks/beginGetAccess/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 21
+    "_estimatedActions": 17
   },
   {
     "name": "DNS Resolver Contributor",
@@ -13565,6 +13598,23 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 90
+  },
+  {
+    "name": "Embedding User",
+    "id": "a55e9338-b2cb-4a9b-8ee0-5c56842dc830",
+    "description": "Execute embedding operations against registered inference accounts. This role should be assigned to users who need to run embedding generation workloads but do not need to manage the accounts themselves.",
+    "actions": [
+      "Microsoft.InferenceService/inferenceAccounts/read"
+    ],
+    "notActions": [
+      "Microsoft.InferenceService/inferenceAccounts/write",
+      "Microsoft.InferenceService/inferenceAccounts/delete"
+    ],
+    "dataActions": [
+      "Microsoft.InferenceService/inferenceAccounts/invoke/embedding/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 1
   },
   {
     "name": "Enclave Approver Role",
@@ -21852,7 +21902,7 @@
   {
     "name": "VM Restore Operator",
     "id": "dfce8971-25e3-42e3-ba33-6055438e3080",
-    "description": "Create and Delete resources during VM Restore. This role is in preview and subject to change.",
+    "description": "Grants permissions to create, access, and delete the Restore VM, Restored VM Extension, Disks, Network, and staging location storage account resources required during Azure Backup VM restore operations. Assign this role only to the Recovery Services vault's managed identity (system- or user-assigned), scoped to the target resource group and staging storage account. This role is in preview and subject to change.",
     "actions": [
       "Microsoft.Authorization/*/read",
       "Microsoft.Compute/disks/read",
@@ -22014,6 +22064,21 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 4
+  },
+  {
+    "name": "Windows 365 Service Connector Administrator",
+    "id": "edbce4e0-c70f-4f11-94ea-eb5f338fc09e",
+    "description": "Provides access to create, read, and update service connectors and attach them to Windows 365 resources.",
+    "actions": [
+      "Microsoft.Windows365/serviceConnectors/read",
+      "Microsoft.Windows365/serviceConnectors/write"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Windows365/serviceConnectors/attach/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Windows Admin Center Administrator Login",
