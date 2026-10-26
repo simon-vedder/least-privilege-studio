@@ -4247,15 +4247,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Cdn/profiles/authpolicies/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Cdn/profiles/customdomains/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/deploymentversions/read",
                     "type": "action"
                   },
                   {
@@ -4325,14 +4317,6 @@
                   {
                     "action": "Microsoft.Cdn/profiles/securitypolicies/read",
                     "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/targetgroups/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/tunnelpolicies/read",
-                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
@@ -4349,15 +4333,7 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Cdn/profiles/authpolicies/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Cdn/profiles/customdomains/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/deploymentversions/write",
                     "type": "action"
                   },
                   {
@@ -4401,14 +4377,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Cdn/profiles/targetgroups/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/tunnelpolicies/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Cdn/profiles/write",
                     "type": "action"
                   }
@@ -4427,19 +4395,11 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Cdn/profiles/authpolicies/delete",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Cdn/profiles/customdomains/delete",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.Cdn/profiles/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/deploymentversions/delete",
                     "type": "action"
                   },
                   {
@@ -4480,14 +4440,6 @@
                   },
                   {
                     "action": "Microsoft.Cdn/profiles/securitypolicies/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/targetgroups/delete",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/tunnelpolicies/delete",
                     "type": "action"
                   }
                 ],
@@ -4534,14 +4486,6 @@
                   },
                   {
                     "action": "Microsoft.Cdn/profiles/customdomains/RefreshValidationToken/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/deploymentversions/Approve/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Cdn/profiles/deploymentversions/Compare/action",
                     "type": "action"
                   },
                   {
@@ -4628,7 +4572,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 92,
+            "totalOps": 78,
             "priority": 999
           }
         ]
@@ -14519,7 +14463,7 @@
       }
     ],
     "totalTypes": 150,
-    "totalOps": 1552
+    "totalOps": 1538
   },
   {
     "name": "Storage",
@@ -18418,6 +18362,26 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/diagnosticData/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgents/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/firewallRules/read",
                     "type": "action"
                   },
@@ -18494,7 +18458,7 @@
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               },
               {
                 "label": "Write",
@@ -18517,6 +18481,22 @@
                   },
                   {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/databases/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/clientExecutions/results/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgents/write",
                     "type": "action"
                   },
                   {
@@ -18544,7 +18524,7 @@
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               },
               {
                 "label": "Delete",
@@ -18560,6 +18540,10 @@
                   {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/databases/delete",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/delete",
+                    "type": "dataAction"
                   },
                   {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/delete",
@@ -18586,7 +18570,7 @@
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               },
               {
                 "label": "Action",
@@ -18598,6 +18582,26 @@
                   {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/checkMigrationNameAvailability/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/clientExecutions/start/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/investigations/forceResolve/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/mitigations/database/approve/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/mitigations/server/approve/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/execute/action",
+                    "type": "dataAction"
                   },
                   {
                     "action": "Microsoft.DBforPostgreSQL/flexibleServers/getSourceDatabaseList/action",
@@ -18704,10 +18708,10 @@
                     "type": "action"
                   }
                 ],
-                "hasDataActions": false
+                "hasDataActions": true
               }
             ],
-            "totalOps": 75,
+            "totalOps": 90,
             "priority": 4
           },
           {
@@ -22677,7 +22681,7 @@
       }
     ],
     "totalTypes": 32,
-    "totalOps": 1150
+    "totalOps": 1165
   },
   {
     "name": "Web + Serverless",
@@ -26256,6 +26260,55 @@
         "displayName": "microsoft.app",
         "types": [
           {
+            "key": "agentSessions",
+            "name": "agent Sessions",
+            "provider": "microsoft.app",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.App/agentSessions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.App/agentSessions/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.App/agentSessions/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.App/agentSessions/provision/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 4,
+            "priority": 999
+          },
+          {
             "key": "agents",
             "name": "agents",
             "provider": "microsoft.app",
@@ -26501,11 +26554,11 @@
                   },
                   {
                     "action": "Microsoft.App/artifactApps/start/action",
-                    "type": "dataAction"
+                    "type": "action"
                   },
                   {
                     "action": "Microsoft.App/artifactApps/stop/action",
-                    "type": "dataAction"
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": true
@@ -27744,6 +27797,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.App/sandboxGroups/sandboxes/portforward/stream/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.App/sandboxGroups/sandboxes/processes/stream/action",
                     "type": "dataAction"
                   },
@@ -27767,7 +27824,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 70,
+            "totalOps": 71,
             "priority": 999
           },
           {
@@ -31696,8 +31753,8 @@
         ]
       }
     ],
-    "totalTypes": 72,
-    "totalOps": 1785
+    "totalTypes": 73,
+    "totalOps": 1790
   },
   {
     "name": "Containers",
@@ -32425,11 +32482,31 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedConnections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedTriggers/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ContainerRegistry/workflowFactories/deletedWorkflows/read",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.ContainerRegistry/workflowFactories/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/histories/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/read",
                     "type": "action"
                   },
                   {
@@ -32447,6 +32524,14 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/write",
                     "type": "action"
                   },
@@ -32461,7 +32546,15 @@
                 "label": "Delete",
                 "ops": [
                   {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ContainerRegistry/workflowFactories/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/delete",
                     "type": "action"
                   },
                   {
@@ -32474,6 +32567,30 @@
               {
                 "label": "Action",
                 "ops": [
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/test/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/use/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedConnections/purge/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedConnections/recover/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedTriggers/purge/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedTriggers/recover/action",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.ContainerRegistry/workflowFactories/deletedWorkflows/purge/action",
                     "type": "action"
@@ -32494,7 +32611,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 12,
+            "totalOps": 27,
             "priority": 999
           }
         ]
@@ -40645,7 +40762,7 @@
       }
     ],
     "totalTypes": 30,
-    "totalOps": 2028
+    "totalOps": 2043
   },
   {
     "name": "Security",
@@ -45835,6 +45952,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/read",
                     "type": "dataAction"
                   },
@@ -45860,6 +45981,10 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/arcDeployments/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/attachedAksClusters/read",
                     "type": "action"
                   },
                   {
@@ -48313,6 +48438,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/write",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/write",
                     "type": "dataAction"
                   },
@@ -48326,6 +48455,10 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/arcDeployments/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/attachedAksClusters/write",
                     "type": "action"
                   },
                   {
@@ -49523,6 +49656,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/delete",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/delete",
                     "type": "dataAction"
                   },
@@ -49536,6 +49673,10 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/arcDeployments/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/attachedAksClusters/delete",
                     "type": "action"
                   },
                   {
@@ -50529,6 +50670,14 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/publish/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/session/exec/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/state/disable/action",
                     "type": "dataAction"
                   },
@@ -50570,6 +50719,10 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/AIServices/providers/action",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/invoke/action",
                     "type": "dataAction"
                   },
                   {
@@ -52369,6 +52522,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/qualityestimation/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/TextTranslation/translate/action",
                     "type": "dataAction"
                   },
@@ -52408,7 +52565,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1656,
+            "totalOps": 1666,
             "priority": 1
           },
           {
@@ -54048,7 +54205,15 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Search/searchServices/indexes/replication/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Search/searchServices/knowledgeBases/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/knowledgeBases/replication/read",
                     "type": "action"
                   },
                   {
@@ -54072,7 +54237,27 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Search/searchServices/privateLinkServiceDetails/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Search/searchServices/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationConnectionProxies/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationConnections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationFollowers/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replications/read",
                     "type": "action"
                   },
                   {
@@ -54118,7 +54303,15 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.Search/searchServices/indexes/replication/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Search/searchServices/indexes/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/knowledgeBases/replication/write",
                     "type": "action"
                   },
                   {
@@ -54139,6 +54332,18 @@
                   },
                   {
                     "action": "Microsoft.Search/searchServices/privateEndpointConnections/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationConnectionProxies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationConnections/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationFollowers/write",
                     "type": "action"
                   },
                   {
@@ -54200,7 +54405,15 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.Search/searchServices/indexes/replication/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Search/searchServices/knowledgeBases/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/knowledgeBases/replication/delete",
                     "type": "action"
                   },
                   {
@@ -54217,6 +54430,18 @@
                   },
                   {
                     "action": "Microsoft.Search/searchServices/privateEndpointConnections/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationConnectionProxies/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationConnections/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Search/searchServices/replicationFollowers/delete",
                     "type": "action"
                   },
                   {
@@ -54282,6 +54507,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Search/searchServices/replicationConnectionsApproval/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Search/searchServices/start/action",
                     "type": "action"
                   },
@@ -54293,7 +54522,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 64,
+            "totalOps": 82,
             "priority": 3
           },
           {
@@ -54319,7 +54548,7 @@
       }
     ],
     "totalTypes": 19,
-    "totalOps": 2069
+    "totalOps": 2097
   },
   {
     "name": "Monitor",
@@ -70704,6 +70933,72 @@
         "displayName": "Relay",
         "types": [
           {
+            "key": "availableClusterRegions",
+            "name": "available Cluster Regions",
+            "provider": "Microsoft.Relay",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Relay/availableClusterRegions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "clusters",
+            "name": "clusters",
+            "provider": "Microsoft.Relay",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Relay/clusters/namespaces/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Relay/clusters/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Relay/clusters/skus/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Relay/clusters/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Relay/clusters/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 5,
+            "priority": 999
+          },
+          {
             "key": "namespaces",
             "name": "namespaces",
             "provider": "Microsoft.Relay",
@@ -70958,6 +71253,29 @@
               }
             ],
             "totalOps": 56,
+            "priority": 999
+          },
+          {
+            "key": "sku",
+            "name": "sku",
+            "provider": "Microsoft.Relay",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Relay/sku/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Relay/sku/regions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
             "priority": 999
           }
         ]
@@ -71373,8 +71691,8 @@
         ]
       }
     ],
-    "totalTypes": 37,
-    "totalOps": 711
+    "totalTypes": 40,
+    "totalOps": 719
   },
   {
     "name": "Analytics",
@@ -79907,6 +80225,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Migrate/migrateProjects/sessions/export/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Migrate/migrateProjects/sessions/invoke/action",
                     "type": "action"
                   },
@@ -79934,7 +80256,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 82,
+            "totalOps": 83,
             "priority": 999
           },
           {
@@ -80903,7 +81225,7 @@
       }
     ],
     "totalTypes": 11,
-    "totalOps": 555
+    "totalOps": 556
   },
   {
     "name": "Other",
@@ -83325,6 +83647,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/read",
                     "type": "action"
                   }
@@ -83335,6 +83661,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/write",
                     "type": "action"
                   }
@@ -83344,6 +83674,10 @@
               {
                 "label": "Delete",
                 "ops": [
+                  {
+                    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/delete",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/delete",
                     "type": "action"
@@ -83366,7 +83700,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 5,
+            "totalOps": 8,
             "priority": 999
           },
           {
@@ -91159,6 +91493,53 @@
             "priority": 999
           },
           {
+            "key": "flexPlans",
+            "name": "flex Plans",
+            "provider": "Microsoft.BillingBenefits",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.BillingBenefits/flexPlans/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.BillingBenefits/flexPlans/terms/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.BillingBenefits/flexPlans/terms/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.BillingBenefits/flexPlans/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.BillingBenefits/flexPlans/cancel/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 5,
+            "priority": 999
+          },
+          {
             "key": "freeServices",
             "name": "free Services",
             "provider": "Microsoft.BillingBenefits",
@@ -98125,123 +98506,6 @@
             "priority": 999
           },
           {
-            "key": "devices",
-            "name": "devices",
-            "provider": "Microsoft.DeviceRegistry",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/devices/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/devices/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/devices/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
-            "key": "discoveredAssetEndpointProfiles",
-            "name": "discovered Asset Endpoint Profiles",
-            "provider": "Microsoft.DeviceRegistry",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/discoveredAssetEndpointProfiles/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/discoveredAssetEndpointProfiles/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/discoveredAssetEndpointProfiles/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
-            "key": "discoveredAssets",
-            "name": "discovered Assets",
-            "provider": "Microsoft.DeviceRegistry",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/discoveredAssets/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/discoveredAssets/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.DeviceRegistry/discoveredAssets/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
             "key": "namespaces",
             "name": "namespaces",
             "provider": "Microsoft.DeviceRegistry",
@@ -98250,27 +98514,19 @@
                 "label": "Read",
                 "ops": [
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/assetEndpointProfiles/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.DeviceRegistry/namespaces/assets/read",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/read",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/certificatePolicies/read",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/read",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/read",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.DeviceRegistry/namespaces/devices/read",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssetEndpointProfiles/read",
                     "type": "action"
                   },
                   {
@@ -98282,7 +98538,39 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.DeviceRegistry/namespaces/groups/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobRuns/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.DeviceRegistry/namespaces/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/attributes/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/authenticationProfiles/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/capabilities/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/read",
                     "type": "action"
                   }
                 ],
@@ -98292,27 +98580,19 @@
                 "label": "Write",
                 "ops": [
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/assetEndpointProfiles/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.DeviceRegistry/namespaces/assets/write",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/write",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/certificatePolicies/write",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/write",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/write",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.DeviceRegistry/namespaces/devices/write",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssetEndpointProfiles/write",
                     "type": "action"
                   },
                   {
@@ -98321,6 +98601,26 @@
                   },
                   {
                     "action": "Microsoft.DeviceRegistry/namespaces/discoveredDevices/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/groups/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/attributes/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/write",
                     "type": "action"
                   },
                   {
@@ -98334,19 +98634,15 @@
                 "label": "Delete",
                 "ops": [
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/assetEndpointProfiles/delete",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.DeviceRegistry/namespaces/assets/delete",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/delete",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/certificatePolicies/delete",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/delete",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/delete",
                     "type": "action"
                   },
                   {
@@ -98358,15 +98654,31 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssetEndpointProfiles/delete",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssets/delete",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.DeviceRegistry/namespaces/discoveredDevices/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/groups/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/attributes/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/delete",
                     "type": "action"
                   }
                 ],
@@ -98376,30 +98688,66 @@
                 "label": "Action",
                 "ops": [
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/issueCertificate/action",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/revokeIssuer/action",
+                    "action": "Microsoft.DeviceRegistry/namespaces/assets/executeAction/action",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/credentials/synchronize/action",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/activate/action",
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.DeviceRegistry/namespaces/devices/revoke/action",
+                    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/revokeAndRotate/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/generateReport/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/getLatestReport/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/groups/countMembers/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/groups/listMembers/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/groups/refreshMembers/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/cancel/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/getSummary/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/listResults/action",
                     "type": "action"
                   },
                   {
                     "action": "Microsoft.DeviceRegistry/namespaces/migrate/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/authenticationProfiles/listKeys/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/authenticationProfiles/revokeCertificates/action",
+                    "type": "action"
                   }
                 ],
-                "hasDataActions": true
+                "hasDataActions": false
               }
             ],
-            "totalOps": 32,
+            "totalOps": 53,
             "priority": 999
           },
           {
@@ -98754,6 +99102,63 @@
               }
             ],
             "totalOps": 7,
+            "priority": 999
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.DigitalAssets",
+        "displayName": "DigitalAssets",
+        "types": [
+          {
+            "key": "zkpRollups",
+            "name": "zkp Rollups",
+            "provider": "Microsoft.DigitalAssets",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.DigitalAssets/zkpRollups/partitions/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DigitalAssets/zkpRollups/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.DigitalAssets/zkpRollups/partitions/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DigitalAssets/zkpRollups/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.DigitalAssets/zkpRollups/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.DigitalAssets/zkpRollups/partitions/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 6,
             "priority": 999
           }
         ]
@@ -104530,6 +104935,279 @@
             "priority": 999
           },
           {
+            "key": "internalCloudEndpoints",
+            "name": "internal Cloud Endpoints",
+            "provider": "Microsoft.HealthcareInterop",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "internalDicomConnectors",
+            "name": "internal Dicom Connectors",
+            "provider": "Microsoft.HealthcareInterop",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "internalDicomEdgeConnectors",
+            "name": "internal Dicom Edge Connectors",
+            "provider": "Microsoft.HealthcareInterop",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "internalHl7Connectors",
+            "name": "internal Hl7Connectors",
+            "provider": "Microsoft.HealthcareInterop",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "internalHl7EdgeConnectors",
+            "name": "internal Hl7Edge Connectors",
+            "provider": "Microsoft.HealthcareInterop",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "internalHl7InboundChannels",
+            "name": "internal Hl7Inbound Channels",
+            "provider": "Microsoft.HealthcareInterop",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "internalHl7OutboundChannels",
+            "name": "internal Hl7Outbound Channels",
+            "provider": "Microsoft.HealthcareInterop",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
             "key": "oneLakeConnectors",
             "name": "one Lake Connectors",
             "provider": "Microsoft.HealthcareInterop",
@@ -105551,6 +106229,42 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/findDocument/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/getApproximateSchema/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/getRecentDocuments/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/hybridSearch/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/listCollections/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/listDatabases/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/queryDocuments/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/textSearch/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/vectorSearch/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.InferenceService/inferenceAccounts/read",
                     "type": "action"
                   }
@@ -105604,7 +106318,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 9,
+            "totalOps": 18,
             "priority": 999
           }
         ]
@@ -111489,6 +112203,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.OpenEnergyPlatform/energyServices/managedPrivateEndpoints/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnectionProxies/read",
                     "type": "action"
                   },
@@ -111511,6 +112229,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.OpenEnergyPlatform/energyServices/managedPrivateEndpoints/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OpenEnergyPlatform/energyServices/privateEndpointConnectionProxies/write",
                     "type": "action"
                   },
@@ -111530,6 +112252,10 @@
                 "ops": [
                   {
                     "action": "Microsoft.OpenEnergyPlatform/energyServices/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.OpenEnergyPlatform/energyServices/managedPrivateEndpoints/delete",
                     "type": "action"
                   },
                   {
@@ -111570,7 +112296,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 15,
+            "totalOps": 18,
             "priority": 999
           }
         ]
@@ -120425,7 +121151,7 @@
         ]
       }
     ],
-    "totalTypes": 743,
-    "totalOps": 4775
+    "totalTypes": 749,
+    "totalOps": 4834
   }
 ]

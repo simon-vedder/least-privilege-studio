@@ -5443,6 +5443,39 @@
         "displayName": "Entra Directory",
         "types": [
           {
+            "key": "conditionalAccessPolicyPlans",
+            "name": "Conditional Access Policy Plans",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicyPlans/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicyPlans/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/conditionalAccessPolicyPlans/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
             "key": "onPasswordUpdateCustomAuthenticationExtension",
             "name": "On Password Update Custom Authentication Extension",
             "provider": "microsoft.directory",
@@ -5503,7 +5536,7 @@
         ]
       }
     ],
-    "totalTypes": 2,
-    "totalOps": 7
+    "totalTypes": 3,
+    "totalOps": 10
   }
 ]

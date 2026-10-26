@@ -3868,6 +3868,22 @@
     "description": "Create or Update API Management Service instance"
   },
   {
+    "action": "Microsoft.App/agentSessions/delete",
+    "description": "Delete a SRE Agent Session"
+  },
+  {
+    "action": "Microsoft.App/agentSessions/provision/action",
+    "description": "Provision a new sandbox generation for a SRE Agent Session"
+  },
+  {
+    "action": "Microsoft.App/agentSessions/read",
+    "description": "Read SRE Agent Session properties"
+  },
+  {
+    "action": "Microsoft.App/agentSessions/write",
+    "description": "Create or Update a SRE Agent Session"
+  },
+  {
     "action": "Microsoft.App/agents/dataconnectors/delete",
     "description": "Delete existing data connectors in an SRE agent"
   },
@@ -4236,6 +4252,10 @@
     "description": "Add pod volume mounts to a running sandbox"
   },
   {
+    "action": "Microsoft.App/sandboxGroups/sandboxes/portforward/stream/action",
+    "description": "Start a TCP port-forward session via WebSocket in a running sandbox"
+  },
+  {
     "action": "Microsoft.App/sandboxGroups/sandboxes/ports/delete",
     "description": "Remove a port from a running sandbox"
   },
@@ -4277,7 +4297,7 @@
   },
   {
     "action": "Microsoft.App/sandboxGroups/sandboxes/write",
-    "description": "Create a new sandbox in a sandbox group"
+    "description": "Update labels on a sandbox in a sandbox group"
   },
   {
     "action": "Microsoft.App/sandboxGroups/secrets/delete",
@@ -6012,12 +6032,24 @@
     "description": "Create a ApprovalWorkflowAssignment"
   },
   {
+    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/delete",
+    "description": "Delete a ApprovalWorkflowInstance"
+  },
+  {
     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/executeStage/action",
     "description": "A long-running resource action."
   },
   {
+    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/read",
+    "description": "Get a ApprovalWorkflowInstance"
+  },
+  {
     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/syncPolicyStatus/action",
     "description": "Synchronize approved policy records with policy resource status."
+  },
+  {
+    "action": "Microsoft.Approvals/approvalWorkflowDefinitions/approvalWorkflowInstances/write",
+    "description": "Create a ApprovalWorkflowInstance"
   },
   {
     "action": "Microsoft.Approvals/approvalWorkflowDefinitions/delete",
@@ -11176,6 +11208,26 @@
     "description": "Create or update a Discount"
   },
   {
+    "action": "Microsoft.BillingBenefits/flexPlans/cancel/action",
+    "description": "Cancel a FlexPlan"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/flexPlans/read",
+    "description": "Read all FlexPlans"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/flexPlans/terms/read",
+    "description": "Read all FlexPlan Terms"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/flexPlans/terms/write",
+    "description": "Create or update a FlexPlan Term"
+  },
+  {
+    "action": "Microsoft.BillingBenefits/flexPlans/write",
+    "description": "Create or update a FlexPlan"
+  },
+  {
     "action": "Microsoft.BillingBenefits/freeServices/delete",
     "description": "Delete a FreeService"
   },
@@ -12072,18 +12124,6 @@
     "description": "write"
   },
   {
-    "action": "Microsoft.Cdn/profiles/authpolicies/delete",
-    "description": "delete"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/authpolicies/read",
-    "description": "read"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/authpolicies/write",
-    "description": "write"
-  },
-  {
     "action": "Microsoft.Cdn/profiles/customdomains/RefreshValidationToken/action",
     "description": "RefreshValidationToken"
   },
@@ -12102,26 +12142,6 @@
   {
     "action": "Microsoft.Cdn/profiles/delete",
     "description": "delete"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/deploymentversions/Approve/action",
-    "description": "Approve"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/deploymentversions/Compare/action",
-    "description": "Compare"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/deploymentversions/delete",
-    "description": "delete"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/deploymentversions/read",
-    "description": "read"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/deploymentversions/write",
-    "description": "write"
   },
   {
     "action": "Microsoft.Cdn/profiles/endpoints/CheckResourceUsage/action",
@@ -12325,30 +12345,6 @@
   },
   {
     "action": "Microsoft.Cdn/profiles/securitypolicies/write",
-    "description": "write"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/targetgroups/delete",
-    "description": "delete"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/targetgroups/read",
-    "description": "read"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/targetgroups/write",
-    "description": "write"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/tunnelpolicies/delete",
-    "description": "delete"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/tunnelpolicies/read",
-    "description": "read"
-  },
-  {
-    "action": "Microsoft.Cdn/profiles/tunnelpolicies/write",
     "description": "write"
   },
   {
@@ -13600,8 +13596,16 @@
     "description": "Allows passing the x-ms-user-identity header to make agent requests on behalf of a specific end user for per-user session isolation."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/publish/action",
+    "description": "Allow user to publish agents"
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/read",
     "description": "Read agents, threads, and messages"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/session/exec/action",
+    "description": "Open and control an interactive exec session in a hosted agent sandbox"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/agents/state/disable/action",
@@ -13790,6 +13794,22 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/responses/write",
     "description": "Create a new response"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/delete",
+    "description": "Delete a reinforcement learning environment version"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/invoke/action",
+    "description": "Invoke a reinforcement learning environment"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/read",
+    "description": "Get or list reinforcement learning environments and versions"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/AIServices/rl_environments/write",
+    "description": "Create or update a reinforcement learning environment or version"
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/AIServices/routines/delete",
@@ -19608,6 +19628,10 @@
     "description": "Gets the set of languages currently supported by other operations of the Translator Text API."
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/TextTranslation/qualityestimation/action",
+    "description": "Estimates translation quality without a reference translation."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/TextTranslation/storagesources/read",
     "description": "List storage sources/options supported by the Document Translation service."
   },
@@ -19766,6 +19790,18 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/arcDeployments/write",
     "description": "Writes deployments."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/attachedAksClusters/delete",
+    "description": "Deletes an attached AKS cluster under an account."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/attachedAksClusters/read",
+    "description": "Reads attached AKS clusters under an account."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/attachedAksClusters/write",
+    "description": "Creates or updates an attached AKS cluster under an account."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/capabilityHosts/delete",
@@ -23012,8 +23048,52 @@
     "description": "Creates or updates a container registry with the specified parameters."
   },
   {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/delete",
+    "description": "Deletes a connection."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/read",
+    "description": "Gets the properties of the specified connection or lists all the connections under the specified workflow factory."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/test/action",
+    "description": "Tests a connection to validate its setup."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/use/action",
+    "description": "Uses a connection referenced by a workflow during execution."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/connections/write",
+    "description": "Creates or updates a connection with the specified parameters."
+  },
+  {
     "action": "Microsoft.ContainerRegistry/workflowFactories/delete",
     "description": "Deletes a workflow factory."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedConnections/purge/action",
+    "description": "Permanently purges a soft-deleted connection."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedConnections/read",
+    "description": "Gets the properties of a soft-deleted connection or lists all soft-deleted connections in the specified workflow factory."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedConnections/recover/action",
+    "description": "Recovers a soft-deleted connection, restoring it to active state."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedTriggers/purge/action",
+    "description": "Permanently purges a soft-deleted trigger."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedTriggers/read",
+    "description": "Gets the properties of a soft-deleted trigger or lists all soft-deleted triggers in the specified workflow factory."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/deletedTriggers/recover/action",
+    "description": "Recovers a soft-deleted trigger, restoring it to active state."
   },
   {
     "action": "Microsoft.ContainerRegistry/workflowFactories/deletedWorkflows/purge/action",
@@ -23030,6 +23110,22 @@
   {
     "action": "Microsoft.ContainerRegistry/workflowFactories/read",
     "description": "Gets the properties of the specified workflow factory or lists all the workflow factories under the specified resource group or subscription."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/delete",
+    "description": "Deletes a trigger."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/histories/read",
+    "description": "Gets the properties of the specified trigger history entry or lists all the trigger history entries for the specified trigger."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/read",
+    "description": "Gets the properties of the specified trigger or lists all the triggers under the specified workflow factory."
+  },
+  {
+    "action": "Microsoft.ContainerRegistry/workflowFactories/triggers/write",
+    "description": "Creates or updates a trigger with the specified parameters."
   },
   {
     "action": "Microsoft.ContainerRegistry/workflowFactories/workflows/delete",
@@ -30204,6 +30300,66 @@
     "description": "Creates or Updates the database of a PostgreSQL server."
   },
   {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/clientExecutions/results/write",
+    "description": "Reports integrity-sensitive results from client execution of an approved DBAgent server mitigation for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/clientExecutions/start/action",
+    "description": "Starts client execution of an already approved DBAgent server mitigation for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/diagnosticData/read",
+    "description": "Reads DBAgent investigation, run, traversal, health-runtime, and event evidence for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/delete",
+    "description": "Deletes only DBAgent custom instructions for a PostgreSQL flexible server; Always-Allow entries and DBAgent settings are excluded."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/read",
+    "description": "Reads only DBAgent custom instructions for a PostgreSQL flexible server; Always-Allow entries and DBAgent settings are excluded."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/write",
+    "description": "Creates or updates only DBAgent custom instructions for a PostgreSQL flexible server; Always-Allow entries and DBAgent settings are excluded."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/investigations/forceResolve/action",
+    "description": "Force-resolves a DBAgent investigation for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/read",
+    "description": "Reads DBAgent issue summaries, details, workflow state, and remediation recommendations for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/write",
+    "description": "Updates DBAgent issues only for acknowledgement, dismissal, and manual-application evidence on a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/mitigations/database/approve/action",
+    "description": "Approves or rejects a DBAgent-proposed PostgreSQL database-engine mitigation for runner execution on a flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/mitigations/server/approve/action",
+    "description": "Approves or rejects a DBAgent-proposed Azure resource-level mitigation for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/execute/action",
+    "description": "Starts execution of a DBAgent task for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/read",
+    "description": "Reads DBAgent task definitions, execution state, and results for a PostgreSQL flexible server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgents/read",
+    "description": "Gets the current DBAgent state for a Flexible Server."
+  },
+  {
+    "action": "Microsoft.DBforPostgreSQL/flexibleServers/dbAgents/write",
+    "description": "Enables or disables DBAgent for a Flexible Server."
+  },
+  {
     "action": "Microsoft.DBforPostgreSQL/flexibleServers/delete",
     "description": "Deletes an existing server."
   },
@@ -34300,100 +34456,52 @@
     "description": "Get a BillingContainer"
   },
   {
-    "action": "Microsoft.DeviceRegistry/devices/delete",
-    "description": "Delete a Device"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/devices/read",
-    "description": "Get a Device"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/devices/write",
-    "description": "Update a Device"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/discoveredAssetEndpointProfiles/delete",
-    "description": "Delete a DiscoveredAssetEndpointProfile"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/discoveredAssetEndpointProfiles/read",
-    "description": "Get a DiscoveredAssetEndpointProfile"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/discoveredAssetEndpointProfiles/write",
-    "description": "Update a DiscoveredAssetEndpointProfile"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/discoveredAssets/delete",
-    "description": "Delete a DiscoveredAsset"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/discoveredAssets/read",
-    "description": "Get a DiscoveredAsset"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/discoveredAssets/write",
-    "description": "Update a DiscoveredAsset"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/assetEndpointProfiles/delete",
-    "description": "Delete a NamespaceAssetEndpointProfile"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/assetEndpointProfiles/read",
-    "description": "Get a NamespaceAssetEndpointProfile"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/assetEndpointProfiles/write",
-    "description": "Update a NamespaceAssetEndpointProfile"
-  },
-  {
     "action": "Microsoft.DeviceRegistry/namespaces/assets/delete",
     "description": "Delete a NamespaceAsset"
   },
   {
-    "action": "Microsoft.DeviceRegistry/namespaces/assets/read",
-    "description": "Get a NamespaceAsset"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/assets/write",
-    "description": "Update a NamespaceAsset"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/delete",
-    "description": "Delete a Credential"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/delete",
-    "description": "Delete a Policy"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/issueCertificate/action",
-    "description": "Allows certificate issuance using certificate based policies."
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/read",
-    "description": "List Policy resources by Credential"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/revokeIssuer/action",
-    "description": "Allows certificate revocation using certificate based policies."
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/policies/write",
-    "description": "Create a Policy"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/read",
-    "description": "Get a Credential"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/synchronize/action",
+    "action": "Microsoft.DeviceRegistry/namespaces/assets/executeAction/action",
     "description": "A long-running resource action."
   },
   {
-    "action": "Microsoft.DeviceRegistry/namespaces/credentials/write",
-    "description": "Update a Credential"
+    "action": "Microsoft.DeviceRegistry/namespaces/assets/read",
+    "description": "List NamespaceAsset resources by Namespace"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/assets/write",
+    "description": "Create a NamespaceAsset"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/activate/action",
+    "description": "Activates a Certificate Authority of type `ICA` and issuer type `External`. If the Certificate Authority is an invalid type, the API responds with HTTP 400."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/certificatePolicies/delete",
+    "description": "Delete a CertificatePolicy"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/certificatePolicies/read",
+    "description": "Get a CertificatePolicy"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/certificatePolicies/write",
+    "description": "Update a CertificatePolicy"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/delete",
+    "description": "Delete a CertificateAuthority"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/read",
+    "description": "Get a CertificateAuthority"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/revokeAndRotate/action",
+    "description": "Revokes a Certificate Authority of type `ICA` and issuer type `Microsoft`. If the Certificate Authority is an invalid type, the API responds with HTTP 400."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/certificateAuthorities/write",
+    "description": "Update a CertificateAuthority"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/delete",
@@ -34405,27 +34513,11 @@
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/devices/read",
-    "description": "Get a NamespaceDevice"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/devices/revoke/action",
-    "description": "Allows device revocation using device based policies."
+    "description": "List NamespaceDevice resources by Namespace"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/devices/write",
     "description": "Update a NamespaceDevice"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssetEndpointProfiles/delete",
-    "description": "Delete a NamespaceDiscoveredAssetEndpointProfile"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssetEndpointProfiles/read",
-    "description": "Get a NamespaceDiscoveredAssetEndpointProfile"
-  },
-  {
-    "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssetEndpointProfiles/write",
-    "description": "Update a NamespaceDiscoveredAssetEndpointProfile"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssets/delete",
@@ -34433,11 +34525,11 @@
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssets/read",
-    "description": "Get a NamespaceDiscoveredAsset"
+    "description": "List NamespaceDiscoveredAsset resources by Namespace"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/discoveredAssets/write",
-    "description": "Update a NamespaceDiscoveredAsset"
+    "description": "Create a NamespaceDiscoveredAsset"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/discoveredDevices/delete",
@@ -34445,11 +34537,83 @@
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/discoveredDevices/read",
-    "description": "Get a NamespaceDiscoveredDevice"
+    "description": "List NamespaceDiscoveredDevice resources by Namespace"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/discoveredDevices/write",
     "description": "Update a NamespaceDiscoveredDevice"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/generateReport/action",
+    "description": "Generate a report for a namespace. The generated report is retrieved separately via the getLatestReport action."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/getLatestReport/action",
+    "description": "Get the most recently generated report of the given type and target without triggering a new report generation."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/groups/countMembers/action",
+    "description": "Returns the current count of members of this group."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/groups/delete",
+    "description": "Delete a Group"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/groups/listMembers/action",
+    "description": "Lists the current members of a namespace group."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/groups/read",
+    "description": "Get a Group"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/groups/refreshMembers/action",
+    "description": "Refreshes the members of this group."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/groups/write",
+    "description": "Update a Group"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobRuns/read",
+    "description": "List job runs by namespace, across all jobs in the namespace."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/delete",
+    "description": "Delete a Job"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/read",
+    "description": "Get a Job"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/cancel/action",
+    "description": "Cancel a job run."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/delete",
+    "description": "Delete a JobRun"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/getSummary/action",
+    "description": "Get a summary of the progress of a job run."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/listResults/action",
+    "description": "Browse the results of a job run to find individual device statuses."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/read",
+    "description": "Get a JobRun"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/runs/write",
+    "description": "Create a JobRun"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/jobs/write",
+    "description": "Update a Job"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/migrate/action",
@@ -34457,11 +34621,51 @@
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/read",
-    "description": "Get a Namespace"
+    "description": "List Namespace resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/attributes/delete",
+    "description": "Delete a RegistryDeviceAttribute"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/attributes/read",
+    "description": "Get a RegistryDeviceAttribute"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/attributes/write",
+    "description": "Create a RegistryDeviceAttribute"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/authenticationProfiles/listKeys/action",
+    "description": "Retrieve the plaintext symmetric keys of a device authentication profile. Only valid when the profile's authentication type is SymmetricKey; profiles of any other type return 400 with the InvalidAuthenticationType error code."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/authenticationProfiles/read",
+    "description": "Get a RegistryDeviceAuthenticationProfile"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/authenticationProfiles/revokeCertificates/action",
+    "description": "Revoke certificates issued for the device authentication profile. Applies to Microsoft-managed X.509 certificates: invalidates outstanding certificates via the PKI revocation list. The authentication profile itself is preserved."
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/capabilities/read",
+    "description": "Get a RegistryDeviceCapability"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/delete",
+    "description": "Delete a RegistryDevice"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/read",
+    "description": "Get a RegistryDevice"
+  },
+  {
+    "action": "Microsoft.DeviceRegistry/namespaces/registryDevices/write",
+    "description": "Update a RegistryDevice"
   },
   {
     "action": "Microsoft.DeviceRegistry/namespaces/write",
-    "description": "Update a Namespace"
+    "description": "Create a Namespace"
   },
   {
     "action": "Microsoft.DeviceRegistry/schemaRegistries/delete",
@@ -35002,6 +35206,30 @@
   {
     "action": "Microsoft.Devices/provisioningServices/skus/Read",
     "description": "Get valid IotDps Skus"
+  },
+  {
+    "action": "Microsoft.DigitalAssets/zkpRollups/delete",
+    "description": "Delete a ZkpRollup"
+  },
+  {
+    "action": "Microsoft.DigitalAssets/zkpRollups/partitions/delete",
+    "description": "Delete a Partition"
+  },
+  {
+    "action": "Microsoft.DigitalAssets/zkpRollups/partitions/read",
+    "description": "List Partition resources by ZkpRollup"
+  },
+  {
+    "action": "Microsoft.DigitalAssets/zkpRollups/partitions/write",
+    "description": "Create a Partition"
+  },
+  {
+    "action": "Microsoft.DigitalAssets/zkpRollups/read",
+    "description": "List ZkpRollup resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.DigitalAssets/zkpRollups/write",
+    "description": "Create a ZkpRollup"
   },
   {
     "action": "Microsoft.DigitalTwins/digitalTwinsInstances/PrivateEndpointConnectionsApproval/action",
@@ -41172,6 +41400,90 @@
     "description": "Update a Hub"
   },
   {
+    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/delete",
+    "description": "Delete a InternalCloudEndpoint"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/read",
+    "description": "Get a InternalCloudEndpoint"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/write",
+    "description": "Update a InternalCloudEndpoint"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/delete",
+    "description": "Delete a InternalDicomConnector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/read",
+    "description": "List InternalDicomConnector resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/write",
+    "description": "Create a InternalDicomConnector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/delete",
+    "description": "Delete a InternalDicomEdgeConnector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/read",
+    "description": "List InternalDicomEdgeConnector resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/write",
+    "description": "Create a InternalDicomEdgeConnector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/delete",
+    "description": "Delete a InternalHl7Connector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/read",
+    "description": "List InternalHl7Connector resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/write",
+    "description": "Create a InternalHl7Connector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/delete",
+    "description": "Delete a InternalHl7EdgeConnector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/read",
+    "description": "List InternalHl7EdgeConnector resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/write",
+    "description": "Create a InternalHl7EdgeConnector"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/delete",
+    "description": "Delete a InternalHl7InboundChannel"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/read",
+    "description": "List InternalHl7InboundChannel resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/write",
+    "description": "Create a InternalHl7InboundChannel"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/delete",
+    "description": "Delete a InternalHl7OutboundChannel"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/read",
+    "description": "List InternalHl7OutboundChannel resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/write",
+    "description": "Create a InternalHl7OutboundChannel"
+  },
+  {
     "action": "Microsoft.HealthcareInterop/oneLakeConnectors/delete",
     "description": "Delete a OneLakeConnector"
   },
@@ -42234,6 +42546,42 @@
   {
     "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/read",
     "description": "Invoke read-only Cosmos DB MCP tools on an inference account."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/findDocument/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP find_document tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/getApproximateSchema/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP get_approximate_schema tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/getRecentDocuments/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP get_recent_documents tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/hybridSearch/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP hybrid_search tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/listCollections/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP list_collections tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/listDatabases/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP list_databases tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/queryDocuments/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP query_documents tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/textSearch/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP text_search tool."
+  },
+  {
+    "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/tools/vectorSearch/read",
+    "description": "Allows invoking the read-only Cosmos DB MCP vector_search tool."
   },
   {
     "action": "Microsoft.InferenceService/inferenceAccounts/mcp/cosmosDb/write",
@@ -52276,6 +52624,10 @@
     "description": "Delete Session"
   },
   {
+    "action": "Microsoft.Migrate/migrateProjects/sessions/export/action",
+    "description": "Export Session"
+  },
+  {
     "action": "Microsoft.Migrate/migrateProjects/sessions/invoke/action",
     "description": "Invoke Session"
   },
@@ -58628,6 +58980,18 @@
     "description": "Method that gets called when list of partitions is requested."
   },
   {
+    "action": "Microsoft.OpenEnergyPlatform/energyServices/managedPrivateEndpoints/delete",
+    "description": "Deletes the specified managed private endpoint associated with the ADME instance."
+  },
+  {
+    "action": "Microsoft.OpenEnergyPlatform/energyServices/managedPrivateEndpoints/read",
+    "description": "Get the specified managed private endpoint associated with the ADME instance."
+  },
+  {
+    "action": "Microsoft.OpenEnergyPlatform/energyServices/managedPrivateEndpoints/write",
+    "description": "Creates or replaces a managed outbound private endpoint (native or Private Link Service) associated with the ADME instance."
+  },
+  {
     "action": "Microsoft.OpenEnergyPlatform/energyServices/markReadyForUpgrade/action",
     "description": "Marks an energy services resource as ready for upgrade during a milestone testing period."
   },
@@ -64321,7 +64685,7 @@
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
-    "description": "Get ResourceGuard proxy operation gets an object representing the Azure resource of type 'ResourceGuard proxy'"
+    "description": "Get the list of ResourceGuard proxies for a resource"
   },
   {
     "action": "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/unlockDelete/action",
@@ -65056,6 +65420,30 @@
     "description": "Create or Update a 'ServiceGroupMember' Relationship"
   },
   {
+    "action": "Microsoft.Relay/availableClusterRegions/read",
+    "description": "Read operation to list available pre-provisioned clusters by Azure region."
+  },
+  {
+    "action": "Microsoft.Relay/clusters/delete",
+    "description": "Delete Relay Cluster Resource"
+  },
+  {
+    "action": "Microsoft.Relay/clusters/namespaces/read",
+    "description": "List namespace ARM IDs for namespaces within a cluster."
+  },
+  {
+    "action": "Microsoft.Relay/clusters/read",
+    "description": "Gets Relay Cluster Resource"
+  },
+  {
+    "action": "Microsoft.Relay/clusters/skus/read",
+    "description": "Get the SKU and supported capacity range for a Relay cluster."
+  },
+  {
+    "action": "Microsoft.Relay/clusters/write",
+    "description": "Create or Update Relay Cluster Resource"
+  },
+  {
     "action": "Microsoft.Relay/namespaces/Delete",
     "description": "Delete Namespace Resource"
   },
@@ -65278,6 +65666,14 @@
   {
     "action": "Microsoft.Relay/namespaces/write",
     "description": "Create a Namespace Resource and Update its properties. Tags and Capacity of the Namespace are the properties which can be updated."
+  },
+  {
+    "action": "Microsoft.Relay/sku/read",
+    "description": "Get list of Sku Resource Descriptions"
+  },
+  {
+    "action": "Microsoft.Relay/sku/regions/read",
+    "description": "Get list of SkuRegions Resource Descriptions"
   },
   {
     "action": "Microsoft.ResourceBuilder/dataCatalogs/datasetRegistrations/delete",
@@ -66228,6 +66624,18 @@
     "description": "Return an index or its statistics, return a list of indexes or their statistics, or test the lexical analysis components of an index."
   },
   {
+    "action": "Microsoft.Search/searchServices/indexes/replication/delete",
+    "description": "Delete the replication configuration for an index."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/indexes/replication/read",
+    "description": "Read the replication configuration for an index."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/indexes/replication/write",
+    "description": "Create or update the replication configuration for an index."
+  },
+  {
     "action": "Microsoft.Search/searchServices/indexes/write",
     "description": "Create an index or modify its properties."
   },
@@ -66238,6 +66646,18 @@
   {
     "action": "Microsoft.Search/searchServices/knowledgeBases/read",
     "description": "Return a knowledge base or a list of knowledge bases."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/knowledgeBases/replication/delete",
+    "description": "Delete the replication configuration for a knowledge base."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/knowledgeBases/replication/read",
+    "description": "Read the replication configuration for a knowledge base."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/knowledgeBases/replication/write",
+    "description": "Create or update the replication configuration for a knowledge base."
   },
   {
     "action": "Microsoft.Search/searchServices/knowledgeBases/retrieve/action",
@@ -66324,12 +66744,60 @@
     "description": "Approve Private Endpoint Connection"
   },
   {
+    "action": "Microsoft.Search/searchServices/privateLinkServiceDetails/read",
+    "description": "Gets the private link service alias for the leader search service."
+  },
+  {
     "action": "Microsoft.Search/searchServices/read",
     "description": "Reads the search service."
   },
   {
     "action": "Microsoft.Search/searchServices/regenerateAdminKey/action",
     "description": "Regenerates the admin key."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationConnectionProxies/delete",
+    "description": "Deletes an internal replication connection proxy on the leader search service."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationConnectionProxies/read",
+    "description": "Returns the list of internal replication connection proxies or gets the properties of a replication connection proxy."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationConnectionProxies/write",
+    "description": "Creates or updates an internal replication connection proxy on the leader search service."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationConnections/delete",
+    "description": "Deletes a replication connection to a leader search service."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationConnections/read",
+    "description": "Returns the list of replication connections or gets the properties of a replication connection."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationConnections/write",
+    "description": "Creates a replication connection to a leader search service or updates an existing replication connection."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationConnectionsApproval/action",
+    "description": "Allows the creation of a replication connection onto this search service."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationFollowers/delete",
+    "description": "Deletes a replication follower of the leader search service."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationFollowers/read",
+    "description": "Returns the list of replication followers or gets the properties of a replication follower."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replicationFollowers/write",
+    "description": "Approves or rejects a replication follower of the leader search service."
+  },
+  {
+    "action": "Microsoft.Search/searchServices/replications/read",
+    "description": "Return a replication or a list of replications."
   },
   {
     "action": "Microsoft.Search/searchServices/sharedPrivateLinkResources/delete",

@@ -1903,12 +1903,14 @@
     "description": "Allows read access to list models, get model details, and calculate model costs",
     "actions": [
       "Microsoft.ContainerService/locations/aiModels/read",
-      "Microsoft.ContainerService/locations/aiModels/calculateCost/action"
+      "Microsoft.ContainerService/locations/aiModels/calculateCost/action",
+      "Microsoft.ContainerService/aiManagers/customAIModels/read",
+      "Microsoft.ContainerService/aiManagers/customAIModels/calculateCost/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 2
+    "_estimatedActions": 4
   },
   {
     "name": "Azure AIManager RBAC Admin",
@@ -1960,6 +1962,7 @@
       "Microsoft.ContainerService/aiManagers/networking.istio.io/*/read",
       "Microsoft.ContainerService/aiManagers/networking.k8s.io/*/read",
       "Microsoft.ContainerService/aiManagers/policy/*/read",
+      "Microsoft.ContainerService/aiManagers/ray.io/*/read",
       "Microsoft.ContainerService/aiManagers/security.istio.io/*/read"
     ],
     "notDataActions": [
@@ -1981,6 +1984,7 @@
       "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
       "Microsoft.ContainerService/aiManagers/read",
       "Microsoft.ContainerService/aiManagers/*/read",
+      "Microsoft.ContainerService/aiManagers/customAIModels/calculateCost/action",
       "Microsoft.ContainerService/aiManagers/namespaces/*/read",
       "Microsoft.ContainerService/locations/aiModels/read",
       "Microsoft.ContainerService/locations/aiModels/calculateCost/action"
@@ -1988,7 +1992,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 26
+    "_estimatedActions": 27
   },
   {
     "name": "Azure API Center Compliance Manager",
@@ -3885,12 +3889,14 @@
       "Microsoft.AzureArcData/sqlServerInstances/getJobsStatus/action",
       "Microsoft.HybridCompute/machines/read",
       "Microsoft.HybridCompute/machines/extensions/read",
-      "Microsoft.Resources/subscriptions/resourceGroups/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureArcData/SqlServerInstances/getMigrationReadinessReport/action",
+      "Microsoft.AzureArcData/SqlServerInstances/getTargetRecommendationReports/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 17
+    "_estimatedActions": 19
   },
   {
     "name": "Azure impact Reporter role",
@@ -5634,12 +5640,13 @@
       "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read",
       "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read",
       "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/read",
+      "Microsoft.RecoveryServices/vaults/replicationJobs/read",
       "Microsoft.DataReplication/replicationVaults/protectedItems/read"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 115
+    "_estimatedActions": 116
   },
   {
     "name": "Azure Monitor Dashboards with Grafana Contributor",
@@ -8061,12 +8068,13 @@
       "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/unlockDelete/action",
       "Microsoft.DataProtection/backupVaults/backupInstances/validateForModifyBackup/action",
       "Microsoft.DataProtection/backupVaults/backupInstances/SuspendBackups/action",
-      "Microsoft.DataProtection/backupVaults/backupInstances/resumeProtection/action"
+      "Microsoft.DataProtection/backupVaults/backupInstances/resumeProtection/action",
+      "Microsoft.DataProtection/backupVaults/crossTenantVaultMappingStatus/action"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 676
+    "_estimatedActions": 677
   },
   {
     "name": "Backup MUA Admin",
@@ -8651,11 +8659,18 @@
     "name": "Chaos Kubernetes Extension Operator",
     "id": "681440c1-3630-4424-a530-0305ac721cfd",
     "description": "Lets a Chaos Studio workspace identity impersonate the Chaos Studio extension's Kubernetes service account and read pods on AKS clusters, and read the cluster's Deployment Safeguards, so Chaos Studio can run faults through the extension.",
-    "actions": [],
+    "actions": [
+      "Microsoft.KubernetesConfiguration/extensions/read",
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.ContainerService/deploymentSafeguards/read"
+    ],
     "notActions": [],
-    "dataActions": [],
+    "dataActions": [
+      "Microsoft.ContainerService/managedClusters/serviceaccounts/impersonate/action",
+      "Microsoft.ContainerService/managedClusters/pods/read"
+    ],
     "notDataActions": [],
-    "_estimatedActions": 0
+    "_estimatedActions": 3
   },
   {
     "name": "Chaos Permissions Admin",
@@ -11775,6 +11790,23 @@
     "_estimatedActions": 6
   },
   {
+    "name": "Defender Foundational CSPM",
+    "id": "fb2e8e50-bc5c-4095-8f9d-c30e1be5e98c",
+    "description": "Grants Microsoft Defender for Cloud CSPM access required for posture recommendations",
+    "actions": [
+      "Microsoft.Authorization/policyAssignments/read",
+      "Microsoft.Authorization/policyExemptions/read",
+      "Microsoft.Authorization/policySetDefinitions/read",
+      "Microsoft.Resources/subscriptions/resources/read",
+      "Microsoft.Management/managementGroups/descendants/read",
+      "Microsoft.Security/assessmentMetadata/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 6
+  },
+  {
     "name": "Defender Kubernetes Agent Operator",
     "id": "8bb6f106-b146-4ee6-a3f9-b9c5a96e0ae5",
     "description": "Grants Microsoft Defender for Cloud permissions to provision the Kubernetes defender security agent",
@@ -14052,6 +14084,7 @@
       "Microsoft.HealthcareApis/services/fhir/resources/import/action",
       "Microsoft.HealthcareApis/services/fhir/resources/hardDelete/action",
       "Microsoft.HealthcareApis/services/fhir/resources/bulkOperator/action",
+      "Microsoft.HealthcareApis/services/fhir/resources/editProfileDefinitions/action",
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/read",
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/write",
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/delete",
@@ -14059,7 +14092,8 @@
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/reindex/action",
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/import/action",
       "Microsoft.HealthcareApis/workspaces/fhirservices/resources/hardDelete/action",
-      "Microsoft.HealthcareApis/workspaces/fhirservices/resources/bulkOperator/action"
+      "Microsoft.HealthcareApis/workspaces/fhirservices/resources/bulkOperator/action",
+      "Microsoft.HealthcareApis/workspaces/fhirservices/resources/editProfileDefinitions/action"
     ],
     "notDataActions": [],
     "_estimatedActions": 0
@@ -15274,9 +15308,9 @@
       "Microsoft.HealthBot/healthBots/RegisteredSkills/Read",
       "Microsoft.HealthBot/healthBots/Configuration/*",
       "Microsoft.HealthBot/healthBots/Localization/*",
-      "Microsoft.HealthBot/healthBots/AuthenticationProviders/Read",
+      "Microsoft.HealthBot/healthBots/AuthenticationProviders/*",
       "Microsoft.HealthBot/healthBots/Channels/*",
-      "Microsoft.HealthBot/healthBots/DataConnections/Read",
+      "Microsoft.HealthBot/healthBots/DataConnections/*",
       "Microsoft.HealthBot/healthBots/OpenAPIPlugins/*",
       "Microsoft.HealthBot/healthBots/Scenarios/*",
       "Microsoft.HealthBot/healthBots/LanguageModels/*",
@@ -15813,7 +15847,7 @@
   {
     "name": "Key Vault Crypto User",
     "id": "12338af0-0e69-4776-bea7-57ae8d297424",
-    "description": "Perform cryptographic operations using keys. Only works for key vaults that use the 'Azure role-based access control' permission model.",
+    "description": "Read key metadata and public material, perform cryptographic operations, back up keys, and update key properties and mutable release policies, including making policies immutable. Does not grant key release. Only works for key vaults that use the 'Azure role-based access control' permission model.",
     "actions": [],
     "notActions": [],
     "dataActions": [
@@ -22079,6 +22113,20 @@
     ],
     "notDataActions": [],
     "_estimatedActions": 2
+  },
+  {
+    "name": "Windows 365 Service Connector User",
+    "id": "5f70377a-ce1d-4a07-b3b9-12c99f22d21f",
+    "description": "Provides access to read service connectors and attach them to Windows 365 resources.",
+    "actions": [
+      "Microsoft.Windows365/serviceConnectors/read"
+    ],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.Windows365/serviceConnectors/attach/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 1
   },
   {
     "name": "Windows Admin Center Administrator Login",

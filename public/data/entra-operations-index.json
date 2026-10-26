@@ -780,6 +780,18 @@
     "description": "Update the default tenant for Conditional Access policies"
   },
   {
+    "action": "microsoft.directory/conditionalAccessPolicyPlans/basic/update",
+    "description": "Update basic properties for Conditional Access policy plans"
+  },
+  {
+    "action": "microsoft.directory/conditionalAccessPolicyPlans/create",
+    "description": "Create Conditional Access policy plans"
+  },
+  {
+    "action": "microsoft.directory/conditionalAccessPolicyPlans/delete",
+    "description": "Delete Conditional Access policy plans"
+  },
+  {
     "action": "microsoft.directory/connectorGroups/allProperties/read",
     "description": "Read all properties of application proxy connector groups"
   },
