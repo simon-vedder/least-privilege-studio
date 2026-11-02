@@ -136,6 +136,10 @@
     "description": "Enable agent identities"
   },
   {
+    "action": "microsoft.directory/agentIdentities/idJagConfiguration/update",
+    "description": "Update the ID-JAG outbound configuration of agent identities"
+  },
+  {
     "action": "microsoft.directory/agentIdentities/owners/update",
     "description": "Update owners on agent identities"
   },
@@ -186,6 +190,10 @@
   {
     "action": "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
     "description": "Enable agent identity blueprint principals"
+  },
+  {
+    "action": "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
+    "description": "Update the ID-JAG outbound configuration of agent identity blueprint principals"
   },
   {
     "action": "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",

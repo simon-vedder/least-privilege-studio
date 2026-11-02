@@ -276,8 +276,16 @@
     "description": "Delete monitors"
   },
   {
+    "action": "Dynatrace.Observability/monitors/discoverMigrationResource/action",
+    "description": "Starts migration resource discovery for the monitor."
+  },
+  {
     "action": "Dynatrace.Observability/monitors/getMetricStatus/action",
     "description": "Gets Metric Status from the dyntrace partner"
+  },
+  {
+    "action": "Dynatrace.Observability/monitors/getMigrationDiscoveryStatus/action",
+    "description": "Gets the most recently accepted migration discovery run."
   },
   {
     "action": "Dynatrace.Observability/monitors/getSSODetails/action",
@@ -730,6 +738,10 @@
   {
     "action": "Microsoft.ADHybridHealthService/services/write",
     "description": "Creates a service instance in the tenant."
+  },
+  {
+    "action": "Microsoft.AIInfraOptimization/providerPermissions/read",
+    "description": "read providerPermissions"
   },
   {
     "action": "Microsoft.AVS/checkNameAvailability/read",
@@ -1702,6 +1714,18 @@
   {
     "action": "Microsoft.ApiManagement/aigateways/tools/list/action",
     "description": "Lists the tools available on an AI Gateway MCP server by using the MCP tools/list method."
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/workspaces/aliases/delete",
+    "description": "Deletes the specified alias."
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/workspaces/aliases/read",
+    "description": "Lists a collection of aliases in a workspace. or Gets the details of the alias specified by its identifier."
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/workspaces/aliases/write",
+    "description": "Creates or Updates an alias. or Updates an existing alias."
   },
   {
     "action": "Microsoft.ApiManagement/aigateways/workspaces/modelProviders/delete",
@@ -3884,6 +3908,26 @@
     "description": "Create or Update a SRE Agent Session"
   },
   {
+    "action": "Microsoft.App/agents/a2a/connections/delete",
+    "description": "Delete outgoing A2A connections in an SRE agent"
+  },
+  {
+    "action": "Microsoft.App/agents/a2a/connections/read",
+    "description": "View incoming and outgoing A2A connections and available handlers, excluding secrets"
+  },
+  {
+    "action": "Microsoft.App/agents/a2a/connections/write",
+    "description": "Create, update, or test outgoing A2A connections and approve, disable, or remove incoming callers"
+  },
+  {
+    "action": "Microsoft.App/agents/a2a/read",
+    "description": "Discover agent capabilities and retrieve caller-authorized A2A task status and results"
+  },
+  {
+    "action": "Microsoft.App/agents/a2a/write",
+    "description": "Submit or continue A2A work and cancel the caller's tasks"
+  },
+  {
     "action": "Microsoft.App/agents/dataconnectors/delete",
     "description": "Delete existing data connectors in an SRE agent"
   },
@@ -3970,6 +4014,10 @@
   {
     "action": "Microsoft.App/agents/scheduledtasks/write",
     "description": "Update scheduled tasks in an SRE agent"
+  },
+  {
+    "action": "Microsoft.App/agents/teams/grant/action",
+    "description": "Grant permission to users in a Teams chat or channel to send messages to an SRE Agent"
   },
   {
     "action": "Microsoft.App/agents/threads/approve/action",
@@ -9900,6 +9948,18 @@
     "description": "Gets EdgeMachine Network Adapter resources"
   },
   {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProvisionOsJobs/Delete",
+    "description": "Deletes EdgeMachine Provision OS jobs"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProvisionOsJobs/Read",
+    "description": "Reads EdgeMachine Provision OS jobs"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/ProvisionOsJobs/Write",
+    "description": "Creates or updates EdgeMachine Provision OS jobs"
+  },
+  {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/ProxyConfigurations/Jobs/Delete",
     "description": "Deletes EdgeMachine Proxy Configuration Job Resource"
   },
@@ -9970,6 +10030,18 @@
   {
     "action": "Microsoft.AzureStackHCI/EdgeMachines/Write",
     "description": "Creates or updates EdgeMachine resource"
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/getSshTrustAnchor/Action",
+    "description": "Gets the SSH public keys trusted by an EdgeMachine."
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForAdmin/Action",
+    "description": "Issues a JWS authorization signature with administrator access for the specified EdgeMachine."
+  },
+  {
+    "action": "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForContributor/Action",
+    "description": "Issues a JWS authorization signature with non-administrator access for the specified EdgeMachine."
   },
   {
     "action": "Microsoft.AzureStackHCI/GalleryImages/Delete",
@@ -13318,6 +13390,14 @@
   {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/write",
     "description": "Creates, updates, and deletes volume contents of a sandbox partner"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/workspaces/read",
+    "description": "Reads workspace resources of a sandbox partner"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/workspaces/write",
+    "description": "Creates, replaces, and deletes workspace resources of a sandbox partner"
   },
   {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/write",
@@ -19252,6 +19332,22 @@
     "description": "Create a realtime connection to the voice live agent api"
   },
   {
+    "action": "Microsoft.CognitiveServices/accounts/SpeechServices/voicelive/sip/action",
+    "description": "Attach to and control Voice Live SIP calls and rotate webhook secrets."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/SpeechServices/voicelive/sip/delete",
+    "description": "Delete Voice Live SIP configuration and webhooks."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/SpeechServices/voicelive/sip/read",
+    "description": "Read Voice Live SIP configuration, webhooks, and outbound calls."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/SpeechServices/voicelive/sip/write",
+    "description": "Create or update Voice Live SIP configuration, webhooks, and outbound calls."
+  },
+  {
     "action": "Microsoft.CognitiveServices/accounts/SpellCheck/spellcheck/action",
     "description": "Get result of a spell check query through GET or POST."
   },
@@ -20058,6 +20154,18 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/projects/connections/write",
     "description": "Write a connection"
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/projects/costControls/delete",
+    "description": "Deletes an RP-owned Project Cost Control."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/projects/costControls/read",
+    "description": "Gets Project-owned Cost Controls."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/projects/costControls/write",
+    "description": "Creates or updates an RP-owned Project Cost Control."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/projects/delete",
@@ -29376,6 +29484,18 @@
     "description": "List the budgets by a subscription or a management group."
   },
   {
+    "action": "Microsoft.CostManagement/budgets/securitydelete/action",
+    "description": "Delete the budgets by a subscription or a management group for Security Products Only."
+  },
+  {
+    "action": "Microsoft.CostManagement/budgets/securityread/action",
+    "description": "List the budgets by a subscription or a management group for Security Products Only."
+  },
+  {
+    "action": "Microsoft.CostManagement/budgets/securitywrite/action",
+    "description": "Creates and update the budgets by a subscription or a management group for Security Products Only."
+  },
+  {
     "action": "Microsoft.CostManagement/calculateCost/read",
     "description": "Calculate cost for provided product codes."
   },
@@ -29474,6 +29594,10 @@
   {
     "action": "Microsoft.CostManagement/forecast/read",
     "description": "Forecast usage data by a scope."
+  },
+  {
+    "action": "Microsoft.CostManagement/forecast/security/action",
+    "description": "Forecasts by a subscription or a management group for Security Products Only."
   },
   {
     "action": "Microsoft.CostManagement/query/read",
@@ -41304,100 +41428,12 @@
     "description": "Write"
   },
   {
-    "action": "Microsoft.HealthcareInterop/dicomConnectors/delete",
-    "description": "Delete a DicomConnector"
+    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/data/read",
+    "description": "Performs and facilitates read operations across an authorized WebSocket connection."
   },
   {
-    "action": "Microsoft.HealthcareInterop/dicomConnectors/read",
-    "description": "Get a DicomConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/dicomConnectors/write",
-    "description": "Update a DicomConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/dicomDirectChannels/delete",
-    "description": "Delete a DicomDirectChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/dicomDirectChannels/read",
-    "description": "Get a DicomDirectChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/dicomDirectChannels/write",
-    "description": "Update a DicomDirectChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/dicomEdgeConnectors/delete",
-    "description": "Delete a DicomEdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/dicomEdgeConnectors/read",
-    "description": "Get a DicomEdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/dicomEdgeConnectors/write",
-    "description": "Update a DicomEdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/fhirQueryEventBatchChannels/delete",
-    "description": "Delete a FhirQueryEventBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/fhirQueryEventBatchChannels/read",
-    "description": "Get a FhirQueryEventBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/fhirQueryEventBatchChannels/write",
-    "description": "Update a FhirQueryEventBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/fhirQueryFlatFileBatchChannels/delete",
-    "description": "Delete a FhirQueryFlatFileBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/fhirQueryFlatFileBatchChannels/read",
-    "description": "Get a FhirQueryFlatFileBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/fhirQueryFlatFileBatchChannels/write",
-    "description": "Update a FhirQueryFlatFileBatchChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hl7Connectors/delete",
-    "description": "Delete a Hl7Connector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hl7Connectors/read",
-    "description": "Get a Hl7Connector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hl7Connectors/write",
-    "description": "Update a Hl7Connector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hl7EdgeConnectors/delete",
-    "description": "Delete a Hl7EdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hl7EdgeConnectors/read",
-    "description": "Get a Hl7EdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hl7EdgeConnectors/write",
-    "description": "Update a Hl7EdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hubs/delete",
-    "description": "Delete a Hub"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hubs/read",
-    "description": "Get a Hub"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/hubs/write",
-    "description": "Update a Hub"
+    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/data/write",
+    "description": "Performs and facilitates write operations across an authorized WebSocket connection."
   },
   {
     "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/delete",
@@ -41405,11 +41441,11 @@
   },
   {
     "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/read",
-    "description": "Get a InternalCloudEndpoint"
+    "description": "List InternalCloudEndpoint resources by subscription ID"
   },
   {
     "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/write",
-    "description": "Update a InternalCloudEndpoint"
+    "description": "Create a InternalCloudEndpoint"
   },
   {
     "action": "Microsoft.HealthcareInterop/internalDicomConnectors/delete",
@@ -41484,30 +41520,6 @@
     "description": "Create a InternalHl7OutboundChannel"
   },
   {
-    "action": "Microsoft.HealthcareInterop/oneLakeConnectors/delete",
-    "description": "Delete a OneLakeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/oneLakeConnectors/read",
-    "description": "Get a OneLakeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/oneLakeConnectors/write",
-    "description": "Update a OneLakeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/storageAccountConnectors/delete",
-    "description": "Delete a StorageAccountConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/storageAccountConnectors/read",
-    "description": "Get a StorageAccountConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/storageAccountConnectors/write",
-    "description": "Update a StorageAccountConnector"
-  },
-  {
     "action": "Microsoft.Help/smartDiagnostics/read",
     "description": "Reads or creates an SmartDiagnostics result"
   },
@@ -41522,6 +41534,14 @@
   {
     "action": "Microsoft.HorizonDb/clusters/administrators/write",
     "description": "Creates or updates an EntraID administrator for the specified HorizonDb cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/authentications/read",
+    "description": "Return the list of HorizonDb clusters or gets the properties for the specified cluster."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/authentications/write",
+    "description": "Asynchronously creates the initial password administrator or updates password authentication. State is required. Initial creation requires Enabled, administratorLogin and administratorLoginPassword. An existing username cannot be supplied again. Disabling requires enabled Microsoft Entra authentication and cannot include credentials. Both 201 creation and 200 replacement responses represent accepted asynchronous operations and include polling headers; poll the operation to determine its final outcome."
   },
   {
     "action": "Microsoft.HorizonDb/clusters/delete",
@@ -41564,6 +41584,10 @@
     "description": "Creates or updates a HorizonDb firewall rule with the specified parameters."
   },
   {
+    "action": "Microsoft.HorizonDb/clusters/pools/nodes/read",
+    "description": ""
+  },
+  {
     "action": "Microsoft.HorizonDb/clusters/pools/read",
     "description": "Gets the properties for the specified HorizonDb pool."
   },
@@ -41598,6 +41622,22 @@
   {
     "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/write",
     "description": "Creates or updates a HorizonDb private endpoint connection proxy."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnections/delete",
+    "description": "Deletes an existing HorizonDb private endpoint connection."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnections/read",
+    "description": "Returns the list of private endpoint connections or gets the properties for the specified HorizonDb private endpoint connection."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateEndpointConnections/write",
+    "description": "Approves or rejects an existing HorizonDb private endpoint connection."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/privateLinkResources/read",
+    "description": "Returns the list of private link resources or gets the specified private link resource for a HorizonDb cluster."
   },
   {
     "action": "Microsoft.HorizonDb/clusters/read",
@@ -46812,8 +46852,16 @@
     "description": "Gets extension type."
   },
   {
+    "action": "Microsoft.KubernetesConfiguration/extensionTypes/versions/read",
+    "description": "Gets extension type version."
+  },
+  {
     "action": "Microsoft.KubernetesConfiguration/extensions/delete",
     "description": "Deletes extension instance resource."
+  },
+  {
+    "action": "Microsoft.KubernetesConfiguration/extensions/dryRun/action",
+    "description": "Simulates extension instance creation to resolve its configuration without deploying to the cluster."
   },
   {
     "action": "Microsoft.KubernetesConfiguration/extensions/read",
@@ -53200,6 +53248,10 @@
     "description": "Deletes a cache resource"
   },
   {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/getDirectoryServicesStatus/action",
+    "description": "Get directory services connectivity status for a cache volume configured with Active Directory."
+  },
+  {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/listPeeringPassphrases/action",
     "description": "Lists the cluster peering command, cluster peering passphrase and the vserver peering command"
   },
@@ -53214,6 +53266,10 @@
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/read",
     "description": "Returns the details of cache resource(s)"
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/rediscoverDomainControllers/action",
+    "description": "Rediscover domain controllers for a cache volume configured with Active Directory."
   },
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/resetSmbPassword/action",
@@ -53332,6 +53388,10 @@
     "description": "Finalize relocation by cleaning up the old volume."
   },
   {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/getDirectoryServicesStatus/action",
+    "description": "Get directory services connectivity status for a volume configured with Active Directory."
+  },
+  {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/getGroupIdListForLdapUser/action",
     "description": "Get group Id list for a given user for an Ldap enabled volume"
   },
@@ -53398,6 +53458,10 @@
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read",
     "description": "Reads a volume resource."
+  },
+  {
+    "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/rediscoverDomainControllers/action",
+    "description": "Rediscover domain controllers for a volume configured with Active Directory."
   },
   {
     "action": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/reestablishReplication/action",
@@ -58470,6 +58534,10 @@
   {
     "action": "Microsoft.OffAzure/masterSites/errorSummary/action",
     "description": "Retrieves Error Summary For Resources Under A Given Master Site"
+  },
+  {
+    "action": "Microsoft.OffAzure/masterSites/executionAgents/execute/action",
+    "description": "Executes an operation on the execution agent under Master site"
   },
   {
     "action": "Microsoft.OffAzure/masterSites/import/action",
@@ -64560,6 +64628,10 @@
     "description": "Get AccessToken for Cross Region Restore."
   },
   {
+    "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/browse/action",
+    "description": "Browse Recovery Point for Protected Item"
+  },
+  {
     "action": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/listInstantItemRecoveryOperationResult/action",
     "description": "Provision Instant Item Recovery for Protected Item"
   },
@@ -67456,12 +67528,16 @@
     "description": "Creates, replaces, or updates a service entitlement setting."
   },
   {
+    "action": "Microsoft.Security/serviceEntitlements/delete",
+    "description": "Deletes the service entitlements for the scope"
+  },
+  {
     "action": "Microsoft.Security/serviceEntitlements/read",
-    "description": "Gets the service entitlements settings for the scope"
+    "description": "Gets the service entitlements for the scope"
   },
   {
     "action": "Microsoft.Security/serviceEntitlements/write",
-    "description": "Updates the service entitlements settings for the scope"
+    "description": "Updates the service entitlements for the scope"
   },
   {
     "action": "Microsoft.Security/settings/read",
@@ -69785,7 +69861,7 @@
   },
   {
     "action": "Microsoft.Sovereign/sovereignViews/remediate/action",
-    "description": "Remediates the Sovereign View resource for the given ARM resource IDs."
+    "description": "Remediates the Sovereign View resource for the given Azure Resource Manager resource IDs."
   },
   {
     "action": "Microsoft.Sovereign/sovereignViews/remediationResult/action",
@@ -69793,19 +69869,7 @@
   },
   {
     "action": "Microsoft.Sovereign/sovereignViews/write",
-    "description": "Creates the Sovereign View resource."
-  },
-  {
-    "action": "Microsoft.Sovereign/transparencyLogs/delete",
-    "description": "Delete a TransparencyLog"
-  },
-  {
-    "action": "Microsoft.Sovereign/transparencyLogs/read",
-    "description": "Get a TransparencyLog"
-  },
-  {
-    "action": "Microsoft.Sovereign/transparencyLogs/write",
-    "description": "Update a TransparencyLog"
+    "description": "Creates or updates the Sovereign View resource."
   },
   {
     "action": "Microsoft.Sql/instancePools/delete",
@@ -69924,7 +69988,7 @@
     "description": "Enable uploading ledger digests "
   },
   {
-    "action": "Microsoft.Sql/managedInstances/databases/queries/read",
+    "action": "Microsoft.Sql/managedInstances/databases/queries/action",
     "description": "Get query text by query id"
   },
   {
@@ -71966,10 +72030,6 @@
   {
     "action": "Microsoft.Storage/storageAccounts/fileServices/shares/restore/action",
     "description": "Restore file share"
-  },
-  {
-    "action": "Microsoft.Storage/storageAccounts/fileServices/shares/revert/action",
-    "description": "Revert File Share"
   },
   {
     "action": "Microsoft.Storage/storageAccounts/fileServices/shares/write",
