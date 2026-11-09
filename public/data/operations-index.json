@@ -1684,6 +1684,10 @@
     "description": "Invokes a model through an AI Gateway."
   },
   {
+    "action": "Microsoft.ApiManagement/aigateways/models/embeddings/action",
+    "description": "Generates embeddings through an AI Gateway model alias."
+  },
+  {
     "action": "Microsoft.ApiManagement/aigateways/models/list/action",
     "description": "Lists the models available through an AI Gateway by using the OpenAI-compatible GET /v1/models endpoint."
   },
@@ -1702,6 +1706,22 @@
   {
     "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnectionProxies/write",
     "description": "Create or update a private endpoint connection proxy that Microsoft.Network uses to connect a private endpoint to an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnections/delete",
+    "description": "Delete a private endpoint connection to an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnections/read",
+    "description": "List or get private endpoint connections to an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnections/write",
+    "description": "Approve or reject a private endpoint connection to an AI Gateway instance"
+  },
+  {
+    "action": "Microsoft.ApiManagement/aigateways/privateLinkResources/read",
+    "description": "Get private link resources for an AI Gateway instance"
   },
   {
     "action": "Microsoft.ApiManagement/aigateways/read",
@@ -4353,7 +4373,7 @@
   },
   {
     "action": "Microsoft.App/sandboxGroups/secrets/peek/action",
-    "description": "Peek at a secret's values in a sandbox group"
+    "description": "Retrieve only inline secret values in a sandbox group, excluding Key Vault references and their resolved values"
   },
   {
     "action": "Microsoft.App/sandboxGroups/secrets/read",
@@ -6009,7 +6029,7 @@
   },
   {
     "action": "Microsoft.ApplicationMigration/oracleSites/agents/refresh/action",
-    "description": "Trigger Refresh action to refresh the OracleAgent resource."
+    "description": "Trigger Refresh action to refresh the Agent resource."
   },
   {
     "action": "Microsoft.ApplicationMigration/oracleSites/agents/write",
@@ -11272,6 +11292,10 @@
     "description": "Delete a Discount"
   },
   {
+    "action": "Microsoft.BillingBenefits/discounts/downloadApplicableSkus/action",
+    "description": "Generate download links for the SKUs applicable to a Discount"
+  },
+  {
     "action": "Microsoft.BillingBenefits/discounts/read",
     "description": "Read all Discounts"
   },
@@ -11862,6 +11886,18 @@
   {
     "action": "Microsoft.Cache/redisEnterprise/PrivateEndpointConnectionsApproval/action",
     "description": "Auto-approve a private endpoint connection of an Azure Managed Redis cache."
+  },
+  {
+    "action": "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments/delete",
+    "description": "Delete an existing access policy assignment from an Azure Managed Redis database."
+  },
+  {
+    "action": "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments/read",
+    "description": "Read access policy assignments for an Azure Managed Redis database."
+  },
+  {
+    "action": "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments/write",
+    "description": "Create a new access policy assignment or modify an existing assignment for an Azure Managed Redis database."
   },
   {
     "action": "Microsoft.Cache/redisEnterprise/databases/delete",
@@ -13344,6 +13380,14 @@
     "description": "read providerPermissions"
   },
   {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/artifacts/read",
+    "description": "Reads and lists skill artifacts of a sandbox partner"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/artifacts/write",
+    "description": "Creates, uploads the content of, and deletes skill artifacts of a sandbox partner"
+  },
+  {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/delete",
     "description": "Delete a SandboxPartner"
   },
@@ -13382,6 +13426,14 @@
   {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/sandboxes/write",
     "description": "Creates, updates, deletes, and allocates sandbox resources of a sandbox partner"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/sessions/read",
+    "description": "Reads and lists sessions of a sandbox partner"
+  },
+  {
+    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/sessions/write",
+    "description": "Creates, updates, releases, and deletes sessions of a sandbox partner"
   },
   {
     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/read",
@@ -41428,98 +41480,6 @@
     "description": "Write"
   },
   {
-    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/data/read",
-    "description": "Performs and facilitates read operations across an authorized WebSocket connection."
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/data/write",
-    "description": "Performs and facilitates write operations across an authorized WebSocket connection."
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/delete",
-    "description": "Delete a InternalCloudEndpoint"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/read",
-    "description": "List InternalCloudEndpoint resources by subscription ID"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/write",
-    "description": "Create a InternalCloudEndpoint"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/delete",
-    "description": "Delete a InternalDicomConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/read",
-    "description": "List InternalDicomConnector resources by subscription ID"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/write",
-    "description": "Create a InternalDicomConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/delete",
-    "description": "Delete a InternalDicomEdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/read",
-    "description": "List InternalDicomEdgeConnector resources by subscription ID"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/write",
-    "description": "Create a InternalDicomEdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/delete",
-    "description": "Delete a InternalHl7Connector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/read",
-    "description": "List InternalHl7Connector resources by subscription ID"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/write",
-    "description": "Create a InternalHl7Connector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/delete",
-    "description": "Delete a InternalHl7EdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/read",
-    "description": "List InternalHl7EdgeConnector resources by subscription ID"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/write",
-    "description": "Create a InternalHl7EdgeConnector"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/delete",
-    "description": "Delete a InternalHl7InboundChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/read",
-    "description": "List InternalHl7InboundChannel resources by subscription ID"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/write",
-    "description": "Create a InternalHl7InboundChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/delete",
-    "description": "Delete a InternalHl7OutboundChannel"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/read",
-    "description": "List InternalHl7OutboundChannel resources by subscription ID"
-  },
-  {
-    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/write",
-    "description": "Create a InternalHl7OutboundChannel"
-  },
-  {
     "action": "Microsoft.Help/smartDiagnostics/read",
     "description": "Reads or creates an SmartDiagnostics result"
   },
@@ -41921,63 +41881,67 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "List the endpoint access credentials to the resource."
+    "description": "Gets the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "List the ingress gateway access credentials to the resource."
+    "description": "Gets the ingress gateway endpoint credentials "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "List the managed proxy details to the resource."
+    "description": "Fetches the managed proxy details "
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Get or list of endpoints to the target resource."
+    "description": "Gets the endpoint to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the serviceConfigurations access to the endpoints resource."
+    "description": "Deletes the service details to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Get or list of serviceConfigurations to the endpoints resource."
+    "description": "Gets the details about the service to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Create or update the serviceConfigurations to the endpoints resource."
+    "description": "Update the service details in the service configurations of the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Create or update the endpoint to the target resource."
+    "description": "Update the endpoint to the target resource."
+  },
+  {
+    "action": "Microsoft.HybridConnectivity/providerPermissions/read",
+    "description": "read providerPermissions"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Deletes the public cloud connectors resource."
+    "description": "Delete a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Gets the public cloud connectors."
+    "description": "Get a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "Tests the permissions of solution configurations under public cloud connector."
+    "description": "A long-running resource action."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update the public cloud connectors resource."
+    "description": "Update a PublicCloudConnector"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Deletes the solution configuration with provided solution name."
+    "description": "Delete a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Retrieve a list of inventory by solution name."
+    "description": "Get a InventoryResource"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Retrieve the solution configuration identified by solution name."
+    "description": "Get a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -41985,11 +41949,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Updates the solution configuration for solution name."
+    "description": "Update a SolutionConfiguration"
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Retrieve the solution type by provided solution type."
+    "description": "Get a SolutionTypeResource"
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -42638,6 +42602,94 @@
   {
     "action": "Microsoft.InferenceService/inferenceAccounts/write",
     "description": "Creates or updates an inference service."
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/databases/delete",
+    "description": "Delete a Database"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/databases/listCredentials/action",
+    "description": "Lists the credentials of the database."
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/databases/read",
+    "description": "List Database resources by Account"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/databases/updatePrimaryRegion/action",
+    "description": "Changes the primary region of the database."
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/databases/write",
+    "description": "Create a Database"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/delete",
+    "description": "Delete a Account"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/integrationTypes/delete",
+    "description": "Delete a IntegrationType"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/integrationTypes/read",
+    "description": "List IntegrationType resources by Account"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/integrationTypes/write",
+    "description": "Create a IntegrationType"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/integrations/delete",
+    "description": "Delete a Integration"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/integrations/read",
+    "description": "Get a Integration"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/integrations/write",
+    "description": "Update a Integration"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/presetTypes/delete",
+    "description": "Delete a PresetType"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/presetTypes/read",
+    "description": "List PresetType resources by Account"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/presetTypes/write",
+    "description": "Create a PresetType"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/presets/delete",
+    "description": "Delete a Preset"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/presets/read",
+    "description": "List Preset resources by Account"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/presets/write",
+    "description": "Create a Preset"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/read",
+    "description": "List Account resources by subscription ID"
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/write",
+    "description": "Create a Account"
+  },
+  {
+    "action": "Microsoft.InfinityDB/providerPermissions/read",
+    "description": "read providerPermissions"
+  },
+  {
+    "action": "Microsoft.InfinityDB/regions/read",
+    "description": "List AvailableRegion resources by subscription"
   },
   {
     "action": "Microsoft.Insights/ActionGroups/Delete",
@@ -45082,6 +45134,18 @@
   {
     "action": "Microsoft.IoTOperations/instances/mcpAuthorizationPolicies/write",
     "description": "Create a McpAuthorizationPolicyResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpGateways/delete",
+    "description": "Delete a McpGatewayResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpGateways/read",
+    "description": "Get a McpGatewayResource"
+  },
+  {
+    "action": "Microsoft.IoTOperations/instances/mcpGateways/write",
+    "description": "Create a McpGatewayResource"
   },
   {
     "action": "Microsoft.IoTOperations/instances/mcpServerConnections/delete",
@@ -48074,6 +48138,18 @@
   {
     "action": "Microsoft.Logic/workflows/disable/action",
     "description": "Disables the workflow."
+  },
+  {
+    "action": "Microsoft.Logic/workflows/drafts/read",
+    "description": "Reads the workflow draft."
+  },
+  {
+    "action": "Microsoft.Logic/workflows/drafts/run/action",
+    "description": "Starts a run of the workflow draft."
+  },
+  {
+    "action": "Microsoft.Logic/workflows/drafts/write",
+    "description": "Creates or updates the workflow draft."
   },
   {
     "action": "Microsoft.Logic/workflows/enable/action",
@@ -57192,6 +57268,10 @@
     "description": "Deletes a virtual network"
   },
   {
+    "action": "Microsoft.Network/virtualNetworks/getAdminNsgInfo/action",
+    "description": "Gets Admin Network Security Group information for a virtual network"
+  },
+  {
     "action": "Microsoft.Network/virtualNetworks/join/action",
     "description": "Joins a virtual network. Not Alertable."
   },
@@ -57378,6 +57458,10 @@
   {
     "action": "Microsoft.Network/virtualNetworks/taggedTrafficConsumers/write",
     "description": "Creates a Tagged Traffic Consumer or updates an existing Tagged Traffic Consumer"
+  },
+  {
+    "action": "Microsoft.Network/virtualNetworks/updateAdminNsgReference/action",
+    "description": "Updates the Admin Network Security Group reference for a virtual network"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/virtualMachines/read",
@@ -61416,6 +61500,10 @@
     "description": "Read data from the EdgeActionServiceLog table"
   },
   {
+    "action": "Microsoft.OperationalInsights/workspaces/query/EdgeSecurityEvents/read",
+    "description": "Read data from the EdgeSecurityEvents table"
+  },
+  {
     "action": "Microsoft.OperationalInsights/workspaces/query/EmailAttachmentInfo/read",
     "description": "Read data from the EmailAttachmentInfo table"
   },
@@ -62234,6 +62322,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/OAuthAppInfo/read",
     "description": "Read data from the OAuthAppInfo table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/ODSPFiles/read",
+    "description": "Read data from the ODSPFiles table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/OEPAirFlowTask/read",
@@ -67100,8 +67192,20 @@
     "description": "Deletes the defenderforstoragesettings for the scope"
   },
   {
+    "action": "Microsoft.Security/defenderforstoragesettings/malwareScans/cancelMalwareScan/action",
+    "description": "Cancels an on-demand malware scan for the storage account"
+  },
+  {
+    "action": "Microsoft.Security/defenderforstoragesettings/malwareScans/read",
+    "description": "Gets or lists on-demand malware scans for the storage account"
+  },
+  {
     "action": "Microsoft.Security/defenderforstoragesettings/read",
     "description": "Gets the defenderforstoragesettings for the scope"
+  },
+  {
+    "action": "Microsoft.Security/defenderforstoragesettings/startMalwareScan/action",
+    "description": "Starts an on-demand malware scan for the storage account"
   },
   {
     "action": "Microsoft.Security/defenderforstoragesettings/write",

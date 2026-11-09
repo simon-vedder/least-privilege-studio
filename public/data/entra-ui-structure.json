@@ -3898,6 +3898,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "microsoft.directory/agentIdentityBlueprints/idJagConfiguration/update",
+                    "type": "action"
+                  },
+                  {
                     "action": "microsoft.directory/agentIdentityBlueprints/owners/update",
                     "type": "action"
                   },
@@ -3927,7 +3931,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 15,
+            "totalOps": 16,
             "priority": 999
           },
           {
@@ -4035,7 +4039,7 @@
       }
     ],
     "totalTypes": 4,
-    "totalOps": 61
+    "totalOps": 62
   },
   {
     "name": "External Identities",

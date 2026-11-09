@@ -3569,12 +3569,13 @@
     "id": "12675fd7-7f59-493f-9201-f7944860a2f1",
     "description": "Azure Device Registry Administrator",
     "actions": [
-      "Microsoft.DeviceRegistry/*"
+      "Microsoft.DeviceRegistry/*",
+      "Microsoft.DeviceUpdate/updateInstances/*"
     ],
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 30
+    "_estimatedActions": 60
   },
   {
     "name": "Azure Device Registry Contributor",
@@ -3582,10 +3583,26 @@
     "description": "Allows for full access to IoT devices within Azure Device Registry Namespace.",
     "actions": [
       "microsoft.deviceregistry/namespaces/read",
+      "microsoft.deviceregistry/namespaces/write",
+      "microsoft.deviceregistry/namespaces/migrate/action",
+      "microsoft.deviceregistry/namespaces/generateReport/action",
+      "microsoft.deviceregistry/namespaces/getLatestReport/action",
+      "microsoft.deviceregistry/assets/*",
+      "microsoft.deviceregistry/assetendpointprofiles/*",
+      "microsoft.deviceregistry/schemaRegistries/*",
       "microsoft.deviceregistry/namespaces/devices/*",
       "microsoft.deviceregistry/namespaces/discovereddevices/*",
+      "microsoft.deviceregistry/namespaces/assets/*",
+      "microsoft.deviceregistry/namespaces/discoveredAssets/*",
+      "microsoft.deviceregistry/namespaces/groups/*",
+      "microsoft.deviceregistry/namespaces/jobs/*",
+      "microsoft.deviceregistry/namespaces/jobRuns/*",
+      "microsoft.deviceregistry/namespaces/registryDevices/*",
       "microsoft.deviceregistry/namespaces/credentials/read",
       "microsoft.deviceregistry/namespaces/credentials/policies/read",
+      "microsoft.deviceregistry/namespaces/certificateAuthorities/read",
+      "microsoft.deviceregistry/namespaces/certificateAuthorities/certificatePolicies/read",
+      "microsoft.deviceupdate/updateinstances/read",
       "microsoft.devices/iothubs/certificates/*",
       "microsoft.devices/iothubs/read"
     ],
@@ -3595,7 +3612,7 @@
       "microsoft.devices/iothubs/devices/*"
     ],
     "notDataActions": [],
-    "_estimatedActions": 94
+    "_estimatedActions": 371
   },
   {
     "name": "Azure Device Registry Credentials Contributor",
@@ -5536,6 +5553,7 @@
       "Microsoft.Insights/alertRules/*",
       "Microsoft.Migrate/*/read",
       "Microsoft.Migrate/migrateProjects/taskSummary/action",
+      "Microsoft.Migrate/migrateProjects/runbooks/*",
       "Microsoft.ApplicationMigration/*/read",
       "Microsoft.OffAzure/*/read",
       "Microsoft.MySQLDiscovery/*/read",
@@ -5578,7 +5596,7 @@
     ],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 243
+    "_estimatedActions": 273
   },
   {
     "name": "Azure Migrate Owner",
@@ -5610,6 +5628,9 @@
       "Microsoft.HybridCompute/machines/write",
       "Microsoft.HybridCompute/machines/delete",
       "Microsoft.HybridCompute/register/action",
+      "Microsoft.HybridCompute/machines/extensions/read",
+      "Microsoft.HybridCompute/machines/extensions/write",
+      "Microsoft.HybridCompute/machines/extensions/delete",
       "Microsoft.Network/networkInterfaces/read",
       "Microsoft.Network/networkInterfaces/write",
       "Microsoft.Network/networkInterfaces/delete",
@@ -5657,7 +5678,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 405
+    "_estimatedActions": 408
   },
   {
     "name": "Azure Migrate Service Reader",
@@ -7629,7 +7650,10 @@
       "Microsoft.HybridCompute/gateways/write",
       "Microsoft.HybridCompute/gateways/delete"
     ],
-    "notActions": [],
+    "notActions": [
+      "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForAdmin/action",
+      "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForContributor/action"
+    ],
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 286
@@ -7695,7 +7719,10 @@
       "Microsoft.ExtendedLocation/customLocations/write",
       "Microsoft.ExtendedLocation/customLocations/delete"
     ],
-    "notActions": [],
+    "notActions": [
+      "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForAdmin/action",
+      "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForContributor/action"
+    ],
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 113
@@ -7727,7 +7754,10 @@
       "Microsoft.Resources/subscriptions/resourcegroups/deployments/operations/read",
       "Microsoft.Resources/subscriptions/resourcegroups/deployments/operationstatuses/read"
     ],
-    "notActions": [],
+    "notActions": [
+      "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForAdmin/action",
+      "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForContributor/action"
+    ],
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 68
@@ -8994,6 +9024,115 @@
     "notActions": [],
     "dataActions": [
       "Microsoft.HealthBot/healthBots/AIActions/ClinicalCoder/Process/Action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Data Owner",
+    "id": "bdbf2dae-53ba-4c03-8ce9-94534a11a9b3",
+    "description": "Read and manage Cloud Device Platform data for partner businesses only. Does not grant sandbox access, ARM management, or role-assignment permissions.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addDevices/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addUserAssignments/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/appDiscovery/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/assignUsers/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkinCloudDevice/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkoutCloudDevice/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteApp/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteDevices/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/device/signal/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/attach/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkDelete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkUpdate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/deleteSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/detach/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/importFromSasUrl/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/notifyUsage/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/restoreSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/sas/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/takeSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/update/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/putApp/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUserAssignments/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUsers/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/resumeProvisioning/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateCollectionMetadata/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateDeviceSpecification/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/validateApp/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/write",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/archive/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/block/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/collectDiagnostics/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deallocate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/delete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deleteSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/diagnoseAndRepair/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failback/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failover/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/hibernate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/reset/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/restart/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/sasUri/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/startSession/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/takeSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/unblock/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/update/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/userAssignment/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/delete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/update/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/images/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/images/write",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetwork/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetworkSetting/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/deleteNetwork/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetwork/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetworkSetting/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/write",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/write",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/write",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/delete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/update/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/write"
     ],
     "notDataActions": [],
     "_estimatedActions": 0
@@ -13234,6 +13373,34 @@
     "_estimatedActions": 17
   },
   {
+    "name": "DiskSnapshotImmutabilityAdmin Service Role",
+    "id": "541b4c51-7349-4db1-b5af-298b9f20dd79",
+    "description": "Can set a new locked immutability policy and modify (extend) it. Cannot change ImmutabilityPolicyType from locked to unlocked for an active immutable policy, and cannot reduce the ImmutabilityPolicyDurationDays for a locked immutability policy.",
+    "actions": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/snapshots/read",
+      "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 3
+  },
+  {
+    "name": "DiskSnapshotImmutabilityOperator Service Role",
+    "id": "5cf89f2f-ccaa-445e-84aa-48d3e203ddf9",
+    "description": "Can set an ImmutabilityPolicyType: unlocked on a snapshot and can modify the unlocked immutability policy (extend, reduce or remove). Cannot set or modify a locked immutability policy.",
+    "actions": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/snapshots/read",
+      "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 3
+  },
+  {
     "name": "DNS Resolver Contributor",
     "id": "0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d",
     "description": "Lets you manage DNS resolver resources.",
@@ -14386,6 +14553,7 @@
       "Microsoft.Insights/logDefinitions/read",
       "Microsoft.Insights/metricdefinitions/read",
       "Microsoft.Insights/metrics/read",
+      "Microsoft.PolicyInsights/*/read",
       "Microsoft.ResourceHealth/availabilityStatuses/read",
       "Microsoft.Resources/deployments/*",
       "Microsoft.Resources/deployments/operations/read",
@@ -14398,7 +14566,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 203
+    "_estimatedActions": 213
   },
   {
     "name": "Foundry Agent Consumer",
@@ -14429,6 +14597,7 @@
       "Microsoft.Insights/activityLogAlerts/*",
       "Microsoft.Insights/metricalerts/*",
       "Microsoft.Insights/scheduledqueryrules/*",
+      "Microsoft.PolicyInsights/*/read",
       "Microsoft.ResourceHealth/availabilityStatuses/read",
       "Microsoft.Resources/deployments/*",
       "Microsoft.Resources/deployments/operations/read",
@@ -14445,7 +14614,7 @@
     "notDataActions": [
       "Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action"
     ],
-    "_estimatedActions": 377
+    "_estimatedActions": 387
   },
   {
     "name": "Foundry Project Manager",
@@ -14459,6 +14628,7 @@
       "Microsoft.CognitiveServices/locations/*/read",
       "Microsoft.Authorization/*/read",
       "Microsoft.Insights/alertRules/*",
+      "Microsoft.PolicyInsights/*/read",
       "Microsoft.Resources/deployments/*",
       "Microsoft.Resources/subscriptions/resourceGroups/read"
     ],
@@ -14471,7 +14641,7 @@
       "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
       "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
     ],
-    "_estimatedActions": 123
+    "_estimatedActions": 133
   },
   {
     "name": "Foundry Project Runtime User",
@@ -14499,6 +14669,7 @@
       "Microsoft.Insights/logDefinitions/read",
       "Microsoft.Insights/metricdefinitions/read",
       "Microsoft.Insights/metrics/read",
+      "Microsoft.PolicyInsights/*/read",
       "Microsoft.ResourceHealth/availabilityStatuses/read",
       "Microsoft.Resources/deployments/*",
       "Microsoft.Resources/subscriptions/operationresults/read",
@@ -14515,7 +14686,7 @@
       "Microsoft.CognitiveServices/accounts/OpenAI/fine-tunes-deployments/write",
       "Microsoft.CognitiveServices/accounts/AIServices/fine_tuning_deployments/write"
     ],
-    "_estimatedActions": 91
+    "_estimatedActions": 101
   },
   {
     "name": "Garnet Data Contributor",
@@ -19203,7 +19374,8 @@
       "Microsoft.AzureStackHCI/edgeMachines/*"
     ],
     "notActions": [
-      "Microsoft.AzureStackHCI/edgeMachines/delete"
+      "Microsoft.AzureStackHCI/edgeMachines/delete",
+      "Microsoft.AzureStackHCI/EdgeMachines/issueSshCertificateForAdmin/action"
     ],
     "dataActions": [],
     "notDataActions": [],
@@ -20874,6 +21046,33 @@
     ],
     "notDataActions": [],
     "_estimatedActions": 12
+  },
+  {
+    "name": "SRE Agent Session Contributor",
+    "id": "c2ad708c-75ea-4e88-b37d-a2b8729db02e",
+    "description": "Manage Agent Session resources without granting access to unrelated Microsoft.App resources.",
+    "actions": [
+      "Microsoft.App/agentSessions/read",
+      "Microsoft.App/agentSessions/write",
+      "Microsoft.App/agentSessions/delete",
+      "Microsoft.App/agentSessions/provision/action"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 4
+  },
+  {
+    "name": "SRE Agent Session Reader",
+    "id": "577a432e-a42b-4308-bc40-6ea45e32bdf4",
+    "description": "View Agent Session resources without changing their configuration or lifecycle.",
+    "actions": [
+      "Microsoft.App/agentSessions/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 1
   },
   {
     "name": "SRE Agent Standard User",

@@ -6858,6 +6858,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Network/virtualNetworks/getAdminNsgInfo/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Network/virtualNetworks/join/action",
                     "type": "action"
                   },
@@ -6940,12 +6944,16 @@
                   {
                     "action": "Microsoft.Network/virtualNetworks/taggedTrafficConsumers/validate/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Network/virtualNetworks/updateAdminNsgReference/action",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 59,
+            "totalOps": 61,
             "priority": 1
           },
           {
@@ -14487,7 +14495,7 @@
       }
     ],
     "totalTypes": 150,
-    "totalOps": 1538
+    "totalOps": 1540
   },
   {
     "name": "Storage",
@@ -17331,6 +17339,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Cache/redisEnterprise/databases/read",
                     "type": "action"
                   },
@@ -17361,6 +17373,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Cache/redisEnterprise/databases/write",
                     "type": "action"
                   },
@@ -17386,6 +17402,10 @@
               {
                 "label": "Delete",
                 "ops": [
+                  {
+                    "action": "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments/delete",
+                    "type": "action"
+                  },
                   {
                     "action": "Microsoft.Cache/redisEnterprise/databases/delete",
                     "type": "action"
@@ -17460,7 +17480,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 27,
+            "totalOps": 30,
             "priority": 999
           }
         ]
@@ -22717,7 +22737,7 @@
       }
     ],
     "totalTypes": 32,
-    "totalOps": 1165
+    "totalOps": 1168
   },
   {
     "name": "Web + Serverless",
@@ -24833,6 +24853,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnections/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ApiManagement/aigateways/privateLinkResources/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ApiManagement/aigateways/read",
                     "type": "action"
                   },
@@ -24876,6 +24904,10 @@
                   },
                   {
                     "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnectionProxies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnections/write",
                     "type": "action"
                   },
                   {
@@ -24925,6 +24957,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.ApiManagement/aigateways/privateEndpointConnections/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ApiManagement/aigateways/workspaces/aliases/delete",
                     "type": "action"
                   },
@@ -24971,6 +25007,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.ApiManagement/aigateways/models/embeddings/action",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.ApiManagement/aigateways/models/list/action",
                     "type": "dataAction"
                   },
@@ -24998,7 +25038,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 38,
+            "totalOps": 43,
             "priority": 999
           },
           {
@@ -31826,7 +31866,7 @@
       }
     ],
     "totalTypes": 73,
-    "totalOps": 1799
+    "totalOps": 1804
   },
   {
     "name": "Containers",
@@ -42445,6 +42485,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.Security/defenderforstoragesettings/malwareScans/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Security/defenderforstoragesettings/read",
                     "type": "action"
                   }
@@ -42470,9 +42514,23 @@
                   }
                 ],
                 "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.Security/defenderforstoragesettings/malwareScans/cancelMalwareScan/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Security/defenderforstoragesettings/startMalwareScan/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
               }
             ],
-            "totalOps": 3,
+            "totalOps": 6,
             "priority": 999
           },
           {
@@ -45342,7 +45400,7 @@
       }
     ],
     "totalTypes": 106,
-    "totalOps": 469
+    "totalOps": 472
   },
   {
     "name": "Identity",
@@ -60532,6 +60590,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/EdgeSecurityEvents/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/EGNFailedHttpDataPlaneOperations/read",
                     "type": "action"
                   },
@@ -61381,6 +61443,10 @@
                   },
                   {
                     "action": "Microsoft.OperationalInsights/workspaces/query/OAuthAppInfo/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/ODSPFiles/read",
                     "type": "action"
                   },
                   {
@@ -62597,7 +62663,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1039,
+            "totalOps": 1041,
             "priority": 1
           },
           {
@@ -62742,7 +62808,7 @@
       }
     ],
     "totalTypes": 64,
-    "totalOps": 1633
+    "totalOps": 1635
   },
   {
     "name": "Management + Governance",
@@ -70187,6 +70253,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Logic/workflows/drafts/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Logic/workflows/read",
                     "type": "action"
                   },
@@ -70237,6 +70307,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Logic/workflows/drafts/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Logic/workflows/write",
                     "type": "action"
                   }
@@ -70278,6 +70352,10 @@
                   },
                   {
                     "action": "Microsoft.Logic/workflows/disable/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Logic/workflows/drafts/run/action",
                     "type": "action"
                   },
                   {
@@ -70356,7 +70434,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 39,
+            "totalOps": 42,
             "priority": 1
           },
           {
@@ -71844,7 +71922,7 @@
       }
     ],
     "totalTypes": 40,
-    "totalOps": 719
+    "totalOps": 722
   },
   {
     "name": "Analytics",
@@ -91669,12 +91747,16 @@
                   {
                     "action": "Microsoft.BillingBenefits/discounts/cancel/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.BillingBenefits/discounts/downloadApplicableSkus/action",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 4,
+            "totalOps": 5,
             "priority": 999
           },
           {
@@ -93879,6 +93961,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/artifacts/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/images/read",
                     "type": "dataAction"
                   },
@@ -93899,6 +93985,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/sessions/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/read",
                     "type": "dataAction"
                   },
@@ -93913,6 +94003,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/artifacts/write",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/images/write",
                     "type": "dataAction"
                   },
@@ -93926,6 +94020,10 @@
                   },
                   {
                     "action": "Microsoft.CloudDevicePlatform/sandboxPartners/sandboxes/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CloudDevicePlatform/sandboxPartners/sessions/write",
                     "type": "dataAction"
                   },
                   {
@@ -93954,7 +94052,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 15,
+            "totalOps": 19,
             "priority": 999
           }
         ]
@@ -104820,293 +104918,6 @@
         ]
       },
       {
-        "namespace": "Microsoft.HealthcareInterop",
-        "displayName": "HealthcareInterop",
-        "types": [
-          {
-            "key": "internalCloudEndpoints",
-            "name": "internal Cloud Endpoints",
-            "provider": "Microsoft.HealthcareInterop",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/data/read",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": true
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/data/write",
-                    "type": "dataAction"
-                  },
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": true
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalCloudEndpoints/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 5,
-            "priority": 999
-          },
-          {
-            "key": "internalDicomConnectors",
-            "name": "internal Dicom Connectors",
-            "provider": "Microsoft.HealthcareInterop",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalDicomConnectors/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
-            "key": "internalDicomEdgeConnectors",
-            "name": "internal Dicom Edge Connectors",
-            "provider": "Microsoft.HealthcareInterop",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalDicomEdgeConnectors/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
-            "key": "internalHl7Connectors",
-            "name": "internal Hl7Connectors",
-            "provider": "Microsoft.HealthcareInterop",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7Connectors/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
-            "key": "internalHl7EdgeConnectors",
-            "name": "internal Hl7Edge Connectors",
-            "provider": "Microsoft.HealthcareInterop",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7EdgeConnectors/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
-            "key": "internalHl7InboundChannels",
-            "name": "internal Hl7Inbound Channels",
-            "provider": "Microsoft.HealthcareInterop",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7InboundChannels/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          },
-          {
-            "key": "internalHl7OutboundChannels",
-            "name": "internal Hl7Outbound Channels",
-            "provider": "Microsoft.HealthcareInterop",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Write",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/write",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              },
-              {
-                "label": "Delete",
-                "ops": [
-                  {
-                    "action": "Microsoft.HealthcareInterop/internalHl7OutboundChannels/delete",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 3,
-            "priority": 999
-          }
-        ]
-      },
-      {
         "namespace": "Microsoft.HealthDataAIServices",
         "displayName": "HealthDataAIServices",
         "types": [
@@ -105519,6 +105330,25 @@
               }
             ],
             "totalOps": 9,
+            "priority": 999
+          },
+          {
+            "key": "providerPermissions",
+            "name": "provider Permissions",
+            "provider": "Microsoft.HybridConnectivity",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.HybridConnectivity/providerPermissions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
             "priority": 999
           },
           {
@@ -106171,6 +106001,163 @@
         ]
       },
       {
+        "namespace": "Microsoft.InfinityDB",
+        "displayName": "InfinityDB",
+        "types": [
+          {
+            "key": "accounts",
+            "name": "accounts",
+            "provider": "Microsoft.InfinityDB",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/databases/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrations/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrationTypes/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/presets/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/presetTypes/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/databases/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrations/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrationTypes/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/presets/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/presetTypes/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/databases/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrations/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrationTypes/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/presets/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/presetTypes/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/databases/listCredentials/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/databases/updatePrimaryRegion/action",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 20,
+            "priority": 999
+          },
+          {
+            "key": "providerPermissions",
+            "name": "provider Permissions",
+            "provider": "Microsoft.InfinityDB",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.InfinityDB/providerPermissions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
+            "key": "regions",
+            "name": "regions",
+            "provider": "Microsoft.InfinityDB",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.InfinityDB/regions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          }
+        ]
+      },
+      {
         "namespace": "Informatica.DataManagement",
         "displayName": "Informatica.DataManagement",
         "types": [
@@ -106804,6 +106791,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.IoTOperations/instances/mcpGateways/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.IoTOperations/instances/mcpServerConnections/read",
                     "type": "action"
                   },
@@ -106899,6 +106890,10 @@
                   },
                   {
                     "action": "Microsoft.IoTOperations/instances/mcpAuthorizationPolicies/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.IoTOperations/instances/mcpGateways/write",
                     "type": "action"
                   },
                   {
@@ -107004,6 +106999,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.IoTOperations/instances/mcpGateways/delete",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.IoTOperations/instances/mcpServerConnections/delete",
                     "type": "action"
                   },
@@ -107015,7 +107014,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 69,
+            "totalOps": 72,
             "priority": 999
           }
         ]
@@ -120959,7 +120958,7 @@
         ]
       }
     ],
-    "totalTypes": 739,
-    "totalOps": 4815
+    "totalTypes": 736,
+    "totalOps": 4823
   }
 ]

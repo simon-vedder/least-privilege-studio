@@ -256,6 +256,10 @@
     "description": "Delete agent identity blueprints"
   },
   {
+    "action": "microsoft.directory/agentIdentityBlueprints/idJagConfiguration/update",
+    "description": "Update the ID-JAG outbound configuration of agent identity blueprints"
+  },
+  {
     "action": "microsoft.directory/agentIdentityBlueprints/owners/update",
     "description": "Update owners on agent identity blueprints"
   },
