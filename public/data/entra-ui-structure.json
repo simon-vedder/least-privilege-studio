@@ -1604,6 +1604,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "microsoft.directory/applications/sponsors/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "microsoft.directory/applications/standard/limitedRead",
                     "type": "action"
                   },
@@ -1729,7 +1733,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 32,
+            "totalOps": 33,
             "priority": 1
           },
           {
@@ -2555,7 +2559,7 @@
       }
     ],
     "totalTypes": 12,
-    "totalOps": 167
+    "totalOps": 168
   },
   {
     "name": "Devices",
@@ -5507,6 +5511,87 @@
             "priority": 999
           },
           {
+            "key": "resourcePolicy",
+            "name": "Resource Policy",
+            "provider": "microsoft.directory",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/resourcePolicy/assignments/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/configuration/standard/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/definitions/standard/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/resourcePolicy/assignments/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/assignments/create",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/configuration/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/definitions/basic/update",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/definitions/create",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/resourcePolicy/assignments/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/definitions/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Action",
+                "ops": [
+                  {
+                    "action": "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+                    "type": "action"
+                  },
+                  {
+                    "action": "microsoft.directory/resourcePolicy/evaluatePolicy",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 12,
+            "priority": 999
+          },
+          {
             "key": "serviceAction",
             "name": "Service Action",
             "provider": "microsoft.directory",
@@ -5548,7 +5633,7 @@
         ]
       }
     ],
-    "totalTypes": 3,
-    "totalOps": 10
+    "totalTypes": 4,
+    "totalOps": 22
   }
 ]

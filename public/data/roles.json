@@ -5583,6 +5583,7 @@
       "Microsoft.Resources/links/read",
       "Microsoft.DependencyMap/*/read",
       "Microsoft.DependencyMap/maps/*/action",
+      "Microsoft.OffAzure/MasterSites/executionAgents/execute/action",
       "Microsoft.Authorization/roleAssignments/write",
       "Microsoft.Authorization/roleAssignments/delete"
     ],
@@ -5596,7 +5597,7 @@
     ],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 273
+    "_estimatedActions": 274
   },
   {
     "name": "Azure Migrate Owner",
@@ -8206,6 +8207,7 @@
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/action",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/listInstantItemRecoveryOperationResult/action",
       "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/accessToken/action",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/restore/action",
@@ -8301,7 +8303,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 312
+    "_estimatedActions": 313
   },
   {
     "name": "Backup Reader",
@@ -8340,7 +8342,8 @@
       "Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/items/read",
       "Microsoft.RecoveryServices/locations/backupStatus/action",
-      "Microsoft.RecoveryServices/Vaults/monitoringConfigurations/*",
+      "Microsoft.RecoveryServices/Vaults/monitoringConfigurations/read",
+      "Microsoft.RecoveryServices/Vaults/monitoringConfigurations/write",
       "Microsoft.RecoveryServices/Vaults/monitoringAlerts/write",
       "Microsoft.RecoveryServices/operations/read",
       "Microsoft.RecoveryServices/locations/operationStatus/read",
@@ -8374,7 +8377,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 100
+    "_estimatedActions": 72
   },
   {
     "name": "Bayer Ag Powered Services Crop Id Solution User Role",
@@ -8727,7 +8730,8 @@
     "actions": [
       "Microsoft.KubernetesConfiguration/extensions/read",
       "Microsoft.ContainerService/managedClusters/read",
-      "Microsoft.ContainerService/deploymentSafeguards/read"
+      "Microsoft.ContainerService/deploymentSafeguards/read",
+      "Microsoft.Authorization/*/read"
     ],
     "notActions": [],
     "dataActions": [
@@ -8735,7 +8739,7 @@
       "Microsoft.ContainerService/managedClusters/pods/read"
     ],
     "notDataActions": [],
-    "_estimatedActions": 3
+    "_estimatedActions": 13
   },
   {
     "name": "Chaos Permissions Admin",
@@ -9029,6 +9033,85 @@
     "_estimatedActions": 0
   },
   {
+    "name": "Cloud Device Platform Collection Administrator",
+    "id": "ae722ee4-7a39-46d9-9a1c-b86ea7be8370",
+    "description": "Read and manage Cloud Device Platform collections, including profiles, applications, assignments, device specifications, snapshots, and profile snapshot SAS export for a partner business.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addDevices/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addUserAssignments/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/appDiscovery/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/assignUsers/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkinCloudDevice/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkoutCloudDevice/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteApp/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteDevices/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/device/signal/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/attach/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkDelete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkUpdate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/deleteSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/detach/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/importFromSasUrl/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/notifyUsage/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/restoreSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/sas/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/takeSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/update/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/putApp/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUserAssignments/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUsers/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/resumeProvisioning/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateCollectionMetadata/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateDeviceSpecification/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/validateApp/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/write"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Collection Reader",
+    "id": "758445d3-c703-4baf-9829-c395279585e0",
+    "description": "Read Cloud Device Platform collection, application, user assignment, device, autoscale, profile, and snapshot metadata and status for a partner business. Excludes profile snapshot SAS export.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "Cloud Device Platform Data Owner",
     "id": "bdbf2dae-53ba-4c03-8ce9-94534a11a9b3",
     "description": "Read and manage Cloud Device Platform data for partner businesses only. Does not grant sandbox access, ARM management, or role-assignment permissions.",
@@ -9138,6 +9221,158 @@
     "_estimatedActions": 0
   },
   {
+    "name": "Cloud Device Platform Data Reader",
+    "id": "2f626d6a-86af-49fb-9414-13a48f86f2d8",
+    "description": "Read Cloud Device Platform data and query device metrics for partner businesses only, excluding snapshot SAS export. Does not grant sandbox access, ARM management, or role-assignment permissions.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Device Administrator",
+    "id": "8588d517-7712-4254-9c6e-00ad445bcd9e",
+    "description": "Read and manage Cloud Device Platform devices, including lifecycle, user assignment, recovery, sessions, diagnostics, snapshots, and snapshot SAS export for a partner business.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/archive/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/block/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/collectDiagnostics/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/create/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deallocate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/delete/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deleteSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/diagnoseAndRepair/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failback/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failover/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/hibernate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/reset/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/restart/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/sasUri/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/startSession/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/takeSnapshot/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/unblock/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/update/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/userAssignment/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Device Operator",
+    "id": "78a66f20-a3c2-48fa-bf39-a4666b380a23",
+    "description": "Read Cloud Device Platform devices and operation status, query metrics, and start, restart, deallocate, or hibernate devices for a partner business. Excludes snapshot SAS export and other device mutations.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deallocate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/hibernate/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/restart/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Device Reader",
+    "id": "295b45b9-e45c-481c-a0a0-738dae8739ff",
+    "description": "Read Cloud Device Platform device metadata, operation status, and snapshot metadata, and query device metrics for a partner business. Excludes snapshot SAS export.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Device Start Operator",
+    "id": "1913c0ee-e341-4626-b2ee-ad4101335253",
+    "description": "Read Cloud Device Platform devices and operation status, and start devices for a partner business. Intended for Scalar wake-on-connect.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Network Administrator",
+    "id": "7c60305f-1499-4fb6-b422-29b183bf3276",
+    "description": "Read and manage Cloud Device Platform networks and network settings, including network operation status, for a partner business.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetwork/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetworkSetting/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/delete",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/deleteNetwork/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetwork/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetworkSetting/action",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/write"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Network Reader",
+    "id": "1b117211-bc97-42f5-a429-ab44eb05af98",
+    "description": "Read Cloud Device Platform network metadata and network operation status for a partner business.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "Cloud Device Platform Sandbox Partner Data Contributor",
     "id": "1a22653f-3441-4c27-8f4a-ba9f93b30e5d",
     "description": "Read and manage resources for Cloud Device Platform sandbox partners.",
@@ -9154,6 +9389,21 @@
       "Microsoft.CloudDevicePlatform/sandboxPartners/images/write",
       "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/read",
       "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/write"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "Cloud Device Platform Snapshot Exporter",
+    "id": "ee7fb110-4b69-462a-8965-b4088372ebf1",
+    "description": "Read device and collection profile snapshot metadata and request snapshot SAS export credentials for a Cloud Device Platform partner business. Does not grant snapshot creation, deletion, or restore.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/sas/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+      "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/sasUri/read"
     ],
     "notDataActions": [],
     "_estimatedActions": 0
@@ -13373,9 +13623,9 @@
     "_estimatedActions": 17
   },
   {
-    "name": "DiskSnapshotImmutabilityAdmin Service Role",
+    "name": "Disk Snapshot Immutability Admin",
     "id": "541b4c51-7349-4db1-b5af-298b9f20dd79",
-    "description": "Can set a new locked immutability policy and modify (extend) it. Cannot change ImmutabilityPolicyType from locked to unlocked for an active immutable policy, and cannot reduce the ImmutabilityPolicyDurationDays for a locked immutability policy.",
+    "description": "Create and manage unlocked snapshot immutability policies, and create or extend locked policies. Cannot unlock, shorten, or expire an active locked policy. This role is in preview and subject to change.",
     "actions": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Compute/snapshots/read",
@@ -13387,9 +13637,9 @@
     "_estimatedActions": 3
   },
   {
-    "name": "DiskSnapshotImmutabilityOperator Service Role",
+    "name": "Disk Snapshot Immutability Operator",
     "id": "5cf89f2f-ccaa-445e-84aa-48d3e203ddf9",
-    "description": "Can set an ImmutabilityPolicyType: unlocked on a snapshot and can modify the unlocked immutability policy (extend, reduce or remove). Cannot set or modify a locked immutability policy.",
+    "description": "Create, extend, shorten, or expire unlocked snapshot immutability policies. Cannot lock policies or modify active locked policies. This role is in preview and subject to change.",
     "actions": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.Compute/snapshots/read",
@@ -14516,6 +14766,19 @@
     "dataActions": [],
     "notDataActions": [],
     "_estimatedActions": 42
+  },
+  {
+    "name": "Flex Plan Reader",
+    "id": "c4219913-25aa-4d66-abc5-a43bed31bea8",
+    "description": "View all Azure Billing Benefit Flex Plan resources, but does not allow you to make any changes.",
+    "actions": [
+      "Microsoft.BillingBenefits/flexPlans/read",
+      "Microsoft.BillingBenefits/flexPlans/terms/read"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 2
   },
   {
     "name": "Flux Configurations Contributor",
@@ -17160,6 +17423,7 @@
     ],
     "notActions": [
       "Microsoft.Web/sites/hostruntime/host/_master/read",
+      "Microsoft.Web/sites/hostruntime/host/_master/*",
       "Microsoft.Web/sites/hostruntime/host/action"
     ],
     "dataActions": [],
@@ -18951,6 +19215,66 @@
     "_estimatedActions": 2
   },
   {
+    "name": "PostgreSQL Database Agent Administrator",
+    "id": "a715612b-6d9c-4e9e-852d-50deb47ab794",
+    "description": "Includes PostgreSQL Database Agent Contributor permissions plus server mitigation approval and client-execution start and result reporting.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/diagnosticData/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/write",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/write",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/delete",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/execute/action",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/mitigations/database/approve/action",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/investigations/forceResolve/action",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/mitigations/server/approve/action",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/clientExecutions/start/action",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/clientExecutions/results/write"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "PostgreSQL Database Agent Contributor",
+    "id": "f86e2d45-38c4-4c0b-91d2-6cd8bc090016",
+    "description": "Read PostgreSQL Database Agent diagnostics, manage issue lifecycle and custom instructions, execute tasks, approve database mitigations, and force-resolve investigations.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/diagnosticData/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/write",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/write",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/delete",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/execute/action",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/mitigations/database/approve/action",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/investigations/forceResolve/action"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
+    "name": "PostgreSQL Database Agent Reader",
+    "id": "86e02ec6-3f26-4bb9-be64-e8836fb6cb90",
+    "description": "Read PostgreSQL Database Agent issue summaries and details, diagnostic data, custom instructions, server overview, and task descriptors.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/issues/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/tasks/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/diagnosticData/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/dbAgent/instructions/read"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
+  },
+  {
     "name": "PostgreSQL Flexible Server Long Term Retention Backup Role",
     "id": "c088a766-074b-43ba-90d4-1fb21feae531",
     "description": "Role to allow backup vault to access PostgreSQL Flexible Server Resource APIs for Long Term Retention Backup.",
@@ -20086,6 +20410,7 @@
     "actions": [
       "Microsoft.Security/serviceEntitlements/read",
       "Microsoft.Security/serviceEntitlements/write",
+      "Microsoft.Security/serviceEntitlements/delete",
       "Microsoft.Security/serviceEntitlementSettings/read",
       "Microsoft.Security/serviceEntitlementSettings/write",
       "Microsoft.Security/serviceEntitlementSettings/delete"
@@ -20093,7 +20418,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 5
+    "_estimatedActions": 6
   },
   {
     "name": "Semantic Reranker User",
@@ -21001,10 +21326,24 @@
       "Microsoft.App/agents/*/read",
       "Microsoft.App/agents/*/write",
       "Microsoft.App/agents/*/delete",
-      "Microsoft.App/agents/threads/approve/action"
+      "Microsoft.App/agents/threads/approve/action",
+      "Microsoft.App/agents/teams/grant/action"
     ],
     "notDataActions": [],
     "_estimatedActions": 53
+  },
+  {
+    "name": "SRE Agent Agent-to-Agent Caller",
+    "id": "40c75cfd-e05f-496e-ab43-b82ca3eb3a16",
+    "description": "Discover and call SRE Agents and retrieve the caller's tasks. Does not grant conversation access, command approval, or connection management access.",
+    "actions": [],
+    "notActions": [],
+    "dataActions": [
+      "Microsoft.App/agents/a2a/read",
+      "Microsoft.App/agents/a2a/write"
+    ],
+    "notDataActions": [],
+    "_estimatedActions": 0
   },
   {
     "name": "SRE Agent Author",
@@ -21023,7 +21362,9 @@
       "Microsoft.App/agents/incidentManagement/delete",
       "Microsoft.App/agents/extendedAgents/read",
       "Microsoft.App/agents/extendedAgents/write",
-      "Microsoft.App/agents/extendedAgents/delete"
+      "Microsoft.App/agents/extendedAgents/delete",
+      "Microsoft.App/agents/a2a/read",
+      "Microsoft.App/agents/a2a/connections/read"
     ],
     "notDataActions": [],
     "_estimatedActions": 12
@@ -21042,7 +21383,9 @@
       "Microsoft.App/agents/threads/read",
       "Microsoft.App/agents/graph/read",
       "Microsoft.App/agents/memory/read",
-      "Microsoft.App/agents/incidentManagement/read"
+      "Microsoft.App/agents/incidentManagement/read",
+      "Microsoft.App/agents/a2a/read",
+      "Microsoft.App/agents/a2a/connections/read"
     ],
     "notDataActions": [],
     "_estimatedActions": 12
@@ -21095,7 +21438,9 @@
       "Microsoft.App/agents/memory/write",
       "Microsoft.App/agents/scheduledtasks/read",
       "Microsoft.App/agents/scheduledtasks/write",
-      "Microsoft.App/agents/scheduledtasks/delete"
+      "Microsoft.App/agents/scheduledtasks/delete",
+      "Microsoft.App/agents/a2a/read",
+      "Microsoft.App/agents/a2a/connections/read"
     ],
     "notDataActions": [],
     "_estimatedActions": 12

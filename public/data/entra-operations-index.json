@@ -560,6 +560,10 @@
     "description": "Restore applications"
   },
   {
+    "action": "microsoft.directory/applications/sponsors/read",
+    "description": "Read sponsors of applications"
+  },
+  {
     "action": "microsoft.directory/applications/standard/limitedRead",
     "description": "Read standard properties of a specific application, but cannot enumerate applications"
   },
@@ -2022,6 +2026,54 @@
   {
     "action": "microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update",
     "description": "Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions"
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/assignments/basic/update",
+    "description": "Update resource policy assignments basic properties."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/assignments/create",
+    "description": "Create resource policy assignments."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/assignments/delete",
+    "description": "Delete resource policy assignments."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/assignments/standard/read",
+    "description": "Read resource policy assignments standard properties."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/configuration/basic/update",
+    "description": "Update basic properties of the tenant-wide resource policy configuration, such as the privileged-read app ID."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/configuration/standard/read",
+    "description": "Read standard properties of the tenant-wide resource policy configuration, such as the privileged-read app ID."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/definitions/basic/update",
+    "description": "Update resource policy definitions basic properties."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/definitions/create",
+    "description": "Create resource policy definitions."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/definitions/delete",
+    "description": "Delete resource policy definitions."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/definitions/standard/read",
+    "description": "Read resource policy definitions standard properties."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+    "description": "Evaluate all policies assigned to a resource."
+  },
+  {
+    "action": "microsoft.directory/resourcePolicy/evaluatePolicy",
+    "description": "Evaluate a specific resource policy against a supplied resource."
   },
   {
     "action": "microsoft.directory/roleAssignments/allProperties/allTasks",

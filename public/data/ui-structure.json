@@ -3408,6 +3408,81 @@
             ],
             "totalOps": 4,
             "priority": 999
+          },
+          {
+            "key": "workloadSpaces",
+            "name": "workload Spaces",
+            "provider": "Microsoft.Compute",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/capabilities/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/runtimeBindings/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/runtimeLinks/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/capabilities/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/runtimeBindings/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/runtimeLinks/write",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/capabilities/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/runtimeBindings/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Compute/workloadSpaces/runtimeLinks/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 12,
+            "priority": 999
           }
         ]
       },
@@ -4126,8 +4201,8 @@
         ]
       }
     ],
-    "totalTypes": 54,
-    "totalOps": 618
+    "totalTypes": 55,
+    "totalOps": 630
   },
   {
     "name": "Networking",
@@ -6408,25 +6483,6 @@
             "priority": 999
           },
           {
-            "key": "networkRackSkus",
-            "name": "network Rack Skus",
-            "provider": "Microsoft.ManagedNetworkFabric",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.ManagedNetworkFabric/networkRackSkus/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 1,
-            "priority": 999
-          },
-          {
             "key": "networkRacks",
             "name": "network Racks",
             "provider": "Microsoft.ManagedNetworkFabric",
@@ -6858,10 +6914,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Network/virtualNetworks/getAdminNsgInfo/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Network/virtualNetworks/join/action",
                     "type": "action"
                   },
@@ -6944,16 +6996,12 @@
                   {
                     "action": "Microsoft.Network/virtualNetworks/taggedTrafficConsumers/validate/action",
                     "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Network/virtualNetworks/updateAdminNsgReference/action",
-                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 61,
+            "totalOps": 59,
             "priority": 1
           },
           {
@@ -14494,8 +14542,8 @@
         ]
       }
     ],
-    "totalTypes": 150,
-    "totalOps": 1540
+    "totalTypes": 149,
+    "totalOps": 1537
   },
   {
     "name": "Storage",
@@ -16644,10 +16692,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.StorageCache/caches/Flush/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.StorageCache/caches/pausePrimingJob/action",
                     "type": "action"
                   },
@@ -16711,7 +16755,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 25,
+            "totalOps": 24,
             "priority": 999
           },
           {
@@ -17115,7 +17159,7 @@
       }
     ],
     "totalTypes": 28,
-    "totalOps": 479
+    "totalOps": 478
   },
   {
     "name": "Databases",
@@ -19898,11 +19942,23 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/clientgetname/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/clientid/read",
                     "type": "dataAction"
                   },
                   {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/clientinfo/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/clusterinfo/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/command/read",
                     "type": "dataAction"
                   },
                   {
@@ -19915,6 +19971,10 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/exists/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/expiretime/read",
                     "type": "dataAction"
                   },
                   {
@@ -20006,11 +20066,23 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/myid/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/nodes/read",
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/pexpiretime/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/ping/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/pttl/read",
                     "type": "dataAction"
                   },
                   {
@@ -20023,6 +20095,10 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/sdiff/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/shards/read",
                     "type": "dataAction"
                   },
                   {
@@ -20067,6 +20143,14 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/sunion/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/ttl/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/type/read",
                     "type": "dataAction"
                   },
                   {
@@ -20192,6 +20276,14 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/clientsetinfo/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/clientsetname/write",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/decr/write",
                     "type": "dataAction"
                   },
@@ -20248,6 +20340,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/persist/write",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/psetex/write",
                     "type": "dataAction"
                   },
@@ -20297,6 +20393,14 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/vsetattr/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/xvcreate/write",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/xvimport/write",
                     "type": "dataAction"
                   },
                   {
@@ -20350,6 +20454,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/expireat/delete",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/getdel/delete",
                     "type": "dataAction"
                   },
@@ -20371,6 +20479,14 @@
                   },
                   {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/hpexpireat/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/pexpire/delete",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/pexpireat/delete",
                     "type": "dataAction"
                   },
                   {
@@ -20423,6 +20539,10 @@
               {
                 "label": "Action",
                 "ops": [
+                  {
+                    "action": "Microsoft.DocumentDB/garnetClusters/acl/asking/action",
+                    "type": "dataAction"
+                  },
                   {
                     "action": "Microsoft.DocumentDB/garnetClusters/acl/channels/action",
                     "type": "dataAction"
@@ -20487,7 +20607,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 142,
+            "totalOps": 161,
             "priority": 999
           },
           {
@@ -22737,7 +22857,7 @@
       }
     ],
     "totalTypes": 32,
-    "totalOps": 1168
+    "totalOps": 1187
   },
   {
     "name": "Web + Serverless",
@@ -38920,6 +39040,18 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.ContainerService/fleets/listMemberCredentials/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerService/fleets/managedNamespaces/listCredentials/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.ContainerService/fleets/managedNamespaces/listMemberCredentials/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.ContainerService/fleets/members/authentication.k8s.io/userextras/impersonate/action",
                     "type": "dataAction"
                   },
@@ -39007,7 +39139,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 694,
+            "totalOps": 697,
             "priority": 999
           },
           {
@@ -40888,7 +41020,7 @@
       }
     ],
     "totalTypes": 30,
-    "totalOps": 2045
+    "totalOps": 2048
   },
   {
     "name": "Security",
@@ -46210,6 +46342,10 @@
                     "type": "dataAction"
                   },
                   {
+                    "action": "Microsoft.CognitiveServices/accounts/BatchAvatar/trialscripts/read",
+                    "type": "dataAction"
+                  },
+                  {
                     "action": "Microsoft.CognitiveServices/accounts/BatchTextToSpeech/batchsyntheses/read",
                     "type": "dataAction"
                   },
@@ -46471,6 +46607,10 @@
                   },
                   {
                     "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/projects/read",
+                    "type": "dataAction"
+                  },
+                  {
+                    "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/quota/read",
                     "type": "dataAction"
                   },
                   {
@@ -52747,7 +52887,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1673,
+            "totalOps": 1675,
             "priority": 1
           },
           {
@@ -54730,7 +54870,7 @@
       }
     ],
     "totalTypes": 19,
-    "totalOps": 2104
+    "totalOps": 2106
   },
   {
     "name": "Monitor",
@@ -61534,6 +61674,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.OperationalInsights/workspaces/query/PartnerRiskEvents/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.OperationalInsights/workspaces/query/PaymentHsmHardwareOperationAuditLogs/read",
                     "type": "action"
                   },
@@ -62663,7 +62807,7 @@
                 "hasDataActions": true
               }
             ],
-            "totalOps": 1041,
+            "totalOps": 1042,
             "priority": 1
           },
           {
@@ -62808,7 +62952,7 @@
       }
     ],
     "totalTypes": 64,
-    "totalOps": 1635
+    "totalOps": 1636
   },
   {
     "name": "Management + Governance",
@@ -70253,10 +70397,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Logic/workflows/drafts/read",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Logic/workflows/read",
                     "type": "action"
                   },
@@ -70307,10 +70447,6 @@
                     "type": "action"
                   },
                   {
-                    "action": "Microsoft.Logic/workflows/drafts/write",
-                    "type": "action"
-                  },
-                  {
                     "action": "Microsoft.Logic/workflows/write",
                     "type": "action"
                   }
@@ -70352,10 +70488,6 @@
                   },
                   {
                     "action": "Microsoft.Logic/workflows/disable/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Microsoft.Logic/workflows/drafts/run/action",
                     "type": "action"
                   },
                   {
@@ -70434,7 +70566,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 42,
+            "totalOps": 39,
             "priority": 1
           },
           {
@@ -71922,7 +72054,7 @@
       }
     ],
     "totalTypes": 40,
-    "totalOps": 722
+    "totalOps": 719
   },
   {
     "name": "Analytics",
@@ -90617,6 +90749,10 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryConfigProfiles/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/read",
                     "type": "action"
                   },
@@ -90639,6 +90775,10 @@
                 "label": "Write",
                 "ops": [
                   {
+                    "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryConfigProfiles/write",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/write",
                     "type": "action"
                   }
@@ -90650,6 +90790,10 @@
                 "ops": [
                   {
                     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/delete",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryConfigProfiles/delete",
                     "type": "action"
                   }
                 ],
@@ -90730,7 +90874,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 24,
+            "totalOps": 27,
             "priority": 999
           },
           {
@@ -92973,6 +93117,29 @@
               }
             ],
             "totalOps": 7,
+            "priority": 999
+          },
+          {
+            "key": "scenarioTemplates",
+            "name": "scenario Templates",
+            "provider": "Microsoft.Chaos",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Chaos/scenarioTemplates/read",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Chaos/scenarioTemplates/versions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 2,
             "priority": 999
           },
           {
@@ -100303,6 +100470,10 @@
                 "label": "Read",
                 "ops": [
                   {
+                    "action": "Dynatrace.Observability/monitors/migrations/read",
+                    "type": "action"
+                  },
+                  {
                     "action": "Dynatrace.Observability/monitors/monitoredSubscriptions/read",
                     "type": "action"
                   },
@@ -100357,15 +100528,7 @@
                 "label": "Action",
                 "ops": [
                   {
-                    "action": "Dynatrace.Observability/monitors/discoverMigrationResource/action",
-                    "type": "action"
-                  },
-                  {
                     "action": "Dynatrace.Observability/monitors/getMetricStatus/action",
-                    "type": "action"
-                  },
-                  {
-                    "action": "Dynatrace.Observability/monitors/getMigrationDiscoveryStatus/action",
                     "type": "action"
                   },
                   {
@@ -100402,6 +100565,10 @@
                   },
                   {
                     "action": "Dynatrace.Observability/monitors/manageSreAgentConnectors/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Dynatrace.Observability/monitors/startDiscovery/action",
                     "type": "action"
                   }
                 ],
@@ -100591,6 +100758,45 @@
         "namespace": "Microsoft.Edge",
         "displayName": "Edge",
         "types": [
+          {
+            "key": "capacityPools",
+            "name": "capacity Pools",
+            "provider": "Microsoft.Edge",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Edge/capacityPools/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Edge/capacityPools/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Edge/capacityPools/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
           {
             "key": "configTemplates",
             "name": "config Templates",
@@ -102475,6 +102681,14 @@
                     "type": "action"
                   },
                   {
+                    "action": "Microsoft.Elastic/monitors/latestLinkedSaaS/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.Elastic/monitors/linkSaaS/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.Elastic/monitors/listAllTrafficFilters/action",
                     "type": "action"
                   },
@@ -102526,7 +102740,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 29,
+            "totalOps": 31,
             "priority": 999
           },
           {
@@ -105200,6 +105414,22 @@
                 "label": "Action",
                 "ops": [
                   {
+                    "action": "Microsoft.HorizonDb/clusters/failover/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/restart/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/start/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.HorizonDb/clusters/pools/stop/action",
+                    "type": "action"
+                  },
+                  {
                     "action": "Microsoft.HorizonDb/clusters/privateEndpointConnectionProxies/validate/action",
                     "type": "action"
                   }
@@ -105207,7 +105437,7 @@
                 "hasDataActions": false
               }
             ],
-            "totalOps": 33,
+            "totalOps": 37,
             "priority": 999
           },
           {
@@ -105330,25 +105560,6 @@
               }
             ],
             "totalOps": 9,
-            "priority": 999
-          },
-          {
-            "key": "providerPermissions",
-            "name": "provider Permissions",
-            "provider": "Microsoft.HybridConnectivity",
-            "actions": [
-              {
-                "label": "Read",
-                "ops": [
-                  {
-                    "action": "Microsoft.HybridConnectivity/providerPermissions/read",
-                    "type": "action"
-                  }
-                ],
-                "hasDataActions": false
-              }
-            ],
-            "totalOps": 1,
             "priority": 999
           },
           {
@@ -106109,12 +106320,20 @@
                   {
                     "action": "Microsoft.InfinityDB/accounts/databases/updatePrimaryRegion/action",
                     "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrations/describeStream/action",
+                    "type": "action"
+                  },
+                  {
+                    "action": "Microsoft.InfinityDB/accounts/integrations/listFiles/action",
+                    "type": "action"
                   }
                 ],
                 "hasDataActions": false
               }
             ],
-            "totalOps": 20,
+            "totalOps": 22,
             "priority": 999
           },
           {
@@ -110599,6 +110818,25 @@
             "priority": 999
           },
           {
+            "key": "catalogServices",
+            "name": "catalog Services",
+            "provider": "Microsoft.Mission",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Mission/catalogServices/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          },
+          {
             "key": "communities",
             "name": "communities",
             "provider": "Microsoft.Mission",
@@ -110778,6 +111016,45 @@
               }
             ],
             "totalOps": 8,
+            "priority": 999
+          },
+          {
+            "key": "serviceCatalogs",
+            "name": "service Catalogs",
+            "provider": "Microsoft.Mission",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Mission/serviceCatalogs/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Mission/serviceCatalogs/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Mission/serviceCatalogs/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
             "priority": 999
           },
           {
@@ -111869,6 +112146,45 @@
         "namespace": "Microsoft.Nutanix",
         "displayName": "Nutanix",
         "types": [
+          {
+            "key": "Clusters",
+            "name": "Clusters",
+            "provider": "Microsoft.Nutanix",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Nutanix/Clusters/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Nutanix/Clusters/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Nutanix/Clusters/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
           {
             "key": "Interfaces",
             "name": "Interfaces",
@@ -119997,6 +120313,70 @@
         ]
       },
       {
+        "namespace": "Microsoft.Weather",
+        "displayName": "Weather",
+        "types": [
+          {
+            "key": "dataFeeds",
+            "name": "data Feeds",
+            "provider": "Microsoft.Weather",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Weather/dataFeeds/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Write",
+                "ops": [
+                  {
+                    "action": "Microsoft.Weather/dataFeeds/write",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              },
+              {
+                "label": "Delete",
+                "ops": [
+                  {
+                    "action": "Microsoft.Weather/dataFeeds/delete",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 3,
+            "priority": 999
+          },
+          {
+            "key": "providerPermissions",
+            "name": "provider Permissions",
+            "provider": "Microsoft.Weather",
+            "actions": [
+              {
+                "label": "Read",
+                "ops": [
+                  {
+                    "action": "Microsoft.Weather/providerPermissions/read",
+                    "type": "action"
+                  }
+                ],
+                "hasDataActions": false
+              }
+            ],
+            "totalOps": 1,
+            "priority": 999
+          }
+        ]
+      },
+      {
         "namespace": "Microsoft.WeightsAndBiases",
         "displayName": "WeightsAndBiases",
         "types": [
@@ -120958,7 +121338,7 @@
         ]
       }
     ],
-    "totalTypes": 736,
-    "totalOps": 4823
+    "totalTypes": 742,
+    "totalOps": 4849
   }
 ]

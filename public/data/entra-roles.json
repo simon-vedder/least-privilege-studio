@@ -14,6 +14,7 @@
       "microsoft.directory/agentIdentities/delete",
       "microsoft.directory/agentIdentities/disable",
       "microsoft.directory/agentIdentities/enable",
+      "microsoft.directory/agentIdentities/idJagConfiguration/update",
       "microsoft.directory/agentIdentities/owners/update",
       "microsoft.directory/agentIdentities/tag/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/allProperties/read",
@@ -24,6 +25,7 @@
       "microsoft.directory/agentIdentityBlueprintPrincipals/delete",
       "microsoft.directory/agentIdentityBlueprintPrincipals/disable",
       "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+      "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/tag/update",
       "microsoft.directory/agentIdentityBlueprints/allProperties/read",
@@ -74,7 +76,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 112
+    "_estimatedActions": 114
   },
   {
     "name": "Agent ID Developer",
@@ -117,6 +119,7 @@
       "microsoft.directory/agentIdentities/delete",
       "microsoft.directory/agentIdentities/disable",
       "microsoft.directory/agentIdentities/enable",
+      "microsoft.directory/agentIdentities/idJagConfiguration/update",
       "microsoft.directory/agentIdentities/owners/update",
       "microsoft.directory/agentIdentities/tag/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/allProperties/read",
@@ -127,6 +130,7 @@
       "microsoft.directory/agentIdentityBlueprintPrincipals/delete",
       "microsoft.directory/agentIdentityBlueprintPrincipals/disable",
       "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+      "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/tag/update",
       "microsoft.directory/agentIdentityBlueprints/allProperties/read",
@@ -180,7 +184,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 179
+    "_estimatedActions": 181
   },
   {
     "name": "AI Reader",
@@ -1377,6 +1381,7 @@
       "microsoft.directory/agentIdentityBlueprintPrincipals/delete",
       "microsoft.directory/agentIdentityBlueprintPrincipals/disable",
       "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+      "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/tag/update",
       "microsoft.directory/agentIdentityBlueprints/allProperties/read",
@@ -1614,7 +1619,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 1699
+    "_estimatedActions": 1700
   },
   {
     "name": "Global Reader",
@@ -2760,6 +2765,57 @@
     "_estimatedActions": 29
   },
   {
+    "name": "Resource Policy Administrator",
+    "id": "c0c46a03-c257-4f91-ab71-3c7e59c89d97",
+    "description": "Users in this role have full permissions to create, read, update, delete, and evaluate resource policies, their assignments, and the tenant-wide resource policy configuration in Microsoft Graph. This role is intended for senior and compliance administrators who are responsible for the entire lifecycle of resource access policies. Assigning this role grants comprehensive control over how resource policies are defined and enforced across the organization.",
+    "actions": [
+      "microsoft.directory/resourcePolicy/assignments/basic/update",
+      "microsoft.directory/resourcePolicy/assignments/create",
+      "microsoft.directory/resourcePolicy/assignments/delete",
+      "microsoft.directory/resourcePolicy/assignments/standard/read",
+      "microsoft.directory/resourcePolicy/configuration/basic/update",
+      "microsoft.directory/resourcePolicy/configuration/standard/read",
+      "microsoft.directory/resourcePolicy/definitions/basic/update",
+      "microsoft.directory/resourcePolicy/definitions/create",
+      "microsoft.directory/resourcePolicy/definitions/delete",
+      "microsoft.directory/resourcePolicy/definitions/standard/read",
+      "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+      "microsoft.directory/resourcePolicy/evaluatePolicy"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 12
+  },
+  {
+    "name": "Resource Policy Evaluator",
+    "id": "1dae4b79-8aea-40ab-9ad0-30d3ab1fa9c1",
+    "description": "Users in this role can evaluate resource policies to understand their impact and outcome. This role does not grant any read or write access to the policy definitions or assignments themselves, making it ideal for developers, testers, and automated tools that need to perform policy validation as part of a development or CI/CD pipeline.",
+    "actions": [
+      "microsoft.directory/resourcePolicy/evaluatePolicy"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 1
+  },
+  {
+    "name": "Resource Policy Reader",
+    "id": "311877b7-9a2e-4337-81c2-068a250eaa22",
+    "description": "Users in this role have read-only access to resource policy definitions, assignments, and the tenant-wide resource policy configuration in Microsoft Graph. They can also evaluate policies to understand their impact, making this role ideal for audit, compliance, and support personnel who need to validate and troubleshoot policies without the ability to modify them.",
+    "actions": [
+      "microsoft.directory/resourcePolicy/assignments/standard/read",
+      "microsoft.directory/resourcePolicy/configuration/standard/read",
+      "microsoft.directory/resourcePolicy/definitions/standard/read",
+      "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+      "microsoft.directory/resourcePolicy/evaluatePolicy"
+    ],
+    "notActions": [],
+    "dataActions": [],
+    "notDataActions": [],
+    "_estimatedActions": 5
+  },
+  {
     "name": "Restricted Guest User",
     "id": "2af84b1e-32c8-42b7-82bc-daa82404023b",
     "description": "Restricted role for guest users. Can read a limited set of directory information.",
@@ -3436,6 +3492,7 @@
       "microsoft.directory/agentIdentities/standard/read",
       "microsoft.directory/agentIdentityBlueprintPrincipals/createAsOwner",
       "microsoft.directory/agentIdentityBlueprintPrincipals/standard/read",
+      "microsoft.directory/agentIdentityBlueprints/createAsOwner",
       "microsoft.directory/agentIdentityBlueprints/standard/read",
       "microsoft.directory/applicationPolicies/createAsOwner",
       "microsoft.directory/applicationPolicies/standard/read",
@@ -3516,6 +3573,7 @@
       "microsoft.directory/agentIdentityBlueprintPrincipals/delete",
       "microsoft.directory/agentIdentityBlueprintPrincipals/disable",
       "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+      "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",
       "microsoft.directory/agentIdentityBlueprintPrincipals/tag/update",
       "microsoft.directory/agentIdentityBlueprints/appRoles/update",
@@ -3606,7 +3664,7 @@
     "notActions": [],
     "dataActions": [],
     "notDataActions": [],
-    "_estimatedActions": 187
+    "_estimatedActions": 189
   },
   {
     "name": "User Administrator",

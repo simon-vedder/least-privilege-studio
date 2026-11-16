@@ -276,16 +276,8 @@
     "description": "Delete monitors"
   },
   {
-    "action": "Dynatrace.Observability/monitors/discoverMigrationResource/action",
-    "description": "Starts migration resource discovery for the monitor."
-  },
-  {
     "action": "Dynatrace.Observability/monitors/getMetricStatus/action",
     "description": "Gets Metric Status from the dyntrace partner"
-  },
-  {
-    "action": "Dynatrace.Observability/monitors/getMigrationDiscoveryStatus/action",
-    "description": "Gets the most recently accepted migration discovery run."
   },
   {
     "action": "Dynatrace.Observability/monitors/getSSODetails/action",
@@ -324,6 +316,10 @@
     "description": "Manages Dynatrace MCP connectors for the SRE Agent."
   },
   {
+    "action": "Dynatrace.Observability/monitors/migrations/read",
+    "description": "Gets or lists migration discovery resources for the monitor."
+  },
+  {
     "action": "Dynatrace.Observability/monitors/monitoredSubscriptions/read",
     "description": "Read monitored subscriptions"
   },
@@ -342,6 +338,10 @@
   {
     "action": "Dynatrace.Observability/monitors/singleSignOnConfigurations/write",
     "description": "Writes the single sign-on configuration"
+  },
+  {
+    "action": "Dynatrace.Observability/monitors/startDiscovery/action",
+    "description": "Starts discovery and creates a migration record for the monitor."
   },
   {
     "action": "Dynatrace.Observability/monitors/tagRules/read",
@@ -9324,6 +9324,18 @@
     "description": "List RecoveryPlan resources by tenant"
   },
   {
+    "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryConfigProfiles/delete",
+    "description": "Deletes a recovery configuration profile."
+  },
+  {
+    "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryConfigProfiles/read",
+    "description": "Gets a recovery configuration profile."
+  },
+  {
+    "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryConfigProfiles/write",
+    "description": "Updates a recovery configuration profile. Omitted fields remain unchanged."
+  },
+  {
     "action": "Microsoft.AzureResilienceManagement/recoveryPlans/recoveryJobs/cancel/action",
     "description": "This action attempts to cancel the ongoing recovery orchestration job. Deprecated: API versions 2025-02-01-preview through 2026-08-31-preview are deprecated. Use 2026-09-30-preview or a later supported API version."
   },
@@ -12724,6 +12736,14 @@
     "description": "Creates or updates a Chaos Experiment resource in a resource group."
   },
   {
+    "action": "Microsoft.Chaos/scenarioTemplates/read",
+    "description": "Gets or lists the built-in scenario templates published by Chaos Studio."
+  },
+  {
+    "action": "Microsoft.Chaos/scenarioTemplates/versions/read",
+    "description": "Gets or lists the published versions of a built-in scenario template."
+  },
+  {
     "action": "Microsoft.Chaos/skus/read",
     "description": "Read the available SKUs for Chaos Studio."
   },
@@ -12793,7 +12813,7 @@
   },
   {
     "action": "Microsoft.Chaos/workspaces/evaluate/action",
-    "description": "Triggers template evaluation for all scenarios in a given workspace."
+    "description": "Evaluates published scenario template versions against a workspace discovery snapshot."
   },
   {
     "action": "Microsoft.Chaos/workspaces/evaluations/delete",
@@ -13517,7 +13537,7 @@
   },
   {
     "action": "Microsoft.CloudHealth/healthmodels/entities/write",
-    "description": "Create a Entity"
+    "description": "Update an existing entity's display name, canvas position, icon, tags, health objective, or impact. Omitted or null properties are unchanged. Canvas position and icon properties merge recursively; a supplied tags dictionary replaces the stored dictionary. Signal groups, signal aggregation groups, and alerts remain PUT-only."
   },
   {
     "action": "Microsoft.CloudHealth/healthmodels/getRecommendedSignals/action",
@@ -14210,6 +14230,10 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/BatchAvatar/batchsyntheses/write",
     "description": "Submits a new avatar batch synthesis."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/BatchAvatar/trialscripts/read",
+    "description": "Gets photo avatar free trial scripts."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/BatchTextToSpeech/batchsyntheses/delete",
@@ -15150,6 +15174,10 @@
   {
     "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/projects/write",
     "description": "Creates custom avatar projects."
+  },
+  {
+    "action": "Microsoft.CognitiveServices/accounts/CustomAvatar/quota/read",
+    "description": "Gets custom avatar account quotas."
   },
   {
     "action": "Microsoft.CognitiveServices/accounts/CustomVision/classify/iterations/image/action",
@@ -21672,6 +21700,54 @@
     "description": "Creates a new virtual machine or updates an existing virtual machine"
   },
   {
+    "action": "Microsoft.Compute/workloadSpaces/capabilities/delete",
+    "description": "Disables and deletes the capability"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/capabilities/read",
+    "description": "Get the properties of a capability in a workload space"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/capabilities/write",
+    "description": "Creates a new capability or updates an existing capability in a workload space"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/delete",
+    "description": "Deletes the workload space and its owned resources"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/read",
+    "description": "Get the properties of a workload space"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/runtimeBindings/delete",
+    "description": "Deletes the runtime binding without deleting customer-owned referenced resources"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/runtimeBindings/read",
+    "description": "Get the properties of a runtime binding in a workload space"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/runtimeBindings/write",
+    "description": "Creates a new runtime binding or updates an existing runtime binding in a workload space"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/runtimeLinks/delete",
+    "description": "Deletes the runtime link without deleting its runtime bindings"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/runtimeLinks/read",
+    "description": "Get the properties of a runtime link in a workload space"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/runtimeLinks/write",
+    "description": "Creates a new runtime link or updates an existing runtime link in a workload space"
+  },
+  {
+    "action": "Microsoft.Compute/workloadSpaces/write",
+    "description": "Creates a new workload space or updates an existing workload space"
+  },
+  {
     "action": "Microsoft.ComputeSchedule/associatedOccurrences/read",
     "description": "List OccurrenceExtensionResource resources by parent"
   },
@@ -25544,6 +25620,10 @@
     "description": "List fleet credentials"
   },
   {
+    "action": "Microsoft.ContainerService/fleets/listMemberCredentials/action",
+    "description": "List fleet member credentials"
+  },
+  {
     "action": "Microsoft.ContainerService/fleets/livez/autoregister-completion/read",
     "description": "Reads autoregister-completion"
   },
@@ -25626,6 +25706,14 @@
   {
     "action": "Microsoft.ContainerService/fleets/managedNamespaces/delete",
     "description": "Delete a fleet managed namespace"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/managedNamespaces/listCredentials/action",
+    "description": "List fleet managed namespace credentials"
+  },
+  {
+    "action": "Microsoft.ContainerService/fleets/managedNamespaces/listMemberCredentials/action",
+    "description": "List fleet managed namespace member credentials"
   },
   {
     "action": "Microsoft.ContainerService/fleets/managedNamespaces/read",
@@ -36832,6 +36920,10 @@
     "description": "Append to a string in a Garnet cluster."
   },
   {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/asking/action",
+    "description": "Route the next command to an importing slot in a Garnet cluster."
+  },
+  {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/bzmpop/delete",
     "description": "Block and remove element with highest/lowest score from sorted set(s) in a Garnet cluster."
   },
@@ -36848,12 +36940,32 @@
     "description": "Get active channels in a Garnet cluster."
   },
   {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/clientgetname/read",
+    "description": "Get the connection name for a Garnet client."
+  },
+  {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/clientid/read",
     "description": "Get client ID for a Garnet cluster."
   },
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/clientinfo/read",
     "description": "Get client information for a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/clientsetinfo/write",
+    "description": "Set library information for a Garnet client."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/clientsetname/write",
+    "description": "Set the connection name for a Garnet client."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/clusterinfo/read",
+    "description": "Get cluster state information for a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/command/read",
+    "description": "Get command metadata for a Garnet cluster."
   },
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/configget/read",
@@ -36882,6 +36994,14 @@
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/expire/delete",
     "description": "Set expiration for a key in a Garnet cluster keyspace."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/expireat/delete",
+    "description": "Set an expiration timestamp for a key in a Garnet cluster keyspace."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/expiretime/read",
+    "description": "Get the expiration timestamp for a key in a Garnet cluster keyspace."
   },
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/flushdb/action",
@@ -37048,6 +37168,10 @@
     "description": "Set multiple string values if they don't exist in a Garnet cluster."
   },
   {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/myid/read",
+    "description": "Get the local node ID for a Garnet cluster."
+  },
+  {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/nodes/read",
     "description": "Manage cluster nodes in a Garnet cluster."
   },
@@ -37060,6 +37184,22 @@
     "description": "Get subscription count for channels in a Garnet cluster."
   },
   {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/persist/write",
+    "description": "Remove expiration from a key in a Garnet cluster keyspace."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/pexpire/delete",
+    "description": "Set expiration in milliseconds for a key in a Garnet cluster keyspace."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/pexpireat/delete",
+    "description": "Set a millisecond expiration timestamp for a key in a Garnet cluster keyspace."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/pexpiretime/read",
+    "description": "Get the millisecond expiration timestamp for a key in a Garnet cluster keyspace."
+  },
+  {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/ping/read",
     "description": "Ping connection for a Garnet cluster."
   },
@@ -37070,6 +37210,10 @@
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/psubscribe/action",
     "description": "Subscribe to channels matching a pattern in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/pttl/read",
+    "description": "Get the expiration time in milliseconds for a key in a Garnet cluster keyspace."
   },
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/publish/action",
@@ -37144,6 +37288,10 @@
     "description": "Set a substring at a specific offset in a Garnet cluster."
   },
   {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/shards/read",
+    "description": "Get shard topology for a Garnet cluster."
+  },
+  {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/sinter/read",
     "description": "Get the intersection of sets in a Garnet cluster."
   },
@@ -37212,6 +37360,14 @@
     "description": "Store the union of sets in a Garnet cluster."
   },
   {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/ttl/read",
+    "description": "Get the expiration time for a key in a Garnet cluster keyspace."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/type/read",
+    "description": "Get the value type for a key in a Garnet cluster keyspace."
+  },
+  {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/unlink/delete",
     "description": "Unlink keys in a Garnet cluster keyspace."
   },
@@ -37266,6 +37422,14 @@
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/vsim/read",
     "description": "Search for similar vectors in a vector set in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/xvcreate/write",
+    "description": "Create a vector set with explicit configuration in a Garnet cluster."
+  },
+  {
+    "action": "Microsoft.DocumentDB/garnetClusters/acl/xvimport/write",
+    "description": "Import data into a vector set in a Garnet cluster."
   },
   {
     "action": "Microsoft.DocumentDB/garnetClusters/acl/zadd/write",
@@ -37814,6 +37978,18 @@
   {
     "action": "Microsoft.Easm/workspaces/write",
     "description": "Update a Workspace."
+  },
+  {
+    "action": "Microsoft.Edge/capacityPools/delete",
+    "description": "Delete a CapacityPool"
+  },
+  {
+    "action": "Microsoft.Edge/capacityPools/read",
+    "description": "Get a CapacityPool"
+  },
+  {
+    "action": "Microsoft.Edge/capacityPools/write",
+    "description": "Update a CapacityPool"
   },
   {
     "action": "Microsoft.Edge/configTemplates/configTemplateMetadatas/delete",
@@ -38706,6 +38882,14 @@
   {
     "action": "Microsoft.Elastic/monitors/getBillingInfo/action",
     "description": "Get marketplace and organization info mapped to the given monitor"
+  },
+  {
+    "action": "Microsoft.Elastic/monitors/latestLinkedSaaS/action",
+    "description": "Get the Marketplace SaaS resource linked to the monitor's Elastic organization"
+  },
+  {
+    "action": "Microsoft.Elastic/monitors/linkSaaS/action",
+    "description": "Replace the Marketplace SaaS resource linked to the monitor's Elastic organization"
   },
   {
     "action": "Microsoft.Elastic/monitors/listAllTrafficFilters/action",
@@ -41516,6 +41700,10 @@
     "description": ""
   },
   {
+    "action": "Microsoft.HorizonDb/clusters/failover/action",
+    "description": "Fails over a HorizonDb cluster to its standby replica."
+  },
+  {
     "action": "Microsoft.HorizonDb/clusters/microsoftEntraAdministrators/delete",
     "description": "Deletes the specified EntraID administrator from the HorizonDb cluster."
   },
@@ -41562,6 +41750,18 @@
   {
     "action": "Microsoft.HorizonDb/clusters/pools/replicas/write",
     "description": "Creates or updates a HorizonDb replica with the specified parameters."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/restart/action",
+    "description": "Restarts a running HorizonDb pool."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/start/action",
+    "description": "Starts a stopped HorizonDb pool."
+  },
+  {
+    "action": "Microsoft.HorizonDb/clusters/pools/stop/action",
+    "description": "Stops a running HorizonDb pool and deallocates its compute."
   },
   {
     "action": "Microsoft.HorizonDb/clusters/pools/write",
@@ -41881,67 +42081,63 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listCredentials/action",
-    "description": "Gets the endpoint access credentials to the resource."
+    "description": "List the endpoint access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listIngressGatewayCredentials/action",
-    "description": "Gets the ingress gateway endpoint credentials "
+    "description": "List the ingress gateway access credentials to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/listManagedProxyDetails/action",
-    "description": "Fetches the managed proxy details "
+    "description": "List the managed proxy details to the resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/read",
-    "description": "Gets the endpoint to the resource."
+    "description": "Get or list of endpoints to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/delete",
-    "description": "Deletes the service details to the target resource."
+    "description": "Deletes the serviceConfigurations access to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/read",
-    "description": "Gets the details about the service to the resource."
+    "description": "Get or list of serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/serviceConfigurations/write",
-    "description": "Update the service details in the service configurations of the target resource."
+    "description": "Create or update the serviceConfigurations to the endpoints resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/endpoints/write",
-    "description": "Update the endpoint to the target resource."
-  },
-  {
-    "action": "Microsoft.HybridConnectivity/providerPermissions/read",
-    "description": "read providerPermissions"
+    "description": "Create or update the endpoint to the target resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/delete",
-    "description": "Delete a PublicCloudConnector"
+    "description": "Deletes the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/read",
-    "description": "Get a PublicCloudConnector"
+    "description": "Gets the public cloud connectors."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/testPermissions/action",
-    "description": "A long-running resource action."
+    "description": "Tests the permissions of solution configurations under public cloud connector."
   },
   {
     "action": "Microsoft.HybridConnectivity/publicCloudConnectors/write",
-    "description": "Update a PublicCloudConnector"
+    "description": "Update the public cloud connectors resource."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/delete",
-    "description": "Delete a SolutionConfiguration"
+    "description": "Deletes the solution configuration with provided solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/inventory/read",
-    "description": "Get a InventoryResource"
+    "description": "Retrieve a list of inventory by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/read",
-    "description": "Get a SolutionConfiguration"
+    "description": "Retrieve the solution configuration identified by solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/syncNow/action",
@@ -41949,11 +42145,11 @@
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionConfigurations/write",
-    "description": "Update a SolutionConfiguration"
+    "description": "Updates the solution configuration for solution name."
   },
   {
     "action": "Microsoft.HybridConnectivity/solutionTypes/read",
-    "description": "Get a SolutionTypeResource"
+    "description": "Retrieve the solution type by provided solution type."
   },
   {
     "action": "Microsoft.HybridContainerService/kubernetesVersions/delete",
@@ -42644,12 +42840,20 @@
     "description": "Delete a Integration"
   },
   {
+    "action": "Microsoft.InfinityDB/accounts/integrations/describeStream/action",
+    "description": "Gets information about the stream the integration connects to."
+  },
+  {
+    "action": "Microsoft.InfinityDB/accounts/integrations/listFiles/action",
+    "description": "Lists the files and folders in a folder of the integration's data source."
+  },
+  {
     "action": "Microsoft.InfinityDB/accounts/integrations/read",
-    "description": "Get a Integration"
+    "description": "List Integration resources by Account"
   },
   {
     "action": "Microsoft.InfinityDB/accounts/integrations/write",
-    "description": "Update a Integration"
+    "description": "Create a Integration"
   },
   {
     "action": "Microsoft.InfinityDB/accounts/presetTypes/delete",
@@ -48140,18 +48344,6 @@
     "description": "Disables the workflow."
   },
   {
-    "action": "Microsoft.Logic/workflows/drafts/read",
-    "description": "Reads the workflow draft."
-  },
-  {
-    "action": "Microsoft.Logic/workflows/drafts/run/action",
-    "description": "Starts a run of the workflow draft."
-  },
-  {
-    "action": "Microsoft.Logic/workflows/drafts/write",
-    "description": "Creates or updates the workflow draft."
-  },
-  {
     "action": "Microsoft.Logic/workflows/enable/action",
     "description": "Enables the workflow."
   },
@@ -50732,10 +50924,6 @@
     "description": "API to update certain properties of the Network Packet Broker resource."
   },
   {
-    "action": "Microsoft.ManagedNetworkFabric/networkRackSkus/read",
-    "description": "List all Network Rack SKUs in the given subscription."
-  },
-  {
     "action": "Microsoft.ManagedNetworkFabric/networkRacks/delete",
     "description": "Delete Network Rack resource."
   },
@@ -52912,6 +53100,10 @@
     "description": "Update a ApprovalResource"
   },
   {
+    "action": "Microsoft.Mission/catalogServices/read",
+    "description": "Gets or lists the services that can be added to a service catalog."
+  },
+  {
     "action": "Microsoft.Mission/communities/checkAddressSpaceAvailability/action",
     "description": "Checks that the IP Address Space to be allocated for this Community is available."
   },
@@ -53026,6 +53218,18 @@
   {
     "action": "Microsoft.Mission/enclaveConnections/write",
     "description": "Update a EnclaveConnectionResource"
+  },
+  {
+    "action": "Microsoft.Mission/serviceCatalogs/delete",
+    "description": "Delete a ServiceCatalogResource"
+  },
+  {
+    "action": "Microsoft.Mission/serviceCatalogs/read",
+    "description": "Get a ServiceCatalogResource"
+  },
+  {
+    "action": "Microsoft.Mission/serviceCatalogs/write",
+    "description": "Update a ServiceCatalogResource"
   },
   {
     "action": "Microsoft.Mission/virtualEnclaves/approvalCallback/action",
@@ -57268,10 +57472,6 @@
     "description": "Deletes a virtual network"
   },
   {
-    "action": "Microsoft.Network/virtualNetworks/getAdminNsgInfo/action",
-    "description": "Gets Admin Network Security Group information for a virtual network"
-  },
-  {
     "action": "Microsoft.Network/virtualNetworks/join/action",
     "description": "Joins a virtual network. Not Alertable."
   },
@@ -57458,10 +57658,6 @@
   {
     "action": "Microsoft.Network/virtualNetworks/taggedTrafficConsumers/write",
     "description": "Creates a Tagged Traffic Consumer or updates an existing Tagged Traffic Consumer"
-  },
-  {
-    "action": "Microsoft.Network/virtualNetworks/updateAdminNsgReference/action",
-    "description": "Updates the Admin Network Security Group reference for a virtual network"
   },
   {
     "action": "Microsoft.Network/virtualNetworks/virtualMachines/read",
@@ -58378,6 +58574,18 @@
   {
     "action": "Microsoft.NotificationHubs/resourceTypes/read",
     "description": "Gets a list of the resource types for Notification Hubs"
+  },
+  {
+    "action": "Microsoft.Nutanix/Clusters/delete",
+    "description": "Delete operation"
+  },
+  {
+    "action": "Microsoft.Nutanix/Clusters/read",
+    "description": "Read operation"
+  },
+  {
+    "action": "Microsoft.Nutanix/Clusters/write",
+    "description": "Write operation"
   },
   {
     "action": "Microsoft.Nutanix/Interfaces/delete",
@@ -62446,6 +62654,10 @@
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/PGSQLServerLogs/read",
     "description": "Read data from the PGSQLServerLogs table"
+  },
+  {
+    "action": "Microsoft.OperationalInsights/workspaces/query/PartnerRiskEvents/read",
+    "description": "Read data from the PartnerRiskEvents table"
   },
   {
     "action": "Microsoft.OperationalInsights/workspaces/query/PaymentHsmHardwareOperationAuditLogs/read",
@@ -72636,10 +72848,6 @@
     "description": "Creates a new amlfilesystem, or updates an existing one"
   },
   {
-    "action": "Microsoft.StorageCache/caches/Flush/action",
-    "description": "Flushes cached data to storage targets"
-  },
-  {
     "action": "Microsoft.StorageCache/caches/Start/action",
     "description": "Starts the cache"
   },
@@ -74406,6 +74614,22 @@
   {
     "action": "Microsoft.VisualStudio/Project/Write",
     "description": "Set Project"
+  },
+  {
+    "action": "Microsoft.Weather/dataFeeds/delete",
+    "description": "Delete a weather data feed and revoke the associated entitlement."
+  },
+  {
+    "action": "Microsoft.Weather/dataFeeds/read",
+    "description": "Get a weather data feed."
+  },
+  {
+    "action": "Microsoft.Weather/dataFeeds/write",
+    "description": "Update the tags on a weather data feed. The data feed has no\ncustomer-writable properties, so tags are the only mutable surface."
+  },
+  {
+    "action": "Microsoft.Weather/providerPermissions/read",
+    "description": "read providerPermissions"
   },
   {
     "action": "Microsoft.Web/Sites/joinPerimeter/action",
